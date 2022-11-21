@@ -1,0 +1,68 @@
+\hypertarget{struct_object}{}\doxysection{Структура Object}
+\label{struct_object}\index{Object@{Object}}
+
+
+Граф наследования\+:Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{struct_object__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_object}{Object}} $\ast$ \mbox{\hyperlink{struct_object_a71225073d06a793b9a6ea9263ed37b12}{obj\+Ref}} (\mbox{\hyperlink{struct_object}{Object}} $\ast$obj)
+\item 
+static \mbox{\hyperlink{struct_object}{Object}} $\ast$ \mbox{\hyperlink{struct_object_a924ee0cecc906d148022b3f0d6325cfb}{obj\+Unref}} (\mbox{\hyperlink{struct_object}{Object}} $\ast$obj)
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_object_a1b6037fba835e83243ababce426ff9af}{ref}}
+\begin{DoxyCompactList}\small\item\em Reference count. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Base object class. 
+
+См. определение в файле \mbox{\hyperlink{manual_8c_source}{manual.\+c}} строка \mbox{\hyperlink{manual_8c_source_l00013}{13}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{struct_object_a71225073d06a793b9a6ea9263ed37b12}\label{struct_object_a71225073d06a793b9a6ea9263ed37b12}} 
+\index{Object@{Object}!objRef@{objRef}}
+\index{objRef@{objRef}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{objRef()}{objRef()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{struct_object}{Object}} $\ast$ obj\+Ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_object}{Object}} $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Increments object reference count by one. \mbox{\Hypertarget{struct_object_a924ee0cecc906d148022b3f0d6325cfb}\label{struct_object_a924ee0cecc906d148022b3f0d6325cfb}} 
+\index{Object@{Object}!objUnref@{objUnref}}
+\index{objUnref@{objUnref}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{objUnref()}{objUnref()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{struct_object}{Object}} $\ast$ obj\+Unref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_object}{Object}} $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Decrements object reference count by one. 
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{struct_object_a1b6037fba835e83243ababce426ff9af}\label{struct_object_a1b6037fba835e83243ababce426ff9af}} 
+\index{Object@{Object}!ref@{ref}}
+\index{ref@{ref}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{ref}{ref}}
+{\footnotesize\ttfamily int Object\+::ref\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference count. 
+
+
+
+См. определение в файле \mbox{\hyperlink{manual_8c_source}{manual.\+c}} строка \mbox{\hyperlink{manual_8c_source_l00015}{15}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+for lab/doxygen/examples/\mbox{\hyperlink{manual_8c}{manual.\+c}}\end{DoxyCompactItemize}

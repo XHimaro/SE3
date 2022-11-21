@@ -1,0 +1,125 @@
+\hypertarget{struct_agsubnode__s}{}\doxysection{Структура Agsubnode\+\_\+s}
+\label{struct_agsubnode__s}\index{Agsubnode\_s@{Agsubnode\_s}}
+
+
+This is the node struct allocated per graph (or subgraph).  
+
+
+
+
+{\ttfamily \#include $<$cgraph.\+h$>$}
+
+
+
+Граф связей класса Agsubnode\+\_\+s\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_agsubnode__s__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} \mbox{\hyperlink{struct_agsubnode__s_a4218b45bb1bc8e8d8220e38207e90688}{seq\+\_\+link}}
+\item 
+\mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} \mbox{\hyperlink{struct_agsubnode__s_a4f80a8fafe5aca9e0c738cb1fcd8abae}{id\+\_\+link}}
+\item 
+\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agsubnode__s_aabe87bcb566b5db602a8d1f332362f1e}{node}}
+\item 
+\mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agsubnode__s_a47a9f2427ab60c3d6b159edb10bcde04}{in\+\_\+id}}
+\item 
+\mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agsubnode__s_a40380062bc9ec5f5abbe0e2e80381769}{out\+\_\+id}}
+\item 
+\mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agsubnode__s_ac437338b91fb9ace063f906895f94b48}{in\+\_\+seq}}
+\item 
+\mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agsubnode__s_a04181be1bf192265a7eb0f73ec7816a2}{out\+\_\+seq}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+This is the node struct allocated per graph (or subgraph). 
+
+It resides in the n\+\_\+dict of the graph. The node set is maintained by libdict, but transparently to libgraph callers. Every node may be given an optional string name at its time of creation, or it is permissible to pass NIL(char$\ast$) for the name. 
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00131}{131}}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{struct_agsubnode__s_a4f80a8fafe5aca9e0c738cb1fcd8abae}\label{struct_agsubnode__s_a4f80a8fafe5aca9e0c738cb1fcd8abae}} 
+\index{Agsubnode\_s@{Agsubnode\_s}!id\_link@{id\_link}}
+\index{id\_link@{id\_link}!Agsubnode\_s@{Agsubnode\_s}}
+\doxysubsubsection{\texorpdfstring{id\_link}{id\_link}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} Agsubnode\+\_\+s\+::id\+\_\+link}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00133}{133}}
+
+\mbox{\Hypertarget{struct_agsubnode__s_a47a9f2427ab60c3d6b159edb10bcde04}\label{struct_agsubnode__s_a47a9f2427ab60c3d6b159edb10bcde04}} 
+\index{Agsubnode\_s@{Agsubnode\_s}!in\_id@{in\_id}}
+\index{in\_id@{in\_id}!Agsubnode\_s@{Agsubnode\_s}}
+\doxysubsubsection{\texorpdfstring{in\_id}{in\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}}$\ast$ Agsubnode\+\_\+s\+::in\+\_\+id}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00135}{135}}
+
+\mbox{\Hypertarget{struct_agsubnode__s_ac437338b91fb9ace063f906895f94b48}\label{struct_agsubnode__s_ac437338b91fb9ace063f906895f94b48}} 
+\index{Agsubnode\_s@{Agsubnode\_s}!in\_seq@{in\_seq}}
+\index{in\_seq@{in\_seq}!Agsubnode\_s@{Agsubnode\_s}}
+\doxysubsubsection{\texorpdfstring{in\_seq}{in\_seq}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}}$\ast$ Agsubnode\+\_\+s\+::in\+\_\+seq}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00136}{136}}
+
+\mbox{\Hypertarget{struct_agsubnode__s_aabe87bcb566b5db602a8d1f332362f1e}\label{struct_agsubnode__s_aabe87bcb566b5db602a8d1f332362f1e}} 
+\index{Agsubnode\_s@{Agsubnode\_s}!node@{node}}
+\index{node@{node}!Agsubnode\_s@{Agsubnode\_s}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}}$\ast$ Agsubnode\+\_\+s\+::node}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00134}{134}}
+
+\mbox{\Hypertarget{struct_agsubnode__s_a40380062bc9ec5f5abbe0e2e80381769}\label{struct_agsubnode__s_a40380062bc9ec5f5abbe0e2e80381769}} 
+\index{Agsubnode\_s@{Agsubnode\_s}!out\_id@{out\_id}}
+\index{out\_id@{out\_id}!Agsubnode\_s@{Agsubnode\_s}}
+\doxysubsubsection{\texorpdfstring{out\_id}{out\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} $\ast$ Agsubnode\+\_\+s\+::out\+\_\+id}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00135}{135}}
+
+\mbox{\Hypertarget{struct_agsubnode__s_a04181be1bf192265a7eb0f73ec7816a2}\label{struct_agsubnode__s_a04181be1bf192265a7eb0f73ec7816a2}} 
+\index{Agsubnode\_s@{Agsubnode\_s}!out\_seq@{out\_seq}}
+\index{out\_seq@{out\_seq}!Agsubnode\_s@{Agsubnode\_s}}
+\doxysubsubsection{\texorpdfstring{out\_seq}{out\_seq}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} $\ast$ Agsubnode\+\_\+s\+::out\+\_\+seq}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00136}{136}}
+
+\mbox{\Hypertarget{struct_agsubnode__s_a4218b45bb1bc8e8d8220e38207e90688}\label{struct_agsubnode__s_a4218b45bb1bc8e8d8220e38207e90688}} 
+\index{Agsubnode\_s@{Agsubnode\_s}!seq\_link@{seq\_link}}
+\index{seq\_link@{seq\_link}!Agsubnode\_s@{Agsubnode\_s}}
+\doxysubsubsection{\texorpdfstring{seq\_link}{seq\_link}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} Agsubnode\+\_\+s\+::seq\+\_\+link}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00132}{132}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\+Graphviz/include/graphviz/\mbox{\hyperlink{cgraph_8h}{cgraph.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,1284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Complex: Файл for lab/Graphviz/include/graphviz/gvcjob.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Complex
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('gvcjob_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#define-members">Макросы</a> &#124;
+<a href="#typedef-members">Определения типов</a> &#124;
+<a href="#enum-members">Перечисления</a>  </div>
+  <div class="headertitle"><div class="title">Файл gvcjob.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="gvcommon_8h_source.html">gvcommon.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="color_8h_source.html">color.h</a>&quot;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для gvcjob.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="gvcjob_8h__incl.png" border="0" usemap="#afor_01lab_2_graphviz_2include_2graphviz_2gvcjob_8h" alt=""/></div>
+<map name="afor_01lab_2_graphviz_2include_2graphviz_2gvcjob_8h" id="afor_01lab_2_graphviz_2include_2graphviz_2gvcjob_8h">
+<area shape="rect" title=" " alt="" coords="77,5,233,45"/>
+<area shape="rect" href="gvcommon_8h.html" title=" " alt="" coords="5,93,100,119"/>
+<area shape="rect" href="color_8h.html" title=" " alt="" coords="125,93,186,119"/>
+<area shape="rect" title=" " alt="" coords="210,93,285,119"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="gvcjob_8h__dep__incl.png" border="0" usemap="#afor_01lab_2_graphviz_2include_2graphviz_2gvcjob_8hdep" alt=""/></div>
+<map name="afor_01lab_2_graphviz_2include_2graphviz_2gvcjob_8hdep" id="afor_01lab_2_graphviz_2include_2graphviz_2gvcjob_8hdep">
+<area shape="rect" title=" " alt="" coords="429,5,585,45"/>
+<area shape="rect" href="gvplugin__device_8h.html" title=" " alt="" coords="5,93,183,133"/>
+<area shape="rect" href="gvplugin__layout_8h.html" title=" " alt="" coords="207,93,383,133"/>
+<area shape="rect" href="gvplugin__loadimage_8h.html" title=" " alt="" coords="407,93,607,133"/>
+<area shape="rect" href="gvplugin__render_8h.html" title=" " alt="" coords="632,93,809,133"/>
+<area shape="rect" href="gvplugin__textlayout_8h.html" title=" " alt="" coords="833,93,1032,133"/>
+</map>
+</div>
+</div>
+<p><a href="gvcjob_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgvrender__features__t.html">gvrender_features_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgvdevice__features__t.html">gvdevice_features_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgvplugin__active__device__s.html">gvplugin_active_device_s</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgvplugin__active__render__s.html">gvplugin_active_render_s</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgvplugin__active__loadimage__t.html">gvplugin_active_loadimage_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgv__argvlist__s.html">gv_argvlist_s</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgvdevice__callbacks__s.html">gvdevice_callbacks_s</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgvevent__key__binding__s.html">gvevent_key_binding_s</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structobj__state__s.html">obj_state_s</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_g_v_j__s.html">GVJ_s</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a4163b4a4e9d8f2949741962dca6c5944"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a4163b4a4e9d8f2949741962dca6c5944">ARRAY_SIZE</a>(<a class="el" href="class_a.html">A</a>)&#160;&#160;&#160;(sizeof(<a class="el" href="class_a.html">A</a>)/sizeof(<a class="el" href="class_a.html">A</a>[0]))</td></tr>
+<tr class="separator:a4163b4a4e9d8f2949741962dca6c5944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad03a35ae3e8eb2d22ba05e3ab13469c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#ad03a35ae3e8eb2d22ba05e3ab13469c2">PENWIDTH_NORMAL</a>&#160;&#160;&#160;1.</td></tr>
+<tr class="separator:ad03a35ae3e8eb2d22ba05e3ab13469c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d4b93a7285736626367c79e6a7e65b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#aa9d4b93a7285736626367c79e6a7e65b">PENWIDTH_BOLD</a>&#160;&#160;&#160;2.</td></tr>
+<tr class="separator:aa9d4b93a7285736626367c79e6a7e65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33cff4ced6fee87fe933a71a93d1ddd8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a33cff4ced6fee87fe933a71a93d1ddd8">EMIT_SORTED</a>&#160;&#160;&#160;(1&lt;&lt;0)</td></tr>
+<tr class="separator:a33cff4ced6fee87fe933a71a93d1ddd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4042465ba24c90c087a0e3071ea8939"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#ae4042465ba24c90c087a0e3071ea8939">EMIT_COLORS</a>&#160;&#160;&#160;(1&lt;&lt;1)</td></tr>
+<tr class="separator:ae4042465ba24c90c087a0e3071ea8939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01da62f83c93432d776dfb82ee06cc7f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a01da62f83c93432d776dfb82ee06cc7f">EMIT_CLUSTERS_LAST</a>&#160;&#160;&#160;(1&lt;&lt;2)</td></tr>
+<tr class="separator:a01da62f83c93432d776dfb82ee06cc7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a995caee67c9846d771eefc6132318bbc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a995caee67c9846d771eefc6132318bbc">EMIT_PREORDER</a>&#160;&#160;&#160;(1&lt;&lt;3)</td></tr>
+<tr class="separator:a995caee67c9846d771eefc6132318bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a409796dc1ac7058fa2a40d578a7297cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a409796dc1ac7058fa2a40d578a7297cc">EMIT_EDGE_SORTED</a>&#160;&#160;&#160;(1&lt;&lt;4)</td></tr>
+<tr class="separator:a409796dc1ac7058fa2a40d578a7297cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67eb586db6b3ae361191f4fa2f0d6517"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a67eb586db6b3ae361191f4fa2f0d6517">GVDEVICE_DOES_PAGES</a>&#160;&#160;&#160;(1&lt;&lt;5)</td></tr>
+<tr class="separator:a67eb586db6b3ae361191f4fa2f0d6517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a8bc9b005d1a7185df952fa8c618c8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a6a8bc9b005d1a7185df952fa8c618c8c">GVDEVICE_DOES_LAYERS</a>&#160;&#160;&#160;(1&lt;&lt;6)</td></tr>
+<tr class="separator:a6a8bc9b005d1a7185df952fa8c618c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa811a27986a93bb5f01e98426b9331e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#aa811a27986a93bb5f01e98426b9331e5">GVDEVICE_EVENTS</a>&#160;&#160;&#160;(1&lt;&lt;7)</td></tr>
+<tr class="separator:aa811a27986a93bb5f01e98426b9331e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ee2b7613e1ad8bae8dd3a884ec58c06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a6ee2b7613e1ad8bae8dd3a884ec58c06">GVDEVICE_DOES_TRUECOLOR</a>&#160;&#160;&#160;(1&lt;&lt;8)</td></tr>
+<tr class="separator:a6ee2b7613e1ad8bae8dd3a884ec58c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a9454ee5e1bc0aa49d8c39c468b66c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a7a9454ee5e1bc0aa49d8c39c468b66c4">GVDEVICE_BINARY_FORMAT</a>&#160;&#160;&#160;(1&lt;&lt;9)</td></tr>
+<tr class="separator:a7a9454ee5e1bc0aa49d8c39c468b66c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c946332a8e7484bda55e93d62e7312d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a2c946332a8e7484bda55e93d62e7312d">GVDEVICE_COMPRESSED_FORMAT</a>&#160;&#160;&#160;(1&lt;&lt;10)</td></tr>
+<tr class="separator:a2c946332a8e7484bda55e93d62e7312d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a106f6008cfc71d48b8b67cd47c530e6d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a106f6008cfc71d48b8b67cd47c530e6d">GVDEVICE_NO_WRITER</a>&#160;&#160;&#160;(1&lt;&lt;11)</td></tr>
+<tr class="separator:a106f6008cfc71d48b8b67cd47c530e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addcf4609271d0fed66432102fcc49e60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#addcf4609271d0fed66432102fcc49e60">GVRENDER_Y_GOES_DOWN</a>&#160;&#160;&#160;(1&lt;&lt;12)</td></tr>
+<tr class="separator:addcf4609271d0fed66432102fcc49e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6673704b17c99db9588bfe4bea1ceae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#ad6673704b17c99db9588bfe4bea1ceae">GVRENDER_DOES_TRANSFORM</a>&#160;&#160;&#160;(1&lt;&lt;13)</td></tr>
+<tr class="separator:ad6673704b17c99db9588bfe4bea1ceae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb425dac84ebb15dc214b6b24efe51a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#aabb425dac84ebb15dc214b6b24efe51a">GVRENDER_DOES_ARROWS</a>&#160;&#160;&#160;(1&lt;&lt;14)</td></tr>
+<tr class="separator:aabb425dac84ebb15dc214b6b24efe51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42800cf2328a05b351d97de328f71835"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a42800cf2328a05b351d97de328f71835">GVRENDER_DOES_LABELS</a>&#160;&#160;&#160;(1&lt;&lt;15)</td></tr>
+<tr class="separator:a42800cf2328a05b351d97de328f71835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa937a02c6c7be59cdab7b6f82da6586"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#aaa937a02c6c7be59cdab7b6f82da6586">GVRENDER_DOES_MAPS</a>&#160;&#160;&#160;(1&lt;&lt;16)</td></tr>
+<tr class="separator:aaa937a02c6c7be59cdab7b6f82da6586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2ff5cf11d0ecef08c1e384a04f959e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#af2ff5cf11d0ecef08c1e384a04f959e1">GVRENDER_DOES_MAP_RECTANGLE</a>&#160;&#160;&#160;(1&lt;&lt;17)</td></tr>
+<tr class="separator:af2ff5cf11d0ecef08c1e384a04f959e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6d511694b77a3a5571a8dc0126fcdb9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#af6d511694b77a3a5571a8dc0126fcdb9">GVRENDER_DOES_MAP_CIRCLE</a>&#160;&#160;&#160;(1&lt;&lt;18)</td></tr>
+<tr class="separator:af6d511694b77a3a5571a8dc0126fcdb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0bcd860ee725637b5103ffe3a30ea62"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#af0bcd860ee725637b5103ffe3a30ea62">GVRENDER_DOES_MAP_POLYGON</a>&#160;&#160;&#160;(1&lt;&lt;19)</td></tr>
+<tr class="separator:af0bcd860ee725637b5103ffe3a30ea62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a555b3636bc63f4552b4a16be7f89ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a1a555b3636bc63f4552b4a16be7f89ee">GVRENDER_DOES_MAP_ELLIPSE</a>&#160;&#160;&#160;(1&lt;&lt;20)</td></tr>
+<tr class="separator:a1a555b3636bc63f4552b4a16be7f89ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf41c3ae6a6d67d1ad1e1f5c1ae516f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#acf41c3ae6a6d67d1ad1e1f5c1ae516f0">GVRENDER_DOES_MAP_BSPLINE</a>&#160;&#160;&#160;(1&lt;&lt;21)</td></tr>
+<tr class="separator:acf41c3ae6a6d67d1ad1e1f5c1ae516f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3abe26a1a0e7d49d56453a51959594dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a3abe26a1a0e7d49d56453a51959594dd">GVRENDER_DOES_TOOLTIPS</a>&#160;&#160;&#160;(1&lt;&lt;22)</td></tr>
+<tr class="separator:a3abe26a1a0e7d49d56453a51959594dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab011b585d098198162a67fb32cae2cd0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#ab011b585d098198162a67fb32cae2cd0">GVRENDER_DOES_TARGETS</a>&#160;&#160;&#160;(1&lt;&lt;23)</td></tr>
+<tr class="separator:ab011b585d098198162a67fb32cae2cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d70997394b899458fd789d902b1764e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a3d70997394b899458fd789d902b1764e">GVRENDER_DOES_Z</a>&#160;&#160;&#160;(1&lt;&lt;24)</td></tr>
+<tr class="separator:a3d70997394b899458fd789d902b1764e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a3678c81c256d0d298d18a3e72cbcab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a4a3678c81c256d0d298d18a3e72cbcab">GVRENDER_NO_WHITE_BG</a>&#160;&#160;&#160;(1&lt;&lt;25)</td></tr>
+<tr class="separator:a4a3678c81c256d0d298d18a3e72cbcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a862bdd7c9410e889ce13a7728af40bbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a862bdd7c9410e889ce13a7728af40bbb">LAYOUT_NOT_REQUIRED</a>&#160;&#160;&#160;(1&lt;&lt;26)</td></tr>
+<tr class="separator:a862bdd7c9410e889ce13a7728af40bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a430d4d79ac8eba41cf38a7f11265dee4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a430d4d79ac8eba41cf38a7f11265dee4">OUTPUT_NOT_REQUIRED</a>&#160;&#160;&#160;(1&lt;&lt;27)</td></tr>
+<tr class="separator:a430d4d79ac8eba41cf38a7f11265dee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5370b8bc484c0586d8537944b1f3a8b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a5370b8bc484c0586d8537944b1f3a8b3">LAYOUT_USES_RANKDIR</a>&#160;&#160;&#160;(1&lt;&lt;0)</td></tr>
+<tr class="separator:a5370b8bc484c0586d8537944b1f3a8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:acc098e86302e99b8dd0a76e841b01e87"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgvdevice__engine__s.html">gvdevice_engine_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#acc098e86302e99b8dd0a76e841b01e87">gvdevice_engine_t</a></td></tr>
+<tr class="separator:acc098e86302e99b8dd0a76e841b01e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa97e4762258d383100569d7edf4f3199"><td class="memItemLeft" align="right" valign="top">typedef struct gvformatter_engine_s&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#aa97e4762258d383100569d7edf4f3199">gvformatter_engine_t</a></td></tr>
+<tr class="separator:aa97e4762258d383100569d7edf4f3199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b4a9a81e4c8d4e96a557de936fcb44"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgvrender__engine__s.html">gvrender_engine_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#aa1b4a9a81e4c8d4e96a557de936fcb44">gvrender_engine_t</a></td></tr>
+<tr class="separator:aa1b4a9a81e4c8d4e96a557de936fcb44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6239c348363fd19ac844b85bbcaee9ec"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgvlayout__engine__s.html">gvlayout_engine_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a6239c348363fd19ac844b85bbcaee9ec">gvlayout_engine_t</a></td></tr>
+<tr class="separator:a6239c348363fd19ac844b85bbcaee9ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af590c2b964f21ea238a2f2ab665215a8"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgvtextlayout__engine__s.html">gvtextlayout_engine_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#af590c2b964f21ea238a2f2ab665215a8">gvtextlayout_engine_t</a></td></tr>
+<tr class="separator:af590c2b964f21ea238a2f2ab665215a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73586fb7b758379b308c315388f92a09"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgvloadimage__engine__s.html">gvloadimage_engine_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a73586fb7b758379b308c315388f92a09">gvloadimage_engine_t</a></td></tr>
+<tr class="separator:a73586fb7b758379b308c315388f92a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd180a852d179da562b0c365c59b631"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgvplugin__active__device__s.html">gvplugin_active_device_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a6bd180a852d179da562b0c365c59b631">gvplugin_active_device_t</a></td></tr>
+<tr class="separator:a6bd180a852d179da562b0c365c59b631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8788f43ffca88d5e43ed142d8e2d9fa1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgvplugin__active__render__s.html">gvplugin_active_render_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a8788f43ffca88d5e43ed142d8e2d9fa1">gvplugin_active_render_t</a></td></tr>
+<tr class="separator:a8788f43ffca88d5e43ed142d8e2d9fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5ed8bb62cb3ee06cdf5c42eb70e169"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgvplugin__active__loadimage__t.html">gvplugin_active_loadimage_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a0c5ed8bb62cb3ee06cdf5c42eb70e169">gvplugin_active_loadimage_t</a></td></tr>
+<tr class="separator:a0c5ed8bb62cb3ee06cdf5c42eb70e169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48939660aaacb77166ba39c7a8c8719"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgv__argvlist__s.html">gv_argvlist_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#ad48939660aaacb77166ba39c7a8c8719">gv_argvlist_t</a></td></tr>
+<tr class="separator:ad48939660aaacb77166ba39c7a8c8719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c978aacd50e6c6bb3a16577fc53c475"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgvdevice__callbacks__s.html">gvdevice_callbacks_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a0c978aacd50e6c6bb3a16577fc53c475">gvdevice_callbacks_t</a></td></tr>
+<tr class="separator:a0c978aacd50e6c6bb3a16577fc53c475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f6a6d73e7cd18369649c5cce7f65278"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a4f6a6d73e7cd18369649c5cce7f65278">gvevent_key_callback_t</a>) (<a class="el" href="gvcext_8h.html#a9a257c86c8fde7d294726bece96315e5">GVJ_t</a> *job)</td></tr>
+<tr class="separator:a4f6a6d73e7cd18369649c5cce7f65278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6de1c57369bc42ccc482b87d6174bc20"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgvevent__key__binding__s.html">gvevent_key_binding_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a6de1c57369bc42ccc482b87d6174bc20">gvevent_key_binding_t</a></td></tr>
+<tr class="separator:a6de1c57369bc42ccc482b87d6174bc20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02731e816998f46b1511d36eff0260ec"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structobj__state__s.html">obj_state_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a02731e816998f46b1511d36eff0260ec">obj_state_t</a></td></tr>
+<tr class="separator:a02731e816998f46b1511d36eff0260ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:a056abdc3e65632a0666767d8395bdc44"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44">pen_type</a> { <a class="el" href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44a1ea6f58bfade3f78fe217ef328fce04d">PEN_NONE</a>
+, <a class="el" href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44ab1f05ac68389e236654d79692b26e7ff">PEN_DASHED</a>
+, <a class="el" href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44aa7d50db1156eddf79a8c8c316d3790b1">PEN_DOTTED</a>
+, <a class="el" href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44a9dd963620972293d3b7821d923ce51d9">PEN_SOLID</a>
+ }</td></tr>
+<tr class="separator:a056abdc3e65632a0666767d8395bdc44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b3c1e8eaca9ba6bf60627aee8bb9e72"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72">fill_type</a> { <a class="el" href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a4d3aeee5877e819284efa1e457b22f34">FILL_NONE</a>
+, <a class="el" href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a9d6d4108c1f3913f3a4b6a09a9962809">FILL_SOLID</a>
+, <a class="el" href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a4a6e86dd59b94007d997b9cb3c5e2e33">FILL_LINEAR</a>
+, <a class="el" href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a333224a0f8e27c7b44dd3786468a53d6">FILL_RADIAL</a>
+ }</td></tr>
+<tr class="separator:a8b3c1e8eaca9ba6bf60627aee8bb9e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a053425e9fef4e52c94d07c3ea352a591"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591">font_type</a> { <a class="el" href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591a5162dac0177f2dd4e0a8435e5184e359">FONT_REGULAR</a>
+, <a class="el" href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591a7a078f2b20d42d7f352d35396217e1ba">FONT_BOLD</a>
+, <a class="el" href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591aff11f5dd59d891ef3b880dbccca4ea2a">FONT_ITALIC</a>
+ }</td></tr>
+<tr class="separator:a053425e9fef4e52c94d07c3ea352a591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a2d3d0fcd201122f8c13d604f91e38"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a27a2d3d0fcd201122f8c13d604f91e38">label_type</a> { <a class="el" href="gvcjob_8h.html#a27a2d3d0fcd201122f8c13d604f91e38ac99e5e928ef0f8ce232b1758b68ba244">LABEL_PLAIN</a>
+, <a class="el" href="gvcjob_8h.html#a27a2d3d0fcd201122f8c13d604f91e38a666836f69dad5233e18b0ee914d1cd7d">LABEL_HTML</a>
+ }</td></tr>
+<tr class="separator:a27a2d3d0fcd201122f8c13d604f91e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94507a537afb96bd72499779f7aee18"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18">gvattr_t</a> { <a class="el" href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18af82282feff99df6db7990b718e9e4aff">GVATTR_STRING</a>
+, <a class="el" href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18ab361c9957d953d10f940086f828994ba">GVATTR_BOOL</a>
+, <a class="el" href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18aeb9159ae9c5b896b9ebdadeda52857e0">GVATTR_COLOR</a>
+ }</td></tr>
+<tr class="separator:aa94507a537afb96bd72499779f7aee18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce3b3a21716351feb74e0155b6499bb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bb">map_shape_t</a> { <a class="el" href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bba93750fa7b7e32fdde29435cbc49c0990">MAP_RECTANGLE</a>
+, <a class="el" href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bba52bb0ede7a27b16527d915d512786bf8">MAP_CIRCLE</a>
+, <a class="el" href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bba8b0f19b8c292d1d2e9772feb41cc4496">MAP_POLYGON</a>
+ }</td></tr>
+<tr class="separator:a5ce3b3a21716351feb74e0155b6499bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac87c026b772bad1b7bb6edea6200fc92"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92">obj_type</a> { <a class="el" href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a552c0763f679b759c8083a2312db5670">ROOTGRAPH_OBJTYPE</a>
+, <a class="el" href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a32600cff05c8f94a126d59b08bbac81c">CLUSTER_OBJTYPE</a>
+, <a class="el" href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a97f20f6ae4bbbf503430fb49f051a61e">NODE_OBJTYPE</a>
+, <a class="el" href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a4b2fac9faf34f5eb8777db67b361e35f">EDGE_OBJTYPE</a>
+ }</td></tr>
+<tr class="separator:ac87c026b772bad1b7bb6edea6200fc92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d67f57cb353edb06b582591b3f1eaf0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0">emit_state_t</a> { <br />
+&#160;&#160;<a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a68607c437efe73900c9263cd4f03b9a2">EMIT_GDRAW</a>
+, <a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a0e2e1037a7ea49ba93e1660b916905ab">EMIT_CDRAW</a>
+, <a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a2b3a09852e892aef3b852d6015725cfb">EMIT_TDRAW</a>
+, <a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a3e59bbb4aff494333b724015f3391986">EMIT_HDRAW</a>
+, <br />
+&#160;&#160;<a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0ac9c989cb015d82004843b3cd9ccabce7">EMIT_GLABEL</a>
+, <a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0aef804da377cf9ba079e759674b76fdf8">EMIT_CLABEL</a>
+, <a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0af46f555368f3e4b5ab9f135588ec5995">EMIT_TLABEL</a>
+, <a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a449206c43bd305ad3caee2c54c04a892">EMIT_HLABEL</a>
+, <br />
+&#160;&#160;<a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a1d814d818b407b71c600c5c59cbf43ae">EMIT_NDRAW</a>
+, <a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0ae215588aa83a61551880c7783ff2eb4c">EMIT_EDRAW</a>
+, <a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0ac27f9399c30523b952cdef6b74a016bd">EMIT_NLABEL</a>
+, <a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0accb8094c46739f15f6a36a30392bdeba">EMIT_ELABEL</a>
+<br />
+ }</td></tr>
+<tr class="separator:a9d67f57cb353edb06b582591b3f1eaf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Макросы</h2>
+<a id="a4163b4a4e9d8f2949741962dca6c5944" name="a4163b4a4e9d8f2949741962dca6c5944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4163b4a4e9d8f2949741962dca6c5944">&#9670;&#160;</a></span>ARRAY_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ARRAY_SIZE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="class_a.html">A</a></td><td>)</td>
+          <td>&#160;&#160;&#160;(sizeof(<a class="el" href="class_a.html">A</a>)/sizeof(<a class="el" href="class_a.html">A</a>[0]))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<a id="a01da62f83c93432d776dfb82ee06cc7f" name="a01da62f83c93432d776dfb82ee06cc7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01da62f83c93432d776dfb82ee06cc7f">&#9670;&#160;</a></span>EMIT_CLUSTERS_LAST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EMIT_CLUSTERS_LAST&#160;&#160;&#160;(1&lt;&lt;2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00083">83</a></p>
+
+</div>
+</div>
+<a id="ae4042465ba24c90c087a0e3071ea8939" name="ae4042465ba24c90c087a0e3071ea8939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4042465ba24c90c087a0e3071ea8939">&#9670;&#160;</a></span>EMIT_COLORS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EMIT_COLORS&#160;&#160;&#160;(1&lt;&lt;1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00082">82</a></p>
+
+</div>
+</div>
+<a id="a409796dc1ac7058fa2a40d578a7297cc" name="a409796dc1ac7058fa2a40d578a7297cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a409796dc1ac7058fa2a40d578a7297cc">&#9670;&#160;</a></span>EMIT_EDGE_SORTED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EMIT_EDGE_SORTED&#160;&#160;&#160;(1&lt;&lt;4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00085">85</a></p>
+
+</div>
+</div>
+<a id="a995caee67c9846d771eefc6132318bbc" name="a995caee67c9846d771eefc6132318bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a995caee67c9846d771eefc6132318bbc">&#9670;&#160;</a></span>EMIT_PREORDER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EMIT_PREORDER&#160;&#160;&#160;(1&lt;&lt;3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00084">84</a></p>
+
+</div>
+</div>
+<a id="a33cff4ced6fee87fe933a71a93d1ddd8" name="a33cff4ced6fee87fe933a71a93d1ddd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33cff4ced6fee87fe933a71a93d1ddd8">&#9670;&#160;</a></span>EMIT_SORTED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EMIT_SORTED&#160;&#160;&#160;(1&lt;&lt;0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00081">81</a></p>
+
+</div>
+</div>
+<a id="a7a9454ee5e1bc0aa49d8c39c468b66c4" name="a7a9454ee5e1bc0aa49d8c39c468b66c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a9454ee5e1bc0aa49d8c39c468b66c4">&#9670;&#160;</a></span>GVDEVICE_BINARY_FORMAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVDEVICE_BINARY_FORMAT&#160;&#160;&#160;(1&lt;&lt;9)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00090">90</a></p>
+
+</div>
+</div>
+<a id="a2c946332a8e7484bda55e93d62e7312d" name="a2c946332a8e7484bda55e93d62e7312d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c946332a8e7484bda55e93d62e7312d">&#9670;&#160;</a></span>GVDEVICE_COMPRESSED_FORMAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVDEVICE_COMPRESSED_FORMAT&#160;&#160;&#160;(1&lt;&lt;10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00091">91</a></p>
+
+</div>
+</div>
+<a id="a6a8bc9b005d1a7185df952fa8c618c8c" name="a6a8bc9b005d1a7185df952fa8c618c8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a8bc9b005d1a7185df952fa8c618c8c">&#9670;&#160;</a></span>GVDEVICE_DOES_LAYERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVDEVICE_DOES_LAYERS&#160;&#160;&#160;(1&lt;&lt;6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00087">87</a></p>
+
+</div>
+</div>
+<a id="a67eb586db6b3ae361191f4fa2f0d6517" name="a67eb586db6b3ae361191f4fa2f0d6517"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67eb586db6b3ae361191f4fa2f0d6517">&#9670;&#160;</a></span>GVDEVICE_DOES_PAGES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVDEVICE_DOES_PAGES&#160;&#160;&#160;(1&lt;&lt;5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00086">86</a></p>
+
+</div>
+</div>
+<a id="a6ee2b7613e1ad8bae8dd3a884ec58c06" name="a6ee2b7613e1ad8bae8dd3a884ec58c06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ee2b7613e1ad8bae8dd3a884ec58c06">&#9670;&#160;</a></span>GVDEVICE_DOES_TRUECOLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVDEVICE_DOES_TRUECOLOR&#160;&#160;&#160;(1&lt;&lt;8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00089">89</a></p>
+
+</div>
+</div>
+<a id="aa811a27986a93bb5f01e98426b9331e5" name="aa811a27986a93bb5f01e98426b9331e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa811a27986a93bb5f01e98426b9331e5">&#9670;&#160;</a></span>GVDEVICE_EVENTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVDEVICE_EVENTS&#160;&#160;&#160;(1&lt;&lt;7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00088">88</a></p>
+
+</div>
+</div>
+<a id="a106f6008cfc71d48b8b67cd47c530e6d" name="a106f6008cfc71d48b8b67cd47c530e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a106f6008cfc71d48b8b67cd47c530e6d">&#9670;&#160;</a></span>GVDEVICE_NO_WRITER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVDEVICE_NO_WRITER&#160;&#160;&#160;(1&lt;&lt;11)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00092">92</a></p>
+
+</div>
+</div>
+<a id="aabb425dac84ebb15dc214b6b24efe51a" name="aabb425dac84ebb15dc214b6b24efe51a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb425dac84ebb15dc214b6b24efe51a">&#9670;&#160;</a></span>GVRENDER_DOES_ARROWS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_ARROWS&#160;&#160;&#160;(1&lt;&lt;14)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00095">95</a></p>
+
+</div>
+</div>
+<a id="a42800cf2328a05b351d97de328f71835" name="a42800cf2328a05b351d97de328f71835"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42800cf2328a05b351d97de328f71835">&#9670;&#160;</a></span>GVRENDER_DOES_LABELS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_LABELS&#160;&#160;&#160;(1&lt;&lt;15)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00096">96</a></p>
+
+</div>
+</div>
+<a id="acf41c3ae6a6d67d1ad1e1f5c1ae516f0" name="acf41c3ae6a6d67d1ad1e1f5c1ae516f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf41c3ae6a6d67d1ad1e1f5c1ae516f0">&#9670;&#160;</a></span>GVRENDER_DOES_MAP_BSPLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_MAP_BSPLINE&#160;&#160;&#160;(1&lt;&lt;21)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00102">102</a></p>
+
+</div>
+</div>
+<a id="af6d511694b77a3a5571a8dc0126fcdb9" name="af6d511694b77a3a5571a8dc0126fcdb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d511694b77a3a5571a8dc0126fcdb9">&#9670;&#160;</a></span>GVRENDER_DOES_MAP_CIRCLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_MAP_CIRCLE&#160;&#160;&#160;(1&lt;&lt;18)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00099">99</a></p>
+
+</div>
+</div>
+<a id="a1a555b3636bc63f4552b4a16be7f89ee" name="a1a555b3636bc63f4552b4a16be7f89ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a555b3636bc63f4552b4a16be7f89ee">&#9670;&#160;</a></span>GVRENDER_DOES_MAP_ELLIPSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_MAP_ELLIPSE&#160;&#160;&#160;(1&lt;&lt;20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00101">101</a></p>
+
+</div>
+</div>
+<a id="af0bcd860ee725637b5103ffe3a30ea62" name="af0bcd860ee725637b5103ffe3a30ea62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0bcd860ee725637b5103ffe3a30ea62">&#9670;&#160;</a></span>GVRENDER_DOES_MAP_POLYGON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_MAP_POLYGON&#160;&#160;&#160;(1&lt;&lt;19)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00100">100</a></p>
+
+</div>
+</div>
+<a id="af2ff5cf11d0ecef08c1e384a04f959e1" name="af2ff5cf11d0ecef08c1e384a04f959e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2ff5cf11d0ecef08c1e384a04f959e1">&#9670;&#160;</a></span>GVRENDER_DOES_MAP_RECTANGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_MAP_RECTANGLE&#160;&#160;&#160;(1&lt;&lt;17)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00098">98</a></p>
+
+</div>
+</div>
+<a id="aaa937a02c6c7be59cdab7b6f82da6586" name="aaa937a02c6c7be59cdab7b6f82da6586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa937a02c6c7be59cdab7b6f82da6586">&#9670;&#160;</a></span>GVRENDER_DOES_MAPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_MAPS&#160;&#160;&#160;(1&lt;&lt;16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00097">97</a></p>
+
+</div>
+</div>
+<a id="ab011b585d098198162a67fb32cae2cd0" name="ab011b585d098198162a67fb32cae2cd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab011b585d098198162a67fb32cae2cd0">&#9670;&#160;</a></span>GVRENDER_DOES_TARGETS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_TARGETS&#160;&#160;&#160;(1&lt;&lt;23)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00104">104</a></p>
+
+</div>
+</div>
+<a id="a3abe26a1a0e7d49d56453a51959594dd" name="a3abe26a1a0e7d49d56453a51959594dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3abe26a1a0e7d49d56453a51959594dd">&#9670;&#160;</a></span>GVRENDER_DOES_TOOLTIPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_TOOLTIPS&#160;&#160;&#160;(1&lt;&lt;22)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00103">103</a></p>
+
+</div>
+</div>
+<a id="ad6673704b17c99db9588bfe4bea1ceae" name="ad6673704b17c99db9588bfe4bea1ceae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6673704b17c99db9588bfe4bea1ceae">&#9670;&#160;</a></span>GVRENDER_DOES_TRANSFORM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_TRANSFORM&#160;&#160;&#160;(1&lt;&lt;13)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00094">94</a></p>
+
+</div>
+</div>
+<a id="a3d70997394b899458fd789d902b1764e" name="a3d70997394b899458fd789d902b1764e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d70997394b899458fd789d902b1764e">&#9670;&#160;</a></span>GVRENDER_DOES_Z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_DOES_Z&#160;&#160;&#160;(1&lt;&lt;24)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00105">105</a></p>
+
+</div>
+</div>
+<a id="a4a3678c81c256d0d298d18a3e72cbcab" name="a4a3678c81c256d0d298d18a3e72cbcab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a3678c81c256d0d298d18a3e72cbcab">&#9670;&#160;</a></span>GVRENDER_NO_WHITE_BG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_NO_WHITE_BG&#160;&#160;&#160;(1&lt;&lt;25)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00106">106</a></p>
+
+</div>
+</div>
+<a id="addcf4609271d0fed66432102fcc49e60" name="addcf4609271d0fed66432102fcc49e60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addcf4609271d0fed66432102fcc49e60">&#9670;&#160;</a></span>GVRENDER_Y_GOES_DOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GVRENDER_Y_GOES_DOWN&#160;&#160;&#160;(1&lt;&lt;12)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00093">93</a></p>
+
+</div>
+</div>
+<a id="a862bdd7c9410e889ce13a7728af40bbb" name="a862bdd7c9410e889ce13a7728af40bbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a862bdd7c9410e889ce13a7728af40bbb">&#9670;&#160;</a></span>LAYOUT_NOT_REQUIRED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LAYOUT_NOT_REQUIRED&#160;&#160;&#160;(1&lt;&lt;26)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00107">107</a></p>
+
+</div>
+</div>
+<a id="a5370b8bc484c0586d8537944b1f3a8b3" name="a5370b8bc484c0586d8537944b1f3a8b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5370b8bc484c0586d8537944b1f3a8b3">&#9670;&#160;</a></span>LAYOUT_USES_RANKDIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LAYOUT_USES_RANKDIR&#160;&#160;&#160;(1&lt;&lt;0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00125">125</a></p>
+
+</div>
+</div>
+<a id="a430d4d79ac8eba41cf38a7f11265dee4" name="a430d4d79ac8eba41cf38a7f11265dee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a430d4d79ac8eba41cf38a7f11265dee4">&#9670;&#160;</a></span>OUTPUT_NOT_REQUIRED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OUTPUT_NOT_REQUIRED&#160;&#160;&#160;(1&lt;&lt;27)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00108">108</a></p>
+
+</div>
+</div>
+<a id="aa9d4b93a7285736626367c79e6a7e65b" name="aa9d4b93a7285736626367c79e6a7e65b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d4b93a7285736626367c79e6a7e65b">&#9670;&#160;</a></span>PENWIDTH_BOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PENWIDTH_BOLD&#160;&#160;&#160;2.</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00038">38</a></p>
+
+</div>
+</div>
+<a id="ad03a35ae3e8eb2d22ba05e3ab13469c2" name="ad03a35ae3e8eb2d22ba05e3ab13469c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad03a35ae3e8eb2d22ba05e3ab13469c2">&#9670;&#160;</a></span>PENWIDTH_NORMAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PENWIDTH_NORMAL&#160;&#160;&#160;1.</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00037">37</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Типы</h2>
+<a id="ad48939660aaacb77166ba39c7a8c8719" name="ad48939660aaacb77166ba39c7a8c8719"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48939660aaacb77166ba39c7a8c8719">&#9670;&#160;</a></span>gv_argvlist_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structgv__argvlist__s.html">gv_argvlist_s</a> <a class="el" href="gvcjob_8h.html#ad48939660aaacb77166ba39c7a8c8719">gv_argvlist_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c978aacd50e6c6bb3a16577fc53c475" name="a0c978aacd50e6c6bb3a16577fc53c475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c978aacd50e6c6bb3a16577fc53c475">&#9670;&#160;</a></span>gvdevice_callbacks_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structgvdevice__callbacks__s.html">gvdevice_callbacks_s</a> <a class="el" href="gvcjob_8h.html#a0c978aacd50e6c6bb3a16577fc53c475">gvdevice_callbacks_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc098e86302e99b8dd0a76e841b01e87" name="acc098e86302e99b8dd0a76e841b01e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc098e86302e99b8dd0a76e841b01e87">&#9670;&#160;</a></span>gvdevice_engine_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structgvdevice__engine__s.html">gvdevice_engine_s</a> <a class="el" href="gvcjob_8h.html#acc098e86302e99b8dd0a76e841b01e87">gvdevice_engine_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00025">25</a></p>
+
+</div>
+</div>
+<a id="a6de1c57369bc42ccc482b87d6174bc20" name="a6de1c57369bc42ccc482b87d6174bc20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6de1c57369bc42ccc482b87d6174bc20">&#9670;&#160;</a></span>gvevent_key_binding_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structgvevent__key__binding__s.html">gvevent_key_binding_s</a> <a class="el" href="gvcjob_8h.html#a6de1c57369bc42ccc482b87d6174bc20">gvevent_key_binding_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4f6a6d73e7cd18369649c5cce7f65278" name="a4f6a6d73e7cd18369649c5cce7f65278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f6a6d73e7cd18369649c5cce7f65278">&#9670;&#160;</a></span>gvevent_key_callback_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int(* gvevent_key_callback_t) (<a class="el" href="gvcext_8h.html#a9a257c86c8fde7d294726bece96315e5">GVJ_t</a> *job)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00165">165</a></p>
+
+</div>
+</div>
+<a id="aa97e4762258d383100569d7edf4f3199" name="aa97e4762258d383100569d7edf4f3199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa97e4762258d383100569d7edf4f3199">&#9670;&#160;</a></span>gvformatter_engine_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct gvformatter_engine_s <a class="el" href="gvcjob_8h.html#aa97e4762258d383100569d7edf4f3199">gvformatter_engine_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00026">26</a></p>
+
+</div>
+</div>
+<a id="a6239c348363fd19ac844b85bbcaee9ec" name="a6239c348363fd19ac844b85bbcaee9ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6239c348363fd19ac844b85bbcaee9ec">&#9670;&#160;</a></span>gvlayout_engine_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structgvlayout__engine__s.html">gvlayout_engine_s</a> <a class="el" href="gvcjob_8h.html#a6239c348363fd19ac844b85bbcaee9ec">gvlayout_engine_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a id="a73586fb7b758379b308c315388f92a09" name="a73586fb7b758379b308c315388f92a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73586fb7b758379b308c315388f92a09">&#9670;&#160;</a></span>gvloadimage_engine_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structgvloadimage__engine__s.html">gvloadimage_engine_s</a> <a class="el" href="gvcjob_8h.html#a73586fb7b758379b308c315388f92a09">gvloadimage_engine_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a id="a6bd180a852d179da562b0c365c59b631" name="a6bd180a852d179da562b0c365c59b631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bd180a852d179da562b0c365c59b631">&#9670;&#160;</a></span>gvplugin_active_device_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structgvplugin__active__device__s.html">gvplugin_active_device_s</a> <a class="el" href="gvcjob_8h.html#a6bd180a852d179da562b0c365c59b631">gvplugin_active_device_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c5ed8bb62cb3ee06cdf5c42eb70e169" name="a0c5ed8bb62cb3ee06cdf5c42eb70e169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c5ed8bb62cb3ee06cdf5c42eb70e169">&#9670;&#160;</a></span>gvplugin_active_loadimage_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structgvplugin__active__loadimage__t.html">gvplugin_active_loadimage_t</a> <a class="el" href="structgvplugin__active__loadimage__t.html">gvplugin_active_loadimage_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8788f43ffca88d5e43ed142d8e2d9fa1" name="a8788f43ffca88d5e43ed142d8e2d9fa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8788f43ffca88d5e43ed142d8e2d9fa1">&#9670;&#160;</a></span>gvplugin_active_render_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structgvplugin__active__render__s.html">gvplugin_active_render_s</a> <a class="el" href="gvcjob_8h.html#a8788f43ffca88d5e43ed142d8e2d9fa1">gvplugin_active_render_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa1b4a9a81e4c8d4e96a557de936fcb44" name="aa1b4a9a81e4c8d4e96a557de936fcb44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b4a9a81e4c8d4e96a557de936fcb44">&#9670;&#160;</a></span>gvrender_engine_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structgvrender__engine__s.html">gvrender_engine_s</a> <a class="el" href="gvcjob_8h.html#aa1b4a9a81e4c8d4e96a557de936fcb44">gvrender_engine_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a id="af590c2b964f21ea238a2f2ab665215a8" name="af590c2b964f21ea238a2f2ab665215a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af590c2b964f21ea238a2f2ab665215a8">&#9670;&#160;</a></span>gvtextlayout_engine_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structgvtextlayout__engine__s.html">gvtextlayout_engine_s</a> <a class="el" href="gvcjob_8h.html#af590c2b964f21ea238a2f2ab665215a8">gvtextlayout_engine_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00029">29</a></p>
+
+</div>
+</div>
+<a id="a02731e816998f46b1511d36eff0260ec" name="a02731e816998f46b1511d36eff0260ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02731e816998f46b1511d36eff0260ec">&#9670;&#160;</a></span>obj_state_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structobj__state__s.html">obj_state_s</a> <a class="el" href="gvcjob_8h.html#a02731e816998f46b1511d36eff0260ec">obj_state_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00185">185</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Перечисления</h2>
+<a id="a9d67f57cb353edb06b582591b3f1eaf0" name="a9d67f57cb353edb06b582591b3f1eaf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d67f57cb353edb06b582591b3f1eaf0">&#9670;&#160;</a></span>emit_state_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0">emit_state_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0a68607c437efe73900c9263cd4f03b9a2" name="a9d67f57cb353edb06b582591b3f1eaf0a68607c437efe73900c9263cd4f03b9a2"></a>EMIT_GDRAW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0a0e2e1037a7ea49ba93e1660b916905ab" name="a9d67f57cb353edb06b582591b3f1eaf0a0e2e1037a7ea49ba93e1660b916905ab"></a>EMIT_CDRAW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0a2b3a09852e892aef3b852d6015725cfb" name="a9d67f57cb353edb06b582591b3f1eaf0a2b3a09852e892aef3b852d6015725cfb"></a>EMIT_TDRAW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0a3e59bbb4aff494333b724015f3391986" name="a9d67f57cb353edb06b582591b3f1eaf0a3e59bbb4aff494333b724015f3391986"></a>EMIT_HDRAW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0ac9c989cb015d82004843b3cd9ccabce7" name="a9d67f57cb353edb06b582591b3f1eaf0ac9c989cb015d82004843b3cd9ccabce7"></a>EMIT_GLABEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0aef804da377cf9ba079e759674b76fdf8" name="a9d67f57cb353edb06b582591b3f1eaf0aef804da377cf9ba079e759674b76fdf8"></a>EMIT_CLABEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0af46f555368f3e4b5ab9f135588ec5995" name="a9d67f57cb353edb06b582591b3f1eaf0af46f555368f3e4b5ab9f135588ec5995"></a>EMIT_TLABEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0a449206c43bd305ad3caee2c54c04a892" name="a9d67f57cb353edb06b582591b3f1eaf0a449206c43bd305ad3caee2c54c04a892"></a>EMIT_HLABEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0a1d814d818b407b71c600c5c59cbf43ae" name="a9d67f57cb353edb06b582591b3f1eaf0a1d814d818b407b71c600c5c59cbf43ae"></a>EMIT_NDRAW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0ae215588aa83a61551880c7783ff2eb4c" name="a9d67f57cb353edb06b582591b3f1eaf0ae215588aa83a61551880c7783ff2eb4c"></a>EMIT_EDRAW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0ac27f9399c30523b952cdef6b74a016bd" name="a9d67f57cb353edb06b582591b3f1eaf0ac27f9399c30523b952cdef6b74a016bd"></a>EMIT_NLABEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d67f57cb353edb06b582591b3f1eaf0accb8094c46739f15f6a36a30392bdeba" name="a9d67f57cb353edb06b582591b3f1eaf0accb8094c46739f15f6a36a30392bdeba"></a>EMIT_ELABEL&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00179">179</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  179</span>                 {</div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a68607c437efe73900c9263cd4f03b9a2">EMIT_GDRAW</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a0e2e1037a7ea49ba93e1660b916905ab">EMIT_CDRAW</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a2b3a09852e892aef3b852d6015725cfb">EMIT_TDRAW</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a3e59bbb4aff494333b724015f3391986">EMIT_HDRAW</a>, </div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0ac9c989cb015d82004843b3cd9ccabce7">EMIT_GLABEL</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0aef804da377cf9ba079e759674b76fdf8">EMIT_CLABEL</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0af46f555368f3e4b5ab9f135588ec5995">EMIT_TLABEL</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a449206c43bd305ad3caee2c54c04a892">EMIT_HLABEL</a>, </div>
+<div class="line"><span class="lineno">  182</span>    <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a1d814d818b407b71c600c5c59cbf43ae">EMIT_NDRAW</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0ae215588aa83a61551880c7783ff2eb4c">EMIT_EDRAW</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0ac27f9399c30523b952cdef6b74a016bd">EMIT_NLABEL</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0accb8094c46739f15f6a36a30392bdeba">EMIT_ELABEL</a>,</div>
+<div class="line"><span class="lineno">  183</span>    } <a class="code hl_enumeration" href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0">emit_state_t</a>;</div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0">emit_state_t</a></div><div class="ttdeci">emit_state_t</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00179">gvcjob.h:179</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0a0e2e1037a7ea49ba93e1660b916905ab"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a0e2e1037a7ea49ba93e1660b916905ab">EMIT_CDRAW</a></div><div class="ttdeci">@ EMIT_CDRAW</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00180">gvcjob.h:180</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0a1d814d818b407b71c600c5c59cbf43ae"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a1d814d818b407b71c600c5c59cbf43ae">EMIT_NDRAW</a></div><div class="ttdeci">@ EMIT_NDRAW</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00182">gvcjob.h:182</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0a2b3a09852e892aef3b852d6015725cfb"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a2b3a09852e892aef3b852d6015725cfb">EMIT_TDRAW</a></div><div class="ttdeci">@ EMIT_TDRAW</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00180">gvcjob.h:180</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0a3e59bbb4aff494333b724015f3391986"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a3e59bbb4aff494333b724015f3391986">EMIT_HDRAW</a></div><div class="ttdeci">@ EMIT_HDRAW</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00180">gvcjob.h:180</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0a449206c43bd305ad3caee2c54c04a892"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a449206c43bd305ad3caee2c54c04a892">EMIT_HLABEL</a></div><div class="ttdeci">@ EMIT_HLABEL</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00181">gvcjob.h:181</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0a68607c437efe73900c9263cd4f03b9a2"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0a68607c437efe73900c9263cd4f03b9a2">EMIT_GDRAW</a></div><div class="ttdeci">@ EMIT_GDRAW</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00180">gvcjob.h:180</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0ac27f9399c30523b952cdef6b74a016bd"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0ac27f9399c30523b952cdef6b74a016bd">EMIT_NLABEL</a></div><div class="ttdeci">@ EMIT_NLABEL</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00182">gvcjob.h:182</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0ac9c989cb015d82004843b3cd9ccabce7"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0ac9c989cb015d82004843b3cd9ccabce7">EMIT_GLABEL</a></div><div class="ttdeci">@ EMIT_GLABEL</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00181">gvcjob.h:181</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0accb8094c46739f15f6a36a30392bdeba"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0accb8094c46739f15f6a36a30392bdeba">EMIT_ELABEL</a></div><div class="ttdeci">@ EMIT_ELABEL</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00182">gvcjob.h:182</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0ae215588aa83a61551880c7783ff2eb4c"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0ae215588aa83a61551880c7783ff2eb4c">EMIT_EDRAW</a></div><div class="ttdeci">@ EMIT_EDRAW</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00182">gvcjob.h:182</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0aef804da377cf9ba079e759674b76fdf8"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0aef804da377cf9ba079e759674b76fdf8">EMIT_CLABEL</a></div><div class="ttdeci">@ EMIT_CLABEL</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00181">gvcjob.h:181</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a9d67f57cb353edb06b582591b3f1eaf0af46f555368f3e4b5ab9f135588ec5995"><div class="ttname"><a href="gvcjob_8h.html#a9d67f57cb353edb06b582591b3f1eaf0af46f555368f3e4b5ab9f135588ec5995">EMIT_TLABEL</a></div><div class="ttdeci">@ EMIT_TLABEL</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00181">gvcjob.h:181</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8b3c1e8eaca9ba6bf60627aee8bb9e72" name="a8b3c1e8eaca9ba6bf60627aee8bb9e72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b3c1e8eaca9ba6bf60627aee8bb9e72">&#9670;&#160;</a></span>fill_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72">fill_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a8b3c1e8eaca9ba6bf60627aee8bb9e72a4d3aeee5877e819284efa1e457b22f34" name="a8b3c1e8eaca9ba6bf60627aee8bb9e72a4d3aeee5877e819284efa1e457b22f34"></a>FILL_NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8b3c1e8eaca9ba6bf60627aee8bb9e72a9d6d4108c1f3913f3a4b6a09a9962809" name="a8b3c1e8eaca9ba6bf60627aee8bb9e72a9d6d4108c1f3913f3a4b6a09a9962809"></a>FILL_SOLID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8b3c1e8eaca9ba6bf60627aee8bb9e72a4a6e86dd59b94007d997b9cb3c5e2e33" name="a8b3c1e8eaca9ba6bf60627aee8bb9e72a4a6e86dd59b94007d997b9cb3c5e2e33"></a>FILL_LINEAR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8b3c1e8eaca9ba6bf60627aee8bb9e72a333224a0f8e27c7b44dd3786468a53d6" name="a8b3c1e8eaca9ba6bf60627aee8bb9e72a333224a0f8e27c7b44dd3786468a53d6"></a>FILL_RADIAL&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00033">33</a></p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{ <a class="code hl_enumvalue" href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a4d3aeee5877e819284efa1e457b22f34">FILL_NONE</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a9d6d4108c1f3913f3a4b6a09a9962809">FILL_SOLID</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a4a6e86dd59b94007d997b9cb3c5e2e33">FILL_LINEAR</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a333224a0f8e27c7b44dd3786468a53d6">FILL_RADIAL</a> } <a class="code hl_enumeration" href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72">fill_type</a>;</div>
+<div class="ttc" id="agvcjob_8h_html_a8b3c1e8eaca9ba6bf60627aee8bb9e72"><div class="ttname"><a href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72">fill_type</a></div><div class="ttdeci">fill_type</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00033">gvcjob.h:33</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a8b3c1e8eaca9ba6bf60627aee8bb9e72a333224a0f8e27c7b44dd3786468a53d6"><div class="ttname"><a href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a333224a0f8e27c7b44dd3786468a53d6">FILL_RADIAL</a></div><div class="ttdeci">@ FILL_RADIAL</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00033">gvcjob.h:33</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a8b3c1e8eaca9ba6bf60627aee8bb9e72a4a6e86dd59b94007d997b9cb3c5e2e33"><div class="ttname"><a href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a4a6e86dd59b94007d997b9cb3c5e2e33">FILL_LINEAR</a></div><div class="ttdeci">@ FILL_LINEAR</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00033">gvcjob.h:33</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a8b3c1e8eaca9ba6bf60627aee8bb9e72a4d3aeee5877e819284efa1e457b22f34"><div class="ttname"><a href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a4d3aeee5877e819284efa1e457b22f34">FILL_NONE</a></div><div class="ttdeci">@ FILL_NONE</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00033">gvcjob.h:33</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a8b3c1e8eaca9ba6bf60627aee8bb9e72a9d6d4108c1f3913f3a4b6a09a9962809"><div class="ttname"><a href="gvcjob_8h.html#a8b3c1e8eaca9ba6bf60627aee8bb9e72a9d6d4108c1f3913f3a4b6a09a9962809">FILL_SOLID</a></div><div class="ttdeci">@ FILL_SOLID</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00033">gvcjob.h:33</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a053425e9fef4e52c94d07c3ea352a591" name="a053425e9fef4e52c94d07c3ea352a591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a053425e9fef4e52c94d07c3ea352a591">&#9670;&#160;</a></span>font_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591">font_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a053425e9fef4e52c94d07c3ea352a591a5162dac0177f2dd4e0a8435e5184e359" name="a053425e9fef4e52c94d07c3ea352a591a5162dac0177f2dd4e0a8435e5184e359"></a>FONT_REGULAR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a053425e9fef4e52c94d07c3ea352a591a7a078f2b20d42d7f352d35396217e1ba" name="a053425e9fef4e52c94d07c3ea352a591a7a078f2b20d42d7f352d35396217e1ba"></a>FONT_BOLD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a053425e9fef4e52c94d07c3ea352a591aff11f5dd59d891ef3b880dbccca4ea2a" name="a053425e9fef4e52c94d07c3ea352a591aff11f5dd59d891ef3b880dbccca4ea2a"></a>FONT_ITALIC&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00034">34</a></p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <a class="code hl_enumvalue" href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591a5162dac0177f2dd4e0a8435e5184e359">FONT_REGULAR</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591a7a078f2b20d42d7f352d35396217e1ba">FONT_BOLD</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591aff11f5dd59d891ef3b880dbccca4ea2a">FONT_ITALIC</a> } <a class="code hl_enumeration" href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591">font_type</a>;</div>
+<div class="ttc" id="agvcjob_8h_html_a053425e9fef4e52c94d07c3ea352a591"><div class="ttname"><a href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591">font_type</a></div><div class="ttdeci">font_type</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00034">gvcjob.h:34</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a053425e9fef4e52c94d07c3ea352a591a5162dac0177f2dd4e0a8435e5184e359"><div class="ttname"><a href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591a5162dac0177f2dd4e0a8435e5184e359">FONT_REGULAR</a></div><div class="ttdeci">@ FONT_REGULAR</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00034">gvcjob.h:34</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a053425e9fef4e52c94d07c3ea352a591a7a078f2b20d42d7f352d35396217e1ba"><div class="ttname"><a href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591a7a078f2b20d42d7f352d35396217e1ba">FONT_BOLD</a></div><div class="ttdeci">@ FONT_BOLD</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00034">gvcjob.h:34</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a053425e9fef4e52c94d07c3ea352a591aff11f5dd59d891ef3b880dbccca4ea2a"><div class="ttname"><a href="gvcjob_8h.html#a053425e9fef4e52c94d07c3ea352a591aff11f5dd59d891ef3b880dbccca4ea2a">FONT_ITALIC</a></div><div class="ttdeci">@ FONT_ITALIC</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00034">gvcjob.h:34</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa94507a537afb96bd72499779f7aee18" name="aa94507a537afb96bd72499779f7aee18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa94507a537afb96bd72499779f7aee18">&#9670;&#160;</a></span>gvattr_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18">gvattr_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="aa94507a537afb96bd72499779f7aee18af82282feff99df6db7990b718e9e4aff" name="aa94507a537afb96bd72499779f7aee18af82282feff99df6db7990b718e9e4aff"></a>GVATTR_STRING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa94507a537afb96bd72499779f7aee18ab361c9957d953d10f940086f828994ba" name="aa94507a537afb96bd72499779f7aee18ab361c9957d953d10f940086f828994ba"></a>GVATTR_BOOL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa94507a537afb96bd72499779f7aee18aeb9159ae9c5b896b9ebdadeda52857e0" name="aa94507a537afb96bd72499779f7aee18aeb9159ae9c5b896b9ebdadeda52857e0"></a>GVATTR_COLOR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00039">39</a></p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{ <a class="code hl_enumvalue" href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18af82282feff99df6db7990b718e9e4aff">GVATTR_STRING</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18ab361c9957d953d10f940086f828994ba">GVATTR_BOOL</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18aeb9159ae9c5b896b9ebdadeda52857e0">GVATTR_COLOR</a> } <a class="code hl_enumeration" href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18">gvattr_t</a>;</div>
+<div class="ttc" id="agvcjob_8h_html_aa94507a537afb96bd72499779f7aee18"><div class="ttname"><a href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18">gvattr_t</a></div><div class="ttdeci">gvattr_t</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00039">gvcjob.h:39</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_aa94507a537afb96bd72499779f7aee18ab361c9957d953d10f940086f828994ba"><div class="ttname"><a href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18ab361c9957d953d10f940086f828994ba">GVATTR_BOOL</a></div><div class="ttdeci">@ GVATTR_BOOL</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00039">gvcjob.h:39</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_aa94507a537afb96bd72499779f7aee18aeb9159ae9c5b896b9ebdadeda52857e0"><div class="ttname"><a href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18aeb9159ae9c5b896b9ebdadeda52857e0">GVATTR_COLOR</a></div><div class="ttdeci">@ GVATTR_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00039">gvcjob.h:39</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_aa94507a537afb96bd72499779f7aee18af82282feff99df6db7990b718e9e4aff"><div class="ttname"><a href="gvcjob_8h.html#aa94507a537afb96bd72499779f7aee18af82282feff99df6db7990b718e9e4aff">GVATTR_STRING</a></div><div class="ttdeci">@ GVATTR_STRING</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00039">gvcjob.h:39</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a27a2d3d0fcd201122f8c13d604f91e38" name="a27a2d3d0fcd201122f8c13d604f91e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27a2d3d0fcd201122f8c13d604f91e38">&#9670;&#160;</a></span>label_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="gvcjob_8h.html#a27a2d3d0fcd201122f8c13d604f91e38">label_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a27a2d3d0fcd201122f8c13d604f91e38ac99e5e928ef0f8ce232b1758b68ba244" name="a27a2d3d0fcd201122f8c13d604f91e38ac99e5e928ef0f8ce232b1758b68ba244"></a>LABEL_PLAIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a27a2d3d0fcd201122f8c13d604f91e38a666836f69dad5233e18b0ee914d1cd7d" name="a27a2d3d0fcd201122f8c13d604f91e38a666836f69dad5233e18b0ee914d1cd7d"></a>LABEL_HTML&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00035">35</a></p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>{ <a class="code hl_enumvalue" href="gvcjob_8h.html#a27a2d3d0fcd201122f8c13d604f91e38ac99e5e928ef0f8ce232b1758b68ba244">LABEL_PLAIN</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a27a2d3d0fcd201122f8c13d604f91e38a666836f69dad5233e18b0ee914d1cd7d">LABEL_HTML</a> } <a class="code hl_enumeration" href="gvcjob_8h.html#a27a2d3d0fcd201122f8c13d604f91e38">label_type</a>;</div>
+<div class="ttc" id="agvcjob_8h_html_a27a2d3d0fcd201122f8c13d604f91e38"><div class="ttname"><a href="gvcjob_8h.html#a27a2d3d0fcd201122f8c13d604f91e38">label_type</a></div><div class="ttdeci">label_type</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00035">gvcjob.h:35</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a27a2d3d0fcd201122f8c13d604f91e38a666836f69dad5233e18b0ee914d1cd7d"><div class="ttname"><a href="gvcjob_8h.html#a27a2d3d0fcd201122f8c13d604f91e38a666836f69dad5233e18b0ee914d1cd7d">LABEL_HTML</a></div><div class="ttdeci">@ LABEL_HTML</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00035">gvcjob.h:35</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a27a2d3d0fcd201122f8c13d604f91e38ac99e5e928ef0f8ce232b1758b68ba244"><div class="ttname"><a href="gvcjob_8h.html#a27a2d3d0fcd201122f8c13d604f91e38ac99e5e928ef0f8ce232b1758b68ba244">LABEL_PLAIN</a></div><div class="ttdeci">@ LABEL_PLAIN</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00035">gvcjob.h:35</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5ce3b3a21716351feb74e0155b6499bb" name="a5ce3b3a21716351feb74e0155b6499bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ce3b3a21716351feb74e0155b6499bb">&#9670;&#160;</a></span>map_shape_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bb">map_shape_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a5ce3b3a21716351feb74e0155b6499bba93750fa7b7e32fdde29435cbc49c0990" name="a5ce3b3a21716351feb74e0155b6499bba93750fa7b7e32fdde29435cbc49c0990"></a>MAP_RECTANGLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5ce3b3a21716351feb74e0155b6499bba52bb0ede7a27b16527d915d512786bf8" name="a5ce3b3a21716351feb74e0155b6499bba52bb0ede7a27b16527d915d512786bf8"></a>MAP_CIRCLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5ce3b3a21716351feb74e0155b6499bba8b0f19b8c292d1d2e9772feb41cc4496" name="a5ce3b3a21716351feb74e0155b6499bba8b0f19b8c292d1d2e9772feb41cc4496"></a>MAP_POLYGON&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00172">172</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>{<a class="code hl_enumvalue" href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bba93750fa7b7e32fdde29435cbc49c0990">MAP_RECTANGLE</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bba52bb0ede7a27b16527d915d512786bf8">MAP_CIRCLE</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bba8b0f19b8c292d1d2e9772feb41cc4496">MAP_POLYGON</a>, } <a class="code hl_enumeration" href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bb">map_shape_t</a>;</div>
+<div class="ttc" id="agvcjob_8h_html_a5ce3b3a21716351feb74e0155b6499bb"><div class="ttname"><a href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bb">map_shape_t</a></div><div class="ttdeci">map_shape_t</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00172">gvcjob.h:172</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a5ce3b3a21716351feb74e0155b6499bba52bb0ede7a27b16527d915d512786bf8"><div class="ttname"><a href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bba52bb0ede7a27b16527d915d512786bf8">MAP_CIRCLE</a></div><div class="ttdeci">@ MAP_CIRCLE</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00172">gvcjob.h:172</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a5ce3b3a21716351feb74e0155b6499bba8b0f19b8c292d1d2e9772feb41cc4496"><div class="ttname"><a href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bba8b0f19b8c292d1d2e9772feb41cc4496">MAP_POLYGON</a></div><div class="ttdeci">@ MAP_POLYGON</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00172">gvcjob.h:172</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a5ce3b3a21716351feb74e0155b6499bba93750fa7b7e32fdde29435cbc49c0990"><div class="ttname"><a href="gvcjob_8h.html#a5ce3b3a21716351feb74e0155b6499bba93750fa7b7e32fdde29435cbc49c0990">MAP_RECTANGLE</a></div><div class="ttdeci">@ MAP_RECTANGLE</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00172">gvcjob.h:172</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac87c026b772bad1b7bb6edea6200fc92" name="ac87c026b772bad1b7bb6edea6200fc92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac87c026b772bad1b7bb6edea6200fc92">&#9670;&#160;</a></span>obj_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92">obj_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="ac87c026b772bad1b7bb6edea6200fc92a552c0763f679b759c8083a2312db5670" name="ac87c026b772bad1b7bb6edea6200fc92a552c0763f679b759c8083a2312db5670"></a>ROOTGRAPH_OBJTYPE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac87c026b772bad1b7bb6edea6200fc92a32600cff05c8f94a126d59b08bbac81c" name="ac87c026b772bad1b7bb6edea6200fc92a32600cff05c8f94a126d59b08bbac81c"></a>CLUSTER_OBJTYPE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac87c026b772bad1b7bb6edea6200fc92a97f20f6ae4bbbf503430fb49f051a61e" name="ac87c026b772bad1b7bb6edea6200fc92a97f20f6ae4bbbf503430fb49f051a61e"></a>NODE_OBJTYPE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac87c026b772bad1b7bb6edea6200fc92a4b2fac9faf34f5eb8777db67b361e35f" name="ac87c026b772bad1b7bb6edea6200fc92a4b2fac9faf34f5eb8777db67b361e35f"></a>EDGE_OBJTYPE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00174">174</a></p>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>{<a class="code hl_enumvalue" href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a552c0763f679b759c8083a2312db5670">ROOTGRAPH_OBJTYPE</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a32600cff05c8f94a126d59b08bbac81c">CLUSTER_OBJTYPE</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a97f20f6ae4bbbf503430fb49f051a61e">NODE_OBJTYPE</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a4b2fac9faf34f5eb8777db67b361e35f">EDGE_OBJTYPE</a>} <a class="code hl_enumeration" href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92">obj_type</a>;</div>
+<div class="ttc" id="agvcjob_8h_html_ac87c026b772bad1b7bb6edea6200fc92"><div class="ttname"><a href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92">obj_type</a></div><div class="ttdeci">obj_type</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00174">gvcjob.h:174</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_ac87c026b772bad1b7bb6edea6200fc92a32600cff05c8f94a126d59b08bbac81c"><div class="ttname"><a href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a32600cff05c8f94a126d59b08bbac81c">CLUSTER_OBJTYPE</a></div><div class="ttdeci">@ CLUSTER_OBJTYPE</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00174">gvcjob.h:174</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_ac87c026b772bad1b7bb6edea6200fc92a4b2fac9faf34f5eb8777db67b361e35f"><div class="ttname"><a href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a4b2fac9faf34f5eb8777db67b361e35f">EDGE_OBJTYPE</a></div><div class="ttdeci">@ EDGE_OBJTYPE</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00174">gvcjob.h:174</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_ac87c026b772bad1b7bb6edea6200fc92a552c0763f679b759c8083a2312db5670"><div class="ttname"><a href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a552c0763f679b759c8083a2312db5670">ROOTGRAPH_OBJTYPE</a></div><div class="ttdeci">@ ROOTGRAPH_OBJTYPE</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00174">gvcjob.h:174</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_ac87c026b772bad1b7bb6edea6200fc92a97f20f6ae4bbbf503430fb49f051a61e"><div class="ttname"><a href="gvcjob_8h.html#ac87c026b772bad1b7bb6edea6200fc92a97f20f6ae4bbbf503430fb49f051a61e">NODE_OBJTYPE</a></div><div class="ttdeci">@ NODE_OBJTYPE</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00174">gvcjob.h:174</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a056abdc3e65632a0666767d8395bdc44" name="a056abdc3e65632a0666767d8395bdc44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a056abdc3e65632a0666767d8395bdc44">&#9670;&#160;</a></span>pen_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44">pen_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a056abdc3e65632a0666767d8395bdc44a1ea6f58bfade3f78fe217ef328fce04d" name="a056abdc3e65632a0666767d8395bdc44a1ea6f58bfade3f78fe217ef328fce04d"></a>PEN_NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a056abdc3e65632a0666767d8395bdc44ab1f05ac68389e236654d79692b26e7ff" name="a056abdc3e65632a0666767d8395bdc44ab1f05ac68389e236654d79692b26e7ff"></a>PEN_DASHED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a056abdc3e65632a0666767d8395bdc44aa7d50db1156eddf79a8c8c316d3790b1" name="a056abdc3e65632a0666767d8395bdc44aa7d50db1156eddf79a8c8c316d3790b1"></a>PEN_DOTTED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a056abdc3e65632a0666767d8395bdc44a9dd963620972293d3b7821d923ce51d9" name="a056abdc3e65632a0666767d8395bdc44a9dd963620972293d3b7821d923ce51d9"></a>PEN_SOLID&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="gvcjob_8h_source.html">gvcjob.h</a> строка <a class="el" href="gvcjob_8h_source.html#l00032">32</a></p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{ <a class="code hl_enumvalue" href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44a1ea6f58bfade3f78fe217ef328fce04d">PEN_NONE</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44ab1f05ac68389e236654d79692b26e7ff">PEN_DASHED</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44aa7d50db1156eddf79a8c8c316d3790b1">PEN_DOTTED</a>, <a class="code hl_enumvalue" href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44a9dd963620972293d3b7821d923ce51d9">PEN_SOLID</a> } <a class="code hl_enumeration" href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44">pen_type</a>;</div>
+<div class="ttc" id="agvcjob_8h_html_a056abdc3e65632a0666767d8395bdc44"><div class="ttname"><a href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44">pen_type</a></div><div class="ttdeci">pen_type</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00032">gvcjob.h:32</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a056abdc3e65632a0666767d8395bdc44a1ea6f58bfade3f78fe217ef328fce04d"><div class="ttname"><a href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44a1ea6f58bfade3f78fe217ef328fce04d">PEN_NONE</a></div><div class="ttdeci">@ PEN_NONE</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00032">gvcjob.h:32</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a056abdc3e65632a0666767d8395bdc44a9dd963620972293d3b7821d923ce51d9"><div class="ttname"><a href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44a9dd963620972293d3b7821d923ce51d9">PEN_SOLID</a></div><div class="ttdeci">@ PEN_SOLID</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00032">gvcjob.h:32</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a056abdc3e65632a0666767d8395bdc44aa7d50db1156eddf79a8c8c316d3790b1"><div class="ttname"><a href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44aa7d50db1156eddf79a8c8c316d3790b1">PEN_DOTTED</a></div><div class="ttdeci">@ PEN_DOTTED</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00032">gvcjob.h:32</a></div></div>
+<div class="ttc" id="agvcjob_8h_html_a056abdc3e65632a0666767d8395bdc44ab1f05ac68389e236654d79692b26e7ff"><div class="ttname"><a href="gvcjob_8h.html#a056abdc3e65632a0666767d8395bdc44ab1f05ac68389e236654d79692b26e7ff">PEN_DASHED</a></div><div class="ttdeci">@ PEN_DASHED</div><div class="ttdef"><b>Definition:</b> <a href="gvcjob_8h_source.html#l00032">gvcjob.h:32</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e6c23235d574a84b5ef1a8613e824ad0.html">for lab</a></li><li class="navelem"><a class="el" href="dir_9e36fc1ac95da228bde805a03f57733e.html">Graphviz</a></li><li class="navelem"><a class="el" href="dir_ad4ebe5bca6393216da41cf9a4442fe0.html">include</a></li><li class="navelem"><a class="el" href="dir_1993f148fdb21d2725c441bae462129c.html">graphviz</a></li><li class="navelem"><a class="el" href="gvcjob_8h.html">gvcjob.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

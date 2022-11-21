@@ -1,0 +1,744 @@
+\hypertarget{group__modbus}{}\doxysection{Modbus}
+\label{group__modbus}\index{Modbus@{Modbus}}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__modbus_ga0e6d79d4ff38dbf7d3fd81a80d655b70}{MB\+\_\+\+TCP\+\_\+\+PORT\+\_\+\+USE\+\_\+\+DEFAULT}}~0
+\begin{DoxyCompactList}\small\item\em Use the default Modbus TCP port (502) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{e\+MBMode}} \{ \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a1b807b8cf3d593d8cd8d1a1d21a3da31}{MB\+\_\+\+RTU}}
+, \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61afa37751530d5e48cb5a3f8841f9e3143}{MB\+\_\+\+ASCII}}
+, \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a5786284fe284b4a23889bf5b444d5142}{MB\+\_\+\+TCP}}
+ \}
+\begin{DoxyCompactList}\small\item\em Modbus serial transmission modes (RTU/\+ASCII). \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}{e\+MBRegister\+Mode}} \{ \mbox{\hyperlink{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8aa210c1d03e2745efb42486b822740d4b}{MB\+\_\+\+REG\+\_\+\+READ}}
+, \mbox{\hyperlink{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8a3d0a62208562b69c5e7692a5a168c14e}{MB\+\_\+\+REG\+\_\+\+WRITE}}
+ \}
+\begin{DoxyCompactList}\small\item\em If register should be written or read. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \{ \newline
+\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\+\_\+\+ENOERR}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf415371aad180c545b726d39adbf9ba7}{MB\+\_\+\+ENOREG}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}{MB\+\_\+\+EINVAL}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\+\_\+\+EPORTERR}}
+, \newline
+\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0700c1e37bfc75068e6577bc0b04bb8}{MB\+\_\+\+ENORES}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{MB\+\_\+\+EIO}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\+\_\+\+EILLSTATE}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da017c559e956f718cf77aafe269f49bd5}{MB\+\_\+\+ETIMEDOUT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Errorcodes used by all function in the protocol stack. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{e\+MBParity}} \{ \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba36c1b70b68bc05d618632e3f975a557b}{MB\+\_\+\+PAR\+\_\+\+NONE}}
+, \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba955fa6c30334314739ddceed6e749316}{MB\+\_\+\+PAR\+\_\+\+ODD}}
+, \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba0415f4c7ede57e13a0cca698a8375dbd}{MB\+\_\+\+PAR\+\_\+\+EVEN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Parity used for characters in serial mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_ga622dbe6b38ff1d255523d4736fa3da26}{e\+MBInit}} (\mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{e\+MBMode}} e\+Mode, UCHAR uc\+Slave\+Address, UCHAR uc\+Port, ULONG ul\+Baud\+Rate, \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{e\+MBParity}} e\+Parity)
+\begin{DoxyCompactList}\small\item\em Initialize the Modbus protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gab06a2d0ef8bdfd866cd934f0ec7e7a6e}{e\+MBTCPInit}} (USHORT us\+TCPPort)
+\begin{DoxyCompactList}\small\item\em Initialize the Modbus protocol stack for Modbus TCP. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gac20080d92be2934456e2a5d27cd36310}{e\+MBClose}} (void)
+\begin{DoxyCompactList}\small\item\em Release resources used by the protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gab697be370833d562e6b016626d996132}{e\+MBEnable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable the Modbus protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gabcc2a31ec41fc276ab3c3ac705defdf3}{e\+MBDisable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable the Modbus protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_ga12648c98d45f768ba878fbcee46caca5}{e\+MBPoll}} (void)
+\begin{DoxyCompactList}\small\item\em The main pooling loop of the Modbus protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gabe2b0e2dccf23d506666aa3cfdf6a8a3}{e\+MBSet\+Slave\+ID}} (UCHAR uc\+Slave\+ID, BOOL x\+Is\+Running, UCHAR const $\ast$puc\+Additional, USHORT us\+Additional\+Len)
+\begin{DoxyCompactList}\small\item\em Configure the slave id of the device. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_ga5f6e66893b2388a602ac453253a00784}{e\+MBRegister\+CB}} (UCHAR uc\+Function\+Code, \mbox{\hyperlink{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}{px\+MBFunction\+Handler}} px\+Handler)
+\begin{DoxyCompactList}\small\item\em Registers a callback handler for a given function code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mb_8h}{mb.h}}"{}} }
+
+\end{DoxyCode}
+
+
+This module defines the interface for the application. It contains the basic functions and types required to use the Modbus protocol stack. \mbox{\hyperlink{class_a}{A}} typical application will want to call \mbox{\hyperlink{group__modbus_ga622dbe6b38ff1d255523d4736fa3da26}{e\+MBInit()}} first. If the device is ready to answer network requests it must then call \mbox{\hyperlink{group__modbus_gab697be370833d562e6b016626d996132}{e\+MBEnable()}} to activate the protocol stack. In the main loop the function \mbox{\hyperlink{group__modbus_ga12648c98d45f768ba878fbcee46caca5}{e\+MBPoll()}} must be called periodically. The time interval between pooling depends on the configured Modbus timeout. If an RTOS is available a separate task should be created and the task should always call the function \mbox{\hyperlink{group__modbus_ga12648c98d45f768ba878fbcee46caca5}{e\+MBPoll()}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Initialize protocol stack in RTU mode for a slave with address 10 = 0x0A}}
+\DoxyCodeLine{\mbox{\hyperlink{group__modbus_ga622dbe6b38ff1d255523d4736fa3da26}{eMBInit}}( \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a1b807b8cf3d593d8cd8d1a1d21a3da31}{MB\_RTU}}, 0x0A, 38400, \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba0415f4c7ede57e13a0cca698a8375dbd}{MB\_PAR\_EVEN}} );}
+\DoxyCodeLine{\textcolor{comment}{// Enable the Modbus Protocol Stack.}}
+\DoxyCodeLine{\mbox{\hyperlink{group__modbus_gab697be370833d562e6b016626d996132}{eMBEnable}}(  );}
+\DoxyCodeLine{\textcolor{keywordflow}{for}( ;; )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// Call the main polling loop of the Modbus protocol stack.}}
+\DoxyCodeLine{    \mbox{\hyperlink{group__modbus_ga12648c98d45f768ba878fbcee46caca5}{eMBPoll}}(  );}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{group__modbus_ga0e6d79d4ff38dbf7d3fd81a80d655b70}\label{group__modbus_ga0e6d79d4ff38dbf7d3fd81a80d655b70}} 
+\index{Modbus@{Modbus}!MB\_TCP\_PORT\_USE\_DEFAULT@{MB\_TCP\_PORT\_USE\_DEFAULT}}
+\index{MB\_TCP\_PORT\_USE\_DEFAULT@{MB\_TCP\_PORT\_USE\_DEFAULT}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{MB\_TCP\_PORT\_USE\_DEFAULT}{MB\_TCP\_PORT\_USE\_DEFAULT}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+TCP\+\_\+\+PORT\+\_\+\+USE\+\_\+\+DEFAULT~0}
+
+
+
+Use the default Modbus TCP port (502) 
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8h_source}{mb.\+h}} строка \mbox{\hyperlink{mb_8h_source_l00074}{74}}
+
+
+
+\doxysubsection{Перечисления}
+\mbox{\Hypertarget{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}\label{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}} 
+\index{Modbus@{Modbus}!eMBErrorCode@{eMBErrorCode}}
+\index{eMBErrorCode@{eMBErrorCode}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBErrorCode}{eMBErrorCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}}}
+
+
+
+Errorcodes used by all function in the protocol stack. 
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_ENOERR@{MB\_ENOERR}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_ENOERR@{MB\_ENOERR}}}\mbox{\Hypertarget{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}\label{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}} 
+MB\+\_\+\+ENOERR&no error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_ENOREG@{MB\_ENOREG}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_ENOREG@{MB\_ENOREG}}}\mbox{\Hypertarget{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf415371aad180c545b726d39adbf9ba7}\label{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf415371aad180c545b726d39adbf9ba7}} 
+MB\+\_\+\+ENOREG&illegal register address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EINVAL@{MB\_EINVAL}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_EINVAL@{MB\_EINVAL}}}\mbox{\Hypertarget{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}\label{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}} 
+MB\+\_\+\+EINVAL&illegal argument. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EPORTERR@{MB\_EPORTERR}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_EPORTERR@{MB\_EPORTERR}}}\mbox{\Hypertarget{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}\label{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}} 
+MB\+\_\+\+EPORTERR&porting layer error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_ENORES@{MB\_ENORES}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_ENORES@{MB\_ENORES}}}\mbox{\Hypertarget{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0700c1e37bfc75068e6577bc0b04bb8}\label{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0700c1e37bfc75068e6577bc0b04bb8}} 
+MB\+\_\+\+ENORES&insufficient resources. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EIO@{MB\_EIO}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_EIO@{MB\_EIO}}}\mbox{\Hypertarget{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}\label{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}} 
+MB\+\_\+\+EIO&I/O error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EILLSTATE@{MB\_EILLSTATE}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_EILLSTATE@{MB\_EILLSTATE}}}\mbox{\Hypertarget{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}\label{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}} 
+MB\+\_\+\+EILLSTATE&protocol stack in illegal state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_ETIMEDOUT@{MB\_ETIMEDOUT}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_ETIMEDOUT@{MB\_ETIMEDOUT}}}\mbox{\Hypertarget{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da017c559e956f718cf77aafe269f49bd5}\label{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da017c559e956f718cf77aafe269f49bd5}} 
+MB\+\_\+\+ETIMEDOUT&timeout error occurred. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8h_source}{mb.\+h}} строка \mbox{\hyperlink{mb_8h_source_l00112}{112}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113 \{}
+\DoxyCodeLine{00114     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}},                  }
+\DoxyCodeLine{00115     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf415371aad180c545b726d39adbf9ba7}{MB\_ENOREG}},                  }
+\DoxyCodeLine{00116     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}{MB\_EINVAL}},                  }
+\DoxyCodeLine{00117     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\_EPORTERR}},                }
+\DoxyCodeLine{00118     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0700c1e37bfc75068e6577bc0b04bb8}{MB\_ENORES}},                  }
+\DoxyCodeLine{00119     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{MB\_EIO}},                     }
+\DoxyCodeLine{00120     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\_EILLSTATE}},               }
+\DoxyCodeLine{00121     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da017c559e956f718cf77aafe269f49bd5}{MB\_ETIMEDOUT}}                }
+\DoxyCodeLine{00122 \} \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}\label{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}} 
+\index{Modbus@{Modbus}!eMBMode@{eMBMode}}
+\index{eMBMode@{eMBMode}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBMode}{eMBMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{e\+MBMode}}}
+
+
+
+Modbus serial transmission modes (RTU/\+ASCII). 
+
+Modbus serial supports two transmission modes. Either ASCII or RTU. RTU is faster but has more hardware requirements and requires a network with a low jitter. ASCII is slower and more reliable on slower links (E.\+g. modems) \begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_RTU@{MB\_RTU}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_RTU@{MB\_RTU}}}\mbox{\Hypertarget{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a1b807b8cf3d593d8cd8d1a1d21a3da31}\label{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a1b807b8cf3d593d8cd8d1a1d21a3da31}} 
+MB\+\_\+\+RTU&RTU transmission mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_ASCII@{MB\_ASCII}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_ASCII@{MB\_ASCII}}}\mbox{\Hypertarget{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61afa37751530d5e48cb5a3f8841f9e3143}\label{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61afa37751530d5e48cb5a3f8841f9e3143}} 
+MB\+\_\+\+ASCII&ASCII transmission mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_TCP@{MB\_TCP}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_TCP@{MB\_TCP}}}\mbox{\Hypertarget{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a5786284fe284b4a23889bf5b444d5142}\label{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a5786284fe284b4a23889bf5b444d5142}} 
+MB\+\_\+\+TCP&TCP mode. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8h_source}{mb.\+h}} строка \mbox{\hyperlink{mb_8h_source_l00085}{85}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086 \{}
+\DoxyCodeLine{00087     \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a1b807b8cf3d593d8cd8d1a1d21a3da31}{MB\_RTU}},                     }
+\DoxyCodeLine{00088     \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61afa37751530d5e48cb5a3f8841f9e3143}{MB\_ASCII}},                   }
+\DoxyCodeLine{00089     \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a5786284fe284b4a23889bf5b444d5142}{MB\_TCP}}                      }
+\DoxyCodeLine{00090 \} \mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{eMBMode}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}\label{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}} 
+\index{Modbus@{Modbus}!eMBParity@{eMBParity}}
+\index{eMBParity@{eMBParity}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBParity}{eMBParity}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{e\+MBParity}}}
+
+
+
+Parity used for characters in serial mode. 
+
+The parity which should be applied to the characters sent over the serial link. Please note that this values are actually passed to the porting layer and therefore not all parity modes might be available. \begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_PAR\_NONE@{MB\_PAR\_NONE}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_PAR\_NONE@{MB\_PAR\_NONE}}}\mbox{\Hypertarget{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba36c1b70b68bc05d618632e3f975a557b}\label{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba36c1b70b68bc05d618632e3f975a557b}} 
+MB\+\_\+\+PAR\+\_\+\+NONE&No parity. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_PAR\_ODD@{MB\_PAR\_ODD}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_PAR\_ODD@{MB\_PAR\_ODD}}}\mbox{\Hypertarget{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba955fa6c30334314739ddceed6e749316}\label{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba955fa6c30334314739ddceed6e749316}} 
+MB\+\_\+\+PAR\+\_\+\+ODD&Odd parity. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_PAR\_EVEN@{MB\_PAR\_EVEN}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_PAR\_EVEN@{MB\_PAR\_EVEN}}}\mbox{\Hypertarget{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba0415f4c7ede57e13a0cca698a8375dbd}\label{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba0415f4c7ede57e13a0cca698a8375dbd}} 
+MB\+\_\+\+PAR\+\_\+\+EVEN&Even parity. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{mbport_8h_source}{mbport.\+h}} строка \mbox{\hyperlink{mbport_8h_source_l00055}{55}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056 \{}
+\DoxyCodeLine{00057     \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba36c1b70b68bc05d618632e3f975a557b}{MB\_PAR\_NONE}},                }
+\DoxyCodeLine{00058     \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba955fa6c30334314739ddceed6e749316}{MB\_PAR\_ODD}},                 }
+\DoxyCodeLine{00059     \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba0415f4c7ede57e13a0cca698a8375dbd}{MB\_PAR\_EVEN}}                 }
+\DoxyCodeLine{00060 \} \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{eMBParity}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}\label{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}} 
+\index{Modbus@{Modbus}!eMBRegisterMode@{eMBRegisterMode}}
+\index{eMBRegisterMode@{eMBRegisterMode}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBRegisterMode}{eMBRegisterMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}{e\+MBRegister\+Mode}}}
+
+
+
+If register should be written or read. 
+
+This value is passed to the callback functions which support either reading or writing register values. Writing means that the application registers should be updated and reading means that the modbus protocol stack needs to know the current register values.
+
+\begin{DoxySeeAlso}{См. также}
+\mbox{\hyperlink{group__modbus__registers_ga10d37e1d80224bf3b1eeb9e246d7582e}{e\+MBReg\+Holding\+CB( )}}, \mbox{\hyperlink{group__modbus__registers_ga88d9b719291515c60eee1bf9ffa1dd02}{e\+MBReg\+Coils\+CB( )}}, \mbox{\hyperlink{group__modbus__registers_ga38101f5da54af137e210a3b8b9fa3887}{e\+MBReg\+Discrete\+CB( )}} and \mbox{\hyperlink{group__modbus__registers_ga7816677520b1eb2ebecf15060a41bc81}{e\+MBReg\+Input\+CB( )}}. 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_REG\_READ@{MB\_REG\_READ}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_REG\_READ@{MB\_REG\_READ}}}\mbox{\Hypertarget{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8aa210c1d03e2745efb42486b822740d4b}\label{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8aa210c1d03e2745efb42486b822740d4b}} 
+MB\+\_\+\+REG\+\_\+\+READ&Read register values and pass to protocol stack. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_REG\_WRITE@{MB\_REG\_WRITE}!Modbus@{Modbus}}\index{Modbus@{Modbus}!MB\_REG\_WRITE@{MB\_REG\_WRITE}}}\mbox{\Hypertarget{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8a3d0a62208562b69c5e7692a5a168c14e}\label{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8a3d0a62208562b69c5e7692a5a168c14e}} 
+MB\+\_\+\+REG\+\_\+\+WRITE&Update register values. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8h_source}{mb.\+h}} строка \mbox{\hyperlink{mb_8h_source_l00103}{103}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104 \{}
+\DoxyCodeLine{00105     \mbox{\hyperlink{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8aa210c1d03e2745efb42486b822740d4b}{MB\_REG\_READ}},                }
+\DoxyCodeLine{00106     \mbox{\hyperlink{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8a3d0a62208562b69c5e7692a5a168c14e}{MB\_REG\_WRITE}}                }
+\DoxyCodeLine{00107 \} \mbox{\hyperlink{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}{eMBRegisterMode}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{group__modbus_gac20080d92be2934456e2a5d27cd36310}\label{group__modbus_gac20080d92be2934456e2a5d27cd36310}} 
+\index{Modbus@{Modbus}!eMBClose@{eMBClose}}
+\index{eMBClose@{eMBClose}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBClose()}{eMBClose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+MBClose (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Release resources used by the protocol stack. 
+
+This function disables the Modbus protocol stack and release all hardware resources. It must only be called when the protocol stack is disabled.
+
+\begin{DoxyNote}{Заметки}
+Note all ports implement this function. \mbox{\hyperlink{class_a}{A}} port which wants to get an callback must define the macro MB\+\_\+\+PORT\+\_\+\+HAS\+\_\+\+CLOSE to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Возвращает}
+If the resources where released it return e\+MBError\+Code\+::\+MB\+\_\+\+ENOERR. If the protocol stack is not in the disabled state it returns e\+MBError\+Code\+::\+MB\+\_\+\+EILLSTATE. 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00273}{273}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00274 \{}
+\DoxyCodeLine{00275     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{00276 }
+\DoxyCodeLine{00277     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} == \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}} )}
+\DoxyCodeLine{00278     \{}
+\DoxyCodeLine{00279         \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{pvMBFrameCloseCur}} != NULL )}
+\DoxyCodeLine{00280         \{}
+\DoxyCodeLine{00281             \mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{pvMBFrameCloseCur}}(  );}
+\DoxyCodeLine{00282         \}}
+\DoxyCodeLine{00283     \}}
+\DoxyCodeLine{00284     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00285     \{}
+\DoxyCodeLine{00286         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\_EILLSTATE}};}
+\DoxyCodeLine{00287     \}}
+\DoxyCodeLine{00288     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{00289 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__modbus_gabcc2a31ec41fc276ab3c3ac705defdf3}\label{group__modbus_gabcc2a31ec41fc276ab3c3ac705defdf3}} 
+\index{Modbus@{Modbus}!eMBDisable@{eMBDisable}}
+\index{eMBDisable@{eMBDisable}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBDisable()}{eMBDisable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+MBDisable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disable the Modbus protocol stack. 
+
+This function disables processing of Modbus frames.
+
+\begin{DoxyReturn}{Возвращает}
+If the protocol stack has been disabled it returns e\+MBError\+Code\+::\+MB\+\_\+\+ENOERR. If it was not in the enabled state it returns e\+MBError\+Code\+::\+MB\+\_\+\+EILLSTATE. 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00310}{310}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00311 \{}
+\DoxyCodeLine{00312     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus;}
+\DoxyCodeLine{00313 }
+\DoxyCodeLine{00314     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} == \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}{STATE\_ENABLED}} )}
+\DoxyCodeLine{00315     \{}
+\DoxyCodeLine{00316         \mbox{\hyperlink{mb_8c_a043a961601eba48ca372b99f5c67ec3c}{pvMBFrameStopCur}}(  );}
+\DoxyCodeLine{00317         \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} = \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}};}
+\DoxyCodeLine{00318         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{00319     \}}
+\DoxyCodeLine{00320     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} == \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}} )}
+\DoxyCodeLine{00321     \{}
+\DoxyCodeLine{00322         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{00323     \}}
+\DoxyCodeLine{00324     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00325     \{}
+\DoxyCodeLine{00326         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\_EILLSTATE}};}
+\DoxyCodeLine{00327     \}}
+\DoxyCodeLine{00328     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{00329 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__modbus_gab697be370833d562e6b016626d996132}\label{group__modbus_gab697be370833d562e6b016626d996132}} 
+\index{Modbus@{Modbus}!eMBEnable@{eMBEnable}}
+\index{eMBEnable@{eMBEnable}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBEnable()}{eMBEnable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+MBEnable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Enable the Modbus protocol stack. 
+
+This function enables processing of Modbus frames. Enabling the protocol stack is only possible if it is in the disabled state.
+
+\begin{DoxyReturn}{Возвращает}
+If the protocol stack is now in the state enabled it returns e\+MBError\+Code\+::\+MB\+\_\+\+ENOERR. If it was not in the disabled state it return e\+MBError\+Code\+::\+MB\+\_\+\+EILLSTATE. 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00292}{292}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00293 \{}
+\DoxyCodeLine{00294     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{00295 }
+\DoxyCodeLine{00296     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} == \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}} )}
+\DoxyCodeLine{00297     \{}
+\DoxyCodeLine{00298         \textcolor{comment}{/* Activate the protocol stack. */}}
+\DoxyCodeLine{00299         \mbox{\hyperlink{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}{pvMBFrameStartCur}}(  );}
+\DoxyCodeLine{00300         \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} = \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}{STATE\_ENABLED}};}
+\DoxyCodeLine{00301     \}}
+\DoxyCodeLine{00302     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00303     \{}
+\DoxyCodeLine{00304         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\_EILLSTATE}};}
+\DoxyCodeLine{00305     \}}
+\DoxyCodeLine{00306     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{00307 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__modbus_ga622dbe6b38ff1d255523d4736fa3da26}\label{group__modbus_ga622dbe6b38ff1d255523d4736fa3da26}} 
+\index{Modbus@{Modbus}!eMBInit@{eMBInit}}
+\index{eMBInit@{eMBInit}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBInit()}{eMBInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+MBInit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{e\+MBMode}}}]{e\+Mode,  }\item[{UCHAR}]{uc\+Slave\+Address,  }\item[{UCHAR}]{uc\+Port,  }\item[{ULONG}]{ul\+Baud\+Rate,  }\item[{\mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{e\+MBParity}}}]{e\+Parity }\end{DoxyParamCaption})}
+
+
+
+Initialize the Modbus protocol stack. 
+
+This functions initializes the ASCII or RTU module and calls the init functions of the porting layer to prepare the hardware. Please note that the receiver is still disabled and no Modbus frames are processed until \mbox{\hyperlink{group__modbus_gab697be370833d562e6b016626d996132}{e\+MBEnable( )}} has been called.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em e\+Mode} & If ASCII or RTU mode should be used. \\
+\hline
+{\em uc\+Slave\+Address} & The slave address. Only frames sent to this address or to the broadcast address are processed. \\
+\hline
+{\em uc\+Port} & The port to use. E.\+g. 1 for COM1 on windows. This value is platform dependent and some ports simply choose to ignore it. \\
+\hline
+{\em ul\+Baud\+Rate} & The baudrate. E.\+g. 19200. Supported baudrates depend on the porting layer. \\
+\hline
+{\em e\+Parity} & Parity used for serial transmission.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+If no error occurs the function returns e\+MBError\+Code\+::\+MB\+\_\+\+ENOERR. The protocol is then in the disabled state and ready for activation by calling \mbox{\hyperlink{group__modbus_gab697be370833d562e6b016626d996132}{e\+MBEnable( )}}. Otherwise one of the following error codes is returned\+:
+\begin{DoxyItemize}
+\item e\+MBError\+Code\+::\+MB\+\_\+\+EINVAL If the slave address was not valid. Valid slave addresses are in the range 1 -\/ 247.
+\item e\+MBError\+Code\+::\+MB\+\_\+\+EPORTERR IF the porting layer returned an error. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00130}{130}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131 \{}
+\DoxyCodeLine{00132     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{00134     \textcolor{comment}{/* check preconditions */}}
+\DoxyCodeLine{00135     \textcolor{keywordflow}{if}( ( ucSlaveAddress == \mbox{\hyperlink{mbproto_8h_a5e80f256fa3cb8a969c9935b48f2a7b1}{MB\_ADDRESS\_BROADCAST}} ) ||}
+\DoxyCodeLine{00136         ( ucSlaveAddress < \mbox{\hyperlink{mbproto_8h_accf024291f4458ad8ad33e32568e8561}{MB\_ADDRESS\_MIN}} ) || ( ucSlaveAddress > \mbox{\hyperlink{mbproto_8h_a8b915be3e09043b5da9d307d30efd9f7}{MB\_ADDRESS\_MAX}} ) )}
+\DoxyCodeLine{00137     \{}
+\DoxyCodeLine{00138         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}{MB\_EINVAL}};}
+\DoxyCodeLine{00139     \}}
+\DoxyCodeLine{00140     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00141     \{}
+\DoxyCodeLine{00142         \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}} = ucSlaveAddress;}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144         \textcolor{keywordflow}{switch} ( eMode )}
+\DoxyCodeLine{00145         \{}
+\DoxyCodeLine{00146 \textcolor{preprocessor}{\#if MB\_RTU\_ENABLED > 0}}
+\DoxyCodeLine{00147         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a1b807b8cf3d593d8cd8d1a1d21a3da31}{MB\_RTU}}:}
+\DoxyCodeLine{00148             \mbox{\hyperlink{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}{pvMBFrameStartCur}} = \mbox{\hyperlink{mbrtu_8c_ae342bae030ea291a6e8a2fe3d2d0abeb}{eMBRTUStart}};}
+\DoxyCodeLine{00149             \mbox{\hyperlink{mb_8c_a043a961601eba48ca372b99f5c67ec3c}{pvMBFrameStopCur}} = \mbox{\hyperlink{mbrtu_8c_a3d44ef4747b7202d37142ef1aaea493b}{eMBRTUStop}};}
+\DoxyCodeLine{00150             \mbox{\hyperlink{mb_8c_ae9daf4765e9a354a64f171108ace3094}{peMBFrameSendCur}} = \mbox{\hyperlink{mbrtu_8c_a6feb0c70f52d3ef74da1cfbdc10d1ab0}{eMBRTUSend}};}
+\DoxyCodeLine{00151             \mbox{\hyperlink{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}{peMBFrameReceiveCur}} = \mbox{\hyperlink{mbrtu_8c_a669fd79aadbd1cc49ac4f11382dc15d9}{eMBRTUReceive}};}
+\DoxyCodeLine{00152             \mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{pvMBFrameCloseCur}} = \mbox{\hyperlink{mb_8c_a63c1fbefc04d96d29ef84407e22c4e3e}{MB\_PORT\_HAS\_CLOSE}} ? \mbox{\hyperlink{mbport_8h_ae97991ffb6ce01584afce5dd4f653b41}{vMBPortClose}} : NULL;}
+\DoxyCodeLine{00153             \mbox{\hyperlink{mb_8c_a6ff9d563210c04e3afb414b9db75154a}{pxMBFrameCBByteReceived}} = \mbox{\hyperlink{mbrtu_8c_a447f45f582daab2600cad612b00120b0}{xMBRTUReceiveFSM}};}
+\DoxyCodeLine{00154             \mbox{\hyperlink{mb_8c_a46ac9d979eaaeb885415014a0cb350b2}{pxMBFrameCBTransmitterEmpty}} = \mbox{\hyperlink{mbrtu_8c_a663e5daf0be0f2426a72c531c91d423f}{xMBRTUTransmitFSM}};}
+\DoxyCodeLine{00155             \mbox{\hyperlink{mb_8c_a3ca010d1cf1b3bda066f0d65641d9055}{pxMBPortCBTimerExpired}} = \mbox{\hyperlink{mbrtu_8c_ac6302a8b67c6b82ae49e6c9d6a9795da}{xMBRTUTimerT35Expired}};}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157             eStatus = \mbox{\hyperlink{mbrtu_8c_a52738b46d7f3be581582d30cfb2bfcb8}{eMBRTUInit}}( \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}}, ucPort, ulBaudRate, eParity );}
+\DoxyCodeLine{00158             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00159 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00160 \textcolor{preprocessor}{\#if MB\_ASCII\_ENABLED > 0}}
+\DoxyCodeLine{00161         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61afa37751530d5e48cb5a3f8841f9e3143}{MB\_ASCII}}:}
+\DoxyCodeLine{00162             \mbox{\hyperlink{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}{pvMBFrameStartCur}} = eMBASCIIStart;}
+\DoxyCodeLine{00163             \mbox{\hyperlink{mb_8c_a043a961601eba48ca372b99f5c67ec3c}{pvMBFrameStopCur}} = eMBASCIIStop;}
+\DoxyCodeLine{00164             \mbox{\hyperlink{mb_8c_ae9daf4765e9a354a64f171108ace3094}{peMBFrameSendCur}} = eMBASCIISend;}
+\DoxyCodeLine{00165             \mbox{\hyperlink{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}{peMBFrameReceiveCur}} = eMBASCIIReceive;}
+\DoxyCodeLine{00166             \mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{pvMBFrameCloseCur}} = \mbox{\hyperlink{mb_8c_a63c1fbefc04d96d29ef84407e22c4e3e}{MB\_PORT\_HAS\_CLOSE}} ? \mbox{\hyperlink{mbport_8h_ae97991ffb6ce01584afce5dd4f653b41}{vMBPortClose}} : NULL;}
+\DoxyCodeLine{00167             \mbox{\hyperlink{mb_8c_a6ff9d563210c04e3afb414b9db75154a}{pxMBFrameCBByteReceived}} = xMBASCIIReceiveFSM;}
+\DoxyCodeLine{00168             \mbox{\hyperlink{mb_8c_a46ac9d979eaaeb885415014a0cb350b2}{pxMBFrameCBTransmitterEmpty}} = xMBASCIITransmitFSM;}
+\DoxyCodeLine{00169             \mbox{\hyperlink{mb_8c_a3ca010d1cf1b3bda066f0d65641d9055}{pxMBPortCBTimerExpired}} = xMBASCIITimerT1SExpired;}
+\DoxyCodeLine{00170 }
+\DoxyCodeLine{00171             eStatus = eMBASCIIInit( \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}}, ucPort, ulBaudRate, eParity );}
+\DoxyCodeLine{00172             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00173 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00174         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00175             eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}{MB\_EINVAL}};}
+\DoxyCodeLine{00176         \}}
+\DoxyCodeLine{00177 }
+\DoxyCodeLine{00178         \textcolor{keywordflow}{if}( eStatus == \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}} )}
+\DoxyCodeLine{00179         \{}
+\DoxyCodeLine{00180             \textcolor{keywordflow}{if}( !\mbox{\hyperlink{mbport_8h_a23aa6afd41597f7aaf5d1a6e6831c718}{xMBPortEventInit}}(  ) )}
+\DoxyCodeLine{00181             \{}
+\DoxyCodeLine{00182                 \textcolor{comment}{/* port dependent event module initalization failed. */}}
+\DoxyCodeLine{00183                 eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\_EPORTERR}};}
+\DoxyCodeLine{00184             \}}
+\DoxyCodeLine{00185             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00186             \{}
+\DoxyCodeLine{00187                 \mbox{\hyperlink{mb_8c_a288653bd38728bea3b3c705f25d87483}{eMBCurrentMode}} = eMode;}
+\DoxyCodeLine{00188                 \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} = \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}};}
+\DoxyCodeLine{00189             \}}
+\DoxyCodeLine{00190         \}}
+\DoxyCodeLine{00191     \}}
+\DoxyCodeLine{00192     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{00193 \}}
+
+\end{DoxyCode}
+Граф вызовов\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__modbus_ga622dbe6b38ff1d255523d4736fa3da26_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__modbus_ga12648c98d45f768ba878fbcee46caca5}\label{group__modbus_ga12648c98d45f768ba878fbcee46caca5}} 
+\index{Modbus@{Modbus}!eMBPoll@{eMBPoll}}
+\index{eMBPoll@{eMBPoll}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBPoll()}{eMBPoll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+MBPoll (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The main pooling loop of the Modbus protocol stack. 
+
+This function must be called periodically. The timer interval required is given by the application dependent Modbus slave timeout. Internally the function calls \mbox{\hyperlink{mbport_8h_ad61d350e63d0c41e7563ac0bc0fd346f}{x\+MBPort\+Event\+Get()}} and waits for an event from the receiver or transmitter state machines.
+
+\begin{DoxyReturn}{Возвращает}
+If the protocol stack is not in the enabled state the function returns e\+MBError\+Code\+::\+MB\+\_\+\+EILLSTATE. Otherwise it returns e\+MBError\+Code\+::\+MB\+\_\+\+ENOERR. 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00332}{332}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00333 \{}
+\DoxyCodeLine{00334     \textcolor{keyword}{static} UCHAR   *ucMBFrame;}
+\DoxyCodeLine{00335     \textcolor{keyword}{static} UCHAR    ucRcvAddress;}
+\DoxyCodeLine{00336     \textcolor{keyword}{static} UCHAR    ucFunctionCode;}
+\DoxyCodeLine{00337     \textcolor{keyword}{static} USHORT   usLength;}
+\DoxyCodeLine{00338     \textcolor{keyword}{static} \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{eMBException}} eException;}
+\DoxyCodeLine{00339 }
+\DoxyCodeLine{00340     \textcolor{keywordtype}{int}             i;}
+\DoxyCodeLine{00341     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{00342     \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{eMBEventType}}    eEvent;}
+\DoxyCodeLine{00343 }
+\DoxyCodeLine{00344     \textcolor{comment}{/* Check if the protocol stack is ready. */}}
+\DoxyCodeLine{00345     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} != \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}{STATE\_ENABLED}} )}
+\DoxyCodeLine{00346     \{}
+\DoxyCodeLine{00347         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\_EILLSTATE}};}
+\DoxyCodeLine{00348     \}}
+\DoxyCodeLine{00349 }
+\DoxyCodeLine{00350     \textcolor{comment}{/* Check if there is a event available. If not return control to caller.}}
+\DoxyCodeLine{00351 \textcolor{comment}{     * Otherwise we will handle the event. */}}
+\DoxyCodeLine{00352     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbport_8h_ad61d350e63d0c41e7563ac0bc0fd346f}{xMBPortEventGet}}( \&eEvent ) == TRUE )}
+\DoxyCodeLine{00353     \{}
+\DoxyCodeLine{00354         \textcolor{keywordflow}{switch} ( eEvent )}
+\DoxyCodeLine{00355         \{}
+\DoxyCodeLine{00356         \textcolor{keywordflow}{case} \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0}{EV\_READY}}:}
+\DoxyCodeLine{00357             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00358 }
+\DoxyCodeLine{00359         \textcolor{keywordflow}{case} \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2}{EV\_FRAME\_RECEIVED}}:}
+\DoxyCodeLine{00360             eStatus = \mbox{\hyperlink{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}{peMBFrameReceiveCur}}( \&ucRcvAddress, \&ucMBFrame, \&usLength );}
+\DoxyCodeLine{00361             \textcolor{keywordflow}{if}( eStatus == \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}} )}
+\DoxyCodeLine{00362             \{}
+\DoxyCodeLine{00363                 \textcolor{comment}{/* Check if the frame is for us. If not ignore the frame. */}}
+\DoxyCodeLine{00364                 \textcolor{keywordflow}{if}( ( ucRcvAddress == \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}} ) || ( ucRcvAddress == \mbox{\hyperlink{mbproto_8h_a5e80f256fa3cb8a969c9935b48f2a7b1}{MB\_ADDRESS\_BROADCAST}} ) )}
+\DoxyCodeLine{00365                 \{}
+\DoxyCodeLine{00366                     ( void )\mbox{\hyperlink{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}{xMBPortEventPost}}( \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019}{EV\_EXECUTE}} );}
+\DoxyCodeLine{00367                 \}}
+\DoxyCodeLine{00368             \}}
+\DoxyCodeLine{00369             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00370 }
+\DoxyCodeLine{00371         \textcolor{keywordflow}{case} \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019}{EV\_EXECUTE}}:}
+\DoxyCodeLine{00372             ucFunctionCode = ucMBFrame[\mbox{\hyperlink{mbframe_8h_a554b629520c4266fdff39099a2eef5db}{MB\_PDU\_FUNC\_OFF}}];}
+\DoxyCodeLine{00373             eException = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caf2cf9a6b48c5dee86cd361cc327b9abb}{MB\_EX\_ILLEGAL\_FUNCTION}};}
+\DoxyCodeLine{00374             \textcolor{keywordflow}{for}( i = 0; i < \mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\_FUNC\_HANDLERS\_MAX}}; i++ )}
+\DoxyCodeLine{00375             \{}
+\DoxyCodeLine{00376                 \textcolor{comment}{/* No more function handlers registered. Abort. */}}
+\DoxyCodeLine{00377                 \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].ucFunctionCode == 0 )}
+\DoxyCodeLine{00378                 \{}
+\DoxyCodeLine{00379                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00380                 \}}
+\DoxyCodeLine{00381                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].ucFunctionCode == ucFunctionCode )}
+\DoxyCodeLine{00382                 \{}
+\DoxyCodeLine{00383                     eException = \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].\mbox{\hyperlink{structx_m_b_function_handler_ab2ea74b69155c337ec9c0d2e229160ce}{pxHandler}}( ucMBFrame, \&usLength );}
+\DoxyCodeLine{00384                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00385                 \}}
+\DoxyCodeLine{00386             \}}
+\DoxyCodeLine{00387 }
+\DoxyCodeLine{00388             \textcolor{comment}{/* If the request was not sent to the broadcast address we}}
+\DoxyCodeLine{00389 \textcolor{comment}{             * return a reply. */}}
+\DoxyCodeLine{00390             \textcolor{keywordflow}{if}( ucRcvAddress != \mbox{\hyperlink{mbproto_8h_a5e80f256fa3cb8a969c9935b48f2a7b1}{MB\_ADDRESS\_BROADCAST}} )}
+\DoxyCodeLine{00391             \{}
+\DoxyCodeLine{00392                 \textcolor{keywordflow}{if}( eException != \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}{MB\_EX\_NONE}} )}
+\DoxyCodeLine{00393                 \{}
+\DoxyCodeLine{00394                     \textcolor{comment}{/* An exception occured. Build an error frame. */}}
+\DoxyCodeLine{00395                     usLength = 0;}
+\DoxyCodeLine{00396                     ucMBFrame[usLength++] = ( UCHAR )( ucFunctionCode | \mbox{\hyperlink{mbproto_8h_ad45e73770d806dfd75cc45b2d1d31dc2}{MB\_FUNC\_ERROR}} );}
+\DoxyCodeLine{00397                     ucMBFrame[usLength++] = eException;}
+\DoxyCodeLine{00398                 \}}
+\DoxyCodeLine{00399                 \textcolor{keywordflow}{if}( ( \mbox{\hyperlink{mb_8c_a288653bd38728bea3b3c705f25d87483}{eMBCurrentMode}} == \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61afa37751530d5e48cb5a3f8841f9e3143}{MB\_ASCII}} ) \&\& \mbox{\hyperlink{group__modbus__cfg_ga22fd01f62670a71ab137e16118c37ca2}{MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS}} )}
+\DoxyCodeLine{00400                 \{}
+\DoxyCodeLine{00401                     \mbox{\hyperlink{mbport_8h_a334f66a0527a862f58488cc40d7999d4}{vMBPortTimersDelay}}( \mbox{\hyperlink{group__modbus__cfg_ga22fd01f62670a71ab137e16118c37ca2}{MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS}} );}
+\DoxyCodeLine{00402                 \}                }
+\DoxyCodeLine{00403                 eStatus = \mbox{\hyperlink{mb_8c_ae9daf4765e9a354a64f171108ace3094}{peMBFrameSendCur}}( \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}}, ucMBFrame, usLength );}
+\DoxyCodeLine{00404             \}}
+\DoxyCodeLine{00405             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00406 }
+\DoxyCodeLine{00407         \textcolor{keywordflow}{case} \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95}{EV\_FRAME\_SENT}}:}
+\DoxyCodeLine{00408             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00409         \}}
+\DoxyCodeLine{00410     \}}
+\DoxyCodeLine{00411     \textcolor{keywordflow}{return} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{00412 \}}
+
+\end{DoxyCode}
+Граф вызовов\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{group__modbus_ga12648c98d45f768ba878fbcee46caca5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__modbus_ga5f6e66893b2388a602ac453253a00784}\label{group__modbus_ga5f6e66893b2388a602ac453253a00784}} 
+\index{Modbus@{Modbus}!eMBRegisterCB@{eMBRegisterCB}}
+\index{eMBRegisterCB@{eMBRegisterCB}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBRegisterCB()}{eMBRegisterCB()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+MBRegister\+CB (\begin{DoxyParamCaption}\item[{UCHAR}]{uc\+Function\+Code,  }\item[{\mbox{\hyperlink{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}{px\+MBFunction\+Handler}}}]{px\+Handler }\end{DoxyParamCaption})}
+
+
+
+Registers a callback handler for a given function code. 
+
+This function registers a new callback handler for a given function code. The callback handler supplied is responsible for interpreting the Modbus PDU and the creation of an appropriate response. In case of an error it should return one of the possible Modbus exceptions which results in a Modbus exception frame sent by the protocol stack.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em uc\+Function\+Code} & The Modbus function code for which this handler should be registers. Valid function codes are in the range 1 to 127. \\
+\hline
+{\em px\+Handler} & The function handler which should be called in case such a frame is received. If {\ttfamily NULL} a previously registered function handler for this function code is removed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+e\+MBError\+Code\+::\+MB\+\_\+\+ENOERR if the handler has been installed. If no more resources are available it returns e\+MBError\+Code\+::\+MB\+\_\+\+ENORES. In this case the values in \mbox{\hyperlink{mbconfig_8h}{mbconfig.\+h}} should be adjusted. If the argument was not valid it returns e\+MBError\+Code\+::\+MB\+\_\+\+EINVAL. 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00226}{226}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00227 \{}
+\DoxyCodeLine{00228     \textcolor{keywordtype}{int}             i;}
+\DoxyCodeLine{00229     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus;}
+\DoxyCodeLine{00230 }
+\DoxyCodeLine{00231     \textcolor{keywordflow}{if}( ( 0 < ucFunctionCode ) \&\& ( ucFunctionCode <= 127 ) )}
+\DoxyCodeLine{00232     \{}
+\DoxyCodeLine{00233         ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{00234         \textcolor{keywordflow}{if}( pxHandler != NULL )}
+\DoxyCodeLine{00235         \{}
+\DoxyCodeLine{00236             \textcolor{keywordflow}{for}( i = 0; i < \mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\_FUNC\_HANDLERS\_MAX}}; i++ )}
+\DoxyCodeLine{00237             \{}
+\DoxyCodeLine{00238                 \textcolor{keywordflow}{if}( ( \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].pxHandler == NULL ) ||}
+\DoxyCodeLine{00239                     ( \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].pxHandler == pxHandler ) )}
+\DoxyCodeLine{00240                 \{}
+\DoxyCodeLine{00241                     \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].\mbox{\hyperlink{structx_m_b_function_handler_acf0798484cf2b6b1ec21389d3f2a997c}{ucFunctionCode}} = ucFunctionCode;}
+\DoxyCodeLine{00242                     \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].\mbox{\hyperlink{structx_m_b_function_handler_ab2ea74b69155c337ec9c0d2e229160ce}{pxHandler}} = pxHandler;}
+\DoxyCodeLine{00243                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00244                 \}}
+\DoxyCodeLine{00245             \}}
+\DoxyCodeLine{00246             eStatus = ( i != \mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\_FUNC\_HANDLERS\_MAX}} ) ? \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}} : \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0700c1e37bfc75068e6577bc0b04bb8}{MB\_ENORES}};}
+\DoxyCodeLine{00247         \}}
+\DoxyCodeLine{00248         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00249         \{}
+\DoxyCodeLine{00250             \textcolor{keywordflow}{for}( i = 0; i < \mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\_FUNC\_HANDLERS\_MAX}}; i++ )}
+\DoxyCodeLine{00251             \{}
+\DoxyCodeLine{00252                 \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].ucFunctionCode == ucFunctionCode )}
+\DoxyCodeLine{00253                 \{}
+\DoxyCodeLine{00254                     \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].\mbox{\hyperlink{structx_m_b_function_handler_acf0798484cf2b6b1ec21389d3f2a997c}{ucFunctionCode}} = 0;}
+\DoxyCodeLine{00255                     \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].\mbox{\hyperlink{structx_m_b_function_handler_ab2ea74b69155c337ec9c0d2e229160ce}{pxHandler}} = NULL;}
+\DoxyCodeLine{00256                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00257                 \}}
+\DoxyCodeLine{00258             \}}
+\DoxyCodeLine{00259             \textcolor{comment}{/* Remove can't fail. */}}
+\DoxyCodeLine{00260             eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{00261         \}}
+\DoxyCodeLine{00262         EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{00263     \}}
+\DoxyCodeLine{00264     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00265     \{}
+\DoxyCodeLine{00266         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}{MB\_EINVAL}};}
+\DoxyCodeLine{00267     \}}
+\DoxyCodeLine{00268     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{00269 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__modbus_gabe2b0e2dccf23d506666aa3cfdf6a8a3}\label{group__modbus_gabe2b0e2dccf23d506666aa3cfdf6a8a3}} 
+\index{Modbus@{Modbus}!eMBSetSlaveID@{eMBSetSlaveID}}
+\index{eMBSetSlaveID@{eMBSetSlaveID}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBSetSlaveID()}{eMBSetSlaveID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+MBSet\+Slave\+ID (\begin{DoxyParamCaption}\item[{UCHAR}]{uc\+Slave\+ID,  }\item[{BOOL}]{x\+Is\+Running,  }\item[{UCHAR const $\ast$}]{puc\+Additional,  }\item[{USHORT}]{us\+Additional\+Len }\end{DoxyParamCaption})}
+
+
+
+Configure the slave id of the device. 
+
+This function should be called when the Modbus function {\itshape Report Slave ID} is enabled ( By defining MB\+\_\+\+FUNC\+\_\+\+OTHER\+\_\+\+REP\+\_\+\+SLAVEID\+\_\+\+ENABLED in \mbox{\hyperlink{mbconfig_8h}{mbconfig.\+h}} ).
+
+
+\begin{DoxyParams}{Аргументы}
+{\em uc\+Slave\+ID} & Values is returned in the {\itshape Slave ID} byte of the {\itshape Report Slave ID} response. \\
+\hline
+{\em x\+Is\+Running} & If TRUE the {\itshape Run Indicator Status} byte is set to 0x\+FF. otherwise the {\itshape Run Indicator Status} is 0x00. \\
+\hline
+{\em puc\+Additional} & Values which should be returned in the {\itshape Additional} bytes of the {\itshape  Report Slave ID} response. \\
+\hline
+{\em us\+Additional\+Len} & Length of the buffer {\ttfamily puc\+Additonal}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+If the static buffer defined by MB\+\_\+\+FUNC\+\_\+\+OTHER\+\_\+\+REP\+\_\+\+SLAVEID\+\_\+\+BUF in \mbox{\hyperlink{mbconfig_8h}{mbconfig.\+h}} is to small it returns e\+MBError\+Code\+::\+MB\+\_\+\+ENORES. Otherwise it returns e\+MBError\+Code\+::\+MB\+\_\+\+ENOERR. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__modbus_gab06a2d0ef8bdfd866cd934f0ec7e7a6e}\label{group__modbus_gab06a2d0ef8bdfd866cd934f0ec7e7a6e}} 
+\index{Modbus@{Modbus}!eMBTCPInit@{eMBTCPInit}}
+\index{eMBTCPInit@{eMBTCPInit}!Modbus@{Modbus}}
+\doxysubsubsection{\texorpdfstring{eMBTCPInit()}{eMBTCPInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+MBTCPInit (\begin{DoxyParamCaption}\item[{USHORT}]{us\+TCPPort }\end{DoxyParamCaption})}
+
+
+
+Initialize the Modbus protocol stack for Modbus TCP. 
+
+This function initializes the Modbus TCP Module. Please note that frame processing is still disabled until \mbox{\hyperlink{group__modbus_gab697be370833d562e6b016626d996132}{e\+MBEnable( )}} is called.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em us\+TCPPort} & The TCP port to listen on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+If the protocol stack has been initialized correctly the function returns e\+MBError\+Code\+::\+MB\+\_\+\+ENOERR. Otherwise one of the following error codes is returned\+:
+\begin{DoxyItemize}
+\item e\+MBError\+Code\+::\+MB\+\_\+\+EINVAL If the slave address was not valid. Valid slave addresses are in the range 1 -\/ 247.
+\item e\+MBError\+Code\+::\+MB\+\_\+\+EPORTERR IF the porting layer returned an error. 
+\end{DoxyItemize}
+\end{DoxyReturn}

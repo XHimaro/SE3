@@ -1,0 +1,104 @@
+\hypertarget{mbcrc_8c_source}{}\doxysection{mbcrc.\+c}
+\label{mbcrc_8c_source}\index{for lab/freemodbus-\/v1.5.0/modbus/rtu/mbcrc.c@{for lab/freemodbus-\/v1.5.0/modbus/rtu/mbcrc.c}}
+\mbox{\hyperlink{mbcrc_8c}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00001}00001 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00002}00002 \textcolor{comment}{ * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00003}00003 \textcolor{comment}{ * Copyright (c) 2006 Christian Walter <wolti@sil.at>}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00004}00004 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00006}00006 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00007}00007 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00008}00008 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00009}00009 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00010}00010 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00011}00011 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00012}00012 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00013}00013 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00014}00014 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00015}00015 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00016}00016 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00017}00017 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00018}00018 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00019}00019 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00020}00020 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00021}00021 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00022}00022 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00023}00023 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00024}00024 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00025}00025 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00026}00026 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00028}00028 \textcolor{comment}{ * File: \$Id: mbcrc.c,v 1.7 2007/02/18 23:50:27 wolti Exp \$}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00029}00029 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00031}00031 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Platform includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00032}00032 \textcolor{preprocessor}{\#include "{}port.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00034}\mbox{\hyperlink{mbcrc_8c_a3c8c243843ff5f7d637d6e515468a6e0}{00034}} \textcolor{keyword}{static} \textcolor{keyword}{const} UCHAR \mbox{\hyperlink{mbcrc_8c_a3c8c243843ff5f7d637d6e515468a6e0}{aucCRCHi}}[] = \{}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00035}00035     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00036}00036     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00037}00037     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00038}00038     0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00039}00039     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00040}00040     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00041}00041     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00042}00042     0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00043}00043     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00044}00044     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00045}00045     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00046}00046     0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, }
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00047}00047     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00048}00048     0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, }
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00049}00049     0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00050}00050     0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00051}00051     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, }
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00052}00052     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00053}00053     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00054}00054     0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00055}00055     0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00056}00056     0x00, 0xC1, 0x81, 0x40}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00057}00057 \};}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00059}\mbox{\hyperlink{mbcrc_8c_ac7191e1b186e144f5c19d1fc78c09719}{00059}} \textcolor{keyword}{static} \textcolor{keyword}{const} UCHAR \mbox{\hyperlink{mbcrc_8c_ac7191e1b186e144f5c19d1fc78c09719}{aucCRCLo}}[] = \{}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00060}00060     0x00, 0xC0, 0xC1, 0x01, 0xC3, 0x03, 0x02, 0xC2, 0xC6, 0x06, 0x07, 0xC7,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00061}00061     0x05, 0xC5, 0xC4, 0x04, 0xCC, 0x0C, 0x0D, 0xCD, 0x0F, 0xCF, 0xCE, 0x0E,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00062}00062     0x0A, 0xCA, 0xCB, 0x0B, 0xC9, 0x09, 0x08, 0xC8, 0xD8, 0x18, 0x19, 0xD9,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00063}00063     0x1B, 0xDB, 0xDA, 0x1A, 0x1E, 0xDE, 0xDF, 0x1F, 0xDD, 0x1D, 0x1C, 0xDC,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00064}00064     0x14, 0xD4, 0xD5, 0x15, 0xD7, 0x17, 0x16, 0xD6, 0xD2, 0x12, 0x13, 0xD3,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00065}00065     0x11, 0xD1, 0xD0, 0x10, 0xF0, 0x30, 0x31, 0xF1, 0x33, 0xF3, 0xF2, 0x32,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00066}00066     0x36, 0xF6, 0xF7, 0x37, 0xF5, 0x35, 0x34, 0xF4, 0x3C, 0xFC, 0xFD, 0x3D,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00067}00067     0xFF, 0x3F, 0x3E, 0xFE, 0xFA, 0x3A, 0x3B, 0xFB, 0x39, 0xF9, 0xF8, 0x38, }
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00068}00068     0x28, 0xE8, 0xE9, 0x29, 0xEB, 0x2B, 0x2A, 0xEA, 0xEE, 0x2E, 0x2F, 0xEF,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00069}00069     0x2D, 0xED, 0xEC, 0x2C, 0xE4, 0x24, 0x25, 0xE5, 0x27, 0xE7, 0xE6, 0x26,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00070}00070     0x22, 0xE2, 0xE3, 0x23, 0xE1, 0x21, 0x20, 0xE0, 0xA0, 0x60, 0x61, 0xA1,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00071}00071     0x63, 0xA3, 0xA2, 0x62, 0x66, 0xA6, 0xA7, 0x67, 0xA5, 0x65, 0x64, 0xA4,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00072}00072     0x6C, 0xAC, 0xAD, 0x6D, 0xAF, 0x6F, 0x6E, 0xAE, 0xAA, 0x6A, 0x6B, 0xAB, }
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00073}00073     0x69, 0xA9, 0xA8, 0x68, 0x78, 0xB8, 0xB9, 0x79, 0xBB, 0x7B, 0x7A, 0xBA,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00074}00074     0xBE, 0x7E, 0x7F, 0xBF, 0x7D, 0xBD, 0xBC, 0x7C, 0xB4, 0x74, 0x75, 0xB5,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00075}00075     0x77, 0xB7, 0xB6, 0x76, 0x72, 0xB2, 0xB3, 0x73, 0xB1, 0x71, 0x70, 0xB0,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00076}00076     0x50, 0x90, 0x91, 0x51, 0x93, 0x53, 0x52, 0x92, 0x96, 0x56, 0x57, 0x97,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00077}00077     0x55, 0x95, 0x94, 0x54, 0x9C, 0x5C, 0x5D, 0x9D, 0x5F, 0x9F, 0x9E, 0x5E,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00078}00078     0x5A, 0x9A, 0x9B, 0x5B, 0x99, 0x59, 0x58, 0x98, 0x88, 0x48, 0x49, 0x89,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00079}00079     0x4B, 0x8B, 0x8A, 0x4A, 0x4E, 0x8E, 0x8F, 0x4F, 0x8D, 0x4D, 0x4C, 0x8C,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00080}00080     0x44, 0x84, 0x85, 0x45, 0x87, 0x47, 0x46, 0x86, 0x82, 0x42, 0x43, 0x83,}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00081}00081     0x41, 0x81, 0x80, 0x40}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00082}00082 \};}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00084}00084 USHORT}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00085}\mbox{\hyperlink{mbcrc_8c_abc48f359fd99e303016c8b74cc82c3ff}{00085}} \mbox{\hyperlink{mbcrc_8c_abc48f359fd99e303016c8b74cc82c3ff}{usMBCRC16}}( UCHAR * pucFrame, USHORT usLen )}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00086}00086 \{}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00087}00087     UCHAR           ucCRCHi = 0xFF;}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00088}00088     UCHAR           ucCRCLo = 0xFF;}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00089}00089     \textcolor{keywordtype}{int}             iIndex;}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00091}00091     \textcolor{keywordflow}{while}( usLen-\/-\/ )}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00092}00092     \{}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00093}00093         iIndex = ucCRCLo \string^ *( pucFrame++ );}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00094}00094         ucCRCLo = ( UCHAR )( ucCRCHi \string^ \mbox{\hyperlink{mbcrc_8c_a3c8c243843ff5f7d637d6e515468a6e0}{aucCRCHi}}[iIndex] );}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00095}00095         ucCRCHi = \mbox{\hyperlink{mbcrc_8c_ac7191e1b186e144f5c19d1fc78c09719}{aucCRCLo}}[iIndex];}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00096}00096     \}}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00097}00097     \textcolor{keywordflow}{return} ( USHORT )( ucCRCHi << 8 | ucCRCLo );}
+\DoxyCodeLine{\Hypertarget{mbcrc_8c_source_l00098}00098 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,924 @@
+\hypertarget{gvcjob_8h}{}\doxysection{Файл for lab/\+Graphviz/include/graphviz/gvcjob.h}
+\label{gvcjob_8h}\index{for lab/Graphviz/include/graphviz/gvcjob.h@{for lab/Graphviz/include/graphviz/gvcjob.h}}
+{\ttfamily \#include \char`\"{}gvcommon.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}color.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Граф включаемых заголовочных файлов для gvcjob.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{gvcjob_8h__incl}
+\end{center}
+\end{figure}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gvcjob_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgvrender__features__t}{gvrender\+\_\+features\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgvdevice__features__t}{gvdevice\+\_\+features\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgvplugin__active__device__s}{gvplugin\+\_\+active\+\_\+device\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{structgvplugin__active__render__s}{gvplugin\+\_\+active\+\_\+render\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{structgvplugin__active__loadimage__t}{gvplugin\+\_\+active\+\_\+loadimage\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgv__argvlist__s}{gv\+\_\+argvlist\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{structgvdevice__callbacks__s}{gvdevice\+\_\+callbacks\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{structgvevent__key__binding__s}{gvevent\+\_\+key\+\_\+binding\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{structobj__state__s}{obj\+\_\+state\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_g_v_j__s}{GVJ\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a4163b4a4e9d8f2949741962dca6c5944}{ARRAY\+\_\+\+SIZE}}(\mbox{\hyperlink{class_a}{A}})~(sizeof(\mbox{\hyperlink{class_a}{A}})/sizeof(\mbox{\hyperlink{class_a}{A}}\mbox{[}0\mbox{]}))
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_ad03a35ae3e8eb2d22ba05e3ab13469c2}{PENWIDTH\+\_\+\+NORMAL}}~1.
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_aa9d4b93a7285736626367c79e6a7e65b}{PENWIDTH\+\_\+\+BOLD}}~2.
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a33cff4ced6fee87fe933a71a93d1ddd8}{EMIT\+\_\+\+SORTED}}~(1$<$$<$0)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_ae4042465ba24c90c087a0e3071ea8939}{EMIT\+\_\+\+COLORS}}~(1$<$$<$1)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a01da62f83c93432d776dfb82ee06cc7f}{EMIT\+\_\+\+CLUSTERS\+\_\+\+LAST}}~(1$<$$<$2)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a995caee67c9846d771eefc6132318bbc}{EMIT\+\_\+\+PREORDER}}~(1$<$$<$3)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a409796dc1ac7058fa2a40d578a7297cc}{EMIT\+\_\+\+EDGE\+\_\+\+SORTED}}~(1$<$$<$4)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a67eb586db6b3ae361191f4fa2f0d6517}{GVDEVICE\+\_\+\+DOES\+\_\+\+PAGES}}~(1$<$$<$5)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a6a8bc9b005d1a7185df952fa8c618c8c}{GVDEVICE\+\_\+\+DOES\+\_\+\+LAYERS}}~(1$<$$<$6)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_aa811a27986a93bb5f01e98426b9331e5}{GVDEVICE\+\_\+\+EVENTS}}~(1$<$$<$7)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a6ee2b7613e1ad8bae8dd3a884ec58c06}{GVDEVICE\+\_\+\+DOES\+\_\+\+TRUECOLOR}}~(1$<$$<$8)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a7a9454ee5e1bc0aa49d8c39c468b66c4}{GVDEVICE\+\_\+\+BINARY\+\_\+\+FORMAT}}~(1$<$$<$9)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a2c946332a8e7484bda55e93d62e7312d}{GVDEVICE\+\_\+\+COMPRESSED\+\_\+\+FORMAT}}~(1$<$$<$10)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a106f6008cfc71d48b8b67cd47c530e6d}{GVDEVICE\+\_\+\+NO\+\_\+\+WRITER}}~(1$<$$<$11)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_addcf4609271d0fed66432102fcc49e60}{GVRENDER\+\_\+\+Y\+\_\+\+GOES\+\_\+\+DOWN}}~(1$<$$<$12)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_ad6673704b17c99db9588bfe4bea1ceae}{GVRENDER\+\_\+\+DOES\+\_\+\+TRANSFORM}}~(1$<$$<$13)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_aabb425dac84ebb15dc214b6b24efe51a}{GVRENDER\+\_\+\+DOES\+\_\+\+ARROWS}}~(1$<$$<$14)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a42800cf2328a05b351d97de328f71835}{GVRENDER\+\_\+\+DOES\+\_\+\+LABELS}}~(1$<$$<$15)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_aaa937a02c6c7be59cdab7b6f82da6586}{GVRENDER\+\_\+\+DOES\+\_\+\+MAPS}}~(1$<$$<$16)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_af2ff5cf11d0ecef08c1e384a04f959e1}{GVRENDER\+\_\+\+DOES\+\_\+\+MAP\+\_\+\+RECTANGLE}}~(1$<$$<$17)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_af6d511694b77a3a5571a8dc0126fcdb9}{GVRENDER\+\_\+\+DOES\+\_\+\+MAP\+\_\+\+CIRCLE}}~(1$<$$<$18)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_af0bcd860ee725637b5103ffe3a30ea62}{GVRENDER\+\_\+\+DOES\+\_\+\+MAP\+\_\+\+POLYGON}}~(1$<$$<$19)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a1a555b3636bc63f4552b4a16be7f89ee}{GVRENDER\+\_\+\+DOES\+\_\+\+MAP\+\_\+\+ELLIPSE}}~(1$<$$<$20)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_acf41c3ae6a6d67d1ad1e1f5c1ae516f0}{GVRENDER\+\_\+\+DOES\+\_\+\+MAP\+\_\+\+BSPLINE}}~(1$<$$<$21)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a3abe26a1a0e7d49d56453a51959594dd}{GVRENDER\+\_\+\+DOES\+\_\+\+TOOLTIPS}}~(1$<$$<$22)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_ab011b585d098198162a67fb32cae2cd0}{GVRENDER\+\_\+\+DOES\+\_\+\+TARGETS}}~(1$<$$<$23)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a3d70997394b899458fd789d902b1764e}{GVRENDER\+\_\+\+DOES\+\_\+Z}}~(1$<$$<$24)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a4a3678c81c256d0d298d18a3e72cbcab}{GVRENDER\+\_\+\+NO\+\_\+\+WHITE\+\_\+\+BG}}~(1$<$$<$25)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a862bdd7c9410e889ce13a7728af40bbb}{LAYOUT\+\_\+\+NOT\+\_\+\+REQUIRED}}~(1$<$$<$26)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a430d4d79ac8eba41cf38a7f11265dee4}{OUTPUT\+\_\+\+NOT\+\_\+\+REQUIRED}}~(1$<$$<$27)
+\item 
+\#define \mbox{\hyperlink{gvcjob_8h_a5370b8bc484c0586d8537944b1f3a8b3}{LAYOUT\+\_\+\+USES\+\_\+\+RANKDIR}}~(1$<$$<$0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structgvdevice__engine__s}{gvdevice\+\_\+engine\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_acc098e86302e99b8dd0a76e841b01e87}{gvdevice\+\_\+engine\+\_\+t}}
+\item 
+typedef struct gvformatter\+\_\+engine\+\_\+s \mbox{\hyperlink{gvcjob_8h_aa97e4762258d383100569d7edf4f3199}{gvformatter\+\_\+engine\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structgvrender__engine__s}{gvrender\+\_\+engine\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_aa1b4a9a81e4c8d4e96a557de936fcb44}{gvrender\+\_\+engine\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structgvlayout__engine__s}{gvlayout\+\_\+engine\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a6239c348363fd19ac844b85bbcaee9ec}{gvlayout\+\_\+engine\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structgvtextlayout__engine__s}{gvtextlayout\+\_\+engine\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_af590c2b964f21ea238a2f2ab665215a8}{gvtextlayout\+\_\+engine\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structgvloadimage__engine__s}{gvloadimage\+\_\+engine\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a73586fb7b758379b308c315388f92a09}{gvloadimage\+\_\+engine\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structgvplugin__active__device__s}{gvplugin\+\_\+active\+\_\+device\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a6bd180a852d179da562b0c365c59b631}{gvplugin\+\_\+active\+\_\+device\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structgvplugin__active__render__s}{gvplugin\+\_\+active\+\_\+render\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a8788f43ffca88d5e43ed142d8e2d9fa1}{gvplugin\+\_\+active\+\_\+render\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structgvplugin__active__loadimage__t}{gvplugin\+\_\+active\+\_\+loadimage\+\_\+t}} \mbox{\hyperlink{gvcjob_8h_a0c5ed8bb62cb3ee06cdf5c42eb70e169}{gvplugin\+\_\+active\+\_\+loadimage\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structgv__argvlist__s}{gv\+\_\+argvlist\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_ad48939660aaacb77166ba39c7a8c8719}{gv\+\_\+argvlist\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structgvdevice__callbacks__s}{gvdevice\+\_\+callbacks\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a0c978aacd50e6c6bb3a16577fc53c475}{gvdevice\+\_\+callbacks\+\_\+t}}
+\item 
+typedef int($\ast$ \mbox{\hyperlink{gvcjob_8h_a4f6a6d73e7cd18369649c5cce7f65278}{gvevent\+\_\+key\+\_\+callback\+\_\+t}}) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+typedef struct \mbox{\hyperlink{structgvevent__key__binding__s}{gvevent\+\_\+key\+\_\+binding\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a6de1c57369bc42ccc482b87d6174bc20}{gvevent\+\_\+key\+\_\+binding\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structobj__state__s}{obj\+\_\+state\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a02731e816998f46b1511d36eff0260ec}{obj\+\_\+state\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44}{pen\+\_\+type}} \{ \mbox{\hyperlink{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44a1ea6f58bfade3f78fe217ef328fce04d}{PEN\+\_\+\+NONE}}
+, \mbox{\hyperlink{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44ab1f05ac68389e236654d79692b26e7ff}{PEN\+\_\+\+DASHED}}
+, \mbox{\hyperlink{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44aa7d50db1156eddf79a8c8c316d3790b1}{PEN\+\_\+\+DOTTED}}
+, \mbox{\hyperlink{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44a9dd963620972293d3b7821d923ce51d9}{PEN\+\_\+\+SOLID}}
+ \}
+\item 
+enum \mbox{\hyperlink{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72}{fill\+\_\+type}} \{ \mbox{\hyperlink{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a4d3aeee5877e819284efa1e457b22f34}{FILL\+\_\+\+NONE}}
+, \mbox{\hyperlink{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a9d6d4108c1f3913f3a4b6a09a9962809}{FILL\+\_\+\+SOLID}}
+, \mbox{\hyperlink{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a4a6e86dd59b94007d997b9cb3c5e2e33}{FILL\+\_\+\+LINEAR}}
+, \mbox{\hyperlink{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a333224a0f8e27c7b44dd3786468a53d6}{FILL\+\_\+\+RADIAL}}
+ \}
+\item 
+enum \mbox{\hyperlink{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591}{font\+\_\+type}} \{ \mbox{\hyperlink{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591a5162dac0177f2dd4e0a8435e5184e359}{FONT\+\_\+\+REGULAR}}
+, \mbox{\hyperlink{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591a7a078f2b20d42d7f352d35396217e1ba}{FONT\+\_\+\+BOLD}}
+, \mbox{\hyperlink{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591aff11f5dd59d891ef3b880dbccca4ea2a}{FONT\+\_\+\+ITALIC}}
+ \}
+\item 
+enum \mbox{\hyperlink{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38}{label\+\_\+type}} \{ \mbox{\hyperlink{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38ac99e5e928ef0f8ce232b1758b68ba244}{LABEL\+\_\+\+PLAIN}}
+, \mbox{\hyperlink{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38a666836f69dad5233e18b0ee914d1cd7d}{LABEL\+\_\+\+HTML}}
+ \}
+\item 
+enum \mbox{\hyperlink{gvcjob_8h_aa94507a537afb96bd72499779f7aee18}{gvattr\+\_\+t}} \{ \mbox{\hyperlink{gvcjob_8h_aa94507a537afb96bd72499779f7aee18af82282feff99df6db7990b718e9e4aff}{GVATTR\+\_\+\+STRING}}
+, \mbox{\hyperlink{gvcjob_8h_aa94507a537afb96bd72499779f7aee18ab361c9957d953d10f940086f828994ba}{GVATTR\+\_\+\+BOOL}}
+, \mbox{\hyperlink{gvcjob_8h_aa94507a537afb96bd72499779f7aee18aeb9159ae9c5b896b9ebdadeda52857e0}{GVATTR\+\_\+\+COLOR}}
+ \}
+\item 
+enum \mbox{\hyperlink{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bb}{map\+\_\+shape\+\_\+t}} \{ \mbox{\hyperlink{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba93750fa7b7e32fdde29435cbc49c0990}{MAP\+\_\+\+RECTANGLE}}
+, \mbox{\hyperlink{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba52bb0ede7a27b16527d915d512786bf8}{MAP\+\_\+\+CIRCLE}}
+, \mbox{\hyperlink{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba8b0f19b8c292d1d2e9772feb41cc4496}{MAP\+\_\+\+POLYGON}}
+ \}
+\item 
+enum \mbox{\hyperlink{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92}{obj\+\_\+type}} \{ \mbox{\hyperlink{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a552c0763f679b759c8083a2312db5670}{ROOTGRAPH\+\_\+\+OBJTYPE}}
+, \mbox{\hyperlink{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a32600cff05c8f94a126d59b08bbac81c}{CLUSTER\+\_\+\+OBJTYPE}}
+, \mbox{\hyperlink{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a97f20f6ae4bbbf503430fb49f051a61e}{NODE\+\_\+\+OBJTYPE}}
+, \mbox{\hyperlink{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a4b2fac9faf34f5eb8777db67b361e35f}{EDGE\+\_\+\+OBJTYPE}}
+ \}
+\item 
+enum \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0}{emit\+\_\+state\+\_\+t}} \{ \newline
+\mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a68607c437efe73900c9263cd4f03b9a2}{EMIT\+\_\+\+GDRAW}}
+, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a0e2e1037a7ea49ba93e1660b916905ab}{EMIT\+\_\+\+CDRAW}}
+, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a2b3a09852e892aef3b852d6015725cfb}{EMIT\+\_\+\+TDRAW}}
+, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a3e59bbb4aff494333b724015f3391986}{EMIT\+\_\+\+HDRAW}}
+, \newline
+\mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ac9c989cb015d82004843b3cd9ccabce7}{EMIT\+\_\+\+GLABEL}}
+, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0aef804da377cf9ba079e759674b76fdf8}{EMIT\+\_\+\+CLABEL}}
+, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0af46f555368f3e4b5ab9f135588ec5995}{EMIT\+\_\+\+TLABEL}}
+, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a449206c43bd305ad3caee2c54c04a892}{EMIT\+\_\+\+HLABEL}}
+, \newline
+\mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a1d814d818b407b71c600c5c59cbf43ae}{EMIT\+\_\+\+NDRAW}}
+, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ae215588aa83a61551880c7783ff2eb4c}{EMIT\+\_\+\+EDRAW}}
+, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ac27f9399c30523b952cdef6b74a016bd}{EMIT\+\_\+\+NLABEL}}
+, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0accb8094c46739f15f6a36a30392bdeba}{EMIT\+\_\+\+ELABEL}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{gvcjob_8h_a4163b4a4e9d8f2949741962dca6c5944}\label{gvcjob_8h_a4163b4a4e9d8f2949741962dca6c5944}} 
+\index{gvcjob.h@{gvcjob.h}!ARRAY\_SIZE@{ARRAY\_SIZE}}
+\index{ARRAY\_SIZE@{ARRAY\_SIZE}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{ARRAY\_SIZE}{ARRAY\_SIZE}}
+{\footnotesize\ttfamily \#define ARRAY\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{class_a}{A}} }\end{DoxyParamCaption})~(sizeof(\mbox{\hyperlink{class_a}{A}})/sizeof(\mbox{\hyperlink{class_a}{A}}\mbox{[}0\mbox{]}))}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00023}{23}}
+
+\mbox{\Hypertarget{gvcjob_8h_a01da62f83c93432d776dfb82ee06cc7f}\label{gvcjob_8h_a01da62f83c93432d776dfb82ee06cc7f}} 
+\index{gvcjob.h@{gvcjob.h}!EMIT\_CLUSTERS\_LAST@{EMIT\_CLUSTERS\_LAST}}
+\index{EMIT\_CLUSTERS\_LAST@{EMIT\_CLUSTERS\_LAST}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{EMIT\_CLUSTERS\_LAST}{EMIT\_CLUSTERS\_LAST}}
+{\footnotesize\ttfamily \#define EMIT\+\_\+\+CLUSTERS\+\_\+\+LAST~(1$<$$<$2)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00083}{83}}
+
+\mbox{\Hypertarget{gvcjob_8h_ae4042465ba24c90c087a0e3071ea8939}\label{gvcjob_8h_ae4042465ba24c90c087a0e3071ea8939}} 
+\index{gvcjob.h@{gvcjob.h}!EMIT\_COLORS@{EMIT\_COLORS}}
+\index{EMIT\_COLORS@{EMIT\_COLORS}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{EMIT\_COLORS}{EMIT\_COLORS}}
+{\footnotesize\ttfamily \#define EMIT\+\_\+\+COLORS~(1$<$$<$1)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00082}{82}}
+
+\mbox{\Hypertarget{gvcjob_8h_a409796dc1ac7058fa2a40d578a7297cc}\label{gvcjob_8h_a409796dc1ac7058fa2a40d578a7297cc}} 
+\index{gvcjob.h@{gvcjob.h}!EMIT\_EDGE\_SORTED@{EMIT\_EDGE\_SORTED}}
+\index{EMIT\_EDGE\_SORTED@{EMIT\_EDGE\_SORTED}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{EMIT\_EDGE\_SORTED}{EMIT\_EDGE\_SORTED}}
+{\footnotesize\ttfamily \#define EMIT\+\_\+\+EDGE\+\_\+\+SORTED~(1$<$$<$4)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00085}{85}}
+
+\mbox{\Hypertarget{gvcjob_8h_a995caee67c9846d771eefc6132318bbc}\label{gvcjob_8h_a995caee67c9846d771eefc6132318bbc}} 
+\index{gvcjob.h@{gvcjob.h}!EMIT\_PREORDER@{EMIT\_PREORDER}}
+\index{EMIT\_PREORDER@{EMIT\_PREORDER}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{EMIT\_PREORDER}{EMIT\_PREORDER}}
+{\footnotesize\ttfamily \#define EMIT\+\_\+\+PREORDER~(1$<$$<$3)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00084}{84}}
+
+\mbox{\Hypertarget{gvcjob_8h_a33cff4ced6fee87fe933a71a93d1ddd8}\label{gvcjob_8h_a33cff4ced6fee87fe933a71a93d1ddd8}} 
+\index{gvcjob.h@{gvcjob.h}!EMIT\_SORTED@{EMIT\_SORTED}}
+\index{EMIT\_SORTED@{EMIT\_SORTED}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{EMIT\_SORTED}{EMIT\_SORTED}}
+{\footnotesize\ttfamily \#define EMIT\+\_\+\+SORTED~(1$<$$<$0)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00081}{81}}
+
+\mbox{\Hypertarget{gvcjob_8h_a7a9454ee5e1bc0aa49d8c39c468b66c4}\label{gvcjob_8h_a7a9454ee5e1bc0aa49d8c39c468b66c4}} 
+\index{gvcjob.h@{gvcjob.h}!GVDEVICE\_BINARY\_FORMAT@{GVDEVICE\_BINARY\_FORMAT}}
+\index{GVDEVICE\_BINARY\_FORMAT@{GVDEVICE\_BINARY\_FORMAT}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVDEVICE\_BINARY\_FORMAT}{GVDEVICE\_BINARY\_FORMAT}}
+{\footnotesize\ttfamily \#define GVDEVICE\+\_\+\+BINARY\+\_\+\+FORMAT~(1$<$$<$9)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00090}{90}}
+
+\mbox{\Hypertarget{gvcjob_8h_a2c946332a8e7484bda55e93d62e7312d}\label{gvcjob_8h_a2c946332a8e7484bda55e93d62e7312d}} 
+\index{gvcjob.h@{gvcjob.h}!GVDEVICE\_COMPRESSED\_FORMAT@{GVDEVICE\_COMPRESSED\_FORMAT}}
+\index{GVDEVICE\_COMPRESSED\_FORMAT@{GVDEVICE\_COMPRESSED\_FORMAT}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVDEVICE\_COMPRESSED\_FORMAT}{GVDEVICE\_COMPRESSED\_FORMAT}}
+{\footnotesize\ttfamily \#define GVDEVICE\+\_\+\+COMPRESSED\+\_\+\+FORMAT~(1$<$$<$10)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00091}{91}}
+
+\mbox{\Hypertarget{gvcjob_8h_a6a8bc9b005d1a7185df952fa8c618c8c}\label{gvcjob_8h_a6a8bc9b005d1a7185df952fa8c618c8c}} 
+\index{gvcjob.h@{gvcjob.h}!GVDEVICE\_DOES\_LAYERS@{GVDEVICE\_DOES\_LAYERS}}
+\index{GVDEVICE\_DOES\_LAYERS@{GVDEVICE\_DOES\_LAYERS}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVDEVICE\_DOES\_LAYERS}{GVDEVICE\_DOES\_LAYERS}}
+{\footnotesize\ttfamily \#define GVDEVICE\+\_\+\+DOES\+\_\+\+LAYERS~(1$<$$<$6)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00087}{87}}
+
+\mbox{\Hypertarget{gvcjob_8h_a67eb586db6b3ae361191f4fa2f0d6517}\label{gvcjob_8h_a67eb586db6b3ae361191f4fa2f0d6517}} 
+\index{gvcjob.h@{gvcjob.h}!GVDEVICE\_DOES\_PAGES@{GVDEVICE\_DOES\_PAGES}}
+\index{GVDEVICE\_DOES\_PAGES@{GVDEVICE\_DOES\_PAGES}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVDEVICE\_DOES\_PAGES}{GVDEVICE\_DOES\_PAGES}}
+{\footnotesize\ttfamily \#define GVDEVICE\+\_\+\+DOES\+\_\+\+PAGES~(1$<$$<$5)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00086}{86}}
+
+\mbox{\Hypertarget{gvcjob_8h_a6ee2b7613e1ad8bae8dd3a884ec58c06}\label{gvcjob_8h_a6ee2b7613e1ad8bae8dd3a884ec58c06}} 
+\index{gvcjob.h@{gvcjob.h}!GVDEVICE\_DOES\_TRUECOLOR@{GVDEVICE\_DOES\_TRUECOLOR}}
+\index{GVDEVICE\_DOES\_TRUECOLOR@{GVDEVICE\_DOES\_TRUECOLOR}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVDEVICE\_DOES\_TRUECOLOR}{GVDEVICE\_DOES\_TRUECOLOR}}
+{\footnotesize\ttfamily \#define GVDEVICE\+\_\+\+DOES\+\_\+\+TRUECOLOR~(1$<$$<$8)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00089}{89}}
+
+\mbox{\Hypertarget{gvcjob_8h_aa811a27986a93bb5f01e98426b9331e5}\label{gvcjob_8h_aa811a27986a93bb5f01e98426b9331e5}} 
+\index{gvcjob.h@{gvcjob.h}!GVDEVICE\_EVENTS@{GVDEVICE\_EVENTS}}
+\index{GVDEVICE\_EVENTS@{GVDEVICE\_EVENTS}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVDEVICE\_EVENTS}{GVDEVICE\_EVENTS}}
+{\footnotesize\ttfamily \#define GVDEVICE\+\_\+\+EVENTS~(1$<$$<$7)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00088}{88}}
+
+\mbox{\Hypertarget{gvcjob_8h_a106f6008cfc71d48b8b67cd47c530e6d}\label{gvcjob_8h_a106f6008cfc71d48b8b67cd47c530e6d}} 
+\index{gvcjob.h@{gvcjob.h}!GVDEVICE\_NO\_WRITER@{GVDEVICE\_NO\_WRITER}}
+\index{GVDEVICE\_NO\_WRITER@{GVDEVICE\_NO\_WRITER}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVDEVICE\_NO\_WRITER}{GVDEVICE\_NO\_WRITER}}
+{\footnotesize\ttfamily \#define GVDEVICE\+\_\+\+NO\+\_\+\+WRITER~(1$<$$<$11)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00092}{92}}
+
+\mbox{\Hypertarget{gvcjob_8h_aabb425dac84ebb15dc214b6b24efe51a}\label{gvcjob_8h_aabb425dac84ebb15dc214b6b24efe51a}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_ARROWS@{GVRENDER\_DOES\_ARROWS}}
+\index{GVRENDER\_DOES\_ARROWS@{GVRENDER\_DOES\_ARROWS}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_ARROWS}{GVRENDER\_DOES\_ARROWS}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+\+ARROWS~(1$<$$<$14)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00095}{95}}
+
+\mbox{\Hypertarget{gvcjob_8h_a42800cf2328a05b351d97de328f71835}\label{gvcjob_8h_a42800cf2328a05b351d97de328f71835}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_LABELS@{GVRENDER\_DOES\_LABELS}}
+\index{GVRENDER\_DOES\_LABELS@{GVRENDER\_DOES\_LABELS}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_LABELS}{GVRENDER\_DOES\_LABELS}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+\+LABELS~(1$<$$<$15)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00096}{96}}
+
+\mbox{\Hypertarget{gvcjob_8h_acf41c3ae6a6d67d1ad1e1f5c1ae516f0}\label{gvcjob_8h_acf41c3ae6a6d67d1ad1e1f5c1ae516f0}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_MAP\_BSPLINE@{GVRENDER\_DOES\_MAP\_BSPLINE}}
+\index{GVRENDER\_DOES\_MAP\_BSPLINE@{GVRENDER\_DOES\_MAP\_BSPLINE}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_MAP\_BSPLINE}{GVRENDER\_DOES\_MAP\_BSPLINE}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+\+MAP\+\_\+\+BSPLINE~(1$<$$<$21)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00102}{102}}
+
+\mbox{\Hypertarget{gvcjob_8h_af6d511694b77a3a5571a8dc0126fcdb9}\label{gvcjob_8h_af6d511694b77a3a5571a8dc0126fcdb9}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_MAP\_CIRCLE@{GVRENDER\_DOES\_MAP\_CIRCLE}}
+\index{GVRENDER\_DOES\_MAP\_CIRCLE@{GVRENDER\_DOES\_MAP\_CIRCLE}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_MAP\_CIRCLE}{GVRENDER\_DOES\_MAP\_CIRCLE}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+\+MAP\+\_\+\+CIRCLE~(1$<$$<$18)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00099}{99}}
+
+\mbox{\Hypertarget{gvcjob_8h_a1a555b3636bc63f4552b4a16be7f89ee}\label{gvcjob_8h_a1a555b3636bc63f4552b4a16be7f89ee}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_MAP\_ELLIPSE@{GVRENDER\_DOES\_MAP\_ELLIPSE}}
+\index{GVRENDER\_DOES\_MAP\_ELLIPSE@{GVRENDER\_DOES\_MAP\_ELLIPSE}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_MAP\_ELLIPSE}{GVRENDER\_DOES\_MAP\_ELLIPSE}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+\+MAP\+\_\+\+ELLIPSE~(1$<$$<$20)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00101}{101}}
+
+\mbox{\Hypertarget{gvcjob_8h_af0bcd860ee725637b5103ffe3a30ea62}\label{gvcjob_8h_af0bcd860ee725637b5103ffe3a30ea62}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_MAP\_POLYGON@{GVRENDER\_DOES\_MAP\_POLYGON}}
+\index{GVRENDER\_DOES\_MAP\_POLYGON@{GVRENDER\_DOES\_MAP\_POLYGON}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_MAP\_POLYGON}{GVRENDER\_DOES\_MAP\_POLYGON}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+\+MAP\+\_\+\+POLYGON~(1$<$$<$19)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00100}{100}}
+
+\mbox{\Hypertarget{gvcjob_8h_af2ff5cf11d0ecef08c1e384a04f959e1}\label{gvcjob_8h_af2ff5cf11d0ecef08c1e384a04f959e1}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_MAP\_RECTANGLE@{GVRENDER\_DOES\_MAP\_RECTANGLE}}
+\index{GVRENDER\_DOES\_MAP\_RECTANGLE@{GVRENDER\_DOES\_MAP\_RECTANGLE}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_MAP\_RECTANGLE}{GVRENDER\_DOES\_MAP\_RECTANGLE}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+\+MAP\+\_\+\+RECTANGLE~(1$<$$<$17)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00098}{98}}
+
+\mbox{\Hypertarget{gvcjob_8h_aaa937a02c6c7be59cdab7b6f82da6586}\label{gvcjob_8h_aaa937a02c6c7be59cdab7b6f82da6586}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_MAPS@{GVRENDER\_DOES\_MAPS}}
+\index{GVRENDER\_DOES\_MAPS@{GVRENDER\_DOES\_MAPS}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_MAPS}{GVRENDER\_DOES\_MAPS}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+\+MAPS~(1$<$$<$16)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00097}{97}}
+
+\mbox{\Hypertarget{gvcjob_8h_ab011b585d098198162a67fb32cae2cd0}\label{gvcjob_8h_ab011b585d098198162a67fb32cae2cd0}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_TARGETS@{GVRENDER\_DOES\_TARGETS}}
+\index{GVRENDER\_DOES\_TARGETS@{GVRENDER\_DOES\_TARGETS}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_TARGETS}{GVRENDER\_DOES\_TARGETS}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+\+TARGETS~(1$<$$<$23)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00104}{104}}
+
+\mbox{\Hypertarget{gvcjob_8h_a3abe26a1a0e7d49d56453a51959594dd}\label{gvcjob_8h_a3abe26a1a0e7d49d56453a51959594dd}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_TOOLTIPS@{GVRENDER\_DOES\_TOOLTIPS}}
+\index{GVRENDER\_DOES\_TOOLTIPS@{GVRENDER\_DOES\_TOOLTIPS}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_TOOLTIPS}{GVRENDER\_DOES\_TOOLTIPS}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+\+TOOLTIPS~(1$<$$<$22)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00103}{103}}
+
+\mbox{\Hypertarget{gvcjob_8h_ad6673704b17c99db9588bfe4bea1ceae}\label{gvcjob_8h_ad6673704b17c99db9588bfe4bea1ceae}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_TRANSFORM@{GVRENDER\_DOES\_TRANSFORM}}
+\index{GVRENDER\_DOES\_TRANSFORM@{GVRENDER\_DOES\_TRANSFORM}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_TRANSFORM}{GVRENDER\_DOES\_TRANSFORM}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+\+TRANSFORM~(1$<$$<$13)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00094}{94}}
+
+\mbox{\Hypertarget{gvcjob_8h_a3d70997394b899458fd789d902b1764e}\label{gvcjob_8h_a3d70997394b899458fd789d902b1764e}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_DOES\_Z@{GVRENDER\_DOES\_Z}}
+\index{GVRENDER\_DOES\_Z@{GVRENDER\_DOES\_Z}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_DOES\_Z}{GVRENDER\_DOES\_Z}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+DOES\+\_\+Z~(1$<$$<$24)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00105}{105}}
+
+\mbox{\Hypertarget{gvcjob_8h_a4a3678c81c256d0d298d18a3e72cbcab}\label{gvcjob_8h_a4a3678c81c256d0d298d18a3e72cbcab}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_NO\_WHITE\_BG@{GVRENDER\_NO\_WHITE\_BG}}
+\index{GVRENDER\_NO\_WHITE\_BG@{GVRENDER\_NO\_WHITE\_BG}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_NO\_WHITE\_BG}{GVRENDER\_NO\_WHITE\_BG}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+NO\+\_\+\+WHITE\+\_\+\+BG~(1$<$$<$25)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00106}{106}}
+
+\mbox{\Hypertarget{gvcjob_8h_addcf4609271d0fed66432102fcc49e60}\label{gvcjob_8h_addcf4609271d0fed66432102fcc49e60}} 
+\index{gvcjob.h@{gvcjob.h}!GVRENDER\_Y\_GOES\_DOWN@{GVRENDER\_Y\_GOES\_DOWN}}
+\index{GVRENDER\_Y\_GOES\_DOWN@{GVRENDER\_Y\_GOES\_DOWN}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{GVRENDER\_Y\_GOES\_DOWN}{GVRENDER\_Y\_GOES\_DOWN}}
+{\footnotesize\ttfamily \#define GVRENDER\+\_\+\+Y\+\_\+\+GOES\+\_\+\+DOWN~(1$<$$<$12)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00093}{93}}
+
+\mbox{\Hypertarget{gvcjob_8h_a862bdd7c9410e889ce13a7728af40bbb}\label{gvcjob_8h_a862bdd7c9410e889ce13a7728af40bbb}} 
+\index{gvcjob.h@{gvcjob.h}!LAYOUT\_NOT\_REQUIRED@{LAYOUT\_NOT\_REQUIRED}}
+\index{LAYOUT\_NOT\_REQUIRED@{LAYOUT\_NOT\_REQUIRED}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{LAYOUT\_NOT\_REQUIRED}{LAYOUT\_NOT\_REQUIRED}}
+{\footnotesize\ttfamily \#define LAYOUT\+\_\+\+NOT\+\_\+\+REQUIRED~(1$<$$<$26)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00107}{107}}
+
+\mbox{\Hypertarget{gvcjob_8h_a5370b8bc484c0586d8537944b1f3a8b3}\label{gvcjob_8h_a5370b8bc484c0586d8537944b1f3a8b3}} 
+\index{gvcjob.h@{gvcjob.h}!LAYOUT\_USES\_RANKDIR@{LAYOUT\_USES\_RANKDIR}}
+\index{LAYOUT\_USES\_RANKDIR@{LAYOUT\_USES\_RANKDIR}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{LAYOUT\_USES\_RANKDIR}{LAYOUT\_USES\_RANKDIR}}
+{\footnotesize\ttfamily \#define LAYOUT\+\_\+\+USES\+\_\+\+RANKDIR~(1$<$$<$0)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00125}{125}}
+
+\mbox{\Hypertarget{gvcjob_8h_a430d4d79ac8eba41cf38a7f11265dee4}\label{gvcjob_8h_a430d4d79ac8eba41cf38a7f11265dee4}} 
+\index{gvcjob.h@{gvcjob.h}!OUTPUT\_NOT\_REQUIRED@{OUTPUT\_NOT\_REQUIRED}}
+\index{OUTPUT\_NOT\_REQUIRED@{OUTPUT\_NOT\_REQUIRED}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_NOT\_REQUIRED}{OUTPUT\_NOT\_REQUIRED}}
+{\footnotesize\ttfamily \#define OUTPUT\+\_\+\+NOT\+\_\+\+REQUIRED~(1$<$$<$27)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00108}{108}}
+
+\mbox{\Hypertarget{gvcjob_8h_aa9d4b93a7285736626367c79e6a7e65b}\label{gvcjob_8h_aa9d4b93a7285736626367c79e6a7e65b}} 
+\index{gvcjob.h@{gvcjob.h}!PENWIDTH\_BOLD@{PENWIDTH\_BOLD}}
+\index{PENWIDTH\_BOLD@{PENWIDTH\_BOLD}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{PENWIDTH\_BOLD}{PENWIDTH\_BOLD}}
+{\footnotesize\ttfamily \#define PENWIDTH\+\_\+\+BOLD~2.}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00038}{38}}
+
+\mbox{\Hypertarget{gvcjob_8h_ad03a35ae3e8eb2d22ba05e3ab13469c2}\label{gvcjob_8h_ad03a35ae3e8eb2d22ba05e3ab13469c2}} 
+\index{gvcjob.h@{gvcjob.h}!PENWIDTH\_NORMAL@{PENWIDTH\_NORMAL}}
+\index{PENWIDTH\_NORMAL@{PENWIDTH\_NORMAL}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{PENWIDTH\_NORMAL}{PENWIDTH\_NORMAL}}
+{\footnotesize\ttfamily \#define PENWIDTH\+\_\+\+NORMAL~1.}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00037}{37}}
+
+
+
+\doxysubsection{Типы}
+\mbox{\Hypertarget{gvcjob_8h_ad48939660aaacb77166ba39c7a8c8719}\label{gvcjob_8h_ad48939660aaacb77166ba39c7a8c8719}} 
+\index{gvcjob.h@{gvcjob.h}!gv\_argvlist\_t@{gv\_argvlist\_t}}
+\index{gv\_argvlist\_t@{gv\_argvlist\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gv\_argvlist\_t}{gv\_argvlist\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgv__argvlist__s}{gv\+\_\+argvlist\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_ad48939660aaacb77166ba39c7a8c8719}{gv\+\_\+argvlist\+\_\+t}}}
+
+\mbox{\Hypertarget{gvcjob_8h_a0c978aacd50e6c6bb3a16577fc53c475}\label{gvcjob_8h_a0c978aacd50e6c6bb3a16577fc53c475}} 
+\index{gvcjob.h@{gvcjob.h}!gvdevice\_callbacks\_t@{gvdevice\_callbacks\_t}}
+\index{gvdevice\_callbacks\_t@{gvdevice\_callbacks\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvdevice\_callbacks\_t}{gvdevice\_callbacks\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgvdevice__callbacks__s}{gvdevice\+\_\+callbacks\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a0c978aacd50e6c6bb3a16577fc53c475}{gvdevice\+\_\+callbacks\+\_\+t}}}
+
+\mbox{\Hypertarget{gvcjob_8h_acc098e86302e99b8dd0a76e841b01e87}\label{gvcjob_8h_acc098e86302e99b8dd0a76e841b01e87}} 
+\index{gvcjob.h@{gvcjob.h}!gvdevice\_engine\_t@{gvdevice\_engine\_t}}
+\index{gvdevice\_engine\_t@{gvdevice\_engine\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvdevice\_engine\_t}{gvdevice\_engine\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgvdevice__engine__s}{gvdevice\+\_\+engine\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_acc098e86302e99b8dd0a76e841b01e87}{gvdevice\+\_\+engine\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00025}{25}}
+
+\mbox{\Hypertarget{gvcjob_8h_a6de1c57369bc42ccc482b87d6174bc20}\label{gvcjob_8h_a6de1c57369bc42ccc482b87d6174bc20}} 
+\index{gvcjob.h@{gvcjob.h}!gvevent\_key\_binding\_t@{gvevent\_key\_binding\_t}}
+\index{gvevent\_key\_binding\_t@{gvevent\_key\_binding\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvevent\_key\_binding\_t}{gvevent\_key\_binding\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgvevent__key__binding__s}{gvevent\+\_\+key\+\_\+binding\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a6de1c57369bc42ccc482b87d6174bc20}{gvevent\+\_\+key\+\_\+binding\+\_\+t}}}
+
+\mbox{\Hypertarget{gvcjob_8h_a4f6a6d73e7cd18369649c5cce7f65278}\label{gvcjob_8h_a4f6a6d73e7cd18369649c5cce7f65278}} 
+\index{gvcjob.h@{gvcjob.h}!gvevent\_key\_callback\_t@{gvevent\_key\_callback\_t}}
+\index{gvevent\_key\_callback\_t@{gvevent\_key\_callback\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvevent\_key\_callback\_t}{gvevent\_key\_callback\_t}}
+{\footnotesize\ttfamily typedef int($\ast$ gvevent\+\_\+key\+\_\+callback\+\_\+t) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00165}{165}}
+
+\mbox{\Hypertarget{gvcjob_8h_aa97e4762258d383100569d7edf4f3199}\label{gvcjob_8h_aa97e4762258d383100569d7edf4f3199}} 
+\index{gvcjob.h@{gvcjob.h}!gvformatter\_engine\_t@{gvformatter\_engine\_t}}
+\index{gvformatter\_engine\_t@{gvformatter\_engine\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvformatter\_engine\_t}{gvformatter\_engine\_t}}
+{\footnotesize\ttfamily typedef struct gvformatter\+\_\+engine\+\_\+s \mbox{\hyperlink{gvcjob_8h_aa97e4762258d383100569d7edf4f3199}{gvformatter\+\_\+engine\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00026}{26}}
+
+\mbox{\Hypertarget{gvcjob_8h_a6239c348363fd19ac844b85bbcaee9ec}\label{gvcjob_8h_a6239c348363fd19ac844b85bbcaee9ec}} 
+\index{gvcjob.h@{gvcjob.h}!gvlayout\_engine\_t@{gvlayout\_engine\_t}}
+\index{gvlayout\_engine\_t@{gvlayout\_engine\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvlayout\_engine\_t}{gvlayout\_engine\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgvlayout__engine__s}{gvlayout\+\_\+engine\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a6239c348363fd19ac844b85bbcaee9ec}{gvlayout\+\_\+engine\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00028}{28}}
+
+\mbox{\Hypertarget{gvcjob_8h_a73586fb7b758379b308c315388f92a09}\label{gvcjob_8h_a73586fb7b758379b308c315388f92a09}} 
+\index{gvcjob.h@{gvcjob.h}!gvloadimage\_engine\_t@{gvloadimage\_engine\_t}}
+\index{gvloadimage\_engine\_t@{gvloadimage\_engine\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvloadimage\_engine\_t}{gvloadimage\_engine\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgvloadimage__engine__s}{gvloadimage\+\_\+engine\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a73586fb7b758379b308c315388f92a09}{gvloadimage\+\_\+engine\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00030}{30}}
+
+\mbox{\Hypertarget{gvcjob_8h_a6bd180a852d179da562b0c365c59b631}\label{gvcjob_8h_a6bd180a852d179da562b0c365c59b631}} 
+\index{gvcjob.h@{gvcjob.h}!gvplugin\_active\_device\_t@{gvplugin\_active\_device\_t}}
+\index{gvplugin\_active\_device\_t@{gvplugin\_active\_device\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvplugin\_active\_device\_t}{gvplugin\_active\_device\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgvplugin__active__device__s}{gvplugin\+\_\+active\+\_\+device\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a6bd180a852d179da562b0c365c59b631}{gvplugin\+\_\+active\+\_\+device\+\_\+t}}}
+
+\mbox{\Hypertarget{gvcjob_8h_a0c5ed8bb62cb3ee06cdf5c42eb70e169}\label{gvcjob_8h_a0c5ed8bb62cb3ee06cdf5c42eb70e169}} 
+\index{gvcjob.h@{gvcjob.h}!gvplugin\_active\_loadimage\_t@{gvplugin\_active\_loadimage\_t}}
+\index{gvplugin\_active\_loadimage\_t@{gvplugin\_active\_loadimage\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvplugin\_active\_loadimage\_t}{gvplugin\_active\_loadimage\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgvplugin__active__loadimage__t}{gvplugin\+\_\+active\+\_\+loadimage\+\_\+t}} \mbox{\hyperlink{structgvplugin__active__loadimage__t}{gvplugin\+\_\+active\+\_\+loadimage\+\_\+t}}}
+
+\mbox{\Hypertarget{gvcjob_8h_a8788f43ffca88d5e43ed142d8e2d9fa1}\label{gvcjob_8h_a8788f43ffca88d5e43ed142d8e2d9fa1}} 
+\index{gvcjob.h@{gvcjob.h}!gvplugin\_active\_render\_t@{gvplugin\_active\_render\_t}}
+\index{gvplugin\_active\_render\_t@{gvplugin\_active\_render\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvplugin\_active\_render\_t}{gvplugin\_active\_render\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgvplugin__active__render__s}{gvplugin\+\_\+active\+\_\+render\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a8788f43ffca88d5e43ed142d8e2d9fa1}{gvplugin\+\_\+active\+\_\+render\+\_\+t}}}
+
+\mbox{\Hypertarget{gvcjob_8h_aa1b4a9a81e4c8d4e96a557de936fcb44}\label{gvcjob_8h_aa1b4a9a81e4c8d4e96a557de936fcb44}} 
+\index{gvcjob.h@{gvcjob.h}!gvrender\_engine\_t@{gvrender\_engine\_t}}
+\index{gvrender\_engine\_t@{gvrender\_engine\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvrender\_engine\_t}{gvrender\_engine\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgvrender__engine__s}{gvrender\+\_\+engine\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_aa1b4a9a81e4c8d4e96a557de936fcb44}{gvrender\+\_\+engine\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00027}{27}}
+
+\mbox{\Hypertarget{gvcjob_8h_af590c2b964f21ea238a2f2ab665215a8}\label{gvcjob_8h_af590c2b964f21ea238a2f2ab665215a8}} 
+\index{gvcjob.h@{gvcjob.h}!gvtextlayout\_engine\_t@{gvtextlayout\_engine\_t}}
+\index{gvtextlayout\_engine\_t@{gvtextlayout\_engine\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvtextlayout\_engine\_t}{gvtextlayout\_engine\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structgvtextlayout__engine__s}{gvtextlayout\+\_\+engine\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_af590c2b964f21ea238a2f2ab665215a8}{gvtextlayout\+\_\+engine\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00029}{29}}
+
+\mbox{\Hypertarget{gvcjob_8h_a02731e816998f46b1511d36eff0260ec}\label{gvcjob_8h_a02731e816998f46b1511d36eff0260ec}} 
+\index{gvcjob.h@{gvcjob.h}!obj\_state\_t@{obj\_state\_t}}
+\index{obj\_state\_t@{obj\_state\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{obj\_state\_t}{obj\_state\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structobj__state__s}{obj\+\_\+state\+\_\+s}} \mbox{\hyperlink{gvcjob_8h_a02731e816998f46b1511d36eff0260ec}{obj\+\_\+state\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00185}{185}}
+
+
+
+\doxysubsection{Перечисления}
+\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0}} 
+\index{gvcjob.h@{gvcjob.h}!emit\_state\_t@{emit\_state\_t}}
+\index{emit\_state\_t@{emit\_state\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{emit\_state\_t}{emit\_state\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0}{emit\+\_\+state\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_GDRAW@{EMIT\_GDRAW}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_GDRAW@{EMIT\_GDRAW}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a68607c437efe73900c9263cd4f03b9a2}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a68607c437efe73900c9263cd4f03b9a2}} 
+EMIT\+\_\+\+GDRAW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_CDRAW@{EMIT\_CDRAW}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_CDRAW@{EMIT\_CDRAW}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a0e2e1037a7ea49ba93e1660b916905ab}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a0e2e1037a7ea49ba93e1660b916905ab}} 
+EMIT\+\_\+\+CDRAW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_TDRAW@{EMIT\_TDRAW}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_TDRAW@{EMIT\_TDRAW}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a2b3a09852e892aef3b852d6015725cfb}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a2b3a09852e892aef3b852d6015725cfb}} 
+EMIT\+\_\+\+TDRAW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_HDRAW@{EMIT\_HDRAW}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_HDRAW@{EMIT\_HDRAW}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a3e59bbb4aff494333b724015f3391986}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a3e59bbb4aff494333b724015f3391986}} 
+EMIT\+\_\+\+HDRAW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_GLABEL@{EMIT\_GLABEL}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_GLABEL@{EMIT\_GLABEL}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ac9c989cb015d82004843b3cd9ccabce7}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ac9c989cb015d82004843b3cd9ccabce7}} 
+EMIT\+\_\+\+GLABEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_CLABEL@{EMIT\_CLABEL}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_CLABEL@{EMIT\_CLABEL}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0aef804da377cf9ba079e759674b76fdf8}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0aef804da377cf9ba079e759674b76fdf8}} 
+EMIT\+\_\+\+CLABEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_TLABEL@{EMIT\_TLABEL}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_TLABEL@{EMIT\_TLABEL}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0af46f555368f3e4b5ab9f135588ec5995}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0af46f555368f3e4b5ab9f135588ec5995}} 
+EMIT\+\_\+\+TLABEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_HLABEL@{EMIT\_HLABEL}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_HLABEL@{EMIT\_HLABEL}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a449206c43bd305ad3caee2c54c04a892}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a449206c43bd305ad3caee2c54c04a892}} 
+EMIT\+\_\+\+HLABEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_NDRAW@{EMIT\_NDRAW}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_NDRAW@{EMIT\_NDRAW}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a1d814d818b407b71c600c5c59cbf43ae}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a1d814d818b407b71c600c5c59cbf43ae}} 
+EMIT\+\_\+\+NDRAW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_EDRAW@{EMIT\_EDRAW}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_EDRAW@{EMIT\_EDRAW}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ae215588aa83a61551880c7783ff2eb4c}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ae215588aa83a61551880c7783ff2eb4c}} 
+EMIT\+\_\+\+EDRAW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_NLABEL@{EMIT\_NLABEL}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_NLABEL@{EMIT\_NLABEL}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ac27f9399c30523b952cdef6b74a016bd}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ac27f9399c30523b952cdef6b74a016bd}} 
+EMIT\+\_\+\+NLABEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMIT\_ELABEL@{EMIT\_ELABEL}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EMIT\_ELABEL@{EMIT\_ELABEL}}}\mbox{\Hypertarget{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0accb8094c46739f15f6a36a30392bdeba}\label{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0accb8094c46739f15f6a36a30392bdeba}} 
+EMIT\+\_\+\+ELABEL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00179}{179}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00179                  \{}
+\DoxyCodeLine{00180     \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a68607c437efe73900c9263cd4f03b9a2}{EMIT\_GDRAW}}, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a0e2e1037a7ea49ba93e1660b916905ab}{EMIT\_CDRAW}}, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a2b3a09852e892aef3b852d6015725cfb}{EMIT\_TDRAW}}, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a3e59bbb4aff494333b724015f3391986}{EMIT\_HDRAW}}, }
+\DoxyCodeLine{00181     \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ac9c989cb015d82004843b3cd9ccabce7}{EMIT\_GLABEL}}, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0aef804da377cf9ba079e759674b76fdf8}{EMIT\_CLABEL}}, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0af46f555368f3e4b5ab9f135588ec5995}{EMIT\_TLABEL}}, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a449206c43bd305ad3caee2c54c04a892}{EMIT\_HLABEL}}, }
+\DoxyCodeLine{00182     \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0a1d814d818b407b71c600c5c59cbf43ae}{EMIT\_NDRAW}}, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ae215588aa83a61551880c7783ff2eb4c}{EMIT\_EDRAW}}, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0ac27f9399c30523b952cdef6b74a016bd}{EMIT\_NLABEL}}, \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0accb8094c46739f15f6a36a30392bdeba}{EMIT\_ELABEL}},}
+\DoxyCodeLine{00183     \} \mbox{\hyperlink{gvcjob_8h_a9d67f57cb353edb06b582591b3f1eaf0}{emit\_state\_t}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72}\label{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72}} 
+\index{gvcjob.h@{gvcjob.h}!fill\_type@{fill\_type}}
+\index{fill\_type@{fill\_type}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{fill\_type}{fill\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72}{fill\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILL\_NONE@{FILL\_NONE}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!FILL\_NONE@{FILL\_NONE}}}\mbox{\Hypertarget{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a4d3aeee5877e819284efa1e457b22f34}\label{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a4d3aeee5877e819284efa1e457b22f34}} 
+FILL\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILL\_SOLID@{FILL\_SOLID}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!FILL\_SOLID@{FILL\_SOLID}}}\mbox{\Hypertarget{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a9d6d4108c1f3913f3a4b6a09a9962809}\label{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a9d6d4108c1f3913f3a4b6a09a9962809}} 
+FILL\+\_\+\+SOLID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILL\_LINEAR@{FILL\_LINEAR}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!FILL\_LINEAR@{FILL\_LINEAR}}}\mbox{\Hypertarget{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a4a6e86dd59b94007d997b9cb3c5e2e33}\label{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a4a6e86dd59b94007d997b9cb3c5e2e33}} 
+FILL\+\_\+\+LINEAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FILL\_RADIAL@{FILL\_RADIAL}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!FILL\_RADIAL@{FILL\_RADIAL}}}\mbox{\Hypertarget{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a333224a0f8e27c7b44dd3786468a53d6}\label{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a333224a0f8e27c7b44dd3786468a53d6}} 
+FILL\+\_\+\+RADIAL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00033}{33}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033 \{ \mbox{\hyperlink{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a4d3aeee5877e819284efa1e457b22f34}{FILL\_NONE}}, \mbox{\hyperlink{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a9d6d4108c1f3913f3a4b6a09a9962809}{FILL\_SOLID}}, \mbox{\hyperlink{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a4a6e86dd59b94007d997b9cb3c5e2e33}{FILL\_LINEAR}}, \mbox{\hyperlink{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72a333224a0f8e27c7b44dd3786468a53d6}{FILL\_RADIAL}} \} \mbox{\hyperlink{gvcjob_8h_a8b3c1e8eaca9ba6bf60627aee8bb9e72}{fill\_type}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591}\label{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591}} 
+\index{gvcjob.h@{gvcjob.h}!font\_type@{font\_type}}
+\index{font\_type@{font\_type}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{font\_type}{font\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591}{font\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FONT\_REGULAR@{FONT\_REGULAR}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!FONT\_REGULAR@{FONT\_REGULAR}}}\mbox{\Hypertarget{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591a5162dac0177f2dd4e0a8435e5184e359}\label{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591a5162dac0177f2dd4e0a8435e5184e359}} 
+FONT\+\_\+\+REGULAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FONT\_BOLD@{FONT\_BOLD}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!FONT\_BOLD@{FONT\_BOLD}}}\mbox{\Hypertarget{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591a7a078f2b20d42d7f352d35396217e1ba}\label{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591a7a078f2b20d42d7f352d35396217e1ba}} 
+FONT\+\_\+\+BOLD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FONT\_ITALIC@{FONT\_ITALIC}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!FONT\_ITALIC@{FONT\_ITALIC}}}\mbox{\Hypertarget{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591aff11f5dd59d891ef3b880dbccca4ea2a}\label{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591aff11f5dd59d891ef3b880dbccca4ea2a}} 
+FONT\+\_\+\+ITALIC&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00034}{34}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034 \{ \mbox{\hyperlink{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591a5162dac0177f2dd4e0a8435e5184e359}{FONT\_REGULAR}}, \mbox{\hyperlink{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591a7a078f2b20d42d7f352d35396217e1ba}{FONT\_BOLD}}, \mbox{\hyperlink{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591aff11f5dd59d891ef3b880dbccca4ea2a}{FONT\_ITALIC}} \} \mbox{\hyperlink{gvcjob_8h_a053425e9fef4e52c94d07c3ea352a591}{font\_type}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gvcjob_8h_aa94507a537afb96bd72499779f7aee18}\label{gvcjob_8h_aa94507a537afb96bd72499779f7aee18}} 
+\index{gvcjob.h@{gvcjob.h}!gvattr\_t@{gvattr\_t}}
+\index{gvattr\_t@{gvattr\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{gvattr\_t}{gvattr\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gvcjob_8h_aa94507a537afb96bd72499779f7aee18}{gvattr\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GVATTR\_STRING@{GVATTR\_STRING}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!GVATTR\_STRING@{GVATTR\_STRING}}}\mbox{\Hypertarget{gvcjob_8h_aa94507a537afb96bd72499779f7aee18af82282feff99df6db7990b718e9e4aff}\label{gvcjob_8h_aa94507a537afb96bd72499779f7aee18af82282feff99df6db7990b718e9e4aff}} 
+GVATTR\+\_\+\+STRING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GVATTR\_BOOL@{GVATTR\_BOOL}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!GVATTR\_BOOL@{GVATTR\_BOOL}}}\mbox{\Hypertarget{gvcjob_8h_aa94507a537afb96bd72499779f7aee18ab361c9957d953d10f940086f828994ba}\label{gvcjob_8h_aa94507a537afb96bd72499779f7aee18ab361c9957d953d10f940086f828994ba}} 
+GVATTR\+\_\+\+BOOL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GVATTR\_COLOR@{GVATTR\_COLOR}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!GVATTR\_COLOR@{GVATTR\_COLOR}}}\mbox{\Hypertarget{gvcjob_8h_aa94507a537afb96bd72499779f7aee18aeb9159ae9c5b896b9ebdadeda52857e0}\label{gvcjob_8h_aa94507a537afb96bd72499779f7aee18aeb9159ae9c5b896b9ebdadeda52857e0}} 
+GVATTR\+\_\+\+COLOR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00039}{39}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039 \{ \mbox{\hyperlink{gvcjob_8h_aa94507a537afb96bd72499779f7aee18af82282feff99df6db7990b718e9e4aff}{GVATTR\_STRING}}, \mbox{\hyperlink{gvcjob_8h_aa94507a537afb96bd72499779f7aee18ab361c9957d953d10f940086f828994ba}{GVATTR\_BOOL}}, \mbox{\hyperlink{gvcjob_8h_aa94507a537afb96bd72499779f7aee18aeb9159ae9c5b896b9ebdadeda52857e0}{GVATTR\_COLOR}} \} \mbox{\hyperlink{gvcjob_8h_aa94507a537afb96bd72499779f7aee18}{gvattr\_t}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38}\label{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38}} 
+\index{gvcjob.h@{gvcjob.h}!label\_type@{label\_type}}
+\index{label\_type@{label\_type}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{label\_type}{label\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38}{label\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LABEL\_PLAIN@{LABEL\_PLAIN}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!LABEL\_PLAIN@{LABEL\_PLAIN}}}\mbox{\Hypertarget{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38ac99e5e928ef0f8ce232b1758b68ba244}\label{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38ac99e5e928ef0f8ce232b1758b68ba244}} 
+LABEL\+\_\+\+PLAIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LABEL\_HTML@{LABEL\_HTML}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!LABEL\_HTML@{LABEL\_HTML}}}\mbox{\Hypertarget{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38a666836f69dad5233e18b0ee914d1cd7d}\label{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38a666836f69dad5233e18b0ee914d1cd7d}} 
+LABEL\+\_\+\+HTML&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00035}{35}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035 \{ \mbox{\hyperlink{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38ac99e5e928ef0f8ce232b1758b68ba244}{LABEL\_PLAIN}}, \mbox{\hyperlink{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38a666836f69dad5233e18b0ee914d1cd7d}{LABEL\_HTML}} \} \mbox{\hyperlink{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38}{label\_type}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bb}\label{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bb}} 
+\index{gvcjob.h@{gvcjob.h}!map\_shape\_t@{map\_shape\_t}}
+\index{map\_shape\_t@{map\_shape\_t}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{map\_shape\_t}{map\_shape\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bb}{map\+\_\+shape\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAP\_RECTANGLE@{MAP\_RECTANGLE}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!MAP\_RECTANGLE@{MAP\_RECTANGLE}}}\mbox{\Hypertarget{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba93750fa7b7e32fdde29435cbc49c0990}\label{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba93750fa7b7e32fdde29435cbc49c0990}} 
+MAP\+\_\+\+RECTANGLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAP\_CIRCLE@{MAP\_CIRCLE}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!MAP\_CIRCLE@{MAP\_CIRCLE}}}\mbox{\Hypertarget{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba52bb0ede7a27b16527d915d512786bf8}\label{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba52bb0ede7a27b16527d915d512786bf8}} 
+MAP\+\_\+\+CIRCLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAP\_POLYGON@{MAP\_POLYGON}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!MAP\_POLYGON@{MAP\_POLYGON}}}\mbox{\Hypertarget{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba8b0f19b8c292d1d2e9772feb41cc4496}\label{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba8b0f19b8c292d1d2e9772feb41cc4496}} 
+MAP\+\_\+\+POLYGON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00172}{172}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00172 \{\mbox{\hyperlink{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba93750fa7b7e32fdde29435cbc49c0990}{MAP\_RECTANGLE}}, \mbox{\hyperlink{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba52bb0ede7a27b16527d915d512786bf8}{MAP\_CIRCLE}}, \mbox{\hyperlink{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bba8b0f19b8c292d1d2e9772feb41cc4496}{MAP\_POLYGON}}, \} \mbox{\hyperlink{gvcjob_8h_a5ce3b3a21716351feb74e0155b6499bb}{map\_shape\_t}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92}\label{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92}} 
+\index{gvcjob.h@{gvcjob.h}!obj\_type@{obj\_type}}
+\index{obj\_type@{obj\_type}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{obj\_type}{obj\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92}{obj\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROOTGRAPH\_OBJTYPE@{ROOTGRAPH\_OBJTYPE}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!ROOTGRAPH\_OBJTYPE@{ROOTGRAPH\_OBJTYPE}}}\mbox{\Hypertarget{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a552c0763f679b759c8083a2312db5670}\label{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a552c0763f679b759c8083a2312db5670}} 
+ROOTGRAPH\+\_\+\+OBJTYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLUSTER\_OBJTYPE@{CLUSTER\_OBJTYPE}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!CLUSTER\_OBJTYPE@{CLUSTER\_OBJTYPE}}}\mbox{\Hypertarget{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a32600cff05c8f94a126d59b08bbac81c}\label{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a32600cff05c8f94a126d59b08bbac81c}} 
+CLUSTER\+\_\+\+OBJTYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_OBJTYPE@{NODE\_OBJTYPE}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!NODE\_OBJTYPE@{NODE\_OBJTYPE}}}\mbox{\Hypertarget{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a97f20f6ae4bbbf503430fb49f051a61e}\label{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a97f20f6ae4bbbf503430fb49f051a61e}} 
+NODE\+\_\+\+OBJTYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EDGE\_OBJTYPE@{EDGE\_OBJTYPE}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!EDGE\_OBJTYPE@{EDGE\_OBJTYPE}}}\mbox{\Hypertarget{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a4b2fac9faf34f5eb8777db67b361e35f}\label{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a4b2fac9faf34f5eb8777db67b361e35f}} 
+EDGE\+\_\+\+OBJTYPE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00174}{174}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00174 \{\mbox{\hyperlink{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a552c0763f679b759c8083a2312db5670}{ROOTGRAPH\_OBJTYPE}}, \mbox{\hyperlink{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a32600cff05c8f94a126d59b08bbac81c}{CLUSTER\_OBJTYPE}}, \mbox{\hyperlink{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a97f20f6ae4bbbf503430fb49f051a61e}{NODE\_OBJTYPE}}, \mbox{\hyperlink{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92a4b2fac9faf34f5eb8777db67b361e35f}{EDGE\_OBJTYPE}}\} \mbox{\hyperlink{gvcjob_8h_ac87c026b772bad1b7bb6edea6200fc92}{obj\_type}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44}\label{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44}} 
+\index{gvcjob.h@{gvcjob.h}!pen\_type@{pen\_type}}
+\index{pen\_type@{pen\_type}!gvcjob.h@{gvcjob.h}}
+\doxysubsubsection{\texorpdfstring{pen\_type}{pen\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44}{pen\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PEN\_NONE@{PEN\_NONE}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!PEN\_NONE@{PEN\_NONE}}}\mbox{\Hypertarget{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44a1ea6f58bfade3f78fe217ef328fce04d}\label{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44a1ea6f58bfade3f78fe217ef328fce04d}} 
+PEN\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PEN\_DASHED@{PEN\_DASHED}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!PEN\_DASHED@{PEN\_DASHED}}}\mbox{\Hypertarget{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44ab1f05ac68389e236654d79692b26e7ff}\label{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44ab1f05ac68389e236654d79692b26e7ff}} 
+PEN\+\_\+\+DASHED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PEN\_DOTTED@{PEN\_DOTTED}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!PEN\_DOTTED@{PEN\_DOTTED}}}\mbox{\Hypertarget{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44aa7d50db1156eddf79a8c8c316d3790b1}\label{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44aa7d50db1156eddf79a8c8c316d3790b1}} 
+PEN\+\_\+\+DOTTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PEN\_SOLID@{PEN\_SOLID}!gvcjob.h@{gvcjob.h}}\index{gvcjob.h@{gvcjob.h}!PEN\_SOLID@{PEN\_SOLID}}}\mbox{\Hypertarget{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44a9dd963620972293d3b7821d923ce51d9}\label{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44a9dd963620972293d3b7821d923ce51d9}} 
+PEN\+\_\+\+SOLID&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00032}{32}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{ \mbox{\hyperlink{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44a1ea6f58bfade3f78fe217ef328fce04d}{PEN\_NONE}}, \mbox{\hyperlink{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44ab1f05ac68389e236654d79692b26e7ff}{PEN\_DASHED}}, \mbox{\hyperlink{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44aa7d50db1156eddf79a8c8c316d3790b1}{PEN\_DOTTED}}, \mbox{\hyperlink{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44a9dd963620972293d3b7821d923ce51d9}{PEN\_SOLID}} \} \mbox{\hyperlink{gvcjob_8h_a056abdc3e65632a0666767d8395bdc44}{pen\_type}};}
+
+\end{DoxyCode}

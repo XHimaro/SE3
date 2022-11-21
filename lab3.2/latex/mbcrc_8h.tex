@@ -1,0 +1,53 @@
+\hypertarget{mbcrc_8h}{}\doxysection{Файл for lab/freemodbus-\/v1.5.0/modbus/rtu/mbcrc.h}
+\label{mbcrc_8h}\index{for lab/freemodbus-\/v1.5.0/modbus/rtu/mbcrc.h@{for lab/freemodbus-\/v1.5.0/modbus/rtu/mbcrc.h}}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{mbcrc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+USHORT \mbox{\hyperlink{mbcrc_8h_abc48f359fd99e303016c8b74cc82c3ff}{us\+MBCRC16}} (UCHAR $\ast$puc\+Frame, USHORT us\+Len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{mbcrc_8h_abc48f359fd99e303016c8b74cc82c3ff}\label{mbcrc_8h_abc48f359fd99e303016c8b74cc82c3ff}} 
+\index{mbcrc.h@{mbcrc.h}!usMBCRC16@{usMBCRC16}}
+\index{usMBCRC16@{usMBCRC16}!mbcrc.h@{mbcrc.h}}
+\doxysubsubsection{\texorpdfstring{usMBCRC16()}{usMBCRC16()}}
+{\footnotesize\ttfamily USHORT us\+MBCRC16 (\begin{DoxyParamCaption}\item[{UCHAR $\ast$}]{puc\+Frame,  }\item[{USHORT}]{us\+Len }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbcrc_8c_source}{mbcrc.\+c}} строка \mbox{\hyperlink{mbcrc_8c_source_l00085}{85}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086 \{}
+\DoxyCodeLine{00087     UCHAR           ucCRCHi = 0xFF;}
+\DoxyCodeLine{00088     UCHAR           ucCRCLo = 0xFF;}
+\DoxyCodeLine{00089     \textcolor{keywordtype}{int}             iIndex;}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     \textcolor{keywordflow}{while}( usLen-\/-\/ )}
+\DoxyCodeLine{00092     \{}
+\DoxyCodeLine{00093         iIndex = ucCRCLo \string^ *( pucFrame++ );}
+\DoxyCodeLine{00094         ucCRCLo = ( UCHAR )( ucCRCHi \string^ \mbox{\hyperlink{mbcrc_8c_a3c8c243843ff5f7d637d6e515468a6e0}{aucCRCHi}}[iIndex] );}
+\DoxyCodeLine{00095         ucCRCHi = \mbox{\hyperlink{mbcrc_8c_ac7191e1b186e144f5c19d1fc78c09719}{aucCRCLo}}[iIndex];}
+\DoxyCodeLine{00096     \}}
+\DoxyCodeLine{00097     \textcolor{keywordflow}{return} ( USHORT )( ucCRCHi << 8 | ucCRCLo );}
+\DoxyCodeLine{00098 \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbcrc_8h_abc48f359fd99e303016c8b74cc82c3ff_icgraph}
+\end{center}
+\end{figure}

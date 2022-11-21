@@ -1,0 +1,119 @@
+\hypertarget{mb_8h_source}{}\doxysection{mb.\+h}
+\label{mb_8h_source}\index{for lab/freemodbus-\/v1.5.0/modbus/include/mb.h@{for lab/freemodbus-\/v1.5.0/modbus/include/mb.h}}
+\mbox{\hyperlink{mb_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00001}00001 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00002}00002 \textcolor{comment}{ * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00003}00003 \textcolor{comment}{ * Copyright (c) 2006 Christian Walter <wolti@sil.at>}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00004}00004 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00006}00006 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00007}00007 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00008}00008 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00009}00009 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00010}00010 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00011}00011 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00012}00012 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00013}00013 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00014}00014 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00015}00015 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00016}00016 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00017}00017 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00018}00018 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00019}00019 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00020}00020 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00021}00021 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00022}00022 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00023}00023 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00024}00024 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00025}00025 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00026}00026 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00028}00028 \textcolor{comment}{ * File: \$Id: mb.h,v 1.17 2006/12/07 22:10:34 wolti Exp \$}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00029}00029 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00031}00031 \textcolor{preprocessor}{\#ifndef \_MB\_H}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00032}00032 \textcolor{preprocessor}{\#define \_MB\_H}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00034}00034 \textcolor{preprocessor}{\#include "{}port.h"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00036}00036 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00037}00037 PR\_BEGIN\_EXTERN\_C}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00038}00038 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00040}00040 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbport_8h}{mbport.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00041}00041 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbproto_8h}{mbproto.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00069}00069 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Defines -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00074}\mbox{\hyperlink{group__modbus_ga0e6d79d4ff38dbf7d3fd81a80d655b70}{00074}} \textcolor{preprocessor}{\#define MB\_TCP\_PORT\_USE\_DEFAULT 0   }}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00076}00076 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Type definitions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00085}\mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{00085}}     \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00086}00086 \{}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00087}\mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a1b807b8cf3d593d8cd8d1a1d21a3da31}{00087}}     \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a1b807b8cf3d593d8cd8d1a1d21a3da31}{MB\_RTU}},                     }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00088}\mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61afa37751530d5e48cb5a3f8841f9e3143}{00088}}     \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61afa37751530d5e48cb5a3f8841f9e3143}{MB\_ASCII}},                   }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00089}00089     \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a5786284fe284b4a23889bf5b444d5142}{MB\_TCP}}                      }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00090}\mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a5786284fe284b4a23889bf5b444d5142}{00090}} \} \mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{eMBMode}};}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00103}\mbox{\hyperlink{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}{00103}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00104}00104 \{}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00105}\mbox{\hyperlink{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8aa210c1d03e2745efb42486b822740d4b}{00105}}     \mbox{\hyperlink{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8aa210c1d03e2745efb42486b822740d4b}{MB\_REG\_READ}},                }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00106}00106     \mbox{\hyperlink{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8a3d0a62208562b69c5e7692a5a168c14e}{MB\_REG\_WRITE}}                }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00107}\mbox{\hyperlink{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8a3d0a62208562b69c5e7692a5a168c14e}{00107}} \} \mbox{\hyperlink{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}{eMBRegisterMode}};}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00112}\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{00112}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00113}00113 \{}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00114}\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{00114}}     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}},                  }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00115}\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf415371aad180c545b726d39adbf9ba7}{00115}}     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf415371aad180c545b726d39adbf9ba7}{MB\_ENOREG}},                  }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00116}\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}{00116}}     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}{MB\_EINVAL}},                  }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00117}\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{00117}}     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\_EPORTERR}},                }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00118}\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0700c1e37bfc75068e6577bc0b04bb8}{00118}}     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0700c1e37bfc75068e6577bc0b04bb8}{MB\_ENORES}},                  }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00119}\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{00119}}     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{MB\_EIO}},                     }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00120}\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{00120}}     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\_EILLSTATE}},               }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00121}00121     \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da017c559e956f718cf77aafe269f49bd5}{MB\_ETIMEDOUT}}                }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00122}\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da017c559e956f718cf77aafe269f49bd5}{00122}} \} \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}};}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00125}00125 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Function prototypes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00151}00151 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus_ga622dbe6b38ff1d255523d4736fa3da26}{eMBInit}}( \mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{eMBMode}} eMode, UCHAR ucSlaveAddress,}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00152}00152                          UCHAR ucPort, ULONG ulBaudRate, \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{eMBParity}} eParity );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00153}00153 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00168}\mbox{\hyperlink{group__modbus_gab06a2d0ef8bdfd866cd934f0ec7e7a6e}{00168}} \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus_gab06a2d0ef8bdfd866cd934f0ec7e7a6e}{eMBTCPInit}}( USHORT usTCPPort );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00184}00184 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus_gac20080d92be2934456e2a5d27cd36310}{eMBClose}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00185}00185 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00196}00196 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus_gab697be370833d562e6b016626d996132}{eMBEnable}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00207}00207 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus_gabcc2a31ec41fc276ab3c3ac705defdf3}{eMBDisable}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00221}00221 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus_ga12648c98d45f768ba878fbcee46caca5}{eMBPoll}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00241}\mbox{\hyperlink{group__modbus_gabe2b0e2dccf23d506666aa3cfdf6a8a3}{00241}} \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus_gabe2b0e2dccf23d506666aa3cfdf6a8a3}{eMBSetSlaveID}}( UCHAR ucSlaveID, BOOL xIsRunning,}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00242}00242                                UCHAR \textcolor{keyword}{const} *pucAdditional,}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00243}00243                                USHORT usAdditionalLen );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00244}00244 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00265}00265 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus_ga5f6e66893b2388a602ac453253a00784}{eMBRegisterCB}}( UCHAR ucFunctionCode, }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00266}00266                                \mbox{\hyperlink{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}{pxMBFunctionHandler}} pxHandler );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00267}00267 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00268}00268 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Callback -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00269}00269 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00312}\mbox{\hyperlink{group__modbus__registers_ga7816677520b1eb2ebecf15060a41bc81}{00312}} \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus__registers_ga7816677520b1eb2ebecf15060a41bc81}{eMBRegInputCB}}( UCHAR * pucRegBuffer, USHORT usAddress,}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00313}00313                                USHORT usNRegs );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00314}00314 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00347}\mbox{\hyperlink{group__modbus__registers_ga10d37e1d80224bf3b1eeb9e246d7582e}{00347}} \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus__registers_ga10d37e1d80224bf3b1eeb9e246d7582e}{eMBRegHoldingCB}}( UCHAR * pucRegBuffer, USHORT usAddress,}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00348}00348                                  USHORT usNRegs, \mbox{\hyperlink{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}{eMBRegisterMode}} eMode );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00349}00349 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00382}\mbox{\hyperlink{group__modbus__registers_ga88d9b719291515c60eee1bf9ffa1dd02}{00382}} \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus__registers_ga88d9b719291515c60eee1bf9ffa1dd02}{eMBRegCoilsCB}}( UCHAR * pucRegBuffer, USHORT usAddress,}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00383}00383                                USHORT usNCoils, \mbox{\hyperlink{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}{eMBRegisterMode}} eMode );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00384}00384 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00411}\mbox{\hyperlink{group__modbus__registers_ga38101f5da54af137e210a3b8b9fa3887}{00411}} \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    \mbox{\hyperlink{group__modbus__registers_ga38101f5da54af137e210a3b8b9fa3887}{eMBRegDiscreteCB}}( UCHAR * pucRegBuffer, USHORT usAddress,}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00412}00412                                   USHORT usNDiscrete );}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00413}00413 }
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00414}00414 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00415}00415 PR\_END\_EXTERN\_C}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00416}00416 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8h_source_l00417}00417 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

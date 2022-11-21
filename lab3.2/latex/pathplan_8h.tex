@@ -1,0 +1,81 @@
+\hypertarget{pathplan_8h}{}\doxysection{Файл for lab/\+Graphviz/include/graphviz/pathplan.h}
+\label{pathplan_8h}\index{for lab/Graphviz/include/graphviz/pathplan.h@{for lab/Graphviz/include/graphviz/pathplan.h}}
+
+
+finds and smooths shortest paths  
+
+
+{\ttfamily \#include \char`\"{}pathgeom.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для pathplan.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{pathplan_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pathplan_8h_aceec0f93b171df2efd6e7bc6f66088f1}{PATHPLAN\+\_\+\+API}}~/$\ast$ nothing $\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pathplan_8h_aceec0f93b171df2efd6e7bc6f66088f1}{PATHPLAN\+\_\+\+API}} int \mbox{\hyperlink{pathplan_8h_a37ffb3674b8a6c8ef89b04c87f143f1e}{Pshortestpath}} (\mbox{\hyperlink{struct_ppoly__t}{Ppoly\+\_\+t}} $\ast$boundary, \mbox{\hyperlink{pathgeom_8h_ae03dc374d3fff2c0f275c6c17e705d1f}{Ppoint\+\_\+t}} endpoints\mbox{[}2\mbox{]}, \mbox{\hyperlink{pathgeom_8h_a40d0fc3e3db12860642e212281e44905}{Ppolyline\+\_\+t}} $\ast$output\+\_\+route)
+\item 
+\mbox{\hyperlink{pathplan_8h_aceec0f93b171df2efd6e7bc6f66088f1}{PATHPLAN\+\_\+\+API}} int \mbox{\hyperlink{pathplan_8h_aee0802451f5a05ff6b33b68319257c5d}{Proutespline}} (\mbox{\hyperlink{struct_pedge__t}{Pedge\+\_\+t}} $\ast$barriers, int n\+\_\+barriers, \mbox{\hyperlink{pathgeom_8h_a40d0fc3e3db12860642e212281e44905}{Ppolyline\+\_\+t}} input\+\_\+route, \mbox{\hyperlink{pathgeom_8h_a1601338d97d595819723e748357f2dca}{Pvector\+\_\+t}} endpoint\+\_\+slopes\mbox{[}2\mbox{]}, \mbox{\hyperlink{pathgeom_8h_a40d0fc3e3db12860642e212281e44905}{Ppolyline\+\_\+t}} $\ast$output\+\_\+route)
+\item 
+\mbox{\hyperlink{pathplan_8h_aceec0f93b171df2efd6e7bc6f66088f1}{PATHPLAN\+\_\+\+API}} int \mbox{\hyperlink{pathplan_8h_a8b2fbb0a2f1a6791780267d8ffae36e1}{Ppolybarriers}} (\mbox{\hyperlink{struct_ppoly__t}{Ppoly\+\_\+t}} $\ast$$\ast$polys, int npolys, \mbox{\hyperlink{struct_pedge__t}{Pedge\+\_\+t}} $\ast$$\ast$barriers, int $\ast$n\+\_\+barriers)
+\item 
+\mbox{\hyperlink{pathplan_8h_aceec0f93b171df2efd6e7bc6f66088f1}{PATHPLAN\+\_\+\+API}} \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} \mbox{\hyperlink{pathplan_8h_ac46ac37b2f74c401c14f7475634a5423}{make\+\_\+polyline}} (\mbox{\hyperlink{pathgeom_8h_a40d0fc3e3db12860642e212281e44905}{Ppolyline\+\_\+t}} line, \mbox{\hyperlink{pathgeom_8h_a40d0fc3e3db12860642e212281e44905}{Ppolyline\+\_\+t}} $\ast$sline)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+finds and smooths shortest paths 
+
+
+
+См. определение в файле \mbox{\hyperlink{pathplan_8h_source}{pathplan.\+h}}
+
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{pathplan_8h_aceec0f93b171df2efd6e7bc6f66088f1}\label{pathplan_8h_aceec0f93b171df2efd6e7bc6f66088f1}} 
+\index{pathplan.h@{pathplan.h}!PATHPLAN\_API@{PATHPLAN\_API}}
+\index{PATHPLAN\_API@{PATHPLAN\_API}!pathplan.h@{pathplan.h}}
+\doxysubsubsection{\texorpdfstring{PATHPLAN\_API}{PATHPLAN\_API}}
+{\footnotesize\ttfamily \#define PATHPLAN\+\_\+\+API~/$\ast$ nothing $\ast$/}
+
+
+
+См. определение в файле \mbox{\hyperlink{pathplan_8h_source}{pathplan.\+h}} строка \mbox{\hyperlink{pathplan_8h_source_l00033}{33}}
+
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{pathplan_8h_ac46ac37b2f74c401c14f7475634a5423}\label{pathplan_8h_ac46ac37b2f74c401c14f7475634a5423}} 
+\index{pathplan.h@{pathplan.h}!make\_polyline@{make\_polyline}}
+\index{make\_polyline@{make\_polyline}!pathplan.h@{pathplan.h}}
+\doxysubsubsection{\texorpdfstring{make\_polyline()}{make\_polyline()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pathplan_8h_aceec0f93b171df2efd6e7bc6f66088f1}{PATHPLAN\+\_\+\+API}} \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} make\+\_\+polyline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pathgeom_8h_a40d0fc3e3db12860642e212281e44905}{Ppolyline\+\_\+t}}}]{line,  }\item[{\mbox{\hyperlink{pathgeom_8h_a40d0fc3e3db12860642e212281e44905}{Ppolyline\+\_\+t}} $\ast$}]{sline }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pathplan_8h_a8b2fbb0a2f1a6791780267d8ffae36e1}\label{pathplan_8h_a8b2fbb0a2f1a6791780267d8ffae36e1}} 
+\index{pathplan.h@{pathplan.h}!Ppolybarriers@{Ppolybarriers}}
+\index{Ppolybarriers@{Ppolybarriers}!pathplan.h@{pathplan.h}}
+\doxysubsubsection{\texorpdfstring{Ppolybarriers()}{Ppolybarriers()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pathplan_8h_aceec0f93b171df2efd6e7bc6f66088f1}{PATHPLAN\+\_\+\+API}} int Ppolybarriers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ppoly__t}{Ppoly\+\_\+t}} $\ast$$\ast$}]{polys,  }\item[{int}]{npolys,  }\item[{\mbox{\hyperlink{struct_pedge__t}{Pedge\+\_\+t}} $\ast$$\ast$}]{barriers,  }\item[{int $\ast$}]{n\+\_\+barriers }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pathplan_8h_aee0802451f5a05ff6b33b68319257c5d}\label{pathplan_8h_aee0802451f5a05ff6b33b68319257c5d}} 
+\index{pathplan.h@{pathplan.h}!Proutespline@{Proutespline}}
+\index{Proutespline@{Proutespline}!pathplan.h@{pathplan.h}}
+\doxysubsubsection{\texorpdfstring{Proutespline()}{Proutespline()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pathplan_8h_aceec0f93b171df2efd6e7bc6f66088f1}{PATHPLAN\+\_\+\+API}} int Proutespline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pedge__t}{Pedge\+\_\+t}} $\ast$}]{barriers,  }\item[{int}]{n\+\_\+barriers,  }\item[{\mbox{\hyperlink{pathgeom_8h_a40d0fc3e3db12860642e212281e44905}{Ppolyline\+\_\+t}}}]{input\+\_\+route,  }\item[{\mbox{\hyperlink{pathgeom_8h_a1601338d97d595819723e748357f2dca}{Pvector\+\_\+t}}}]{endpoint\+\_\+slopes\mbox{[}2\mbox{]},  }\item[{\mbox{\hyperlink{pathgeom_8h_a40d0fc3e3db12860642e212281e44905}{Ppolyline\+\_\+t}} $\ast$}]{output\+\_\+route }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pathplan_8h_a37ffb3674b8a6c8ef89b04c87f143f1e}\label{pathplan_8h_a37ffb3674b8a6c8ef89b04c87f143f1e}} 
+\index{pathplan.h@{pathplan.h}!Pshortestpath@{Pshortestpath}}
+\index{Pshortestpath@{Pshortestpath}!pathplan.h@{pathplan.h}}
+\doxysubsubsection{\texorpdfstring{Pshortestpath()}{Pshortestpath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pathplan_8h_aceec0f93b171df2efd6e7bc6f66088f1}{PATHPLAN\+\_\+\+API}} int Pshortestpath (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_ppoly__t}{Ppoly\+\_\+t}} $\ast$}]{boundary,  }\item[{\mbox{\hyperlink{pathgeom_8h_ae03dc374d3fff2c0f275c6c17e705d1f}{Ppoint\+\_\+t}}}]{endpoints\mbox{[}2\mbox{]},  }\item[{\mbox{\hyperlink{pathgeom_8h_a40d0fc3e3db12860642e212281e44905}{Ppolyline\+\_\+t}} $\ast$}]{output\+\_\+route }\end{DoxyParamCaption})}
+

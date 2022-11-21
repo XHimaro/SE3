@@ -1,0 +1,83 @@
+\hypertarget{mbconfig_8h_source}{}\doxysection{mbconfig.\+h}
+\label{mbconfig_8h_source}\index{for lab/freemodbus-\/v1.5.0/modbus/include/mbconfig.h@{for lab/freemodbus-\/v1.5.0/modbus/include/mbconfig.h}}
+\mbox{\hyperlink{mbconfig_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00001}00001 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00002}00002 \textcolor{comment}{ * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00003}00003 \textcolor{comment}{ * Copyright (c) 2006 Christian Walter <wolti@sil.at>}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00004}00004 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00006}00006 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00007}00007 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00008}00008 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00009}00009 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00010}00010 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00011}00011 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00012}00012 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00013}00013 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00014}00014 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00015}00015 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00016}00016 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00017}00017 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00018}00018 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00019}00019 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00020}00020 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00021}00021 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00022}00022 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00023}00023 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00024}00024 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00025}00025 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00026}00026 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00028}00028 \textcolor{comment}{ * File: \$Id: mbconfig.h,v 1.15 2010/06/06 13:54:40 wolti Exp \$}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00029}00029 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00031}00031 \textcolor{preprocessor}{\#ifndef \_MB\_CONFIG\_H}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00032}00032 \textcolor{preprocessor}{\#define \_MB\_CONFIG\_H}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00034}00034 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00035}00035 PR\_BEGIN\_EXTERN\_C}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00036}00036 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00037}00037 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Defines -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00050}\mbox{\hyperlink{group__modbus__cfg_gae4accc470cf44e38b4011213a93a2adc}{00050}} \textcolor{preprocessor}{\#define MB\_ASCII\_ENABLED                        (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00053}\mbox{\hyperlink{group__modbus__cfg_ga00b7b4d768c9489b5022832db253a71c}{00053}} \textcolor{preprocessor}{\#define MB\_RTU\_ENABLED                          (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00056}\mbox{\hyperlink{group__modbus__cfg_ga93a17168bbe8c49e45ce6405cb4c1afb}{00056}} \textcolor{preprocessor}{\#define MB\_TCP\_ENABLED                          (  0 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00064}\mbox{\hyperlink{group__modbus__cfg_ga90fe92ab8f17c76c6e48dbbab8986446}{00064}} \textcolor{preprocessor}{\#define MB\_ASCII\_TIMEOUT\_SEC                    (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00075}00075 \textcolor{preprocessor}{\#ifndef MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00076}\mbox{\hyperlink{group__modbus__cfg_ga22fd01f62670a71ab137e16118c37ca2}{00076}} \textcolor{preprocessor}{\#define MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS    ( 0 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00077}00077 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00086}\mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{00086}} \textcolor{preprocessor}{\#define MB\_FUNC\_HANDLERS\_MAX                    ( 16 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00096}\mbox{\hyperlink{group__modbus__cfg_ga4c376ec5ec8bea2ccfe067cd8c05db06}{00096}} \textcolor{preprocessor}{\#define MB\_FUNC\_OTHER\_REP\_SLAVEID\_BUF           ( 32 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00099}\mbox{\hyperlink{group__modbus__cfg_ga580ff483eb8b3fbfc23115808d7025c9}{00099}} \textcolor{preprocessor}{\#define MB\_FUNC\_OTHER\_REP\_SLAVEID\_ENABLED       (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00102}\mbox{\hyperlink{group__modbus__cfg_ga18432b6043942aa4b9e5f14c0543e663}{00102}} \textcolor{preprocessor}{\#define MB\_FUNC\_READ\_INPUT\_ENABLED              (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00105}\mbox{\hyperlink{group__modbus__cfg_ga2427219b5788299b59972102db511df8}{00105}} \textcolor{preprocessor}{\#define MB\_FUNC\_READ\_HOLDING\_ENABLED            (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00108}\mbox{\hyperlink{group__modbus__cfg_gae8aa746269641b5fe032b81aafd93521}{00108}} \textcolor{preprocessor}{\#define MB\_FUNC\_WRITE\_HOLDING\_ENABLED           (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00111}\mbox{\hyperlink{group__modbus__cfg_gaafa15ddf4a433ab3149178ba8199e8e2}{00111}} \textcolor{preprocessor}{\#define MB\_FUNC\_WRITE\_MULTIPLE\_HOLDING\_ENABLED  (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00114}\mbox{\hyperlink{group__modbus__cfg_ga0a699b69e28d21c32c95affe08e04112}{00114}} \textcolor{preprocessor}{\#define MB\_FUNC\_READ\_COILS\_ENABLED              (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00117}\mbox{\hyperlink{group__modbus__cfg_ga3bb42e153880ea5312eaa42bb671ee50}{00117}} \textcolor{preprocessor}{\#define MB\_FUNC\_WRITE\_COIL\_ENABLED              (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00120}\mbox{\hyperlink{group__modbus__cfg_ga1973cf9a66e8738ee06681443259b78f}{00120}} \textcolor{preprocessor}{\#define MB\_FUNC\_WRITE\_MULTIPLE\_COILS\_ENABLED    (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00123}\mbox{\hyperlink{group__modbus__cfg_ga76bb577b6d66b4e45571f7e46b04b134}{00123}} \textcolor{preprocessor}{\#define MB\_FUNC\_READ\_DISCRETE\_INPUTS\_ENABLED    (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00126}\mbox{\hyperlink{group__modbus__cfg_gae62a61cbd68a80de8c7ee268a5934ea3}{00126}} \textcolor{preprocessor}{\#define MB\_FUNC\_READWRITE\_HOLDING\_ENABLED       (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00129}00129 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00130}00130     PR\_END\_EXTERN\_C}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00131}00131 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mbconfig_8h_source_l00132}00132 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

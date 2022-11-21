@@ -1,0 +1,273 @@
+\hypertarget{mb_8c}{}\doxysection{Файл for lab/freemodbus-\/v1.5.0/modbus/mb.c}
+\label{mb_8c}\index{for lab/freemodbus-\/v1.5.0/modbus/mb.c@{for lab/freemodbus-\/v1.5.0/modbus/mb.c}}
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}port.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbconfig.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbframe.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbproto.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbfunc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbport.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для mb.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mb_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mb_8c_a63c1fbefc04d96d29ef84407e22c4e3e}{MB\+\_\+\+PORT\+\_\+\+HAS\+\_\+\+CLOSE}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}{STATE\+\_\+\+ENABLED}}
+, \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\+\_\+\+DISABLED}}
+, \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bae2477750e043f9c82868690f0162f232}{STATE\+\_\+\+NOT\+\_\+\+INITIALIZED}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_ga622dbe6b38ff1d255523d4736fa3da26}{e\+MBInit}} (\mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{e\+MBMode}} e\+Mode, UCHAR uc\+Slave\+Address, UCHAR uc\+Port, ULONG ul\+Baud\+Rate, \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{e\+MBParity}} e\+Parity)
+\begin{DoxyCompactList}\small\item\em Initialize the Modbus protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_ga5f6e66893b2388a602ac453253a00784}{e\+MBRegister\+CB}} (UCHAR uc\+Function\+Code, \mbox{\hyperlink{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}{px\+MBFunction\+Handler}} px\+Handler)
+\begin{DoxyCompactList}\small\item\em Registers a callback handler for a given function code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gac20080d92be2934456e2a5d27cd36310}{e\+MBClose}} (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}})
+\begin{DoxyCompactList}\small\item\em Release resources used by the protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gab697be370833d562e6b016626d996132}{e\+MBEnable}} (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}})
+\begin{DoxyCompactList}\small\item\em Enable the Modbus protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gabcc2a31ec41fc276ab3c3ac705defdf3}{e\+MBDisable}} (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}})
+\begin{DoxyCompactList}\small\item\em Disable the Modbus protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_ga12648c98d45f768ba878fbcee46caca5}{e\+MBPoll}} (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}})
+\begin{DoxyCompactList}\small\item\em The main pooling loop of the Modbus protocol stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+static UCHAR \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{uc\+MBAddress}}
+\item 
+static \mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{e\+MBMode}} \mbox{\hyperlink{mb_8c_a288653bd38728bea3b3c705f25d87483}{e\+MBCurrent\+Mode}}
+\item 
+static enum  \{ ... \}  \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{e\+MBState}} = \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bae2477750e043f9c82868690f0162f232}{STATE\+\_\+\+NOT\+\_\+\+INITIALIZED}}
+\item 
+static \mbox{\hyperlink{mbframe_8h_a2819876d9dce4626d9d54833902fa88c}{pe\+MBFrame\+Send}} \mbox{\hyperlink{mb_8c_ae9daf4765e9a354a64f171108ace3094}{pe\+MBFrame\+Send\+Cur}}
+\item 
+static \mbox{\hyperlink{mbframe_8h_a075bd0854eba03b7b33da5933e96a078}{pv\+MBFrame\+Start}} \mbox{\hyperlink{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}{pv\+MBFrame\+Start\+Cur}}
+\item 
+static \mbox{\hyperlink{mbframe_8h_ae77f5c0d4c4e2fa7afd55122c599f3e2}{pv\+MBFrame\+Stop}} \mbox{\hyperlink{mb_8c_a043a961601eba48ca372b99f5c67ec3c}{pv\+MBFrame\+Stop\+Cur}}
+\item 
+static \mbox{\hyperlink{mbframe_8h_a06f6bce5e91795fb466ed8edf386c611}{pe\+MBFrame\+Receive}} \mbox{\hyperlink{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}{pe\+MBFrame\+Receive\+Cur}}
+\item 
+static \mbox{\hyperlink{mbframe_8h_ac90725e31188ed4e9b8250fd39625b57}{pv\+MBFrame\+Close}} \mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{pv\+MBFrame\+Close\+Cur}}
+\item 
+BOOL($\ast$ \mbox{\hyperlink{mb_8c_a6ff9d563210c04e3afb414b9db75154a}{px\+MBFrame\+CBByte\+Received}} )(\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}})
+\begin{DoxyCompactList}\small\item\em Callback function for the porting layer when a new byte is available. \end{DoxyCompactList}\item 
+BOOL($\ast$ \mbox{\hyperlink{mb_8c_a46ac9d979eaaeb885415014a0cb350b2}{px\+MBFrame\+CBTransmitter\+Empty}} )(\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}})
+\item 
+BOOL($\ast$ \mbox{\hyperlink{mb_8c_a3ca010d1cf1b3bda066f0d65641d9055}{px\+MBPort\+CBTimer\+Expired}} )(\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}})
+\item 
+BOOL($\ast$ \mbox{\hyperlink{mb_8c_a9363e9558a3370aa7f877b5414e83a31}{px\+MBFrame\+CBReceive\+FSMCur}} )(\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}})
+\item 
+BOOL($\ast$ \mbox{\hyperlink{mb_8c_a590a5400a72de0dcbce5f383a67a5093}{px\+MBFrame\+CBTransmit\+FSMCur}} )(\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}})
+\item 
+static \mbox{\hyperlink{structx_m_b_function_handler}{x\+MBFunction\+Handler}} \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{x\+Func\+Handlers}} \mbox{[}\mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\+\_\+\+FUNC\+\_\+\+HANDLERS\+\_\+\+MAX}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{mb_8c_a63c1fbefc04d96d29ef84407e22c4e3e}\label{mb_8c_a63c1fbefc04d96d29ef84407e22c4e3e}} 
+\index{mb.c@{mb.c}!MB\_PORT\_HAS\_CLOSE@{MB\_PORT\_HAS\_CLOSE}}
+\index{MB\_PORT\_HAS\_CLOSE@{MB\_PORT\_HAS\_CLOSE}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PORT\_HAS\_CLOSE}{MB\_PORT\_HAS\_CLOSE}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PORT\+\_\+\+HAS\+\_\+\+CLOSE~0}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00057}{57}}
+
+
+
+\doxysubsection{Перечисления}
+\mbox{\Hypertarget{mb_8c_a06fc87d81c62e9abb8790b6e5713c55b}\label{mb_8c_a06fc87d81c62e9abb8790b6e5713c55b}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_ENABLED@{STATE\_ENABLED}!mb.c@{mb.c}}\index{mb.c@{mb.c}!STATE\_ENABLED@{STATE\_ENABLED}}}\mbox{\Hypertarget{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}\label{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}} 
+STATE\+\_\+\+ENABLED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_DISABLED@{STATE\_DISABLED}!mb.c@{mb.c}}\index{mb.c@{mb.c}!STATE\_DISABLED@{STATE\_DISABLED}}}\mbox{\Hypertarget{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}\label{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}} 
+STATE\+\_\+\+DISABLED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_NOT\_INITIALIZED@{STATE\_NOT\_INITIALIZED}!mb.c@{mb.c}}\index{mb.c@{mb.c}!STATE\_NOT\_INITIALIZED@{STATE\_NOT\_INITIALIZED}}}\mbox{\Hypertarget{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bae2477750e043f9c82868690f0162f232}\label{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bae2477750e043f9c82868690f0162f232}} 
+STATE\+\_\+\+NOT\+\_\+\+INITIALIZED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00065}{65}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066 \{}
+\DoxyCodeLine{00067     \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}{STATE\_ENABLED}},}
+\DoxyCodeLine{00068     \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}},}
+\DoxyCodeLine{00069     \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bae2477750e043f9c82868690f0162f232}{STATE\_NOT\_INITIALIZED}}}
+\DoxyCodeLine{00070 \} \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} = \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bae2477750e043f9c82868690f0162f232}{STATE\_NOT\_INITIALIZED}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Переменные}
+\mbox{\Hypertarget{mb_8c_a288653bd38728bea3b3c705f25d87483}\label{mb_8c_a288653bd38728bea3b3c705f25d87483}} 
+\index{mb.c@{mb.c}!eMBCurrentMode@{eMBCurrentMode}}
+\index{eMBCurrentMode@{eMBCurrentMode}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{eMBCurrentMode}{eMBCurrentMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{e\+MBMode}} e\+MBCurrent\+Mode\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00063}{63}}
+
+\mbox{\Hypertarget{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}\label{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}} 
+\index{mb.c@{mb.c}!eMBState@{eMBState}}
+\index{eMBState@{eMBState}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily enum  \{ ... \}  e\+MBState\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}\label{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}} 
+\index{mb.c@{mb.c}!peMBFrameReceiveCur@{peMBFrameReceiveCur}}
+\index{peMBFrameReceiveCur@{peMBFrameReceiveCur}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{peMBFrameReceiveCur}{peMBFrameReceiveCur}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mbframe_8h_a06f6bce5e91795fb466ed8edf386c611}{pe\+MBFrame\+Receive}} pe\+MBFrame\+Receive\+Cur\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00078}{78}}
+
+\mbox{\Hypertarget{mb_8c_ae9daf4765e9a354a64f171108ace3094}\label{mb_8c_ae9daf4765e9a354a64f171108ace3094}} 
+\index{mb.c@{mb.c}!peMBFrameSendCur@{peMBFrameSendCur}}
+\index{peMBFrameSendCur@{peMBFrameSendCur}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{peMBFrameSendCur}{peMBFrameSendCur}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mbframe_8h_a2819876d9dce4626d9d54833902fa88c}{pe\+MBFrame\+Send}} pe\+MBFrame\+Send\+Cur\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00075}{75}}
+
+\mbox{\Hypertarget{mb_8c_aef5110f3d47305125c738986dbe85e0d}\label{mb_8c_aef5110f3d47305125c738986dbe85e0d}} 
+\index{mb.c@{mb.c}!pvMBFrameCloseCur@{pvMBFrameCloseCur}}
+\index{pvMBFrameCloseCur@{pvMBFrameCloseCur}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{pvMBFrameCloseCur}{pvMBFrameCloseCur}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mbframe_8h_ac90725e31188ed4e9b8250fd39625b57}{pv\+MBFrame\+Close}} pv\+MBFrame\+Close\+Cur\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00079}{79}}
+
+\mbox{\Hypertarget{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}\label{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}} 
+\index{mb.c@{mb.c}!pvMBFrameStartCur@{pvMBFrameStartCur}}
+\index{pvMBFrameStartCur@{pvMBFrameStartCur}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{pvMBFrameStartCur}{pvMBFrameStartCur}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mbframe_8h_a075bd0854eba03b7b33da5933e96a078}{pv\+MBFrame\+Start}} pv\+MBFrame\+Start\+Cur\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00076}{76}}
+
+\mbox{\Hypertarget{mb_8c_a043a961601eba48ca372b99f5c67ec3c}\label{mb_8c_a043a961601eba48ca372b99f5c67ec3c}} 
+\index{mb.c@{mb.c}!pvMBFrameStopCur@{pvMBFrameStopCur}}
+\index{pvMBFrameStopCur@{pvMBFrameStopCur}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{pvMBFrameStopCur}{pvMBFrameStopCur}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mbframe_8h_ae77f5c0d4c4e2fa7afd55122c599f3e2}{pv\+MBFrame\+Stop}} pv\+MBFrame\+Stop\+Cur\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00077}{77}}
+
+\mbox{\Hypertarget{mb_8c_a6ff9d563210c04e3afb414b9db75154a}\label{mb_8c_a6ff9d563210c04e3afb414b9db75154a}} 
+\index{mb.c@{mb.c}!pxMBFrameCBByteReceived@{pxMBFrameCBByteReceived}}
+\index{pxMBFrameCBByteReceived@{pxMBFrameCBByteReceived}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{pxMBFrameCBByteReceived}{pxMBFrameCBByteReceived}}
+{\footnotesize\ttfamily BOOL($\ast$ px\+MBFrame\+CBByte\+Received) (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Callback function for the porting layer when a new byte is available. 
+
+Depending upon the mode this callback function is used by the RTU or ASCII transmission layers. In any case a call to \mbox{\hyperlink{mbport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770}{x\+MBPort\+Serial\+Get\+Byte()}} must immediately return a new character.
+
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily TRUE} if a event was posted to the queue because a new byte was received. The port implementation should wake up the tasks which are currently blocked on the eventqueue. 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00085}{85}}
+
+\mbox{\Hypertarget{mb_8c_a9363e9558a3370aa7f877b5414e83a31}\label{mb_8c_a9363e9558a3370aa7f877b5414e83a31}} 
+\index{mb.c@{mb.c}!pxMBFrameCBReceiveFSMCur@{pxMBFrameCBReceiveFSMCur}}
+\index{pxMBFrameCBReceiveFSMCur@{pxMBFrameCBReceiveFSMCur}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{pxMBFrameCBReceiveFSMCur}{pxMBFrameCBReceiveFSMCur}}
+{\footnotesize\ttfamily BOOL($\ast$ px\+MBFrame\+CBReceive\+FSMCur) (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00089}{89}}
+
+\mbox{\Hypertarget{mb_8c_a590a5400a72de0dcbce5f383a67a5093}\label{mb_8c_a590a5400a72de0dcbce5f383a67a5093}} 
+\index{mb.c@{mb.c}!pxMBFrameCBTransmitFSMCur@{pxMBFrameCBTransmitFSMCur}}
+\index{pxMBFrameCBTransmitFSMCur@{pxMBFrameCBTransmitFSMCur}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{pxMBFrameCBTransmitFSMCur}{pxMBFrameCBTransmitFSMCur}}
+{\footnotesize\ttfamily BOOL($\ast$ px\+MBFrame\+CBTransmit\+FSMCur) (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00090}{90}}
+
+\mbox{\Hypertarget{mb_8c_a46ac9d979eaaeb885415014a0cb350b2}\label{mb_8c_a46ac9d979eaaeb885415014a0cb350b2}} 
+\index{mb.c@{mb.c}!pxMBFrameCBTransmitterEmpty@{pxMBFrameCBTransmitterEmpty}}
+\index{pxMBFrameCBTransmitterEmpty@{pxMBFrameCBTransmitterEmpty}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{pxMBFrameCBTransmitterEmpty}{pxMBFrameCBTransmitterEmpty}}
+{\footnotesize\ttfamily BOOL($\ast$ px\+MBFrame\+CBTransmitter\+Empty) (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00086}{86}}
+
+\mbox{\Hypertarget{mb_8c_a3ca010d1cf1b3bda066f0d65641d9055}\label{mb_8c_a3ca010d1cf1b3bda066f0d65641d9055}} 
+\index{mb.c@{mb.c}!pxMBPortCBTimerExpired@{pxMBPortCBTimerExpired}}
+\index{pxMBPortCBTimerExpired@{pxMBPortCBTimerExpired}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{pxMBPortCBTimerExpired}{pxMBPortCBTimerExpired}}
+{\footnotesize\ttfamily BOOL($\ast$ px\+MBPort\+CBTimer\+Expired) (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00087}{87}}
+
+\mbox{\Hypertarget{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}\label{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}} 
+\index{mb.c@{mb.c}!ucMBAddress@{ucMBAddress}}
+\index{ucMBAddress@{ucMBAddress}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{ucMBAddress}{ucMBAddress}}
+{\footnotesize\ttfamily UCHAR uc\+MBAddress\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00062}{62}}
+
+\mbox{\Hypertarget{mb_8c_af7285b4571ef7138b23ddc3b2d079539}\label{mb_8c_af7285b4571ef7138b23ddc3b2d079539}} 
+\index{mb.c@{mb.c}!xFuncHandlers@{xFuncHandlers}}
+\index{xFuncHandlers@{xFuncHandlers}!mb.c@{mb.c}}
+\doxysubsubsection{\texorpdfstring{xFuncHandlers}{xFuncHandlers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structx_m_b_function_handler}{x\+MBFunction\+Handler}} x\+Func\+Handlers\mbox{[}\mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\+\_\+\+FUNC\+\_\+\+HANDLERS\+\_\+\+MAX}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00095}{95}}
+

@@ -1,0 +1,554 @@
+  % Handle batch mode
+  % to overcome problems with too many open files
+  \let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}
+  % Set document class depending on configuration
+  \documentclass[twoside]{book}
+  %% moved from doxygen.sty due to workaround for LaTex 2019 version and unmaintained tabu package
+  \usepackage{ifthen}
+  \ifx\requestedLaTeXdate\undefined
+    \usepackage{array}
+  \else
+    \usepackage{array}[=2016-10-06]
+  \fi
+  %%
+  % Packages required by doxygen
+  \usepackage{fixltx2e} % for \textsubscript
+  \usepackage{doxygen}
+  \usepackage{graphicx}
+  \usepackage[utf8]{inputenc}
+  \usepackage{makeidx}
+  \PassOptionsToPackage{warn}{textcomp}
+  \usepackage{textcomp}
+  \usepackage[nointegrals]{wasysym}
+  \usepackage{ifxetex}
+  % NLS support packages
+  \usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+  % Define default fonts
+  % Font selection
+  \usepackage[T1]{fontenc}
+  % set main and monospaced font
+  \usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+  \usepackage{sectsty}
+  \allsectionsfont{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \renewcommand{\DoxyLabelFont}{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+   % Arguments of doxygenemoji:
+   % 1) ':<text>:' form of the emoji, already LaTeX-escaped
+   % 2) file with the name of the emoji without the .png extension
+   % in case image exist use this otherwise use the ':<text>:' form
+   \newcommand{\doxygenemoji}[2]{%
+     \IfFileExists{./#2.png}{\raisebox{-0.1em}{\includegraphics[height=0.9em]{./#2.png}}}{#1}%
+   }
+  % Page & text layout
+  \usepackage{geometry}
+  \geometry{%
+    a4paper,%
+    top=2.5cm,%
+    bottom=2.5cm,%
+    left=2.5cm,%
+    right=2.5cm%
+  }
+  % Allow a bit of overflow to go unnoticed by other means
+  \tolerance=750
+  \hfuzz=15pt
+  \hbadness=750
+  \setlength{\emergencystretch}{15pt}
+  \setlength{\parindent}{0cm}
+  \newcommand{\doxynormalparskip}{\setlength{\parskip}{3ex plus 2ex minus 2ex}}
+  \newcommand{\doxytocparskip}{\setlength{\parskip}{1ex plus 0ex minus 0ex}}
+  \doxynormalparskip
+  % Redefine paragraph/subparagraph environments, using sectsty fonts
+  \makeatletter
+  \renewcommand{\paragraph}{%
+    \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@parafont%
+    }%
+  }
+  \renewcommand{\subparagraph}{%
+    \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@subparafont%
+    }%
+  }
+  \makeatother
+  \makeatletter
+  \newcommand\hrulefilll{\leavevmode\leaders\hrule\hskip 0pt plus 1filll\kern\z@}
+  \makeatother
+  % Headers & footers
+  \usepackage{fancyhdr}
+  \pagestyle{fancyplain}
+  \renewcommand{\footrulewidth}{0.4pt}
+  \fancypagestyle{fancyplain}{
+    \fancyhf{}
+    \fancyhead[LE, RO]{\bfseries\thepage}
+    \fancyhead[LO]{\bfseries\rightmark}
+    \fancyhead[RE]{\bfseries\leftmark}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Создано системой Doxygen }
+  }
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Создано системой Doxygen }
+    \renewcommand{\headrulewidth}{0pt}
+  }
+  \pagestyle{fancyplain}
+  \renewcommand{\chaptermark}[1]{%
+    \markboth{#1}{}%
+  }
+  \renewcommand{\sectionmark}[1]{%
+    \markright{\thesection\ #1}%
+  }
+  % ToC, LoF, LoT, bibliography, and index
+  % Indices & bibliography
+  \usepackage{natbib}
+  \usepackage[titles]{tocloft}
+  \setcounter{tocdepth}{3}
+  \setcounter{secnumdepth}{5}
+  % creating indexes
+  \makeindex
+  \usepackage{newunicodechar}
+  \newunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \newunicodechar{²}{${}^{2}$}% Superscript two
+  \newunicodechar{³}{${}^{3}$}% Superscript three
+  % Hyperlinks
+    % Hyperlinks (required, but should be loaded last)
+    \ifpdf
+      \usepackage[pdftex,pagebackref=true]{hyperref}
+    \else
+      \ifxetex
+        \usepackage[pagebackref=true]{hyperref}
+      \else
+        \usepackage[ps2pdf,pagebackref=true]{hyperref}
+      \fi
+    \fi
+    \hypersetup{%
+      colorlinks=true,%
+      linkcolor=blue,%
+      citecolor=blue,%
+      unicode,%
+      pdftitle={Mod\+Bus},%
+      pdfsubject={}%
+    }
+  % Custom commands used by the header
+  % Custom commands
+  \newcommand{\clearemptydoublepage}{%
+    \newpage{\pagestyle{empty}\cleardoublepage}%
+  }
+  % caption style definition
+  \usepackage{caption}
+  \captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+  % in page table of contents
+  \usepackage{etoc}
+  \etocsettocstyle{\doxytocparskip}{\doxynormalparskip}
+  % prevent numbers overlap the titles in toc
+  \renewcommand{\numberline}[1]{#1~}
+% End of preamble, now comes the document contents
+%===== C O N T E N T S =====
+\begin{document}
+  \raggedbottom
+  % Titlepage & ToC
+    % To avoid duplicate page anchors due to reuse of same numbers for
+    % the index (be it as roman numbers)
+    \hypersetup{pageanchor=false,
+                bookmarksnumbered=true,
+                pdfencoding=unicode
+               }
+  \pagenumbering{alph}
+  \begin{titlepage}
+  \vspace*{7cm}
+  \begin{center}%
+  {\Large Mod\+Bus}\\
+  \vspace*{1cm}
+  {\large Создано системой Doxygen 1.9.5}\\
+  \end{center}
+  \end{titlepage}
+  \clearemptydoublepage
+  \pagenumbering{roman}
+  \tableofcontents
+  \clearemptydoublepage
+  \pagenumbering{arabic}
+  % re-enable anchors again
+  \hypersetup{pageanchor=true}
+%--- Begin generated contents ---
+\chapter{pag\+\_\+example}
+\label{pag_example}
+\Hypertarget{pag_example}
+\input{pag_example}
+\chapter{Ошибки}
+\label{bug}
+\Hypertarget{bug}
+\input{bug}
+\chapter{Алфавитный указатель групп}
+\input{modules}
+\chapter{Алфавитный указатель пространств имен}
+\input{namespaces}
+\chapter{Иерархический список классов}
+\input{hierarchy}
+\chapter{Алфавитный указатель классов}
+\input{annotated}
+\chapter{Список файлов}
+\input{files}
+\chapter{Группы}
+\input{group__group1}
+\input{group__group2}
+\input{group__group3}
+\input{group__group4}
+\input{group__group5}
+\input{group__modbus}
+\input{group__modbus__registers}
+\input{group__modbus__cfg}
+\input{group__modbus__utils}
+\chapter{Пространства имен}
+\input{namespace_c_graph}
+\input{namespacedocstring}
+\input{namespace_g_v_c}
+\input{namespace_n1}
+\input{namespacepyexample}
+\input{namespacestrip__example}
+\chapter{Классы}
+\input{struct__dt__s}
+\input{struct__dtdata__s}
+\input{struct__dtdisc__s}
+\input{struct__dthold__s}
+\input{struct__dtlink__s}
+\input{struct__dtmethod__s}
+\input{struct__dtstat__s}
+\input{struct___postscript_alias}
+\input{struct__xdot__op}
+\input{class_a}
+\input{structadjmatrix__t}
+\input{class_afterdoc___test}
+\input{struct_agattr__s}
+\input{struct_agcbdisc__s}
+\input{struct_agcbstack__s}
+\input{struct_agclos__s}
+\input{struct_agdatadict__s}
+\input{struct_agdesc__s}
+\input{struct_agdisc__s}
+\input{struct_agdstate__s}
+\input{struct_agedge__s}
+\input{struct_agedgeinfo__t}
+\input{struct_agedgepair__s}
+\input{struct_agiddisc__s}
+\input{struct_agiodisc__s}
+\input{struct_agmemdisc__s}
+\input{struct_agnode__s}
+\input{struct_agnodeinfo__t}
+\input{struct_agobj__s}
+\input{class_c_graph_1_1_a_graph}
+\input{struct_agraph__s}
+\input{struct_agraphinfo__t}
+\input{struct_agrec__s}
+\input{struct_agsubnode__s}
+\input{struct_agsym__s}
+\input{struct_agtag__s}
+\input{class_autolink___test}
+\input{class_b}
+\input{classmux__using__with_1_1behavior}
+\input{structbezier}
+\input{structbox}
+\input{structboxf}
+\input{class_c}
+\input{class_c1}
+\input{class_c2}
+\input{class_c3}
+\input{class_c4}
+\input{class_c5}
+\input{struct_car}
+\input{structcolor__s}
+\input{class_communicating_socket}
+\input{struct_coord_struct}
+\input{class_d}
+\input{class_e}
+\input{structelist}
+\input{class_enum___test}
+\input{class_example___test}
+\input{structfield__t}
+\input{class_fn___test}
+\input{structgv__argvlist__s}
+\input{struct_g_v_c_o_m_m_o_n__s}
+\input{class_g_v_c_1_1_g_v_context}
+\input{structgvdevice__callbacks__s}
+\input{structgvdevice__engine__s}
+\input{structgvdevice__features__t}
+\input{structgvevent__key__binding__s}
+\input{struct_g_v_j__s}
+\input{class_g_v_c_1_1_g_v_layout}
+\input{structgvlayout__engine__s}
+\input{structgvlayout__features__t}
+\input{structgvloadimage__engine__s}
+\input{structgvplugin__active__device__s}
+\input{structgvplugin__active__loadimage__t}
+\input{structgvplugin__active__render__s}
+\input{structgvplugin__api__t}
+\input{structgvplugin__installed__t}
+\input{structgvplugin__library__t}
+\input{structgvrender__engine__s}
+\input{structgvrender__features__t}
+\input{class_g_v_c_1_1_g_v_render_data}
+\input{structgvtextlayout__engine__s}
+\input{structhsvrgbacolor__t}
+\input{class_include___test}
+\input{unioninside__t}
+\input{class_javadoc___test}
+\input{structlayout__t}
+\input{structlt__symlist__t}
+\input{class_memgrp___test}
+\input{classmux__using__with}
+\input{structnlist__t}
+\input{structnodequeue}
+\input{structobj__state__s}
+\input{struct_object}
+\input{class_overload___test}
+\input{structpack__info}
+\input{class_par___test}
+\input{structpath}
+\input{structpathend__t}
+\input{struct_pedge__t}
+\input{structpoint}
+\input{structpointf__s}
+\input{structpolygon__t}
+\input{structport}
+\input{struct_ppoly__t}
+\input{struct_pxy__t}
+\input{classdocstring_1_1_py_class}
+\input{classpyexample_1_1_py_class}
+\input{class_q_tstyle___test}
+\input{structrank__t}
+\input{structshape__desc}
+\input{structshape__functions}
+\input{class_socket}
+\input{class_socket_exception}
+\input{class_some_nice_class}
+\input{structspline_info}
+\input{structsplines}
+\input{class_string}
+\input{structstroke__t}
+\input{class_tag}
+\input{class_t_c_p_server_socket}
+\input{class_t_c_p_socket}
+\input{class_test}
+\input{class_test_3_01_t_01_5_01_4}
+\input{class_test_3_01void_01_5_00_01200_01_4}
+\input{structtextfont__t}
+\input{structtextlabel__t}
+\input{structtextspan__t}
+\input{struct_truck}
+\input{class_u_d_p_socket}
+\input{structusershape__s}
+\input{struct_vehicle}
+\input{structxdot}
+\input{structxdot__color}
+\input{structxdot__color__stop}
+\input{structxdot__font}
+\input{structxdot__image}
+\input{structxdot__linear__grad}
+\input{structxdot__point}
+\input{structxdot__polyline}
+\input{structxdot__radial__grad}
+\input{structxdot__rect}
+\input{structxdot__stats}
+\input{structxdot__text}
+\input{structx_m_b_function_handler}
+\chapter{Файлы}
+\input{afterdoc_8h}
+\input{afterdoc_8h_source}
+\input{author_8cpp}
+\input{author_8cpp_source}
+\input{autolink_8cpp}
+\input{autolink_8cpp_source}
+\input{class_8h}
+\input{class_8h_source}
+\input{define_8h}
+\input{define_8h_source}
+\input{diagrams__a_8h}
+\input{diagrams__a_8h_source}
+\input{diagrams__b_8h}
+\input{diagrams__b_8h_source}
+\input{diagrams__c_8h}
+\input{diagrams__c_8h_source}
+\input{diagrams__d_8h}
+\input{diagrams__d_8h_source}
+\input{diagrams__e_8h}
+\input{diagrams__e_8h_source}
+\input{docstring_8py}
+\input{docstring_8py_source}
+\input{enum_8h}
+\input{enum_8h_source}
+\input{example_8cpp}
+\input{example_8cpp_source}
+\input{example__test_8cpp}
+\input{example__test_8cpp_source}
+\input{file_8h}
+\input{file_8h_source}
+\input{func_8h}
+\input{func_8h_source}
+\input{group_8cpp}
+\input{group_8cpp_source}
+\input{include_8cpp}
+\input{include_8cpp_source}
+\input{include__test_8cpp}
+\input{include__test_8cpp_source}
+\input{javadoc-banner_8h}
+\input{javadoc-banner_8h_source}
+\input{jdstyle_8cpp}
+\input{jdstyle_8cpp_source}
+\input{manual_8c}
+\input{manual_8c_source}
+\input{memgrp_8cpp}
+\input{memgrp_8cpp_source}
+\input{mux_8vhdl}
+\input{mux_8vhdl_source}
+\input{overload_8cpp}
+\input{overload_8cpp_source}
+\input{par_8cpp}
+\input{par_8cpp_source}
+\input{pyexample_8py}
+\input{pyexample_8py_source}
+\input{qtstyle_8cpp}
+\input{qtstyle_8cpp_source}
+\input{relates_8cpp}
+\input{relates_8cpp_source}
+\input{restypedef_8cpp}
+\input{restypedef_8cpp_source}
+\input{strip__example_8py}
+\input{strip__example_8py_source}
+\input{structcmd_8h}
+\input{structcmd_8h_source}
+\input{tag_8cpp}
+\input{tag_8cpp_source}
+\input{templ_8cpp}
+\input{templ_8cpp_source}
+\input{bsd_8txt}
+\input{_changelog_8txt}
+\input{gpl_8txt}
+\input{lgpl_8txt}
+\input{mbascii_8c}
+\input{mbascii_8c_source}
+\input{mbascii_8h}
+\input{mbascii_8h_source}
+\input{mbfunccoils_8c}
+\input{mbfunccoils_8c_source}
+\input{mbfuncdiag_8c}
+\input{mbfuncdiag_8c_source}
+\input{mbfuncdisc_8c}
+\input{mbfuncdisc_8c_source}
+\input{mbfuncholding_8c}
+\input{mbfuncholding_8c_source}
+\input{mbfuncinput_8c}
+\input{mbfuncinput_8c_source}
+\input{mbfuncother_8c}
+\input{mbfuncother_8c_source}
+\input{mbutils_8c}
+\input{mbutils_8c_source}
+\input{mb_8h}
+\input{mb_8h_source}
+\input{mbconfig_8h}
+\input{mbconfig_8h_source}
+\input{mbframe_8h}
+\input{mbframe_8h_source}
+\input{mbfunc_8h}
+\input{mbfunc_8h_source}
+\input{mbport_8h}
+\input{mbport_8h_source}
+\input{mbproto_8h}
+\input{mbproto_8h_source}
+\input{mbutils_8h}
+\input{mbutils_8h_source}
+\input{mb_8c}
+\input{mb_8c_source}
+\input{mbcrc_8c}
+\input{mbcrc_8c_source}
+\input{mbcrc_8h}
+\input{mbcrc_8h_source}
+\input{mbrtu_8c}
+\input{mbrtu_8c_source}
+\input{mbrtu_8h}
+\input{mbrtu_8h_source}
+\input{mbtcp_8c}
+\input{mbtcp_8c_source}
+\input{mbtcp_8h}
+\input{mbtcp_8h_source}
+\input{_a_graph_8h}
+\input{_a_graph_8h_source}
+\input{arith_8h}
+\input{arith_8h_source}
+\input{cdt_8h}
+\input{cdt_8h_source}
+\input{cgraph_8h}
+\input{cgraph_8h_source}
+\input{color_8h}
+\input{color_8h_source}
+\input{geom_8h}
+\input{geom_8h_source}
+\input{graphviz__version_8h}
+\input{graphviz__version_8h_source}
+\input{gvc_8h}
+\input{gvc_8h_source}
+\input{gvcext_8h}
+\input{gvcext_8h_source}
+\input{gvcjob_8h}
+\input{gvcjob_8h_source}
+\input{gvcommon_8h}
+\input{gvcommon_8h_source}
+\input{gvconfig_8h}
+\input{gvconfig_8h_source}
+\input{_g_v_context_8h}
+\input{_g_v_context_8h_source}
+\input{_g_v_layout_8h}
+\input{_g_v_layout_8h_source}
+\input{gvplugin_8h}
+\input{gvplugin_8h_source}
+\input{gvplugin__device_8h}
+\input{gvplugin__device_8h_source}
+\input{gvplugin__layout_8h}
+\input{gvplugin__layout_8h_source}
+\input{gvplugin__loadimage_8h}
+\input{gvplugin__loadimage_8h_source}
+\input{gvplugin__render_8h}
+\input{gvplugin__render_8h_source}
+\input{gvplugin__textlayout_8h}
+\input{gvplugin__textlayout_8h_source}
+\input{_g_v_render_data_8h}
+\input{_g_v_render_data_8h_source}
+\input{pack_8h}
+\input{pack_8h_source}
+\input{pathgeom_8h}
+\input{pathgeom_8h_source}
+\input{pathplan_8h}
+\input{pathplan_8h_source}
+\input{textspan_8h}
+\input{textspan_8h_source}
+\input{types_8h}
+\input{types_8h_source}
+\input{usershape_8h}
+\input{usershape_8h_source}
+\input{xdot_8h}
+\input{xdot_8h_source}
+\input{for_01lab_2_practical_socket_8cpp}
+\input{for_01lab_2_practical_socket_8cpp_source}
+\input{_practical_socket_8cpp}
+\input{_practical_socket_8cpp_source}
+\input{for_01lab_2_practical_socket_8h}
+\input{for_01lab_2_practical_socket_8h_source}
+\input{_practical_socket_8h}
+\input{_practical_socket_8h_source}
+\chapter{Примеры}
+\input{example_test_8cpp-example}
+%--- End generated contents ---
+% Index
+  \backmatter
+  \newpage
+  \phantomsection
+  \clearemptydoublepage
+  \addcontentsline{toc}{chapter}{\indexname}
+  \printindex
+% Required for some languages (in combination with latexdocumentpre from the header)
+\end{document}

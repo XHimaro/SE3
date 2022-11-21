@@ -1,0 +1,393 @@
+\hypertarget{class_communicating_socket}{}\doxysection{Класс Communicating\+Socket}
+\label{class_communicating_socket}\index{CommunicatingSocket@{CommunicatingSocket}}
+
+
+{\ttfamily \#include $<$Practical\+Socket.\+h$>$}
+
+
+
+Граф наследования\+:Communicating\+Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_communicating_socket__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Граф связей класса Communicating\+Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_communicating_socket__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect}} (const string \&foreign\+Address, unsigned short foreign\+Port)  throw (\+Socket\+Exception)
+\item 
+void \mbox{\hyperlink{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}{send}} (const void $\ast$buffer, int buffer\+Len)  throw (\+Socket\+Exception)
+\item 
+int \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{recv}} (void $\ast$buffer, int buffer\+Len)  throw (\+Socket\+Exception)
+\item 
+string \mbox{\hyperlink{class_communicating_socket_a13f9eca30ef56836cf23c163c848c09e}{get\+Foreign\+Address}} ()  throw (\+Socket\+Exception)
+\item 
+unsigned short \mbox{\hyperlink{class_communicating_socket_a184fbb4775184b87ebd886a5587eb1a3}{get\+Foreign\+Port}} ()  throw (\+Socket\+Exception)
+\item 
+void \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect}} (const string \&foreign\+Address, unsigned short foreign\+Port)  throw (\+Socket\+Exception)
+\item 
+void \mbox{\hyperlink{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}{send}} (const void $\ast$buffer, int buffer\+Len)  throw (\+Socket\+Exception)
+\item 
+int \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{recv}} (void $\ast$buffer, int buffer\+Len)  throw (\+Socket\+Exception)
+\item 
+string \mbox{\hyperlink{class_communicating_socket_a13f9eca30ef56836cf23c163c848c09e}{get\+Foreign\+Address}} ()  throw (\+Socket\+Exception)
+\item 
+unsigned short \mbox{\hyperlink{class_communicating_socket_a184fbb4775184b87ebd886a5587eb1a3}{get\+Foreign\+Port}} ()  throw (\+Socket\+Exception)
+\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_communicating_socket_a0017517b8d6e761fde0c40475af3b2ab}{Communicating\+Socket}} (int type, int protocol)  throw (\+Socket\+Exception)
+\item 
+\mbox{\hyperlink{class_communicating_socket_a27d758db782b3be7d28741e92cb613d1}{Communicating\+Socket}} (int new\+Conn\+SD)
+\item 
+\mbox{\hyperlink{class_communicating_socket_a0017517b8d6e761fde0c40475af3b2ab}{Communicating\+Socket}} (int type, int protocol)  throw (\+Socket\+Exception)
+\item 
+\mbox{\hyperlink{class_communicating_socket_a27d758db782b3be7d28741e92cb613d1}{Communicating\+Socket}} (int new\+Conn\+SD)
+\end{DoxyCompactItemize}
+\doxysubsection*{Дополнительные унаследованные члены}
+
+
+\doxysubsection{Подробное описание}
+\mbox{\hyperlink{class_socket}{Socket}} which is able to connect, send, and receive 
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8h_source}{Practical\+Socket.\+h}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8h_source_l00137}{137}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_communicating_socket_a0017517b8d6e761fde0c40475af3b2ab}\label{class_communicating_socket_a0017517b8d6e761fde0c40475af3b2ab}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!CommunicatingSocket@{CommunicatingSocket}}
+\index{CommunicatingSocket@{CommunicatingSocket}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{CommunicatingSocket()}{CommunicatingSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Communicating\+Socket\+::\+Communicating\+Socket (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{int}]{protocol }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) \hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00177}{177}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00178                            : \mbox{\hyperlink{class_socket}{Socket}}(type, protocol) \{}
+\DoxyCodeLine{00179 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communicating_socket_a27d758db782b3be7d28741e92cb613d1}\label{class_communicating_socket_a27d758db782b3be7d28741e92cb613d1}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!CommunicatingSocket@{CommunicatingSocket}}
+\index{CommunicatingSocket@{CommunicatingSocket}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{CommunicatingSocket()}{CommunicatingSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Communicating\+Socket\+::\+Communicating\+Socket (\begin{DoxyParamCaption}\item[{int}]{new\+Conn\+SD }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00181}{181}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00181                                                       : \mbox{\hyperlink{class_socket}{Socket}}(newConnSD) \{}
+\DoxyCodeLine{00182 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communicating_socket_a0017517b8d6e761fde0c40475af3b2ab}\label{class_communicating_socket_a0017517b8d6e761fde0c40475af3b2ab}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!CommunicatingSocket@{CommunicatingSocket}}
+\index{CommunicatingSocket@{CommunicatingSocket}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{CommunicatingSocket()}{CommunicatingSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Communicating\+Socket\+::\+Communicating\+Socket (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{int}]{protocol }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) \hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_communicating_socket_a27d758db782b3be7d28741e92cb613d1}\label{class_communicating_socket_a27d758db782b3be7d28741e92cb613d1}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!CommunicatingSocket@{CommunicatingSocket}}
+\index{CommunicatingSocket@{CommunicatingSocket}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{CommunicatingSocket()}{CommunicatingSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Communicating\+Socket\+::\+Communicating\+Socket (\begin{DoxyParamCaption}\item[{int}]{new\+Conn\+SD }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}\label{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!connect@{connect}}
+\index{connect@{connect}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Communicating\+Socket\+::connect (\begin{DoxyParamCaption}\item[{const string \&}]{foreign\+Address,  }\item[{unsigned short}]{foreign\+Port }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Establish a socket connection with the given foreign address and port 
+\begin{DoxyParams}{Аргументы}
+{\em foreign\+Address} & foreign address (IP address or name) \\
+\hline
+{\em foreign\+Port} & foreign port \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if unable to establish connection \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00184}{184}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00185                                                        \{}
+\DoxyCodeLine{00186   \textcolor{comment}{// Get the address of the requested host}}
+\DoxyCodeLine{00187   sockaddr\_in destAddr;}
+\DoxyCodeLine{00188   \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_a155e03535e1d5c1f5df7ceafe63dbdb0}{fillAddr}}(foreignAddress, foreignPort, destAddr);}
+\DoxyCodeLine{00189 }
+\DoxyCodeLine{00190   \textcolor{comment}{// Try to connect to the given port}}
+\DoxyCodeLine{00191   \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{::connect}}(\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}}, (sockaddr *) \&destAddr, \textcolor{keyword}{sizeof}(destAddr)) < 0) \{}
+\DoxyCodeLine{00192     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Connect failed (connect())"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{00193   \}}
+\DoxyCodeLine{00194 \}}
+
+\end{DoxyCode}
+Граф вызовов\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{class_communicating_socket_a9192374d9baab8e189860aa8d913683c_cgraph}
+\end{center}
+\end{figure}
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_communicating_socket_a9192374d9baab8e189860aa8d913683c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}\label{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!connect@{connect}}
+\index{connect@{connect}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Communicating\+Socket\+::connect (\begin{DoxyParamCaption}\item[{const string \&}]{foreign\+Address,  }\item[{unsigned short}]{foreign\+Port }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Establish a socket connection with the given foreign address and port 
+\begin{DoxyParams}{Аргументы}
+{\em foreign\+Address} & foreign address (IP address or name) \\
+\hline
+{\em foreign\+Port} & foreign port \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if unable to establish connection \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_communicating_socket_a13f9eca30ef56836cf23c163c848c09e}\label{class_communicating_socket_a13f9eca30ef56836cf23c163c848c09e}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!getForeignAddress@{getForeignAddress}}
+\index{getForeignAddress@{getForeignAddress}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{getForeignAddress()}{getForeignAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Communicating\+Socket\+::get\+Foreign\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Get the foreign address. Call \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect()}} before calling \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{recv()}} \begin{DoxyReturn}{Возвращает}
+foreign address 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if unable to fetch foreign address \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00213}{213}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00214                            \{}
+\DoxyCodeLine{00215   sockaddr\_in addr;}
+\DoxyCodeLine{00216   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} addr\_len = \textcolor{keyword}{sizeof}(addr);}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218   \textcolor{keywordflow}{if} (getpeername(\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}}, (sockaddr *) \&addr,(socklen\_t *) \&addr\_len) < 0) \{}
+\DoxyCodeLine{00219     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Fetch of foreign address failed (getpeername())"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{00220   \}}
+\DoxyCodeLine{00221   \textcolor{keywordflow}{return} inet\_ntoa(addr.sin\_addr);}
+\DoxyCodeLine{00222 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communicating_socket_a13f9eca30ef56836cf23c163c848c09e}\label{class_communicating_socket_a13f9eca30ef56836cf23c163c848c09e}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!getForeignAddress@{getForeignAddress}}
+\index{getForeignAddress@{getForeignAddress}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{getForeignAddress()}{getForeignAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Communicating\+Socket\+::get\+Foreign\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Get the foreign address. Call \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect()}} before calling \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{recv()}} \begin{DoxyReturn}{Возвращает}
+foreign address 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if unable to fetch foreign address \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_communicating_socket_a184fbb4775184b87ebd886a5587eb1a3}\label{class_communicating_socket_a184fbb4775184b87ebd886a5587eb1a3}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!getForeignPort@{getForeignPort}}
+\index{getForeignPort@{getForeignPort}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{getForeignPort()}{getForeignPort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned short Communicating\+Socket\+::get\+Foreign\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Get the foreign port. Call \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect()}} before calling \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{recv()}} \begin{DoxyReturn}{Возвращает}
+foreign port 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if unable to fetch foreign port \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00224}{224}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00224                                                                           \{}
+\DoxyCodeLine{00225   sockaddr\_in addr;}
+\DoxyCodeLine{00226   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} addr\_len = \textcolor{keyword}{sizeof}(addr);}
+\DoxyCodeLine{00227 }
+\DoxyCodeLine{00228   \textcolor{keywordflow}{if} (getpeername(\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}}, (sockaddr *) \&addr, (socklen\_t *) \&addr\_len) < 0) \{}
+\DoxyCodeLine{00229     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Fetch of foreign port failed (getpeername())"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{00230   \}}
+\DoxyCodeLine{00231   \textcolor{keywordflow}{return} ntohs(addr.sin\_port);}
+\DoxyCodeLine{00232 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communicating_socket_a184fbb4775184b87ebd886a5587eb1a3}\label{class_communicating_socket_a184fbb4775184b87ebd886a5587eb1a3}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!getForeignPort@{getForeignPort}}
+\index{getForeignPort@{getForeignPort}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{getForeignPort()}{getForeignPort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned short Communicating\+Socket\+::get\+Foreign\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Get the foreign port. Call \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect()}} before calling \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{recv()}} \begin{DoxyReturn}{Возвращает}
+foreign port 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if unable to fetch foreign port \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}\label{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!recv@{recv}}
+\index{recv@{recv}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{recv()}{recv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Communicating\+Socket\+::recv (\begin{DoxyParamCaption}\item[{void $\ast$}]{buffer,  }\item[{int}]{buffer\+Len }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Read into the given buffer up to buffer\+Len bytes data from this socket. Call \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect()}} before calling \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{recv()}} 
+\begin{DoxyParams}{Аргументы}
+{\em buffer} & buffer to receive the data \\
+\hline
+{\em buffer\+Len} & maximum number of bytes to read into buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+number of bytes read, 0 for EOF, and -\/1 for error 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if unable to receive data \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00203}{203}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00204                            \{}
+\DoxyCodeLine{00205   \textcolor{keywordtype}{int} rtn;}
+\DoxyCodeLine{00206   \textcolor{keywordflow}{if} ((rtn = \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{::recv}}(\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}}, (\mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_aba7a57aadc5c75eaab8ee698d0fa6608}{raw\_type}} *) buffer, bufferLen, 0)) < 0) \{}
+\DoxyCodeLine{00207     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Received failed (recv())"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{00208   \}}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210   \textcolor{keywordflow}{return} rtn;}
+\DoxyCodeLine{00211 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}\label{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!recv@{recv}}
+\index{recv@{recv}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{recv()}{recv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Communicating\+Socket\+::recv (\begin{DoxyParamCaption}\item[{void $\ast$}]{buffer,  }\item[{int}]{buffer\+Len }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Read into the given buffer up to buffer\+Len bytes data from this socket. Call \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect()}} before calling \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{recv()}} 
+\begin{DoxyParams}{Аргументы}
+{\em buffer} & buffer to receive the data \\
+\hline
+{\em buffer\+Len} & maximum number of bytes to read into buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+number of bytes read, 0 for EOF, and -\/1 for error 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if unable to receive data \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}\label{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!send@{send}}
+\index{send@{send}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Communicating\+Socket\+::send (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buffer,  }\item[{int}]{buffer\+Len }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Write the given buffer to this socket. Call \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect()}} before calling \mbox{\hyperlink{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}{send()}} 
+\begin{DoxyParams}{Аргументы}
+{\em buffer} & buffer to be written \\
+\hline
+{\em buffer\+Len} & number of bytes from buffer to be written \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if unable to send data \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00196}{196}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00197                            \{}
+\DoxyCodeLine{00198   \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}{::send}}(\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}}, (\mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_aba7a57aadc5c75eaab8ee698d0fa6608}{raw\_type}} *) buffer, bufferLen, 0) < 0) \{}
+\DoxyCodeLine{00199     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Send failed (send())"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{00200   \}}
+\DoxyCodeLine{00201 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}\label{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}} 
+\index{CommunicatingSocket@{CommunicatingSocket}!send@{send}}
+\index{send@{send}!CommunicatingSocket@{CommunicatingSocket}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Communicating\+Socket\+::send (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buffer,  }\item[{int}]{buffer\+Len }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Write the given buffer to this socket. Call \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect()}} before calling \mbox{\hyperlink{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}{send()}} 
+\begin{DoxyParams}{Аргументы}
+{\em buffer} & buffer to be written \\
+\hline
+{\em buffer\+Len} & number of bytes from buffer to be written \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if unable to send data \\
+\hline
+\end{DoxyExceptions}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\mbox{\hyperlink{for_01lab_2_practical_socket_8h}{Practical\+Socket.\+h}}\item 
+\mbox{\hyperlink{_practical_socket_8h}{Practical\+Socket.\+h}}\item 
+for lab/\mbox{\hyperlink{for_01lab_2_practical_socket_8cpp}{Practical\+Socket.\+cpp}}\item 
+\mbox{\hyperlink{_practical_socket_8cpp}{Practical\+Socket.\+cpp}}\end{DoxyCompactItemize}

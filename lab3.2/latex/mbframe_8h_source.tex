@@ -1,0 +1,67 @@
+\hypertarget{mbframe_8h_source}{}\doxysection{mbframe.\+h}
+\label{mbframe_8h_source}\index{for lab/freemodbus-\/v1.5.0/modbus/include/mbframe.h@{for lab/freemodbus-\/v1.5.0/modbus/include/mbframe.h}}
+\mbox{\hyperlink{mbframe_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00001}00001 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00002}00002 \textcolor{comment}{ * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00003}00003 \textcolor{comment}{ * Copyright (c) 2006 Christian Walter <wolti@sil.at>}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00004}00004 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00006}00006 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00007}00007 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00008}00008 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00009}00009 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00010}00010 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00011}00011 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00012}00012 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00013}00013 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00014}00014 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00015}00015 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00016}00016 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00017}00017 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00018}00018 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00019}00019 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00020}00020 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00021}00021 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00022}00022 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00023}00023 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00024}00024 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00025}00025 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00026}00026 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00028}00028 \textcolor{comment}{ * File: \$Id: mbframe.h,v 1.9 2006/12/07 22:10:34 wolti Exp \$}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00029}00029 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00031}00031 \textcolor{preprocessor}{\#ifndef \_MB\_FRAME\_H}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00032}00032 \textcolor{preprocessor}{\#define \_MB\_FRAME\_H}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00034}00034 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00035}00035 PR\_BEGIN\_EXTERN\_C}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00036}00036 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00063}00063 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Defines -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00064}\mbox{\hyperlink{mbframe_8h_a072469ed5a2489229aad3bb243b4370f}{00064}} \textcolor{preprocessor}{\#define MB\_PDU\_SIZE\_MAX     253 }}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00065}\mbox{\hyperlink{mbframe_8h_a95544bbb1d07b33d7e7d6cc28b5f0956}{00065}} \textcolor{preprocessor}{\#define MB\_PDU\_SIZE\_MIN     1   }}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00066}\mbox{\hyperlink{mbframe_8h_a554b629520c4266fdff39099a2eef5db}{00066}} \textcolor{preprocessor}{\#define MB\_PDU\_FUNC\_OFF     0   }}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00067}\mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{00067}} \textcolor{preprocessor}{\#define MB\_PDU\_DATA\_OFF     1   }}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00069}00069 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Prototypes  0-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00070}\mbox{\hyperlink{mbframe_8h_a075bd0854eba03b7b33da5933e96a078}{00070}} \textcolor{keyword}{typedef} \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}    ( *\mbox{\hyperlink{mbframe_8h_a075bd0854eba03b7b33da5933e96a078}{pvMBFrameStart}} ) ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} );}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00072}\mbox{\hyperlink{mbframe_8h_ae77f5c0d4c4e2fa7afd55122c599f3e2}{00072}} \textcolor{keyword}{typedef} \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}    ( *\mbox{\hyperlink{mbframe_8h_ae77f5c0d4c4e2fa7afd55122c599f3e2}{pvMBFrameStop}} ) ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} );}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00074}\mbox{\hyperlink{mbframe_8h_a06f6bce5e91795fb466ed8edf386c611}{00074}} \textcolor{keyword}{typedef} \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}( *\mbox{\hyperlink{mbframe_8h_a06f6bce5e91795fb466ed8edf386c611}{peMBFrameReceive}} ) ( UCHAR * pucRcvAddress,}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00075}00075                                             UCHAR ** pucFrame,}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00076}00076                                             USHORT * pusLength );}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00078}\mbox{\hyperlink{mbframe_8h_a2819876d9dce4626d9d54833902fa88c}{00078}} \textcolor{keyword}{typedef} \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}( *\mbox{\hyperlink{mbframe_8h_a2819876d9dce4626d9d54833902fa88c}{peMBFrameSend}} ) ( UCHAR slaveAddress,}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00079}00079                                          \textcolor{keyword}{const} UCHAR * pucFrame,}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00080}00080                                          USHORT usLength );}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00082}\mbox{\hyperlink{mbframe_8h_ac90725e31188ed4e9b8250fd39625b57}{00082}} \textcolor{keyword}{typedef} \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}( *\mbox{\hyperlink{mbframe_8h_ac90725e31188ed4e9b8250fd39625b57}{pvMBFrameClose}} ) ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} );}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00084}00084 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00085}00085 PR\_END\_EXTERN\_C}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00086}00086 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mbframe_8h_source_l00087}00087 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

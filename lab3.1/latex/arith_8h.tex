@@ -1,0 +1,206 @@
+\hypertarget{arith_8h}{}\doxysection{Файл for lab/\+Graphviz/include/graphviz/arith.h}
+\label{arith_8h}\index{for lab/Graphviz/include/graphviz/arith.h@{for lab/Graphviz/include/graphviz/arith.h}}
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Граф включаемых заголовочных файлов для arith.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{arith_8h__incl}
+\end{center}
+\end{figure}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{arith_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{arith_8h_a369266c24eacffb87046522897a570d5}{\+\_\+\+GNU\+\_\+\+SOURCE}}~1
+\item 
+\#define \mbox{\hyperlink{arith_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{MIN}}(a,  b)~((a)$<$(b)?(a)\+:(b))
+\item 
+\#define \mbox{\hyperlink{arith_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}(a,  b)~((a)$>$(b)?(a)\+:(b))
+\item 
+\#define \mbox{\hyperlink{arith_8h_a5d66ce7f9d1958415dc8a5f9556e73b2}{AVG}}(a,  b)~((a + b) / 2)
+\item 
+\#define \mbox{\hyperlink{arith_8h_a0501e9b03fb5d244efedcc437ef66f68}{SGN}}(a)~(((a)$<$0)? -\/1 \+: 1)
+\item 
+\#define \mbox{\hyperlink{arith_8h_adf44891366ab95806ded6886a9f1c2ee}{CMP}}(a,  b)~(((a)$<$(b)) ? -\/1 \+: (((a)$>$(b)) ? 1 \+: 0))
+\item 
+\#define \mbox{\hyperlink{arith_8h_ace724a9256f4e65b352465e5feb24a21}{MAXDOUBLE}}~1.\+7976931348623157e+308
+\item 
+\#define \mbox{\hyperlink{arith_8h_a043815e8b2e49280dc4fcd060fc56a38}{BETWEEN}}(a,  b,  c)~(((a) $<$= (b)) \&\& ((b) $<$= (c)))
+\item 
+\#define \mbox{\hyperlink{arith_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~3.\+14159265358979323846
+\item 
+\#define \mbox{\hyperlink{arith_8h_a514396dd60fa0621c83072091fb2a0cd}{SQRT2}}~1.\+41421356237309504880
+\item 
+\#define \mbox{\hyperlink{arith_8h_a91a8600e2a2859a47dbc2ba39960a352}{ROUND}}(f)~((f$>$=0)?(int)(f + .\+5)\+:(int)(f -\/ .\+5))
+\item 
+\#define \mbox{\hyperlink{arith_8h_a4af1b2e9b11a7583daf59f2cb45a22e5}{RADIANS}}(deg)~((deg)/180.\+0 $\ast$ \mbox{\hyperlink{arith_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}})
+\item 
+\#define \mbox{\hyperlink{arith_8h_aaee81a47de7098b758f6aadc3e2d9007}{DEGREES}}(rad)~((rad)/\mbox{\hyperlink{arith_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}} $\ast$ 180.\+0)
+\item 
+\#define \mbox{\hyperlink{arith_8h_ad41630f833e920c1ffa34722f45a8e77}{SQR}}(a)~((a) $\ast$ (a))
+\item 
+\#define \mbox{\hyperlink{arith_8h_acc80bfed9382d1c32be56f4114e1fbeb}{sincos}}(x,  s,  c)~$\ast$s = sin(x); $\ast$c = cos(x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{arith_8h_a369266c24eacffb87046522897a570d5}\label{arith_8h_a369266c24eacffb87046522897a570d5}} 
+\index{arith.h@{arith.h}!\_GNU\_SOURCE@{\_GNU\_SOURCE}}
+\index{\_GNU\_SOURCE@{\_GNU\_SOURCE}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{\_GNU\_SOURCE}{\_GNU\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GNU\+\_\+\+SOURCE~1}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00018}{18}}
+
+\mbox{\Hypertarget{arith_8h_a5d66ce7f9d1958415dc8a5f9556e73b2}\label{arith_8h_a5d66ce7f9d1958415dc8a5f9556e73b2}} 
+\index{arith.h@{arith.h}!AVG@{AVG}}
+\index{AVG@{AVG}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{AVG}{AVG}}
+{\footnotesize\ttfamily \#define AVG(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((a + b) / 2)}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00038}{38}}
+
+\mbox{\Hypertarget{arith_8h_a043815e8b2e49280dc4fcd060fc56a38}\label{arith_8h_a043815e8b2e49280dc4fcd060fc56a38}} 
+\index{arith.h@{arith.h}!BETWEEN@{BETWEEN}}
+\index{BETWEEN@{BETWEEN}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{BETWEEN}{BETWEEN}}
+{\footnotesize\ttfamily \#define BETWEEN(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{c }\end{DoxyParamCaption})~(((a) $<$= (b)) \&\& ((b) $<$= (c)))}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00049}{49}}
+
+\mbox{\Hypertarget{arith_8h_adf44891366ab95806ded6886a9f1c2ee}\label{arith_8h_adf44891366ab95806ded6886a9f1c2ee}} 
+\index{arith.h@{arith.h}!CMP@{CMP}}
+\index{CMP@{CMP}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{CMP}{CMP}}
+{\footnotesize\ttfamily \#define CMP(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a)$<$(b)) ? -\/1 \+: (((a)$>$(b)) ? 1 \+: 0))}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00040}{40}}
+
+\mbox{\Hypertarget{arith_8h_aaee81a47de7098b758f6aadc3e2d9007}\label{arith_8h_aaee81a47de7098b758f6aadc3e2d9007}} 
+\index{arith.h@{arith.h}!DEGREES@{DEGREES}}
+\index{DEGREES@{DEGREES}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{DEGREES}{DEGREES}}
+{\footnotesize\ttfamily \#define DEGREES(\begin{DoxyParamCaption}\item[{}]{rad }\end{DoxyParamCaption})~((rad)/\mbox{\hyperlink{arith_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}} $\ast$ 180.\+0)}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00061}{61}}
+
+\mbox{\Hypertarget{arith_8h_ae71449b1cc6e6250b91f539153a7a0d3}\label{arith_8h_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{arith.h@{arith.h}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~3.\+14159265358979323846}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00052}{52}}
+
+\mbox{\Hypertarget{arith_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{arith_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\index{arith.h@{arith.h}!MAX@{MAX}}
+\index{MAX@{MAX}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define MAX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((a)$>$(b)?(a)\+:(b))}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00036}{36}}
+
+\mbox{\Hypertarget{arith_8h_ace724a9256f4e65b352465e5feb24a21}\label{arith_8h_ace724a9256f4e65b352465e5feb24a21}} 
+\index{arith.h@{arith.h}!MAXDOUBLE@{MAXDOUBLE}}
+\index{MAXDOUBLE@{MAXDOUBLE}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{MAXDOUBLE}{MAXDOUBLE}}
+{\footnotesize\ttfamily \#define MAXDOUBLE~1.\+7976931348623157e+308}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00043}{43}}
+
+\mbox{\Hypertarget{arith_8h_a3acffbd305ee72dcd4593c0d8af64a4f}\label{arith_8h_a3acffbd305ee72dcd4593c0d8af64a4f}} 
+\index{arith.h@{arith.h}!MIN@{MIN}}
+\index{MIN@{MIN}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \#define MIN(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((a)$<$(b)?(a)\+:(b))}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00031}{31}}
+
+\mbox{\Hypertarget{arith_8h_a4af1b2e9b11a7583daf59f2cb45a22e5}\label{arith_8h_a4af1b2e9b11a7583daf59f2cb45a22e5}} 
+\index{arith.h@{arith.h}!RADIANS@{RADIANS}}
+\index{RADIANS@{RADIANS}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{RADIANS}{RADIANS}}
+{\footnotesize\ttfamily \#define RADIANS(\begin{DoxyParamCaption}\item[{}]{deg }\end{DoxyParamCaption})~((deg)/180.\+0 $\ast$ \mbox{\hyperlink{arith_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}})}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00060}{60}}
+
+\mbox{\Hypertarget{arith_8h_a91a8600e2a2859a47dbc2ba39960a352}\label{arith_8h_a91a8600e2a2859a47dbc2ba39960a352}} 
+\index{arith.h@{arith.h}!ROUND@{ROUND}}
+\index{ROUND@{ROUND}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{ROUND}{ROUND}}
+{\footnotesize\ttfamily \#define ROUND(\begin{DoxyParamCaption}\item[{}]{f }\end{DoxyParamCaption})~((f$>$=0)?(int)(f + .\+5)\+:(int)(f -\/ .\+5))}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00059}{59}}
+
+\mbox{\Hypertarget{arith_8h_a0501e9b03fb5d244efedcc437ef66f68}\label{arith_8h_a0501e9b03fb5d244efedcc437ef66f68}} 
+\index{arith.h@{arith.h}!SGN@{SGN}}
+\index{SGN@{SGN}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{SGN}{SGN}}
+{\footnotesize\ttfamily \#define SGN(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~(((a)$<$0)? -\/1 \+: 1)}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00039}{39}}
+
+\mbox{\Hypertarget{arith_8h_acc80bfed9382d1c32be56f4114e1fbeb}\label{arith_8h_acc80bfed9382d1c32be56f4114e1fbeb}} 
+\index{arith.h@{arith.h}!sincos@{sincos}}
+\index{sincos@{sincos}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{sincos}{sincos}}
+{\footnotesize\ttfamily \#define sincos(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{s,  }\item[{}]{c }\end{DoxyParamCaption})~$\ast$s = sin(x); $\ast$c = cos(x)}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00068}{68}}
+
+\mbox{\Hypertarget{arith_8h_ad41630f833e920c1ffa34722f45a8e77}\label{arith_8h_ad41630f833e920c1ffa34722f45a8e77}} 
+\index{arith.h@{arith.h}!SQR@{SQR}}
+\index{SQR@{SQR}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{SQR}{SQR}}
+{\footnotesize\ttfamily \#define SQR(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~((a) $\ast$ (a))}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00063}{63}}
+
+\mbox{\Hypertarget{arith_8h_a514396dd60fa0621c83072091fb2a0cd}\label{arith_8h_a514396dd60fa0621c83072091fb2a0cd}} 
+\index{arith.h@{arith.h}!SQRT2@{SQRT2}}
+\index{SQRT2@{SQRT2}!arith.h@{arith.h}}
+\doxysubsubsection{\texorpdfstring{SQRT2}{SQRT2}}
+{\footnotesize\ttfamily \#define SQRT2~1.\+41421356237309504880}
+
+
+
+См. определение в файле \mbox{\hyperlink{arith_8h_source}{arith.\+h}} строка \mbox{\hyperlink{arith_8h_source_l00056}{56}}
+

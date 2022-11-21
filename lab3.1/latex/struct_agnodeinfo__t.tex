@@ -1,0 +1,694 @@
+\hypertarget{struct_agnodeinfo__t}{}\doxysection{Структура Agnodeinfo\+\_\+t}
+\label{struct_agnodeinfo__t}\index{Agnodeinfo\_t@{Agnodeinfo\_t}}
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+
+
+Граф связей класса Agnodeinfo\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_agnodeinfo__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}{Agrec\+\_\+t}} \mbox{\hyperlink{struct_agnodeinfo__t_a04e9986e0043b00c1c49ac9d890c58ac}{hdr}}
+\item 
+\mbox{\hyperlink{structshape__desc}{shape\+\_\+desc}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_a9b9cc2413e0fbd69d74f04542d204433}{shape}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_a7d30ccada3964341e92b04450bea9c23}{shape\+\_\+info}}
+\item 
+\mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} \mbox{\hyperlink{struct_agnodeinfo__t_a4022a77ce465f3319f1f2d59b2a452c6}{coord}}
+\item 
+double \mbox{\hyperlink{struct_agnodeinfo__t_a0eb16e79104273a276bc30a10ae4f4d9}{width}}
+\item 
+double \mbox{\hyperlink{struct_agnodeinfo__t_a37f6de44fbb0cb2e394bd6c43f0bfbef}{height}}
+\item 
+\mbox{\hyperlink{structboxf}{boxf}} \mbox{\hyperlink{struct_agnodeinfo__t_a249e032f928a9d172e0e84b4e2c8eb6e}{bb}}
+\item 
+double \mbox{\hyperlink{struct_agnodeinfo__t_afb9b91836901786236912a5bcc6e9646}{ht}}
+\item 
+double \mbox{\hyperlink{struct_agnodeinfo__t_a57c26e1f3129094538de78cfce3b5c4d}{lw}}
+\item 
+double \mbox{\hyperlink{struct_agnodeinfo__t_a0e8ce4ed8936be519c39f2fdcfa5a38d}{rw}}
+\item 
+\mbox{\hyperlink{structtextlabel__t}{textlabel\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_a6e217dbc4ea34e6a63c9e74a23c1708f}{label}}
+\item 
+\mbox{\hyperlink{structtextlabel__t}{textlabel\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_a95dc60ae2925878bc270ffbbd9c84704}{xlabel}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_a2f2406fb2fd238fd003415d428b75948}{alg}}
+\item 
+char \mbox{\hyperlink{struct_agnodeinfo__t_ae2526e010bdeb496dde00cd04ad7cac1}{state}}
+\item 
+unsigned char \mbox{\hyperlink{struct_agnodeinfo__t_a75c1120d38aff9b8dd0508bc063378f5}{gui\+\_\+state}}
+\item 
+bool \mbox{\hyperlink{struct_agnodeinfo__t_af81bd22906caa346964f2b7298422549}{clustnode}}
+\item 
+unsigned char \mbox{\hyperlink{struct_agnodeinfo__t_a0feabe436db4204390b3dbbe5d7d7d73}{pinned}}
+\item 
+int \mbox{\hyperlink{struct_agnodeinfo__t_a85edf73145eaf819b85d804bf3975438}{id}}
+\item 
+int \mbox{\hyperlink{struct_agnodeinfo__t_a5ed3cd9e721ee9c478aec8fe752096d2}{heapindex}}
+\item 
+int \mbox{\hyperlink{struct_agnodeinfo__t_abe2116feb081319a3b2eea29369a18d1}{hops}}
+\item 
+double $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_ab209cadb7e79192e61bfe1791b5a6b64}{pos}}
+\item 
+double \mbox{\hyperlink{struct_agnodeinfo__t_a6640b9c93b05410452591340d7e440f7}{dist}}
+\item 
+unsigned char \mbox{\hyperlink{struct_agnodeinfo__t_a8ace281110ccb6836d0569a41bdbc2eb}{showboxes}}
+\item 
+bool \mbox{\hyperlink{struct_agnodeinfo__t_a91b19256f97904e45b8cd82a991f0f3d}{has\+\_\+port}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_aa756672038e563e41fbe6551eeddb26a}{rep}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_a789c289cda5ed646376b580352508d40}{set}}
+\item 
+char \mbox{\hyperlink{struct_agnodeinfo__t_a0d4dfc72187560b861802b9ee4abbae3}{node\+\_\+type}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_agnodeinfo__t_a4d5ef1e8b7dfd341e89562d87cf510e3}{mark}}
+\item 
+char \mbox{\hyperlink{struct_agnodeinfo__t_a588f583535fbb53ada43bdf4bcc8ffd9}{onstack}}
+\item 
+char \mbox{\hyperlink{struct_agnodeinfo__t_a941b18ffec27aa24e0e36b24c45c8713}{ranktype}}
+\item 
+char \mbox{\hyperlink{struct_agnodeinfo__t_a62867b6ec9cbc6b6a116c97c5dc3f925}{weight\+\_\+class}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_ab6462a99c6f362e60a62cc7a8d2e212c}{next}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_aa750606f7719f2e58dd869ba9c6d2b1c}{prev}}
+\item 
+\mbox{\hyperlink{structelist}{elist}} \mbox{\hyperlink{struct_agnodeinfo__t_a9b5958f138a099c3fa19b4c2dcb89524}{in}}
+\item 
+\mbox{\hyperlink{structelist}{elist}} \mbox{\hyperlink{struct_agnodeinfo__t_a55c47895ce58eecf4d2c5b2bb4f4efd8}{out}}
+\item 
+\mbox{\hyperlink{structelist}{elist}} \mbox{\hyperlink{struct_agnodeinfo__t_a706e552fb9332ae1b096f6493116362c}{flat\+\_\+out}}
+\item 
+\mbox{\hyperlink{structelist}{elist}} \mbox{\hyperlink{struct_agnodeinfo__t_a5d4a9446610041070cbe4bc92d21a47c}{flat\+\_\+in}}
+\item 
+\mbox{\hyperlink{structelist}{elist}} \mbox{\hyperlink{struct_agnodeinfo__t_adba160969a51e7ec4582b064e6b91830}{other}}
+\item 
+\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_aba8f5800f9df651be7171542ca0ebf5d}{clust}}
+\item 
+int \mbox{\hyperlink{struct_agnodeinfo__t_a789bfc74f3019f3b7fbeaac0a9e96dd5}{UF\+\_\+size}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_a8be0fcd365f8c4c03eccb9dec07d92e0}{UF\+\_\+parent}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_a310d44ea755c65d705106ecc9f1ef743}{inleaf}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_ab3e2e154e54697e08426e5b649a9effb}{outleaf}}
+\item 
+int \mbox{\hyperlink{struct_agnodeinfo__t_abff4af7c68bd02f9289b7fb7b5d087bb}{rank}}
+\item 
+int \mbox{\hyperlink{struct_agnodeinfo__t_a67a121c2366f88703549f70b2066190a}{order}}
+\item 
+double \mbox{\hyperlink{struct_agnodeinfo__t_a0701e6e29996b3777623764fc06402a0}{mval}}
+\item 
+\mbox{\hyperlink{structelist}{elist}} \mbox{\hyperlink{struct_agnodeinfo__t_afac4e6b893221077d76f2acb2f4c466d}{save\+\_\+in}}
+\item 
+\mbox{\hyperlink{structelist}{elist}} \mbox{\hyperlink{struct_agnodeinfo__t_abed21fa6556bc175a436b49d7b0b1141}{save\+\_\+out}}
+\item 
+\mbox{\hyperlink{structelist}{elist}} \mbox{\hyperlink{struct_agnodeinfo__t_afdb9ebdbd7a77ffad54e35846a93f140}{tree\+\_\+in}}
+\item 
+\mbox{\hyperlink{structelist}{elist}} \mbox{\hyperlink{struct_agnodeinfo__t_a7075eaa0407664f673383f05bad32833}{tree\+\_\+out}}
+\item 
+\mbox{\hyperlink{types_8h_ab6289995bb0656f4da2ae67d80fea6d2}{edge\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agnodeinfo__t_ae9fe16328675c6607feaba0608f91306}{par}}
+\item 
+int \mbox{\hyperlink{struct_agnodeinfo__t_a0e4e42f8e544f29dd9f47997b2708d7b}{low}}
+\item 
+int \mbox{\hyperlink{struct_agnodeinfo__t_a9efc525b9bfa6e74f8879f509e169b3b}{lim}}
+\item 
+int \mbox{\hyperlink{struct_agnodeinfo__t_ab88eb1a018df09eff45bc43cb3dace09}{priority}}
+\item 
+double \mbox{\hyperlink{struct_agnodeinfo__t_aa51d206384f26c970a10027c24a4ddde}{pad}} \mbox{[}1\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00409}{409}}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{struct_agnodeinfo__t_a2f2406fb2fd238fd003415d428b75948}\label{struct_agnodeinfo__t_a2f2406fb2fd238fd003415d428b75948}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!alg@{alg}}
+\index{alg@{alg}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{alg}{alg}}
+{\footnotesize\ttfamily void$\ast$ Agnodeinfo\+\_\+t\+::alg}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00422}{422}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a249e032f928a9d172e0e84b4e2c8eb6e}\label{struct_agnodeinfo__t_a249e032f928a9d172e0e84b4e2c8eb6e}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!bb@{bb}}
+\index{bb@{bb}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{bb}{bb}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structboxf}{boxf}} Agnodeinfo\+\_\+t\+::bb}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00416}{416}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_aba8f5800f9df651be7171542ca0ebf5d}\label{struct_agnodeinfo__t_aba8f5800f9df651be7171542ca0ebf5d}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!clust@{clust}}
+\index{clust@{clust}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{clust}{clust}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}}$\ast$ Agnodeinfo\+\_\+t\+::clust}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00454}{454}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_af81bd22906caa346964f2b7298422549}\label{struct_agnodeinfo__t_af81bd22906caa346964f2b7298422549}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!clustnode@{clustnode}}
+\index{clustnode@{clustnode}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{clustnode}{clustnode}}
+{\footnotesize\ttfamily bool Agnodeinfo\+\_\+t\+::clustnode}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00425}{425}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a4022a77ce465f3319f1f2d59b2a452c6}\label{struct_agnodeinfo__t_a4022a77ce465f3319f1f2d59b2a452c6}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!coord@{coord}}
+\index{coord@{coord}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{coord}{coord}}
+{\footnotesize\ttfamily \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} Agnodeinfo\+\_\+t\+::coord}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00413}{413}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a6640b9c93b05410452591340d7e440f7}\label{struct_agnodeinfo__t_a6640b9c93b05410452591340d7e440f7}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!dist@{dist}}
+\index{dist@{dist}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{dist}{dist}}
+{\footnotesize\ttfamily double Agnodeinfo\+\_\+t\+::dist}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00433}{433}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a5d4a9446610041070cbe4bc92d21a47c}\label{struct_agnodeinfo__t_a5d4a9446610041070cbe4bc92d21a47c}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!flat\_in@{flat\_in}}
+\index{flat\_in@{flat\_in}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{flat\_in}{flat\_in}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structelist}{elist}} Agnodeinfo\+\_\+t\+::flat\+\_\+in}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00452}{452}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a706e552fb9332ae1b096f6493116362c}\label{struct_agnodeinfo__t_a706e552fb9332ae1b096f6493116362c}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!flat\_out@{flat\_out}}
+\index{flat\_out@{flat\_out}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{flat\_out}{flat\_out}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structelist}{elist}} Agnodeinfo\+\_\+t\+::flat\+\_\+out}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00451}{451}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a75c1120d38aff9b8dd0508bc063378f5}\label{struct_agnodeinfo__t_a75c1120d38aff9b8dd0508bc063378f5}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!gui\_state@{gui\_state}}
+\index{gui\_state@{gui\_state}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{gui\_state}{gui\_state}}
+{\footnotesize\ttfamily unsigned char Agnodeinfo\+\_\+t\+::gui\+\_\+state}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00424}{424}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a91b19256f97904e45b8cd82a991f0f3d}\label{struct_agnodeinfo__t_a91b19256f97904e45b8cd82a991f0f3d}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!has\_port@{has\_port}}
+\index{has\_port@{has\_port}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{has\_port}{has\_port}}
+{\footnotesize\ttfamily bool Agnodeinfo\+\_\+t\+::has\+\_\+port}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00437}{437}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a04e9986e0043b00c1c49ac9d890c58ac}\label{struct_agnodeinfo__t_a04e9986e0043b00c1c49ac9d890c58ac}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}{Agrec\+\_\+t}} Agnodeinfo\+\_\+t\+::hdr}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00410}{410}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a5ed3cd9e721ee9c478aec8fe752096d2}\label{struct_agnodeinfo__t_a5ed3cd9e721ee9c478aec8fe752096d2}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!heapindex@{heapindex}}
+\index{heapindex@{heapindex}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{heapindex}{heapindex}}
+{\footnotesize\ttfamily int Agnodeinfo\+\_\+t\+::heapindex}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00430}{430}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a37f6de44fbb0cb2e394bd6c43f0bfbef}\label{struct_agnodeinfo__t_a37f6de44fbb0cb2e394bd6c43f0bfbef}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!height@{height}}
+\index{height@{height}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily double Agnodeinfo\+\_\+t\+::height}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00415}{415}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_abe2116feb081319a3b2eea29369a18d1}\label{struct_agnodeinfo__t_abe2116feb081319a3b2eea29369a18d1}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!hops@{hops}}
+\index{hops@{hops}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{hops}{hops}}
+{\footnotesize\ttfamily int Agnodeinfo\+\_\+t\+::hops}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00431}{431}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_afb9b91836901786236912a5bcc6e9646}\label{struct_agnodeinfo__t_afb9b91836901786236912a5bcc6e9646}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!ht@{ht}}
+\index{ht@{ht}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{ht}{ht}}
+{\footnotesize\ttfamily double Agnodeinfo\+\_\+t\+::ht}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00417}{417}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a85edf73145eaf819b85d804bf3975438}\label{struct_agnodeinfo__t_a85edf73145eaf819b85d804bf3975438}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!id@{id}}
+\index{id@{id}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Agnodeinfo\+\_\+t\+::id}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00429}{429}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a9b5958f138a099c3fa19b4c2dcb89524}\label{struct_agnodeinfo__t_a9b5958f138a099c3fa19b4c2dcb89524}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!in@{in}}
+\index{in@{in}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{in}{in}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structelist}{elist}} Agnodeinfo\+\_\+t\+::in}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00449}{449}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a310d44ea755c65d705106ecc9f1ef743}\label{struct_agnodeinfo__t_a310d44ea755c65d705106ecc9f1ef743}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!inleaf@{inleaf}}
+\index{inleaf@{inleaf}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{inleaf}{inleaf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agnodeinfo\+\_\+t\+::inleaf}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00459}{459}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a6e217dbc4ea34e6a63c9e74a23c1708f}\label{struct_agnodeinfo__t_a6e217dbc4ea34e6a63c9e74a23c1708f}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!label@{label}}
+\index{label@{label}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtextlabel__t}{textlabel\+\_\+t}}$\ast$ Agnodeinfo\+\_\+t\+::label}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00420}{420}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a9efc525b9bfa6e74f8879f509e169b3b}\label{struct_agnodeinfo__t_a9efc525b9bfa6e74f8879f509e169b3b}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!lim@{lim}}
+\index{lim@{lim}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{lim}{lim}}
+{\footnotesize\ttfamily int Agnodeinfo\+\_\+t\+::lim}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00474}{474}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a0e4e42f8e544f29dd9f47997b2708d7b}\label{struct_agnodeinfo__t_a0e4e42f8e544f29dd9f47997b2708d7b}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!low@{low}}
+\index{low@{low}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{low}{low}}
+{\footnotesize\ttfamily int Agnodeinfo\+\_\+t\+::low}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00473}{473}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a57c26e1f3129094538de78cfce3b5c4d}\label{struct_agnodeinfo__t_a57c26e1f3129094538de78cfce3b5c4d}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!lw@{lw}}
+\index{lw@{lw}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{lw}{lw}}
+{\footnotesize\ttfamily double Agnodeinfo\+\_\+t\+::lw}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00418}{418}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a4d5ef1e8b7dfd341e89562d87cf510e3}\label{struct_agnodeinfo__t_a4d5ef1e8b7dfd341e89562d87cf510e3}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!mark@{mark}}
+\index{mark@{mark}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{mark}{mark}}
+{\footnotesize\ttfamily size\+\_\+t Agnodeinfo\+\_\+t\+::mark}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00443}{443}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a0701e6e29996b3777623764fc06402a0}\label{struct_agnodeinfo__t_a0701e6e29996b3777623764fc06402a0}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!mval@{mval}}
+\index{mval@{mval}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{mval}{mval}}
+{\footnotesize\ttfamily double Agnodeinfo\+\_\+t\+::mval}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00465}{465}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_ab6462a99c6f362e60a62cc7a8d2e212c}\label{struct_agnodeinfo__t_ab6462a99c6f362e60a62cc7a8d2e212c}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!next@{next}}
+\index{next@{next}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agnodeinfo\+\_\+t\+::next}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00447}{447}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a0d4dfc72187560b861802b9ee4abbae3}\label{struct_agnodeinfo__t_a0d4dfc72187560b861802b9ee4abbae3}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!node\_type@{node\_type}}
+\index{node\_type@{node\_type}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{node\_type}{node\_type}}
+{\footnotesize\ttfamily char Agnodeinfo\+\_\+t\+::node\+\_\+type}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00442}{442}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a588f583535fbb53ada43bdf4bcc8ffd9}\label{struct_agnodeinfo__t_a588f583535fbb53ada43bdf4bcc8ffd9}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!onstack@{onstack}}
+\index{onstack@{onstack}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{onstack}{onstack}}
+{\footnotesize\ttfamily char Agnodeinfo\+\_\+t\+::onstack}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00444}{444}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a67a121c2366f88703549f70b2066190a}\label{struct_agnodeinfo__t_a67a121c2366f88703549f70b2066190a}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!order@{order}}
+\index{order@{order}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{order}{order}}
+{\footnotesize\ttfamily int Agnodeinfo\+\_\+t\+::order}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00464}{464}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_adba160969a51e7ec4582b064e6b91830}\label{struct_agnodeinfo__t_adba160969a51e7ec4582b064e6b91830}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!other@{other}}
+\index{other@{other}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{other}{other}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structelist}{elist}} Agnodeinfo\+\_\+t\+::other}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00453}{453}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a55c47895ce58eecf4d2c5b2bb4f4efd8}\label{struct_agnodeinfo__t_a55c47895ce58eecf4d2c5b2bb4f4efd8}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!out@{out}}
+\index{out@{out}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structelist}{elist}} Agnodeinfo\+\_\+t\+::out}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00450}{450}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_ab3e2e154e54697e08426e5b649a9effb}\label{struct_agnodeinfo__t_ab3e2e154e54697e08426e5b649a9effb}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!outleaf@{outleaf}}
+\index{outleaf@{outleaf}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{outleaf}{outleaf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agnodeinfo\+\_\+t\+::outleaf}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00460}{460}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_aa51d206384f26c970a10027c24a4ddde}\label{struct_agnodeinfo__t_aa51d206384f26c970a10027c24a4ddde}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!pad@{pad}}
+\index{pad@{pad}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{pad}{pad}}
+{\footnotesize\ttfamily double Agnodeinfo\+\_\+t\+::pad\mbox{[}1\mbox{]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00477}{477}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_ae9fe16328675c6607feaba0608f91306}\label{struct_agnodeinfo__t_ae9fe16328675c6607feaba0608f91306}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!par@{par}}
+\index{par@{par}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{par}{par}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_ab6289995bb0656f4da2ae67d80fea6d2}{edge\+\_\+t}}$\ast$ Agnodeinfo\+\_\+t\+::par}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00472}{472}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a0feabe436db4204390b3dbbe5d7d7d73}\label{struct_agnodeinfo__t_a0feabe436db4204390b3dbbe5d7d7d73}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!pinned@{pinned}}
+\index{pinned@{pinned}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{pinned}{pinned}}
+{\footnotesize\ttfamily unsigned char Agnodeinfo\+\_\+t\+::pinned}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00428}{428}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_ab209cadb7e79192e61bfe1791b5a6b64}\label{struct_agnodeinfo__t_ab209cadb7e79192e61bfe1791b5a6b64}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!pos@{pos}}
+\index{pos@{pos}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily double$\ast$ Agnodeinfo\+\_\+t\+::pos}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00432}{432}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_aa750606f7719f2e58dd869ba9c6d2b1c}\label{struct_agnodeinfo__t_aa750606f7719f2e58dd869ba9c6d2b1c}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!prev@{prev}}
+\index{prev@{prev}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{prev}{prev}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agnodeinfo\+\_\+t\+::prev}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00448}{448}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_ab88eb1a018df09eff45bc43cb3dace09}\label{struct_agnodeinfo__t_ab88eb1a018df09eff45bc43cb3dace09}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!priority@{priority}}
+\index{priority@{priority}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{priority}{priority}}
+{\footnotesize\ttfamily int Agnodeinfo\+\_\+t\+::priority}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00475}{475}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_abff4af7c68bd02f9289b7fb7b5d087bb}\label{struct_agnodeinfo__t_abff4af7c68bd02f9289b7fb7b5d087bb}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!rank@{rank}}
+\index{rank@{rank}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{rank}{rank}}
+{\footnotesize\ttfamily int Agnodeinfo\+\_\+t\+::rank}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00463}{463}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a941b18ffec27aa24e0e36b24c45c8713}\label{struct_agnodeinfo__t_a941b18ffec27aa24e0e36b24c45c8713}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!ranktype@{ranktype}}
+\index{ranktype@{ranktype}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{ranktype}{ranktype}}
+{\footnotesize\ttfamily char Agnodeinfo\+\_\+t\+::ranktype}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00445}{445}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_aa756672038e563e41fbe6551eeddb26a}\label{struct_agnodeinfo__t_aa756672038e563e41fbe6551eeddb26a}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!rep@{rep}}
+\index{rep@{rep}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{rep}{rep}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agnodeinfo\+\_\+t\+::rep}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00438}{438}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a0e8ce4ed8936be519c39f2fdcfa5a38d}\label{struct_agnodeinfo__t_a0e8ce4ed8936be519c39f2fdcfa5a38d}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!rw@{rw}}
+\index{rw@{rw}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{rw}{rw}}
+{\footnotesize\ttfamily double Agnodeinfo\+\_\+t\+::rw}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00419}{419}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_afac4e6b893221077d76f2acb2f4c466d}\label{struct_agnodeinfo__t_afac4e6b893221077d76f2acb2f4c466d}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!save\_in@{save\_in}}
+\index{save\_in@{save\_in}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{save\_in}{save\_in}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structelist}{elist}} Agnodeinfo\+\_\+t\+::save\+\_\+in}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00466}{466}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_abed21fa6556bc175a436b49d7b0b1141}\label{struct_agnodeinfo__t_abed21fa6556bc175a436b49d7b0b1141}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!save\_out@{save\_out}}
+\index{save\_out@{save\_out}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{save\_out}{save\_out}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structelist}{elist}} Agnodeinfo\+\_\+t\+::save\+\_\+out}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00467}{467}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a789c289cda5ed646376b580352508d40}\label{struct_agnodeinfo__t_a789c289cda5ed646376b580352508d40}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!set@{set}}
+\index{set@{set}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{set}{set}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agnodeinfo\+\_\+t\+::set}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00439}{439}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a9b9cc2413e0fbd69d74f04542d204433}\label{struct_agnodeinfo__t_a9b9cc2413e0fbd69d74f04542d204433}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!shape@{shape}}
+\index{shape@{shape}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{shape}{shape}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structshape__desc}{shape\+\_\+desc}}$\ast$ Agnodeinfo\+\_\+t\+::shape}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00411}{411}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a7d30ccada3964341e92b04450bea9c23}\label{struct_agnodeinfo__t_a7d30ccada3964341e92b04450bea9c23}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!shape\_info@{shape\_info}}
+\index{shape\_info@{shape\_info}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{shape\_info}{shape\_info}}
+{\footnotesize\ttfamily void$\ast$ Agnodeinfo\+\_\+t\+::shape\+\_\+info}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00412}{412}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a8ace281110ccb6836d0569a41bdbc2eb}\label{struct_agnodeinfo__t_a8ace281110ccb6836d0569a41bdbc2eb}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!showboxes@{showboxes}}
+\index{showboxes@{showboxes}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{showboxes}{showboxes}}
+{\footnotesize\ttfamily unsigned char Agnodeinfo\+\_\+t\+::showboxes}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00436}{436}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_ae2526e010bdeb496dde00cd04ad7cac1}\label{struct_agnodeinfo__t_ae2526e010bdeb496dde00cd04ad7cac1}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!state@{state}}
+\index{state@{state}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily char Agnodeinfo\+\_\+t\+::state}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00423}{423}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_afdb9ebdbd7a77ffad54e35846a93f140}\label{struct_agnodeinfo__t_afdb9ebdbd7a77ffad54e35846a93f140}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!tree\_in@{tree\_in}}
+\index{tree\_in@{tree\_in}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{tree\_in}{tree\_in}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structelist}{elist}} Agnodeinfo\+\_\+t\+::tree\+\_\+in}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00470}{470}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a7075eaa0407664f673383f05bad32833}\label{struct_agnodeinfo__t_a7075eaa0407664f673383f05bad32833}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!tree\_out@{tree\_out}}
+\index{tree\_out@{tree\_out}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{tree\_out}{tree\_out}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structelist}{elist}} Agnodeinfo\+\_\+t\+::tree\+\_\+out}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00471}{471}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a8be0fcd365f8c4c03eccb9dec07d92e0}\label{struct_agnodeinfo__t_a8be0fcd365f8c4c03eccb9dec07d92e0}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!UF\_parent@{UF\_parent}}
+\index{UF\_parent@{UF\_parent}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{UF\_parent}{UF\_parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agnodeinfo\+\_\+t\+::\+UF\+\_\+parent}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00458}{458}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a789bfc74f3019f3b7fbeaac0a9e96dd5}\label{struct_agnodeinfo__t_a789bfc74f3019f3b7fbeaac0a9e96dd5}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!UF\_size@{UF\_size}}
+\index{UF\_size@{UF\_size}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{UF\_size}{UF\_size}}
+{\footnotesize\ttfamily int Agnodeinfo\+\_\+t\+::\+UF\+\_\+size}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00457}{457}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a62867b6ec9cbc6b6a116c97c5dc3f925}\label{struct_agnodeinfo__t_a62867b6ec9cbc6b6a116c97c5dc3f925}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!weight\_class@{weight\_class}}
+\index{weight\_class@{weight\_class}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{weight\_class}{weight\_class}}
+{\footnotesize\ttfamily char Agnodeinfo\+\_\+t\+::weight\+\_\+class}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00446}{446}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a0eb16e79104273a276bc30a10ae4f4d9}\label{struct_agnodeinfo__t_a0eb16e79104273a276bc30a10ae4f4d9}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!width@{width}}
+\index{width@{width}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily double Agnodeinfo\+\_\+t\+::width}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00414}{414}}
+
+\mbox{\Hypertarget{struct_agnodeinfo__t_a95dc60ae2925878bc270ffbbd9c84704}\label{struct_agnodeinfo__t_a95dc60ae2925878bc270ffbbd9c84704}} 
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!xlabel@{xlabel}}
+\index{xlabel@{xlabel}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\doxysubsubsection{\texorpdfstring{xlabel}{xlabel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtextlabel__t}{textlabel\+\_\+t}}$\ast$ Agnodeinfo\+\_\+t\+::xlabel}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00421}{421}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\+Graphviz/include/graphviz/\mbox{\hyperlink{types_8h}{types.\+h}}\end{DoxyCompactItemize}

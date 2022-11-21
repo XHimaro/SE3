@@ -1,0 +1,164 @@
+\hypertarget{mbtcp_8c_source}{}\doxysection{mbtcp.\+c}
+\label{mbtcp_8c_source}\index{for lab/freemodbus-\/v1.5.0/modbus/tcp/mbtcp.c@{for lab/freemodbus-\/v1.5.0/modbus/tcp/mbtcp.c}}
+\mbox{\hyperlink{mbtcp_8c}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00001}00001 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00002}00002 \textcolor{comment}{ * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00003}00003 \textcolor{comment}{ * Copyright (c) 2006 Christian Walter <wolti@sil.at>}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00004}00004 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00006}00006 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00007}00007 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00008}00008 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00009}00009 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00010}00010 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00011}00011 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00012}00012 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00013}00013 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00014}00014 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00015}00015 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00016}00016 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00017}00017 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00018}00018 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00019}00019 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00020}00020 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00021}00021 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00022}00022 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00023}00023 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00024}00024 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00025}00025 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00026}00026 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00028}00028 \textcolor{comment}{ * File: \$Id: mbtcp.c,v 1.3 2006/12/07 22:10:34 wolti Exp \$}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00029}00029 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00031}00031 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ System includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00032}00032 \textcolor{preprocessor}{\#include "{}stdlib.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00033}00033 \textcolor{preprocessor}{\#include "{}string.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00035}00035 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Platform includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00036}00036 \textcolor{preprocessor}{\#include "{}port.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00038}00038 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Modbus includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00039}00039 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mb_8h}{mb.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00040}00040 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbconfig_8h}{mbconfig.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00041}00041 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbtcp_8h}{mbtcp.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00042}00042 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbframe_8h}{mbframe.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00043}00043 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbport_8h}{mbport.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00045}00045 \textcolor{preprocessor}{\#if MB\_TCP\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00047}00047 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Defines -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00049}00049 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ MBAP Header -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00050}00050 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00051}00051 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00052}00052 \textcolor{comment}{ * <-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ MODBUS TCP/IP ADU(1) -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/>}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00053}00053 \textcolor{comment}{ *              <-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ MODBUS PDU (1') -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/>}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00054}00054 \textcolor{comment}{ *  +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00055}00055 \textcolor{comment}{ *  | TID | PID | Length | UID  |Code | Data                               |}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00056}00056 \textcolor{comment}{ *  +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00057}00057 \textcolor{comment}{ *  |     |     |        |      |                                           }}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00058}00058 \textcolor{comment}{ * (2)   (3)   (4)      (5)    (6)                                          }}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00059}00059 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00060}00060 \textcolor{comment}{ * (2)  ... MB\_TCP\_TID          = 0 (Transaction Identifier -\/ 2 Byte) }}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00061}00061 \textcolor{comment}{ * (3)  ... MB\_TCP\_PID          = 2 (Protocol Identifier -\/ 2 Byte)}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00062}00062 \textcolor{comment}{ * (4)  ... MB\_TCP\_LEN          = 4 (Number of bytes -\/ 2 Byte)}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00063}00063 \textcolor{comment}{ * (5)  ... MB\_TCP\_UID          = 6 (Unit Identifier -\/ 1 Byte)}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00064}00064 \textcolor{comment}{ * (6)  ... MB\_TCP\_FUNC         = 7 (Modbus Function Code)}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00065}00065 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00066}00066 \textcolor{comment}{ * (1)  ... Modbus TCP/IP Application Data Unit}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00067}00067 \textcolor{comment}{ * (1') ... Modbus Protocol Data Unit}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00068}00068 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00070}00070 \textcolor{preprocessor}{\#define MB\_TCP\_TID          0}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00071}00071 \textcolor{preprocessor}{\#define MB\_TCP\_PID          2}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00072}00072 \textcolor{preprocessor}{\#define MB\_TCP\_LEN          4}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00073}00073 \textcolor{preprocessor}{\#define MB\_TCP\_UID          6}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00074}00074 \textcolor{preprocessor}{\#define MB\_TCP\_FUNC         7}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00076}00076 \textcolor{preprocessor}{\#define MB\_TCP\_PROTOCOL\_ID  0   }\textcolor{comment}{/* 0 = Modbus Protocol */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00079}00079 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Start implementation -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00080}00080 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00081}00081 \mbox{\hyperlink{mbtcp_8h_afc4d97e1ef477aa7d6462bd11cda6350}{eMBTCPDoInit}}( USHORT ucTCPPort )}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00082}00082 \{}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00083}00083     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00085}00085     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbport_8h_a793d6e53b5632f4075af872b6a5c8ca5}{xMBTCPPortInit}}( ucTCPPort ) == FALSE )}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00086}00086     \{}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00087}00087         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\_EPORTERR}};}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00088}00088     \}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00089}00089     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00090}00090 \}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00092}00092 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00093}00093 \mbox{\hyperlink{mbtcp_8h_a4c3d680e5dcb5a83148eab88618adacf}{eMBTCPStart}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00094}00094 \{}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00095}00095 \}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00097}00097 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00098}00098 \mbox{\hyperlink{mbtcp_8h_a69f057684ffba6bb272096f78748f3c0}{eMBTCPStop}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00099}00099 \{}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00100}00100     \textcolor{comment}{/* Make sure that no more clients are connected. */}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00101}00101     \mbox{\hyperlink{mbport_8h_a2ea2cd5d0cb31ce90df6e46d7af29d8d}{vMBTCPPortDisable}}( );}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00102}00102 \}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00104}00104 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00105}00105 \mbox{\hyperlink{mbtcp_8h_a9af49438982de4ee6447f0c53aa7cf15}{eMBTCPReceive}}( UCHAR * pucRcvAddress, UCHAR ** ppucFrame, USHORT * pusLength )}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00106}00106 \{}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00107}00107     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{MB\_EIO}};}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00108}00108     UCHAR          *pucMBTCPFrame;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00109}00109     USHORT          usLength;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00110}00110     USHORT          usPID;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00112}00112     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbport_8h_a770c9a4001e08aafec96234e51ac8f42}{xMBTCPPortGetRequest}}( \&pucMBTCPFrame, \&usLength ) != FALSE )}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00113}00113     \{}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00114}00114         usPID = pucMBTCPFrame[MB\_TCP\_PID] << 8U;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00115}00115         usPID |= pucMBTCPFrame[MB\_TCP\_PID + 1];}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00117}00117         \textcolor{keywordflow}{if}( usPID == MB\_TCP\_PROTOCOL\_ID )}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00118}00118         \{}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00119}00119             *ppucFrame = \&pucMBTCPFrame[MB\_TCP\_FUNC];}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00120}00120             *pusLength = usLength -\/ MB\_TCP\_FUNC;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00121}00121             eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00123}00123             \textcolor{comment}{/* Modbus TCP does not use any addresses. Fake the source address such}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00124}00124 \textcolor{comment}{             * that the processing part deals with this frame.}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00125}00125 \textcolor{comment}{             */}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00126}00126             *pucRcvAddress = \mbox{\hyperlink{mbtcp_8h_a86f074736a0c94868fb139cd9de1e1e4}{MB\_TCP\_PSEUDO\_ADDRESS}};}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00127}00127         \}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00128}00128     \}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00129}00129     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00130}00130     \{}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00131}00131         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{MB\_EIO}};}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00132}00132     \}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00133}00133     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00134}00134 \}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00135}00135 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00136}00136 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00137}00137 \mbox{\hyperlink{mbtcp_8h_ae3a739ca896039491dbbe5ea1f1701fb}{eMBTCPSend}}( UCHAR \_unused, \textcolor{keyword}{const} UCHAR * pucFrame, USHORT usLength )}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00138}00138 \{}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00139}00139     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00140}00140     UCHAR          *pucMBTCPFrame = ( UCHAR * ) pucFrame -\/ MB\_TCP\_FUNC;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00141}00141     USHORT          usTCPLength = usLength + MB\_TCP\_FUNC;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00143}00143     \textcolor{comment}{/* The MBAP header is already initialized because the caller calls this}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00144}00144 \textcolor{comment}{     * function with the buffer returned by the previous call. Therefore we }}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00145}00145 \textcolor{comment}{     * only have to update the length in the header. Note that the length }}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00146}00146 \textcolor{comment}{     * header includes the size of the Modbus PDU and the UID Byte. Therefore }}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00147}00147 \textcolor{comment}{     * the length is usLength plus one.}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00148}00148 \textcolor{comment}{     */}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00149}00149     pucMBTCPFrame[MB\_TCP\_LEN] = ( usLength + 1 ) >> 8U;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00150}00150     pucMBTCPFrame[MB\_TCP\_LEN + 1] = ( usLength + 1 ) \& 0xFF;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00151}00151     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbport_8h_a2902b52c4070bd676851561caef5a4c5}{xMBTCPPortSendResponse}}( pucMBTCPFrame, usTCPLength ) == FALSE )}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00152}00152     \{}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00153}00153         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{MB\_EIO}};}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00154}00154     \}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00155}00155     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00156}00156 \}}
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{mbtcp_8c_source_l00158}00158 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

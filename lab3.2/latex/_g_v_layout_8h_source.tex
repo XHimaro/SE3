@@ -1,0 +1,58 @@
+\hypertarget{_g_v_layout_8h_source}{}\doxysection{GVLayout.\+h}
+\label{_g_v_layout_8h_source}\index{for lab/Graphviz/include/graphviz/GVLayout.h@{for lab/Graphviz/include/graphviz/GVLayout.h}}
+\mbox{\hyperlink{_g_v_layout_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00003}00003 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_a_graph_8h}{AGraph.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_g_v_context_8h}{GVContext.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_g_v_render_data_8h}{GVRenderData.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00009}00009 \textcolor{preprocessor}{\#ifdef GVDLL}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00010}00010 \textcolor{preprocessor}{\#if gvc\_\_\_EXPORTS }\textcolor{comment}{// CMake's substitution of gvc++\_EXPORTS}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00011}00011 \textcolor{preprocessor}{\#define GVLAYOUT\_API \_\_declspec(dllexport)}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00012}00012 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00013}00013 \textcolor{preprocessor}{\#define GVLAYOUT\_API \_\_declspec(dllimport)}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00014}00014 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00015}00015 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00017}00017 \textcolor{preprocessor}{\#ifndef GVLAYOUT\_API}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00018}\mbox{\hyperlink{_g_v_layout_8h_af0e6de9a8115030216fad5a998e15f2e}{00018}} \textcolor{preprocessor}{\#define GVLAYOUT\_API }\textcolor{comment}{/* nothing */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00019}00019 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00021}00021 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_v_c}{GVC}} \{}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00027}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{00027}} \textcolor{keyword}{class }\mbox{\hyperlink{_g_v_layout_8h_af0e6de9a8115030216fad5a998e15f2e}{GVLAYOUT\_API}} \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \{}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00028}00028 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00029}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a1924389732788dc88aa339b33613e475}{00029}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a1924389732788dc88aa339b33613e475}{GVLayout}}(\textcolor{keyword}{const} std::shared\_ptr<GVContext> \&gvc,}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00030}00030            \textcolor{keyword}{const} std::shared\_ptr<CGraph::AGraph> \&g, \textcolor{keyword}{const} std::string \&engine);}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00031}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_af2d19a3c632f16347d5b30042c6c36fa}{00031}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_af2d19a3c632f16347d5b30042c6c36fa}{GVLayout}}(\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&gvc, \mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph::AGraph}} \&\&g, \textcolor{keyword}{const} std::string \&engine);}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00032}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_aa50d2ff00a2f299361110e2615728a9d}{00032}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_aa50d2ff00a2f299361110e2615728a9d}{GVLayout}}(std::shared\_ptr<GVContext> gvc, \mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph::AGraph}} \&\&g,}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00033}00033            \textcolor{keyword}{const} std::string \&engine);}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00034}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_ace44891629e3e3f002ae72bf369bee1f}{00034}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_ace44891629e3e3f002ae72bf369bee1f}{GVLayout}}(\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&gvc, std::shared\_ptr<CGraph::AGraph> g,}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00035}00035            \textcolor{keyword}{const} std::string \&engine);}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00036}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a68a13451faf1cdd5e8005e9e39efd2cb}{00036}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a68a13451faf1cdd5e8005e9e39efd2cb}{\string~GVLayout}}();}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00038}00038   \textcolor{comment}{// default copy since we manage resources through movable types}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00039}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a0039d8c89ccae48c54e7b57bcef61fdc}{00039}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a0039d8c89ccae48c54e7b57bcef61fdc}{GVLayout}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00040}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_ad7a4a0b86a765bf6a6d63e1131a3f37d}{00040}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_ad7a4a0b86a765bf6a6d63e1131a3f37d}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00042}00042   \textcolor{comment}{// default move since we manage resources through movable types}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00043}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a0043815c3d47a9b11d612b9f10daeb03}{00043}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a0043815c3d47a9b11d612b9f10daeb03}{GVLayout}}(\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00044}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a92f9b79398f64268535c3377a73e44f4}{00044}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a92f9b79398f64268535c3377a73e44f4}{operator=}}(\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&\&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00046}00046   \textcolor{comment}{// render the layout in the specified format}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00047}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a2afc965cde8f81707ce2fd12c140a673}{00047}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_render_data}{GVRenderData}} \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a2afc965cde8f81707ce2fd12c140a673}{render}}(\textcolor{keyword}{const} std::string \&format) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00049}00049 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00050}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a32e3a6c8f48bf9aae03b5de359496842}{00050}}   std::shared\_ptr<GVContext> \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a32e3a6c8f48bf9aae03b5de359496842}{m\_gvc}};}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00051}\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a3345dae4650647d8b0092a0d7c60379d}{00051}}   std::shared\_ptr<CGraph::AGraph> \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a3345dae4650647d8b0092a0d7c60379d}{m\_g}};}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00052}00052 \};}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00054}00054 \} \textcolor{comment}{//  namespace GVC}}
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_g_v_layout_8h_source_l00056}00056 \textcolor{preprocessor}{\#undef GVLAYOUT\_API}}
+
+\end{DoxyCode}

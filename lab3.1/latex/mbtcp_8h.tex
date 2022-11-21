@@ -1,0 +1,74 @@
+\hypertarget{mbtcp_8h}{}\doxysection{Файл for lab/freemodbus-\/v1.5.0/modbus/tcp/mbtcp.h}
+\label{mbtcp_8h}\index{for lab/freemodbus-\/v1.5.0/modbus/tcp/mbtcp.h@{for lab/freemodbus-\/v1.5.0/modbus/tcp/mbtcp.h}}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{mbtcp_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mbtcp_8h_a86f074736a0c94868fb139cd9de1e1e4}{MB\+\_\+\+TCP\+\_\+\+PSEUDO\+\_\+\+ADDRESS}}~255
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{mbtcp_8h_afc4d97e1ef477aa7d6462bd11cda6350}{e\+MBTCPDo\+Init}} (USHORT uc\+TCPPort)
+\item 
+void \mbox{\hyperlink{mbtcp_8h_a4c3d680e5dcb5a83148eab88618adacf}{e\+MBTCPStart}} (void)
+\item 
+void \mbox{\hyperlink{mbtcp_8h_a69f057684ffba6bb272096f78748f3c0}{e\+MBTCPStop}} (void)
+\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{mbtcp_8h_a9af49438982de4ee6447f0c53aa7cf15}{e\+MBTCPReceive}} (UCHAR $\ast$puc\+Rcv\+Address, UCHAR $\ast$$\ast$puc\+Frame, USHORT $\ast$pus\+Length)
+\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{mbtcp_8h_ae3a739ca896039491dbbe5ea1f1701fb}{e\+MBTCPSend}} (UCHAR \+\_\+unused, const UCHAR $\ast$puc\+Frame, USHORT us\+Length)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{mbtcp_8h_a86f074736a0c94868fb139cd9de1e1e4}\label{mbtcp_8h_a86f074736a0c94868fb139cd9de1e1e4}} 
+\index{mbtcp.h@{mbtcp.h}!MB\_TCP\_PSEUDO\_ADDRESS@{MB\_TCP\_PSEUDO\_ADDRESS}}
+\index{MB\_TCP\_PSEUDO\_ADDRESS@{MB\_TCP\_PSEUDO\_ADDRESS}!mbtcp.h@{mbtcp.h}}
+\doxysubsubsection{\texorpdfstring{MB\_TCP\_PSEUDO\_ADDRESS}{MB\_TCP\_PSEUDO\_ADDRESS}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+TCP\+\_\+\+PSEUDO\+\_\+\+ADDRESS~255}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbtcp_8h_source}{mbtcp.\+h}} строка \mbox{\hyperlink{mbtcp_8h_source_l00039}{39}}
+
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{mbtcp_8h_afc4d97e1ef477aa7d6462bd11cda6350}\label{mbtcp_8h_afc4d97e1ef477aa7d6462bd11cda6350}} 
+\index{mbtcp.h@{mbtcp.h}!eMBTCPDoInit@{eMBTCPDoInit}}
+\index{eMBTCPDoInit@{eMBTCPDoInit}!mbtcp.h@{mbtcp.h}}
+\doxysubsubsection{\texorpdfstring{eMBTCPDoInit()}{eMBTCPDoInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+MBTCPDo\+Init (\begin{DoxyParamCaption}\item[{USHORT}]{uc\+TCPPort }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mbtcp_8h_a9af49438982de4ee6447f0c53aa7cf15}\label{mbtcp_8h_a9af49438982de4ee6447f0c53aa7cf15}} 
+\index{mbtcp.h@{mbtcp.h}!eMBTCPReceive@{eMBTCPReceive}}
+\index{eMBTCPReceive@{eMBTCPReceive}!mbtcp.h@{mbtcp.h}}
+\doxysubsubsection{\texorpdfstring{eMBTCPReceive()}{eMBTCPReceive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+MBTCPReceive (\begin{DoxyParamCaption}\item[{UCHAR $\ast$}]{puc\+Rcv\+Address,  }\item[{UCHAR $\ast$$\ast$}]{puc\+Frame,  }\item[{USHORT $\ast$}]{pus\+Length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mbtcp_8h_ae3a739ca896039491dbbe5ea1f1701fb}\label{mbtcp_8h_ae3a739ca896039491dbbe5ea1f1701fb}} 
+\index{mbtcp.h@{mbtcp.h}!eMBTCPSend@{eMBTCPSend}}
+\index{eMBTCPSend@{eMBTCPSend}!mbtcp.h@{mbtcp.h}}
+\doxysubsubsection{\texorpdfstring{eMBTCPSend()}{eMBTCPSend()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+MBTCPSend (\begin{DoxyParamCaption}\item[{UCHAR}]{\+\_\+unused,  }\item[{const UCHAR $\ast$}]{puc\+Frame,  }\item[{USHORT}]{us\+Length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mbtcp_8h_a4c3d680e5dcb5a83148eab88618adacf}\label{mbtcp_8h_a4c3d680e5dcb5a83148eab88618adacf}} 
+\index{mbtcp.h@{mbtcp.h}!eMBTCPStart@{eMBTCPStart}}
+\index{eMBTCPStart@{eMBTCPStart}!mbtcp.h@{mbtcp.h}}
+\doxysubsubsection{\texorpdfstring{eMBTCPStart()}{eMBTCPStart()}}
+{\footnotesize\ttfamily void e\+MBTCPStart (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mbtcp_8h_a69f057684ffba6bb272096f78748f3c0}\label{mbtcp_8h_a69f057684ffba6bb272096f78748f3c0}} 
+\index{mbtcp.h@{mbtcp.h}!eMBTCPStop@{eMBTCPStop}}
+\index{eMBTCPStop@{eMBTCPStop}!mbtcp.h@{mbtcp.h}}
+\doxysubsubsection{\texorpdfstring{eMBTCPStop()}{eMBTCPStop()}}
+{\footnotesize\ttfamily void e\+MBTCPStop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

@@ -1,0 +1,123 @@
+\hypertarget{gvc_8h_source}{}\doxysection{gvc.\+h}
+\label{gvc_8h_source}\index{for lab/Graphviz/include/graphviz/gvc.h@{for lab/Graphviz/include/graphviz/gvc.h}}
+\mbox{\hyperlink{gvc_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00006}00006 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00007}00007 \textcolor{comment}{ * Copyright (c) 2011 AT\&T Intellectual Property }}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00008}00008 \textcolor{comment}{ * All rights reserved. This program and the accompanying materials}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00009}00009 \textcolor{comment}{ * are made available under the terms of the Eclipse Public License v1.0}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00010}00010 \textcolor{comment}{ * which accompanies this distribution, and is available at}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00011}00011 \textcolor{comment}{ * http://www.eclipse.org/legal/epl-\/v10.html}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00013}00013 \textcolor{comment}{ * Contributors: Details at https://graphviz.org}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00014}00014 \textcolor{comment}{ *************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00016}00016 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00018}00018 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00020}00020 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{types_8h}{types.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00021}00021 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gvplugin_8h}{gvplugin.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00023}00023 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00024}00024 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00025}00025 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00027}00027 \textcolor{preprocessor}{\#ifdef GVDLL}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00028}00028 \textcolor{preprocessor}{\#ifdef GVC\_EXPORTS}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00029}00029 \textcolor{preprocessor}{\#define GVC\_API \_\_declspec(dllexport)}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00030}00030 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00031}00031 \textcolor{preprocessor}{\#define GVC\_API \_\_declspec(dllimport)}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00032}00032 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00033}00033 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00035}00035 \textcolor{preprocessor}{\#ifndef GVC\_API}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00036}\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{00036}} \textcolor{preprocessor}{\#define GVC\_API }\textcolor{comment}{/* nothing */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00037}00037 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00038}00038     }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00039}\mbox{\hyperlink{gvc_8h_a1900bbae79ee742028fdade9874044ab}{00039}} \textcolor{preprocessor}{\#define LAYOUT\_DONE(g) (agbindrec(g, "{}Agraphinfo\_t"{}}, 0, TRUE) \&\& GD\_drawing(g))}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00041}00041 \textcolor{comment}{/* misc */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00042}00042 \textcolor{comment}{/* FIXME -\/ this needs eliminating or renaming */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00043}\mbox{\hyperlink{gvc_8h_a018b112f47c2d5d0f16ba15d96da6b83}{00043}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{void} \mbox{\hyperlink{gvc_8h_a018b112f47c2d5d0f16ba15d96da6b83}{gvToggle}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00045}00045 \textcolor{comment}{/* set up a graphviz context */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00046}\mbox{\hyperlink{gvc_8h_a6f9134481fe1f165031eef2f7a15d757}{00046}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *\mbox{\hyperlink{gvc_8h_a6f9134481fe1f165031eef2f7a15d757}{gvNEWcontext}}(\textcolor{keyword}{const} \mbox{\hyperlink{structlt__symlist__t}{lt\_symlist\_t}} *builtins, \textcolor{keywordtype}{int} demand\_loading);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00048}00048 \textcolor{comment}{/*  set up a graphviz context -\/ and init graph -\/ retaining old API */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00049}\mbox{\hyperlink{gvc_8h_ac3f8b67fedaba6f18a2d590fd2215dd9}{00049}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *\mbox{\hyperlink{gvc_8h_ac3f8b67fedaba6f18a2d590fd2215dd9}{gvContext}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00050}00050 \textcolor{comment}{/*  set up a graphviz context -\/ and init graph -\/ with builtins */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00051}\mbox{\hyperlink{gvc_8h_a7a7d68cec7821a013740b4f26691dde3}{00051}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *\mbox{\hyperlink{gvc_8h_a7a7d68cec7821a013740b4f26691dde3}{gvContextPlugins}}(\textcolor{keyword}{const} \mbox{\hyperlink{structlt__symlist__t}{lt\_symlist\_t}} *builtins, \textcolor{keywordtype}{int} demand\_loading);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00053}00053 \textcolor{comment}{/* get information associated with a graphviz context */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00054}\mbox{\hyperlink{gvc_8h_a00dbd3b38295f5d2a43f96f8204003f3}{00054}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{char} **\mbox{\hyperlink{gvc_8h_a00dbd3b38295f5d2a43f96f8204003f3}{gvcInfo}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}}*);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00055}\mbox{\hyperlink{gvc_8h_a66edadacbf11a308d4dbcdaf1839a953}{00055}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{gvc_8h_a66edadacbf11a308d4dbcdaf1839a953}{gvcVersion}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}}*);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00056}\mbox{\hyperlink{gvc_8h_aeb03050323b78e7964a86d7208745852}{00056}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{gvc_8h_aeb03050323b78e7964a86d7208745852}{gvcBuildDate}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}}*);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00058}00058 \textcolor{comment}{/* parse command line args -\/ minimally argv[0] sets layout engine */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00059}\mbox{\hyperlink{gvc_8h_a1afe7f473fdb3f6bdc031d4dffaef68c}{00059}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{gvc_8h_a1afe7f473fdb3f6bdc031d4dffaef68c}{gvParseArgs}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc, \textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00060}\mbox{\hyperlink{gvc_8h_ae4b75fef75c05fbb8caf8f7706df4532}{00060}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \mbox{\hyperlink{struct_agraph__s}{graph\_t}} *\mbox{\hyperlink{gvc_8h_ae4b75fef75c05fbb8caf8f7706df4532}{gvNextInputGraph}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00061}\mbox{\hyperlink{gvc_8h_a3e8b6e342763fd924d91c79c61e0cec6}{00061}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \mbox{\hyperlink{struct_agraph__s}{graph\_t}} *\mbox{\hyperlink{gvc_8h_a3e8b6e342763fd924d91c79c61e0cec6}{gvPluginsGraph}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00063}00063 \textcolor{comment}{/* Compute a layout using a specified engine */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00064}\mbox{\hyperlink{gvc_8h_a67788d439d9ee5c1eeda56ebf02813aa}{00064}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{gvc_8h_a67788d439d9ee5c1eeda56ebf02813aa}{gvLayout}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc, \mbox{\hyperlink{struct_agraph__s}{graph\_t}} *g, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *engine);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00066}00066 \textcolor{comment}{/* Compute a layout using layout engine from command line args */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00067}\mbox{\hyperlink{gvc_8h_aaa732e30740522246477e06e6eca7d64}{00067}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{gvc_8h_aaa732e30740522246477e06e6eca7d64}{gvLayoutJobs}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc, \mbox{\hyperlink{struct_agraph__s}{graph\_t}} *g);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00069}00069 \textcolor{comment}{/* Check if a layout has been done */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00070}\mbox{\hyperlink{gvc_8h_a970a70b771b2ad9758285406830ca31c}{00070}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{gvc_8h_a970a70b771b2ad9758285406830ca31c}{gvLayoutDone}}(\mbox{\hyperlink{struct_agraph__s}{graph\_t}} *g);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00072}00072 \textcolor{comment}{/* Render layout into string attributes of the graph */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00073}\mbox{\hyperlink{gvc_8h_a1cdc6ab9575d837bae9b4e9fa2aee014}{00073}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{void} \mbox{\hyperlink{gvc_8h_a1cdc6ab9575d837bae9b4e9fa2aee014}{attach\_attrs}}(\mbox{\hyperlink{struct_agraph__s}{graph\_t}} *g);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00075}00075 \textcolor{comment}{/* Render layout in a specified format to an open FILE */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00076}\mbox{\hyperlink{gvc_8h_a76ad723902c7c6e808b174b6ef825b01}{00076}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{gvc_8h_a76ad723902c7c6e808b174b6ef825b01}{gvRender}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc, \mbox{\hyperlink{struct_agraph__s}{graph\_t}} *g, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *format, FILE *out);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00078}00078 \textcolor{comment}{/* Render layout in a specified format to a file with the given name */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00079}\mbox{\hyperlink{gvc_8h_a2d56af58cb0bf82c3d978b46a6917703}{00079}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{gvc_8h_a2d56af58cb0bf82c3d978b46a6917703}{gvRenderFilename}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc, \mbox{\hyperlink{struct_agraph__s}{graph\_t}} *g, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *format, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *filename);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00081}00081 \textcolor{comment}{/* Render layout in a specified format to an GVC\_APIal context */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00082}\mbox{\hyperlink{gvc_8h_a12cfb6aba5527c755f511f27e874e364}{00082}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{gvc_8h_a12cfb6aba5527c755f511f27e874e364}{gvRenderContext}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc, \mbox{\hyperlink{struct_agraph__s}{graph\_t}} *g, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *format, \textcolor{keywordtype}{void} *context);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00084}00084 \textcolor{comment}{/* Render layout in a specified format to a malloc'ed string */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00085}\mbox{\hyperlink{gvc_8h_a8ee62b87ba2bb53b185eae26a0c39642}{00085}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{gvc_8h_a8ee62b87ba2bb53b185eae26a0c39642}{gvRenderData}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc, \mbox{\hyperlink{struct_agraph__s}{graph\_t}} *g, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *format, \textcolor{keywordtype}{char} **result, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *length);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00087}00087 \textcolor{comment}{/* Free memory allocated and pointed to by *result in gvRenderData */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00088}\mbox{\hyperlink{gvc_8h_afa4ad95793974b7f7c630dc62cf10bf7}{00088}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{void} \mbox{\hyperlink{gvc_8h_afa4ad95793974b7f7c630dc62cf10bf7}{gvFreeRenderData}} (\textcolor{keywordtype}{char}* data);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00090}00090 \textcolor{comment}{/* Render layout according to -\/T and -\/o options found by gvParseArgs */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00091}\mbox{\hyperlink{gvc_8h_ad4103215debda04c9af5c0c1a63adc7e}{00091}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{gvc_8h_ad4103215debda04c9af5c0c1a63adc7e}{gvRenderJobs}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc, \mbox{\hyperlink{struct_agraph__s}{graph\_t}} *g);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00093}00093 \textcolor{comment}{/* Clean up layout data structures -\/ layouts are not nestable (yet) */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00094}\mbox{\hyperlink{gvc_8h_ad14d00ac9b4d7cf10bce3a90ffff1a19}{00094}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{gvc_8h_ad14d00ac9b4d7cf10bce3a90ffff1a19}{gvFreeLayout}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc, \mbox{\hyperlink{struct_agraph__s}{graph\_t}} *g);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00096}00096 \textcolor{comment}{/* Clean up graphviz context */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00097}\mbox{\hyperlink{gvc_8h_a9af0ef2b1a4645bcb168768b952b161a}{00097}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{void} \mbox{\hyperlink{gvc_8h_a9af0ef2b1a4645bcb168768b952b161a}{gvFinalize}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00098}\mbox{\hyperlink{gvc_8h_a86a2da027bb6065bb5e88f630a27456c}{00098}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{gvc_8h_a86a2da027bb6065bb5e88f630a27456c}{gvFreeContext}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00100}00100 \textcolor{comment}{/* Return list of plugins of type kind.}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00101}00101 \textcolor{comment}{ * kind would normally be "{}render"{} "{}layout"{} "{}textlayout"{} "{}device"{} "{}loadimage"{}}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00102}00102 \textcolor{comment}{ * The size of the list is stored in sz.}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00103}00103 \textcolor{comment}{ * The caller is responsible for freeing the storage. This involves}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00104}00104 \textcolor{comment}{ * freeing each item, then the list.}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00105}00105 \textcolor{comment}{ * Returns NULL on error, or if there are no plugins.}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00106}00106 \textcolor{comment}{ * In the former case, sz is unchanged; in the latter, sz = 0.}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00107}00107 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00108}00108 \textcolor{comment}{ * At present, the str argument is unused, but may be used to modify}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00109}00109 \textcolor{comment}{ * the search as in gvplugin\_list above.}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00110}00110 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00111}\mbox{\hyperlink{gvc_8h_a9e533745ca24b0096ab1b4bde56e8aca}{00111}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{char}** \mbox{\hyperlink{gvc_8h_a9e533745ca24b0096ab1b4bde56e8aca}{gvPluginList}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* kind, \textcolor{keywordtype}{int}* sz, \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00117}\mbox{\hyperlink{gvc_8h_ad78d42fe0cb3303d4bec3d6db8cace41}{00117}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{void} \mbox{\hyperlink{gvc_8h_ad78d42fe0cb3303d4bec3d6db8cace41}{gvAddLibrary}}(\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *gvc, \mbox{\hyperlink{structgvplugin__library__t}{gvplugin\_library\_t}} *lib);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00122}\mbox{\hyperlink{gvc_8h_ad2db2fef176ff1719e9a83e3495e2c31}{00122}} \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{gvc_8h_ad2db2fef176ff1719e9a83e3495e2c31}{gvToolTred}}(\mbox{\hyperlink{struct_agraph__s}{graph\_t}} *g);}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00124}00124 \textcolor{preprocessor}{\#undef GVC\_API}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00126}00126 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00127}00127 \}}
+\DoxyCodeLine{\Hypertarget{gvc_8h_source_l00128}00128 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

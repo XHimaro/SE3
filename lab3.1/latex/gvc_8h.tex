@@ -1,0 +1,291 @@
+\hypertarget{gvc_8h}{}\doxysection{Файл for lab/\+Graphviz/include/graphviz/gvc.h}
+\label{gvc_8h}\index{for lab/Graphviz/include/graphviz/gvc.h@{for lab/Graphviz/include/graphviz/gvc.h}}
+
+
+Graphviz context library.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gvplugin.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для gvc.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gvc_8h__incl}
+\end{center}
+\end{figure}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{gvc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}}~/$\ast$ nothing $\ast$/
+\item 
+\#define \mbox{\hyperlink{gvc_8h_a1900bbae79ee742028fdade9874044ab}{LAYOUT\+\_\+\+DONE}}(g)~(\mbox{\hyperlink{cgraph_8h_a6bdb778abe4c0e93b957329520e31917}{agbindrec}}(g, \char`\"{}Agraphinfo\+\_\+t\char`\"{}, 0, TRUE) \&\& \mbox{\hyperlink{types_8h_a304761d6ec6f0b12b6cef1b38d79fa37}{GD\+\_\+drawing}}(g))
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} void \mbox{\hyperlink{gvc_8h_a018b112f47c2d5d0f16ba15d96da6b83}{gv\+Toggle}} (int)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$ \mbox{\hyperlink{gvc_8h_a6f9134481fe1f165031eef2f7a15d757}{gv\+NEWcontext}} (const \mbox{\hyperlink{structlt__symlist__t}{lt\+\_\+symlist\+\_\+t}} $\ast$builtins, int demand\+\_\+loading)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$ \mbox{\hyperlink{gvc_8h_ac3f8b67fedaba6f18a2d590fd2215dd9}{gv\+Context}} (void)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$ \mbox{\hyperlink{gvc_8h_a7a7d68cec7821a013740b4f26691dde3}{gv\+Context\+Plugins}} (const \mbox{\hyperlink{structlt__symlist__t}{lt\+\_\+symlist\+\_\+t}} $\ast$builtins, int demand\+\_\+loading)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} char $\ast$$\ast$ \mbox{\hyperlink{gvc_8h_a00dbd3b38295f5d2a43f96f8204003f3}{gvc\+Info}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} char $\ast$ \mbox{\hyperlink{gvc_8h_a66edadacbf11a308d4dbcdaf1839a953}{gvc\+Version}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} char $\ast$ \mbox{\hyperlink{gvc_8h_aeb03050323b78e7964a86d7208745852}{gvc\+Build\+Date}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int \mbox{\hyperlink{gvc_8h_a1afe7f473fdb3f6bdc031d4dffaef68c}{gv\+Parse\+Args}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc, int argc, char $\ast$$\ast$argv)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$ \mbox{\hyperlink{gvc_8h_ae4b75fef75c05fbb8caf8f7706df4532}{gv\+Next\+Input\+Graph}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$ \mbox{\hyperlink{gvc_8h_a3e8b6e342763fd924d91c79c61e0cec6}{gv\+Plugins\+Graph}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int \mbox{\hyperlink{gvc_8h_a67788d439d9ee5c1eeda56ebf02813aa}{gv\+Layout}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc, \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g, const char $\ast$engine)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int \mbox{\hyperlink{gvc_8h_aaa732e30740522246477e06e6eca7d64}{gv\+Layout\+Jobs}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc, \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} bool \mbox{\hyperlink{gvc_8h_a970a70b771b2ad9758285406830ca31c}{gv\+Layout\+Done}} (\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} void \mbox{\hyperlink{gvc_8h_a1cdc6ab9575d837bae9b4e9fa2aee014}{attach\+\_\+attrs}} (\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int \mbox{\hyperlink{gvc_8h_a76ad723902c7c6e808b174b6ef825b01}{gv\+Render}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc, \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g, const char $\ast$format, FILE $\ast$out)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int \mbox{\hyperlink{gvc_8h_a2d56af58cb0bf82c3d978b46a6917703}{gv\+Render\+Filename}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc, \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g, const char $\ast$format, const char $\ast$filename)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int \mbox{\hyperlink{gvc_8h_a12cfb6aba5527c755f511f27e874e364}{gv\+Render\+Context}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc, \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g, const char $\ast$format, void $\ast$context)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int \mbox{\hyperlink{gvc_8h_a8ee62b87ba2bb53b185eae26a0c39642}{gv\+Render\+Data}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc, \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g, const char $\ast$format, char $\ast$$\ast$result, unsigned int $\ast$length)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} void \mbox{\hyperlink{gvc_8h_afa4ad95793974b7f7c630dc62cf10bf7}{gv\+Free\+Render\+Data}} (char $\ast$data)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int \mbox{\hyperlink{gvc_8h_ad4103215debda04c9af5c0c1a63adc7e}{gv\+Render\+Jobs}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc, \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int \mbox{\hyperlink{gvc_8h_ad14d00ac9b4d7cf10bce3a90ffff1a19}{gv\+Free\+Layout}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc, \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} void \mbox{\hyperlink{gvc_8h_a9af0ef2b1a4645bcb168768b952b161a}{gv\+Finalize}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int \mbox{\hyperlink{gvc_8h_a86a2da027bb6065bb5e88f630a27456c}{gv\+Free\+Context}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} char $\ast$$\ast$ \mbox{\hyperlink{gvc_8h_a9e533745ca24b0096ab1b4bde56e8aca}{gv\+Plugin\+List}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc, const char $\ast$kind, int $\ast$sz, char $\ast$)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} void \mbox{\hyperlink{gvc_8h_ad78d42fe0cb3303d4bec3d6db8cace41}{gv\+Add\+Library}} (\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$gvc, \mbox{\hyperlink{structgvplugin__library__t}{gvplugin\+\_\+library\+\_\+t}} $\ast$lib)
+\item 
+\mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int \mbox{\hyperlink{gvc_8h_ad2db2fef176ff1719e9a83e3495e2c31}{gv\+Tool\+Tred}} (\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Graphviz context library. 
+
+
+
+См. определение в файле \mbox{\hyperlink{gvc_8h_source}{gvc.\+h}}
+
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}\label{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}} 
+\index{gvc.h@{gvc.h}!GVC\_API@{GVC\_API}}
+\index{GVC\_API@{GVC\_API}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{GVC\_API}{GVC\_API}}
+{\footnotesize\ttfamily \#define GVC\+\_\+\+API~/$\ast$ nothing $\ast$/}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvc_8h_source}{gvc.\+h}} строка \mbox{\hyperlink{gvc_8h_source_l00036}{36}}
+
+\mbox{\Hypertarget{gvc_8h_a1900bbae79ee742028fdade9874044ab}\label{gvc_8h_a1900bbae79ee742028fdade9874044ab}} 
+\index{gvc.h@{gvc.h}!LAYOUT\_DONE@{LAYOUT\_DONE}}
+\index{LAYOUT\_DONE@{LAYOUT\_DONE}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{LAYOUT\_DONE}{LAYOUT\_DONE}}
+{\footnotesize\ttfamily \#define LAYOUT\+\_\+\+DONE(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a6bdb778abe4c0e93b957329520e31917}{agbindrec}}(g, \char`\"{}Agraphinfo\+\_\+t\char`\"{}, 0, TRUE) \&\& \mbox{\hyperlink{types_8h_a304761d6ec6f0b12b6cef1b38d79fa37}{GD\+\_\+drawing}}(g))}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvc_8h_source}{gvc.\+h}} строка \mbox{\hyperlink{gvc_8h_source_l00039}{39}}
+
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{gvc_8h_a1cdc6ab9575d837bae9b4e9fa2aee014}\label{gvc_8h_a1cdc6ab9575d837bae9b4e9fa2aee014}} 
+\index{gvc.h@{gvc.h}!attach\_attrs@{attach\_attrs}}
+\index{attach\_attrs@{attach\_attrs}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{attach\_attrs()}{attach\_attrs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} void attach\+\_\+attrs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_ad78d42fe0cb3303d4bec3d6db8cace41}\label{gvc_8h_ad78d42fe0cb3303d4bec3d6db8cace41}} 
+\index{gvc.h@{gvc.h}!gvAddLibrary@{gvAddLibrary}}
+\index{gvAddLibrary@{gvAddLibrary}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvAddLibrary()}{gvAddLibrary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} void gv\+Add\+Library (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc,  }\item[{\mbox{\hyperlink{structgvplugin__library__t}{gvplugin\+\_\+library\+\_\+t}} $\ast$}]{lib }\end{DoxyParamCaption})}
+
+Add a library from your user application 
+\begin{DoxyParams}{Аргументы}
+{\em gvc} & Graphviz context to add library to \\
+\hline
+{\em lib} & library to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{gvc_8h_aeb03050323b78e7964a86d7208745852}\label{gvc_8h_aeb03050323b78e7964a86d7208745852}} 
+\index{gvc.h@{gvc.h}!gvcBuildDate@{gvcBuildDate}}
+\index{gvcBuildDate@{gvcBuildDate}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvcBuildDate()}{gvcBuildDate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} char $\ast$ gvc\+Build\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a00dbd3b38295f5d2a43f96f8204003f3}\label{gvc_8h_a00dbd3b38295f5d2a43f96f8204003f3}} 
+\index{gvc.h@{gvc.h}!gvcInfo@{gvcInfo}}
+\index{gvcInfo@{gvcInfo}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvcInfo()}{gvcInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} char $\ast$$\ast$ gvc\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_ac3f8b67fedaba6f18a2d590fd2215dd9}\label{gvc_8h_ac3f8b67fedaba6f18a2d590fd2215dd9}} 
+\index{gvc.h@{gvc.h}!gvContext@{gvContext}}
+\index{gvContext@{gvContext}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvContext()}{gvContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$ gv\+Context (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a7a7d68cec7821a013740b4f26691dde3}\label{gvc_8h_a7a7d68cec7821a013740b4f26691dde3}} 
+\index{gvc.h@{gvc.h}!gvContextPlugins@{gvContextPlugins}}
+\index{gvContextPlugins@{gvContextPlugins}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvContextPlugins()}{gvContextPlugins()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$ gv\+Context\+Plugins (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlt__symlist__t}{lt\+\_\+symlist\+\_\+t}} $\ast$}]{builtins,  }\item[{int}]{demand\+\_\+loading }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a66edadacbf11a308d4dbcdaf1839a953}\label{gvc_8h_a66edadacbf11a308d4dbcdaf1839a953}} 
+\index{gvc.h@{gvc.h}!gvcVersion@{gvcVersion}}
+\index{gvcVersion@{gvcVersion}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvcVersion()}{gvcVersion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} char $\ast$ gvc\+Version (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a9af0ef2b1a4645bcb168768b952b161a}\label{gvc_8h_a9af0ef2b1a4645bcb168768b952b161a}} 
+\index{gvc.h@{gvc.h}!gvFinalize@{gvFinalize}}
+\index{gvFinalize@{gvFinalize}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvFinalize()}{gvFinalize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} void gv\+Finalize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a86a2da027bb6065bb5e88f630a27456c}\label{gvc_8h_a86a2da027bb6065bb5e88f630a27456c}} 
+\index{gvc.h@{gvc.h}!gvFreeContext@{gvFreeContext}}
+\index{gvFreeContext@{gvFreeContext}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvFreeContext()}{gvFreeContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int gv\+Free\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_ad14d00ac9b4d7cf10bce3a90ffff1a19}\label{gvc_8h_ad14d00ac9b4d7cf10bce3a90ffff1a19}} 
+\index{gvc.h@{gvc.h}!gvFreeLayout@{gvFreeLayout}}
+\index{gvFreeLayout@{gvFreeLayout}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvFreeLayout()}{gvFreeLayout()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int gv\+Free\+Layout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc,  }\item[{\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_afa4ad95793974b7f7c630dc62cf10bf7}\label{gvc_8h_afa4ad95793974b7f7c630dc62cf10bf7}} 
+\index{gvc.h@{gvc.h}!gvFreeRenderData@{gvFreeRenderData}}
+\index{gvFreeRenderData@{gvFreeRenderData}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvFreeRenderData()}{gvFreeRenderData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} void gv\+Free\+Render\+Data (\begin{DoxyParamCaption}\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a67788d439d9ee5c1eeda56ebf02813aa}\label{gvc_8h_a67788d439d9ee5c1eeda56ebf02813aa}} 
+\index{gvc.h@{gvc.h}!gvLayout@{gvLayout}}
+\index{gvLayout@{gvLayout}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvLayout()}{gvLayout()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int gv\+Layout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc,  }\item[{\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$}]{g,  }\item[{const char $\ast$}]{engine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a970a70b771b2ad9758285406830ca31c}\label{gvc_8h_a970a70b771b2ad9758285406830ca31c}} 
+\index{gvc.h@{gvc.h}!gvLayoutDone@{gvLayoutDone}}
+\index{gvLayoutDone@{gvLayoutDone}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvLayoutDone()}{gvLayoutDone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} bool gv\+Layout\+Done (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_aaa732e30740522246477e06e6eca7d64}\label{gvc_8h_aaa732e30740522246477e06e6eca7d64}} 
+\index{gvc.h@{gvc.h}!gvLayoutJobs@{gvLayoutJobs}}
+\index{gvLayoutJobs@{gvLayoutJobs}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvLayoutJobs()}{gvLayoutJobs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int gv\+Layout\+Jobs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc,  }\item[{\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a6f9134481fe1f165031eef2f7a15d757}\label{gvc_8h_a6f9134481fe1f165031eef2f7a15d757}} 
+\index{gvc.h@{gvc.h}!gvNEWcontext@{gvNEWcontext}}
+\index{gvNEWcontext@{gvNEWcontext}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvNEWcontext()}{gvNEWcontext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$ gv\+NEWcontext (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlt__symlist__t}{lt\+\_\+symlist\+\_\+t}} $\ast$}]{builtins,  }\item[{int}]{demand\+\_\+loading }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_ae4b75fef75c05fbb8caf8f7706df4532}\label{gvc_8h_ae4b75fef75c05fbb8caf8f7706df4532}} 
+\index{gvc.h@{gvc.h}!gvNextInputGraph@{gvNextInputGraph}}
+\index{gvNextInputGraph@{gvNextInputGraph}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvNextInputGraph()}{gvNextInputGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$ gv\+Next\+Input\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a1afe7f473fdb3f6bdc031d4dffaef68c}\label{gvc_8h_a1afe7f473fdb3f6bdc031d4dffaef68c}} 
+\index{gvc.h@{gvc.h}!gvParseArgs@{gvParseArgs}}
+\index{gvParseArgs@{gvParseArgs}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvParseArgs()}{gvParseArgs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int gv\+Parse\+Args (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc,  }\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a9e533745ca24b0096ab1b4bde56e8aca}\label{gvc_8h_a9e533745ca24b0096ab1b4bde56e8aca}} 
+\index{gvc.h@{gvc.h}!gvPluginList@{gvPluginList}}
+\index{gvPluginList@{gvPluginList}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvPluginList()}{gvPluginList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} char $\ast$$\ast$ gv\+Plugin\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc,  }\item[{const char $\ast$}]{kind,  }\item[{int $\ast$}]{sz,  }\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a3e8b6e342763fd924d91c79c61e0cec6}\label{gvc_8h_a3e8b6e342763fd924d91c79c61e0cec6}} 
+\index{gvc.h@{gvc.h}!gvPluginsGraph@{gvPluginsGraph}}
+\index{gvPluginsGraph@{gvPluginsGraph}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvPluginsGraph()}{gvPluginsGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$ gv\+Plugins\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a76ad723902c7c6e808b174b6ef825b01}\label{gvc_8h_a76ad723902c7c6e808b174b6ef825b01}} 
+\index{gvc.h@{gvc.h}!gvRender@{gvRender}}
+\index{gvRender@{gvRender}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvRender()}{gvRender()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int gv\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc,  }\item[{\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$}]{g,  }\item[{const char $\ast$}]{format,  }\item[{FILE $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a12cfb6aba5527c755f511f27e874e364}\label{gvc_8h_a12cfb6aba5527c755f511f27e874e364}} 
+\index{gvc.h@{gvc.h}!gvRenderContext@{gvRenderContext}}
+\index{gvRenderContext@{gvRenderContext}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvRenderContext()}{gvRenderContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int gv\+Render\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc,  }\item[{\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$}]{g,  }\item[{const char $\ast$}]{format,  }\item[{void $\ast$}]{context }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a8ee62b87ba2bb53b185eae26a0c39642}\label{gvc_8h_a8ee62b87ba2bb53b185eae26a0c39642}} 
+\index{gvc.h@{gvc.h}!gvRenderData@{gvRenderData}}
+\index{gvRenderData@{gvRenderData}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvRenderData()}{gvRenderData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int gv\+Render\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc,  }\item[{\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$}]{g,  }\item[{const char $\ast$}]{format,  }\item[{char $\ast$$\ast$}]{result,  }\item[{unsigned int $\ast$}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a2d56af58cb0bf82c3d978b46a6917703}\label{gvc_8h_a2d56af58cb0bf82c3d978b46a6917703}} 
+\index{gvc.h@{gvc.h}!gvRenderFilename@{gvRenderFilename}}
+\index{gvRenderFilename@{gvRenderFilename}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvRenderFilename()}{gvRenderFilename()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int gv\+Render\+Filename (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc,  }\item[{\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$}]{g,  }\item[{const char $\ast$}]{format,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_ad4103215debda04c9af5c0c1a63adc7e}\label{gvc_8h_ad4103215debda04c9af5c0c1a63adc7e}} 
+\index{gvc.h@{gvc.h}!gvRenderJobs@{gvRenderJobs}}
+\index{gvRenderJobs@{gvRenderJobs}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvRenderJobs()}{gvRenderJobs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int gv\+Render\+Jobs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$}]{gvc,  }\item[{\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_a018b112f47c2d5d0f16ba15d96da6b83}\label{gvc_8h_a018b112f47c2d5d0f16ba15d96da6b83}} 
+\index{gvc.h@{gvc.h}!gvToggle@{gvToggle}}
+\index{gvToggle@{gvToggle}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvToggle()}{gvToggle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} void gv\+Toggle (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{gvc_8h_ad2db2fef176ff1719e9a83e3495e2c31}\label{gvc_8h_ad2db2fef176ff1719e9a83e3495e2c31}} 
+\index{gvc.h@{gvc.h}!gvToolTred@{gvToolTred}}
+\index{gvToolTred@{gvToolTred}!gvc.h@{gvc.h}}
+\doxysubsubsection{\texorpdfstring{gvToolTred()}{gvToolTred()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvc_8h_a021af93a41eb0d655443edeeabbc15bc}{GVC\+\_\+\+API}} int gv\+Tool\+Tred (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+Perform a Transitive Reduction on a graph 
+\begin{DoxyParams}{Аргументы}
+{\em g} & graph to be transformed. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,83 @@
+\hypertarget{mbutils_8c}{}\doxysection{Файл for lab/freemodbus-\/v1.5.0/modbus/functions/mbutils.c}
+\label{mbutils_8c}\index{for lab/freemodbus-\/v1.5.0/modbus/functions/mbutils.c@{for lab/freemodbus-\/v1.5.0/modbus/functions/mbutils.c}}
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}port.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbproto.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для mbutils.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbutils_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mbutils_8c_aad9c8ffbfd788a2a6ba69ed38ea11983}{BITS\+\_\+\+UCHAR}}~8U
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} \mbox{\hyperlink{group__modbus__utils_gaffd1defb8bceb85f1b65d64fa1c895e1}{x\+MBUtil\+Set\+Bits}} (UCHAR $\ast$uc\+Byte\+Buf, USHORT us\+Bit\+Offset, UCHAR uc\+NBits, UCHAR uc\+Value)
+\begin{DoxyCompactList}\small\item\em Function to set bits in a byte buffer. \end{DoxyCompactList}\item 
+UCHAR \mbox{\hyperlink{group__modbus__utils_ga94b3b43e1d2353e621748c79e2fb4dd5}{x\+MBUtil\+Get\+Bits}} (UCHAR $\ast$uc\+Byte\+Buf, USHORT us\+Bit\+Offset, UCHAR uc\+NBits)
+\begin{DoxyCompactList}\small\item\em Function to read bits in a byte buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{e\+MBException}} \mbox{\hyperlink{mbutils_8c_ad5d2cc07a83fa7ea723ed734c905bc55}{prve\+MBError2\+Exception}} (\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+Error\+Code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{mbutils_8c_aad9c8ffbfd788a2a6ba69ed38ea11983}\label{mbutils_8c_aad9c8ffbfd788a2a6ba69ed38ea11983}} 
+\index{mbutils.c@{mbutils.c}!BITS\_UCHAR@{BITS\_UCHAR}}
+\index{BITS\_UCHAR@{BITS\_UCHAR}!mbutils.c@{mbutils.c}}
+\doxysubsubsection{\texorpdfstring{BITS\_UCHAR}{BITS\_UCHAR}}
+{\footnotesize\ttfamily \#define BITS\+\_\+\+UCHAR~8U}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbutils_8c_source}{mbutils.\+c}} строка \mbox{\hyperlink{mbutils_8c_source_l00043}{43}}
+
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{mbutils_8c_ad5d2cc07a83fa7ea723ed734c905bc55}\label{mbutils_8c_ad5d2cc07a83fa7ea723ed734c905bc55}} 
+\index{mbutils.c@{mbutils.c}!prveMBError2Exception@{prveMBError2Exception}}
+\index{prveMBError2Exception@{prveMBError2Exception}!mbutils.c@{mbutils.c}}
+\doxysubsubsection{\texorpdfstring{prveMBError2Exception()}{prveMBError2Exception()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{e\+MBException}} prve\+MBError2\+Exception (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}}}]{e\+Error\+Code }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbutils_8c_source}{mbutils.\+c}} строка \mbox{\hyperlink{mbutils_8c_source_l00117}{117}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118 \{}
+\DoxyCodeLine{00119     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{eMBException}}    eStatus;}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121     \textcolor{keywordflow}{switch} ( eErrorCode )}
+\DoxyCodeLine{00122     \{}
+\DoxyCodeLine{00123         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}}:}
+\DoxyCodeLine{00124             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}{MB\_EX\_NONE}};}
+\DoxyCodeLine{00125             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf415371aad180c545b726d39adbf9ba7}{MB\_ENOREG}}:}
+\DoxyCodeLine{00128             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca610b4256de04afb3b4ef7b7d3e19ed52}{MB\_EX\_ILLEGAL\_DATA\_ADDRESS}};}
+\DoxyCodeLine{00129             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da017c559e956f718cf77aafe269f49bd5}{MB\_ETIMEDOUT}}:}
+\DoxyCodeLine{00132             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cae3ec1c97155e5f397d3bad66efa75fdc}{MB\_EX\_SLAVE\_BUSY}};}
+\DoxyCodeLine{00133             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00136             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cad3dbaac0c2e2f7005e3a896f5c7f8274}{MB\_EX\_SLAVE\_DEVICE\_FAILURE}};}
+\DoxyCodeLine{00137             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00138     \}}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{00141 \}}
+
+\end{DoxyCode}

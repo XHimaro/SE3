@@ -1,0 +1,47 @@
+\hypertarget{mbconfig_8h}{}\doxysection{Файл for lab/freemodbus-\/v1.5.0/modbus/include/mbconfig.h}
+\label{mbconfig_8h}\index{for lab/freemodbus-\/v1.5.0/modbus/include/mbconfig.h@{for lab/freemodbus-\/v1.5.0/modbus/include/mbconfig.h}}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbconfig_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_gae4accc470cf44e38b4011213a93a2adc}{MB\+\_\+\+ASCII\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If Modbus ASCII support is enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga00b7b4d768c9489b5022832db253a71c}{MB\+\_\+\+RTU\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If Modbus RTU support is enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga93a17168bbe8c49e45ce6405cb4c1afb}{MB\+\_\+\+TCP\+\_\+\+ENABLED}}~(  0 )
+\begin{DoxyCompactList}\small\item\em If Modbus TCP support is enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga90fe92ab8f17c76c6e48dbbab8986446}{MB\+\_\+\+ASCII\+\_\+\+TIMEOUT\+\_\+\+SEC}}~(  1 )
+\begin{DoxyCompactList}\small\item\em The character timeout value for Modbus ASCII. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga22fd01f62670a71ab137e16118c37ca2}{MB\+\_\+\+ASCII\+\_\+\+TIMEOUT\+\_\+\+WAIT\+\_\+\+BEFORE\+\_\+\+SEND\+\_\+\+MS}}~( 0 )
+\begin{DoxyCompactList}\small\item\em Timeout to wait in ASCII prior to enabling transmitter. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\+\_\+\+FUNC\+\_\+\+HANDLERS\+\_\+\+MAX}}~( 16 )
+\begin{DoxyCompactList}\small\item\em Maximum number of Modbus functions codes the protocol stack should support. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga4c376ec5ec8bea2ccfe067cd8c05db06}{MB\+\_\+\+FUNC\+\_\+\+OTHER\+\_\+\+REP\+\_\+\+SLAVEID\+\_\+\+BUF}}~( 32 )
+\begin{DoxyCompactList}\small\item\em Number of bytes which should be allocated for the {\itshape Report Slave ID }command. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga580ff483eb8b3fbfc23115808d7025c9}{MB\+\_\+\+FUNC\+\_\+\+OTHER\+\_\+\+REP\+\_\+\+SLAVEID\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Report Slave ID} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga18432b6043942aa4b9e5f14c0543e663}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+INPUT\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Read Input Registers} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga2427219b5788299b59972102db511df8}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+HOLDING\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Read Holding Registers} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_gae8aa746269641b5fe032b81aafd93521}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+HOLDING\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Write Single Register} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_gaafa15ddf4a433ab3149178ba8199e8e2}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+HOLDING\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Write Multiple registers} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga0a699b69e28d21c32c95affe08e04112}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+COILS\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Read Coils} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga3bb42e153880ea5312eaa42bb671ee50}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+COIL\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Write Coils} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga1973cf9a66e8738ee06681443259b78f}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+COILS\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Write Multiple Coils} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga76bb577b6d66b4e45571f7e46b04b134}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+DISCRETE\+\_\+\+INPUTS\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Read Discrete Inputs} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_gae62a61cbd68a80de8c7ee268a5934ea3}{MB\+\_\+\+FUNC\+\_\+\+READWRITE\+\_\+\+HOLDING\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Read/\+Write Multiple Registers} function should be enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}

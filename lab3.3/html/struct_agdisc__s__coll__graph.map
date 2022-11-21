@@ -1,0 +1,6 @@
+<map id="Agdisc_s" name="Agdisc_s">
+<area shape="rect" id="node1" title="user&#39;s discipline" alt="" coords="140,93,216,119"/>
+<area shape="rect" id="node2" href="$struct_agmemdisc__s.html" title="memory allocator discipline, independent of other resources" alt="" coords="5,5,111,31"/>
+<area shape="rect" id="node3" href="$struct_agiddisc__s.html" title="object ID allocator discipline" alt="" coords="135,5,221,31"/>
+<area shape="rect" id="node4" href="$struct_agiodisc__s.html" title=" " alt="" coords="245,5,332,31"/>
+</map>

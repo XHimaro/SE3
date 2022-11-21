@@ -1,0 +1,89 @@
+\hypertarget{mbproto_8h_source}{}\doxysection{mbproto.\+h}
+\label{mbproto_8h_source}\index{for lab/freemodbus-\/v1.5.0/modbus/include/mbproto.h@{for lab/freemodbus-\/v1.5.0/modbus/include/mbproto.h}}
+\mbox{\hyperlink{mbproto_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00001}00001 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00002}00002 \textcolor{comment}{ * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00003}00003 \textcolor{comment}{ * Copyright (c) 2006 Christian Walter <wolti@sil.at>}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00004}00004 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00006}00006 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00007}00007 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00008}00008 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00009}00009 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00010}00010 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00011}00011 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00012}00012 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00013}00013 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00014}00014 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00015}00015 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00016}00016 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00017}00017 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00018}00018 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00019}00019 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00020}00020 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00021}00021 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00022}00022 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00023}00023 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00024}00024 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00025}00025 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00026}00026 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00028}00028 \textcolor{comment}{ * File: \$Id: mbproto.h,v 1.14 2006/12/07 22:10:34 wolti Exp \$}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00029}00029 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00031}00031 \textcolor{preprocessor}{\#ifndef \_MB\_PROTO\_H}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00032}00032 \textcolor{preprocessor}{\#define \_MB\_PROTO\_H}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00034}00034 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00035}00035 PR\_BEGIN\_EXTERN\_C}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00036}00036 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00037}00037 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Defines -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00038}\mbox{\hyperlink{mbproto_8h_a5e80f256fa3cb8a969c9935b48f2a7b1}{00038}} \textcolor{preprocessor}{\#define MB\_ADDRESS\_BROADCAST    ( 0 )   }}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00039}\mbox{\hyperlink{mbproto_8h_accf024291f4458ad8ad33e32568e8561}{00039}} \textcolor{preprocessor}{\#define MB\_ADDRESS\_MIN          ( 1 )   }}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00040}\mbox{\hyperlink{mbproto_8h_a8b915be3e09043b5da9d307d30efd9f7}{00040}} \textcolor{preprocessor}{\#define MB\_ADDRESS\_MAX          ( 247 ) }}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00041}\mbox{\hyperlink{mbproto_8h_a1097ed957945889aed9a3317a4962a93}{00041}} \textcolor{preprocessor}{\#define MB\_FUNC\_NONE                          (  0 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00042}\mbox{\hyperlink{mbproto_8h_a0a6bec36d352b12d11ce92855999ac21}{00042}} \textcolor{preprocessor}{\#define MB\_FUNC\_READ\_COILS                    (  1 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00043}\mbox{\hyperlink{mbproto_8h_a3c8f7c9db7137eab91695bb75dd1bcaf}{00043}} \textcolor{preprocessor}{\#define MB\_FUNC\_READ\_DISCRETE\_INPUTS          (  2 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00044}\mbox{\hyperlink{mbproto_8h_a4135bcd6e71affdba9daf3cd9bb2297b}{00044}} \textcolor{preprocessor}{\#define MB\_FUNC\_WRITE\_SINGLE\_COIL             (  5 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00045}\mbox{\hyperlink{mbproto_8h_a0ecd378607ca725092525dbc54ec4c7f}{00045}} \textcolor{preprocessor}{\#define MB\_FUNC\_WRITE\_MULTIPLE\_COILS          ( 15 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00046}\mbox{\hyperlink{mbproto_8h_af82cce9431080646def54ecdcaf9a8e4}{00046}} \textcolor{preprocessor}{\#define MB\_FUNC\_READ\_HOLDING\_REGISTER         (  3 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00047}\mbox{\hyperlink{mbproto_8h_ab4adf9aa2c94273ab987590cd1a74859}{00047}} \textcolor{preprocessor}{\#define MB\_FUNC\_READ\_INPUT\_REGISTER           (  4 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00048}\mbox{\hyperlink{mbproto_8h_a662445c40ea914156262986611f98fb8}{00048}} \textcolor{preprocessor}{\#define MB\_FUNC\_WRITE\_REGISTER                (  6 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00049}\mbox{\hyperlink{mbproto_8h_ad53ef69db978b8f15dbeef630335dd37}{00049}} \textcolor{preprocessor}{\#define MB\_FUNC\_WRITE\_MULTIPLE\_REGISTERS      ( 16 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00050}\mbox{\hyperlink{mbproto_8h_aae67d35bd7db006198623aaf68439dec}{00050}} \textcolor{preprocessor}{\#define MB\_FUNC\_READWRITE\_MULTIPLE\_REGISTERS  ( 23 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00051}\mbox{\hyperlink{mbproto_8h_aee399c2ed9f9294e05029041c12deef3}{00051}} \textcolor{preprocessor}{\#define MB\_FUNC\_DIAG\_READ\_EXCEPTION           (  7 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00052}\mbox{\hyperlink{mbproto_8h_a891a8d1a286313c71d6389a33c60547e}{00052}} \textcolor{preprocessor}{\#define MB\_FUNC\_DIAG\_DIAGNOSTIC               (  8 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00053}\mbox{\hyperlink{mbproto_8h_aaed3a627e46195cdd35df734cb098be2}{00053}} \textcolor{preprocessor}{\#define MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_CNT        ( 11 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00054}\mbox{\hyperlink{mbproto_8h_a3c5273d91f1e7bd705fa9a56444bc6f9}{00054}} \textcolor{preprocessor}{\#define MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_LOG        ( 12 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00055}\mbox{\hyperlink{mbproto_8h_a8a711674834a510f4a1515f6ab420048}{00055}} \textcolor{preprocessor}{\#define MB\_FUNC\_OTHER\_REPORT\_SLAVEID          ( 17 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00056}\mbox{\hyperlink{mbproto_8h_ad45e73770d806dfd75cc45b2d1d31dc2}{00056}} \textcolor{preprocessor}{\#define MB\_FUNC\_ERROR                         ( 128 )}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00057}00057 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Type definitions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00058}\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{00058}}     \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00059}00059 \{}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00060}\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}{00060}}     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}{MB\_EX\_NONE}} = 0x00,}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00061}\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caf2cf9a6b48c5dee86cd361cc327b9abb}{00061}}     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caf2cf9a6b48c5dee86cd361cc327b9abb}{MB\_EX\_ILLEGAL\_FUNCTION}} = 0x01,}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00062}\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca610b4256de04afb3b4ef7b7d3e19ed52}{00062}}     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca610b4256de04afb3b4ef7b7d3e19ed52}{MB\_EX\_ILLEGAL\_DATA\_ADDRESS}} = 0x02,}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00063}\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca473bfed2d0edb76c4ff02e659082c777}{00063}}     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca473bfed2d0edb76c4ff02e659082c777}{MB\_EX\_ILLEGAL\_DATA\_VALUE}} = 0x03,}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00064}\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cad3dbaac0c2e2f7005e3a896f5c7f8274}{00064}}     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cad3dbaac0c2e2f7005e3a896f5c7f8274}{MB\_EX\_SLAVE\_DEVICE\_FAILURE}} = 0x04,}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00065}\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca8ab5f36846f909d37bd6a3e4ba4426bb}{00065}}     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca8ab5f36846f909d37bd6a3e4ba4426bb}{MB\_EX\_ACKNOWLEDGE}} = 0x05,}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00066}\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cae3ec1c97155e5f397d3bad66efa75fdc}{00066}}     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cae3ec1c97155e5f397d3bad66efa75fdc}{MB\_EX\_SLAVE\_BUSY}} = 0x06,}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00067}\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca45135805fdf5b286bcd2a9b48b44bd41}{00067}}     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca45135805fdf5b286bcd2a9b48b44bd41}{MB\_EX\_MEMORY\_PARITY\_ERROR}} = 0x08,}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00068}\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca1edd146a459bc8ed8709b495406d3839}{00068}}     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca1edd146a459bc8ed8709b495406d3839}{MB\_EX\_GATEWAY\_PATH\_FAILED}} = 0x0A,}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00069}00069     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caec539d85e1d3b8c407c4f8a39ef0bf88}{MB\_EX\_GATEWAY\_TGT\_FAILED}} = 0x0B}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00070}\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caec539d85e1d3b8c407c4f8a39ef0bf88}{00070}} \} \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{eMBException}};}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00072}\mbox{\hyperlink{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}{00072}} \textcolor{keyword}{typedef}         \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{eMBException}}( *\mbox{\hyperlink{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}{pxMBFunctionHandler}} ) ( UCHAR * pucFrame, USHORT * pusLength );}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00074}\mbox{\hyperlink{structx_m_b_function_handler}{00074}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00075}00075 \{}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00076}\mbox{\hyperlink{structx_m_b_function_handler_acf0798484cf2b6b1ec21389d3f2a997c}{00076}}     UCHAR           \mbox{\hyperlink{structx_m_b_function_handler_acf0798484cf2b6b1ec21389d3f2a997c}{ucFunctionCode}};}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00077}\mbox{\hyperlink{structx_m_b_function_handler_ab2ea74b69155c337ec9c0d2e229160ce}{00077}}     \mbox{\hyperlink{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}{pxMBFunctionHandler}} \mbox{\hyperlink{structx_m_b_function_handler_ab2ea74b69155c337ec9c0d2e229160ce}{pxHandler}};}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00078}00078 \} \mbox{\hyperlink{structx_m_b_function_handler}{xMBFunctionHandler}};}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00080}00080 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00081}00081 PR\_END\_EXTERN\_C}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00082}00082 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mbproto_8h_source_l00083}00083 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

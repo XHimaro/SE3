@@ -1,0 +1,5 @@
+<map id="Agobj_s" name="Agobj_s">
+<area shape="rect" id="node1" title="a generic graph/node/edge header" alt="" coords="42,93,111,119"/>
+<area shape="rect" id="node2" href="$struct_agtag__s.html" title="Object tag for graphs, nodes, and edges." alt="" coords="5,5,76,31"/>
+<area shape="rect" id="node3" href="$struct_agrec__s.html" title="Header of a user record." alt="" coords="100,5,171,31"/>
+</map>

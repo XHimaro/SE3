@@ -1,0 +1,2449 @@
+\hypertarget{types_8h}{}\doxysection{Файл for lab/\+Graphviz/include/graphviz/types.h}
+\label{types_8h}\index{for lab/Graphviz/include/graphviz/types.h@{for lab/Graphviz/include/graphviz/types.h}}
+
+
+graphs, nodes and edges info\+: \mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}, \mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}} and \mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}geom.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gvcext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pathgeom.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}textspan.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cgraph.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}usershape.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для types.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{types_8h__incl}
+\end{center}
+\end{figure}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{types_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unioninside__t}{inside\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structport}{port}}
+\item 
+struct \mbox{\hyperlink{structspline_info}{spline\+Info}}
+\item 
+struct \mbox{\hyperlink{structpathend__t}{pathend\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structpath}{path}}
+\item 
+struct \mbox{\hyperlink{structbezier}{bezier}}
+\item 
+struct \mbox{\hyperlink{structsplines}{splines}}
+\item 
+struct \mbox{\hyperlink{structtextlabel__t}{textlabel\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structpolygon__t}{polygon\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structstroke__t}{stroke\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structshape__functions}{shape\+\_\+functions}}
+\item 
+struct \mbox{\hyperlink{structshape__desc}{shape\+\_\+desc}}
+\item 
+struct \mbox{\hyperlink{structnodequeue}{nodequeue}}
+\item 
+struct \mbox{\hyperlink{structadjmatrix__t}{adjmatrix\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structrank__t}{rank\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structlayout__t}{layout\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structfield__t}{field\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structnlist__t}{nlist\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structelist}{elist}}
+\item 
+struct \mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structgvlayout__features__t}{gvlayout\+\_\+features\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{types_8h_a8348ff030220824389a59808aa46d30e}{WITH\+\_\+\+CGRAPH}}~1
+\item 
+\#define \mbox{\hyperlink{types_8h_a12d1b461e7a9a9ef358c6bec5264a2e2}{TAIL\+\_\+\+ID}}~\char`\"{}tailport\char`\"{}
+\item 
+\#define \mbox{\hyperlink{types_8h_aaf9f916d15b0ab383ab871f5031c74eb}{HEAD\+\_\+\+ID}}~\char`\"{}headport\char`\"{}
+\item 
+\#define \mbox{\hyperlink{types_8h_a294cef5e272eb4e560857bbe4f3cee6c}{STROKE\+\_\+\+CLOSED}}~(1 $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{types_8h_aff5a5ede8aacf4290082188b90f43958}{STROKE\+\_\+\+FILLED}}~(1 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{types_8h_a7ff3b8ca79f7765b471898f193f65a93}{STROKE\+\_\+\+PENDOWN}}~(1 $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{types_8h_a8aa5ed929529f67b930d67de58a9d38e}{STROKE\+\_\+\+VERTICES\+\_\+\+ALLOCATED}}~(1 $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{types_8h_a6e210aba484615e657c8c46fab75b850}{GUI\+\_\+\+STATE\+\_\+\+ACTIVE}}~(1$<$$<$0)
+\item 
+\#define \mbox{\hyperlink{types_8h_ad72428e0e76cd454bc58a3600bca7b23}{GUI\+\_\+\+STATE\+\_\+\+SELECTED}}~(1$<$$<$1)
+\item 
+\#define \mbox{\hyperlink{types_8h_af0241d18f172aab5e76110b238e0f192}{GUI\+\_\+\+STATE\+\_\+\+VISITED}}~(1$<$$<$2)
+\item 
+\#define \mbox{\hyperlink{types_8h_adcb50938e305addf6c9632dddb7513d9}{GUI\+\_\+\+STATE\+\_\+\+DELETED}}~(1$<$$<$3)
+\item 
+\#define \mbox{\hyperlink{types_8h_a6715ffe537007b0fc39be1c1deda1108}{elist\+\_\+fastapp}}(item,  L)~do \{L.\+list\mbox{[}L.\+size++\mbox{]} = item; L.\+list\mbox{[}L.\+size\mbox{]} = NULL;\} while(0)
+\item 
+\#define \mbox{\hyperlink{types_8h_a911ab2551bc8ea9e16346460246940fe}{elist\+\_\+append}}(item,  L)~do \{L.\+list = ALLOC(L.\+size + 2,L.\+list,\mbox{\hyperlink{types_8h_ab6289995bb0656f4da2ae67d80fea6d2}{edge\+\_\+t}}$\ast$); L.\+list\mbox{[}L.\+size++\mbox{]} = item; L.\+list\mbox{[}L.\+size\mbox{]} = NULL;\} while(0)
+\item 
+\#define \mbox{\hyperlink{types_8h_ae0026dfea8f7eb0765f419f1fff65886}{alloc\+\_\+elist}}(n,  L)~do \{L.\+size = 0; L.\+list = N\+\_\+\+NEW(n + 1,\mbox{\hyperlink{types_8h_ab6289995bb0656f4da2ae67d80fea6d2}{edge\+\_\+t}}$\ast$); \} while (0)
+\item 
+\#define \mbox{\hyperlink{types_8h_a0daea177ae8f9997439bb552218fc70a}{free\+\_\+list}}(L)~free(L.\+list)
+\item 
+\#define \mbox{\hyperlink{types_8h_a7c4edc4279776663c7e0b498d32415f5}{GD\+\_\+parent}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$parent)
+\item 
+\#define \mbox{\hyperlink{types_8h_aa9a0f0587dc81585dd7e19bb37714b19}{GD\+\_\+level}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$level)
+\item 
+\#define \mbox{\hyperlink{types_8h_a304761d6ec6f0b12b6cef1b38d79fa37}{GD\+\_\+drawing}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$drawing)
+\item 
+\#define \mbox{\hyperlink{types_8h_a901aff57f7816b36b6e5f362c05ac2fe}{GD\+\_\+bb}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$bb)
+\item 
+\#define \mbox{\hyperlink{types_8h_af0cd94956a3b6c26beb40b95ec14757f}{GD\+\_\+gvc}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$gvc)
+\item 
+\#define \mbox{\hyperlink{types_8h_adbe1e26fccc1a3d1c0a78767510e81c6}{GD\+\_\+cleanup}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$cleanup)
+\item 
+\#define \mbox{\hyperlink{types_8h_aeffb42301531359813d5128f243e1124}{GD\+\_\+dist}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$dist)
+\item 
+\#define \mbox{\hyperlink{types_8h_a67b630030eacd3cb15dd2433b3a863f5}{GD\+\_\+alg}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$alg)
+\item 
+\#define \mbox{\hyperlink{types_8h_a518eb6cf9ba677d9d0315c492dfd582a}{GD\+\_\+border}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$border)
+\item 
+\#define \mbox{\hyperlink{types_8h_a5668dcc358c7a2113b24345806c6f59e}{GD\+\_\+clust}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$clust)
+\item 
+\#define \mbox{\hyperlink{types_8h_aad569cb58d6640eb26ac9f5a41553e9f}{GD\+\_\+dotroot}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$dotroot)
+\item 
+\#define \mbox{\hyperlink{types_8h_ad268734b2d2575d8e2af51e432748e2e}{GD\+\_\+comp}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$comp)
+\item 
+\#define \mbox{\hyperlink{types_8h_af859a2be52c0c4c885468241f9f50cdc}{GD\+\_\+exact\+\_\+ranksep}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$exact\+\_\+ranksep)
+\item 
+\#define \mbox{\hyperlink{types_8h_abeb0f73d67e12a8f52c28954d050e1f7}{GD\+\_\+expanded}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$expanded)
+\item 
+\#define \mbox{\hyperlink{types_8h_a75bb1b66668ed3d3aeb42c85a4448e9a}{GD\+\_\+flags}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$flags)
+\item 
+\#define \mbox{\hyperlink{types_8h_af93c88eaf216675d42119439ec9e2a1e}{GD\+\_\+gui\+\_\+state}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$gui\+\_\+state)
+\item 
+\#define \mbox{\hyperlink{types_8h_ae0c0e1c4d187901d851cb77143519def}{GD\+\_\+charset}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$charset)
+\item 
+\#define \mbox{\hyperlink{types_8h_a52c46fcffcec9b43212679e86a9c1339}{GD\+\_\+has\+\_\+labels}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$has\+\_\+labels)
+\item 
+\#define \mbox{\hyperlink{types_8h_a7c90d72524042801c0d132672570dee5}{GD\+\_\+has\+\_\+images}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$has\+\_\+images)
+\item 
+\#define \mbox{\hyperlink{types_8h_a7d659b279f968f7560a4e95e8b92f388}{GD\+\_\+has\+\_\+flat\+\_\+edges}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$has\+\_\+flat\+\_\+edges)
+\item 
+\#define \mbox{\hyperlink{types_8h_a66401e570966b6972081cc29ce0a5501}{GD\+\_\+has\+\_\+sourcerank}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$has\+\_\+sourcerank)
+\item 
+\#define \mbox{\hyperlink{types_8h_a10f2b0ee86f196d370c25f4a02313f46}{GD\+\_\+has\+\_\+sinkrank}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$has\+\_\+sinkrank)
+\item 
+\#define \mbox{\hyperlink{types_8h_ae62105b8f1d3ab03b871a1ffb41b60cc}{GD\+\_\+ht1}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$ht1)
+\item 
+\#define \mbox{\hyperlink{types_8h_aa9979ba2b7959ac3390f5a7a0f46bb9d}{GD\+\_\+ht2}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$ht2)
+\item 
+\#define \mbox{\hyperlink{types_8h_a5c6afbddcdf2311322cebb07fd21f3dd}{GD\+\_\+installed}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$installed)
+\item 
+\#define \mbox{\hyperlink{types_8h_ad73f51275d97d6aa889862b23950a99b}{GD\+\_\+label}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$label)
+\item 
+\#define \mbox{\hyperlink{types_8h_ac660bf2efd1a9f02e8746d5c80b0491a}{GD\+\_\+leader}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$leader)
+\item 
+\#define \mbox{\hyperlink{types_8h_a1d10b818e1ff69372cfb54ee0d469129}{GD\+\_\+rankdir2}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rankdir)
+\item 
+\#define \mbox{\hyperlink{types_8h_aee757533265228f46df219420f410273}{GD\+\_\+rankdir}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rankdir \& 0x3)
+\item 
+\#define \mbox{\hyperlink{types_8h_af280ec2b75bc7b00e15e6141c2b3eae7}{GD\+\_\+flip}}(g)~(\mbox{\hyperlink{types_8h_aee757533265228f46df219420f410273}{GD\+\_\+rankdir}}(g) \& 1)
+\item 
+\#define \mbox{\hyperlink{types_8h_ab5f0385f4efbc680994dd7d1739c61b7}{GD\+\_\+realrankdir}}(g)~((((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rankdir) $>$$>$ 2)
+\item 
+\#define \mbox{\hyperlink{types_8h_a0858386b028d64c0dbd191691a8be606}{GD\+\_\+realflip}}(g)~(\mbox{\hyperlink{types_8h_ab5f0385f4efbc680994dd7d1739c61b7}{GD\+\_\+realrankdir}}(g) \& 1)
+\item 
+\#define \mbox{\hyperlink{types_8h_ae1191ea3f43a6549bc00200e704fd27f}{GD\+\_\+ln}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$ln)
+\item 
+\#define \mbox{\hyperlink{types_8h_a20984ce193d2d03b0aa85804f60aa1ae}{GD\+\_\+maxrank}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$maxrank)
+\item 
+\#define \mbox{\hyperlink{types_8h_a248701de5d81b4dc60f61ef53811ad18}{GD\+\_\+maxset}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$maxset)
+\item 
+\#define \mbox{\hyperlink{types_8h_a0573f46f314d41f1dd3a93b5d5222d6d}{GD\+\_\+minrank}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$minrank)
+\item 
+\#define \mbox{\hyperlink{types_8h_a9f72a5780dc55294ba4fc9dc43dd4cfc}{GD\+\_\+minset}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$minset)
+\item 
+\#define \mbox{\hyperlink{types_8h_a6d5d20d8a29ad9536bc3529b64225e24}{GD\+\_\+minrep}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$minrep)
+\item 
+\#define \mbox{\hyperlink{types_8h_a44fd0386ed15c0c89a6e8862d6cc3f42}{GD\+\_\+maxrep}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$maxrep)
+\item 
+\#define \mbox{\hyperlink{types_8h_a8732c573a23261f021563cb7889aec18}{GD\+\_\+move}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$move)
+\item 
+\#define \mbox{\hyperlink{types_8h_aa6e5b25c4fec6eb18582a419b9ddd3fc}{GD\+\_\+n\+\_\+cluster}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$n\+\_\+cluster)
+\item 
+\#define \mbox{\hyperlink{types_8h_aa915c5306ae2812e52cda92baaeac681}{GD\+\_\+n\+\_\+nodes}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$n\+\_\+nodes)
+\item 
+\#define \mbox{\hyperlink{types_8h_ac7982d95b7f3e2f3aa38108cdaeca3dd}{GD\+\_\+ndim}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$ndim)
+\item 
+\#define \mbox{\hyperlink{types_8h_af8d793183ce04d75e7ebb59c98136d59}{GD\+\_\+odim}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$odim)
+\item 
+\#define \mbox{\hyperlink{types_8h_af5f0296e7ebe013231a5337c3f346a64}{GD\+\_\+neato\+\_\+nlist}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$neato\+\_\+nlist)
+\item 
+\#define \mbox{\hyperlink{types_8h_a90f9dcaed839738a87a918807c5b4a44}{GD\+\_\+nlist}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$nlist)
+\item 
+\#define \mbox{\hyperlink{types_8h_ada22146929ee5be60bd05c07159d6c9e}{GD\+\_\+nodesep}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$nodesep)
+\item 
+\#define \mbox{\hyperlink{types_8h_ae6a773c42a396683e5f36d9a091e0102}{GD\+\_\+outleaf}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$outleaf)
+\item 
+\#define \mbox{\hyperlink{types_8h_a7ab3956e95627faa3d013a0b7e9be148}{GD\+\_\+rank}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rank)
+\item 
+\#define \mbox{\hyperlink{types_8h_af4f41d9fcc3048ec7cf65ccfe26839b0}{GD\+\_\+rankleader}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rankleader)
+\item 
+\#define \mbox{\hyperlink{types_8h_afa6fda64bce7de9858030b3bd9ff577c}{GD\+\_\+ranksep}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$ranksep)
+\item 
+\#define \mbox{\hyperlink{types_8h_a6c9ffdd449bb900a5f2a45f26d494b68}{GD\+\_\+rn}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rn)
+\item 
+\#define \mbox{\hyperlink{types_8h_aac3b0f6b60c2b5c3eed9a0cfe90ecb66}{GD\+\_\+set\+\_\+type}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$set\+\_\+type)
+\item 
+\#define \mbox{\hyperlink{types_8h_a96143dd3e09b113a765ea9bbe944f72f}{GD\+\_\+label\+\_\+pos}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$label\+\_\+pos)
+\item 
+\#define \mbox{\hyperlink{types_8h_a9be6d03614124729a3f3ecc18851f7b7}{GD\+\_\+showboxes}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$showboxes)
+\item 
+\#define \mbox{\hyperlink{types_8h_a25ebc4c1126df610cfe80ccc012e00a2}{GD\+\_\+fontnames}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$fontnames)
+\item 
+\#define \mbox{\hyperlink{types_8h_af3ac828276b6b469e04bcc567ab4fbe5}{GD\+\_\+spring}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$spring)
+\item 
+\#define \mbox{\hyperlink{types_8h_a589a746bbed5d188d6965e7337bf1a75}{GD\+\_\+sum\+\_\+t}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$sum\+\_\+t)
+\item 
+\#define \mbox{\hyperlink{types_8h_a9432fa3c11bc7b85dd20bf70a6aaf5d9}{GD\+\_\+t}}(g)~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$t)
+\item 
+\#define \mbox{\hyperlink{types_8h_a0affbf5af96f331f4426bf5dd340c9ec}{ND\+\_\+id}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$id)
+\item 
+\#define \mbox{\hyperlink{types_8h_a756b74075ae0a75309ad5a012550c5b0}{ND\+\_\+alg}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$alg)
+\item 
+\#define \mbox{\hyperlink{types_8h_ab2e2ec5a6d410abc991d5ddae1db134c}{ND\+\_\+\+UF\+\_\+parent}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$UF\+\_\+parent)
+\item 
+\#define \mbox{\hyperlink{types_8h_a6c07a73ad18bd14f7ccf938532f541ac}{ND\+\_\+set}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$set)
+\item 
+\#define \mbox{\hyperlink{types_8h_ad00f2be2e982b4737f81b32a62cbcbe2}{ND\+\_\+\+UF\+\_\+size}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$UF\+\_\+size)
+\item 
+\#define \mbox{\hyperlink{types_8h_a24be5471334ac496135e0c94f0377da2}{ND\+\_\+bb}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$bb)
+\item 
+\#define \mbox{\hyperlink{types_8h_a56e6c495adc9afcce11b7ecb8a1f4daf}{ND\+\_\+clust}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$clust)
+\item 
+\#define \mbox{\hyperlink{types_8h_ae5c4c0a0cc39024b09a5bf94251aceff}{ND\+\_\+coord}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$coord)
+\item 
+\#define \mbox{\hyperlink{types_8h_ae9e7b39a3525fb90ba0b334c9e320cf3}{ND\+\_\+dist}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$dist)
+\item 
+\#define \mbox{\hyperlink{types_8h_ae4437bfd2417303a177a8955b73cd2f8}{ND\+\_\+flat\+\_\+in}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$flat\+\_\+in)
+\item 
+\#define \mbox{\hyperlink{types_8h_a7ac213b39266f3dd86f60bb9f39ee5a5}{ND\+\_\+flat\+\_\+out}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$flat\+\_\+out)
+\item 
+\#define \mbox{\hyperlink{types_8h_a1931c9487f15292849c2b49c3e96b6a4}{ND\+\_\+gui\+\_\+state}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$gui\+\_\+state)
+\item 
+\#define \mbox{\hyperlink{types_8h_a325000a2fc365352eafcbfb8be910b00}{ND\+\_\+has\+\_\+port}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$has\+\_\+port)
+\item 
+\#define \mbox{\hyperlink{types_8h_aaf40a53b50e0a203b67453a6127bb508}{ND\+\_\+rep}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$rep)
+\item 
+\#define \mbox{\hyperlink{types_8h_a656493ad251af9524cfc5552dc213383}{ND\+\_\+heapindex}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$heapindex)
+\item 
+\#define \mbox{\hyperlink{types_8h_aa323a7137791d555fdf08f7f0f2eff02}{ND\+\_\+height}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$height)
+\item 
+\#define \mbox{\hyperlink{types_8h_ac1f79021f7fecf1ff682bf57e9050241}{ND\+\_\+hops}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$hops)
+\item 
+\#define \mbox{\hyperlink{types_8h_a1bb4c002fbbf73f2e4061de8efcbe453}{ND\+\_\+ht}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$ht)
+\item 
+\#define \mbox{\hyperlink{types_8h_ae5f583e129d6061a535d76fdb170e94c}{ND\+\_\+in}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$in)
+\item 
+\#define \mbox{\hyperlink{types_8h_a595085bed4fb2c71bcb227c776fb37f7}{ND\+\_\+inleaf}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$inleaf)
+\item 
+\#define \mbox{\hyperlink{types_8h_a74eefa711e291975c7d89493d5df1d5b}{ND\+\_\+label}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$label)
+\item 
+\#define \mbox{\hyperlink{types_8h_aca812c68db4d6ec5856ebdcfac4d8284}{ND\+\_\+xlabel}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$xlabel)
+\item 
+\#define \mbox{\hyperlink{types_8h_a2b836cfd06a967ad326d658a8138c146}{ND\+\_\+lim}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$lim)
+\item 
+\#define \mbox{\hyperlink{types_8h_adb513eaede379fa8cf40bb5e335e0c32}{ND\+\_\+low}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$low)
+\item 
+\#define \mbox{\hyperlink{types_8h_aafdc3f915c57fc734959a7936feba1c2}{ND\+\_\+lw}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$lw)
+\item 
+\#define \mbox{\hyperlink{types_8h_a932f96bdb911ef9d25ff3a5f4f9fcdea}{ND\+\_\+mark}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$mark)
+\item 
+\#define \mbox{\hyperlink{types_8h_ab6cf44ed9beadb42dec6cbf1e215d683}{ND\+\_\+mval}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$mval)
+\item 
+\#define \mbox{\hyperlink{types_8h_a0e22e496fee82db6b89acdd5ef6c37c7}{ND\+\_\+n\+\_\+cluster}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$n\+\_\+cluster)
+\item 
+\#define \mbox{\hyperlink{types_8h_a3bb87e7928ed2fd3686ac378858b293f}{ND\+\_\+next}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$next)
+\item 
+\#define \mbox{\hyperlink{types_8h_a9ea2bead61709465110b8141bcf68721}{ND\+\_\+node\+\_\+type}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$node\+\_\+type)
+\item 
+\#define \mbox{\hyperlink{types_8h_a15cbeaea7dab64dcfbcde1cad226c552}{ND\+\_\+onstack}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$onstack)
+\item 
+\#define \mbox{\hyperlink{types_8h_ac2743f96dd3d2c06547e3d25d9471c7c}{ND\+\_\+order}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$order)
+\item 
+\#define \mbox{\hyperlink{types_8h_a5d0398c1cdeb6735e6b95b7a027c573f}{ND\+\_\+other}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$other)
+\item 
+\#define \mbox{\hyperlink{types_8h_afb8b0da4ea62a1bbd2a4ae3ce52e7384}{ND\+\_\+out}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$out)
+\item 
+\#define \mbox{\hyperlink{types_8h_ab62dbc34dc3168e022f0a0969a5d7bc8}{ND\+\_\+outleaf}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$outleaf)
+\item 
+\#define \mbox{\hyperlink{types_8h_a4bd342b70058683d7d2f510f4b82f819}{ND\+\_\+par}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$par)
+\item 
+\#define \mbox{\hyperlink{types_8h_a50b5fb87a83783653f9a5bd28109ff07}{ND\+\_\+pinned}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$pinned)
+\item 
+\#define \mbox{\hyperlink{types_8h_add78de551f9363227c013ce673f2b573}{ND\+\_\+pos}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$pos)
+\item 
+\#define \mbox{\hyperlink{types_8h_a1805943530ef1049887e85db4bc918b7}{ND\+\_\+prev}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$prev)
+\item 
+\#define \mbox{\hyperlink{types_8h_afe5072a4ab915d5cd6a1994c446db319}{ND\+\_\+priority}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$priority)
+\item 
+\#define \mbox{\hyperlink{types_8h_a0baa35dbbb9c1b03e40b48b26deb0b38}{ND\+\_\+rank}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$rank)
+\item 
+\#define \mbox{\hyperlink{types_8h_ade7cf787f4b798952fcefb4abb3c256d}{ND\+\_\+ranktype}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$ranktype)
+\item 
+\#define \mbox{\hyperlink{types_8h_a9cb8c502c548e420aa8b507b162a2d2e}{ND\+\_\+rw}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$rw)
+\item 
+\#define \mbox{\hyperlink{types_8h_a5d7bd45bc6b14c164b47f2e477115d13}{ND\+\_\+save\+\_\+in}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$save\+\_\+in)
+\item 
+\#define \mbox{\hyperlink{types_8h_ab4b05872287c433b1e9b163037827813}{ND\+\_\+save\+\_\+out}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$save\+\_\+out)
+\item 
+\#define \mbox{\hyperlink{types_8h_ae90c22cfce70f108bb551499ac52dc54}{ND\+\_\+shape}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$shape)
+\item 
+\#define \mbox{\hyperlink{types_8h_ad25b873ee39c60fc1067d18051dd6ebc}{ND\+\_\+shape\+\_\+info}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$shape\+\_\+info)
+\item 
+\#define \mbox{\hyperlink{types_8h_a2d474280f17cea3b13984c60b7fdf335}{ND\+\_\+showboxes}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$showboxes)
+\item 
+\#define \mbox{\hyperlink{types_8h_a359619b85d94d92c966cdff435c80ce6}{ND\+\_\+state}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$state)
+\item 
+\#define \mbox{\hyperlink{types_8h_a9ec32b051f012346111fee4912756843}{ND\+\_\+clustnode}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$clustnode)
+\item 
+\#define \mbox{\hyperlink{types_8h_a06fb60e161258ecbf1558df103ec704c}{ND\+\_\+tree\+\_\+in}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$tree\+\_\+in)
+\item 
+\#define \mbox{\hyperlink{types_8h_ac4da309537bc828fd6ecc56046258a48}{ND\+\_\+tree\+\_\+out}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$tree\+\_\+out)
+\item 
+\#define \mbox{\hyperlink{types_8h_ad20fffb76a5d5801962b2e9ca678109f}{ND\+\_\+weight\+\_\+class}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$weight\+\_\+class)
+\item 
+\#define \mbox{\hyperlink{types_8h_aac55d17a94648f59f637f29aabb3259b}{ND\+\_\+width}}(n)~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$width)
+\item 
+\#define \mbox{\hyperlink{types_8h_af99fce39f8dcc513002af9c1f97c9b3b}{ND\+\_\+xsize}}(n)~(\mbox{\hyperlink{types_8h_aafdc3f915c57fc734959a7936feba1c2}{ND\+\_\+lw}}(n)+\mbox{\hyperlink{types_8h_a9cb8c502c548e420aa8b507b162a2d2e}{ND\+\_\+rw}}(n))
+\item 
+\#define \mbox{\hyperlink{types_8h_a3cee88e9b3eff3a89e96837ca91a723f}{ND\+\_\+ysize}}(n)~(\mbox{\hyperlink{types_8h_a1bb4c002fbbf73f2e4061de8efcbe453}{ND\+\_\+ht}}(n))
+\item 
+\#define \mbox{\hyperlink{types_8h_aa2b7773c035a0866fa49e47682f03806}{ED\+\_\+alg}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$alg)
+\item 
+\#define \mbox{\hyperlink{types_8h_a5322ddecbfd78b6219d7858130e8ba89}{ED\+\_\+conc\+\_\+opp\+\_\+flag}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$conc\+\_\+opp\+\_\+flag)
+\item 
+\#define \mbox{\hyperlink{types_8h_a94822e795d402ebafb4f534f43fe58d3}{ED\+\_\+count}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$count)
+\item 
+\#define \mbox{\hyperlink{types_8h_acb80190e3b238a47474e4e9a2d9a9a17}{ED\+\_\+cutvalue}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$cutvalue)
+\item 
+\#define \mbox{\hyperlink{types_8h_a9b03efc65b943a56a6da501119f61ff2}{ED\+\_\+edge\+\_\+type}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$edge\+\_\+type)
+\item 
+\#define \mbox{\hyperlink{types_8h_a14c23d9ac2ce08caf15e98a2b00e560f}{ED\+\_\+compound}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$compound)
+\item 
+\#define \mbox{\hyperlink{types_8h_acb5bb0e8c848dc4992471c3535dee33d}{ED\+\_\+adjacent}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$adjacent)
+\item 
+\#define \mbox{\hyperlink{types_8h_abb948350e25dda9a74389582ed8876d0}{ED\+\_\+factor}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$factor)
+\item 
+\#define \mbox{\hyperlink{types_8h_a872eea083b0fc41d5cbe4aed44078d5b}{ED\+\_\+gui\+\_\+state}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$gui\+\_\+state)
+\item 
+\#define \mbox{\hyperlink{types_8h_a7246ae9cbfda66cab6b9050c5e5a3494}{ED\+\_\+head\+\_\+label}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$head\+\_\+label)
+\item 
+\#define \mbox{\hyperlink{types_8h_adec0e33e4e788c1ce603597b89d3055a}{ED\+\_\+head\+\_\+port}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$head\+\_\+port)
+\item 
+\#define \mbox{\hyperlink{types_8h_ae590329810778be5909563f40375c458}{ED\+\_\+label}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$label)
+\item 
+\#define \mbox{\hyperlink{types_8h_a60a2aa92dd94846e103ae74ea88a306a}{ED\+\_\+xlabel}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$xlabel)
+\item 
+\#define \mbox{\hyperlink{types_8h_a634e2a938804e412ae5bd59c4952e1ff}{ED\+\_\+label\+\_\+ontop}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$label\+\_\+ontop)
+\item 
+\#define \mbox{\hyperlink{types_8h_a33ee77a99cd045f6ce3432ac896dd7ef}{ED\+\_\+minlen}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$minlen)
+\item 
+\#define \mbox{\hyperlink{types_8h_aab0740676cd17e8496c1de18c579a182}{ED\+\_\+path}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$\mbox{\hyperlink{structpath}{path}})
+\item 
+\#define \mbox{\hyperlink{types_8h_a58e5543a5552a571c9ad286944f5e74d}{ED\+\_\+showboxes}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$showboxes)
+\item 
+\#define \mbox{\hyperlink{types_8h_a8fb5cc3d3b3e8cb72c82e87c843f3432}{ED\+\_\+spl}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$spl)
+\item 
+\#define \mbox{\hyperlink{types_8h_abaffd96fcefc50e244c603930299a3fe}{ED\+\_\+tail\+\_\+label}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$tail\+\_\+label)
+\item 
+\#define \mbox{\hyperlink{types_8h_aebbf6cf6d8a89d415a8d0b40df2c110d}{ED\+\_\+tail\+\_\+port}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$tail\+\_\+port)
+\item 
+\#define \mbox{\hyperlink{types_8h_a0a6706e6b353fb3420b0bacd7d3a2251}{ED\+\_\+to\+\_\+orig}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$to\+\_\+orig)
+\item 
+\#define \mbox{\hyperlink{types_8h_af626c847d81347ad341596b6809a05e2}{ED\+\_\+to\+\_\+virt}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$to\+\_\+virt)
+\item 
+\#define \mbox{\hyperlink{types_8h_a0ee6b93c9004250a5f12e29e2c894167}{ED\+\_\+tree\+\_\+index}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$tree\+\_\+index)
+\item 
+\#define \mbox{\hyperlink{types_8h_a7327a70c8b4346b7ebed6867736b7d53}{ED\+\_\+xpenalty}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$xpenalty)
+\item 
+\#define \mbox{\hyperlink{types_8h_a331c2d40ba790391413f9c335bdf1d1b}{ED\+\_\+dist}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$dist)
+\item 
+\#define \mbox{\hyperlink{types_8h_aa50ab14aac03a171606749049925384f}{ED\+\_\+weight}}(e)~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$weight)
+\item 
+\#define \mbox{\hyperlink{types_8h_a0e2f3c6c3a245eb9d16b83ff6b2b3c24}{ag\+\_\+xget}}(x,  a)~\mbox{\hyperlink{cgraph_8h_ad2d0f1fbd29039ec42d12ffb24c015b6}{agxget}}(x,a)
+\item 
+\#define \mbox{\hyperlink{types_8h_ac513571df7814fe16758f00c2a59fecf}{SET\+\_\+\+RANKDIR}}(g,  rd)~(\mbox{\hyperlink{types_8h_a1d10b818e1ff69372cfb54ee0d469129}{GD\+\_\+rankdir2}}(g) = rd)
+\item 
+\#define \mbox{\hyperlink{types_8h_ab58bf52067c43e9deb7e9bad4fccfcba}{agfindedge}}(g,  t,  h)~(\mbox{\hyperlink{cgraph_8h_a95def214657d6bb88fa9fb78c0a8decc}{agedge}}(g,t,h,NULL,0))
+\item 
+\#define \mbox{\hyperlink{types_8h_ae309bfc1ef6997297934402bc684f0f5}{agfindnode}}(g,  n)~(\mbox{\hyperlink{cgraph_8h_a1e8d44a7de90600adccd069df68e1fdc}{agnode}}(g,n,0))
+\item 
+\#define \mbox{\hyperlink{types_8h_a086057e1ffaf626987d480a024641c6e}{agfindgraphattr}}(g,  a)~(\mbox{\hyperlink{cgraph_8h_ac9976dbfd1f6494265db70a8b5757e13}{agattr}}(g,\mbox{\hyperlink{cgraph_8h_a1e06db728ec62594cc4c34d5e039f94b}{AGRAPH}},a,NULL))
+\item 
+\#define \mbox{\hyperlink{types_8h_a62ab34e97050c33903a56359783a1753}{agfindnodeattr}}(g,  a)~(\mbox{\hyperlink{cgraph_8h_ac9976dbfd1f6494265db70a8b5757e13}{agattr}}(g,\mbox{\hyperlink{cgraph_8h_a43a81a3fd3c7b0ee89f200344195e630}{AGNODE}},a,NULL))
+\item 
+\#define \mbox{\hyperlink{types_8h_a7321b58cb4928637f7309edf433bbea5}{agfindedgeattr}}(g,  a)~(\mbox{\hyperlink{cgraph_8h_ac9976dbfd1f6494265db70a8b5757e13}{agattr}}(g,\mbox{\hyperlink{cgraph_8h_af7e2feb683e8c8e540a832845b15bb18}{AGEDGE}},a,NULL))
+\end{DoxyCompactItemize}
+\doxysubsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \mbox{\hyperlink{types_8h_ac2d6b237613fae80c3a9fa117f76482b}{qsort\+\_\+cmpf}}) (const void $\ast$, const void $\ast$)
+\item 
+typedef int($\ast$ \mbox{\hyperlink{types_8h_a23b0baed858f43d9563f3e471eab14b7}{bsearch\+\_\+cmpf}}) (const void $\ast$, const void $\ast$)
+\item 
+typedef struct \mbox{\hyperlink{struct_agraph__s}{Agraph\+\_\+s}} \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_agnode__s}{Agnode\+\_\+s}} \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_agedge__s}{Agedge\+\_\+s}} \mbox{\hyperlink{types_8h_ab6289995bb0656f4da2ae67d80fea6d2}{edge\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_agsym__s}{Agsym\+\_\+s}} \mbox{\hyperlink{types_8h_a074b8806dbdd80edff842d96051d4325}{attrsym\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{types_8h_ace6945bb2802e1190d98a4b4319c6d53}{htmllabel\+\_\+t}} \mbox{\hyperlink{types_8h_ace6945bb2802e1190d98a4b4319c6d53}{htmllabel\+\_\+t}}
+\item 
+typedef union \mbox{\hyperlink{unioninside__t}{inside\+\_\+t}} \mbox{\hyperlink{types_8h_ac04692d45a1fef6cd62f5d44bb078357}{inside\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structport}{port}} \mbox{\hyperlink{types_8h_ae95a60d33b2914f06e5882ef97f6ce3e}{port}}
+\item 
+typedef struct \mbox{\hyperlink{structpathend__t}{pathend\+\_\+t}} \mbox{\hyperlink{types_8h_ad284ee6b03d9fc028b8269adbef5fc65}{pathend\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structpath}{path}} \mbox{\hyperlink{types_8h_a130fc11a930a5aa9d3e5e4793172c82d}{path}}
+\item 
+typedef struct \mbox{\hyperlink{structbezier}{bezier}} \mbox{\hyperlink{types_8h_a800a5a54f93310b21802f76661efa426}{bezier}}
+\item 
+typedef struct \mbox{\hyperlink{structsplines}{splines}} \mbox{\hyperlink{types_8h_a50a0ad9736b3bcace6e4531bd44d0759}{splines}}
+\item 
+typedef struct \mbox{\hyperlink{structtextlabel__t}{textlabel\+\_\+t}} \mbox{\hyperlink{types_8h_a3ec6402de3a86938ff9751e054bdd1cf}{textlabel\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structpolygon__t}{polygon\+\_\+t}} \mbox{\hyperlink{types_8h_a54fcc55206762e2cbac75fe208b9b235}{polygon\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structstroke__t}{stroke\+\_\+t}} \mbox{\hyperlink{types_8h_ae3daf21c5a1c87ed4b22e46e41dc67b6}{stroke\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structshape__functions}{shape\+\_\+functions}} \mbox{\hyperlink{types_8h_a6d6c2e66636ceb6cad0df539cf2442fe}{shape\+\_\+functions}}
+\item 
+typedef struct \mbox{\hyperlink{structshape__desc}{shape\+\_\+desc}} \mbox{\hyperlink{types_8h_a468eddb197afa13a3864ce4812c823cb}{shape\+\_\+desc}}
+\item 
+typedef struct \mbox{\hyperlink{structnodequeue}{nodequeue}} \mbox{\hyperlink{types_8h_ab0ed5d5be4d87a3f8240302dd96f9dfe}{nodequeue}}
+\item 
+typedef struct \mbox{\hyperlink{structadjmatrix__t}{adjmatrix\+\_\+t}} \mbox{\hyperlink{types_8h_a90a81e34f2d8b7e78c0589584f51d645}{adjmatrix\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structrank__t}{rank\+\_\+t}} \mbox{\hyperlink{types_8h_a88b8fdea9d1dfb6e3b27ac7a94b786ca}{rank\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structlayout__t}{layout\+\_\+t}} \mbox{\hyperlink{types_8h_ab70208e6f93ae550e6099ab4adc87330}{layout\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structfield__t}{field\+\_\+t}} \mbox{\hyperlink{types_8h_a8e3205a9a1e9d9c7608c678d900f845e}{field\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structnlist__t}{nlist\+\_\+t}} \mbox{\hyperlink{types_8h_ad2a80a423612e0accdeb9e60421190c8}{nlist\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structelist}{elist}} \mbox{\hyperlink{types_8h_a29a6cb48b14cf8e1d183d055c5f7ff3b}{elist}}
+\item 
+typedef struct \mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}} \mbox{\hyperlink{types_8h_ac63023c62153c35af49136637b3918ca}{Agraphinfo\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}} \mbox{\hyperlink{types_8h_a99f5e71bafc639934d8a78307c510dfe}{Agnodeinfo\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}} \mbox{\hyperlink{types_8h_a7f6006922902c3a180aa46008d9cda04}{Agedgeinfo\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7c}{shape\+\_\+kind}} \{ \newline
+\mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca775dfd155f3c8185d05520101a033ff3}{SH\+\_\+\+UNSET}}
+, \mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7cadd4ea7af512fbabd92af5be76d50e22e}{SH\+\_\+\+POLY}}
+, \mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca3d8cb0521bb6b92b2b396cf8cb870d6d}{SH\+\_\+\+RECORD}}
+, \mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7cad9f3e7eed3b6d20cd282bb4856aa363a}{SH\+\_\+\+POINT}}
+, \newline
+\mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca20f460bfd46fdfdf3116925db34ae749}{SH\+\_\+\+EPSF}}
+ \}
+\item 
+enum \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3}{ratio\+\_\+t}} \{ \newline
+\mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3abec06f2a16e9fad36d80732a385b146c}{R\+\_\+\+NONE}}
+, \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3a4d90c50b9b54a8ce4dafdeb83b211d11}{R\+\_\+\+VALUE}}
+, \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3a5a44faf145f63c8202d16d9c5cfa8add}{R\+\_\+\+FILL}}
+, \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3a0d81d612dbac14feb838b55ac96ca292}{R\+\_\+\+COMPRESS}}
+, \newline
+\mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3a084b1de8767c8bf88efae83ecd4ea574}{R\+\_\+\+AUTO}}
+, \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3a929bb8521a6a4dc8bc0b5225d0bc6a41}{R\+\_\+\+EXPAND}}
+ \}
+\item 
+enum \mbox{\hyperlink{types_8h_a2a6b72cfc1be9a7af92447c2f1372496}{fontname\+\_\+kind}} \{ \mbox{\hyperlink{types_8h_a2a6b72cfc1be9a7af92447c2f1372496aa04601a2ac6cdc4251c48d174b0e2509}{NATIVEFONTS}}
+, \mbox{\hyperlink{types_8h_a2a6b72cfc1be9a7af92447c2f1372496aac9e353cbe29ed058f39ae1b0b05b5e1}{PSFONTS}}
+, \mbox{\hyperlink{types_8h_a2a6b72cfc1be9a7af92447c2f1372496ab8851f34a473071b4ff971413c9c2acd}{SVGFONTS}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+graphs, nodes and edges info\+: \mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}, \mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}} and \mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}} 
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}}
+
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{types_8h_a0e2f3c6c3a245eb9d16b83ff6b2b3c24}\label{types_8h_a0e2f3c6c3a245eb9d16b83ff6b2b3c24}} 
+\index{types.h@{types.h}!ag\_xget@{ag\_xget}}
+\index{ag\_xget@{ag\_xget}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ag\_xget}{ag\_xget}}
+{\footnotesize\ttfamily \#define ag\+\_\+xget(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{a }\end{DoxyParamCaption})~\mbox{\hyperlink{cgraph_8h_ad2d0f1fbd29039ec42d12ffb24c015b6}{agxget}}(x,a)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00601}{601}}
+
+\mbox{\Hypertarget{types_8h_ab58bf52067c43e9deb7e9bad4fccfcba}\label{types_8h_ab58bf52067c43e9deb7e9bad4fccfcba}} 
+\index{types.h@{types.h}!agfindedge@{agfindedge}}
+\index{agfindedge@{agfindedge}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{agfindedge}{agfindedge}}
+{\footnotesize\ttfamily \#define agfindedge(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{t,  }\item[{}]{h }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a95def214657d6bb88fa9fb78c0a8decc}{agedge}}(g,t,h,NULL,0))}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00603}{603}}
+
+\mbox{\Hypertarget{types_8h_a7321b58cb4928637f7309edf433bbea5}\label{types_8h_a7321b58cb4928637f7309edf433bbea5}} 
+\index{types.h@{types.h}!agfindedgeattr@{agfindedgeattr}}
+\index{agfindedgeattr@{agfindedgeattr}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{agfindedgeattr}{agfindedgeattr}}
+{\footnotesize\ttfamily \#define agfindedgeattr(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{a }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_ac9976dbfd1f6494265db70a8b5757e13}{agattr}}(g,\mbox{\hyperlink{cgraph_8h_af7e2feb683e8c8e540a832845b15bb18}{AGEDGE}},a,NULL))}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00607}{607}}
+
+\mbox{\Hypertarget{types_8h_a086057e1ffaf626987d480a024641c6e}\label{types_8h_a086057e1ffaf626987d480a024641c6e}} 
+\index{types.h@{types.h}!agfindgraphattr@{agfindgraphattr}}
+\index{agfindgraphattr@{agfindgraphattr}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{agfindgraphattr}{agfindgraphattr}}
+{\footnotesize\ttfamily \#define agfindgraphattr(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{a }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_ac9976dbfd1f6494265db70a8b5757e13}{agattr}}(g,\mbox{\hyperlink{cgraph_8h_a1e06db728ec62594cc4c34d5e039f94b}{AGRAPH}},a,NULL))}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00605}{605}}
+
+\mbox{\Hypertarget{types_8h_ae309bfc1ef6997297934402bc684f0f5}\label{types_8h_ae309bfc1ef6997297934402bc684f0f5}} 
+\index{types.h@{types.h}!agfindnode@{agfindnode}}
+\index{agfindnode@{agfindnode}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{agfindnode}{agfindnode}}
+{\footnotesize\ttfamily \#define agfindnode(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{n }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a1e8d44a7de90600adccd069df68e1fdc}{agnode}}(g,n,0))}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00604}{604}}
+
+\mbox{\Hypertarget{types_8h_a62ab34e97050c33903a56359783a1753}\label{types_8h_a62ab34e97050c33903a56359783a1753}} 
+\index{types.h@{types.h}!agfindnodeattr@{agfindnodeattr}}
+\index{agfindnodeattr@{agfindnodeattr}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{agfindnodeattr}{agfindnodeattr}}
+{\footnotesize\ttfamily \#define agfindnodeattr(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{a }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_ac9976dbfd1f6494265db70a8b5757e13}{agattr}}(g,\mbox{\hyperlink{cgraph_8h_a43a81a3fd3c7b0ee89f200344195e630}{AGNODE}},a,NULL))}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00606}{606}}
+
+\mbox{\Hypertarget{types_8h_ae0026dfea8f7eb0765f419f1fff65886}\label{types_8h_ae0026dfea8f7eb0765f419f1fff65886}} 
+\index{types.h@{types.h}!alloc\_elist@{alloc\_elist}}
+\index{alloc\_elist@{alloc\_elist}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{alloc\_elist}{alloc\_elist}}
+{\footnotesize\ttfamily \#define alloc\+\_\+elist(\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{L }\end{DoxyParamCaption})~do \{L.\+size = 0; L.\+list = N\+\_\+\+NEW(n + 1,\mbox{\hyperlink{types_8h_ab6289995bb0656f4da2ae67d80fea6d2}{edge\+\_\+t}}$\ast$); \} while (0)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00268}{268}}
+
+\mbox{\Hypertarget{types_8h_acb5bb0e8c848dc4992471c3535dee33d}\label{types_8h_acb5bb0e8c848dc4992471c3535dee33d}} 
+\index{types.h@{types.h}!ED\_adjacent@{ED\_adjacent}}
+\index{ED\_adjacent@{ED\_adjacent}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_adjacent}{ED\_adjacent}}
+{\footnotesize\ttfamily \#define ED\+\_\+adjacent(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$adjacent)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00580}{580}}
+
+\mbox{\Hypertarget{types_8h_aa2b7773c035a0866fa49e47682f03806}\label{types_8h_aa2b7773c035a0866fa49e47682f03806}} 
+\index{types.h@{types.h}!ED\_alg@{ED\_alg}}
+\index{ED\_alg@{ED\_alg}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_alg}{ED\_alg}}
+{\footnotesize\ttfamily \#define ED\+\_\+alg(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$alg)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00574}{574}}
+
+\mbox{\Hypertarget{types_8h_a14c23d9ac2ce08caf15e98a2b00e560f}\label{types_8h_a14c23d9ac2ce08caf15e98a2b00e560f}} 
+\index{types.h@{types.h}!ED\_compound@{ED\_compound}}
+\index{ED\_compound@{ED\_compound}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_compound}{ED\_compound}}
+{\footnotesize\ttfamily \#define ED\+\_\+compound(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$compound)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00579}{579}}
+
+\mbox{\Hypertarget{types_8h_a5322ddecbfd78b6219d7858130e8ba89}\label{types_8h_a5322ddecbfd78b6219d7858130e8ba89}} 
+\index{types.h@{types.h}!ED\_conc\_opp\_flag@{ED\_conc\_opp\_flag}}
+\index{ED\_conc\_opp\_flag@{ED\_conc\_opp\_flag}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_conc\_opp\_flag}{ED\_conc\_opp\_flag}}
+{\footnotesize\ttfamily \#define ED\+\_\+conc\+\_\+opp\+\_\+flag(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$conc\+\_\+opp\+\_\+flag)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00575}{575}}
+
+\mbox{\Hypertarget{types_8h_a94822e795d402ebafb4f534f43fe58d3}\label{types_8h_a94822e795d402ebafb4f534f43fe58d3}} 
+\index{types.h@{types.h}!ED\_count@{ED\_count}}
+\index{ED\_count@{ED\_count}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_count}{ED\_count}}
+{\footnotesize\ttfamily \#define ED\+\_\+count(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$count)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00576}{576}}
+
+\mbox{\Hypertarget{types_8h_acb80190e3b238a47474e4e9a2d9a9a17}\label{types_8h_acb80190e3b238a47474e4e9a2d9a9a17}} 
+\index{types.h@{types.h}!ED\_cutvalue@{ED\_cutvalue}}
+\index{ED\_cutvalue@{ED\_cutvalue}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_cutvalue}{ED\_cutvalue}}
+{\footnotesize\ttfamily \#define ED\+\_\+cutvalue(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$cutvalue)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00577}{577}}
+
+\mbox{\Hypertarget{types_8h_a331c2d40ba790391413f9c335bdf1d1b}\label{types_8h_a331c2d40ba790391413f9c335bdf1d1b}} 
+\index{types.h@{types.h}!ED\_dist@{ED\_dist}}
+\index{ED\_dist@{ED\_dist}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_dist}{ED\_dist}}
+{\footnotesize\ttfamily \#define ED\+\_\+dist(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$dist)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00598}{598}}
+
+\mbox{\Hypertarget{types_8h_a9b03efc65b943a56a6da501119f61ff2}\label{types_8h_a9b03efc65b943a56a6da501119f61ff2}} 
+\index{types.h@{types.h}!ED\_edge\_type@{ED\_edge\_type}}
+\index{ED\_edge\_type@{ED\_edge\_type}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_edge\_type}{ED\_edge\_type}}
+{\footnotesize\ttfamily \#define ED\+\_\+edge\+\_\+type(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$edge\+\_\+type)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00578}{578}}
+
+\mbox{\Hypertarget{types_8h_abb948350e25dda9a74389582ed8876d0}\label{types_8h_abb948350e25dda9a74389582ed8876d0}} 
+\index{types.h@{types.h}!ED\_factor@{ED\_factor}}
+\index{ED\_factor@{ED\_factor}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_factor}{ED\_factor}}
+{\footnotesize\ttfamily \#define ED\+\_\+factor(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$factor)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00581}{581}}
+
+\mbox{\Hypertarget{types_8h_a872eea083b0fc41d5cbe4aed44078d5b}\label{types_8h_a872eea083b0fc41d5cbe4aed44078d5b}} 
+\index{types.h@{types.h}!ED\_gui\_state@{ED\_gui\_state}}
+\index{ED\_gui\_state@{ED\_gui\_state}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_gui\_state}{ED\_gui\_state}}
+{\footnotesize\ttfamily \#define ED\+\_\+gui\+\_\+state(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$gui\+\_\+state)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00582}{582}}
+
+\mbox{\Hypertarget{types_8h_a7246ae9cbfda66cab6b9050c5e5a3494}\label{types_8h_a7246ae9cbfda66cab6b9050c5e5a3494}} 
+\index{types.h@{types.h}!ED\_head\_label@{ED\_head\_label}}
+\index{ED\_head\_label@{ED\_head\_label}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_head\_label}{ED\_head\_label}}
+{\footnotesize\ttfamily \#define ED\+\_\+head\+\_\+label(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$head\+\_\+label)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00583}{583}}
+
+\mbox{\Hypertarget{types_8h_adec0e33e4e788c1ce603597b89d3055a}\label{types_8h_adec0e33e4e788c1ce603597b89d3055a}} 
+\index{types.h@{types.h}!ED\_head\_port@{ED\_head\_port}}
+\index{ED\_head\_port@{ED\_head\_port}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_head\_port}{ED\_head\_port}}
+{\footnotesize\ttfamily \#define ED\+\_\+head\+\_\+port(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$head\+\_\+port)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00584}{584}}
+
+\mbox{\Hypertarget{types_8h_ae590329810778be5909563f40375c458}\label{types_8h_ae590329810778be5909563f40375c458}} 
+\index{types.h@{types.h}!ED\_label@{ED\_label}}
+\index{ED\_label@{ED\_label}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_label}{ED\_label}}
+{\footnotesize\ttfamily \#define ED\+\_\+label(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$label)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00585}{585}}
+
+\mbox{\Hypertarget{types_8h_a634e2a938804e412ae5bd59c4952e1ff}\label{types_8h_a634e2a938804e412ae5bd59c4952e1ff}} 
+\index{types.h@{types.h}!ED\_label\_ontop@{ED\_label\_ontop}}
+\index{ED\_label\_ontop@{ED\_label\_ontop}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_label\_ontop}{ED\_label\_ontop}}
+{\footnotesize\ttfamily \#define ED\+\_\+label\+\_\+ontop(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$label\+\_\+ontop)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00587}{587}}
+
+\mbox{\Hypertarget{types_8h_a33ee77a99cd045f6ce3432ac896dd7ef}\label{types_8h_a33ee77a99cd045f6ce3432ac896dd7ef}} 
+\index{types.h@{types.h}!ED\_minlen@{ED\_minlen}}
+\index{ED\_minlen@{ED\_minlen}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_minlen}{ED\_minlen}}
+{\footnotesize\ttfamily \#define ED\+\_\+minlen(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$minlen)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00588}{588}}
+
+\mbox{\Hypertarget{types_8h_aab0740676cd17e8496c1de18c579a182}\label{types_8h_aab0740676cd17e8496c1de18c579a182}} 
+\index{types.h@{types.h}!ED\_path@{ED\_path}}
+\index{ED\_path@{ED\_path}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_path}{ED\_path}}
+{\footnotesize\ttfamily \#define ED\+\_\+path(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$\mbox{\hyperlink{structpath}{path}})}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00589}{589}}
+
+\mbox{\Hypertarget{types_8h_a58e5543a5552a571c9ad286944f5e74d}\label{types_8h_a58e5543a5552a571c9ad286944f5e74d}} 
+\index{types.h@{types.h}!ED\_showboxes@{ED\_showboxes}}
+\index{ED\_showboxes@{ED\_showboxes}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_showboxes}{ED\_showboxes}}
+{\footnotesize\ttfamily \#define ED\+\_\+showboxes(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$showboxes)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00590}{590}}
+
+\mbox{\Hypertarget{types_8h_a8fb5cc3d3b3e8cb72c82e87c843f3432}\label{types_8h_a8fb5cc3d3b3e8cb72c82e87c843f3432}} 
+\index{types.h@{types.h}!ED\_spl@{ED\_spl}}
+\index{ED\_spl@{ED\_spl}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_spl}{ED\_spl}}
+{\footnotesize\ttfamily \#define ED\+\_\+spl(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$spl)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00591}{591}}
+
+\mbox{\Hypertarget{types_8h_abaffd96fcefc50e244c603930299a3fe}\label{types_8h_abaffd96fcefc50e244c603930299a3fe}} 
+\index{types.h@{types.h}!ED\_tail\_label@{ED\_tail\_label}}
+\index{ED\_tail\_label@{ED\_tail\_label}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_tail\_label}{ED\_tail\_label}}
+{\footnotesize\ttfamily \#define ED\+\_\+tail\+\_\+label(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$tail\+\_\+label)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00592}{592}}
+
+\mbox{\Hypertarget{types_8h_aebbf6cf6d8a89d415a8d0b40df2c110d}\label{types_8h_aebbf6cf6d8a89d415a8d0b40df2c110d}} 
+\index{types.h@{types.h}!ED\_tail\_port@{ED\_tail\_port}}
+\index{ED\_tail\_port@{ED\_tail\_port}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_tail\_port}{ED\_tail\_port}}
+{\footnotesize\ttfamily \#define ED\+\_\+tail\+\_\+port(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$tail\+\_\+port)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00593}{593}}
+
+\mbox{\Hypertarget{types_8h_a0a6706e6b353fb3420b0bacd7d3a2251}\label{types_8h_a0a6706e6b353fb3420b0bacd7d3a2251}} 
+\index{types.h@{types.h}!ED\_to\_orig@{ED\_to\_orig}}
+\index{ED\_to\_orig@{ED\_to\_orig}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_to\_orig}{ED\_to\_orig}}
+{\footnotesize\ttfamily \#define ED\+\_\+to\+\_\+orig(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$to\+\_\+orig)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00594}{594}}
+
+\mbox{\Hypertarget{types_8h_af626c847d81347ad341596b6809a05e2}\label{types_8h_af626c847d81347ad341596b6809a05e2}} 
+\index{types.h@{types.h}!ED\_to\_virt@{ED\_to\_virt}}
+\index{ED\_to\_virt@{ED\_to\_virt}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_to\_virt}{ED\_to\_virt}}
+{\footnotesize\ttfamily \#define ED\+\_\+to\+\_\+virt(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$to\+\_\+virt)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00595}{595}}
+
+\mbox{\Hypertarget{types_8h_a0ee6b93c9004250a5f12e29e2c894167}\label{types_8h_a0ee6b93c9004250a5f12e29e2c894167}} 
+\index{types.h@{types.h}!ED\_tree\_index@{ED\_tree\_index}}
+\index{ED\_tree\_index@{ED\_tree\_index}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_tree\_index}{ED\_tree\_index}}
+{\footnotesize\ttfamily \#define ED\+\_\+tree\+\_\+index(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$tree\+\_\+index)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00596}{596}}
+
+\mbox{\Hypertarget{types_8h_aa50ab14aac03a171606749049925384f}\label{types_8h_aa50ab14aac03a171606749049925384f}} 
+\index{types.h@{types.h}!ED\_weight@{ED\_weight}}
+\index{ED\_weight@{ED\_weight}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_weight}{ED\_weight}}
+{\footnotesize\ttfamily \#define ED\+\_\+weight(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$weight)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00599}{599}}
+
+\mbox{\Hypertarget{types_8h_a60a2aa92dd94846e103ae74ea88a306a}\label{types_8h_a60a2aa92dd94846e103ae74ea88a306a}} 
+\index{types.h@{types.h}!ED\_xlabel@{ED\_xlabel}}
+\index{ED\_xlabel@{ED\_xlabel}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_xlabel}{ED\_xlabel}}
+{\footnotesize\ttfamily \#define ED\+\_\+xlabel(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$xlabel)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00586}{586}}
+
+\mbox{\Hypertarget{types_8h_a7327a70c8b4346b7ebed6867736b7d53}\label{types_8h_a7327a70c8b4346b7ebed6867736b7d53}} 
+\index{types.h@{types.h}!ED\_xpenalty@{ED\_xpenalty}}
+\index{ED\_xpenalty@{ED\_xpenalty}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ED\_xpenalty}{ED\_xpenalty}}
+{\footnotesize\ttfamily \#define ED\+\_\+xpenalty(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(e))-\/$>$xpenalty)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00597}{597}}
+
+\mbox{\Hypertarget{types_8h_a911ab2551bc8ea9e16346460246940fe}\label{types_8h_a911ab2551bc8ea9e16346460246940fe}} 
+\index{types.h@{types.h}!elist\_append@{elist\_append}}
+\index{elist\_append@{elist\_append}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{elist\_append}{elist\_append}}
+{\footnotesize\ttfamily \#define elist\+\_\+append(\begin{DoxyParamCaption}\item[{}]{item,  }\item[{}]{L }\end{DoxyParamCaption})~do \{L.\+list = ALLOC(L.\+size + 2,L.\+list,\mbox{\hyperlink{types_8h_ab6289995bb0656f4da2ae67d80fea6d2}{edge\+\_\+t}}$\ast$); L.\+list\mbox{[}L.\+size++\mbox{]} = item; L.\+list\mbox{[}L.\+size\mbox{]} = NULL;\} while(0)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00267}{267}}
+
+\mbox{\Hypertarget{types_8h_a6715ffe537007b0fc39be1c1deda1108}\label{types_8h_a6715ffe537007b0fc39be1c1deda1108}} 
+\index{types.h@{types.h}!elist\_fastapp@{elist\_fastapp}}
+\index{elist\_fastapp@{elist\_fastapp}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{elist\_fastapp}{elist\_fastapp}}
+{\footnotesize\ttfamily \#define elist\+\_\+fastapp(\begin{DoxyParamCaption}\item[{}]{item,  }\item[{}]{L }\end{DoxyParamCaption})~do \{L.\+list\mbox{[}L.\+size++\mbox{]} = item; L.\+list\mbox{[}L.\+size\mbox{]} = NULL;\} while(0)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00266}{266}}
+
+\mbox{\Hypertarget{types_8h_a0daea177ae8f9997439bb552218fc70a}\label{types_8h_a0daea177ae8f9997439bb552218fc70a}} 
+\index{types.h@{types.h}!free\_list@{free\_list}}
+\index{free\_list@{free\_list}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{free\_list}{free\_list}}
+{\footnotesize\ttfamily \#define free\+\_\+list(\begin{DoxyParamCaption}\item[{}]{L }\end{DoxyParamCaption})~free(L.\+list)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00269}{269}}
+
+\mbox{\Hypertarget{types_8h_a67b630030eacd3cb15dd2433b3a863f5}\label{types_8h_a67b630030eacd3cb15dd2433b3a863f5}} 
+\index{types.h@{types.h}!GD\_alg@{GD\_alg}}
+\index{GD\_alg@{GD\_alg}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_alg}{GD\_alg}}
+{\footnotesize\ttfamily \#define GD\+\_\+alg(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$alg)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00356}{356}}
+
+\mbox{\Hypertarget{types_8h_a901aff57f7816b36b6e5f362c05ac2fe}\label{types_8h_a901aff57f7816b36b6e5f362c05ac2fe}} 
+\index{types.h@{types.h}!GD\_bb@{GD\_bb}}
+\index{GD\_bb@{GD\_bb}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_bb}{GD\_bb}}
+{\footnotesize\ttfamily \#define GD\+\_\+bb(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$bb)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00352}{352}}
+
+\mbox{\Hypertarget{types_8h_a518eb6cf9ba677d9d0315c492dfd582a}\label{types_8h_a518eb6cf9ba677d9d0315c492dfd582a}} 
+\index{types.h@{types.h}!GD\_border@{GD\_border}}
+\index{GD\_border@{GD\_border}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_border}{GD\_border}}
+{\footnotesize\ttfamily \#define GD\+\_\+border(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$border)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00357}{357}}
+
+\mbox{\Hypertarget{types_8h_ae0c0e1c4d187901d851cb77143519def}\label{types_8h_ae0c0e1c4d187901d851cb77143519def}} 
+\index{types.h@{types.h}!GD\_charset@{GD\_charset}}
+\index{GD\_charset@{GD\_charset}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_charset}{GD\_charset}}
+{\footnotesize\ttfamily \#define GD\+\_\+charset(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$charset)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00365}{365}}
+
+\mbox{\Hypertarget{types_8h_adbe1e26fccc1a3d1c0a78767510e81c6}\label{types_8h_adbe1e26fccc1a3d1c0a78767510e81c6}} 
+\index{types.h@{types.h}!GD\_cleanup@{GD\_cleanup}}
+\index{GD\_cleanup@{GD\_cleanup}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_cleanup}{GD\_cleanup}}
+{\footnotesize\ttfamily \#define GD\+\_\+cleanup(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$cleanup)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00354}{354}}
+
+\mbox{\Hypertarget{types_8h_a5668dcc358c7a2113b24345806c6f59e}\label{types_8h_a5668dcc358c7a2113b24345806c6f59e}} 
+\index{types.h@{types.h}!GD\_clust@{GD\_clust}}
+\index{GD\_clust@{GD\_clust}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_clust}{GD\_clust}}
+{\footnotesize\ttfamily \#define GD\+\_\+clust(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$clust)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00358}{358}}
+
+\mbox{\Hypertarget{types_8h_ad268734b2d2575d8e2af51e432748e2e}\label{types_8h_ad268734b2d2575d8e2af51e432748e2e}} 
+\index{types.h@{types.h}!GD\_comp@{GD\_comp}}
+\index{GD\_comp@{GD\_comp}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_comp}{GD\_comp}}
+{\footnotesize\ttfamily \#define GD\+\_\+comp(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$comp)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00360}{360}}
+
+\mbox{\Hypertarget{types_8h_aeffb42301531359813d5128f243e1124}\label{types_8h_aeffb42301531359813d5128f243e1124}} 
+\index{types.h@{types.h}!GD\_dist@{GD\_dist}}
+\index{GD\_dist@{GD\_dist}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_dist}{GD\_dist}}
+{\footnotesize\ttfamily \#define GD\+\_\+dist(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$dist)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00355}{355}}
+
+\mbox{\Hypertarget{types_8h_aad569cb58d6640eb26ac9f5a41553e9f}\label{types_8h_aad569cb58d6640eb26ac9f5a41553e9f}} 
+\index{types.h@{types.h}!GD\_dotroot@{GD\_dotroot}}
+\index{GD\_dotroot@{GD\_dotroot}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_dotroot}{GD\_dotroot}}
+{\footnotesize\ttfamily \#define GD\+\_\+dotroot(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$dotroot)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00359}{359}}
+
+\mbox{\Hypertarget{types_8h_a304761d6ec6f0b12b6cef1b38d79fa37}\label{types_8h_a304761d6ec6f0b12b6cef1b38d79fa37}} 
+\index{types.h@{types.h}!GD\_drawing@{GD\_drawing}}
+\index{GD\_drawing@{GD\_drawing}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_drawing}{GD\_drawing}}
+{\footnotesize\ttfamily \#define GD\+\_\+drawing(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$drawing)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00351}{351}}
+
+\mbox{\Hypertarget{types_8h_af859a2be52c0c4c885468241f9f50cdc}\label{types_8h_af859a2be52c0c4c885468241f9f50cdc}} 
+\index{types.h@{types.h}!GD\_exact\_ranksep@{GD\_exact\_ranksep}}
+\index{GD\_exact\_ranksep@{GD\_exact\_ranksep}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_exact\_ranksep}{GD\_exact\_ranksep}}
+{\footnotesize\ttfamily \#define GD\+\_\+exact\+\_\+ranksep(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$exact\+\_\+ranksep)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00361}{361}}
+
+\mbox{\Hypertarget{types_8h_abeb0f73d67e12a8f52c28954d050e1f7}\label{types_8h_abeb0f73d67e12a8f52c28954d050e1f7}} 
+\index{types.h@{types.h}!GD\_expanded@{GD\_expanded}}
+\index{GD\_expanded@{GD\_expanded}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_expanded}{GD\_expanded}}
+{\footnotesize\ttfamily \#define GD\+\_\+expanded(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$expanded)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00362}{362}}
+
+\mbox{\Hypertarget{types_8h_a75bb1b66668ed3d3aeb42c85a4448e9a}\label{types_8h_a75bb1b66668ed3d3aeb42c85a4448e9a}} 
+\index{types.h@{types.h}!GD\_flags@{GD\_flags}}
+\index{GD\_flags@{GD\_flags}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_flags}{GD\_flags}}
+{\footnotesize\ttfamily \#define GD\+\_\+flags(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$flags)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00363}{363}}
+
+\mbox{\Hypertarget{types_8h_af280ec2b75bc7b00e15e6141c2b3eae7}\label{types_8h_af280ec2b75bc7b00e15e6141c2b3eae7}} 
+\index{types.h@{types.h}!GD\_flip@{GD\_flip}}
+\index{GD\_flip@{GD\_flip}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_flip}{GD\_flip}}
+{\footnotesize\ttfamily \#define GD\+\_\+flip(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(\mbox{\hyperlink{types_8h_aee757533265228f46df219420f410273}{GD\+\_\+rankdir}}(g) \& 1)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00378}{378}}
+
+\mbox{\Hypertarget{types_8h_a25ebc4c1126df610cfe80ccc012e00a2}\label{types_8h_a25ebc4c1126df610cfe80ccc012e00a2}} 
+\index{types.h@{types.h}!GD\_fontnames@{GD\_fontnames}}
+\index{GD\_fontnames@{GD\_fontnames}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_fontnames}{GD\_fontnames}}
+{\footnotesize\ttfamily \#define GD\+\_\+fontnames(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$fontnames)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00404}{404}}
+
+\mbox{\Hypertarget{types_8h_af93c88eaf216675d42119439ec9e2a1e}\label{types_8h_af93c88eaf216675d42119439ec9e2a1e}} 
+\index{types.h@{types.h}!GD\_gui\_state@{GD\_gui\_state}}
+\index{GD\_gui\_state@{GD\_gui\_state}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_gui\_state}{GD\_gui\_state}}
+{\footnotesize\ttfamily \#define GD\+\_\+gui\+\_\+state(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$gui\+\_\+state)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00364}{364}}
+
+\mbox{\Hypertarget{types_8h_af0cd94956a3b6c26beb40b95ec14757f}\label{types_8h_af0cd94956a3b6c26beb40b95ec14757f}} 
+\index{types.h@{types.h}!GD\_gvc@{GD\_gvc}}
+\index{GD\_gvc@{GD\_gvc}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_gvc}{GD\_gvc}}
+{\footnotesize\ttfamily \#define GD\+\_\+gvc(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$gvc)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00353}{353}}
+
+\mbox{\Hypertarget{types_8h_a7d659b279f968f7560a4e95e8b92f388}\label{types_8h_a7d659b279f968f7560a4e95e8b92f388}} 
+\index{types.h@{types.h}!GD\_has\_flat\_edges@{GD\_has\_flat\_edges}}
+\index{GD\_has\_flat\_edges@{GD\_has\_flat\_edges}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_has\_flat\_edges}{GD\_has\_flat\_edges}}
+{\footnotesize\ttfamily \#define GD\+\_\+has\+\_\+flat\+\_\+edges(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$has\+\_\+flat\+\_\+edges)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00368}{368}}
+
+\mbox{\Hypertarget{types_8h_a7c90d72524042801c0d132672570dee5}\label{types_8h_a7c90d72524042801c0d132672570dee5}} 
+\index{types.h@{types.h}!GD\_has\_images@{GD\_has\_images}}
+\index{GD\_has\_images@{GD\_has\_images}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_has\_images}{GD\_has\_images}}
+{\footnotesize\ttfamily \#define GD\+\_\+has\+\_\+images(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$has\+\_\+images)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00367}{367}}
+
+\mbox{\Hypertarget{types_8h_a52c46fcffcec9b43212679e86a9c1339}\label{types_8h_a52c46fcffcec9b43212679e86a9c1339}} 
+\index{types.h@{types.h}!GD\_has\_labels@{GD\_has\_labels}}
+\index{GD\_has\_labels@{GD\_has\_labels}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_has\_labels}{GD\_has\_labels}}
+{\footnotesize\ttfamily \#define GD\+\_\+has\+\_\+labels(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$has\+\_\+labels)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00366}{366}}
+
+\mbox{\Hypertarget{types_8h_a10f2b0ee86f196d370c25f4a02313f46}\label{types_8h_a10f2b0ee86f196d370c25f4a02313f46}} 
+\index{types.h@{types.h}!GD\_has\_sinkrank@{GD\_has\_sinkrank}}
+\index{GD\_has\_sinkrank@{GD\_has\_sinkrank}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_has\_sinkrank}{GD\_has\_sinkrank}}
+{\footnotesize\ttfamily \#define GD\+\_\+has\+\_\+sinkrank(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$has\+\_\+sinkrank)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00370}{370}}
+
+\mbox{\Hypertarget{types_8h_a66401e570966b6972081cc29ce0a5501}\label{types_8h_a66401e570966b6972081cc29ce0a5501}} 
+\index{types.h@{types.h}!GD\_has\_sourcerank@{GD\_has\_sourcerank}}
+\index{GD\_has\_sourcerank@{GD\_has\_sourcerank}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_has\_sourcerank}{GD\_has\_sourcerank}}
+{\footnotesize\ttfamily \#define GD\+\_\+has\+\_\+sourcerank(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$has\+\_\+sourcerank)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00369}{369}}
+
+\mbox{\Hypertarget{types_8h_ae62105b8f1d3ab03b871a1ffb41b60cc}\label{types_8h_ae62105b8f1d3ab03b871a1ffb41b60cc}} 
+\index{types.h@{types.h}!GD\_ht1@{GD\_ht1}}
+\index{GD\_ht1@{GD\_ht1}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_ht1}{GD\_ht1}}
+{\footnotesize\ttfamily \#define GD\+\_\+ht1(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$ht1)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00371}{371}}
+
+\mbox{\Hypertarget{types_8h_aa9979ba2b7959ac3390f5a7a0f46bb9d}\label{types_8h_aa9979ba2b7959ac3390f5a7a0f46bb9d}} 
+\index{types.h@{types.h}!GD\_ht2@{GD\_ht2}}
+\index{GD\_ht2@{GD\_ht2}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_ht2}{GD\_ht2}}
+{\footnotesize\ttfamily \#define GD\+\_\+ht2(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$ht2)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00372}{372}}
+
+\mbox{\Hypertarget{types_8h_a5c6afbddcdf2311322cebb07fd21f3dd}\label{types_8h_a5c6afbddcdf2311322cebb07fd21f3dd}} 
+\index{types.h@{types.h}!GD\_installed@{GD\_installed}}
+\index{GD\_installed@{GD\_installed}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_installed}{GD\_installed}}
+{\footnotesize\ttfamily \#define GD\+\_\+installed(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$installed)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00373}{373}}
+
+\mbox{\Hypertarget{types_8h_ad73f51275d97d6aa889862b23950a99b}\label{types_8h_ad73f51275d97d6aa889862b23950a99b}} 
+\index{types.h@{types.h}!GD\_label@{GD\_label}}
+\index{GD\_label@{GD\_label}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_label}{GD\_label}}
+{\footnotesize\ttfamily \#define GD\+\_\+label(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$label)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00374}{374}}
+
+\mbox{\Hypertarget{types_8h_a96143dd3e09b113a765ea9bbe944f72f}\label{types_8h_a96143dd3e09b113a765ea9bbe944f72f}} 
+\index{types.h@{types.h}!GD\_label\_pos@{GD\_label\_pos}}
+\index{GD\_label\_pos@{GD\_label\_pos}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_label\_pos}{GD\_label\_pos}}
+{\footnotesize\ttfamily \#define GD\+\_\+label\+\_\+pos(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$label\+\_\+pos)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00402}{402}}
+
+\mbox{\Hypertarget{types_8h_ac660bf2efd1a9f02e8746d5c80b0491a}\label{types_8h_ac660bf2efd1a9f02e8746d5c80b0491a}} 
+\index{types.h@{types.h}!GD\_leader@{GD\_leader}}
+\index{GD\_leader@{GD\_leader}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_leader}{GD\_leader}}
+{\footnotesize\ttfamily \#define GD\+\_\+leader(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$leader)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00375}{375}}
+
+\mbox{\Hypertarget{types_8h_aa9a0f0587dc81585dd7e19bb37714b19}\label{types_8h_aa9a0f0587dc81585dd7e19bb37714b19}} 
+\index{types.h@{types.h}!GD\_level@{GD\_level}}
+\index{GD\_level@{GD\_level}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_level}{GD\_level}}
+{\footnotesize\ttfamily \#define GD\+\_\+level(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$level)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00350}{350}}
+
+\mbox{\Hypertarget{types_8h_ae1191ea3f43a6549bc00200e704fd27f}\label{types_8h_ae1191ea3f43a6549bc00200e704fd27f}} 
+\index{types.h@{types.h}!GD\_ln@{GD\_ln}}
+\index{GD\_ln@{GD\_ln}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_ln}{GD\_ln}}
+{\footnotesize\ttfamily \#define GD\+\_\+ln(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$ln)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00381}{381}}
+
+\mbox{\Hypertarget{types_8h_a20984ce193d2d03b0aa85804f60aa1ae}\label{types_8h_a20984ce193d2d03b0aa85804f60aa1ae}} 
+\index{types.h@{types.h}!GD\_maxrank@{GD\_maxrank}}
+\index{GD\_maxrank@{GD\_maxrank}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_maxrank}{GD\_maxrank}}
+{\footnotesize\ttfamily \#define GD\+\_\+maxrank(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$maxrank)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00382}{382}}
+
+\mbox{\Hypertarget{types_8h_a44fd0386ed15c0c89a6e8862d6cc3f42}\label{types_8h_a44fd0386ed15c0c89a6e8862d6cc3f42}} 
+\index{types.h@{types.h}!GD\_maxrep@{GD\_maxrep}}
+\index{GD\_maxrep@{GD\_maxrep}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_maxrep}{GD\_maxrep}}
+{\footnotesize\ttfamily \#define GD\+\_\+maxrep(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$maxrep)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00387}{387}}
+
+\mbox{\Hypertarget{types_8h_a248701de5d81b4dc60f61ef53811ad18}\label{types_8h_a248701de5d81b4dc60f61ef53811ad18}} 
+\index{types.h@{types.h}!GD\_maxset@{GD\_maxset}}
+\index{GD\_maxset@{GD\_maxset}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_maxset}{GD\_maxset}}
+{\footnotesize\ttfamily \#define GD\+\_\+maxset(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$maxset)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00383}{383}}
+
+\mbox{\Hypertarget{types_8h_a0573f46f314d41f1dd3a93b5d5222d6d}\label{types_8h_a0573f46f314d41f1dd3a93b5d5222d6d}} 
+\index{types.h@{types.h}!GD\_minrank@{GD\_minrank}}
+\index{GD\_minrank@{GD\_minrank}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_minrank}{GD\_minrank}}
+{\footnotesize\ttfamily \#define GD\+\_\+minrank(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$minrank)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00384}{384}}
+
+\mbox{\Hypertarget{types_8h_a6d5d20d8a29ad9536bc3529b64225e24}\label{types_8h_a6d5d20d8a29ad9536bc3529b64225e24}} 
+\index{types.h@{types.h}!GD\_minrep@{GD\_minrep}}
+\index{GD\_minrep@{GD\_minrep}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_minrep}{GD\_minrep}}
+{\footnotesize\ttfamily \#define GD\+\_\+minrep(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$minrep)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00386}{386}}
+
+\mbox{\Hypertarget{types_8h_a9f72a5780dc55294ba4fc9dc43dd4cfc}\label{types_8h_a9f72a5780dc55294ba4fc9dc43dd4cfc}} 
+\index{types.h@{types.h}!GD\_minset@{GD\_minset}}
+\index{GD\_minset@{GD\_minset}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_minset}{GD\_minset}}
+{\footnotesize\ttfamily \#define GD\+\_\+minset(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$minset)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00385}{385}}
+
+\mbox{\Hypertarget{types_8h_a8732c573a23261f021563cb7889aec18}\label{types_8h_a8732c573a23261f021563cb7889aec18}} 
+\index{types.h@{types.h}!GD\_move@{GD\_move}}
+\index{GD\_move@{GD\_move}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_move}{GD\_move}}
+{\footnotesize\ttfamily \#define GD\+\_\+move(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$move)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00388}{388}}
+
+\mbox{\Hypertarget{types_8h_aa6e5b25c4fec6eb18582a419b9ddd3fc}\label{types_8h_aa6e5b25c4fec6eb18582a419b9ddd3fc}} 
+\index{types.h@{types.h}!GD\_n\_cluster@{GD\_n\_cluster}}
+\index{GD\_n\_cluster@{GD\_n\_cluster}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_n\_cluster}{GD\_n\_cluster}}
+{\footnotesize\ttfamily \#define GD\+\_\+n\+\_\+cluster(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$n\+\_\+cluster)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00389}{389}}
+
+\mbox{\Hypertarget{types_8h_aa915c5306ae2812e52cda92baaeac681}\label{types_8h_aa915c5306ae2812e52cda92baaeac681}} 
+\index{types.h@{types.h}!GD\_n\_nodes@{GD\_n\_nodes}}
+\index{GD\_n\_nodes@{GD\_n\_nodes}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_n\_nodes}{GD\_n\_nodes}}
+{\footnotesize\ttfamily \#define GD\+\_\+n\+\_\+nodes(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$n\+\_\+nodes)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00390}{390}}
+
+\mbox{\Hypertarget{types_8h_ac7982d95b7f3e2f3aa38108cdaeca3dd}\label{types_8h_ac7982d95b7f3e2f3aa38108cdaeca3dd}} 
+\index{types.h@{types.h}!GD\_ndim@{GD\_ndim}}
+\index{GD\_ndim@{GD\_ndim}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_ndim}{GD\_ndim}}
+{\footnotesize\ttfamily \#define GD\+\_\+ndim(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$ndim)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00391}{391}}
+
+\mbox{\Hypertarget{types_8h_af5f0296e7ebe013231a5337c3f346a64}\label{types_8h_af5f0296e7ebe013231a5337c3f346a64}} 
+\index{types.h@{types.h}!GD\_neato\_nlist@{GD\_neato\_nlist}}
+\index{GD\_neato\_nlist@{GD\_neato\_nlist}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_neato\_nlist}{GD\_neato\_nlist}}
+{\footnotesize\ttfamily \#define GD\+\_\+neato\+\_\+nlist(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$neato\+\_\+nlist)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00393}{393}}
+
+\mbox{\Hypertarget{types_8h_a90f9dcaed839738a87a918807c5b4a44}\label{types_8h_a90f9dcaed839738a87a918807c5b4a44}} 
+\index{types.h@{types.h}!GD\_nlist@{GD\_nlist}}
+\index{GD\_nlist@{GD\_nlist}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_nlist}{GD\_nlist}}
+{\footnotesize\ttfamily \#define GD\+\_\+nlist(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$nlist)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00394}{394}}
+
+\mbox{\Hypertarget{types_8h_ada22146929ee5be60bd05c07159d6c9e}\label{types_8h_ada22146929ee5be60bd05c07159d6c9e}} 
+\index{types.h@{types.h}!GD\_nodesep@{GD\_nodesep}}
+\index{GD\_nodesep@{GD\_nodesep}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_nodesep}{GD\_nodesep}}
+{\footnotesize\ttfamily \#define GD\+\_\+nodesep(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$nodesep)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00395}{395}}
+
+\mbox{\Hypertarget{types_8h_af8d793183ce04d75e7ebb59c98136d59}\label{types_8h_af8d793183ce04d75e7ebb59c98136d59}} 
+\index{types.h@{types.h}!GD\_odim@{GD\_odim}}
+\index{GD\_odim@{GD\_odim}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_odim}{GD\_odim}}
+{\footnotesize\ttfamily \#define GD\+\_\+odim(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$odim)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00392}{392}}
+
+\mbox{\Hypertarget{types_8h_ae6a773c42a396683e5f36d9a091e0102}\label{types_8h_ae6a773c42a396683e5f36d9a091e0102}} 
+\index{types.h@{types.h}!GD\_outleaf@{GD\_outleaf}}
+\index{GD\_outleaf@{GD\_outleaf}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_outleaf}{GD\_outleaf}}
+{\footnotesize\ttfamily \#define GD\+\_\+outleaf(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$outleaf)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00396}{396}}
+
+\mbox{\Hypertarget{types_8h_a7c4edc4279776663c7e0b498d32415f5}\label{types_8h_a7c4edc4279776663c7e0b498d32415f5}} 
+\index{types.h@{types.h}!GD\_parent@{GD\_parent}}
+\index{GD\_parent@{GD\_parent}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_parent}{GD\_parent}}
+{\footnotesize\ttfamily \#define GD\+\_\+parent(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$parent)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00349}{349}}
+
+\mbox{\Hypertarget{types_8h_a7ab3956e95627faa3d013a0b7e9be148}\label{types_8h_a7ab3956e95627faa3d013a0b7e9be148}} 
+\index{types.h@{types.h}!GD\_rank@{GD\_rank}}
+\index{GD\_rank@{GD\_rank}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_rank}{GD\_rank}}
+{\footnotesize\ttfamily \#define GD\+\_\+rank(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rank)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00397}{397}}
+
+\mbox{\Hypertarget{types_8h_aee757533265228f46df219420f410273}\label{types_8h_aee757533265228f46df219420f410273}} 
+\index{types.h@{types.h}!GD\_rankdir@{GD\_rankdir}}
+\index{GD\_rankdir@{GD\_rankdir}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_rankdir}{GD\_rankdir}}
+{\footnotesize\ttfamily \#define GD\+\_\+rankdir(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rankdir \& 0x3)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00377}{377}}
+
+\mbox{\Hypertarget{types_8h_a1d10b818e1ff69372cfb54ee0d469129}\label{types_8h_a1d10b818e1ff69372cfb54ee0d469129}} 
+\index{types.h@{types.h}!GD\_rankdir2@{GD\_rankdir2}}
+\index{GD\_rankdir2@{GD\_rankdir2}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_rankdir2}{GD\_rankdir2}}
+{\footnotesize\ttfamily \#define GD\+\_\+rankdir2(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rankdir)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00376}{376}}
+
+\mbox{\Hypertarget{types_8h_af4f41d9fcc3048ec7cf65ccfe26839b0}\label{types_8h_af4f41d9fcc3048ec7cf65ccfe26839b0}} 
+\index{types.h@{types.h}!GD\_rankleader@{GD\_rankleader}}
+\index{GD\_rankleader@{GD\_rankleader}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_rankleader}{GD\_rankleader}}
+{\footnotesize\ttfamily \#define GD\+\_\+rankleader(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rankleader)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00398}{398}}
+
+\mbox{\Hypertarget{types_8h_afa6fda64bce7de9858030b3bd9ff577c}\label{types_8h_afa6fda64bce7de9858030b3bd9ff577c}} 
+\index{types.h@{types.h}!GD\_ranksep@{GD\_ranksep}}
+\index{GD\_ranksep@{GD\_ranksep}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_ranksep}{GD\_ranksep}}
+{\footnotesize\ttfamily \#define GD\+\_\+ranksep(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$ranksep)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00399}{399}}
+
+\mbox{\Hypertarget{types_8h_a0858386b028d64c0dbd191691a8be606}\label{types_8h_a0858386b028d64c0dbd191691a8be606}} 
+\index{types.h@{types.h}!GD\_realflip@{GD\_realflip}}
+\index{GD\_realflip@{GD\_realflip}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_realflip}{GD\_realflip}}
+{\footnotesize\ttfamily \#define GD\+\_\+realflip(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(\mbox{\hyperlink{types_8h_ab5f0385f4efbc680994dd7d1739c61b7}{GD\+\_\+realrankdir}}(g) \& 1)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00380}{380}}
+
+\mbox{\Hypertarget{types_8h_ab5f0385f4efbc680994dd7d1739c61b7}\label{types_8h_ab5f0385f4efbc680994dd7d1739c61b7}} 
+\index{types.h@{types.h}!GD\_realrankdir@{GD\_realrankdir}}
+\index{GD\_realrankdir@{GD\_realrankdir}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_realrankdir}{GD\_realrankdir}}
+{\footnotesize\ttfamily \#define GD\+\_\+realrankdir(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~((((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rankdir) $>$$>$ 2)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00379}{379}}
+
+\mbox{\Hypertarget{types_8h_a6c9ffdd449bb900a5f2a45f26d494b68}\label{types_8h_a6c9ffdd449bb900a5f2a45f26d494b68}} 
+\index{types.h@{types.h}!GD\_rn@{GD\_rn}}
+\index{GD\_rn@{GD\_rn}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_rn}{GD\_rn}}
+{\footnotesize\ttfamily \#define GD\+\_\+rn(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$rn)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00400}{400}}
+
+\mbox{\Hypertarget{types_8h_aac3b0f6b60c2b5c3eed9a0cfe90ecb66}\label{types_8h_aac3b0f6b60c2b5c3eed9a0cfe90ecb66}} 
+\index{types.h@{types.h}!GD\_set\_type@{GD\_set\_type}}
+\index{GD\_set\_type@{GD\_set\_type}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_set\_type}{GD\_set\_type}}
+{\footnotesize\ttfamily \#define GD\+\_\+set\+\_\+type(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$set\+\_\+type)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00401}{401}}
+
+\mbox{\Hypertarget{types_8h_a9be6d03614124729a3f3ecc18851f7b7}\label{types_8h_a9be6d03614124729a3f3ecc18851f7b7}} 
+\index{types.h@{types.h}!GD\_showboxes@{GD\_showboxes}}
+\index{GD\_showboxes@{GD\_showboxes}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_showboxes}{GD\_showboxes}}
+{\footnotesize\ttfamily \#define GD\+\_\+showboxes(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$showboxes)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00403}{403}}
+
+\mbox{\Hypertarget{types_8h_af3ac828276b6b469e04bcc567ab4fbe5}\label{types_8h_af3ac828276b6b469e04bcc567ab4fbe5}} 
+\index{types.h@{types.h}!GD\_spring@{GD\_spring}}
+\index{GD\_spring@{GD\_spring}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_spring}{GD\_spring}}
+{\footnotesize\ttfamily \#define GD\+\_\+spring(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$spring)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00405}{405}}
+
+\mbox{\Hypertarget{types_8h_a589a746bbed5d188d6965e7337bf1a75}\label{types_8h_a589a746bbed5d188d6965e7337bf1a75}} 
+\index{types.h@{types.h}!GD\_sum\_t@{GD\_sum\_t}}
+\index{GD\_sum\_t@{GD\_sum\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_sum\_t}{GD\_sum\_t}}
+{\footnotesize\ttfamily \#define GD\+\_\+sum\+\_\+t(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$sum\+\_\+t)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00406}{406}}
+
+\mbox{\Hypertarget{types_8h_a9432fa3c11bc7b85dd20bf70a6aaf5d9}\label{types_8h_a9432fa3c11bc7b85dd20bf70a6aaf5d9}} 
+\index{types.h@{types.h}!GD\_t@{GD\_t}}
+\index{GD\_t@{GD\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GD\_t}{GD\_t}}
+{\footnotesize\ttfamily \#define GD\+\_\+t(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(g))-\/$>$t)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00407}{407}}
+
+\mbox{\Hypertarget{types_8h_a6e210aba484615e657c8c46fab75b850}\label{types_8h_a6e210aba484615e657c8c46fab75b850}} 
+\index{types.h@{types.h}!GUI\_STATE\_ACTIVE@{GUI\_STATE\_ACTIVE}}
+\index{GUI\_STATE\_ACTIVE@{GUI\_STATE\_ACTIVE}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GUI\_STATE\_ACTIVE}{GUI\_STATE\_ACTIVE}}
+{\footnotesize\ttfamily \#define GUI\+\_\+\+STATE\+\_\+\+ACTIVE~(1$<$$<$0)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00261}{261}}
+
+\mbox{\Hypertarget{types_8h_adcb50938e305addf6c9632dddb7513d9}\label{types_8h_adcb50938e305addf6c9632dddb7513d9}} 
+\index{types.h@{types.h}!GUI\_STATE\_DELETED@{GUI\_STATE\_DELETED}}
+\index{GUI\_STATE\_DELETED@{GUI\_STATE\_DELETED}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GUI\_STATE\_DELETED}{GUI\_STATE\_DELETED}}
+{\footnotesize\ttfamily \#define GUI\+\_\+\+STATE\+\_\+\+DELETED~(1$<$$<$3)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00264}{264}}
+
+\mbox{\Hypertarget{types_8h_ad72428e0e76cd454bc58a3600bca7b23}\label{types_8h_ad72428e0e76cd454bc58a3600bca7b23}} 
+\index{types.h@{types.h}!GUI\_STATE\_SELECTED@{GUI\_STATE\_SELECTED}}
+\index{GUI\_STATE\_SELECTED@{GUI\_STATE\_SELECTED}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GUI\_STATE\_SELECTED}{GUI\_STATE\_SELECTED}}
+{\footnotesize\ttfamily \#define GUI\+\_\+\+STATE\+\_\+\+SELECTED~(1$<$$<$1)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00262}{262}}
+
+\mbox{\Hypertarget{types_8h_af0241d18f172aab5e76110b238e0f192}\label{types_8h_af0241d18f172aab5e76110b238e0f192}} 
+\index{types.h@{types.h}!GUI\_STATE\_VISITED@{GUI\_STATE\_VISITED}}
+\index{GUI\_STATE\_VISITED@{GUI\_STATE\_VISITED}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{GUI\_STATE\_VISITED}{GUI\_STATE\_VISITED}}
+{\footnotesize\ttfamily \#define GUI\+\_\+\+STATE\+\_\+\+VISITED~(1$<$$<$2)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00263}{263}}
+
+\mbox{\Hypertarget{types_8h_aaf9f916d15b0ab383ab871f5031c74eb}\label{types_8h_aaf9f916d15b0ab383ab871f5031c74eb}} 
+\index{types.h@{types.h}!HEAD\_ID@{HEAD\_ID}}
+\index{HEAD\_ID@{HEAD\_ID}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{HEAD\_ID}{HEAD\_ID}}
+{\footnotesize\ttfamily \#define HEAD\+\_\+\+ID~\char`\"{}headport\char`\"{}}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00054}{54}}
+
+\mbox{\Hypertarget{types_8h_a756b74075ae0a75309ad5a012550c5b0}\label{types_8h_a756b74075ae0a75309ad5a012550c5b0}} 
+\index{types.h@{types.h}!ND\_alg@{ND\_alg}}
+\index{ND\_alg@{ND\_alg}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_alg}{ND\_alg}}
+{\footnotesize\ttfamily \#define ND\+\_\+alg(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$alg)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00483}{483}}
+
+\mbox{\Hypertarget{types_8h_a24be5471334ac496135e0c94f0377da2}\label{types_8h_a24be5471334ac496135e0c94f0377da2}} 
+\index{types.h@{types.h}!ND\_bb@{ND\_bb}}
+\index{ND\_bb@{ND\_bb}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_bb}{ND\_bb}}
+{\footnotesize\ttfamily \#define ND\+\_\+bb(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$bb)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00487}{487}}
+
+\mbox{\Hypertarget{types_8h_a56e6c495adc9afcce11b7ecb8a1f4daf}\label{types_8h_a56e6c495adc9afcce11b7ecb8a1f4daf}} 
+\index{types.h@{types.h}!ND\_clust@{ND\_clust}}
+\index{ND\_clust@{ND\_clust}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_clust}{ND\_clust}}
+{\footnotesize\ttfamily \#define ND\+\_\+clust(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$clust)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00488}{488}}
+
+\mbox{\Hypertarget{types_8h_a9ec32b051f012346111fee4912756843}\label{types_8h_a9ec32b051f012346111fee4912756843}} 
+\index{types.h@{types.h}!ND\_clustnode@{ND\_clustnode}}
+\index{ND\_clustnode@{ND\_clustnode}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_clustnode}{ND\_clustnode}}
+{\footnotesize\ttfamily \#define ND\+\_\+clustnode(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$clustnode)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00531}{531}}
+
+\mbox{\Hypertarget{types_8h_ae5c4c0a0cc39024b09a5bf94251aceff}\label{types_8h_ae5c4c0a0cc39024b09a5bf94251aceff}} 
+\index{types.h@{types.h}!ND\_coord@{ND\_coord}}
+\index{ND\_coord@{ND\_coord}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_coord}{ND\_coord}}
+{\footnotesize\ttfamily \#define ND\+\_\+coord(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$coord)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00489}{489}}
+
+\mbox{\Hypertarget{types_8h_ae9e7b39a3525fb90ba0b334c9e320cf3}\label{types_8h_ae9e7b39a3525fb90ba0b334c9e320cf3}} 
+\index{types.h@{types.h}!ND\_dist@{ND\_dist}}
+\index{ND\_dist@{ND\_dist}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_dist}{ND\_dist}}
+{\footnotesize\ttfamily \#define ND\+\_\+dist(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$dist)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00490}{490}}
+
+\mbox{\Hypertarget{types_8h_ae4437bfd2417303a177a8955b73cd2f8}\label{types_8h_ae4437bfd2417303a177a8955b73cd2f8}} 
+\index{types.h@{types.h}!ND\_flat\_in@{ND\_flat\_in}}
+\index{ND\_flat\_in@{ND\_flat\_in}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_flat\_in}{ND\_flat\_in}}
+{\footnotesize\ttfamily \#define ND\+\_\+flat\+\_\+in(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$flat\+\_\+in)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00491}{491}}
+
+\mbox{\Hypertarget{types_8h_a7ac213b39266f3dd86f60bb9f39ee5a5}\label{types_8h_a7ac213b39266f3dd86f60bb9f39ee5a5}} 
+\index{types.h@{types.h}!ND\_flat\_out@{ND\_flat\_out}}
+\index{ND\_flat\_out@{ND\_flat\_out}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_flat\_out}{ND\_flat\_out}}
+{\footnotesize\ttfamily \#define ND\+\_\+flat\+\_\+out(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$flat\+\_\+out)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00492}{492}}
+
+\mbox{\Hypertarget{types_8h_a1931c9487f15292849c2b49c3e96b6a4}\label{types_8h_a1931c9487f15292849c2b49c3e96b6a4}} 
+\index{types.h@{types.h}!ND\_gui\_state@{ND\_gui\_state}}
+\index{ND\_gui\_state@{ND\_gui\_state}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_gui\_state}{ND\_gui\_state}}
+{\footnotesize\ttfamily \#define ND\+\_\+gui\+\_\+state(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$gui\+\_\+state)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00493}{493}}
+
+\mbox{\Hypertarget{types_8h_a325000a2fc365352eafcbfb8be910b00}\label{types_8h_a325000a2fc365352eafcbfb8be910b00}} 
+\index{types.h@{types.h}!ND\_has\_port@{ND\_has\_port}}
+\index{ND\_has\_port@{ND\_has\_port}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_has\_port}{ND\_has\_port}}
+{\footnotesize\ttfamily \#define ND\+\_\+has\+\_\+port(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$has\+\_\+port)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00494}{494}}
+
+\mbox{\Hypertarget{types_8h_a656493ad251af9524cfc5552dc213383}\label{types_8h_a656493ad251af9524cfc5552dc213383}} 
+\index{types.h@{types.h}!ND\_heapindex@{ND\_heapindex}}
+\index{ND\_heapindex@{ND\_heapindex}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_heapindex}{ND\_heapindex}}
+{\footnotesize\ttfamily \#define ND\+\_\+heapindex(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$heapindex)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00496}{496}}
+
+\mbox{\Hypertarget{types_8h_aa323a7137791d555fdf08f7f0f2eff02}\label{types_8h_aa323a7137791d555fdf08f7f0f2eff02}} 
+\index{types.h@{types.h}!ND\_height@{ND\_height}}
+\index{ND\_height@{ND\_height}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_height}{ND\_height}}
+{\footnotesize\ttfamily \#define ND\+\_\+height(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$height)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00497}{497}}
+
+\mbox{\Hypertarget{types_8h_ac1f79021f7fecf1ff682bf57e9050241}\label{types_8h_ac1f79021f7fecf1ff682bf57e9050241}} 
+\index{types.h@{types.h}!ND\_hops@{ND\_hops}}
+\index{ND\_hops@{ND\_hops}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_hops}{ND\_hops}}
+{\footnotesize\ttfamily \#define ND\+\_\+hops(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$hops)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00498}{498}}
+
+\mbox{\Hypertarget{types_8h_a1bb4c002fbbf73f2e4061de8efcbe453}\label{types_8h_a1bb4c002fbbf73f2e4061de8efcbe453}} 
+\index{types.h@{types.h}!ND\_ht@{ND\_ht}}
+\index{ND\_ht@{ND\_ht}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_ht}{ND\_ht}}
+{\footnotesize\ttfamily \#define ND\+\_\+ht(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$ht)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00499}{499}}
+
+\mbox{\Hypertarget{types_8h_a0affbf5af96f331f4426bf5dd340c9ec}\label{types_8h_a0affbf5af96f331f4426bf5dd340c9ec}} 
+\index{types.h@{types.h}!ND\_id@{ND\_id}}
+\index{ND\_id@{ND\_id}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_id}{ND\_id}}
+{\footnotesize\ttfamily \#define ND\+\_\+id(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$id)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00482}{482}}
+
+\mbox{\Hypertarget{types_8h_ae5f583e129d6061a535d76fdb170e94c}\label{types_8h_ae5f583e129d6061a535d76fdb170e94c}} 
+\index{types.h@{types.h}!ND\_in@{ND\_in}}
+\index{ND\_in@{ND\_in}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_in}{ND\_in}}
+{\footnotesize\ttfamily \#define ND\+\_\+in(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$in)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00500}{500}}
+
+\mbox{\Hypertarget{types_8h_a595085bed4fb2c71bcb227c776fb37f7}\label{types_8h_a595085bed4fb2c71bcb227c776fb37f7}} 
+\index{types.h@{types.h}!ND\_inleaf@{ND\_inleaf}}
+\index{ND\_inleaf@{ND\_inleaf}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_inleaf}{ND\_inleaf}}
+{\footnotesize\ttfamily \#define ND\+\_\+inleaf(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$inleaf)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00501}{501}}
+
+\mbox{\Hypertarget{types_8h_a74eefa711e291975c7d89493d5df1d5b}\label{types_8h_a74eefa711e291975c7d89493d5df1d5b}} 
+\index{types.h@{types.h}!ND\_label@{ND\_label}}
+\index{ND\_label@{ND\_label}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_label}{ND\_label}}
+{\footnotesize\ttfamily \#define ND\+\_\+label(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$label)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00502}{502}}
+
+\mbox{\Hypertarget{types_8h_a2b836cfd06a967ad326d658a8138c146}\label{types_8h_a2b836cfd06a967ad326d658a8138c146}} 
+\index{types.h@{types.h}!ND\_lim@{ND\_lim}}
+\index{ND\_lim@{ND\_lim}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_lim}{ND\_lim}}
+{\footnotesize\ttfamily \#define ND\+\_\+lim(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$lim)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00504}{504}}
+
+\mbox{\Hypertarget{types_8h_adb513eaede379fa8cf40bb5e335e0c32}\label{types_8h_adb513eaede379fa8cf40bb5e335e0c32}} 
+\index{types.h@{types.h}!ND\_low@{ND\_low}}
+\index{ND\_low@{ND\_low}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_low}{ND\_low}}
+{\footnotesize\ttfamily \#define ND\+\_\+low(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$low)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00505}{505}}
+
+\mbox{\Hypertarget{types_8h_aafdc3f915c57fc734959a7936feba1c2}\label{types_8h_aafdc3f915c57fc734959a7936feba1c2}} 
+\index{types.h@{types.h}!ND\_lw@{ND\_lw}}
+\index{ND\_lw@{ND\_lw}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_lw}{ND\_lw}}
+{\footnotesize\ttfamily \#define ND\+\_\+lw(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$lw)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00506}{506}}
+
+\mbox{\Hypertarget{types_8h_a932f96bdb911ef9d25ff3a5f4f9fcdea}\label{types_8h_a932f96bdb911ef9d25ff3a5f4f9fcdea}} 
+\index{types.h@{types.h}!ND\_mark@{ND\_mark}}
+\index{ND\_mark@{ND\_mark}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_mark}{ND\_mark}}
+{\footnotesize\ttfamily \#define ND\+\_\+mark(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$mark)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00507}{507}}
+
+\mbox{\Hypertarget{types_8h_ab6cf44ed9beadb42dec6cbf1e215d683}\label{types_8h_ab6cf44ed9beadb42dec6cbf1e215d683}} 
+\index{types.h@{types.h}!ND\_mval@{ND\_mval}}
+\index{ND\_mval@{ND\_mval}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_mval}{ND\_mval}}
+{\footnotesize\ttfamily \#define ND\+\_\+mval(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$mval)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00508}{508}}
+
+\mbox{\Hypertarget{types_8h_a0e22e496fee82db6b89acdd5ef6c37c7}\label{types_8h_a0e22e496fee82db6b89acdd5ef6c37c7}} 
+\index{types.h@{types.h}!ND\_n\_cluster@{ND\_n\_cluster}}
+\index{ND\_n\_cluster@{ND\_n\_cluster}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_n\_cluster}{ND\_n\_cluster}}
+{\footnotesize\ttfamily \#define ND\+\_\+n\+\_\+cluster(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$n\+\_\+cluster)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00509}{509}}
+
+\mbox{\Hypertarget{types_8h_a3bb87e7928ed2fd3686ac378858b293f}\label{types_8h_a3bb87e7928ed2fd3686ac378858b293f}} 
+\index{types.h@{types.h}!ND\_next@{ND\_next}}
+\index{ND\_next@{ND\_next}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_next}{ND\_next}}
+{\footnotesize\ttfamily \#define ND\+\_\+next(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$next)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00510}{510}}
+
+\mbox{\Hypertarget{types_8h_a9ea2bead61709465110b8141bcf68721}\label{types_8h_a9ea2bead61709465110b8141bcf68721}} 
+\index{types.h@{types.h}!ND\_node\_type@{ND\_node\_type}}
+\index{ND\_node\_type@{ND\_node\_type}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_node\_type}{ND\_node\_type}}
+{\footnotesize\ttfamily \#define ND\+\_\+node\+\_\+type(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$node\+\_\+type)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00511}{511}}
+
+\mbox{\Hypertarget{types_8h_a15cbeaea7dab64dcfbcde1cad226c552}\label{types_8h_a15cbeaea7dab64dcfbcde1cad226c552}} 
+\index{types.h@{types.h}!ND\_onstack@{ND\_onstack}}
+\index{ND\_onstack@{ND\_onstack}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_onstack}{ND\_onstack}}
+{\footnotesize\ttfamily \#define ND\+\_\+onstack(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$onstack)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00512}{512}}
+
+\mbox{\Hypertarget{types_8h_ac2743f96dd3d2c06547e3d25d9471c7c}\label{types_8h_ac2743f96dd3d2c06547e3d25d9471c7c}} 
+\index{types.h@{types.h}!ND\_order@{ND\_order}}
+\index{ND\_order@{ND\_order}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_order}{ND\_order}}
+{\footnotesize\ttfamily \#define ND\+\_\+order(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$order)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00513}{513}}
+
+\mbox{\Hypertarget{types_8h_a5d0398c1cdeb6735e6b95b7a027c573f}\label{types_8h_a5d0398c1cdeb6735e6b95b7a027c573f}} 
+\index{types.h@{types.h}!ND\_other@{ND\_other}}
+\index{ND\_other@{ND\_other}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_other}{ND\_other}}
+{\footnotesize\ttfamily \#define ND\+\_\+other(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$other)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00514}{514}}
+
+\mbox{\Hypertarget{types_8h_afb8b0da4ea62a1bbd2a4ae3ce52e7384}\label{types_8h_afb8b0da4ea62a1bbd2a4ae3ce52e7384}} 
+\index{types.h@{types.h}!ND\_out@{ND\_out}}
+\index{ND\_out@{ND\_out}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_out}{ND\_out}}
+{\footnotesize\ttfamily \#define ND\+\_\+out(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$out)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00515}{515}}
+
+\mbox{\Hypertarget{types_8h_ab62dbc34dc3168e022f0a0969a5d7bc8}\label{types_8h_ab62dbc34dc3168e022f0a0969a5d7bc8}} 
+\index{types.h@{types.h}!ND\_outleaf@{ND\_outleaf}}
+\index{ND\_outleaf@{ND\_outleaf}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_outleaf}{ND\_outleaf}}
+{\footnotesize\ttfamily \#define ND\+\_\+outleaf(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$outleaf)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00516}{516}}
+
+\mbox{\Hypertarget{types_8h_a4bd342b70058683d7d2f510f4b82f819}\label{types_8h_a4bd342b70058683d7d2f510f4b82f819}} 
+\index{types.h@{types.h}!ND\_par@{ND\_par}}
+\index{ND\_par@{ND\_par}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_par}{ND\_par}}
+{\footnotesize\ttfamily \#define ND\+\_\+par(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$par)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00517}{517}}
+
+\mbox{\Hypertarget{types_8h_a50b5fb87a83783653f9a5bd28109ff07}\label{types_8h_a50b5fb87a83783653f9a5bd28109ff07}} 
+\index{types.h@{types.h}!ND\_pinned@{ND\_pinned}}
+\index{ND\_pinned@{ND\_pinned}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_pinned}{ND\_pinned}}
+{\footnotesize\ttfamily \#define ND\+\_\+pinned(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$pinned)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00518}{518}}
+
+\mbox{\Hypertarget{types_8h_add78de551f9363227c013ce673f2b573}\label{types_8h_add78de551f9363227c013ce673f2b573}} 
+\index{types.h@{types.h}!ND\_pos@{ND\_pos}}
+\index{ND\_pos@{ND\_pos}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_pos}{ND\_pos}}
+{\footnotesize\ttfamily \#define ND\+\_\+pos(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$pos)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00519}{519}}
+
+\mbox{\Hypertarget{types_8h_a1805943530ef1049887e85db4bc918b7}\label{types_8h_a1805943530ef1049887e85db4bc918b7}} 
+\index{types.h@{types.h}!ND\_prev@{ND\_prev}}
+\index{ND\_prev@{ND\_prev}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_prev}{ND\_prev}}
+{\footnotesize\ttfamily \#define ND\+\_\+prev(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$prev)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00520}{520}}
+
+\mbox{\Hypertarget{types_8h_afe5072a4ab915d5cd6a1994c446db319}\label{types_8h_afe5072a4ab915d5cd6a1994c446db319}} 
+\index{types.h@{types.h}!ND\_priority@{ND\_priority}}
+\index{ND\_priority@{ND\_priority}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_priority}{ND\_priority}}
+{\footnotesize\ttfamily \#define ND\+\_\+priority(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$priority)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00521}{521}}
+
+\mbox{\Hypertarget{types_8h_a0baa35dbbb9c1b03e40b48b26deb0b38}\label{types_8h_a0baa35dbbb9c1b03e40b48b26deb0b38}} 
+\index{types.h@{types.h}!ND\_rank@{ND\_rank}}
+\index{ND\_rank@{ND\_rank}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_rank}{ND\_rank}}
+{\footnotesize\ttfamily \#define ND\+\_\+rank(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$rank)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00522}{522}}
+
+\mbox{\Hypertarget{types_8h_ade7cf787f4b798952fcefb4abb3c256d}\label{types_8h_ade7cf787f4b798952fcefb4abb3c256d}} 
+\index{types.h@{types.h}!ND\_ranktype@{ND\_ranktype}}
+\index{ND\_ranktype@{ND\_ranktype}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_ranktype}{ND\_ranktype}}
+{\footnotesize\ttfamily \#define ND\+\_\+ranktype(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$ranktype)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00523}{523}}
+
+\mbox{\Hypertarget{types_8h_aaf40a53b50e0a203b67453a6127bb508}\label{types_8h_aaf40a53b50e0a203b67453a6127bb508}} 
+\index{types.h@{types.h}!ND\_rep@{ND\_rep}}
+\index{ND\_rep@{ND\_rep}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_rep}{ND\_rep}}
+{\footnotesize\ttfamily \#define ND\+\_\+rep(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$rep)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00495}{495}}
+
+\mbox{\Hypertarget{types_8h_a9cb8c502c548e420aa8b507b162a2d2e}\label{types_8h_a9cb8c502c548e420aa8b507b162a2d2e}} 
+\index{types.h@{types.h}!ND\_rw@{ND\_rw}}
+\index{ND\_rw@{ND\_rw}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_rw}{ND\_rw}}
+{\footnotesize\ttfamily \#define ND\+\_\+rw(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$rw)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00524}{524}}
+
+\mbox{\Hypertarget{types_8h_a5d7bd45bc6b14c164b47f2e477115d13}\label{types_8h_a5d7bd45bc6b14c164b47f2e477115d13}} 
+\index{types.h@{types.h}!ND\_save\_in@{ND\_save\_in}}
+\index{ND\_save\_in@{ND\_save\_in}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_save\_in}{ND\_save\_in}}
+{\footnotesize\ttfamily \#define ND\+\_\+save\+\_\+in(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$save\+\_\+in)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00525}{525}}
+
+\mbox{\Hypertarget{types_8h_ab4b05872287c433b1e9b163037827813}\label{types_8h_ab4b05872287c433b1e9b163037827813}} 
+\index{types.h@{types.h}!ND\_save\_out@{ND\_save\_out}}
+\index{ND\_save\_out@{ND\_save\_out}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_save\_out}{ND\_save\_out}}
+{\footnotesize\ttfamily \#define ND\+\_\+save\+\_\+out(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$save\+\_\+out)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00526}{526}}
+
+\mbox{\Hypertarget{types_8h_a6c07a73ad18bd14f7ccf938532f541ac}\label{types_8h_a6c07a73ad18bd14f7ccf938532f541ac}} 
+\index{types.h@{types.h}!ND\_set@{ND\_set}}
+\index{ND\_set@{ND\_set}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_set}{ND\_set}}
+{\footnotesize\ttfamily \#define ND\+\_\+set(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$set)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00485}{485}}
+
+\mbox{\Hypertarget{types_8h_ae90c22cfce70f108bb551499ac52dc54}\label{types_8h_ae90c22cfce70f108bb551499ac52dc54}} 
+\index{types.h@{types.h}!ND\_shape@{ND\_shape}}
+\index{ND\_shape@{ND\_shape}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_shape}{ND\_shape}}
+{\footnotesize\ttfamily \#define ND\+\_\+shape(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$shape)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00527}{527}}
+
+\mbox{\Hypertarget{types_8h_ad25b873ee39c60fc1067d18051dd6ebc}\label{types_8h_ad25b873ee39c60fc1067d18051dd6ebc}} 
+\index{types.h@{types.h}!ND\_shape\_info@{ND\_shape\_info}}
+\index{ND\_shape\_info@{ND\_shape\_info}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_shape\_info}{ND\_shape\_info}}
+{\footnotesize\ttfamily \#define ND\+\_\+shape\+\_\+info(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$shape\+\_\+info)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00528}{528}}
+
+\mbox{\Hypertarget{types_8h_a2d474280f17cea3b13984c60b7fdf335}\label{types_8h_a2d474280f17cea3b13984c60b7fdf335}} 
+\index{types.h@{types.h}!ND\_showboxes@{ND\_showboxes}}
+\index{ND\_showboxes@{ND\_showboxes}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_showboxes}{ND\_showboxes}}
+{\footnotesize\ttfamily \#define ND\+\_\+showboxes(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$showboxes)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00529}{529}}
+
+\mbox{\Hypertarget{types_8h_a359619b85d94d92c966cdff435c80ce6}\label{types_8h_a359619b85d94d92c966cdff435c80ce6}} 
+\index{types.h@{types.h}!ND\_state@{ND\_state}}
+\index{ND\_state@{ND\_state}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_state}{ND\_state}}
+{\footnotesize\ttfamily \#define ND\+\_\+state(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$state)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00530}{530}}
+
+\mbox{\Hypertarget{types_8h_a06fb60e161258ecbf1558df103ec704c}\label{types_8h_a06fb60e161258ecbf1558df103ec704c}} 
+\index{types.h@{types.h}!ND\_tree\_in@{ND\_tree\_in}}
+\index{ND\_tree\_in@{ND\_tree\_in}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_tree\_in}{ND\_tree\_in}}
+{\footnotesize\ttfamily \#define ND\+\_\+tree\+\_\+in(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$tree\+\_\+in)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00532}{532}}
+
+\mbox{\Hypertarget{types_8h_ac4da309537bc828fd6ecc56046258a48}\label{types_8h_ac4da309537bc828fd6ecc56046258a48}} 
+\index{types.h@{types.h}!ND\_tree\_out@{ND\_tree\_out}}
+\index{ND\_tree\_out@{ND\_tree\_out}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_tree\_out}{ND\_tree\_out}}
+{\footnotesize\ttfamily \#define ND\+\_\+tree\+\_\+out(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$tree\+\_\+out)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00533}{533}}
+
+\mbox{\Hypertarget{types_8h_ab2e2ec5a6d410abc991d5ddae1db134c}\label{types_8h_ab2e2ec5a6d410abc991d5ddae1db134c}} 
+\index{types.h@{types.h}!ND\_UF\_parent@{ND\_UF\_parent}}
+\index{ND\_UF\_parent@{ND\_UF\_parent}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_UF\_parent}{ND\_UF\_parent}}
+{\footnotesize\ttfamily \#define ND\+\_\+\+UF\+\_\+parent(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$UF\+\_\+parent)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00484}{484}}
+
+\mbox{\Hypertarget{types_8h_ad00f2be2e982b4737f81b32a62cbcbe2}\label{types_8h_ad00f2be2e982b4737f81b32a62cbcbe2}} 
+\index{types.h@{types.h}!ND\_UF\_size@{ND\_UF\_size}}
+\index{ND\_UF\_size@{ND\_UF\_size}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_UF\_size}{ND\_UF\_size}}
+{\footnotesize\ttfamily \#define ND\+\_\+\+UF\+\_\+size(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$UF\+\_\+size)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00486}{486}}
+
+\mbox{\Hypertarget{types_8h_ad20fffb76a5d5801962b2e9ca678109f}\label{types_8h_ad20fffb76a5d5801962b2e9ca678109f}} 
+\index{types.h@{types.h}!ND\_weight\_class@{ND\_weight\_class}}
+\index{ND\_weight\_class@{ND\_weight\_class}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_weight\_class}{ND\_weight\_class}}
+{\footnotesize\ttfamily \#define ND\+\_\+weight\+\_\+class(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$weight\+\_\+class)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00534}{534}}
+
+\mbox{\Hypertarget{types_8h_aac55d17a94648f59f637f29aabb3259b}\label{types_8h_aac55d17a94648f59f637f29aabb3259b}} 
+\index{types.h@{types.h}!ND\_width@{ND\_width}}
+\index{ND\_width@{ND\_width}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_width}{ND\_width}}
+{\footnotesize\ttfamily \#define ND\+\_\+width(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$width)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00535}{535}}
+
+\mbox{\Hypertarget{types_8h_aca812c68db4d6ec5856ebdcfac4d8284}\label{types_8h_aca812c68db4d6ec5856ebdcfac4d8284}} 
+\index{types.h@{types.h}!ND\_xlabel@{ND\_xlabel}}
+\index{ND\_xlabel@{ND\_xlabel}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_xlabel}{ND\_xlabel}}
+{\footnotesize\ttfamily \#define ND\+\_\+xlabel(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(((\mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}$\ast$)\mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(n))-\/$>$xlabel)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00503}{503}}
+
+\mbox{\Hypertarget{types_8h_af99fce39f8dcc513002af9c1f97c9b3b}\label{types_8h_af99fce39f8dcc513002af9c1f97c9b3b}} 
+\index{types.h@{types.h}!ND\_xsize@{ND\_xsize}}
+\index{ND\_xsize@{ND\_xsize}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_xsize}{ND\_xsize}}
+{\footnotesize\ttfamily \#define ND\+\_\+xsize(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(\mbox{\hyperlink{types_8h_aafdc3f915c57fc734959a7936feba1c2}{ND\+\_\+lw}}(n)+\mbox{\hyperlink{types_8h_a9cb8c502c548e420aa8b507b162a2d2e}{ND\+\_\+rw}}(n))}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00536}{536}}
+
+\mbox{\Hypertarget{types_8h_a3cee88e9b3eff3a89e96837ca91a723f}\label{types_8h_a3cee88e9b3eff3a89e96837ca91a723f}} 
+\index{types.h@{types.h}!ND\_ysize@{ND\_ysize}}
+\index{ND\_ysize@{ND\_ysize}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ND\_ysize}{ND\_ysize}}
+{\footnotesize\ttfamily \#define ND\+\_\+ysize(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(\mbox{\hyperlink{types_8h_a1bb4c002fbbf73f2e4061de8efcbe453}{ND\+\_\+ht}}(n))}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00537}{537}}
+
+\mbox{\Hypertarget{types_8h_ac513571df7814fe16758f00c2a59fecf}\label{types_8h_ac513571df7814fe16758f00c2a59fecf}} 
+\index{types.h@{types.h}!SET\_RANKDIR@{SET\_RANKDIR}}
+\index{SET\_RANKDIR@{SET\_RANKDIR}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{SET\_RANKDIR}{SET\_RANKDIR}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+RANKDIR(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{rd }\end{DoxyParamCaption})~(\mbox{\hyperlink{types_8h_a1d10b818e1ff69372cfb54ee0d469129}{GD\+\_\+rankdir2}}(g) = rd)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00602}{602}}
+
+\mbox{\Hypertarget{types_8h_a294cef5e272eb4e560857bbe4f3cee6c}\label{types_8h_a294cef5e272eb4e560857bbe4f3cee6c}} 
+\index{types.h@{types.h}!STROKE\_CLOSED@{STROKE\_CLOSED}}
+\index{STROKE\_CLOSED@{STROKE\_CLOSED}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{STROKE\_CLOSED}{STROKE\_CLOSED}}
+{\footnotesize\ttfamily \#define STROKE\+\_\+\+CLOSED~(1 $<$$<$ 0)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00167}{167}}
+
+\mbox{\Hypertarget{types_8h_aff5a5ede8aacf4290082188b90f43958}\label{types_8h_aff5a5ede8aacf4290082188b90f43958}} 
+\index{types.h@{types.h}!STROKE\_FILLED@{STROKE\_FILLED}}
+\index{STROKE\_FILLED@{STROKE\_FILLED}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{STROKE\_FILLED}{STROKE\_FILLED}}
+{\footnotesize\ttfamily \#define STROKE\+\_\+\+FILLED~(1 $<$$<$ 1)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00168}{168}}
+
+\mbox{\Hypertarget{types_8h_a7ff3b8ca79f7765b471898f193f65a93}\label{types_8h_a7ff3b8ca79f7765b471898f193f65a93}} 
+\index{types.h@{types.h}!STROKE\_PENDOWN@{STROKE\_PENDOWN}}
+\index{STROKE\_PENDOWN@{STROKE\_PENDOWN}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{STROKE\_PENDOWN}{STROKE\_PENDOWN}}
+{\footnotesize\ttfamily \#define STROKE\+\_\+\+PENDOWN~(1 $<$$<$ 2)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00169}{169}}
+
+\mbox{\Hypertarget{types_8h_a8aa5ed929529f67b930d67de58a9d38e}\label{types_8h_a8aa5ed929529f67b930d67de58a9d38e}} 
+\index{types.h@{types.h}!STROKE\_VERTICES\_ALLOCATED@{STROKE\_VERTICES\_ALLOCATED}}
+\index{STROKE\_VERTICES\_ALLOCATED@{STROKE\_VERTICES\_ALLOCATED}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{STROKE\_VERTICES\_ALLOCATED}{STROKE\_VERTICES\_ALLOCATED}}
+{\footnotesize\ttfamily \#define STROKE\+\_\+\+VERTICES\+\_\+\+ALLOCATED~(1 $<$$<$ 3)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00170}{170}}
+
+\mbox{\Hypertarget{types_8h_a12d1b461e7a9a9ef358c6bec5264a2e2}\label{types_8h_a12d1b461e7a9a9ef358c6bec5264a2e2}} 
+\index{types.h@{types.h}!TAIL\_ID@{TAIL\_ID}}
+\index{TAIL\_ID@{TAIL\_ID}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{TAIL\_ID}{TAIL\_ID}}
+{\footnotesize\ttfamily \#define TAIL\+\_\+\+ID~\char`\"{}tailport\char`\"{}}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00053}{53}}
+
+\mbox{\Hypertarget{types_8h_a8348ff030220824389a59808aa46d30e}\label{types_8h_a8348ff030220824389a59808aa46d30e}} 
+\index{types.h@{types.h}!WITH\_CGRAPH@{WITH\_CGRAPH}}
+\index{WITH\_CGRAPH@{WITH\_CGRAPH}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{WITH\_CGRAPH}{WITH\_CGRAPH}}
+{\footnotesize\ttfamily \#define WITH\+\_\+\+CGRAPH~1}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00019}{19}}
+
+
+
+\doxysubsection{Типы}
+\mbox{\Hypertarget{types_8h_a90a81e34f2d8b7e78c0589584f51d645}\label{types_8h_a90a81e34f2d8b7e78c0589584f51d645}} 
+\index{types.h@{types.h}!adjmatrix\_t@{adjmatrix\_t}}
+\index{adjmatrix\_t@{adjmatrix\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{adjmatrix\_t}{adjmatrix\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structadjmatrix__t}{adjmatrix\+\_\+t}} \mbox{\hyperlink{structadjmatrix__t}{adjmatrix\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_a7f6006922902c3a180aa46008d9cda04}\label{types_8h_a7f6006922902c3a180aa46008d9cda04}} 
+\index{types.h@{types.h}!Agedgeinfo\_t@{Agedgeinfo\_t}}
+\index{Agedgeinfo\_t@{Agedgeinfo\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{Agedgeinfo\_t}{Agedgeinfo\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}} \mbox{\hyperlink{struct_agedgeinfo__t}{Agedgeinfo\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_a99f5e71bafc639934d8a78307c510dfe}\label{types_8h_a99f5e71bafc639934d8a78307c510dfe}} 
+\index{types.h@{types.h}!Agnodeinfo\_t@{Agnodeinfo\_t}}
+\index{Agnodeinfo\_t@{Agnodeinfo\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{Agnodeinfo\_t}{Agnodeinfo\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}} \mbox{\hyperlink{struct_agnodeinfo__t}{Agnodeinfo\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_ac63023c62153c35af49136637b3918ca}\label{types_8h_ac63023c62153c35af49136637b3918ca}} 
+\index{types.h@{types.h}!Agraphinfo\_t@{Agraphinfo\_t}}
+\index{Agraphinfo\_t@{Agraphinfo\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{Agraphinfo\_t}{Agraphinfo\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}} \mbox{\hyperlink{struct_agraphinfo__t}{Agraphinfo\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_a074b8806dbdd80edff842d96051d4325}\label{types_8h_a074b8806dbdd80edff842d96051d4325}} 
+\index{types.h@{types.h}!attrsym\_t@{attrsym\_t}}
+\index{attrsym\_t@{attrsym\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{attrsym\_t}{attrsym\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agsym__s}{Agsym\+\_\+s}} \mbox{\hyperlink{types_8h_a074b8806dbdd80edff842d96051d4325}{attrsym\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00052}{52}}
+
+\mbox{\Hypertarget{types_8h_a800a5a54f93310b21802f76661efa426}\label{types_8h_a800a5a54f93310b21802f76661efa426}} 
+\index{types.h@{types.h}!bezier@{bezier}}
+\index{bezier@{bezier}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{bezier}{bezier}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structbezier}{bezier}} \mbox{\hyperlink{structbezier}{bezier}}}
+
+\mbox{\Hypertarget{types_8h_a23b0baed858f43d9563f3e471eab14b7}\label{types_8h_a23b0baed858f43d9563f3e471eab14b7}} 
+\index{types.h@{types.h}!bsearch\_cmpf@{bsearch\_cmpf}}
+\index{bsearch\_cmpf@{bsearch\_cmpf}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{bsearch\_cmpf}{bsearch\_cmpf}}
+{\footnotesize\ttfamily typedef int($\ast$ bsearch\+\_\+cmpf) (const void $\ast$, const void $\ast$)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00048}{48}}
+
+\mbox{\Hypertarget{types_8h_ab6289995bb0656f4da2ae67d80fea6d2}\label{types_8h_ab6289995bb0656f4da2ae67d80fea6d2}} 
+\index{types.h@{types.h}!edge\_t@{edge\_t}}
+\index{edge\_t@{edge\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{edge\_t}{edge\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agedge__s}{Agedge\+\_\+s}} \mbox{\hyperlink{types_8h_ab6289995bb0656f4da2ae67d80fea6d2}{edge\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00051}{51}}
+
+\mbox{\Hypertarget{types_8h_a29a6cb48b14cf8e1d183d055c5f7ff3b}\label{types_8h_a29a6cb48b14cf8e1d183d055c5f7ff3b}} 
+\index{types.h@{types.h}!elist@{elist}}
+\index{elist@{elist}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{elist}{elist}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structelist}{elist}} \mbox{\hyperlink{structelist}{elist}}}
+
+\mbox{\Hypertarget{types_8h_a8e3205a9a1e9d9c7608c678d900f845e}\label{types_8h_a8e3205a9a1e9d9c7608c678d900f845e}} 
+\index{types.h@{types.h}!field\_t@{field\_t}}
+\index{field\_t@{field\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{field\_t}{field\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structfield__t}{field\+\_\+t}} \mbox{\hyperlink{structfield__t}{field\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_aedca4e11cb6b1a3893747040cb785c12}\label{types_8h_aedca4e11cb6b1a3893747040cb785c12}} 
+\index{types.h@{types.h}!graph\_t@{graph\_t}}
+\index{graph\_t@{graph\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{graph\_t}{graph\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agraph__s}{Agraph\+\_\+s}} \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00049}{49}}
+
+\mbox{\Hypertarget{types_8h_ace6945bb2802e1190d98a4b4319c6d53}\label{types_8h_ace6945bb2802e1190d98a4b4319c6d53}} 
+\index{types.h@{types.h}!htmllabel\_t@{htmllabel\_t}}
+\index{htmllabel\_t@{htmllabel\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{htmllabel\_t}{htmllabel\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{types_8h_ace6945bb2802e1190d98a4b4319c6d53}{htmllabel\+\_\+t}} \mbox{\hyperlink{types_8h_ace6945bb2802e1190d98a4b4319c6d53}{htmllabel\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00056}{56}}
+
+\mbox{\Hypertarget{types_8h_ac04692d45a1fef6cd62f5d44bb078357}\label{types_8h_ac04692d45a1fef6cd62f5d44bb078357}} 
+\index{types.h@{types.h}!inside\_t@{inside\_t}}
+\index{inside\_t@{inside\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{inside\_t}{inside\_t}}
+{\footnotesize\ttfamily typedef union \mbox{\hyperlink{unioninside__t}{inside\+\_\+t}} \mbox{\hyperlink{unioninside__t}{inside\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_ab70208e6f93ae550e6099ab4adc87330}\label{types_8h_ab70208e6f93ae550e6099ab4adc87330}} 
+\index{types.h@{types.h}!layout\_t@{layout\_t}}
+\index{layout\_t@{layout\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{layout\_t}{layout\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structlayout__t}{layout\+\_\+t}} \mbox{\hyperlink{structlayout__t}{layout\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_ad2a80a423612e0accdeb9e60421190c8}\label{types_8h_ad2a80a423612e0accdeb9e60421190c8}} 
+\index{types.h@{types.h}!nlist\_t@{nlist\_t}}
+\index{nlist\_t@{nlist\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{nlist\_t}{nlist\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnlist__t}{nlist\+\_\+t}} \mbox{\hyperlink{structnlist__t}{nlist\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_aa54efbeed985023658063bdae73347ec}\label{types_8h_aa54efbeed985023658063bdae73347ec}} 
+\index{types.h@{types.h}!node\_t@{node\_t}}
+\index{node\_t@{node\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{node\_t}{node\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agnode__s}{Agnode\+\_\+s}} \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00050}{50}}
+
+\mbox{\Hypertarget{types_8h_ab0ed5d5be4d87a3f8240302dd96f9dfe}\label{types_8h_ab0ed5d5be4d87a3f8240302dd96f9dfe}} 
+\index{types.h@{types.h}!nodequeue@{nodequeue}}
+\index{nodequeue@{nodequeue}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{nodequeue}{nodequeue}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnodequeue}{nodequeue}} \mbox{\hyperlink{structnodequeue}{nodequeue}}}
+
+\mbox{\Hypertarget{types_8h_a130fc11a930a5aa9d3e5e4793172c82d}\label{types_8h_a130fc11a930a5aa9d3e5e4793172c82d}} 
+\index{types.h@{types.h}!path@{path}}
+\index{path@{path}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structpath}{path}} \mbox{\hyperlink{structpath}{path}}}
+
+\mbox{\Hypertarget{types_8h_ad284ee6b03d9fc028b8269adbef5fc65}\label{types_8h_ad284ee6b03d9fc028b8269adbef5fc65}} 
+\index{types.h@{types.h}!pathend\_t@{pathend\_t}}
+\index{pathend\_t@{pathend\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{pathend\_t}{pathend\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structpathend__t}{pathend\+\_\+t}} \mbox{\hyperlink{structpathend__t}{pathend\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_a54fcc55206762e2cbac75fe208b9b235}\label{types_8h_a54fcc55206762e2cbac75fe208b9b235}} 
+\index{types.h@{types.h}!polygon\_t@{polygon\_t}}
+\index{polygon\_t@{polygon\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{polygon\_t}{polygon\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structpolygon__t}{polygon\+\_\+t}} \mbox{\hyperlink{structpolygon__t}{polygon\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_ae95a60d33b2914f06e5882ef97f6ce3e}\label{types_8h_ae95a60d33b2914f06e5882ef97f6ce3e}} 
+\index{types.h@{types.h}!port@{port}}
+\index{port@{port}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structport}{port}} \mbox{\hyperlink{structport}{port}}}
+
+\mbox{\Hypertarget{types_8h_ac2d6b237613fae80c3a9fa117f76482b}\label{types_8h_ac2d6b237613fae80c3a9fa117f76482b}} 
+\index{types.h@{types.h}!qsort\_cmpf@{qsort\_cmpf}}
+\index{qsort\_cmpf@{qsort\_cmpf}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{qsort\_cmpf}{qsort\_cmpf}}
+{\footnotesize\ttfamily typedef int($\ast$ qsort\+\_\+cmpf) (const void $\ast$, const void $\ast$)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00047}{47}}
+
+\mbox{\Hypertarget{types_8h_a88b8fdea9d1dfb6e3b27ac7a94b786ca}\label{types_8h_a88b8fdea9d1dfb6e3b27ac7a94b786ca}} 
+\index{types.h@{types.h}!rank\_t@{rank\_t}}
+\index{rank\_t@{rank\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{rank\_t}{rank\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structrank__t}{rank\+\_\+t}} \mbox{\hyperlink{structrank__t}{rank\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_a468eddb197afa13a3864ce4812c823cb}\label{types_8h_a468eddb197afa13a3864ce4812c823cb}} 
+\index{types.h@{types.h}!shape\_desc@{shape\_desc}}
+\index{shape\_desc@{shape\_desc}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{shape\_desc}{shape\_desc}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structshape__desc}{shape\+\_\+desc}} \mbox{\hyperlink{structshape__desc}{shape\+\_\+desc}}}
+
+\mbox{\Hypertarget{types_8h_a6d6c2e66636ceb6cad0df539cf2442fe}\label{types_8h_a6d6c2e66636ceb6cad0df539cf2442fe}} 
+\index{types.h@{types.h}!shape\_functions@{shape\_functions}}
+\index{shape\_functions@{shape\_functions}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{shape\_functions}{shape\_functions}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structshape__functions}{shape\+\_\+functions}} \mbox{\hyperlink{structshape__functions}{shape\+\_\+functions}}}
+
+\mbox{\Hypertarget{types_8h_a50a0ad9736b3bcace6e4531bd44d0759}\label{types_8h_a50a0ad9736b3bcace6e4531bd44d0759}} 
+\index{types.h@{types.h}!splines@{splines}}
+\index{splines@{splines}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{splines}{splines}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structsplines}{splines}} \mbox{\hyperlink{structsplines}{splines}}}
+
+\mbox{\Hypertarget{types_8h_ae3daf21c5a1c87ed4b22e46e41dc67b6}\label{types_8h_ae3daf21c5a1c87ed4b22e46e41dc67b6}} 
+\index{types.h@{types.h}!stroke\_t@{stroke\_t}}
+\index{stroke\_t@{stroke\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{stroke\_t}{stroke\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structstroke__t}{stroke\+\_\+t}} \mbox{\hyperlink{structstroke__t}{stroke\+\_\+t}}}
+
+\mbox{\Hypertarget{types_8h_a3ec6402de3a86938ff9751e054bdd1cf}\label{types_8h_a3ec6402de3a86938ff9751e054bdd1cf}} 
+\index{types.h@{types.h}!textlabel\_t@{textlabel\_t}}
+\index{textlabel\_t@{textlabel\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{textlabel\_t}{textlabel\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtextlabel__t}{textlabel\+\_\+t}} \mbox{\hyperlink{structtextlabel__t}{textlabel\+\_\+t}}}
+
+
+
+\doxysubsection{Перечисления}
+\mbox{\Hypertarget{types_8h_a2a6b72cfc1be9a7af92447c2f1372496}\label{types_8h_a2a6b72cfc1be9a7af92447c2f1372496}} 
+\index{types.h@{types.h}!fontname\_kind@{fontname\_kind}}
+\index{fontname\_kind@{fontname\_kind}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{fontname\_kind}{fontname\_kind}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{types_8h_a2a6b72cfc1be9a7af92447c2f1372496}{fontname\+\_\+kind}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NATIVEFONTS@{NATIVEFONTS}!types.h@{types.h}}\index{types.h@{types.h}!NATIVEFONTS@{NATIVEFONTS}}}\mbox{\Hypertarget{types_8h_a2a6b72cfc1be9a7af92447c2f1372496aa04601a2ac6cdc4251c48d174b0e2509}\label{types_8h_a2a6b72cfc1be9a7af92447c2f1372496aa04601a2ac6cdc4251c48d174b0e2509}} 
+NATIVEFONTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PSFONTS@{PSFONTS}!types.h@{types.h}}\index{types.h@{types.h}!PSFONTS@{PSFONTS}}}\mbox{\Hypertarget{types_8h_a2a6b72cfc1be9a7af92447c2f1372496aac9e353cbe29ed058f39ae1b0b05b5e1}\label{types_8h_a2a6b72cfc1be9a7af92447c2f1372496aac9e353cbe29ed058f39ae1b0b05b5e1}} 
+PSFONTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SVGFONTS@{SVGFONTS}!types.h@{types.h}}\index{types.h@{types.h}!SVGFONTS@{SVGFONTS}}}\mbox{\Hypertarget{types_8h_a2a6b72cfc1be9a7af92447c2f1372496ab8851f34a473071b4ff971413c9c2acd}\label{types_8h_a2a6b72cfc1be9a7af92447c2f1372496ab8851f34a473071b4ff971413c9c2acd}} 
+SVGFONTS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00271}{271}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00271 \{\mbox{\hyperlink{types_8h_a2a6b72cfc1be9a7af92447c2f1372496aa04601a2ac6cdc4251c48d174b0e2509}{NATIVEFONTS}},\mbox{\hyperlink{types_8h_a2a6b72cfc1be9a7af92447c2f1372496aac9e353cbe29ed058f39ae1b0b05b5e1}{PSFONTS}},\mbox{\hyperlink{types_8h_a2a6b72cfc1be9a7af92447c2f1372496ab8851f34a473071b4ff971413c9c2acd}{SVGFONTS}}\} \mbox{\hyperlink{types_8h_a2a6b72cfc1be9a7af92447c2f1372496}{fontname\_kind}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{types_8h_af8bc308d7a0937e534f4e0aef70628a3}\label{types_8h_af8bc308d7a0937e534f4e0aef70628a3}} 
+\index{types.h@{types.h}!ratio\_t@{ratio\_t}}
+\index{ratio\_t@{ratio\_t}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{ratio\_t}{ratio\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3}{ratio\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\_NONE@{R\_NONE}!types.h@{types.h}}\index{types.h@{types.h}!R\_NONE@{R\_NONE}}}\mbox{\Hypertarget{types_8h_af8bc308d7a0937e534f4e0aef70628a3abec06f2a16e9fad36d80732a385b146c}\label{types_8h_af8bc308d7a0937e534f4e0aef70628a3abec06f2a16e9fad36d80732a385b146c}} 
+R\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\_VALUE@{R\_VALUE}!types.h@{types.h}}\index{types.h@{types.h}!R\_VALUE@{R\_VALUE}}}\mbox{\Hypertarget{types_8h_af8bc308d7a0937e534f4e0aef70628a3a4d90c50b9b54a8ce4dafdeb83b211d11}\label{types_8h_af8bc308d7a0937e534f4e0aef70628a3a4d90c50b9b54a8ce4dafdeb83b211d11}} 
+R\+\_\+\+VALUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\_FILL@{R\_FILL}!types.h@{types.h}}\index{types.h@{types.h}!R\_FILL@{R\_FILL}}}\mbox{\Hypertarget{types_8h_af8bc308d7a0937e534f4e0aef70628a3a5a44faf145f63c8202d16d9c5cfa8add}\label{types_8h_af8bc308d7a0937e534f4e0aef70628a3a5a44faf145f63c8202d16d9c5cfa8add}} 
+R\+\_\+\+FILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\_COMPRESS@{R\_COMPRESS}!types.h@{types.h}}\index{types.h@{types.h}!R\_COMPRESS@{R\_COMPRESS}}}\mbox{\Hypertarget{types_8h_af8bc308d7a0937e534f4e0aef70628a3a0d81d612dbac14feb838b55ac96ca292}\label{types_8h_af8bc308d7a0937e534f4e0aef70628a3a0d81d612dbac14feb838b55ac96ca292}} 
+R\+\_\+\+COMPRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\_AUTO@{R\_AUTO}!types.h@{types.h}}\index{types.h@{types.h}!R\_AUTO@{R\_AUTO}}}\mbox{\Hypertarget{types_8h_af8bc308d7a0937e534f4e0aef70628a3a084b1de8767c8bf88efae83ecd4ea574}\label{types_8h_af8bc308d7a0937e534f4e0aef70628a3a084b1de8767c8bf88efae83ecd4ea574}} 
+R\+\_\+\+AUTO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\_EXPAND@{R\_EXPAND}!types.h@{types.h}}\index{types.h@{types.h}!R\_EXPAND@{R\_EXPAND}}}\mbox{\Hypertarget{types_8h_af8bc308d7a0937e534f4e0aef70628a3a929bb8521a6a4dc8bc0b5225d0bc6a41}\label{types_8h_af8bc308d7a0937e534f4e0aef70628a3a929bb8521a6a4dc8bc0b5225d0bc6a41}} 
+R\+\_\+\+EXPAND&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00220}{220}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00220                  \{ \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3abec06f2a16e9fad36d80732a385b146c}{R\_NONE}} =}
+\DoxyCodeLine{00221         0, \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3a4d90c50b9b54a8ce4dafdeb83b211d11}{R\_VALUE}}, \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3a5a44faf145f63c8202d16d9c5cfa8add}{R\_FILL}}, \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3a0d81d612dbac14feb838b55ac96ca292}{R\_COMPRESS}}, \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3a084b1de8767c8bf88efae83ecd4ea574}{R\_AUTO}}, \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3a929bb8521a6a4dc8bc0b5225d0bc6a41}{R\_EXPAND}} \} \mbox{\hyperlink{types_8h_af8bc308d7a0937e534f4e0aef70628a3}{ratio\_t}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{types_8h_a89b3365676a2806c547d5bc9bf4d9d7c}\label{types_8h_a89b3365676a2806c547d5bc9bf4d9d7c}} 
+\index{types.h@{types.h}!shape\_kind@{shape\_kind}}
+\index{shape\_kind@{shape\_kind}!types.h@{types.h}}
+\doxysubsubsection{\texorpdfstring{shape\_kind}{shape\_kind}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7c}{shape\+\_\+kind}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_UNSET@{SH\_UNSET}!types.h@{types.h}}\index{types.h@{types.h}!SH\_UNSET@{SH\_UNSET}}}\mbox{\Hypertarget{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca775dfd155f3c8185d05520101a033ff3}\label{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca775dfd155f3c8185d05520101a033ff3}} 
+SH\+\_\+\+UNSET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_POLY@{SH\_POLY}!types.h@{types.h}}\index{types.h@{types.h}!SH\_POLY@{SH\_POLY}}}\mbox{\Hypertarget{types_8h_a89b3365676a2806c547d5bc9bf4d9d7cadd4ea7af512fbabd92af5be76d50e22e}\label{types_8h_a89b3365676a2806c547d5bc9bf4d9d7cadd4ea7af512fbabd92af5be76d50e22e}} 
+SH\+\_\+\+POLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_RECORD@{SH\_RECORD}!types.h@{types.h}}\index{types.h@{types.h}!SH\_RECORD@{SH\_RECORD}}}\mbox{\Hypertarget{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca3d8cb0521bb6b92b2b396cf8cb870d6d}\label{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca3d8cb0521bb6b92b2b396cf8cb870d6d}} 
+SH\+\_\+\+RECORD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_POINT@{SH\_POINT}!types.h@{types.h}}\index{types.h@{types.h}!SH\_POINT@{SH\_POINT}}}\mbox{\Hypertarget{types_8h_a89b3365676a2806c547d5bc9bf4d9d7cad9f3e7eed3b6d20cd282bb4856aa363a}\label{types_8h_a89b3365676a2806c547d5bc9bf4d9d7cad9f3e7eed3b6d20cd282bb4856aa363a}} 
+SH\+\_\+\+POINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_EPSF@{SH\_EPSF}!types.h@{types.h}}\index{types.h@{types.h}!SH\_EPSF@{SH\_EPSF}}}\mbox{\Hypertarget{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca20f460bfd46fdfdf3116925db34ae749}\label{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca20f460bfd46fdfdf3116925db34ae749}} 
+SH\+\_\+\+EPSF&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00181}{181}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00181 \{ \mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca775dfd155f3c8185d05520101a033ff3}{SH\_UNSET}}, \mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7cadd4ea7af512fbabd92af5be76d50e22e}{SH\_POLY}}, \mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca3d8cb0521bb6b92b2b396cf8cb870d6d}{SH\_RECORD}}, \mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7cad9f3e7eed3b6d20cd282bb4856aa363a}{SH\_POINT}}, \mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7ca20f460bfd46fdfdf3116925db34ae749}{SH\_EPSF}}\} \mbox{\hyperlink{types_8h_a89b3365676a2806c547d5bc9bf4d9d7c}{shape\_kind}};}
+
+\end{DoxyCode}

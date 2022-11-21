@@ -1,0 +1,80 @@
+\hypertarget{for_01lab_2_practical_socket_8cpp}{}\doxysection{Файл for lab/\+Practical\+Socket.cpp}
+\label{for_01lab_2_practical_socket_8cpp}\index{for lab/PracticalSocket.cpp@{for lab/PracticalSocket.cpp}}
+{\ttfamily \#include \char`\"{}Practical\+Socket.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+Граф включаемых заголовочных файлов для Practical\+Socket.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{for_01lab_2_practical_socket_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+typedef void \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_aba7a57aadc5c75eaab8ee698d0fa6608}{raw\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_a155e03535e1d5c1f5df7ceafe63dbdb0}{fill\+Addr}} (const string \&address, unsigned short \mbox{\hyperlink{structport}{port}}, sockaddr\+\_\+in \&addr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Типы}
+\mbox{\Hypertarget{for_01lab_2_practical_socket_8cpp_aba7a57aadc5c75eaab8ee698d0fa6608}\label{for_01lab_2_practical_socket_8cpp_aba7a57aadc5c75eaab8ee698d0fa6608}} 
+\index{PracticalSocket.cpp@{PracticalSocket.cpp}!raw\_type@{raw\_type}}
+\index{raw\_type@{raw\_type}!PracticalSocket.cpp@{PracticalSocket.cpp}}
+\doxysubsubsection{\texorpdfstring{raw\_type}{raw\_type}}
+{\footnotesize\ttfamily typedef void \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_aba7a57aadc5c75eaab8ee698d0fa6608}{raw\+\_\+type}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00033}{33}}
+
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{for_01lab_2_practical_socket_8cpp_a155e03535e1d5c1f5df7ceafe63dbdb0}\label{for_01lab_2_practical_socket_8cpp_a155e03535e1d5c1f5df7ceafe63dbdb0}} 
+\index{PracticalSocket.cpp@{PracticalSocket.cpp}!fillAddr@{fillAddr}}
+\index{fillAddr@{fillAddr}!PracticalSocket.cpp@{PracticalSocket.cpp}}
+\doxysubsubsection{\texorpdfstring{fillAddr()}{fillAddr()}}
+{\footnotesize\ttfamily static void fill\+Addr (\begin{DoxyParamCaption}\item[{const string \&}]{address,  }\item[{unsigned short}]{port,  }\item[{sockaddr\+\_\+in \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00062}{62}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063                                         \{}
+\DoxyCodeLine{00064   memset(\&addr, 0, \textcolor{keyword}{sizeof}(addr));  \textcolor{comment}{// Zero out address structure}}
+\DoxyCodeLine{00065   addr.sin\_family = AF\_INET;       \textcolor{comment}{// Internet address}}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067   hostent *host;  \textcolor{comment}{// Resolve name}}
+\DoxyCodeLine{00068   \textcolor{keywordflow}{if} ((host = gethostbyname(address.c\_str())) == NULL) \{}
+\DoxyCodeLine{00069     \textcolor{comment}{// strerror() will not work for gethostbyname() and hstrerror() }}
+\DoxyCodeLine{00070     \textcolor{comment}{// is supposedly obsolete}}
+\DoxyCodeLine{00071     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Failed to resolve name (gethostbyname())"{}});}
+\DoxyCodeLine{00072   \}}
+\DoxyCodeLine{00073   addr.sin\_addr.s\_addr = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *) host-\/>h\_addr\_list[0]);}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075   addr.sin\_port = htons(\mbox{\hyperlink{structport}{port}});     \textcolor{comment}{// Assign port in network byte order}}
+\DoxyCodeLine{00076 \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{for_01lab_2_practical_socket_8cpp_a155e03535e1d5c1f5df7ceafe63dbdb0_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,116 @@
+\hypertarget{mbport_8h_source}{}\doxysection{mbport.\+h}
+\label{mbport_8h_source}\index{for lab/freemodbus-\/v1.5.0/modbus/include/mbport.h@{for lab/freemodbus-\/v1.5.0/modbus/include/mbport.h}}
+\mbox{\hyperlink{mbport_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00001}00001 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00002}00002 \textcolor{comment}{ * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00003}00003 \textcolor{comment}{ * Copyright (c) 2006 Christian Walter <wolti@sil.at>}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00004}00004 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00006}00006 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00007}00007 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00008}00008 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00009}00009 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00010}00010 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00011}00011 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00012}00012 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00013}00013 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00014}00014 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00015}00015 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00016}00016 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00017}00017 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00018}00018 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00019}00019 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00020}00020 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00021}00021 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00022}00022 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00023}00023 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00024}00024 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00025}00025 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00026}00026 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00028}00028 \textcolor{comment}{ * File: \$Id: mbport.h,v 1.19 2010/06/06 13:54:40 wolti Exp \$}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00029}00029 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00031}00031 \textcolor{preprocessor}{\#ifndef \_MB\_PORT\_H}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00032}00032 \textcolor{preprocessor}{\#define \_MB\_PORT\_H}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00034}00034 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00035}00035 PR\_BEGIN\_EXTERN\_C}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00036}00036 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00038}00038 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Type definitions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00040}\mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{00040}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00041}00041 \{}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00042}\mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0}{00042}}     \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0}{EV\_READY}},                   }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00043}\mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2}{00043}}     \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2}{EV\_FRAME\_RECEIVED}},          }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00044}\mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019}{00044}}     \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019}{EV\_EXECUTE}},                 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00045}00045     \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95}{EV\_FRAME\_SENT}}               }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00046}\mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95}{00046}} \} \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{eMBEventType}};}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00055}\mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{00055}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00056}00056 \{}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00057}\mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba36c1b70b68bc05d618632e3f975a557b}{00057}}     \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba36c1b70b68bc05d618632e3f975a557b}{MB\_PAR\_NONE}},                }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00058}\mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba955fa6c30334314739ddceed6e749316}{00058}}     \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba955fa6c30334314739ddceed6e749316}{MB\_PAR\_ODD}},                 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00059}00059     \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba0415f4c7ede57e13a0cca698a8375dbd}{MB\_PAR\_EVEN}}                 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00060}\mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba0415f4c7ede57e13a0cca698a8375dbd}{00060}} \} \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{eMBParity}};}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00062}00062 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Supporting functions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00063}\mbox{\hyperlink{mbport_8h_a23aa6afd41597f7aaf5d1a6e6831c718}{00063}} BOOL            \mbox{\hyperlink{mbport_8h_a23aa6afd41597f7aaf5d1a6e6831c718}{xMBPortEventInit}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00065}\mbox{\hyperlink{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}{00065}} BOOL            \mbox{\hyperlink{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}{xMBPortEventPost}}( \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{eMBEventType}} eEvent );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00067}\mbox{\hyperlink{mbport_8h_ad61d350e63d0c41e7563ac0bc0fd346f}{00067}} BOOL            \mbox{\hyperlink{mbport_8h_ad61d350e63d0c41e7563ac0bc0fd346f}{xMBPortEventGet}}(  \textcolor{comment}{/*@out@ */} \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{eMBEventType}} * eEvent );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00069}00069 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Serial port functions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00071}\mbox{\hyperlink{mbport_8h_af614e62c57eaba86f45c45e5d0e6cfd9}{00071}} BOOL            \mbox{\hyperlink{mbport_8h_af614e62c57eaba86f45c45e5d0e6cfd9}{xMBPortSerialInit}}( UCHAR ucPort, ULONG ulBaudRate,}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00072}00072                                    UCHAR ucDataBits, \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{eMBParity}} eParity );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00074}\mbox{\hyperlink{mbport_8h_ae97991ffb6ce01584afce5dd4f653b41}{00074}} \textcolor{keywordtype}{void}            \mbox{\hyperlink{mbport_8h_ae97991ffb6ce01584afce5dd4f653b41}{vMBPortClose}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00076}\mbox{\hyperlink{mbport_8h_a9f5987b97b1075363db05a6783bd1103}{00076}} \textcolor{keywordtype}{void}            \mbox{\hyperlink{mbport_8h_a9f5987b97b1075363db05a6783bd1103}{xMBPortSerialClose}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00078}\mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{00078}} \textcolor{keywordtype}{void}            \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{vMBPortSerialEnable}}( BOOL xRxEnable, BOOL xTxEnable );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00080}\mbox{\hyperlink{mbport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770}{00080}} BOOL            \mbox{\hyperlink{mbport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770}{xMBPortSerialGetByte}}( CHAR * pucByte );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00082}\mbox{\hyperlink{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8}{00082}} BOOL            \mbox{\hyperlink{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8}{xMBPortSerialPutByte}}( CHAR ucByte );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00084}00084 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Timers functions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00085}\mbox{\hyperlink{mbport_8h_a93d8e78fe43e66fab707da6eda4f5eaf}{00085}} BOOL            \mbox{\hyperlink{mbport_8h_a93d8e78fe43e66fab707da6eda4f5eaf}{xMBPortTimersInit}}( USHORT usTimeOut50us );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00087}\mbox{\hyperlink{mbport_8h_a7a7591ccc79c9423e5c1821d3fd826d1}{00087}} \textcolor{keywordtype}{void}            \mbox{\hyperlink{mbport_8h_a7a7591ccc79c9423e5c1821d3fd826d1}{xMBPortTimersClose}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00089}\mbox{\hyperlink{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}{00089}} \textcolor{keywordtype}{void}            \mbox{\hyperlink{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}{vMBPortTimersEnable}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00091}\mbox{\hyperlink{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523}{00091}} \textcolor{keywordtype}{void}            \mbox{\hyperlink{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523}{vMBPortTimersDisable}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00093}\mbox{\hyperlink{mbport_8h_a334f66a0527a862f58488cc40d7999d4}{00093}} \textcolor{keywordtype}{void}            \mbox{\hyperlink{mbport_8h_a334f66a0527a862f58488cc40d7999d4}{vMBPortTimersDelay}}( USHORT usTimeOutMS );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00095}00095 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Callback for the protocol stack -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00109}00109 \textcolor{keyword}{extern}          BOOL( *\mbox{\hyperlink{mbport_8h_a6ff9d563210c04e3afb414b9db75154a}{pxMBFrameCBByteReceived}} ) ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00111}00111 \textcolor{keyword}{extern}          BOOL( *\mbox{\hyperlink{mbport_8h_a46ac9d979eaaeb885415014a0cb350b2}{pxMBFrameCBTransmitterEmpty}} ) ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00113}00113 \textcolor{keyword}{extern}          BOOL( *\mbox{\hyperlink{mbport_8h_a3ca010d1cf1b3bda066f0d65641d9055}{pxMBPortCBTimerExpired}} ) ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00115}00115 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ TCP port functions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00116}\mbox{\hyperlink{mbport_8h_a793d6e53b5632f4075af872b6a5c8ca5}{00116}} BOOL            \mbox{\hyperlink{mbport_8h_a793d6e53b5632f4075af872b6a5c8ca5}{xMBTCPPortInit}}( USHORT usTCPPort );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00118}\mbox{\hyperlink{mbport_8h_a8c43e5231c42bb7b8c6a31f8bfcb8a3e}{00118}} \textcolor{keywordtype}{void}            \mbox{\hyperlink{mbport_8h_a8c43e5231c42bb7b8c6a31f8bfcb8a3e}{vMBTCPPortClose}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00120}\mbox{\hyperlink{mbport_8h_a2ea2cd5d0cb31ce90df6e46d7af29d8d}{00120}} \textcolor{keywordtype}{void}            \mbox{\hyperlink{mbport_8h_a2ea2cd5d0cb31ce90df6e46d7af29d8d}{vMBTCPPortDisable}}( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00122}\mbox{\hyperlink{mbport_8h_a770c9a4001e08aafec96234e51ac8f42}{00122}} BOOL            \mbox{\hyperlink{mbport_8h_a770c9a4001e08aafec96234e51ac8f42}{xMBTCPPortGetRequest}}( UCHAR **ppucMBTCPFrame, USHORT * usTCPLength );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00124}\mbox{\hyperlink{mbport_8h_a2902b52c4070bd676851561caef5a4c5}{00124}} BOOL            \mbox{\hyperlink{mbport_8h_a2902b52c4070bd676851561caef5a4c5}{xMBTCPPortSendResponse}}( \textcolor{keyword}{const} UCHAR *pucMBTCPFrame, USHORT usTCPLength );}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00126}00126 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00127}00127 PR\_END\_EXTERN\_C}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00128}00128 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mbport_8h_source_l00129}00129 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

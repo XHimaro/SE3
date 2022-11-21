@@ -1,0 +1,356 @@
+\hypertarget{mbproto_8h}{}\doxysection{Файл for lab/freemodbus-\/v1.5.0/modbus/include/mbproto.h}
+\label{mbproto_8h}\index{for lab/freemodbus-\/v1.5.0/modbus/include/mbproto.h@{for lab/freemodbus-\/v1.5.0/modbus/include/mbproto.h}}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbproto_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structx_m_b_function_handler}{x\+MBFunction\+Handler}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_a5e80f256fa3cb8a969c9935b48f2a7b1}{MB\+\_\+\+ADDRESS\+\_\+\+BROADCAST}}~( 0 )   /$\ast$! Modbus broadcast address. $\ast$/
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_accf024291f4458ad8ad33e32568e8561}{MB\+\_\+\+ADDRESS\+\_\+\+MIN}}~( 1 )   /$\ast$! Smallest possible slave address. $\ast$/
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_a8b915be3e09043b5da9d307d30efd9f7}{MB\+\_\+\+ADDRESS\+\_\+\+MAX}}~( 247 ) /$\ast$! Biggest possible slave address. $\ast$/
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_a1097ed957945889aed9a3317a4962a93}{MB\+\_\+\+FUNC\+\_\+\+NONE}}~(  0 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_a0a6bec36d352b12d11ce92855999ac21}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+COILS}}~(  1 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_a3c8f7c9db7137eab91695bb75dd1bcaf}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+DISCRETE\+\_\+\+INPUTS}}~(  2 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_a4135bcd6e71affdba9daf3cd9bb2297b}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+SINGLE\+\_\+\+COIL}}~(  5 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_a0ecd378607ca725092525dbc54ec4c7f}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+COILS}}~( 15 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_af82cce9431080646def54ecdcaf9a8e4}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+HOLDING\+\_\+\+REGISTER}}~(  3 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_ab4adf9aa2c94273ab987590cd1a74859}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+INPUT\+\_\+\+REGISTER}}~(  4 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_a662445c40ea914156262986611f98fb8}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+REGISTER}}~(  6 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_ad53ef69db978b8f15dbeef630335dd37}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+REGISTERS}}~( 16 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_aae67d35bd7db006198623aaf68439dec}{MB\+\_\+\+FUNC\+\_\+\+READWRITE\+\_\+\+MULTIPLE\+\_\+\+REGISTERS}}~( 23 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_aee399c2ed9f9294e05029041c12deef3}{MB\+\_\+\+FUNC\+\_\+\+DIAG\+\_\+\+READ\+\_\+\+EXCEPTION}}~(  7 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_a891a8d1a286313c71d6389a33c60547e}{MB\+\_\+\+FUNC\+\_\+\+DIAG\+\_\+\+DIAGNOSTIC}}~(  8 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_aaed3a627e46195cdd35df734cb098be2}{MB\+\_\+\+FUNC\+\_\+\+DIAG\+\_\+\+GET\+\_\+\+COM\+\_\+\+EVENT\+\_\+\+CNT}}~( 11 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_a3c5273d91f1e7bd705fa9a56444bc6f9}{MB\+\_\+\+FUNC\+\_\+\+DIAG\+\_\+\+GET\+\_\+\+COM\+\_\+\+EVENT\+\_\+\+LOG}}~( 12 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_a8a711674834a510f4a1515f6ab420048}{MB\+\_\+\+FUNC\+\_\+\+OTHER\+\_\+\+REPORT\+\_\+\+SLAVEID}}~( 17 )
+\item 
+\#define \mbox{\hyperlink{mbproto_8h_ad45e73770d806dfd75cc45b2d1d31dc2}{MB\+\_\+\+FUNC\+\_\+\+ERROR}}~( 128 )
+\end{DoxyCompactItemize}
+\doxysubsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{e\+MBException}}($\ast$ \mbox{\hyperlink{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}{px\+MBFunction\+Handler}}) (UCHAR $\ast$puc\+Frame, USHORT $\ast$pus\+Length)
+\end{DoxyCompactItemize}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{e\+MBException}} \{ \newline
+\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}{MB\+\_\+\+EX\+\_\+\+NONE}} = 0x00
+, \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caf2cf9a6b48c5dee86cd361cc327b9abb}{MB\+\_\+\+EX\+\_\+\+ILLEGAL\+\_\+\+FUNCTION}} = 0x01
+, \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca610b4256de04afb3b4ef7b7d3e19ed52}{MB\+\_\+\+EX\+\_\+\+ILLEGAL\+\_\+\+DATA\+\_\+\+ADDRESS}} = 0x02
+, \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca473bfed2d0edb76c4ff02e659082c777}{MB\+\_\+\+EX\+\_\+\+ILLEGAL\+\_\+\+DATA\+\_\+\+VALUE}} = 0x03
+, \newline
+\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cad3dbaac0c2e2f7005e3a896f5c7f8274}{MB\+\_\+\+EX\+\_\+\+SLAVE\+\_\+\+DEVICE\+\_\+\+FAILURE}} = 0x04
+, \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca8ab5f36846f909d37bd6a3e4ba4426bb}{MB\+\_\+\+EX\+\_\+\+ACKNOWLEDGE}} = 0x05
+, \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cae3ec1c97155e5f397d3bad66efa75fdc}{MB\+\_\+\+EX\+\_\+\+SLAVE\+\_\+\+BUSY}} = 0x06
+, \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca45135805fdf5b286bcd2a9b48b44bd41}{MB\+\_\+\+EX\+\_\+\+MEMORY\+\_\+\+PARITY\+\_\+\+ERROR}} = 0x08
+, \newline
+\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca1edd146a459bc8ed8709b495406d3839}{MB\+\_\+\+EX\+\_\+\+GATEWAY\+\_\+\+PATH\+\_\+\+FAILED}} = 0x0A
+, \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caec539d85e1d3b8c407c4f8a39ef0bf88}{MB\+\_\+\+EX\+\_\+\+GATEWAY\+\_\+\+TGT\+\_\+\+FAILED}} = 0x0B
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{mbproto_8h_a5e80f256fa3cb8a969c9935b48f2a7b1}\label{mbproto_8h_a5e80f256fa3cb8a969c9935b48f2a7b1}} 
+\index{mbproto.h@{mbproto.h}!MB\_ADDRESS\_BROADCAST@{MB\_ADDRESS\_BROADCAST}}
+\index{MB\_ADDRESS\_BROADCAST@{MB\_ADDRESS\_BROADCAST}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_ADDRESS\_BROADCAST}{MB\_ADDRESS\_BROADCAST}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+ADDRESS\+\_\+\+BROADCAST~( 0 )   /$\ast$! Modbus broadcast address. $\ast$/}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00038}{38}}
+
+\mbox{\Hypertarget{mbproto_8h_a8b915be3e09043b5da9d307d30efd9f7}\label{mbproto_8h_a8b915be3e09043b5da9d307d30efd9f7}} 
+\index{mbproto.h@{mbproto.h}!MB\_ADDRESS\_MAX@{MB\_ADDRESS\_MAX}}
+\index{MB\_ADDRESS\_MAX@{MB\_ADDRESS\_MAX}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_ADDRESS\_MAX}{MB\_ADDRESS\_MAX}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+ADDRESS\+\_\+\+MAX~( 247 ) /$\ast$! Biggest possible slave address. $\ast$/}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00040}{40}}
+
+\mbox{\Hypertarget{mbproto_8h_accf024291f4458ad8ad33e32568e8561}\label{mbproto_8h_accf024291f4458ad8ad33e32568e8561}} 
+\index{mbproto.h@{mbproto.h}!MB\_ADDRESS\_MIN@{MB\_ADDRESS\_MIN}}
+\index{MB\_ADDRESS\_MIN@{MB\_ADDRESS\_MIN}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_ADDRESS\_MIN}{MB\_ADDRESS\_MIN}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+ADDRESS\+\_\+\+MIN~( 1 )   /$\ast$! Smallest possible slave address. $\ast$/}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00039}{39}}
+
+\mbox{\Hypertarget{mbproto_8h_a891a8d1a286313c71d6389a33c60547e}\label{mbproto_8h_a891a8d1a286313c71d6389a33c60547e}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_DIAG\_DIAGNOSTIC@{MB\_FUNC\_DIAG\_DIAGNOSTIC}}
+\index{MB\_FUNC\_DIAG\_DIAGNOSTIC@{MB\_FUNC\_DIAG\_DIAGNOSTIC}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_DIAG\_DIAGNOSTIC}{MB\_FUNC\_DIAG\_DIAGNOSTIC}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+DIAG\+\_\+\+DIAGNOSTIC~(  8 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00052}{52}}
+
+\mbox{\Hypertarget{mbproto_8h_aaed3a627e46195cdd35df734cb098be2}\label{mbproto_8h_aaed3a627e46195cdd35df734cb098be2}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_CNT@{MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_CNT}}
+\index{MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_CNT@{MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_CNT}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_CNT}{MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_CNT}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+DIAG\+\_\+\+GET\+\_\+\+COM\+\_\+\+EVENT\+\_\+\+CNT~( 11 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00053}{53}}
+
+\mbox{\Hypertarget{mbproto_8h_a3c5273d91f1e7bd705fa9a56444bc6f9}\label{mbproto_8h_a3c5273d91f1e7bd705fa9a56444bc6f9}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_LOG@{MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_LOG}}
+\index{MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_LOG@{MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_LOG}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_LOG}{MB\_FUNC\_DIAG\_GET\_COM\_EVENT\_LOG}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+DIAG\+\_\+\+GET\+\_\+\+COM\+\_\+\+EVENT\+\_\+\+LOG~( 12 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00054}{54}}
+
+\mbox{\Hypertarget{mbproto_8h_aee399c2ed9f9294e05029041c12deef3}\label{mbproto_8h_aee399c2ed9f9294e05029041c12deef3}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_DIAG\_READ\_EXCEPTION@{MB\_FUNC\_DIAG\_READ\_EXCEPTION}}
+\index{MB\_FUNC\_DIAG\_READ\_EXCEPTION@{MB\_FUNC\_DIAG\_READ\_EXCEPTION}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_DIAG\_READ\_EXCEPTION}{MB\_FUNC\_DIAG\_READ\_EXCEPTION}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+DIAG\+\_\+\+READ\+\_\+\+EXCEPTION~(  7 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00051}{51}}
+
+\mbox{\Hypertarget{mbproto_8h_ad45e73770d806dfd75cc45b2d1d31dc2}\label{mbproto_8h_ad45e73770d806dfd75cc45b2d1d31dc2}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_ERROR@{MB\_FUNC\_ERROR}}
+\index{MB\_FUNC\_ERROR@{MB\_FUNC\_ERROR}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_ERROR}{MB\_FUNC\_ERROR}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+ERROR~( 128 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00056}{56}}
+
+\mbox{\Hypertarget{mbproto_8h_a1097ed957945889aed9a3317a4962a93}\label{mbproto_8h_a1097ed957945889aed9a3317a4962a93}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_NONE@{MB\_FUNC\_NONE}}
+\index{MB\_FUNC\_NONE@{MB\_FUNC\_NONE}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_NONE}{MB\_FUNC\_NONE}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+NONE~(  0 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00041}{41}}
+
+\mbox{\Hypertarget{mbproto_8h_a8a711674834a510f4a1515f6ab420048}\label{mbproto_8h_a8a711674834a510f4a1515f6ab420048}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_OTHER\_REPORT\_SLAVEID@{MB\_FUNC\_OTHER\_REPORT\_SLAVEID}}
+\index{MB\_FUNC\_OTHER\_REPORT\_SLAVEID@{MB\_FUNC\_OTHER\_REPORT\_SLAVEID}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_OTHER\_REPORT\_SLAVEID}{MB\_FUNC\_OTHER\_REPORT\_SLAVEID}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+OTHER\+\_\+\+REPORT\+\_\+\+SLAVEID~( 17 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00055}{55}}
+
+\mbox{\Hypertarget{mbproto_8h_a0a6bec36d352b12d11ce92855999ac21}\label{mbproto_8h_a0a6bec36d352b12d11ce92855999ac21}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_READ\_COILS@{MB\_FUNC\_READ\_COILS}}
+\index{MB\_FUNC\_READ\_COILS@{MB\_FUNC\_READ\_COILS}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_READ\_COILS}{MB\_FUNC\_READ\_COILS}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+COILS~(  1 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00042}{42}}
+
+\mbox{\Hypertarget{mbproto_8h_a3c8f7c9db7137eab91695bb75dd1bcaf}\label{mbproto_8h_a3c8f7c9db7137eab91695bb75dd1bcaf}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_READ\_DISCRETE\_INPUTS@{MB\_FUNC\_READ\_DISCRETE\_INPUTS}}
+\index{MB\_FUNC\_READ\_DISCRETE\_INPUTS@{MB\_FUNC\_READ\_DISCRETE\_INPUTS}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_READ\_DISCRETE\_INPUTS}{MB\_FUNC\_READ\_DISCRETE\_INPUTS}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+DISCRETE\+\_\+\+INPUTS~(  2 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00043}{43}}
+
+\mbox{\Hypertarget{mbproto_8h_af82cce9431080646def54ecdcaf9a8e4}\label{mbproto_8h_af82cce9431080646def54ecdcaf9a8e4}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_READ\_HOLDING\_REGISTER@{MB\_FUNC\_READ\_HOLDING\_REGISTER}}
+\index{MB\_FUNC\_READ\_HOLDING\_REGISTER@{MB\_FUNC\_READ\_HOLDING\_REGISTER}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_READ\_HOLDING\_REGISTER}{MB\_FUNC\_READ\_HOLDING\_REGISTER}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+HOLDING\+\_\+\+REGISTER~(  3 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00046}{46}}
+
+\mbox{\Hypertarget{mbproto_8h_ab4adf9aa2c94273ab987590cd1a74859}\label{mbproto_8h_ab4adf9aa2c94273ab987590cd1a74859}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_READ\_INPUT\_REGISTER@{MB\_FUNC\_READ\_INPUT\_REGISTER}}
+\index{MB\_FUNC\_READ\_INPUT\_REGISTER@{MB\_FUNC\_READ\_INPUT\_REGISTER}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_READ\_INPUT\_REGISTER}{MB\_FUNC\_READ\_INPUT\_REGISTER}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+INPUT\+\_\+\+REGISTER~(  4 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00047}{47}}
+
+\mbox{\Hypertarget{mbproto_8h_aae67d35bd7db006198623aaf68439dec}\label{mbproto_8h_aae67d35bd7db006198623aaf68439dec}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_READWRITE\_MULTIPLE\_REGISTERS@{MB\_FUNC\_READWRITE\_MULTIPLE\_REGISTERS}}
+\index{MB\_FUNC\_READWRITE\_MULTIPLE\_REGISTERS@{MB\_FUNC\_READWRITE\_MULTIPLE\_REGISTERS}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_READWRITE\_MULTIPLE\_REGISTERS}{MB\_FUNC\_READWRITE\_MULTIPLE\_REGISTERS}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+READWRITE\+\_\+\+MULTIPLE\+\_\+\+REGISTERS~( 23 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00050}{50}}
+
+\mbox{\Hypertarget{mbproto_8h_a0ecd378607ca725092525dbc54ec4c7f}\label{mbproto_8h_a0ecd378607ca725092525dbc54ec4c7f}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_WRITE\_MULTIPLE\_COILS@{MB\_FUNC\_WRITE\_MULTIPLE\_COILS}}
+\index{MB\_FUNC\_WRITE\_MULTIPLE\_COILS@{MB\_FUNC\_WRITE\_MULTIPLE\_COILS}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_WRITE\_MULTIPLE\_COILS}{MB\_FUNC\_WRITE\_MULTIPLE\_COILS}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+COILS~( 15 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00045}{45}}
+
+\mbox{\Hypertarget{mbproto_8h_ad53ef69db978b8f15dbeef630335dd37}\label{mbproto_8h_ad53ef69db978b8f15dbeef630335dd37}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_WRITE\_MULTIPLE\_REGISTERS@{MB\_FUNC\_WRITE\_MULTIPLE\_REGISTERS}}
+\index{MB\_FUNC\_WRITE\_MULTIPLE\_REGISTERS@{MB\_FUNC\_WRITE\_MULTIPLE\_REGISTERS}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_WRITE\_MULTIPLE\_REGISTERS}{MB\_FUNC\_WRITE\_MULTIPLE\_REGISTERS}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+REGISTERS~( 16 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00049}{49}}
+
+\mbox{\Hypertarget{mbproto_8h_a662445c40ea914156262986611f98fb8}\label{mbproto_8h_a662445c40ea914156262986611f98fb8}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_WRITE\_REGISTER@{MB\_FUNC\_WRITE\_REGISTER}}
+\index{MB\_FUNC\_WRITE\_REGISTER@{MB\_FUNC\_WRITE\_REGISTER}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_WRITE\_REGISTER}{MB\_FUNC\_WRITE\_REGISTER}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+REGISTER~(  6 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00048}{48}}
+
+\mbox{\Hypertarget{mbproto_8h_a4135bcd6e71affdba9daf3cd9bb2297b}\label{mbproto_8h_a4135bcd6e71affdba9daf3cd9bb2297b}} 
+\index{mbproto.h@{mbproto.h}!MB\_FUNC\_WRITE\_SINGLE\_COIL@{MB\_FUNC\_WRITE\_SINGLE\_COIL}}
+\index{MB\_FUNC\_WRITE\_SINGLE\_COIL@{MB\_FUNC\_WRITE\_SINGLE\_COIL}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_WRITE\_SINGLE\_COIL}{MB\_FUNC\_WRITE\_SINGLE\_COIL}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+SINGLE\+\_\+\+COIL~(  5 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00044}{44}}
+
+
+
+\doxysubsection{Типы}
+\mbox{\Hypertarget{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}\label{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}} 
+\index{mbproto.h@{mbproto.h}!pxMBFunctionHandler@{pxMBFunctionHandler}}
+\index{pxMBFunctionHandler@{pxMBFunctionHandler}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{pxMBFunctionHandler}{pxMBFunctionHandler}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{e\+MBException}}($\ast$ px\+MBFunction\+Handler) (UCHAR $\ast$puc\+Frame, USHORT $\ast$pus\+Length)}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00072}{72}}
+
+
+
+\doxysubsection{Перечисления}
+\mbox{\Hypertarget{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}\label{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}} 
+\index{mbproto.h@{mbproto.h}!eMBException@{eMBException}}
+\index{eMBException@{eMBException}!mbproto.h@{mbproto.h}}
+\doxysubsubsection{\texorpdfstring{eMBException}{eMBException}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{e\+MBException}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EX\_NONE@{MB\_EX\_NONE}!mbproto.h@{mbproto.h}}\index{mbproto.h@{mbproto.h}!MB\_EX\_NONE@{MB\_EX\_NONE}}}\mbox{\Hypertarget{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}\label{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}} 
+MB\+\_\+\+EX\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EX\_ILLEGAL\_FUNCTION@{MB\_EX\_ILLEGAL\_FUNCTION}!mbproto.h@{mbproto.h}}\index{mbproto.h@{mbproto.h}!MB\_EX\_ILLEGAL\_FUNCTION@{MB\_EX\_ILLEGAL\_FUNCTION}}}\mbox{\Hypertarget{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caf2cf9a6b48c5dee86cd361cc327b9abb}\label{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caf2cf9a6b48c5dee86cd361cc327b9abb}} 
+MB\+\_\+\+EX\+\_\+\+ILLEGAL\+\_\+\+FUNCTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EX\_ILLEGAL\_DATA\_ADDRESS@{MB\_EX\_ILLEGAL\_DATA\_ADDRESS}!mbproto.h@{mbproto.h}}\index{mbproto.h@{mbproto.h}!MB\_EX\_ILLEGAL\_DATA\_ADDRESS@{MB\_EX\_ILLEGAL\_DATA\_ADDRESS}}}\mbox{\Hypertarget{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca610b4256de04afb3b4ef7b7d3e19ed52}\label{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca610b4256de04afb3b4ef7b7d3e19ed52}} 
+MB\+\_\+\+EX\+\_\+\+ILLEGAL\+\_\+\+DATA\+\_\+\+ADDRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EX\_ILLEGAL\_DATA\_VALUE@{MB\_EX\_ILLEGAL\_DATA\_VALUE}!mbproto.h@{mbproto.h}}\index{mbproto.h@{mbproto.h}!MB\_EX\_ILLEGAL\_DATA\_VALUE@{MB\_EX\_ILLEGAL\_DATA\_VALUE}}}\mbox{\Hypertarget{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca473bfed2d0edb76c4ff02e659082c777}\label{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca473bfed2d0edb76c4ff02e659082c777}} 
+MB\+\_\+\+EX\+\_\+\+ILLEGAL\+\_\+\+DATA\+\_\+\+VALUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EX\_SLAVE\_DEVICE\_FAILURE@{MB\_EX\_SLAVE\_DEVICE\_FAILURE}!mbproto.h@{mbproto.h}}\index{mbproto.h@{mbproto.h}!MB\_EX\_SLAVE\_DEVICE\_FAILURE@{MB\_EX\_SLAVE\_DEVICE\_FAILURE}}}\mbox{\Hypertarget{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cad3dbaac0c2e2f7005e3a896f5c7f8274}\label{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cad3dbaac0c2e2f7005e3a896f5c7f8274}} 
+MB\+\_\+\+EX\+\_\+\+SLAVE\+\_\+\+DEVICE\+\_\+\+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EX\_ACKNOWLEDGE@{MB\_EX\_ACKNOWLEDGE}!mbproto.h@{mbproto.h}}\index{mbproto.h@{mbproto.h}!MB\_EX\_ACKNOWLEDGE@{MB\_EX\_ACKNOWLEDGE}}}\mbox{\Hypertarget{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca8ab5f36846f909d37bd6a3e4ba4426bb}\label{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca8ab5f36846f909d37bd6a3e4ba4426bb}} 
+MB\+\_\+\+EX\+\_\+\+ACKNOWLEDGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EX\_SLAVE\_BUSY@{MB\_EX\_SLAVE\_BUSY}!mbproto.h@{mbproto.h}}\index{mbproto.h@{mbproto.h}!MB\_EX\_SLAVE\_BUSY@{MB\_EX\_SLAVE\_BUSY}}}\mbox{\Hypertarget{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cae3ec1c97155e5f397d3bad66efa75fdc}\label{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cae3ec1c97155e5f397d3bad66efa75fdc}} 
+MB\+\_\+\+EX\+\_\+\+SLAVE\+\_\+\+BUSY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EX\_MEMORY\_PARITY\_ERROR@{MB\_EX\_MEMORY\_PARITY\_ERROR}!mbproto.h@{mbproto.h}}\index{mbproto.h@{mbproto.h}!MB\_EX\_MEMORY\_PARITY\_ERROR@{MB\_EX\_MEMORY\_PARITY\_ERROR}}}\mbox{\Hypertarget{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca45135805fdf5b286bcd2a9b48b44bd41}\label{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca45135805fdf5b286bcd2a9b48b44bd41}} 
+MB\+\_\+\+EX\+\_\+\+MEMORY\+\_\+\+PARITY\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EX\_GATEWAY\_PATH\_FAILED@{MB\_EX\_GATEWAY\_PATH\_FAILED}!mbproto.h@{mbproto.h}}\index{mbproto.h@{mbproto.h}!MB\_EX\_GATEWAY\_PATH\_FAILED@{MB\_EX\_GATEWAY\_PATH\_FAILED}}}\mbox{\Hypertarget{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca1edd146a459bc8ed8709b495406d3839}\label{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca1edd146a459bc8ed8709b495406d3839}} 
+MB\+\_\+\+EX\+\_\+\+GATEWAY\+\_\+\+PATH\+\_\+\+FAILED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MB\_EX\_GATEWAY\_TGT\_FAILED@{MB\_EX\_GATEWAY\_TGT\_FAILED}!mbproto.h@{mbproto.h}}\index{mbproto.h@{mbproto.h}!MB\_EX\_GATEWAY\_TGT\_FAILED@{MB\_EX\_GATEWAY\_TGT\_FAILED}}}\mbox{\Hypertarget{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caec539d85e1d3b8c407c4f8a39ef0bf88}\label{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caec539d85e1d3b8c407c4f8a39ef0bf88}} 
+MB\+\_\+\+EX\+\_\+\+GATEWAY\+\_\+\+TGT\+\_\+\+FAILED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{mbproto_8h_source}{mbproto.\+h}} строка \mbox{\hyperlink{mbproto_8h_source_l00058}{58}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059 \{}
+\DoxyCodeLine{00060     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}{MB\_EX\_NONE}} = 0x00,}
+\DoxyCodeLine{00061     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caf2cf9a6b48c5dee86cd361cc327b9abb}{MB\_EX\_ILLEGAL\_FUNCTION}} = 0x01,}
+\DoxyCodeLine{00062     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca610b4256de04afb3b4ef7b7d3e19ed52}{MB\_EX\_ILLEGAL\_DATA\_ADDRESS}} = 0x02,}
+\DoxyCodeLine{00063     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca473bfed2d0edb76c4ff02e659082c777}{MB\_EX\_ILLEGAL\_DATA\_VALUE}} = 0x03,}
+\DoxyCodeLine{00064     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cad3dbaac0c2e2f7005e3a896f5c7f8274}{MB\_EX\_SLAVE\_DEVICE\_FAILURE}} = 0x04,}
+\DoxyCodeLine{00065     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca8ab5f36846f909d37bd6a3e4ba4426bb}{MB\_EX\_ACKNOWLEDGE}} = 0x05,}
+\DoxyCodeLine{00066     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cae3ec1c97155e5f397d3bad66efa75fdc}{MB\_EX\_SLAVE\_BUSY}} = 0x06,}
+\DoxyCodeLine{00067     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca45135805fdf5b286bcd2a9b48b44bd41}{MB\_EX\_MEMORY\_PARITY\_ERROR}} = 0x08,}
+\DoxyCodeLine{00068     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca1edd146a459bc8ed8709b495406d3839}{MB\_EX\_GATEWAY\_PATH\_FAILED}} = 0x0A,}
+\DoxyCodeLine{00069     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caec539d85e1d3b8c407c4f8a39ef0bf88}{MB\_EX\_GATEWAY\_TGT\_FAILED}} = 0x0B}
+\DoxyCodeLine{00070 \} \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{eMBException}};}
+
+\end{DoxyCode}

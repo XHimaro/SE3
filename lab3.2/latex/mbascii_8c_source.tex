@@ -1,0 +1,491 @@
+\hypertarget{mbascii_8c_source}{}\doxysection{mbascii.\+c}
+\label{mbascii_8c_source}\index{for lab/freemodbus-\/v1.5.0/modbus/ascii/mbascii.c@{for lab/freemodbus-\/v1.5.0/modbus/ascii/mbascii.c}}
+\mbox{\hyperlink{mbascii_8c}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00001}00001 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00002}00002 \textcolor{comment}{ * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00003}00003 \textcolor{comment}{ * Copyright (c) 2006 Christian Walter <wolti@sil.at>}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00004}00004 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00006}00006 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00007}00007 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00008}00008 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00009}00009 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00010}00010 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00011}00011 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00012}00012 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00013}00013 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00014}00014 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00015}00015 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00016}00016 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00017}00017 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00018}00018 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00019}00019 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00020}00020 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00021}00021 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00022}00022 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00023}00023 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00024}00024 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00025}00025 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00026}00026 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00028}00028 \textcolor{comment}{ * File: \$Id: mbascii.c,v 1.17 2010/06/06 13:47:07 wolti Exp \$}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00029}00029 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00031}00031 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ System includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00032}00032 \textcolor{preprocessor}{\#include "{}stdlib.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00033}00033 \textcolor{preprocessor}{\#include "{}string.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00035}00035 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Platform includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00036}00036 \textcolor{preprocessor}{\#include "{}port.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00038}00038 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Modbus includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00039}00039 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mb_8h}{mb.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00040}00040 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbconfig_8h}{mbconfig.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00041}00041 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbascii_8h}{mbascii.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00042}00042 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbframe_8h}{mbframe.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00044}00044 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbcrc_8h}{mbcrc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00045}00045 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbport_8h}{mbport.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00047}00047 \textcolor{preprocessor}{\#if MB\_ASCII\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00049}00049 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Defines -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00050}00050 \textcolor{preprocessor}{\#define MB\_ASCII\_DEFAULT\_CR     '\(\backslash\)r'    }}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00051}00051 \textcolor{preprocessor}{\#define MB\_ASCII\_DEFAULT\_LF     '\(\backslash\)n'    }}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00052}00052 \textcolor{preprocessor}{\#define MB\_SER\_PDU\_SIZE\_MIN     3       }}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00053}00053 \textcolor{preprocessor}{\#define MB\_SER\_PDU\_SIZE\_MAX     256     }}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00054}00054 \textcolor{preprocessor}{\#define MB\_SER\_PDU\_SIZE\_LRC     1       }}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00055}00055 \textcolor{preprocessor}{\#define MB\_SER\_PDU\_ADDR\_OFF     0       }}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00056}00056 \textcolor{preprocessor}{\#define MB\_SER\_PDU\_PDU\_OFF      1       }}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00058}00058 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Type definitions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00059}00059 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00060}00060 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00061}00061     \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}},              }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00062}00062     \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{STATE\_RX\_RCV}},               }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00063}00063     STATE\_RX\_WAIT\_EOF           }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00064}00064 \} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefb}{eMBRcvState}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00066}00066 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00067}00067 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00068}00068     \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefab1bd9fcf7cdb346f72d012adfca4767a}{STATE\_TX\_IDLE}},              }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00069}00069     STATE\_TX\_START,             }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00070}00070     STATE\_TX\_DATA,              }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00071}00071     STATE\_TX\_END,               }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00072}00072     STATE\_TX\_NOTIFY             }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00073}00073 \} \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fef}{eMBSndState}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00075}00075 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00076}00076 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00077}00077     BYTE\_HIGH\_NIBBLE,           }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00078}00078     BYTE\_LOW\_NIBBLE             }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00079}00079 \} eMBBytePos;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00081}00081 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Static functions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00082}00082 \textcolor{keyword}{static} UCHAR    prvucMBCHAR2BIN( UCHAR ucCharacter );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00084}00084 \textcolor{keyword}{static} UCHAR    prvucMBBIN2CHAR( UCHAR ucByte );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00086}00086 \textcolor{keyword}{static} UCHAR    prvucMBLRC( UCHAR * pucFrame, USHORT usLen );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00088}00088 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Static variables -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00089}00089 \textcolor{keyword}{static} \textcolor{keyword}{volatile} \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fef}{eMBSndState}} \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00090}00090 \textcolor{keyword}{static} \textcolor{keyword}{volatile} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefb}{eMBRcvState}} \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00092}00092 \textcolor{comment}{/* We reuse the Modbus RTU buffer because only one buffer is needed and the}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00093}00093 \textcolor{comment}{ * RTU buffer is bigger. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00094}00094 \textcolor{keyword}{extern} \textcolor{keyword}{volatile} UCHAR \mbox{\hyperlink{mbrtu_8c_a0fa63f7bfbfea7ac20cce55d94cf3d53}{ucRTUBuf}}[];}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00095}00095 \textcolor{keyword}{static} \textcolor{keyword}{volatile} UCHAR *ucASCIIBuf = \mbox{\hyperlink{mbrtu_8c_a0fa63f7bfbfea7ac20cce55d94cf3d53}{ucRTUBuf}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00097}00097 \textcolor{keyword}{static} \textcolor{keyword}{volatile} USHORT \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00098}00098 \textcolor{keyword}{static} \textcolor{keyword}{volatile} eMBBytePos eBytePos;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00100}00100 \textcolor{keyword}{static} \textcolor{keyword}{volatile} UCHAR *\mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00101}00101 \textcolor{keyword}{static} \textcolor{keyword}{volatile} USHORT \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00103}00103 \textcolor{keyword}{static} \textcolor{keyword}{volatile} UCHAR ucLRC;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00104}00104 \textcolor{keyword}{static} \textcolor{keyword}{volatile} UCHAR ucMBLFCharacter;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00106}00106 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Start implementation -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00107}00107 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00108}00108 eMBASCIIInit( UCHAR ucSlaveAddress, UCHAR ucPort, ULONG ulBaudRate, \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{eMBParity}} eParity )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00109}00109 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00110}00110     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00111}00111     ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} )ucSlaveAddress;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00112}00112     }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00113}00113     ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00114}00114     ucMBLFCharacter = MB\_ASCII\_DEFAULT\_LF;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00116}00116     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbport_8h_af614e62c57eaba86f45c45e5d0e6cfd9}{xMBPortSerialInit}}( ucPort, ulBaudRate, 7, eParity ) != TRUE )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00117}00117     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00118}00118         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\_EPORTERR}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00119}00119     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00120}00120     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbport_8h_a93d8e78fe43e66fab707da6eda4f5eaf}{xMBPortTimersInit}}( \mbox{\hyperlink{group__modbus__cfg_ga90fe92ab8f17c76c6e48dbbab8986446}{MB\_ASCII\_TIMEOUT\_SEC}} * 20000UL ) != TRUE )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00121}00121     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00122}00122         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\_EPORTERR}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00123}00123     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00125}00125     EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00127}00127     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00128}00128 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00130}00130 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00131}00131 eMBASCIIStart( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00132}00132 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00133}00133     ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00134}00134     \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{vMBPortSerialEnable}}( TRUE, FALSE );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00135}00135     \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00136}00136     EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00138}00138     \textcolor{comment}{/* No special startup required for ASCII. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00139}00139     ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} )\mbox{\hyperlink{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}{xMBPortEventPost}}( \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0}{EV\_READY}} );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00140}00140 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00142}00142 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00143}00143 eMBASCIIStop( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00144}00144 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00145}00145     ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00146}00146     \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{vMBPortSerialEnable}}( FALSE, FALSE );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00147}00147     \mbox{\hyperlink{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523}{vMBPortTimersDisable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00148}00148     EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00149}00149 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00151}00151 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00152}00152 eMBASCIIReceive( UCHAR * pucRcvAddress, UCHAR ** pucFrame, USHORT * pusLength )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00153}00153 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00154}00154     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00156}00156     ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00157}00157     assert( \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} < \mbox{\hyperlink{mbrtu_8c_ad7e9cfdbd55413153a9a862d824a149f}{MB\_SER\_PDU\_SIZE\_MAX}} );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00159}00159     \textcolor{comment}{/* Length and CRC check */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00160}00160     \textcolor{keywordflow}{if}( ( \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} >= \mbox{\hyperlink{mbrtu_8c_ae0dc27c9b034c5177638e9eef79d48a7}{MB\_SER\_PDU\_SIZE\_MIN}} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00161}00161         \&\& ( prvucMBLRC( ( UCHAR * ) ucASCIIBuf, \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} ) == 0 ) )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00162}00162     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00163}00163         \textcolor{comment}{/* Save the address field. All frames are passed to the upper layed}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00164}00164 \textcolor{comment}{         * and the decision if a frame is used is done there.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00165}00165 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00166}00166         *pucRcvAddress = ucASCIIBuf[\mbox{\hyperlink{mbrtu_8c_afd3d56d60a90ce4cb9858d305f446630}{MB\_SER\_PDU\_ADDR\_OFF}}];}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00168}00168         \textcolor{comment}{/* Total length of Modbus-\/PDU is Modbus-\/Serial-\/Line-\/PDU minus}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00169}00169 \textcolor{comment}{         * size of address field and CRC checksum.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00170}00170 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00171}00171         *pusLength = ( USHORT )( \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} -\/ \mbox{\hyperlink{mbrtu_8c_ab20d539d6366275b4f75f181908ca207}{MB\_SER\_PDU\_PDU\_OFF}} -\/ MB\_SER\_PDU\_SIZE\_LRC );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00173}00173         \textcolor{comment}{/* Return the start of the Modbus PDU to the caller. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00174}00174         *pucFrame = ( UCHAR * ) \& ucASCIIBuf[\mbox{\hyperlink{mbrtu_8c_ab20d539d6366275b4f75f181908ca207}{MB\_SER\_PDU\_PDU\_OFF}}];}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00175}00175     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00176}00176     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00177}00177     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00178}00178         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{MB\_EIO}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00179}00179     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00180}00180     EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00181}00181     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00182}00182 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00184}00184 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00185}00185 eMBASCIISend( UCHAR ucSlaveAddress, \textcolor{keyword}{const} UCHAR * pucFrame, USHORT usLength )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00186}00186 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00187}00187     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00188}00188     UCHAR           usLRC;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00190}00190     ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00191}00191     \textcolor{comment}{/* Check if the receiver is still in idle state. If not we where too}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00192}00192 \textcolor{comment}{     * slow with processing the received frame and the master sent another}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00193}00193 \textcolor{comment}{     * frame on the network. We have to abort sending the frame.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00194}00194 \textcolor{comment}{     */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00195}00195     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} == \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00196}00196     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00197}00197         \textcolor{comment}{/* First byte before the Modbus-\/PDU is the slave address. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00198}00198         \mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}} = ( UCHAR * ) pucFrame -\/ 1;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00199}00199         \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}} = 1;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00201}00201         \textcolor{comment}{/* Now copy the Modbus-\/PDU into the Modbus-\/Serial-\/Line-\/PDU. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00202}00202         \mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}}[\mbox{\hyperlink{mbrtu_8c_afd3d56d60a90ce4cb9858d305f446630}{MB\_SER\_PDU\_ADDR\_OFF}}] = ucSlaveAddress;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00203}00203         \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}} += usLength;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00205}00205         \textcolor{comment}{/* Calculate LRC checksum for Modbus-\/Serial-\/Line-\/PDU. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00206}00206         usLRC = prvucMBLRC( ( UCHAR * ) \mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}}, \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}} );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00207}00207         ucASCIIBuf[\mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}}++] = usLRC;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00209}00209         \textcolor{comment}{/* Activate the transmitter. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00210}00210         \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} = STATE\_TX\_START;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00211}00211         \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{vMBPortSerialEnable}}( FALSE, TRUE );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00212}00212     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00213}00213     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00214}00214     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00215}00215         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{MB\_EIO}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00216}00216     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00217}00217     EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00218}00218     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00219}00219 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00221}00221 BOOL}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00222}00222 xMBASCIIReceiveFSM( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00223}00223 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00224}00224     BOOL            xNeedPoll = FALSE;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00225}00225     UCHAR           ucByte;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00226}00226     UCHAR           ucResult;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00228}00228     assert( \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} == \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefab1bd9fcf7cdb346f72d012adfca4767a}{STATE\_TX\_IDLE}} );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00229}00229 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00230}00230     ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} )\mbox{\hyperlink{mbport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770}{xMBPortSerialGetByte}}( ( CHAR * ) \& ucByte );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00231}00231     \textcolor{keywordflow}{switch} ( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00232}00232     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00233}00233         \textcolor{comment}{/* A new character is received. If the character is a ':' the input}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00234}00234 \textcolor{comment}{         * buffer is cleared. A CR-\/character signals the end of the data}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00235}00235 \textcolor{comment}{         * block. Other characters are part of the data block and their}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00236}00236 \textcolor{comment}{         * ASCII value is converted back to a binary representation.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00237}00237 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00238}00238     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{STATE\_RX\_RCV}}:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00239}00239         \textcolor{comment}{/* Enable timer for character timeout. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00240}00240         \mbox{\hyperlink{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}{vMBPortTimersEnable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00241}00241         \textcolor{keywordflow}{if}( ucByte == \textcolor{charliteral}{':'} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00242}00242         \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00243}00243             \textcolor{comment}{/* Empty receive buffer. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00244}00244             eBytePos = BYTE\_HIGH\_NIBBLE;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00245}00245             \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} = 0;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00246}00246         \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00247}00247         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ucByte == MB\_ASCII\_DEFAULT\_CR )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00248}00248         \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00249}00249             \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = STATE\_RX\_WAIT\_EOF;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00250}00250         \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00251}00251         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00252}00252         \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00253}00253             ucResult = prvucMBCHAR2BIN( ucByte );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00254}00254             \textcolor{keywordflow}{switch} ( eBytePos )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00255}00255             \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00256}00256                 \textcolor{comment}{/* High nibble of the byte comes first. We check for}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00257}00257 \textcolor{comment}{                 * a buffer overflow here. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00258}00258             \textcolor{keywordflow}{case} BYTE\_HIGH\_NIBBLE:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00259}00259                 \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} < \mbox{\hyperlink{mbrtu_8c_ad7e9cfdbd55413153a9a862d824a149f}{MB\_SER\_PDU\_SIZE\_MAX}} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00260}00260                 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00261}00261                     ucASCIIBuf[\mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}}] = ( UCHAR )( ucResult << 4 );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00262}00262                     eBytePos = BYTE\_LOW\_NIBBLE;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00263}00263                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00264}00264                 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00265}00265                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00266}00266                 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00267}00267                     \textcolor{comment}{/* not handled in Modbus specification but seems}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00268}00268 \textcolor{comment}{                     * a resonable implementation. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00269}00269                     \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00270}00270                     \textcolor{comment}{/* Disable previously activated timer because of error state. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00271}00271                     \mbox{\hyperlink{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523}{vMBPortTimersDisable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00272}00272                 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00273}00273                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00274}00274 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00275}00275             \textcolor{keywordflow}{case} BYTE\_LOW\_NIBBLE:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00276}00276                 ucASCIIBuf[\mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}}] |= ucResult;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00277}00277                 \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}}++;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00278}00278                 eBytePos = BYTE\_HIGH\_NIBBLE;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00279}00279                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00280}00280             \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00281}00281         \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00282}00282         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00283}00283 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00284}00284     \textcolor{keywordflow}{case} STATE\_RX\_WAIT\_EOF:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00285}00285         \textcolor{keywordflow}{if}( ucByte == ucMBLFCharacter )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00286}00286         \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00287}00287             \textcolor{comment}{/* Disable character timeout timer because all characters are}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00288}00288 \textcolor{comment}{             * received. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00289}00289             \mbox{\hyperlink{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523}{vMBPortTimersDisable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00290}00290             \textcolor{comment}{/* Receiver is again in idle state. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00291}00291             \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00292}00292 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00293}00293             \textcolor{comment}{/* Notify the caller of eMBASCIIReceive that a new frame}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00294}00294 \textcolor{comment}{             * was received. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00295}00295             xNeedPoll = \mbox{\hyperlink{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}{xMBPortEventPost}}( \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2}{EV\_FRAME\_RECEIVED}} );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00296}00296         \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00297}00297         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ucByte == \textcolor{charliteral}{':'} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00298}00298         \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00299}00299             \textcolor{comment}{/* Empty receive buffer and back to receive state. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00300}00300             eBytePos = BYTE\_HIGH\_NIBBLE;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00301}00301             \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} = 0;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00302}00302             \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{STATE\_RX\_RCV}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00303}00303 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00304}00304             \textcolor{comment}{/* Enable timer for character timeout. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00305}00305             \mbox{\hyperlink{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}{vMBPortTimersEnable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00306}00306         \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00307}00307         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00308}00308         \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00309}00309             \textcolor{comment}{/* Frame is not okay. Delete entire frame. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00310}00310             \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00311}00311         \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00312}00312         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00313}00313 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00314}00314     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}}:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00315}00315         \textcolor{keywordflow}{if}( ucByte == \textcolor{charliteral}{':'} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00316}00316         \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00317}00317             \textcolor{comment}{/* Enable timer for character timeout. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00318}00318             \mbox{\hyperlink{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}{vMBPortTimersEnable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00319}00319             \textcolor{comment}{/* Reset the input buffers to store the frame. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00320}00320             \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} = 0;;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00321}00321             eBytePos = BYTE\_HIGH\_NIBBLE;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00322}00322             \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{STATE\_RX\_RCV}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00323}00323         \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00324}00324         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00325}00325     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00326}00326 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00327}00327     \textcolor{keywordflow}{return} xNeedPoll;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00328}00328 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00329}00329 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00330}00330 BOOL}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00331}00331 xMBASCIITransmitFSM( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00332}00332 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00333}00333     BOOL            xNeedPoll = FALSE;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00334}00334     UCHAR           ucByte;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00335}00335 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00336}00336     assert( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} == \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}} );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00337}00337     \textcolor{keywordflow}{switch} ( \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00338}00338     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00339}00339         \textcolor{comment}{/* Start of transmission. The start of a frame is defined by sending}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00340}00340 \textcolor{comment}{         * the character ':'. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00341}00341     \textcolor{keywordflow}{case} STATE\_TX\_START:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00342}00342         ucByte = \textcolor{charliteral}{':'};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00343}00343         \mbox{\hyperlink{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8}{xMBPortSerialPutByte}}( ( CHAR )ucByte );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00344}00344         \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} = STATE\_TX\_DATA;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00345}00345         eBytePos = BYTE\_HIGH\_NIBBLE;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00346}00346         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00347}00347 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00348}00348         \textcolor{comment}{/* Send the data block. Each data byte is encoded as a character hex}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00349}00349 \textcolor{comment}{         * stream with the high nibble sent first and the low nibble sent}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00350}00350 \textcolor{comment}{         * last. If all data bytes are exhausted we send a '\(\backslash\)r' character}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00351}00351 \textcolor{comment}{         * to end the transmission. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00352}00352     \textcolor{keywordflow}{case} STATE\_TX\_DATA:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00353}00353         \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}} > 0 )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00354}00354         \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00355}00355             \textcolor{keywordflow}{switch} ( eBytePos )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00356}00356             \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00357}00357             \textcolor{keywordflow}{case} BYTE\_HIGH\_NIBBLE:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00358}00358                 ucByte = prvucMBBIN2CHAR( ( UCHAR )( *\mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}} >> 4 ) );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00359}00359                 \mbox{\hyperlink{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8}{xMBPortSerialPutByte}}( ( CHAR ) ucByte );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00360}00360                 eBytePos = BYTE\_LOW\_NIBBLE;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00361}00361                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00362}00362 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00363}00363             \textcolor{keywordflow}{case} BYTE\_LOW\_NIBBLE:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00364}00364                 ucByte = prvucMBBIN2CHAR( ( UCHAR )( *\mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}} \& 0x0F ) );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00365}00365                 \mbox{\hyperlink{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8}{xMBPortSerialPutByte}}( ( CHAR )ucByte );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00366}00366                 \mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}}++;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00367}00367                 eBytePos = BYTE\_HIGH\_NIBBLE;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00368}00368                 \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}}-\/-\/;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00369}00369                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00370}00370             \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00371}00371         \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00372}00372         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00373}00373         \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00374}00374             \mbox{\hyperlink{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8}{xMBPortSerialPutByte}}( MB\_ASCII\_DEFAULT\_CR );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00375}00375             \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} = STATE\_TX\_END;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00376}00376         \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00377}00377         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00378}00378 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00379}00379         \textcolor{comment}{/* Finish the frame by sending a LF character. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00380}00380     \textcolor{keywordflow}{case} STATE\_TX\_END:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00381}00381         \mbox{\hyperlink{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8}{xMBPortSerialPutByte}}( ( CHAR )ucMBLFCharacter );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00382}00382         \textcolor{comment}{/* We need another state to make sure that the CR character has}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00383}00383 \textcolor{comment}{         * been sent. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00384}00384         \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} = STATE\_TX\_NOTIFY;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00385}00385         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00386}00386 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00387}00387         \textcolor{comment}{/* Notify the task which called eMBASCIISend that the frame has}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00388}00388 \textcolor{comment}{         * been sent. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00389}00389     \textcolor{keywordflow}{case} STATE\_TX\_NOTIFY:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00390}00390         \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} = \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefab1bd9fcf7cdb346f72d012adfca4767a}{STATE\_TX\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00391}00391         xNeedPoll = \mbox{\hyperlink{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}{xMBPortEventPost}}( \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95}{EV\_FRAME\_SENT}} );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00392}00392 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00393}00393         \textcolor{comment}{/* Disable transmitter. This prevents another transmit buffer}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00394}00394 \textcolor{comment}{         * empty interrupt. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00395}00395         \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{vMBPortSerialEnable}}( TRUE, FALSE );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00396}00396         \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} = \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefab1bd9fcf7cdb346f72d012adfca4767a}{STATE\_TX\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00397}00397         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00398}00398 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00399}00399         \textcolor{comment}{/* We should not get a transmitter event if the transmitter is in}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00400}00400 \textcolor{comment}{         * idle state.  */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00401}00401     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefab1bd9fcf7cdb346f72d012adfca4767a}{STATE\_TX\_IDLE}}:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00402}00402         \textcolor{comment}{/* enable receiver/disable transmitter. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00403}00403         \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{vMBPortSerialEnable}}( TRUE, FALSE );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00404}00404         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00405}00405     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00406}00406 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00407}00407     \textcolor{keywordflow}{return} xNeedPoll;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00408}00408 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00409}00409 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00410}00410 BOOL}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00411}00411 xMBASCIITimerT1SExpired( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00412}00412 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00413}00413     \textcolor{keywordflow}{switch} ( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00414}00414     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00415}00415         \textcolor{comment}{/* If we have a timeout we go back to the idle state and wait for}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00416}00416 \textcolor{comment}{         * the next frame.}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00417}00417 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00418}00418     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{STATE\_RX\_RCV}}:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00419}00419     \textcolor{keywordflow}{case} STATE\_RX\_WAIT\_EOF:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00420}00420         \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00421}00421         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00422}00422 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00423}00423     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00424}00424         assert( ( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} == \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{STATE\_RX\_RCV}} ) || ( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} == STATE\_RX\_WAIT\_EOF ) );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00425}00425         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00426}00426     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00427}00427     \mbox{\hyperlink{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523}{vMBPortTimersDisable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00428}00428 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00429}00429     \textcolor{comment}{/* no context switch required. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00430}00430     \textcolor{keywordflow}{return} FALSE;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00431}00431 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00432}00432 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00433}00433 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00434}00434 \textcolor{keyword}{static}          UCHAR}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00435}00435 prvucMBCHAR2BIN( UCHAR ucCharacter )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00436}00436 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00437}00437     \textcolor{keywordflow}{if}( ( ucCharacter >= \textcolor{charliteral}{'0'} ) \&\& ( ucCharacter <= \textcolor{charliteral}{'9'} ) )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00438}00438     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00439}00439         \textcolor{keywordflow}{return} ( UCHAR )( ucCharacter -\/ \textcolor{charliteral}{'0'} );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00440}00440     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00441}00441     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ( ucCharacter >= \textcolor{charliteral}{'A'} ) \&\& ( ucCharacter <= \textcolor{charliteral}{'F'} ) )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00442}00442     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00443}00443         \textcolor{keywordflow}{return} ( UCHAR )( ucCharacter -\/ \textcolor{charliteral}{'A'} + 0x0A );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00444}00444     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00445}00445     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00446}00446     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00447}00447         \textcolor{keywordflow}{return} 0xFF;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00448}00448     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00449}00449 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00450}00450 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00451}00451 \textcolor{keyword}{static}          UCHAR}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00452}00452 prvucMBBIN2CHAR( UCHAR ucByte )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00453}00453 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00454}00454     \textcolor{keywordflow}{if}( ucByte <= 0x09 )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00455}00455     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00456}00456         \textcolor{keywordflow}{return} ( UCHAR )( \textcolor{charliteral}{'0'} + ucByte );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00457}00457     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00458}00458     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( ( ucByte >= 0x0A ) \&\& ( ucByte <= 0x0F ) )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00459}00459     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00460}00460         \textcolor{keywordflow}{return} ( UCHAR )( ucByte -\/ 0x0A + \textcolor{charliteral}{'A'} );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00461}00461     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00462}00462     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00463}00463     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00464}00464         \textcolor{comment}{/* Programming error. */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00465}00465         assert( 0 );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00466}00466     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00467}00467     \textcolor{keywordflow}{return} \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00468}00468 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00469}00469 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00470}00470 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00471}00471 \textcolor{keyword}{static}          UCHAR}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00472}00472 prvucMBLRC( UCHAR * pucFrame, USHORT usLen )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00473}00473 \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00474}00474     UCHAR           ucLRC = 0;  \textcolor{comment}{/* LRC char initialized */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00475}00475 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00476}00476     \textcolor{keywordflow}{while}( usLen-\/-\/ )}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00477}00477     \{}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00478}00478         ucLRC += *pucFrame++;   \textcolor{comment}{/* Add buffer byte without carry */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00479}00479     \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00480}00480 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00481}00481     \textcolor{comment}{/* Return twos complement */}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00482}00482     ucLRC = ( UCHAR ) ( -\/( ( CHAR ) ucLRC ) );}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00483}00483     \textcolor{keywordflow}{return} ucLRC;}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00484}00484 \}}
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00485}00485 }
+\DoxyCodeLine{\Hypertarget{mbascii_8c_source_l00486}00486 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

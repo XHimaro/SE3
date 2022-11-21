@@ -1,0 +1,6 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="node1" href="$struct_object.html" title=" " alt="" coords="5,31,65,56"/>
+<area shape="rect" id="node2" href="$struct_vehicle.html" title=" " alt="" coords="113,31,179,56"/>
+<area shape="rect" id="node3" href="$struct_car.html" title=" " alt="" coords="233,5,275,31"/>
+<area shape="rect" id="node4" href="$struct_truck.html" title=" " alt="" coords="227,55,281,80"/>
+</map>

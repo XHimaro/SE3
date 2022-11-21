@@ -1,0 +1,527 @@
+\hypertarget{class_socket}{}\doxysection{Класс Socket}
+\label{class_socket}\index{Socket@{Socket}}
+
+
+{\ttfamily \#include $<$Practical\+Socket.\+h$>$}
+
+
+
+Граф наследования\+:Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_socket__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket_aeac4eb6379a543d38ed88977d3b6630a}{$\sim$\+Socket}} ()
+\item 
+string \mbox{\hyperlink{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}{get\+Local\+Address}} ()  throw (\+Socket\+Exception)
+\item 
+unsigned short \mbox{\hyperlink{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}{get\+Local\+Port}} ()  throw (\+Socket\+Exception)
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} \mbox{\hyperlink{class_socket_a773fe4a35146002de76952e16fdebcfa}{set\+Local\+Port}} (unsigned short local\+Port)  throw (\+Socket\+Exception)
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} \mbox{\hyperlink{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}{set\+Local\+Address\+And\+Port}} (const string \&local\+Address, unsigned short local\+Port=0)  throw (\+Socket\+Exception)
+\item 
+\mbox{\hyperlink{class_socket_aeac4eb6379a543d38ed88977d3b6630a}{$\sim$\+Socket}} ()
+\item 
+string \mbox{\hyperlink{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}{get\+Local\+Address}} ()  throw (\+Socket\+Exception)
+\item 
+unsigned short \mbox{\hyperlink{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}{get\+Local\+Port}} ()  throw (\+Socket\+Exception)
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} \mbox{\hyperlink{class_socket_a773fe4a35146002de76952e16fdebcfa}{set\+Local\+Port}} (unsigned short local\+Port)  throw (\+Socket\+Exception)
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} \mbox{\hyperlink{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}{set\+Local\+Address\+And\+Port}} (const string \&local\+Address, unsigned short local\+Port=0)  throw (\+Socket\+Exception)
+\end{DoxyCompactItemize}
+\doxysubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} \mbox{\hyperlink{class_socket_ac5060aeb501044044351d5a85b3fc95f}{clean\+Up}} ()  throw (\+Socket\+Exception)
+\item 
+static unsigned short \mbox{\hyperlink{class_socket_a982c63b25c5b756321a74074a275adbc}{resolve\+Service}} (const string \&service, const string \&protocol=\char`\"{}tcp\char`\"{})
+\item 
+static \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} \mbox{\hyperlink{class_socket_a7ca859fca0e15ae7157b2ab29bb5399c}{clean\+Up}} ()  throw (\+Socket\+Exception)
+\item 
+static unsigned short \mbox{\hyperlink{class_socket_a19fdcfe174b5a6578f56f396a8c70b6b}{resolve\+Service}} (const string \&service, const string \&protocol=\char`\"{}tcp\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket_a53e00027bab2125a2b407914c6148589}{Socket}} (int type, int protocol)  throw (\+Socket\+Exception)
+\item 
+\mbox{\hyperlink{class_socket_a6a2609eef6559336a595a336f138d395}{Socket}} (int \mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sock\+Desc}})
+\item 
+\mbox{\hyperlink{class_socket_a53e00027bab2125a2b407914c6148589}{Socket}} (int type, int protocol)  throw (\+Socket\+Exception)
+\item 
+\mbox{\hyperlink{class_socket_a6a2609eef6559336a595a336f138d395}{Socket}} (int \mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sock\+Desc}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sock\+Desc}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket_a656389d58fa00729ff70c4e159623f5c}{Socket}} (const \mbox{\hyperlink{class_socket}{Socket}} \&sock)
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} \mbox{\hyperlink{class_socket_a1ef8f4c222c32756c8b1537323702df8}{operator=}} (const \mbox{\hyperlink{class_socket}{Socket}} \&sock)
+\item 
+\mbox{\hyperlink{class_socket_a656389d58fa00729ff70c4e159623f5c}{Socket}} (const \mbox{\hyperlink{class_socket}{Socket}} \&sock)
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} \mbox{\hyperlink{class_socket_a1ef8f4c222c32756c8b1537323702df8}{operator=}} (const \mbox{\hyperlink{class_socket}{Socket}} \&sock)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Base class representing basic communication endpoint 
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8h_source}{Practical\+Socket.\+h}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8h_source_l00059}{59}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_socket_aeac4eb6379a543d38ed88977d3b6630a}\label{class_socket_aeac4eb6379a543d38ed88977d3b6630a}} 
+\index{Socket@{Socket}!````~Socket@{$\sim$Socket}}
+\index{````~Socket@{$\sim$Socket}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{$\sim$Socket()}{~Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Socket\+::$\sim$\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Close and deallocate this socket 
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00104}{104}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104                 \{}
+\DoxyCodeLine{00105 \textcolor{preprocessor}{  \#ifdef WIN32}}
+\DoxyCodeLine{00106     ::closesocket(\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}});}
+\DoxyCodeLine{00107 \textcolor{preprocessor}{  \#else}}
+\DoxyCodeLine{00108     ::close(\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}});}
+\DoxyCodeLine{00109 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{00110   \mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}} = -\/1;}
+\DoxyCodeLine{00111 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_socket_a656389d58fa00729ff70c4e159623f5c}\label{class_socket_a656389d58fa00729ff70c4e159623f5c}} 
+\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_socket}{Socket}} \&}]{sock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_socket_a53e00027bab2125a2b407914c6148589}\label{class_socket_a53e00027bab2125a2b407914c6148589}} 
+\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{int}]{protocol }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) \hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00080}{80}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080                                                             \{}
+\DoxyCodeLine{00081 \textcolor{preprocessor}{  \#ifdef WIN32}}
+\DoxyCodeLine{00082     \textcolor{keywordflow}{if} (!initialized) \{}
+\DoxyCodeLine{00083       WORD wVersionRequested;}
+\DoxyCodeLine{00084       WSADATA wsaData;}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086       wVersionRequested = MAKEWORD(2, 0);              \textcolor{comment}{// Request WinSock v2.0}}
+\DoxyCodeLine{00087       \textcolor{keywordflow}{if} (WSAStartup(wVersionRequested, \&wsaData) != 0) \{  \textcolor{comment}{// Load WinSock DLL}}
+\DoxyCodeLine{00088         \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Unable to load WinSock DLL"{}});}
+\DoxyCodeLine{00089       \}}
+\DoxyCodeLine{00090       initialized = \textcolor{keyword}{true};}
+\DoxyCodeLine{00091     \}}
+\DoxyCodeLine{00092 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094   \textcolor{comment}{// Make a new socket}}
+\DoxyCodeLine{00095   \textcolor{keywordflow}{if} ((\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}} = socket(PF\_INET, type, protocol)) < 0) \{}
+\DoxyCodeLine{00096     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Socket creation failed (socket())"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{00097   \}}
+\DoxyCodeLine{00098 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_socket_a6a2609eef6559336a595a336f138d395}\label{class_socket_a6a2609eef6559336a595a336f138d395}} 
+\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{int}]{sock\+Desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00100}{100}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100                            \{}
+\DoxyCodeLine{00101   this-\/>\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}} = \mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}};}
+\DoxyCodeLine{00102 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_socket_aeac4eb6379a543d38ed88977d3b6630a}\label{class_socket_aeac4eb6379a543d38ed88977d3b6630a}} 
+\index{Socket@{Socket}!````~Socket@{$\sim$Socket}}
+\index{````~Socket@{$\sim$Socket}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{$\sim$Socket()}{~Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Socket\+::$\sim$\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Close and deallocate this socket \mbox{\Hypertarget{class_socket_a656389d58fa00729ff70c4e159623f5c}\label{class_socket_a656389d58fa00729ff70c4e159623f5c}} 
+\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_socket}{Socket}} \&}]{sock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_socket_a53e00027bab2125a2b407914c6148589}\label{class_socket_a53e00027bab2125a2b407914c6148589}} 
+\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{int}]{protocol }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) \hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_socket_a6a2609eef6559336a595a336f138d395}\label{class_socket_a6a2609eef6559336a595a336f138d395}} 
+\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{int}]{sock\+Desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_socket_ac5060aeb501044044351d5a85b3fc95f}\label{class_socket_ac5060aeb501044044351d5a85b3fc95f}} 
+\index{Socket@{Socket}!cleanUp@{cleanUp}}
+\index{cleanUp@{cleanUp}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{cleanUp()}{cleanUp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} Socket\+::clean\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) \hspace{0.3cm}{\ttfamily [static]}}
+
+If Win\+Sock, unload the Win\+Sock DLLs; otherwise do nothing. We ignore this in our sample client code but include it in the library for completeness. If you are running on Windows and you are concerned about DLL resource consumption, call this after you are done with all \mbox{\hyperlink{class_socket}{Socket}} instances. If you execute this on Windows while some instance of \mbox{\hyperlink{class_socket}{Socket}} exists, you are toast. For portability of client code, this is an empty function on non-\/\+Windows platforms so you can always include it. 
+\begin{DoxyParams}{Аргументы}
+{\em buffer} & buffer to receive the data \\
+\hline
+{\em buffer\+Len} & maximum number of bytes to read into buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+number of bytes read, 0 for EOF, and -\/1 for error 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown Win\+Sock clean up fails \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00157}{157}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157                                             \{}
+\DoxyCodeLine{00158 \textcolor{preprocessor}{  \#ifdef WIN32}}
+\DoxyCodeLine{00159     \textcolor{keywordflow}{if} (WSACleanup() != 0) \{}
+\DoxyCodeLine{00160       \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}WSACleanup() failed"{}});}
+\DoxyCodeLine{00161     \}}
+\DoxyCodeLine{00162 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{00163 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_socket_a7ca859fca0e15ae7157b2ab29bb5399c}\label{class_socket_a7ca859fca0e15ae7157b2ab29bb5399c}} 
+\index{Socket@{Socket}!cleanUp@{cleanUp}}
+\index{cleanUp@{cleanUp}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{cleanUp()}{cleanUp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} Socket\+::clean\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) \hspace{0.3cm}{\ttfamily [static]}}
+
+If Win\+Sock, unload the Win\+Sock DLLs; otherwise do nothing. We ignore this in our sample client code but include it in the library for completeness. If you are running on Windows and you are concerned about DLL resource consumption, call this after you are done with all \mbox{\hyperlink{class_socket}{Socket}} instances. If you execute this on Windows while some instance of \mbox{\hyperlink{class_socket}{Socket}} exists, you are toast. For portability of client code, this is an empty function on non-\/\+Windows platforms so you can always include it. 
+\begin{DoxyParams}{Аргументы}
+{\em buffer} & buffer to receive the data \\
+\hline
+{\em buffer\+Len} & maximum number of bytes to read into buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+number of bytes read, 0 for EOF, and -\/1 for error 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown Win\+Sock clean up fails \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}\label{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}} 
+\index{Socket@{Socket}!getLocalAddress@{getLocalAddress}}
+\index{getLocalAddress@{getLocalAddress}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{getLocalAddress()}{getLocalAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Socket\+::get\+Local\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Get the local address \begin{DoxyReturn}{Возвращает}
+local address of socket 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if fetch fails \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00113}{113}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113                                                       \{}
+\DoxyCodeLine{00114   sockaddr\_in addr;}
+\DoxyCodeLine{00115   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} addr\_len = \textcolor{keyword}{sizeof}(addr);}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117   \textcolor{keywordflow}{if} (getsockname(\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}}, (sockaddr *) \&addr, (socklen\_t *) \&addr\_len) < 0) \{}
+\DoxyCodeLine{00118     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Fetch of local address failed (getsockname())"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{00119   \}}
+\DoxyCodeLine{00120   \textcolor{keywordflow}{return} inet\_ntoa(addr.sin\_addr);}
+\DoxyCodeLine{00121 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}\label{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}} 
+\index{Socket@{Socket}!getLocalAddress@{getLocalAddress}}
+\index{getLocalAddress@{getLocalAddress}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{getLocalAddress()}{getLocalAddress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Socket\+::get\+Local\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Get the local address \begin{DoxyReturn}{Возвращает}
+local address of socket 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if fetch fails \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}\label{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}} 
+\index{Socket@{Socket}!getLocalPort@{getLocalPort}}
+\index{getLocalPort@{getLocalPort}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{getLocalPort()}{getLocalPort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned short Socket\+::get\+Local\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Get the local port \begin{DoxyReturn}{Возвращает}
+local port of socket 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if fetch fails \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00123}{123}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123                                                            \{}
+\DoxyCodeLine{00124   sockaddr\_in addr;}
+\DoxyCodeLine{00125   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} addr\_len = \textcolor{keyword}{sizeof}(addr);}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127   \textcolor{keywordflow}{if} (getsockname(\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}}, (sockaddr *) \&addr, (socklen\_t *) \&addr\_len) < 0) \{}
+\DoxyCodeLine{00128     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Fetch of local port failed (getsockname())"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{00129   \}}
+\DoxyCodeLine{00130   \textcolor{keywordflow}{return} ntohs(addr.sin\_port);}
+\DoxyCodeLine{00131 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}\label{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}} 
+\index{Socket@{Socket}!getLocalPort@{getLocalPort}}
+\index{getLocalPort@{getLocalPort}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{getLocalPort()}{getLocalPort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned short Socket\+::get\+Local\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Get the local port \begin{DoxyReturn}{Возвращает}
+local port of socket 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if fetch fails \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_socket_a1ef8f4c222c32756c8b1537323702df8}\label{class_socket_a1ef8f4c222c32756c8b1537323702df8}} 
+\index{Socket@{Socket}!operator=@{operator=}}
+\index{operator=@{operator=}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} Socket\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_socket}{Socket}} \&}]{sock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_socket_a1ef8f4c222c32756c8b1537323702df8}\label{class_socket_a1ef8f4c222c32756c8b1537323702df8}} 
+\index{Socket@{Socket}!operator=@{operator=}}
+\index{operator=@{operator=}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} Socket\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_socket}{Socket}} \&}]{sock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_socket_a982c63b25c5b756321a74074a275adbc}\label{class_socket_a982c63b25c5b756321a74074a275adbc}} 
+\index{Socket@{Socket}!resolveService@{resolveService}}
+\index{resolveService@{resolveService}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{resolveService()}{resolveService()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned short Socket\+::resolve\+Service (\begin{DoxyParamCaption}\item[{const string \&}]{service,  }\item[{const string \&}]{protocol = {\ttfamily \char`\"{}tcp\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Resolve the specified service for the specified protocol to the corresponding port number in host byte order 
+\begin{DoxyParams}{Аргументы}
+{\em service} & service to resolve (e.\+g., \char`\"{}http\char`\"{}) \\
+\hline
+{\em protocol} & protocol of service to resolve. Default is \char`\"{}tcp\char`\"{}. \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00165}{165}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166                                                               \{}
+\DoxyCodeLine{00167   \textcolor{keyword}{struct }servent *serv;        \textcolor{comment}{/* Structure containing service information */}}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169   \textcolor{keywordflow}{if} ((serv = getservbyname(service.c\_str(), protocol.c\_str())) == NULL)}
+\DoxyCodeLine{00170     \textcolor{keywordflow}{return} atoi(service.c\_str());  \textcolor{comment}{/* Service is port number */}}
+\DoxyCodeLine{00171   \textcolor{keywordflow}{else} }
+\DoxyCodeLine{00172     \textcolor{keywordflow}{return} ntohs(serv-\/>s\_port);    \textcolor{comment}{/* Found port (network byte order) by name */}}
+\DoxyCodeLine{00173 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_socket_a19fdcfe174b5a6578f56f396a8c70b6b}\label{class_socket_a19fdcfe174b5a6578f56f396a8c70b6b}} 
+\index{Socket@{Socket}!resolveService@{resolveService}}
+\index{resolveService@{resolveService}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{resolveService()}{resolveService()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static unsigned short Socket\+::resolve\+Service (\begin{DoxyParamCaption}\item[{const string \&}]{service,  }\item[{const string \&}]{protocol = {\ttfamily \char`\"{}tcp\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Resolve the specified service for the specified protocol to the corresponding port number in host byte order 
+\begin{DoxyParams}{Аргументы}
+{\em service} & service to resolve (e.\+g., \char`\"{}http\char`\"{}) \\
+\hline
+{\em protocol} & protocol of service to resolve. Default is \char`\"{}tcp\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}\label{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}} 
+\index{Socket@{Socket}!setLocalAddressAndPort@{setLocalAddressAndPort}}
+\index{setLocalAddressAndPort@{setLocalAddressAndPort}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{setLocalAddressAndPort()}{setLocalAddressAndPort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} Socket\+::set\+Local\+Address\+And\+Port (\begin{DoxyParamCaption}\item[{const string \&}]{local\+Address,  }\item[{unsigned short}]{local\+Port = {\ttfamily 0} }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Set the local port to the specified port and the local address to the specified address. If you omit the port, a random port will be selected. 
+\begin{DoxyParams}{Аргументы}
+{\em local\+Address} & local address \\
+\hline
+{\em local\+Port} & local port \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if setting local port or address fails \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00146}{146}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147                                                      \{}
+\DoxyCodeLine{00148   \textcolor{comment}{// Get the address of the requested host}}
+\DoxyCodeLine{00149   sockaddr\_in localAddr;}
+\DoxyCodeLine{00150   \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_a155e03535e1d5c1f5df7ceafe63dbdb0}{fillAddr}}(localAddress, localPort, localAddr);}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152   \textcolor{keywordflow}{if} (bind(\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}}, (sockaddr *) \&localAddr, \textcolor{keyword}{sizeof}(sockaddr\_in)) < 0) \{}
+\DoxyCodeLine{00153     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Set of local address and port failed (bind())"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{00154   \}}
+\DoxyCodeLine{00155 \}}
+
+\end{DoxyCode}
+Граф вызовов\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_socket_aa6b986410bc2e606ba27d01fa7cb8836_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}\label{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}} 
+\index{Socket@{Socket}!setLocalAddressAndPort@{setLocalAddressAndPort}}
+\index{setLocalAddressAndPort@{setLocalAddressAndPort}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{setLocalAddressAndPort()}{setLocalAddressAndPort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} Socket\+::set\+Local\+Address\+And\+Port (\begin{DoxyParamCaption}\item[{const string \&}]{local\+Address,  }\item[{unsigned short}]{local\+Port = {\ttfamily 0} }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Set the local port to the specified port and the local address to the specified address. If you omit the port, a random port will be selected. 
+\begin{DoxyParams}{Аргументы}
+{\em local\+Address} & local address \\
+\hline
+{\em local\+Port} & local port \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if setting local port or address fails \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_socket_a773fe4a35146002de76952e16fdebcfa}\label{class_socket_a773fe4a35146002de76952e16fdebcfa}} 
+\index{Socket@{Socket}!setLocalPort@{setLocalPort}}
+\index{setLocalPort@{setLocalPort}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{setLocalPort()}{setLocalPort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} Socket\+::set\+Local\+Port (\begin{DoxyParamCaption}\item[{unsigned short}]{local\+Port }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Set the local port to the specified port and the local address to any interface 
+\begin{DoxyParams}{Аргументы}
+{\em local\+Port} & local port \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if setting local port fails \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00133}{133}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00133                                                                          \{}
+\DoxyCodeLine{00134   \textcolor{comment}{// Bind the socket to its port}}
+\DoxyCodeLine{00135   sockaddr\_in localAddr;}
+\DoxyCodeLine{00136   memset(\&localAddr, 0, \textcolor{keyword}{sizeof}(localAddr));}
+\DoxyCodeLine{00137   localAddr.sin\_family = AF\_INET;}
+\DoxyCodeLine{00138   localAddr.sin\_addr.s\_addr = htonl(INADDR\_ANY);}
+\DoxyCodeLine{00139   localAddr.sin\_port = htons(localPort);}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141   \textcolor{keywordflow}{if} (bind(\mbox{\hyperlink{class_socket_ad5704d2fdfb062139e1f88831617bbfb}{sockDesc}}, (sockaddr *) \&localAddr, \textcolor{keyword}{sizeof}(sockaddr\_in)) < 0) \{}
+\DoxyCodeLine{00142     \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_socket_exception}{SocketException}}(\textcolor{stringliteral}{"{}Set of local port failed (bind())"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{00143   \}}
+\DoxyCodeLine{00144 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_socket_a773fe4a35146002de76952e16fdebcfa}\label{class_socket_a773fe4a35146002de76952e16fdebcfa}} 
+\index{Socket@{Socket}!setLocalPort@{setLocalPort}}
+\index{setLocalPort@{setLocalPort}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{setLocalPort()}{setLocalPort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} Socket\+::set\+Local\+Port (\begin{DoxyParamCaption}\item[{unsigned short}]{local\+Port }\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Set the local port to the specified port and the local address to any interface 
+\begin{DoxyParams}{Аргументы}
+{\em local\+Port} & local port \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}} & thrown if setting local port fails \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{class_socket_ad5704d2fdfb062139e1f88831617bbfb}\label{class_socket_ad5704d2fdfb062139e1f88831617bbfb}} 
+\index{Socket@{Socket}!sockDesc@{sockDesc}}
+\index{sockDesc@{sockDesc}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{sockDesc}{sockDesc}}
+{\footnotesize\ttfamily int Socket\+::sock\+Desc\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8h_source}{Practical\+Socket.\+h}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8h_source_l00129}{129}}
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\mbox{\hyperlink{for_01lab_2_practical_socket_8h}{Practical\+Socket.\+h}}\item 
+\mbox{\hyperlink{_practical_socket_8h}{Practical\+Socket.\+h}}\item 
+for lab/\mbox{\hyperlink{for_01lab_2_practical_socket_8cpp}{Practical\+Socket.\+cpp}}\item 
+\mbox{\hyperlink{_practical_socket_8cpp}{Practical\+Socket.\+cpp}}\end{DoxyCompactItemize}

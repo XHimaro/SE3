@@ -1,0 +1,418 @@
+\hypertarget{mb_8c_source}{}\doxysection{mb.\+c}
+\label{mb_8c_source}\index{for lab/freemodbus-\/v1.5.0/modbus/mb.c@{for lab/freemodbus-\/v1.5.0/modbus/mb.c}}
+\mbox{\hyperlink{mb_8c}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00001}00001 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00002}00002 \textcolor{comment}{ * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00003}00003 \textcolor{comment}{ * Copyright (c) 2006 Christian Walter <wolti@sil.at>}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00004}00004 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00006}00006 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00007}00007 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00008}00008 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00009}00009 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00010}00010 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00011}00011 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00012}00012 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00013}00013 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00014}00014 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00015}00015 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00016}00016 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00017}00017 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00018}00018 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00019}00019 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00020}00020 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00021}00021 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00022}00022 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00023}00023 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00024}00024 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00025}00025 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00026}00026 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00028}00028 \textcolor{comment}{ * File: \$Id: mb.c,v 1.28 2010/06/06 13:54:40 wolti Exp \$}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00029}00029 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00031}00031 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ System includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00032}00032 \textcolor{preprocessor}{\#include "{}stdlib.h"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00033}00033 \textcolor{preprocessor}{\#include "{}string.h"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00035}00035 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Platform includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00036}00036 \textcolor{preprocessor}{\#include "{}port.h"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00038}00038 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Modbus includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00039}00039 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mb_8h}{mb.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00040}00040 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbconfig_8h}{mbconfig.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00041}00041 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbframe_8h}{mbframe.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00042}00042 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbproto_8h}{mbproto.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00043}00043 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbfunc_8h}{mbfunc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00045}00045 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbport_8h}{mbport.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00046}00046 \textcolor{preprocessor}{\#if MB\_RTU\_ENABLED == 1}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00047}00047 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbrtu_8h}{mbrtu.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00048}00048 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00049}00049 \textcolor{preprocessor}{\#if MB\_ASCII\_ENABLED == 1}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00050}00050 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbascii_8h}{mbascii.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00051}00051 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00052}00052 \textcolor{preprocessor}{\#if MB\_TCP\_ENABLED == 1}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00053}00053 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbtcp_8h}{mbtcp.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00054}00054 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00056}00056 \textcolor{preprocessor}{\#ifndef MB\_PORT\_HAS\_CLOSE}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00057}\mbox{\hyperlink{mb_8c_a63c1fbefc04d96d29ef84407e22c4e3e}{00057}} \textcolor{preprocessor}{\#define MB\_PORT\_HAS\_CLOSE 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00058}00058 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00060}00060 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Static variables -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00062}\mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{00062}} \textcolor{keyword}{static} UCHAR    \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00063}\mbox{\hyperlink{mb_8c_a288653bd38728bea3b3c705f25d87483}{00063}} \textcolor{keyword}{static} \mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{eMBMode}}  \mbox{\hyperlink{mb_8c_a288653bd38728bea3b3c705f25d87483}{eMBCurrentMode}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00065}00065 \textcolor{keyword}{static} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00066}00066 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00067}\mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}{00067}}     \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}{STATE\_ENABLED}},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00068}\mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{00068}}     \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00069}00069     \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bae2477750e043f9c82868690f0162f232}{STATE\_NOT\_INITIALIZED}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00070}\mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{00070}} \} \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} = \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bae2477750e043f9c82868690f0162f232}{STATE\_NOT\_INITIALIZED}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00072}00072 \textcolor{comment}{/* Functions pointer which are initialized in eMBInit( ). Depending on the}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00073}00073 \textcolor{comment}{ * mode (RTU or ASCII) the are set to the correct implementations.}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00074}00074 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00075}\mbox{\hyperlink{mb_8c_ae9daf4765e9a354a64f171108ace3094}{00075}} \textcolor{keyword}{static} \mbox{\hyperlink{mbframe_8h_a2819876d9dce4626d9d54833902fa88c}{peMBFrameSend}} \mbox{\hyperlink{mb_8c_ae9daf4765e9a354a64f171108ace3094}{peMBFrameSendCur}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00076}\mbox{\hyperlink{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}{00076}} \textcolor{keyword}{static} \mbox{\hyperlink{mbframe_8h_a075bd0854eba03b7b33da5933e96a078}{pvMBFrameStart}} \mbox{\hyperlink{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}{pvMBFrameStartCur}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00077}\mbox{\hyperlink{mb_8c_a043a961601eba48ca372b99f5c67ec3c}{00077}} \textcolor{keyword}{static} \mbox{\hyperlink{mbframe_8h_ae77f5c0d4c4e2fa7afd55122c599f3e2}{pvMBFrameStop}} \mbox{\hyperlink{mb_8c_a043a961601eba48ca372b99f5c67ec3c}{pvMBFrameStopCur}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00078}\mbox{\hyperlink{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}{00078}} \textcolor{keyword}{static} \mbox{\hyperlink{mbframe_8h_a06f6bce5e91795fb466ed8edf386c611}{peMBFrameReceive}} \mbox{\hyperlink{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}{peMBFrameReceiveCur}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00079}\mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{00079}} \textcolor{keyword}{static} \mbox{\hyperlink{mbframe_8h_ac90725e31188ed4e9b8250fd39625b57}{pvMBFrameClose}} \mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{pvMBFrameCloseCur}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00081}00081 \textcolor{comment}{/* Callback functions required by the porting layer. They are called when}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00082}00082 \textcolor{comment}{ * an external event has happend which includes a timeout or the reception}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00083}00083 \textcolor{comment}{ * or transmission of a character.}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00084}00084 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00085}\mbox{\hyperlink{mbport_8h_a6ff9d563210c04e3afb414b9db75154a}{00085}} BOOL( *\mbox{\hyperlink{mb_8c_a6ff9d563210c04e3afb414b9db75154a}{pxMBFrameCBByteReceived}} ) ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00086}\mbox{\hyperlink{mbport_8h_a46ac9d979eaaeb885415014a0cb350b2}{00086}} BOOL( *\mbox{\hyperlink{mb_8c_a46ac9d979eaaeb885415014a0cb350b2}{pxMBFrameCBTransmitterEmpty}} ) ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00087}\mbox{\hyperlink{mbport_8h_a3ca010d1cf1b3bda066f0d65641d9055}{00087}} BOOL( *\mbox{\hyperlink{mb_8c_a3ca010d1cf1b3bda066f0d65641d9055}{pxMBPortCBTimerExpired}} ) ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00089}\mbox{\hyperlink{mb_8c_a9363e9558a3370aa7f877b5414e83a31}{00089}} BOOL( *\mbox{\hyperlink{mb_8c_a9363e9558a3370aa7f877b5414e83a31}{pxMBFrameCBReceiveFSMCur}} ) ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00090}\mbox{\hyperlink{mb_8c_a590a5400a72de0dcbce5f383a67a5093}{00090}} BOOL( *\mbox{\hyperlink{mb_8c_a590a5400a72de0dcbce5f383a67a5093}{pxMBFrameCBTransmitFSMCur}} ) ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00092}00092 \textcolor{comment}{/* An array of Modbus functions handlers which associates Modbus function}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00093}00093 \textcolor{comment}{ * codes with implementing functions.}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00094}00094 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00095}\mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{00095}} \textcolor{keyword}{static} \mbox{\hyperlink{structx_m_b_function_handler}{xMBFunctionHandler}} \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[\mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\_FUNC\_HANDLERS\_MAX}}] = \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00096}00096 \textcolor{preprocessor}{\#if MB\_FUNC\_OTHER\_REP\_SLAVEID\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00097}00097     \{\mbox{\hyperlink{mbproto_8h_a8a711674834a510f4a1515f6ab420048}{MB\_FUNC\_OTHER\_REPORT\_SLAVEID}}, eMBFuncReportSlaveID\},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00098}00098 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00099}00099 \textcolor{preprocessor}{\#if MB\_FUNC\_READ\_INPUT\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00100}00100     \{\mbox{\hyperlink{mbproto_8h_ab4adf9aa2c94273ab987590cd1a74859}{MB\_FUNC\_READ\_INPUT\_REGISTER}}, eMBFuncReadInputRegister\},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00101}00101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00102}00102 \textcolor{preprocessor}{\#if MB\_FUNC\_READ\_HOLDING\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00103}00103     \{\mbox{\hyperlink{mbproto_8h_af82cce9431080646def54ecdcaf9a8e4}{MB\_FUNC\_READ\_HOLDING\_REGISTER}}, eMBFuncReadHoldingRegister\},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00104}00104 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00105}00105 \textcolor{preprocessor}{\#if MB\_FUNC\_WRITE\_MULTIPLE\_HOLDING\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00106}00106     \{\mbox{\hyperlink{mbproto_8h_ad53ef69db978b8f15dbeef630335dd37}{MB\_FUNC\_WRITE\_MULTIPLE\_REGISTERS}}, eMBFuncWriteMultipleHoldingRegister\},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00107}00107 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00108}00108 \textcolor{preprocessor}{\#if MB\_FUNC\_WRITE\_HOLDING\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00109}00109     \{\mbox{\hyperlink{mbproto_8h_a662445c40ea914156262986611f98fb8}{MB\_FUNC\_WRITE\_REGISTER}}, eMBFuncWriteHoldingRegister\},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00110}00110 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00111}00111 \textcolor{preprocessor}{\#if MB\_FUNC\_READWRITE\_HOLDING\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00112}00112     \{\mbox{\hyperlink{mbproto_8h_aae67d35bd7db006198623aaf68439dec}{MB\_FUNC\_READWRITE\_MULTIPLE\_REGISTERS}}, eMBFuncReadWriteMultipleHoldingRegister\},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00113}00113 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00114}00114 \textcolor{preprocessor}{\#if MB\_FUNC\_READ\_COILS\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00115}00115     \{\mbox{\hyperlink{mbproto_8h_a0a6bec36d352b12d11ce92855999ac21}{MB\_FUNC\_READ\_COILS}}, eMBFuncReadCoils\},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00116}00116 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00117}00117 \textcolor{preprocessor}{\#if MB\_FUNC\_WRITE\_COIL\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00118}00118     \{\mbox{\hyperlink{mbproto_8h_a4135bcd6e71affdba9daf3cd9bb2297b}{MB\_FUNC\_WRITE\_SINGLE\_COIL}}, eMBFuncWriteCoil\},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00119}00119 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00120}00120 \textcolor{preprocessor}{\#if MB\_FUNC\_WRITE\_MULTIPLE\_COILS\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00121}00121     \{\mbox{\hyperlink{mbproto_8h_a0ecd378607ca725092525dbc54ec4c7f}{MB\_FUNC\_WRITE\_MULTIPLE\_COILS}}, eMBFuncWriteMultipleCoils\},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00122}00122 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00123}00123 \textcolor{preprocessor}{\#if MB\_FUNC\_READ\_DISCRETE\_INPUTS\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00124}00124     \{\mbox{\hyperlink{mbproto_8h_a3c8f7c9db7137eab91695bb75dd1bcaf}{MB\_FUNC\_READ\_DISCRETE\_INPUTS}}, eMBFuncReadDiscreteInputs\},}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00125}00125 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00126}00126 \};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00128}00128 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Start implementation -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00129}00129 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00130}\mbox{\hyperlink{group__modbus_ga622dbe6b38ff1d255523d4736fa3da26}{00130}} \mbox{\hyperlink{group__modbus_ga622dbe6b38ff1d255523d4736fa3da26}{eMBInit}}( \mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{eMBMode}} eMode, UCHAR ucSlaveAddress, UCHAR ucPort, ULONG ulBaudRate, \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{eMBParity}} eParity )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00131}00131 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00132}00132     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00134}00134     \textcolor{comment}{/* check preconditions */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00135}00135     \textcolor{keywordflow}{if}( ( ucSlaveAddress == \mbox{\hyperlink{mbproto_8h_a5e80f256fa3cb8a969c9935b48f2a7b1}{MB\_ADDRESS\_BROADCAST}} ) ||}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00136}00136         ( ucSlaveAddress < \mbox{\hyperlink{mbproto_8h_accf024291f4458ad8ad33e32568e8561}{MB\_ADDRESS\_MIN}} ) || ( ucSlaveAddress > \mbox{\hyperlink{mbproto_8h_a8b915be3e09043b5da9d307d30efd9f7}{MB\_ADDRESS\_MAX}} ) )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00137}00137     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00138}00138         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}{MB\_EINVAL}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00139}00139     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00140}00140     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00141}00141     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00142}00142         \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}} = ucSlaveAddress;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00144}00144         \textcolor{keywordflow}{switch} ( eMode )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00145}00145         \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00146}00146 \textcolor{preprocessor}{\#if MB\_RTU\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00147}00147         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a1b807b8cf3d593d8cd8d1a1d21a3da31}{MB\_RTU}}:}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00148}00148             \mbox{\hyperlink{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}{pvMBFrameStartCur}} = \mbox{\hyperlink{mbrtu_8c_ae342bae030ea291a6e8a2fe3d2d0abeb}{eMBRTUStart}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00149}00149             \mbox{\hyperlink{mb_8c_a043a961601eba48ca372b99f5c67ec3c}{pvMBFrameStopCur}} = \mbox{\hyperlink{mbrtu_8c_a3d44ef4747b7202d37142ef1aaea493b}{eMBRTUStop}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00150}00150             \mbox{\hyperlink{mb_8c_ae9daf4765e9a354a64f171108ace3094}{peMBFrameSendCur}} = \mbox{\hyperlink{mbrtu_8c_a6feb0c70f52d3ef74da1cfbdc10d1ab0}{eMBRTUSend}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00151}00151             \mbox{\hyperlink{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}{peMBFrameReceiveCur}} = \mbox{\hyperlink{mbrtu_8c_a669fd79aadbd1cc49ac4f11382dc15d9}{eMBRTUReceive}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00152}00152             \mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{pvMBFrameCloseCur}} = \mbox{\hyperlink{mb_8c_a63c1fbefc04d96d29ef84407e22c4e3e}{MB\_PORT\_HAS\_CLOSE}} ? \mbox{\hyperlink{mbport_8h_ae97991ffb6ce01584afce5dd4f653b41}{vMBPortClose}} : NULL;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00153}00153             \mbox{\hyperlink{mb_8c_a6ff9d563210c04e3afb414b9db75154a}{pxMBFrameCBByteReceived}} = \mbox{\hyperlink{mbrtu_8c_a447f45f582daab2600cad612b00120b0}{xMBRTUReceiveFSM}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00154}00154             \mbox{\hyperlink{mb_8c_a46ac9d979eaaeb885415014a0cb350b2}{pxMBFrameCBTransmitterEmpty}} = \mbox{\hyperlink{mbrtu_8c_a663e5daf0be0f2426a72c531c91d423f}{xMBRTUTransmitFSM}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00155}00155             \mbox{\hyperlink{mb_8c_a3ca010d1cf1b3bda066f0d65641d9055}{pxMBPortCBTimerExpired}} = \mbox{\hyperlink{mbrtu_8c_ac6302a8b67c6b82ae49e6c9d6a9795da}{xMBRTUTimerT35Expired}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00156}00156 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00157}00157             eStatus = \mbox{\hyperlink{mbrtu_8c_a52738b46d7f3be581582d30cfb2bfcb8}{eMBRTUInit}}( \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}}, ucPort, ulBaudRate, eParity );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00158}00158             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00159}00159 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00160}00160 \textcolor{preprocessor}{\#if MB\_ASCII\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00161}00161         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61afa37751530d5e48cb5a3f8841f9e3143}{MB\_ASCII}}:}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00162}00162             \mbox{\hyperlink{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}{pvMBFrameStartCur}} = eMBASCIIStart;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00163}00163             \mbox{\hyperlink{mb_8c_a043a961601eba48ca372b99f5c67ec3c}{pvMBFrameStopCur}} = eMBASCIIStop;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00164}00164             \mbox{\hyperlink{mb_8c_ae9daf4765e9a354a64f171108ace3094}{peMBFrameSendCur}} = eMBASCIISend;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00165}00165             \mbox{\hyperlink{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}{peMBFrameReceiveCur}} = eMBASCIIReceive;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00166}00166             \mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{pvMBFrameCloseCur}} = \mbox{\hyperlink{mb_8c_a63c1fbefc04d96d29ef84407e22c4e3e}{MB\_PORT\_HAS\_CLOSE}} ? \mbox{\hyperlink{mbport_8h_ae97991ffb6ce01584afce5dd4f653b41}{vMBPortClose}} : NULL;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00167}00167             \mbox{\hyperlink{mb_8c_a6ff9d563210c04e3afb414b9db75154a}{pxMBFrameCBByteReceived}} = xMBASCIIReceiveFSM;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00168}00168             \mbox{\hyperlink{mb_8c_a46ac9d979eaaeb885415014a0cb350b2}{pxMBFrameCBTransmitterEmpty}} = xMBASCIITransmitFSM;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00169}00169             \mbox{\hyperlink{mb_8c_a3ca010d1cf1b3bda066f0d65641d9055}{pxMBPortCBTimerExpired}} = xMBASCIITimerT1SExpired;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00171}00171             eStatus = eMBASCIIInit( \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}}, ucPort, ulBaudRate, eParity );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00172}00172             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00173}00173 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00174}00174         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00175}00175             eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}{MB\_EINVAL}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00176}00176         \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00178}00178         \textcolor{keywordflow}{if}( eStatus == \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00179}00179         \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00180}00180             \textcolor{keywordflow}{if}( !\mbox{\hyperlink{mbport_8h_a23aa6afd41597f7aaf5d1a6e6831c718}{xMBPortEventInit}}(  ) )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00181}00181             \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00182}00182                 \textcolor{comment}{/* port dependent event module initalization failed. */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00183}00183                 eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\_EPORTERR}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00184}00184             \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00185}00185             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00186}00186             \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00187}00187                 \mbox{\hyperlink{mb_8c_a288653bd38728bea3b3c705f25d87483}{eMBCurrentMode}} = eMode;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00188}00188                 \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} = \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00189}00189             \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00190}00190         \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00191}00191     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00192}00192     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00193}00193 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00194}00194 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00195}00195 \textcolor{preprocessor}{\#if MB\_TCP\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00196}00196 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00197}00197 \mbox{\hyperlink{group__modbus_gab06a2d0ef8bdfd866cd934f0ec7e7a6e}{eMBTCPInit}}( USHORT ucTCPPort )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00198}00198 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00199}00199     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00201}00201     \textcolor{keywordflow}{if}( ( eStatus = \mbox{\hyperlink{mbtcp_8h_afc4d97e1ef477aa7d6462bd11cda6350}{eMBTCPDoInit}}( ucTCPPort ) ) != \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00202}00202     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00203}00203         \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} = \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00204}00204     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00205}00205     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( !\mbox{\hyperlink{mbport_8h_a23aa6afd41597f7aaf5d1a6e6831c718}{xMBPortEventInit}}(  ) )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00206}00206     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00207}00207         \textcolor{comment}{/* Port dependent event module initalization failed. */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00208}00208         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\_EPORTERR}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00209}00209     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00210}00210     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00211}00211     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00212}00212         \mbox{\hyperlink{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}{pvMBFrameStartCur}} = \mbox{\hyperlink{mbtcp_8h_a4c3d680e5dcb5a83148eab88618adacf}{eMBTCPStart}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00213}00213         \mbox{\hyperlink{mb_8c_a043a961601eba48ca372b99f5c67ec3c}{pvMBFrameStopCur}} = \mbox{\hyperlink{mbtcp_8h_a69f057684ffba6bb272096f78748f3c0}{eMBTCPStop}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00214}00214         \mbox{\hyperlink{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}{peMBFrameReceiveCur}} = \mbox{\hyperlink{mbtcp_8h_a9af49438982de4ee6447f0c53aa7cf15}{eMBTCPReceive}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00215}00215         \mbox{\hyperlink{mb_8c_ae9daf4765e9a354a64f171108ace3094}{peMBFrameSendCur}} = \mbox{\hyperlink{mbtcp_8h_ae3a739ca896039491dbbe5ea1f1701fb}{eMBTCPSend}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00216}00216         \mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{pvMBFrameCloseCur}} = \mbox{\hyperlink{mb_8c_a63c1fbefc04d96d29ef84407e22c4e3e}{MB\_PORT\_HAS\_CLOSE}} ? \mbox{\hyperlink{mbport_8h_a8c43e5231c42bb7b8c6a31f8bfcb8a3e}{vMBTCPPortClose}} : NULL;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00217}00217         \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}} = \mbox{\hyperlink{mbtcp_8h_a86f074736a0c94868fb139cd9de1e1e4}{MB\_TCP\_PSEUDO\_ADDRESS}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00218}00218         \mbox{\hyperlink{mb_8c_a288653bd38728bea3b3c705f25d87483}{eMBCurrentMode}} = \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a5786284fe284b4a23889bf5b444d5142}{MB\_TCP}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00219}00219         \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} = \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00220}00220     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00221}00221     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00222}00222 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00223}00223 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00224}00224 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00225}00225 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00226}\mbox{\hyperlink{group__modbus_ga5f6e66893b2388a602ac453253a00784}{00226}} \mbox{\hyperlink{group__modbus_ga5f6e66893b2388a602ac453253a00784}{eMBRegisterCB}}( UCHAR ucFunctionCode, \mbox{\hyperlink{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}{pxMBFunctionHandler}} pxHandler )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00227}00227 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00228}00228     \textcolor{keywordtype}{int}             i;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00229}00229     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00230}00230 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00231}00231     \textcolor{keywordflow}{if}( ( 0 < ucFunctionCode ) \&\& ( ucFunctionCode <= 127 ) )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00232}00232     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00233}00233         ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00234}00234         \textcolor{keywordflow}{if}( pxHandler != NULL )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00235}00235         \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00236}00236             \textcolor{keywordflow}{for}( i = 0; i < \mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\_FUNC\_HANDLERS\_MAX}}; i++ )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00237}00237             \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00238}00238                 \textcolor{keywordflow}{if}( ( \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].pxHandler == NULL ) ||}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00239}00239                     ( \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].pxHandler == pxHandler ) )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00240}00240                 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00241}00241                     \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].\mbox{\hyperlink{structx_m_b_function_handler_acf0798484cf2b6b1ec21389d3f2a997c}{ucFunctionCode}} = ucFunctionCode;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00242}00242                     \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].\mbox{\hyperlink{structx_m_b_function_handler_ab2ea74b69155c337ec9c0d2e229160ce}{pxHandler}} = pxHandler;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00243}00243                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00244}00244                 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00245}00245             \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00246}00246             eStatus = ( i != \mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\_FUNC\_HANDLERS\_MAX}} ) ? \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}} : \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0700c1e37bfc75068e6577bc0b04bb8}{MB\_ENORES}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00247}00247         \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00248}00248         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00249}00249         \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00250}00250             \textcolor{keywordflow}{for}( i = 0; i < \mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\_FUNC\_HANDLERS\_MAX}}; i++ )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00251}00251             \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00252}00252                 \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].ucFunctionCode == ucFunctionCode )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00253}00253                 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00254}00254                     \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].\mbox{\hyperlink{structx_m_b_function_handler_acf0798484cf2b6b1ec21389d3f2a997c}{ucFunctionCode}} = 0;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00255}00255                     \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].\mbox{\hyperlink{structx_m_b_function_handler_ab2ea74b69155c337ec9c0d2e229160ce}{pxHandler}} = NULL;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00256}00256                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00257}00257                 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00258}00258             \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00259}00259             \textcolor{comment}{/* Remove can't fail. */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00260}00260             eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00261}00261         \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00262}00262         EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00263}00263     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00264}00264     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00265}00265     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00266}00266         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}{MB\_EINVAL}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00267}00267     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00268}00268     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00269}00269 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00271}00271 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00272}00272 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00273}\mbox{\hyperlink{group__modbus_gac20080d92be2934456e2a5d27cd36310}{00273}} \mbox{\hyperlink{group__modbus_gac20080d92be2934456e2a5d27cd36310}{eMBClose}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00274}00274 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00275}00275     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00276}00276 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00277}00277     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} == \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00278}00278     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00279}00279         \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{pvMBFrameCloseCur}} != NULL )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00280}00280         \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00281}00281             \mbox{\hyperlink{mb_8c_aef5110f3d47305125c738986dbe85e0d}{pvMBFrameCloseCur}}(  );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00282}00282         \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00283}00283     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00284}00284     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00285}00285     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00286}00286         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\_EILLSTATE}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00287}00287     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00288}00288     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00289}00289 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00290}00290 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00291}00291 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00292}\mbox{\hyperlink{group__modbus_gab697be370833d562e6b016626d996132}{00292}} \mbox{\hyperlink{group__modbus_gab697be370833d562e6b016626d996132}{eMBEnable}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00293}00293 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00294}00294     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00295}00295 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00296}00296     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} == \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00297}00297     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00298}00298         \textcolor{comment}{/* Activate the protocol stack. */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00299}00299         \mbox{\hyperlink{mb_8c_ae5cc9150f4c154d4c4983fa551b0c2c1}{pvMBFrameStartCur}}(  );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00300}00300         \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} = \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}{STATE\_ENABLED}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00301}00301     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00302}00302     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00303}00303     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00304}00304         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\_EILLSTATE}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00305}00305     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00306}00306     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00307}00307 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00308}00308 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00309}00309 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00310}\mbox{\hyperlink{group__modbus_gabcc2a31ec41fc276ab3c3ac705defdf3}{00310}} \mbox{\hyperlink{group__modbus_gabcc2a31ec41fc276ab3c3ac705defdf3}{eMBDisable}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00311}00311 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00312}00312     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00313}00313 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00314}00314     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} == \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}{STATE\_ENABLED}} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00315}00315     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00316}00316         \mbox{\hyperlink{mb_8c_a043a961601eba48ca372b99f5c67ec3c}{pvMBFrameStopCur}}(  );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00317}00317         \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} = \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00318}00318         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00319}00319     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00320}00320     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} == \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55bad2199361daff83037e3f6aaccaa5a91b}{STATE\_DISABLED}} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00321}00321     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00322}00322         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00323}00323     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00324}00324     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00325}00325     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00326}00326         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\_EILLSTATE}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00327}00327     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00328}00328     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00329}00329 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00330}00330 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00331}00331 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00332}\mbox{\hyperlink{group__modbus_ga12648c98d45f768ba878fbcee46caca5}{00332}} \mbox{\hyperlink{group__modbus_ga12648c98d45f768ba878fbcee46caca5}{eMBPoll}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00333}00333 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00334}00334     \textcolor{keyword}{static} UCHAR   *ucMBFrame;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00335}00335     \textcolor{keyword}{static} UCHAR    ucRcvAddress;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00336}00336     \textcolor{keyword}{static} UCHAR    ucFunctionCode;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00337}00337     \textcolor{keyword}{static} USHORT   usLength;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00338}00338     \textcolor{keyword}{static} \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{eMBException}} eException;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00339}00339 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00340}00340     \textcolor{keywordtype}{int}             i;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00341}00341     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00342}00342     \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{eMBEventType}}    eEvent;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00343}00343 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00344}00344     \textcolor{comment}{/* Check if the protocol stack is ready. */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00345}00345     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_a1ccc6954ab86e45b13f3c0536fd66315}{eMBState}} != \mbox{\hyperlink{mb_8c_a06fc87d81c62e9abb8790b6e5713c55ba94a5ceac60e29b414570d8fec5d459ca}{STATE\_ENABLED}} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00346}00346     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00347}00347         \textcolor{keywordflow}{return} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\_EILLSTATE}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00348}00348     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00349}00349 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00350}00350     \textcolor{comment}{/* Check if there is a event available. If not return control to caller.}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00351}00351 \textcolor{comment}{     * Otherwise we will handle the event. */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00352}00352     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbport_8h_ad61d350e63d0c41e7563ac0bc0fd346f}{xMBPortEventGet}}( \&eEvent ) == TRUE )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00353}00353     \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00354}00354         \textcolor{keywordflow}{switch} ( eEvent )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00355}00355         \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00356}00356         \textcolor{keywordflow}{case} \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0}{EV\_READY}}:}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00357}00357             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00358}00358 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00359}00359         \textcolor{keywordflow}{case} \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2}{EV\_FRAME\_RECEIVED}}:}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00360}00360             eStatus = \mbox{\hyperlink{mb_8c_a9e7657161e4e14b266f0f20d3ad8eda5}{peMBFrameReceiveCur}}( \&ucRcvAddress, \&ucMBFrame, \&usLength );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00361}00361             \textcolor{keywordflow}{if}( eStatus == \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00362}00362             \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00363}00363                 \textcolor{comment}{/* Check if the frame is for us. If not ignore the frame. */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00364}00364                 \textcolor{keywordflow}{if}( ( ucRcvAddress == \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}} ) || ( ucRcvAddress == \mbox{\hyperlink{mbproto_8h_a5e80f256fa3cb8a969c9935b48f2a7b1}{MB\_ADDRESS\_BROADCAST}} ) )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00365}00365                 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00366}00366                     ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} )\mbox{\hyperlink{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}{xMBPortEventPost}}( \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019}{EV\_EXECUTE}} );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00367}00367                 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00368}00368             \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00369}00369             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00370}00370 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00371}00371         \textcolor{keywordflow}{case} \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019}{EV\_EXECUTE}}:}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00372}00372             ucFunctionCode = ucMBFrame[\mbox{\hyperlink{mbframe_8h_a554b629520c4266fdff39099a2eef5db}{MB\_PDU\_FUNC\_OFF}}];}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00373}00373             eException = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9caf2cf9a6b48c5dee86cd361cc327b9abb}{MB\_EX\_ILLEGAL\_FUNCTION}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00374}00374             \textcolor{keywordflow}{for}( i = 0; i < \mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\_FUNC\_HANDLERS\_MAX}}; i++ )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00375}00375             \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00376}00376                 \textcolor{comment}{/* No more function handlers registered. Abort. */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00377}00377                 \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].ucFunctionCode == 0 )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00378}00378                 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00379}00379                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00380}00380                 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00381}00381                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].ucFunctionCode == ucFunctionCode )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00382}00382                 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00383}00383                     eException = \mbox{\hyperlink{mb_8c_af7285b4571ef7138b23ddc3b2d079539}{xFuncHandlers}}[i].\mbox{\hyperlink{structx_m_b_function_handler_ab2ea74b69155c337ec9c0d2e229160ce}{pxHandler}}( ucMBFrame, \&usLength );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00384}00384                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00385}00385                 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00386}00386             \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00387}00387 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00388}00388             \textcolor{comment}{/* If the request was not sent to the broadcast address we}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00389}00389 \textcolor{comment}{             * return a reply. */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00390}00390             \textcolor{keywordflow}{if}( ucRcvAddress != \mbox{\hyperlink{mbproto_8h_a5e80f256fa3cb8a969c9935b48f2a7b1}{MB\_ADDRESS\_BROADCAST}} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00391}00391             \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00392}00392                 \textcolor{keywordflow}{if}( eException != \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}{MB\_EX\_NONE}} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00393}00393                 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00394}00394                     \textcolor{comment}{/* An exception occured. Build an error frame. */}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00395}00395                     usLength = 0;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00396}00396                     ucMBFrame[usLength++] = ( UCHAR )( ucFunctionCode | \mbox{\hyperlink{mbproto_8h_ad45e73770d806dfd75cc45b2d1d31dc2}{MB\_FUNC\_ERROR}} );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00397}00397                     ucMBFrame[usLength++] = eException;}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00398}00398                 \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00399}00399                 \textcolor{keywordflow}{if}( ( \mbox{\hyperlink{mb_8c_a288653bd38728bea3b3c705f25d87483}{eMBCurrentMode}} == \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61afa37751530d5e48cb5a3f8841f9e3143}{MB\_ASCII}} ) \&\& \mbox{\hyperlink{group__modbus__cfg_ga22fd01f62670a71ab137e16118c37ca2}{MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS}} )}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00400}00400                 \{}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00401}00401                     \mbox{\hyperlink{mbport_8h_a334f66a0527a862f58488cc40d7999d4}{vMBPortTimersDelay}}( \mbox{\hyperlink{group__modbus__cfg_ga22fd01f62670a71ab137e16118c37ca2}{MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS}} );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00402}00402                 \}                }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00403}00403                 eStatus = \mbox{\hyperlink{mb_8c_ae9daf4765e9a354a64f171108ace3094}{peMBFrameSendCur}}( \mbox{\hyperlink{mb_8c_a49d81a2027be5b1914a9aca31bb1a9ae}{ucMBAddress}}, ucMBFrame, usLength );}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00404}00404             \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00405}00405             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00406}00406 }
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00407}00407         \textcolor{keywordflow}{case} \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95}{EV\_FRAME\_SENT}}:}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00408}00408             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00409}00409         \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00410}00410     \}}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00411}00411     \textcolor{keywordflow}{return} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mb_8c_source_l00412}00412 \}}
+
+\end{DoxyCode}

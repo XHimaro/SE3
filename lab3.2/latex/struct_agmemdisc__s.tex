@@ -1,0 +1,89 @@
+\hypertarget{struct_agmemdisc__s}{}\doxysection{Структура Agmemdisc\+\_\+s}
+\label{struct_agmemdisc__s}\index{Agmemdisc\_s@{Agmemdisc\_s}}
+
+
+memory allocator discipline, independent of other resources  
+
+
+
+
+{\ttfamily \#include $<$cgraph.\+h$>$}
+
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$($\ast$ \mbox{\hyperlink{struct_agmemdisc__s_ab03129f23b9e9bb10c2005390eb1007c}{open}} )(\mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} $\ast$)
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$($\ast$ \mbox{\hyperlink{struct_agmemdisc__s_a5820cc7d181ccf1e3c4cdc4d71ab5df7}{alloc}} )(\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$state, size\+\_\+t req)
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$($\ast$ \mbox{\hyperlink{struct_agmemdisc__s_aa42643a0e9edc4dcd1452b50b9f245a9}{resize}} )(\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$state, \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$ptr, size\+\_\+t old, size\+\_\+t req)
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}($\ast$ \mbox{\hyperlink{struct_agmemdisc__s_a6e02b7bba7708f7554ee0895ad552541}{free}} )(\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$state, \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$ptr)
+\item 
+\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}($\ast$ \mbox{\hyperlink{struct_agmemdisc__s_aa60ee35624830932ba13696872a9a799}{close}} )(\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$state)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+memory allocator discipline, independent of other resources 
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00171}{171}}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{struct_agmemdisc__s_a5820cc7d181ccf1e3c4cdc4d71ab5df7}\label{struct_agmemdisc__s_a5820cc7d181ccf1e3c4cdc4d71ab5df7}} 
+\index{Agmemdisc\_s@{Agmemdisc\_s}!alloc@{alloc}}
+\index{alloc@{alloc}!Agmemdisc\_s@{Agmemdisc\_s}}
+\doxysubsubsection{\texorpdfstring{alloc}{alloc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$($\ast$ Agmemdisc\+\_\+s\+::alloc) (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$state, size\+\_\+t req)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00173}{173}}
+
+\mbox{\Hypertarget{struct_agmemdisc__s_aa60ee35624830932ba13696872a9a799}\label{struct_agmemdisc__s_aa60ee35624830932ba13696872a9a799}} 
+\index{Agmemdisc\_s@{Agmemdisc\_s}!close@{close}}
+\index{close@{close}!Agmemdisc\_s@{Agmemdisc\_s}}
+\doxysubsubsection{\texorpdfstring{close}{close}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}($\ast$ Agmemdisc\+\_\+s\+::close) (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$state)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00176}{176}}
+
+\mbox{\Hypertarget{struct_agmemdisc__s_a6e02b7bba7708f7554ee0895ad552541}\label{struct_agmemdisc__s_a6e02b7bba7708f7554ee0895ad552541}} 
+\index{Agmemdisc\_s@{Agmemdisc\_s}!free@{free}}
+\index{free@{free}!Agmemdisc\_s@{Agmemdisc\_s}}
+\doxysubsubsection{\texorpdfstring{free}{free}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}}($\ast$ Agmemdisc\+\_\+s\+::free) (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$state, \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$ptr)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00175}{175}}
+
+\mbox{\Hypertarget{struct_agmemdisc__s_ab03129f23b9e9bb10c2005390eb1007c}\label{struct_agmemdisc__s_ab03129f23b9e9bb10c2005390eb1007c}} 
+\index{Agmemdisc\_s@{Agmemdisc\_s}!open@{open}}
+\index{open@{open}!Agmemdisc\_s@{Agmemdisc\_s}}
+\doxysubsubsection{\texorpdfstring{open}{open}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$($\ast$ Agmemdisc\+\_\+s\+::open) (\mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} $\ast$)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00172}{172}}
+
+\mbox{\Hypertarget{struct_agmemdisc__s_aa42643a0e9edc4dcd1452b50b9f245a9}\label{struct_agmemdisc__s_aa42643a0e9edc4dcd1452b50b9f245a9}} 
+\index{Agmemdisc\_s@{Agmemdisc\_s}!resize@{resize}}
+\index{resize@{resize}!Agmemdisc\_s@{Agmemdisc\_s}}
+\doxysubsubsection{\texorpdfstring{resize}{resize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$($\ast$ Agmemdisc\+\_\+s\+::resize) (\mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$state, \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} $\ast$ptr, size\+\_\+t old, size\+\_\+t req)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00174}{174}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\+Graphviz/include/graphviz/\mbox{\hyperlink{cgraph_8h}{cgraph.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Файл for lab/Graphviz/include/graphviz/geom.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('geom_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#define-members">Макросы</a> &#124;
+<a href="#typedef-members">Определения типов</a>  </div>
+  <div class="headertitle"><div class="title">Файл geom.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="arith_8h_source.html">arith.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для geom.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="geom_8h__incl.png" border="0" usemap="#afor_01lab_2_graphviz_2include_2graphviz_2geom_8h" alt=""/></div>
+<map name="afor_01lab_2_graphviz_2include_2graphviz_2geom_8h" id="afor_01lab_2_graphviz_2include_2graphviz_2geom_8h">
+<area shape="rect" title=" " alt="" coords="5,5,161,45"/>
+<area shape="rect" href="arith_8h.html" title=" " alt="" coords="54,93,113,119"/>
+<area shape="rect" title=" " alt="" coords="7,167,71,192"/>
+<area shape="rect" title=" " alt="" coords="96,167,159,192"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="geom_8h__dep__incl.png" border="0" usemap="#afor_01lab_2_graphviz_2include_2graphviz_2geom_8hdep" alt=""/></div>
+<map name="afor_01lab_2_graphviz_2include_2graphviz_2geom_8hdep" id="afor_01lab_2_graphviz_2include_2graphviz_2geom_8hdep">
+<area shape="rect" title=" " alt="" coords="609,5,765,45"/>
+<area shape="rect" href="types_8h.html" title="graphs, nodes and edges info: Agraphinfo_t, Agnodeinfo_t and Agedgeinfo_t" alt="" coords="609,93,765,133"/>
+<area shape="rect" href="gvc_8h.html" title="Graphviz context library." alt="" coords="5,181,161,221"/>
+<area shape="rect" href="gvplugin__device_8h.html" title=" " alt="" coords="185,181,363,221"/>
+<area shape="rect" href="gvplugin__layout_8h.html" title=" " alt="" coords="387,181,563,221"/>
+<area shape="rect" href="gvplugin__loadimage_8h.html" title=" " alt="" coords="587,181,787,221"/>
+<area shape="rect" href="gvplugin__render_8h.html" title=" " alt="" coords="812,181,989,221"/>
+<area shape="rect" href="gvplugin__textlayout_8h.html" title=" " alt="" coords="1013,181,1212,221"/>
+<area shape="rect" href="pack_8h.html" title="support for connected components" alt="" coords="1236,181,1392,221"/>
+<area shape="rect" href="_g_v_context_8h.html" title=" " alt="" coords="5,269,161,309"/>
+<area shape="rect" href="_g_v_layout_8h.html" title=" " alt="" coords="5,357,161,397"/>
+</map>
+</div>
+</div>
+<p><a href="geom_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpoint.html">point</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpointf__s.html">pointf_s</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbox.html">box</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboxf.html">boxf</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:ab69353e0ac74a73ef0ff9a8e7c060b0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ab69353e0ac74a73ef0ff9a8e7c060b0f">HAVE_POINTF_S</a></td></tr>
+<tr class="separator:ab69353e0ac74a73ef0ff9a8e7c060b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac001b1c07c2060720b4634dae4ebc0cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ac001b1c07c2060720b4634dae4ebc0cc">INSIDE</a>(p,  b)&#160;&#160;&#160;(<a class="el" href="arith_8h.html#a043815e8b2e49280dc4fcd060fc56a38">BETWEEN</a>((b).LL.x,(p).x,(b).UR.x) &amp;&amp; <a class="el" href="arith_8h.html#a043815e8b2e49280dc4fcd060fc56a38">BETWEEN</a>((b).LL.y,(p).y,(b).UR.y))</td></tr>
+<tr class="separator:ac001b1c07c2060720b4634dae4ebc0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a8ce04331b6e094a610e83109691b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a83a8ce04331b6e094a610e83109691b4">OVERLAP</a>(b0,  b1)&#160;&#160;&#160;(((b0).UR.x &gt;= (b1).LL.x) &amp;&amp; ((b1).UR.x &gt;= (b0).LL.x) &amp;&amp; ((b0).UR.y &gt;= (b1).LL.y) &amp;&amp; ((b1).UR.y &gt;= (b0).LL.y))</td></tr>
+<tr class="separator:a83a8ce04331b6e094a610e83109691b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a125a16152ae7c6187c963a9a05ad8257"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a125a16152ae7c6187c963a9a05ad8257">CONTAINS</a>(b0,  b1)&#160;&#160;&#160;(((b0).UR.x &gt;= (b1).UR.x) &amp;&amp; ((b0).UR.y &gt;= (b1).UR.y) &amp;&amp; ((b0).LL.x &lt;= (b1).LL.x) &amp;&amp; ((b0).LL.y &lt;= (b1).LL.y))</td></tr>
+<tr class="separator:a125a16152ae7c6187c963a9a05ad8257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d0d02a2d6c99478c8b142e94d97580"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aa9d0d02a2d6c99478c8b142e94d97580">EXPANDBP</a>(b,  p)&#160;&#160;&#160;((b).LL.x = <a class="el" href="define_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a>((b).LL.x, (p).x), (b).LL.y = <a class="el" href="define_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a>((b).LL.y, (p).y), (b).UR.x = <a class="el" href="define_8h.html#aacc3ee1a7f283f8ef65cea31f4436a95">MAX</a>((b).UR.x, (p).x), (b).UR.y = <a class="el" href="define_8h.html#aacc3ee1a7f283f8ef65cea31f4436a95">MAX</a>((b).UR.y, (p).y))</td></tr>
+<tr class="separator:aa9d0d02a2d6c99478c8b142e94d97580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7263e4389c950834c00dcf266ac59ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ac7263e4389c950834c00dcf266ac59ce">EXPANDBB</a>(b0,  b1)&#160;&#160;&#160;((b0).LL.x = <a class="el" href="define_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a>((b0).LL.x, (b1).LL.x), (b0).LL.y = <a class="el" href="define_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a>((b0).LL.y, (b1).LL.y), (b0).UR.x = <a class="el" href="define_8h.html#aacc3ee1a7f283f8ef65cea31f4436a95">MAX</a>((b0).UR.x, (b1).UR.x), (b0).UR.y = <a class="el" href="define_8h.html#aacc3ee1a7f283f8ef65cea31f4436a95">MAX</a>((b0).UR.y, (b1).UR.y))</td></tr>
+<tr class="separator:ac7263e4389c950834c00dcf266ac59ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a652bb32013460334427cd57045378a28"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a652bb32013460334427cd57045378a28">LEN2</a>(a,  b)&#160;&#160;&#160;(<a class="el" href="arith_8h.html#ad41630f833e920c1ffa34722f45a8e77">SQR</a>(a) + <a class="el" href="arith_8h.html#ad41630f833e920c1ffa34722f45a8e77">SQR</a>(b))</td></tr>
+<tr class="separator:a652bb32013460334427cd57045378a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6842f09df182c02bf22ee34d88d2bec8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a6842f09df182c02bf22ee34d88d2bec8">LEN</a>(a,  b)&#160;&#160;&#160;(sqrt(<a class="el" href="geom_8h.html#a652bb32013460334427cd57045378a28">LEN2</a>((a),(b))))</td></tr>
+<tr class="separator:a6842f09df182c02bf22ee34d88d2bec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc0ec5372e4853b86c8e7ebe3a600bea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#acc0ec5372e4853b86c8e7ebe3a600bea">DIST2</a>(p,  q)&#160;&#160;&#160;(<a class="el" href="geom_8h.html#a652bb32013460334427cd57045378a28">LEN2</a>(((p).x - (q).x),((p).y - (q).y)))</td></tr>
+<tr class="separator:acc0ec5372e4853b86c8e7ebe3a600bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5c251cef9401f6422380216727a4549"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ae5c251cef9401f6422380216727a4549">DIST</a>(p,  q)&#160;&#160;&#160;(sqrt(<a class="el" href="geom_8h.html#acc0ec5372e4853b86c8e7ebe3a600bea">DIST2</a>((p),(q))))</td></tr>
+<tr class="separator:ae5c251cef9401f6422380216727a4549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99ebec8aa1d257ed1164f2676994a08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a>&#160;&#160;&#160;72</td></tr>
+<tr class="separator:ae99ebec8aa1d257ed1164f2676994a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad010a21b8850e22a4d89196c34690e5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ad010a21b8850e22a4d89196c34690e5a">POINTS_PER_PC</a>&#160;&#160;&#160;((double)<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a> / 6)</td></tr>
+<tr class="separator:ad010a21b8850e22a4d89196c34690e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae888418f7e295106634bee702d3b20ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ae888418f7e295106634bee702d3b20ac">POINTS_PER_CM</a>&#160;&#160;&#160;((double)<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a> * 0.393700787)</td></tr>
+<tr class="separator:ae888418f7e295106634bee702d3b20ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e85993634dfb89ca1e1c3623b4174a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a3e85993634dfb89ca1e1c3623b4174a2">POINTS_PER_MM</a>&#160;&#160;&#160;((double)<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a> * 0.0393700787)</td></tr>
+<tr class="separator:a3e85993634dfb89ca1e1c3623b4174a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f1922d8d1737c1b16cf23c40434f10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aa3f1922d8d1737c1b16cf23c40434f10">POINTS</a>(a_inches)&#160;&#160;&#160;(<a class="el" href="arith_8h.html#a91a8600e2a2859a47dbc2ba39960a352">ROUND</a>((a_inches)*<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a>))</td></tr>
+<tr class="separator:aa3f1922d8d1737c1b16cf23c40434f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e5ed37f3560b239db0497a354dffbc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ae9e5ed37f3560b239db0497a354dffbc">INCH2PS</a>(a_inches)&#160;&#160;&#160;((a_inches)*(double)<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a>)</td></tr>
+<tr class="separator:ae9e5ed37f3560b239db0497a354dffbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7118931f8434d39d9e127817e70373d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a7118931f8434d39d9e127817e70373d4">PS2INCH</a>(a_points)&#160;&#160;&#160;((a_points)/(double)<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a>)</td></tr>
+<tr class="separator:a7118931f8434d39d9e127817e70373d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53d8aa26e51b7fb6061863174547aa95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a53d8aa26e51b7fb6061863174547aa95">P2PF</a>(p,  pf)&#160;&#160;&#160;((pf).x = (p).x,(pf).y = (p).y)</td></tr>
+<tr class="separator:a53d8aa26e51b7fb6061863174547aa95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf5270b3786d98a43aa4cf9c29869c0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#abf5270b3786d98a43aa4cf9c29869c0d">PF2P</a>(pf,  p)&#160;&#160;&#160;((p).x = <a class="el" href="arith_8h.html#a91a8600e2a2859a47dbc2ba39960a352">ROUND</a>((pf).x),(p).y = <a class="el" href="arith_8h.html#a91a8600e2a2859a47dbc2ba39960a352">ROUND</a>((pf).y))</td></tr>
+<tr class="separator:abf5270b3786d98a43aa4cf9c29869c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7542f527f0017fb314ba84dba193e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a1f7542f527f0017fb314ba84dba193e6">B2BF</a>(b,  bf)&#160;&#160;&#160;(<a class="el" href="geom_8h.html#a53d8aa26e51b7fb6061863174547aa95">P2PF</a>((b).LL,(bf).LL),<a class="el" href="geom_8h.html#a53d8aa26e51b7fb6061863174547aa95">P2PF</a>((b).UR,(bf).UR))</td></tr>
+<tr class="separator:a1f7542f527f0017fb314ba84dba193e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a307b8aa0ae20f60f2add3433b5db1750"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a307b8aa0ae20f60f2add3433b5db1750">BF2B</a>(bf,  b)&#160;&#160;&#160;(<a class="el" href="geom_8h.html#abf5270b3786d98a43aa4cf9c29869c0d">PF2P</a>((bf).LL,(b).LL),<a class="el" href="geom_8h.html#abf5270b3786d98a43aa4cf9c29869c0d">PF2P</a>((bf).UR,(b).UR))</td></tr>
+<tr class="separator:a307b8aa0ae20f60f2add3433b5db1750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa31f5c05f726b16a20cf2376dc6bd652"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aa31f5c05f726b16a20cf2376dc6bd652">APPROXEQPT</a>(p,  q,  tol)&#160;&#160;&#160;(<a class="el" href="geom_8h.html#acc0ec5372e4853b86c8e7ebe3a600bea">DIST2</a>((p),(q)) &lt; <a class="el" href="arith_8h.html#ad41630f833e920c1ffa34722f45a8e77">SQR</a>(tol))</td></tr>
+<tr class="separator:aa31f5c05f726b16a20cf2376dc6bd652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423711bbbda1aa37fecdf461f508aa37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a423711bbbda1aa37fecdf461f508aa37">MILLIPOINT</a>&#160;&#160;&#160;.001</td></tr>
+<tr class="separator:a423711bbbda1aa37fecdf461f508aa37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:ab1d4fa1dc6a3884bc0f897efb568a084"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structpointf__s.html">pointf_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ab1d4fa1dc6a3884bc0f897efb568a084">pointf</a></td></tr>
+<tr class="separator:ab1d4fa1dc6a3884bc0f897efb568a084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Макросы</h2>
+<a id="aa31f5c05f726b16a20cf2376dc6bd652" name="aa31f5c05f726b16a20cf2376dc6bd652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa31f5c05f726b16a20cf2376dc6bd652">&#9670;&#160;</a></span>APPROXEQPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define APPROXEQPT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">q, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tol&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="geom_8h.html#acc0ec5372e4853b86c8e7ebe3a600bea">DIST2</a>((p),(q)) &lt; <a class="el" href="arith_8h.html#ad41630f833e920c1ffa34722f45a8e77">SQR</a>(tol))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00070">70</a></p>
+
+</div>
+</div>
+<a id="a1f7542f527f0017fb314ba84dba193e6" name="a1f7542f527f0017fb314ba84dba193e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f7542f527f0017fb314ba84dba193e6">&#9670;&#160;</a></span>B2BF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define B2BF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">bf&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="geom_8h.html#a53d8aa26e51b7fb6061863174547aa95">P2PF</a>((b).LL,(bf).LL),<a class="el" href="geom_8h.html#a53d8aa26e51b7fb6061863174547aa95">P2PF</a>((b).UR,(bf).UR))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00067">67</a></p>
+
+</div>
+</div>
+<a id="a307b8aa0ae20f60f2add3433b5db1750" name="a307b8aa0ae20f60f2add3433b5db1750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a307b8aa0ae20f60f2add3433b5db1750">&#9670;&#160;</a></span>BF2B</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BF2B</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">bf, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="geom_8h.html#abf5270b3786d98a43aa4cf9c29869c0d">PF2P</a>((bf).LL,(b).LL),<a class="el" href="geom_8h.html#abf5270b3786d98a43aa4cf9c29869c0d">PF2P</a>((bf).UR,(b).UR))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00068">68</a></p>
+
+</div>
+</div>
+<a id="a125a16152ae7c6187c963a9a05ad8257" name="a125a16152ae7c6187c963a9a05ad8257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a125a16152ae7c6187c963a9a05ad8257">&#9670;&#160;</a></span>CONTAINS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONTAINS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b0, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b1&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(((b0).UR.x &gt;= (b1).UR.x) &amp;&amp; ((b0).UR.y &gt;= (b1).UR.y) &amp;&amp; ((b0).LL.x &lt;= (b1).LL.x) &amp;&amp; ((b0).LL.y &lt;= (b1).LL.y))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00041">41</a></p>
+
+</div>
+</div>
+<a id="ae5c251cef9401f6422380216727a4549" name="ae5c251cef9401f6422380216727a4549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5c251cef9401f6422380216727a4549">&#9670;&#160;</a></span>DIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DIST</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">q&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(sqrt(<a class="el" href="geom_8h.html#acc0ec5372e4853b86c8e7ebe3a600bea">DIST2</a>((p),(q))))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00053">53</a></p>
+
+</div>
+</div>
+<a id="acc0ec5372e4853b86c8e7ebe3a600bea" name="acc0ec5372e4853b86c8e7ebe3a600bea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc0ec5372e4853b86c8e7ebe3a600bea">&#9670;&#160;</a></span>DIST2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DIST2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">q&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="geom_8h.html#a652bb32013460334427cd57045378a28">LEN2</a>(((p).x - (q).x),((p).y - (q).y)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00052">52</a></p>
+
+</div>
+</div>
+<a id="ac7263e4389c950834c00dcf266ac59ce" name="ac7263e4389c950834c00dcf266ac59ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7263e4389c950834c00dcf266ac59ce">&#9670;&#160;</a></span>EXPANDBB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXPANDBB</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b0, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b1&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((b0).LL.x = <a class="el" href="define_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a>((b0).LL.x, (b1).LL.x), (b0).LL.y = <a class="el" href="define_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a>((b0).LL.y, (b1).LL.y), (b0).UR.x = <a class="el" href="define_8h.html#aacc3ee1a7f283f8ef65cea31f4436a95">MAX</a>((b0).UR.x, (b1).UR.x), (b0).UR.y = <a class="el" href="define_8h.html#aacc3ee1a7f283f8ef65cea31f4436a95">MAX</a>((b0).UR.y, (b1).UR.y))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00047">47</a></p>
+
+</div>
+</div>
+<a id="aa9d0d02a2d6c99478c8b142e94d97580" name="aa9d0d02a2d6c99478c8b142e94d97580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d0d02a2d6c99478c8b142e94d97580">&#9670;&#160;</a></span>EXPANDBP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXPANDBP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((b).LL.x = <a class="el" href="define_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a>((b).LL.x, (p).x), (b).LL.y = <a class="el" href="define_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a>((b).LL.y, (p).y), (b).UR.x = <a class="el" href="define_8h.html#aacc3ee1a7f283f8ef65cea31f4436a95">MAX</a>((b).UR.x, (p).x), (b).UR.y = <a class="el" href="define_8h.html#aacc3ee1a7f283f8ef65cea31f4436a95">MAX</a>((b).UR.y, (p).y))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a id="ab69353e0ac74a73ef0ff9a8e7c060b0f" name="ab69353e0ac74a73ef0ff9a8e7c060b0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab69353e0ac74a73ef0ff9a8e7c060b0f">&#9670;&#160;</a></span>HAVE_POINTF_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HAVE_POINTF_S</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a id="ae9e5ed37f3560b239db0497a354dffbc" name="ae9e5ed37f3560b239db0497a354dffbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e5ed37f3560b239db0497a354dffbc">&#9670;&#160;</a></span>INCH2PS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INCH2PS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a_inches</td><td>)</td>
+          <td>&#160;&#160;&#160;((a_inches)*(double)<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00061">61</a></p>
+
+</div>
+</div>
+<a id="ac001b1c07c2060720b4634dae4ebc0cc" name="ac001b1c07c2060720b4634dae4ebc0cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac001b1c07c2060720b4634dae4ebc0cc">&#9670;&#160;</a></span>INSIDE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSIDE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="arith_8h.html#a043815e8b2e49280dc4fcd060fc56a38">BETWEEN</a>((b).LL.x,(p).x,(b).UR.x) &amp;&amp; <a class="el" href="arith_8h.html#a043815e8b2e49280dc4fcd060fc56a38">BETWEEN</a>((b).LL.y,(p).y,(b).UR.y))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00035">35</a></p>
+
+</div>
+</div>
+<a id="a6842f09df182c02bf22ee34d88d2bec8" name="a6842f09df182c02bf22ee34d88d2bec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6842f09df182c02bf22ee34d88d2bec8">&#9670;&#160;</a></span>LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(sqrt(<a class="el" href="geom_8h.html#a652bb32013460334427cd57045378a28">LEN2</a>((a),(b))))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00050">50</a></p>
+
+</div>
+</div>
+<a id="a652bb32013460334427cd57045378a28" name="a652bb32013460334427cd57045378a28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a652bb32013460334427cd57045378a28">&#9670;&#160;</a></span>LEN2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEN2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="arith_8h.html#ad41630f833e920c1ffa34722f45a8e77">SQR</a>(a) + <a class="el" href="arith_8h.html#ad41630f833e920c1ffa34722f45a8e77">SQR</a>(b))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00049">49</a></p>
+
+</div>
+</div>
+<a id="a423711bbbda1aa37fecdf461f508aa37" name="a423711bbbda1aa37fecdf461f508aa37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a423711bbbda1aa37fecdf461f508aa37">&#9670;&#160;</a></span>MILLIPOINT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MILLIPOINT&#160;&#160;&#160;.001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00073">73</a></p>
+
+</div>
+</div>
+<a id="a83a8ce04331b6e094a610e83109691b4" name="a83a8ce04331b6e094a610e83109691b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a8ce04331b6e094a610e83109691b4">&#9670;&#160;</a></span>OVERLAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OVERLAP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b0, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b1&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(((b0).UR.x &gt;= (b1).LL.x) &amp;&amp; ((b1).UR.x &gt;= (b0).LL.x) &amp;&amp; ((b0).UR.y &gt;= (b1).LL.y) &amp;&amp; ((b1).UR.y &gt;= (b0).LL.y))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00038">38</a></p>
+
+</div>
+</div>
+<a id="a53d8aa26e51b7fb6061863174547aa95" name="a53d8aa26e51b7fb6061863174547aa95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53d8aa26e51b7fb6061863174547aa95">&#9670;&#160;</a></span>P2PF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define P2PF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">pf&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((pf).x = (p).x,(pf).y = (p).y)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00064">64</a></p>
+
+</div>
+</div>
+<a id="abf5270b3786d98a43aa4cf9c29869c0d" name="abf5270b3786d98a43aa4cf9c29869c0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf5270b3786d98a43aa4cf9c29869c0d">&#9670;&#160;</a></span>PF2P</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PF2P</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">pf, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((p).x = <a class="el" href="arith_8h.html#a91a8600e2a2859a47dbc2ba39960a352">ROUND</a>((pf).x),(p).y = <a class="el" href="arith_8h.html#a91a8600e2a2859a47dbc2ba39960a352">ROUND</a>((pf).y))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00065">65</a></p>
+
+</div>
+</div>
+<a id="aa3f1922d8d1737c1b16cf23c40434f10" name="aa3f1922d8d1737c1b16cf23c40434f10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3f1922d8d1737c1b16cf23c40434f10">&#9670;&#160;</a></span>POINTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POINTS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a_inches</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="arith_8h.html#a91a8600e2a2859a47dbc2ba39960a352">ROUND</a>((a_inches)*<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00060">60</a></p>
+
+</div>
+</div>
+<a id="ae888418f7e295106634bee702d3b20ac" name="ae888418f7e295106634bee702d3b20ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae888418f7e295106634bee702d3b20ac">&#9670;&#160;</a></span>POINTS_PER_CM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POINTS_PER_CM&#160;&#160;&#160;((double)<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a> * 0.393700787)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00057">57</a></p>
+
+</div>
+</div>
+<a id="ae99ebec8aa1d257ed1164f2676994a08" name="ae99ebec8aa1d257ed1164f2676994a08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae99ebec8aa1d257ed1164f2676994a08">&#9670;&#160;</a></span>POINTS_PER_INCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POINTS_PER_INCH&#160;&#160;&#160;72</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00055">55</a></p>
+
+</div>
+</div>
+<a id="a3e85993634dfb89ca1e1c3623b4174a2" name="a3e85993634dfb89ca1e1c3623b4174a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e85993634dfb89ca1e1c3623b4174a2">&#9670;&#160;</a></span>POINTS_PER_MM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POINTS_PER_MM&#160;&#160;&#160;((double)<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a> * 0.0393700787)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00058">58</a></p>
+
+</div>
+</div>
+<a id="ad010a21b8850e22a4d89196c34690e5a" name="ad010a21b8850e22a4d89196c34690e5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad010a21b8850e22a4d89196c34690e5a">&#9670;&#160;</a></span>POINTS_PER_PC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POINTS_PER_PC&#160;&#160;&#160;((double)<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a> / 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00056">56</a></p>
+
+</div>
+</div>
+<a id="a7118931f8434d39d9e127817e70373d4" name="a7118931f8434d39d9e127817e70373d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7118931f8434d39d9e127817e70373d4">&#9670;&#160;</a></span>PS2INCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PS2INCH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a_points</td><td>)</td>
+          <td>&#160;&#160;&#160;((a_points)/(double)<a class="el" href="geom_8h.html#ae99ebec8aa1d257ed1164f2676994a08">POINTS_PER_INCH</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="geom_8h_source.html">geom.h</a> строка <a class="el" href="geom_8h_source.html#l00062">62</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Типы</h2>
+<a id="ab1d4fa1dc6a3884bc0f897efb568a084" name="ab1d4fa1dc6a3884bc0f897efb568a084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1d4fa1dc6a3884bc0f897efb568a084">&#9670;&#160;</a></span>pointf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structpointf__s.html">pointf_s</a> <a class="el" href="geom_8h.html#ab1d4fa1dc6a3884bc0f897efb568a084">pointf</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e6c23235d574a84b5ef1a8613e824ad0.html">for lab</a></li><li class="navelem"><a class="el" href="dir_9e36fc1ac95da228bde805a03f57733e.html">Graphviz</a></li><li class="navelem"><a class="el" href="dir_ad4ebe5bca6393216da41cf9a4442fe0.html">include</a></li><li class="navelem"><a class="el" href="dir_1993f148fdb21d2725c441bae462129c.html">graphviz</a></li><li class="navelem"><a class="el" href="geom_8h.html">geom.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

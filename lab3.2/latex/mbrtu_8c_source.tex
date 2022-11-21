@@ -1,0 +1,360 @@
+\hypertarget{mbrtu_8c_source}{}\doxysection{mbrtu.\+c}
+\label{mbrtu_8c_source}\index{for lab/freemodbus-\/v1.5.0/modbus/rtu/mbrtu.c@{for lab/freemodbus-\/v1.5.0/modbus/rtu/mbrtu.c}}
+\mbox{\hyperlink{mbrtu_8c}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00001}00001 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00002}00002 \textcolor{comment}{ * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00003}00003 \textcolor{comment}{ * Copyright (c) 2006 Christian Walter <wolti@sil.at>}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00004}00004 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00006}00006 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00007}00007 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00008}00008 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00009}00009 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00010}00010 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00011}00011 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00012}00012 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00013}00013 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00014}00014 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00015}00015 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00016}00016 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00017}00017 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00018}00018 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00019}00019 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00020}00020 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00021}00021 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00022}00022 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00023}00023 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00024}00024 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00025}00025 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00026}00026 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00028}00028 \textcolor{comment}{ * File: \$Id: mbrtu.c,v 1.18 2007/09/12 10:15:56 wolti Exp \$}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00029}00029 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00031}00031 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ System includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00032}00032 \textcolor{preprocessor}{\#include "{}stdlib.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00033}00033 \textcolor{preprocessor}{\#include "{}string.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00035}00035 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Platform includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00036}00036 \textcolor{preprocessor}{\#include "{}port.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00038}00038 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Modbus includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00039}00039 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mb_8h}{mb.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00040}00040 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbrtu_8h}{mbrtu.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00041}00041 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbframe_8h}{mbframe.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00043}00043 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbcrc_8h}{mbcrc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00044}00044 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbport_8h}{mbport.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00046}00046 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Defines -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00047}\mbox{\hyperlink{mbrtu_8c_ae0dc27c9b034c5177638e9eef79d48a7}{00047}} \textcolor{preprocessor}{\#define MB\_SER\_PDU\_SIZE\_MIN     4       }}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00048}\mbox{\hyperlink{mbrtu_8c_ad7e9cfdbd55413153a9a862d824a149f}{00048}} \textcolor{preprocessor}{\#define MB\_SER\_PDU\_SIZE\_MAX     256     }}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00049}\mbox{\hyperlink{mbrtu_8c_afc5bf40f988e11036cdd8a44c1402d52}{00049}} \textcolor{preprocessor}{\#define MB\_SER\_PDU\_SIZE\_CRC     2       }}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00050}\mbox{\hyperlink{mbrtu_8c_afd3d56d60a90ce4cb9858d305f446630}{00050}} \textcolor{preprocessor}{\#define MB\_SER\_PDU\_ADDR\_OFF     0       }}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00051}\mbox{\hyperlink{mbrtu_8c_ab20d539d6366275b4f75f181908ca207}{00051}} \textcolor{preprocessor}{\#define MB\_SER\_PDU\_PDU\_OFF      1       }}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00053}00053 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Type definitions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00054}\mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefb}{00054}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00055}00055 \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00056}\mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba2b2395354f5e0566929bd52408265fb3}{00056}}     \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba2b2395354f5e0566929bd52408265fb3}{STATE\_RX\_INIT}},              }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00057}\mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{00057}}     \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}},              }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00058}\mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{00058}}     \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{STATE\_RX\_RCV}},               }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00059}00059     \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefbafbb71fcd5e10dfbcc33a8f5a00df1f95}{STATE\_RX\_ERROR}}              }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00060}\mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefbafbb71fcd5e10dfbcc33a8f5a00df1f95}{00060}} \} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefb}{eMBRcvState}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00062}\mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fef}{00062}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00063}00063 \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00064}\mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefab1bd9fcf7cdb346f72d012adfca4767a}{00064}}     \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefab1bd9fcf7cdb346f72d012adfca4767a}{STATE\_TX\_IDLE}},              }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00065}00065     \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefa99b8ef6f95d0035f9519dcb2889b3a83}{STATE\_TX\_XMIT}}               }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00066}\mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefa99b8ef6f95d0035f9519dcb2889b3a83}{00066}} \} \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fef}{eMBSndState}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00068}00068 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Static variables -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00069}\mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{00069}} \textcolor{keyword}{static} \textcolor{keyword}{volatile} \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fef}{eMBSndState}} \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00070}\mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{00070}} \textcolor{keyword}{static} \textcolor{keyword}{volatile} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefb}{eMBRcvState}} \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00072}\mbox{\hyperlink{mbrtu_8c_a0fa63f7bfbfea7ac20cce55d94cf3d53}{00072}} \textcolor{keyword}{volatile} UCHAR  \mbox{\hyperlink{mbrtu_8c_a0fa63f7bfbfea7ac20cce55d94cf3d53}{ucRTUBuf}}[\mbox{\hyperlink{mbrtu_8c_ad7e9cfdbd55413153a9a862d824a149f}{MB\_SER\_PDU\_SIZE\_MAX}}];}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00074}\mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{00074}} \textcolor{keyword}{static} \textcolor{keyword}{volatile} UCHAR *\mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00075}\mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{00075}} \textcolor{keyword}{static} \textcolor{keyword}{volatile} USHORT \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00077}\mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{00077}} \textcolor{keyword}{static} \textcolor{keyword}{volatile} USHORT \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00079}00079 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Start implementation -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00080}00080 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00081}\mbox{\hyperlink{mbrtu_8c_a52738b46d7f3be581582d30cfb2bfcb8}{00081}} \mbox{\hyperlink{mbrtu_8c_a52738b46d7f3be581582d30cfb2bfcb8}{eMBRTUInit}}( UCHAR ucSlaveAddress, UCHAR ucPort, ULONG ulBaudRate, \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{eMBParity}} eParity )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00082}00082 \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00083}00083     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00084}00084     ULONG           usTimerT35\_50us;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00086}00086     ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} )ucSlaveAddress;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00087}00087     ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00089}00089     \textcolor{comment}{/* Modbus RTU uses 8 Databits. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00090}00090     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbport_8h_af614e62c57eaba86f45c45e5d0e6cfd9}{xMBPortSerialInit}}( ucPort, ulBaudRate, 8, eParity ) != TRUE )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00091}00091     \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00092}00092         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\_EPORTERR}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00093}00093     \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00094}00094     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00095}00095     \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00096}00096         \textcolor{comment}{/* If baudrate > 19200 then we should use the fixed timer values}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00097}00097 \textcolor{comment}{         * t35 = 1750us. Otherwise t35 must be 3.5 times the character time.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00098}00098 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00099}00099         \textcolor{keywordflow}{if}( ulBaudRate > 19200 )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00100}00100         \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00101}00101             usTimerT35\_50us = 35;       \textcolor{comment}{/* 1800us. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00102}00102         \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00103}00103         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00104}00104         \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00105}00105             \textcolor{comment}{/* The timer reload value for a character is given by:}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00106}00106 \textcolor{comment}{             *}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00107}00107 \textcolor{comment}{             * ChTimeValue = Ticks\_per\_1s / ( Baudrate / 11 )}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00108}00108 \textcolor{comment}{             *             = 11 * Ticks\_per\_1s / Baudrate}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00109}00109 \textcolor{comment}{             *             = 220000 / Baudrate}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00110}00110 \textcolor{comment}{             * The reload for t3.5 is 1.5 times this value and similary}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00111}00111 \textcolor{comment}{             * for t3.5.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00112}00112 \textcolor{comment}{             */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00113}00113             usTimerT35\_50us = ( 7UL * 220000UL ) / ( 2UL * ulBaudRate );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00114}00114         \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00115}00115         \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbport_8h_a93d8e78fe43e66fab707da6eda4f5eaf}{xMBPortTimersInit}}( ( USHORT ) usTimerT35\_50us ) != TRUE )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00116}00116         \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00117}00117             eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\_EPORTERR}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00118}00118         \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00119}00119     \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00120}00120     EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00122}00122     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00123}00123 \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00125}00125 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00126}\mbox{\hyperlink{mbrtu_8c_ae342bae030ea291a6e8a2fe3d2d0abeb}{00126}} \mbox{\hyperlink{mbrtu_8c_ae342bae030ea291a6e8a2fe3d2d0abeb}{eMBRTUStart}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00127}00127 \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00128}00128     ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00129}00129     \textcolor{comment}{/* Initially the receiver is in the state STATE\_RX\_INIT. we start}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00130}00130 \textcolor{comment}{     * the timer and if no character is received within t3.5 we change}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00131}00131 \textcolor{comment}{     * to STATE\_RX\_IDLE. This makes sure that we delay startup of the}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00132}00132 \textcolor{comment}{     * modbus protocol stack until the bus is free.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00133}00133 \textcolor{comment}{     */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00134}00134     \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba2b2395354f5e0566929bd52408265fb3}{STATE\_RX\_INIT}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00135}00135     \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{vMBPortSerialEnable}}( TRUE, FALSE );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00136}00136     \mbox{\hyperlink{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}{vMBPortTimersEnable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00138}00138     EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00139}00139 \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00141}00141 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00142}\mbox{\hyperlink{mbrtu_8c_a3d44ef4747b7202d37142ef1aaea493b}{00142}} \mbox{\hyperlink{mbrtu_8c_a3d44ef4747b7202d37142ef1aaea493b}{eMBRTUStop}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00143}00143 \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00144}00144     ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00145}00145     \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{vMBPortSerialEnable}}( FALSE, FALSE );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00146}00146     \mbox{\hyperlink{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523}{vMBPortTimersDisable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00147}00147     EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00148}00148 \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00150}00150 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00151}\mbox{\hyperlink{mbrtu_8c_a669fd79aadbd1cc49ac4f11382dc15d9}{00151}} \mbox{\hyperlink{mbrtu_8c_a669fd79aadbd1cc49ac4f11382dc15d9}{eMBRTUReceive}}( UCHAR * pucRcvAddress, UCHAR ** pucFrame, USHORT * pusLength )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00152}00152 \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00153}00153     BOOL            xFrameReceived = FALSE;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00154}00154     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00156}00156     ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00157}00157     assert( \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} < \mbox{\hyperlink{mbrtu_8c_ad7e9cfdbd55413153a9a862d824a149f}{MB\_SER\_PDU\_SIZE\_MAX}} );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00159}00159     \textcolor{comment}{/* Length and CRC check */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00160}00160     \textcolor{keywordflow}{if}( ( \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} >= \mbox{\hyperlink{mbrtu_8c_ae0dc27c9b034c5177638e9eef79d48a7}{MB\_SER\_PDU\_SIZE\_MIN}} )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00161}00161         \&\& ( \mbox{\hyperlink{mbcrc_8c_abc48f359fd99e303016c8b74cc82c3ff}{usMBCRC16}}( ( UCHAR * ) \mbox{\hyperlink{mbrtu_8c_a0fa63f7bfbfea7ac20cce55d94cf3d53}{ucRTUBuf}}, \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} ) == 0 ) )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00162}00162     \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00163}00163         \textcolor{comment}{/* Save the address field. All frames are passed to the upper layed}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00164}00164 \textcolor{comment}{         * and the decision if a frame is used is done there.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00165}00165 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00166}00166         *pucRcvAddress = \mbox{\hyperlink{mbrtu_8c_a0fa63f7bfbfea7ac20cce55d94cf3d53}{ucRTUBuf}}[\mbox{\hyperlink{mbrtu_8c_afd3d56d60a90ce4cb9858d305f446630}{MB\_SER\_PDU\_ADDR\_OFF}}];}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00168}00168         \textcolor{comment}{/* Total length of Modbus-\/PDU is Modbus-\/Serial-\/Line-\/PDU minus}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00169}00169 \textcolor{comment}{         * size of address field and CRC checksum.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00170}00170 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00171}00171         *pusLength = ( USHORT )( \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} -\/ \mbox{\hyperlink{mbrtu_8c_ab20d539d6366275b4f75f181908ca207}{MB\_SER\_PDU\_PDU\_OFF}} -\/ \mbox{\hyperlink{mbrtu_8c_afc5bf40f988e11036cdd8a44c1402d52}{MB\_SER\_PDU\_SIZE\_CRC}} );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00173}00173         \textcolor{comment}{/* Return the start of the Modbus PDU to the caller. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00174}00174         *pucFrame = ( UCHAR * ) \& \mbox{\hyperlink{mbrtu_8c_a0fa63f7bfbfea7ac20cce55d94cf3d53}{ucRTUBuf}}[\mbox{\hyperlink{mbrtu_8c_ab20d539d6366275b4f75f181908ca207}{MB\_SER\_PDU\_PDU\_OFF}}];}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00175}00175         xFrameReceived = TRUE;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00176}00176     \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00177}00177     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00178}00178     \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00179}00179         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{MB\_EIO}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00180}00180     \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00181}00181 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00182}00182     EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00183}00183     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00184}00184 \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00185}00185 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00186}00186 \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00187}\mbox{\hyperlink{mbrtu_8c_a6feb0c70f52d3ef74da1cfbdc10d1ab0}{00187}} \mbox{\hyperlink{mbrtu_8c_a6feb0c70f52d3ef74da1cfbdc10d1ab0}{eMBRTUSend}}( UCHAR ucSlaveAddress, \textcolor{keyword}{const} UCHAR * pucFrame, USHORT usLength )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00188}00188 \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00189}00189     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00190}00190     USHORT          usCRC16;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00192}00192     ENTER\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00194}00194     \textcolor{comment}{/* Check if the receiver is still in idle state. If not we where to}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00195}00195 \textcolor{comment}{     * slow with processing the received frame and the master sent another}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00196}00196 \textcolor{comment}{     * frame on the network. We have to abort sending the frame.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00197}00197 \textcolor{comment}{     */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00198}00198     \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} == \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}} )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00199}00199     \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00200}00200         \textcolor{comment}{/* First byte before the Modbus-\/PDU is the slave address. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00201}00201         \mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}} = ( UCHAR * ) pucFrame -\/ 1;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00202}00202         \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}} = 1;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00203}00203 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00204}00204         \textcolor{comment}{/* Now copy the Modbus-\/PDU into the Modbus-\/Serial-\/Line-\/PDU. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00205}00205         \mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}}[\mbox{\hyperlink{mbrtu_8c_afd3d56d60a90ce4cb9858d305f446630}{MB\_SER\_PDU\_ADDR\_OFF}}] = ucSlaveAddress;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00206}00206         \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}} += usLength;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00208}00208         \textcolor{comment}{/* Calculate CRC16 checksum for Modbus-\/Serial-\/Line-\/PDU. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00209}00209         usCRC16 = \mbox{\hyperlink{mbcrc_8c_abc48f359fd99e303016c8b74cc82c3ff}{usMBCRC16}}( ( UCHAR * ) \mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}}, \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}} );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00210}00210         \mbox{\hyperlink{mbrtu_8c_a0fa63f7bfbfea7ac20cce55d94cf3d53}{ucRTUBuf}}[\mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}}++] = ( UCHAR )( usCRC16 \& 0xFF );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00211}00211         \mbox{\hyperlink{mbrtu_8c_a0fa63f7bfbfea7ac20cce55d94cf3d53}{ucRTUBuf}}[\mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}}++] = ( UCHAR )( usCRC16 >> 8 );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00212}00212 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00213}00213         \textcolor{comment}{/* Activate the transmitter. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00214}00214         \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} = \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefa99b8ef6f95d0035f9519dcb2889b3a83}{STATE\_TX\_XMIT}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00215}00215         \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{vMBPortSerialEnable}}( FALSE, TRUE );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00216}00216     \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00217}00217     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00218}00218     \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00219}00219         eStatus = \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{MB\_EIO}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00220}00220     \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00221}00221     EXIT\_CRITICAL\_SECTION(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00222}00222     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00223}00223 \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00224}00224 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00225}00225 BOOL}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00226}\mbox{\hyperlink{mbrtu_8c_a447f45f582daab2600cad612b00120b0}{00226}} \mbox{\hyperlink{mbrtu_8c_a447f45f582daab2600cad612b00120b0}{xMBRTUReceiveFSM}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00227}00227 \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00228}00228     BOOL            xTaskNeedSwitch = FALSE;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00229}00229     UCHAR           ucByte;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00230}00230 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00231}00231     assert( \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} == \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefab1bd9fcf7cdb346f72d012adfca4767a}{STATE\_TX\_IDLE}} );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00232}00232 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00233}00233     \textcolor{comment}{/* Always read the character. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00234}00234     ( \mbox{\hyperlink{gpl_8txt_ad7243a7e1e4fa3700063bb11adb57c6b}{void}} )\mbox{\hyperlink{mbport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770}{xMBPortSerialGetByte}}( ( CHAR * ) \& ucByte );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00235}00235 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00236}00236     \textcolor{keywordflow}{switch} ( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00237}00237     \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00238}00238         \textcolor{comment}{/* If we have received a character in the init state we have to}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00239}00239 \textcolor{comment}{         * wait until the frame is finished.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00240}00240 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00241}00241     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba2b2395354f5e0566929bd52408265fb3}{STATE\_RX\_INIT}}:}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00242}00242         \mbox{\hyperlink{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}{vMBPortTimersEnable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00243}00243         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00244}00244 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00245}00245         \textcolor{comment}{/* In the error state we wait until all characters in the}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00246}00246 \textcolor{comment}{         * damaged frame are transmitted.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00247}00247 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00248}00248     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefbafbb71fcd5e10dfbcc33a8f5a00df1f95}{STATE\_RX\_ERROR}}:}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00249}00249         \mbox{\hyperlink{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}{vMBPortTimersEnable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00250}00250         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00251}00251 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00252}00252         \textcolor{comment}{/* In the idle state we wait for a new character. If a character}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00253}00253 \textcolor{comment}{         * is received the t1.5 and t3.5 timers are started and the}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00254}00254 \textcolor{comment}{         * receiver is in the state STATE\_RX\_RECEIVCE.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00255}00255 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00256}00256     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}}:}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00257}00257         \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} = 0;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00258}00258         \mbox{\hyperlink{mbrtu_8c_a0fa63f7bfbfea7ac20cce55d94cf3d53}{ucRTUBuf}}[\mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}}++] = ucByte;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00259}00259         \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{STATE\_RX\_RCV}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00260}00260 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00261}00261         \textcolor{comment}{/* Enable t3.5 timers. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00262}00262         \mbox{\hyperlink{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}{vMBPortTimersEnable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00263}00263         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00264}00264 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00265}00265         \textcolor{comment}{/* We are currently receiving a frame. Reset the timer after}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00266}00266 \textcolor{comment}{         * every character received. If more than the maximum possible}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00267}00267 \textcolor{comment}{         * number of bytes in a modbus frame is received the frame is}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00268}00268 \textcolor{comment}{         * ignored.}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00269}00269 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00270}00270     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{STATE\_RX\_RCV}}:}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00271}00271         \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}} < \mbox{\hyperlink{mbrtu_8c_ad7e9cfdbd55413153a9a862d824a149f}{MB\_SER\_PDU\_SIZE\_MAX}} )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00272}00272         \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00273}00273             \mbox{\hyperlink{mbrtu_8c_a0fa63f7bfbfea7ac20cce55d94cf3d53}{ucRTUBuf}}[\mbox{\hyperlink{mbrtu_8c_a18e87488a0c8bf30709e36306721e661}{usRcvBufferPos}}++] = ucByte;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00274}00274         \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00275}00275         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00276}00276         \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00277}00277             \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefbafbb71fcd5e10dfbcc33a8f5a00df1f95}{STATE\_RX\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00278}00278         \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00279}00279         \mbox{\hyperlink{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}{vMBPortTimersEnable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00280}00280         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00281}00281     \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00282}00282     \textcolor{keywordflow}{return} xTaskNeedSwitch;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00283}00283 \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00284}00284 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00285}00285 BOOL}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00286}\mbox{\hyperlink{mbrtu_8c_a663e5daf0be0f2426a72c531c91d423f}{00286}} \mbox{\hyperlink{mbrtu_8c_a663e5daf0be0f2426a72c531c91d423f}{xMBRTUTransmitFSM}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00287}00287 \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00288}00288     BOOL            xNeedPoll = FALSE;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00289}00289 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00290}00290     assert( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} == \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}} );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00291}00291 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00292}00292     \textcolor{keywordflow}{switch} ( \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00293}00293     \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00294}00294         \textcolor{comment}{/* We should not get a transmitter event if the transmitter is in}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00295}00295 \textcolor{comment}{         * idle state.  */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00296}00296     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefab1bd9fcf7cdb346f72d012adfca4767a}{STATE\_TX\_IDLE}}:}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00297}00297         \textcolor{comment}{/* enable receiver/disable transmitter. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00298}00298         \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{vMBPortSerialEnable}}( TRUE, FALSE );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00299}00299         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00300}00300 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00301}00301     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefa99b8ef6f95d0035f9519dcb2889b3a83}{STATE\_TX\_XMIT}}:}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00302}00302         \textcolor{comment}{/* check if we are finished. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00303}00303         \textcolor{keywordflow}{if}( \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}} != 0 )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00304}00304         \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00305}00305             \mbox{\hyperlink{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8}{xMBPortSerialPutByte}}( ( CHAR )*\mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}} );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00306}00306             \mbox{\hyperlink{mbrtu_8c_a3c1d4b58733f636b8c083d35472089f7}{pucSndBufferCur}}++;  \textcolor{comment}{/* next byte in sendbuffer. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00307}00307             \mbox{\hyperlink{mbrtu_8c_aaa960901f019f4aada070337f3a98c9c}{usSndBufferCount}}-\/-\/;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00308}00308         \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00309}00309         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00310}00310         \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00311}00311             xNeedPoll = \mbox{\hyperlink{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}{xMBPortEventPost}}( \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95}{EV\_FRAME\_SENT}} );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00312}00312             \textcolor{comment}{/* Disable transmitter. This prevents another transmit buffer}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00313}00313 \textcolor{comment}{             * empty interrupt. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00314}00314             \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{vMBPortSerialEnable}}( TRUE, FALSE );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00315}00315             \mbox{\hyperlink{mbrtu_8c_a4cb94211b4ab8c9760ea9b134fab58cf}{eSndState}} = \mbox{\hyperlink{mbrtu_8c_ac877d5e834a5d5b2f80240c0a90d7fefab1bd9fcf7cdb346f72d012adfca4767a}{STATE\_TX\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00316}00316         \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00317}00317         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00318}00318     \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00319}00319 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00320}00320     \textcolor{keywordflow}{return} xNeedPoll;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00321}00321 \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00322}00322 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00323}00323 BOOL}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00324}\mbox{\hyperlink{mbrtu_8c_ac6302a8b67c6b82ae49e6c9d6a9795da}{00324}} \mbox{\hyperlink{mbrtu_8c_ac6302a8b67c6b82ae49e6c9d6a9795da}{xMBRTUTimerT35Expired}}( \textcolor{keywordtype}{void} )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00325}00325 \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00326}00326     BOOL            xNeedPoll = FALSE;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00327}00327 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00328}00328     \textcolor{keywordflow}{switch} ( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} )}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00329}00329     \{}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00330}00330         \textcolor{comment}{/* Timer t35 expired. Startup phase is finished. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00331}00331     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba2b2395354f5e0566929bd52408265fb3}{STATE\_RX\_INIT}}:}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00332}00332         xNeedPoll = \mbox{\hyperlink{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}{xMBPortEventPost}}( \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0}{EV\_READY}} );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00333}00333         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00334}00334 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00335}00335         \textcolor{comment}{/* A frame was received and t35 expired. Notify the listener that}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00336}00336 \textcolor{comment}{         * a new frame was received. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00337}00337     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{STATE\_RX\_RCV}}:}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00338}00338         xNeedPoll = \mbox{\hyperlink{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}{xMBPortEventPost}}( \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2}{EV\_FRAME\_RECEIVED}} );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00339}00339         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00340}00340 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00341}00341         \textcolor{comment}{/* An error occured while receiving the frame. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00342}00342     \textcolor{keywordflow}{case} \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefbafbb71fcd5e10dfbcc33a8f5a00df1f95}{STATE\_RX\_ERROR}}:}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00343}00343         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00344}00344 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00345}00345         \textcolor{comment}{/* Function called in an illegal state. */}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00346}00346     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00347}00347         assert( ( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} == \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba2b2395354f5e0566929bd52408265fb3}{STATE\_RX\_INIT}} ) ||}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00348}00348                 ( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} == \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba6489a66156527784ec30b45fc5ffe43b}{STATE\_RX\_RCV}} ) || ( \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} == \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefbafbb71fcd5e10dfbcc33a8f5a00df1f95}{STATE\_RX\_ERROR}} ) );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00349}00349     \}}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00350}00350 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00351}00351     \mbox{\hyperlink{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523}{vMBPortTimersDisable}}(  );}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00352}00352     \mbox{\hyperlink{mbrtu_8c_acd3c969b4adcde91ff7a9aa4e068be92}{eRcvState}} = \mbox{\hyperlink{mbrtu_8c_ada71af7b20c01523339e4f2ff95feefba516714125b01eae93e5cb693fdc3a9e0}{STATE\_RX\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00353}00353 }
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00354}00354     \textcolor{keywordflow}{return} xNeedPoll;}
+\DoxyCodeLine{\Hypertarget{mbrtu_8c_source_l00355}00355 \}}
+
+\end{DoxyCode}

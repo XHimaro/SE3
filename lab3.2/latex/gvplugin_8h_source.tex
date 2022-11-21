@@ -1,0 +1,64 @@
+\hypertarget{gvplugin_8h_source}{}\doxysection{gvplugin.\+h}
+\label{gvplugin_8h_source}\index{for lab/Graphviz/include/graphviz/gvplugin.h@{for lab/Graphviz/include/graphviz/gvplugin.h}}
+\mbox{\hyperlink{gvplugin_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00002}00002 \textcolor{comment}{ * Copyright (c) 2011 AT\&T Intellectual Property }}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00003}00003 \textcolor{comment}{ * All rights reserved. This program and the accompanying materials}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00004}00004 \textcolor{comment}{ * are made available under the terms of the Eclipse Public License v1.0}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00005}00005 \textcolor{comment}{ * which accompanies this distribution, and is available at}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00006}00006 \textcolor{comment}{ * http://www.eclipse.org/legal/epl-\/v10.html}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00007}00007 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00008}00008 \textcolor{comment}{ * Contributors: Details at https://graphviz.org}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00009}00009 \textcolor{comment}{ *************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00011}00011 \textcolor{comment}{/* Header used by plugins */}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00013}00013 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00015}00015 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00016}00016 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00017}00017 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00019}00019 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gvcext_8h}{gvcext.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00021}00021 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00022}00022 \textcolor{comment}{ * Terminology:}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00023}00023 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00024}00024 \textcolor{comment}{ *    package         -\/ e.g. libgvplugin\_cairo.so}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00025}00025 \textcolor{comment}{ *       api          -\/ e.g. render}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00026}00026 \textcolor{comment}{ *          type      -\/ e.g. "{}png"{}, "{}ps"{}}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00027}00027 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00029}\mbox{\hyperlink{structgvplugin__installed__t}{00029}}     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00030}\mbox{\hyperlink{structgvplugin__installed__t_a18d59b8f83618b167ad96776150b184f}{00030}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structgvplugin__installed__t_a18d59b8f83618b167ad96776150b184f}{id}};         \textcolor{comment}{/* an id that is only unique within a package }}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00031}00031 \textcolor{comment}{            of plugins of the same api.}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00032}00032 \textcolor{comment}{            A renderer-\/type such as "{}png"{} in the cairo package}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00033}00033 \textcolor{comment}{            has an id that is different from the "{}ps"{} type}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00034}00034 \textcolor{comment}{            in the same package */}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00035}\mbox{\hyperlink{structgvplugin__installed__t_af437ea384ed530792cac44c361bd8c25}{00035}}     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{structgvplugin__installed__t_af437ea384ed530792cac44c361bd8c25}{type}};   \textcolor{comment}{/* a string name, such as "{}png"{} or "{}ps"{} that}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00036}00036 \textcolor{comment}{            distinguishes different types within the same}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00037}00037 \textcolor{comment}{             (renderer in this case) */}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00038}\mbox{\hyperlink{structgvplugin__installed__t_a3cf8df3ad1b36b320f4724b4ce1c4620}{00038}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structgvplugin__installed__t_a3cf8df3ad1b36b320f4724b4ce1c4620}{quality}};    \textcolor{comment}{/* an arbitrary integer used for ordering plugins of}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00039}00039 \textcolor{comment}{            the same type from different packages */}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00040}\mbox{\hyperlink{structgvplugin__installed__t_a736d5873fcf50a384aae25fe41ff3e1d}{00040}}     \textcolor{keywordtype}{void} *\mbox{\hyperlink{structgvplugin__installed__t_a736d5873fcf50a384aae25fe41ff3e1d}{engine}};   \textcolor{comment}{/* pointer to the jump table for the plugin */}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00041}\mbox{\hyperlink{structgvplugin__installed__t_a02c5e2e73cfd0497c7b2145c9761d78c}{00041}}     \textcolor{keywordtype}{void} *\mbox{\hyperlink{structgvplugin__installed__t_a02c5e2e73cfd0497c7b2145c9761d78c}{features}}; \textcolor{comment}{/* pointer to the feature description }}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00042}00042 \textcolor{comment}{                void* because type varies by api */}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00043}00043     \} \mbox{\hyperlink{structgvplugin__installed__t}{gvplugin\_installed\_t}};}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00045}\mbox{\hyperlink{structgvplugin__api__t}{00045}}     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00046}\mbox{\hyperlink{structgvplugin__api__t_a9f7766289dadc3de6e3390d85a54244d}{00046}}     \mbox{\hyperlink{gvcext_8h_ae124da9cae472afed2b4d3c7ef2ff574}{api\_t}} \mbox{\hyperlink{structgvplugin__api__t_a9f7766289dadc3de6e3390d85a54244d}{api}};}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00047}\mbox{\hyperlink{structgvplugin__api__t_aff869f838f426c6e25eba224d64e296f}{00047}}     \mbox{\hyperlink{structgvplugin__installed__t}{gvplugin\_installed\_t}} *\mbox{\hyperlink{structgvplugin__api__t_aff869f838f426c6e25eba224d64e296f}{types}};}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00048}00048     \} \mbox{\hyperlink{structgvplugin__api__t}{gvplugin\_api\_t}};}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00050}\mbox{\hyperlink{structgvplugin__library__t}{00050}}     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00051}\mbox{\hyperlink{structgvplugin__library__t_a427cd929e4d01d8eb493f17b189b87c1}{00051}}     \textcolor{keywordtype}{char} *\mbox{\hyperlink{structgvplugin__library__t_a427cd929e4d01d8eb493f17b189b87c1}{packagename}};    \textcolor{comment}{/* used when this plugin is builtin and has}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00052}00052 \textcolor{comment}{                    no pathname */}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00053}\mbox{\hyperlink{structgvplugin__library__t_a253967ed16d1bbf448699a9a75622bd9}{00053}}     \mbox{\hyperlink{structgvplugin__api__t}{gvplugin\_api\_t}} *\mbox{\hyperlink{structgvplugin__library__t_a253967ed16d1bbf448699a9a75622bd9}{apis}};}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00054}00054     \} \mbox{\hyperlink{structgvplugin__library__t}{gvplugin\_library\_t}};}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00056}00056 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00057}00057 \}}
+\DoxyCodeLine{\Hypertarget{gvplugin_8h_source_l00058}00058 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

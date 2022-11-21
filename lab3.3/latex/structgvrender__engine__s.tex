@@ -1,0 +1,384 @@
+\hypertarget{structgvrender__engine__s}{}\doxysection{Структура gvrender\+\_\+engine\+\_\+s}
+\label{structgvrender__engine__s}\index{gvrender\_engine\_s@{gvrender\_engine\_s}}
+
+
+{\ttfamily \#include $<$gvplugin\+\_\+render.\+h$>$}
+
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_ab77448cc624796d7602090035a5f3a28}{begin\+\_\+job}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a5dd4da474f0e6f6f0dde0504dcbe62df}{end\+\_\+job}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_add3e254ca58f87658f41d283271f3f2b}{begin\+\_\+graph}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_ab3730d367fd769ddd74dd95bed1a0867}{end\+\_\+graph}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a02548954923cb14790de005806b89a32}{begin\+\_\+layer}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, char $\ast$layername, int layer\+Num, int num\+Layers)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_ab700f4e6ae1a5b1be92139ddf8350dfa}{end\+\_\+layer}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a4b9ed92904310113e0ed4208ada3fd87}{begin\+\_\+page}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a846da51feeacfc96c406e5ff5de8e09d}{end\+\_\+page}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a4adce6578d1997abd55f23ae67e0514c}{begin\+\_\+cluster}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_ac70ab71309b063da8ecba0c772a56b28}{end\+\_\+cluster}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_aab1fae12f3754c0bd8fc71a8a84a1302}{begin\+\_\+nodes}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_aefb34e2a4128865080a6af578ce54585}{end\+\_\+nodes}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_abad17e2932b7b2f4a26172a0d8001e17}{begin\+\_\+edges}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_ac4bd2808af5c4fdf136cf7d4f74ed75f}{end\+\_\+edges}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a5f84e0f2ae7a6db6e59e84e150975226}{begin\+\_\+node}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a996710ccc23d98de8fcfecd5dd4baef3}{end\+\_\+node}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_aa7704db228202da9b0c973aaadb29820}{begin\+\_\+edge}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a9214933ea0ba0a7680d9c69cf5b28882}{end\+\_\+edge}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a41567ab3dfe84c7a487e612468203199}{begin\+\_\+anchor}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, char $\ast$href, char $\ast$tooltip, char $\ast$target, char $\ast$id)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_aa5644443edbd8eb0ead422f4eac29651}{end\+\_\+anchor}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_aee66812627b856a9c58b672f9d1b63fb}{begin\+\_\+label}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38}{label\+\_\+type}} type)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a01c0dd5dca977c9aa5a138edee4322a3}{end\+\_\+label}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a9195f2083fbd928563284af73a7f6b47}{textspan}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} p, \mbox{\hyperlink{structtextspan__t}{textspan\+\_\+t}} $\ast$span)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a52e5ce59d3333f67552b3c37a776b1c6}{resolve\+\_\+color}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{color_8h_ae1191eed3030f43658df2fef5fa202de}{gvcolor\+\_\+t}} $\ast$color)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a6f598b5a14fb6f356f58cfc95f80d4b1}{ellipse}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} $\ast$\mbox{\hyperlink{class_a}{A}}, int filled)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a5d5ee18f1f36df22170763f7a01aec6c}{polygon}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} $\ast$\mbox{\hyperlink{class_a}{A}}, int n, int filled)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_ab0f6e466acad0321f4fded78f003fb35}{beziercurve}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} $\ast$\mbox{\hyperlink{class_a}{A}}, int n, int arrow\+\_\+at\+\_\+start, int arrow\+\_\+at\+\_\+end, int)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_a244395cffd6607eac569ee1f1d4e8896}{polyline}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} $\ast$\mbox{\hyperlink{class_a}{A}}, int n)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_aff4c30db40d1f9c4b5389fc353658641}{comment}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, char $\ast$comment)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvrender__engine__s_ac38e50e3765c950887fd58e274287fad}{library\+\_\+shape}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, char $\ast$name, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} $\ast$\mbox{\hyperlink{class_a}{A}}, int n, int filled)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00021}{21}}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{structgvrender__engine__s_a41567ab3dfe84c7a487e612468203199}\label{structgvrender__engine__s_a41567ab3dfe84c7a487e612468203199}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!begin\_anchor@{begin\_anchor}}
+\index{begin\_anchor@{begin\_anchor}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{begin\_anchor}{begin\_anchor}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::begin\+\_\+anchor) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, char $\ast$href, char $\ast$tooltip, char $\ast$target, char $\ast$id)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00041}{41}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a4adce6578d1997abd55f23ae67e0514c}\label{structgvrender__engine__s_a4adce6578d1997abd55f23ae67e0514c}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!begin\_cluster@{begin\_cluster}}
+\index{begin\_cluster@{begin\_cluster}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{begin\_cluster}{begin\_cluster}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::begin\+\_\+cluster) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00031}{31}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_aa7704db228202da9b0c973aaadb29820}\label{structgvrender__engine__s_aa7704db228202da9b0c973aaadb29820}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!begin\_edge@{begin\_edge}}
+\index{begin\_edge@{begin\_edge}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{begin\_edge}{begin\_edge}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::begin\+\_\+edge) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00039}{39}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_abad17e2932b7b2f4a26172a0d8001e17}\label{structgvrender__engine__s_abad17e2932b7b2f4a26172a0d8001e17}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!begin\_edges@{begin\_edges}}
+\index{begin\_edges@{begin\_edges}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{begin\_edges}{begin\_edges}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::begin\+\_\+edges) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00035}{35}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_add3e254ca58f87658f41d283271f3f2b}\label{structgvrender__engine__s_add3e254ca58f87658f41d283271f3f2b}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!begin\_graph@{begin\_graph}}
+\index{begin\_graph@{begin\_graph}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{begin\_graph}{begin\_graph}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::begin\+\_\+graph) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00024}{24}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_ab77448cc624796d7602090035a5f3a28}\label{structgvrender__engine__s_ab77448cc624796d7602090035a5f3a28}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!begin\_job@{begin\_job}}
+\index{begin\_job@{begin\_job}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{begin\_job}{begin\_job}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::begin\+\_\+job) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00022}{22}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_aee66812627b856a9c58b672f9d1b63fb}\label{structgvrender__engine__s_aee66812627b856a9c58b672f9d1b63fb}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!begin\_label@{begin\_label}}
+\index{begin\_label@{begin\_label}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{begin\_label}{begin\_label}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::begin\+\_\+label) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{gvcjob_8h_a27a2d3d0fcd201122f8c13d604f91e38}{label\+\_\+type}} type)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00044}{44}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a02548954923cb14790de005806b89a32}\label{structgvrender__engine__s_a02548954923cb14790de005806b89a32}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!begin\_layer@{begin\_layer}}
+\index{begin\_layer@{begin\_layer}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{begin\_layer}{begin\_layer}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::begin\+\_\+layer) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, char $\ast$layername, int layer\+Num, int num\+Layers)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00026}{26}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a5f84e0f2ae7a6db6e59e84e150975226}\label{structgvrender__engine__s_a5f84e0f2ae7a6db6e59e84e150975226}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!begin\_node@{begin\_node}}
+\index{begin\_node@{begin\_node}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{begin\_node}{begin\_node}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::begin\+\_\+node) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00037}{37}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_aab1fae12f3754c0bd8fc71a8a84a1302}\label{structgvrender__engine__s_aab1fae12f3754c0bd8fc71a8a84a1302}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!begin\_nodes@{begin\_nodes}}
+\index{begin\_nodes@{begin\_nodes}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{begin\_nodes}{begin\_nodes}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::begin\+\_\+nodes) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00033}{33}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a4b9ed92904310113e0ed4208ada3fd87}\label{structgvrender__engine__s_a4b9ed92904310113e0ed4208ada3fd87}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!begin\_page@{begin\_page}}
+\index{begin\_page@{begin\_page}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{begin\_page}{begin\_page}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::begin\+\_\+page) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00029}{29}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_ab0f6e466acad0321f4fded78f003fb35}\label{structgvrender__engine__s_ab0f6e466acad0321f4fded78f003fb35}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!beziercurve@{beziercurve}}
+\index{beziercurve@{beziercurve}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{beziercurve}{beziercurve}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::beziercurve) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} $\ast$\mbox{\hyperlink{class_a}{A}}, int n, int arrow\+\_\+at\+\_\+start, int arrow\+\_\+at\+\_\+end, int)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00050}{50}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_aff4c30db40d1f9c4b5389fc353658641}\label{structgvrender__engine__s_aff4c30db40d1f9c4b5389fc353658641}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!comment@{comment}}
+\index{comment@{comment}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{comment}{comment}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::comment) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, char $\ast$comment)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00053}{53}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a6f598b5a14fb6f356f58cfc95f80d4b1}\label{structgvrender__engine__s_a6f598b5a14fb6f356f58cfc95f80d4b1}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!ellipse@{ellipse}}
+\index{ellipse@{ellipse}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{ellipse}{ellipse}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::ellipse) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} $\ast$\mbox{\hyperlink{class_a}{A}}, int filled)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00048}{48}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_aa5644443edbd8eb0ead422f4eac29651}\label{structgvrender__engine__s_aa5644443edbd8eb0ead422f4eac29651}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!end\_anchor@{end\_anchor}}
+\index{end\_anchor@{end\_anchor}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{end\_anchor}{end\_anchor}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::end\+\_\+anchor) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00043}{43}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_ac70ab71309b063da8ecba0c772a56b28}\label{structgvrender__engine__s_ac70ab71309b063da8ecba0c772a56b28}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!end\_cluster@{end\_cluster}}
+\index{end\_cluster@{end\_cluster}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{end\_cluster}{end\_cluster}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::end\+\_\+cluster) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00032}{32}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a9214933ea0ba0a7680d9c69cf5b28882}\label{structgvrender__engine__s_a9214933ea0ba0a7680d9c69cf5b28882}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!end\_edge@{end\_edge}}
+\index{end\_edge@{end\_edge}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{end\_edge}{end\_edge}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::end\+\_\+edge) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00040}{40}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_ac4bd2808af5c4fdf136cf7d4f74ed75f}\label{structgvrender__engine__s_ac4bd2808af5c4fdf136cf7d4f74ed75f}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!end\_edges@{end\_edges}}
+\index{end\_edges@{end\_edges}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{end\_edges}{end\_edges}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::end\+\_\+edges) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00036}{36}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_ab3730d367fd769ddd74dd95bed1a0867}\label{structgvrender__engine__s_ab3730d367fd769ddd74dd95bed1a0867}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!end\_graph@{end\_graph}}
+\index{end\_graph@{end\_graph}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{end\_graph}{end\_graph}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::end\+\_\+graph) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00025}{25}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a5dd4da474f0e6f6f0dde0504dcbe62df}\label{structgvrender__engine__s_a5dd4da474f0e6f6f0dde0504dcbe62df}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!end\_job@{end\_job}}
+\index{end\_job@{end\_job}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{end\_job}{end\_job}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::end\+\_\+job) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00023}{23}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a01c0dd5dca977c9aa5a138edee4322a3}\label{structgvrender__engine__s_a01c0dd5dca977c9aa5a138edee4322a3}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!end\_label@{end\_label}}
+\index{end\_label@{end\_label}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{end\_label}{end\_label}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::end\+\_\+label) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00045}{45}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_ab700f4e6ae1a5b1be92139ddf8350dfa}\label{structgvrender__engine__s_ab700f4e6ae1a5b1be92139ddf8350dfa}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!end\_layer@{end\_layer}}
+\index{end\_layer@{end\_layer}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{end\_layer}{end\_layer}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::end\+\_\+layer) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00028}{28}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a996710ccc23d98de8fcfecd5dd4baef3}\label{structgvrender__engine__s_a996710ccc23d98de8fcfecd5dd4baef3}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!end\_node@{end\_node}}
+\index{end\_node@{end\_node}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{end\_node}{end\_node}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::end\+\_\+node) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00038}{38}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_aefb34e2a4128865080a6af578ce54585}\label{structgvrender__engine__s_aefb34e2a4128865080a6af578ce54585}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!end\_nodes@{end\_nodes}}
+\index{end\_nodes@{end\_nodes}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{end\_nodes}{end\_nodes}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::end\+\_\+nodes) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00034}{34}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a846da51feeacfc96c406e5ff5de8e09d}\label{structgvrender__engine__s_a846da51feeacfc96c406e5ff5de8e09d}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!end\_page@{end\_page}}
+\index{end\_page@{end\_page}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{end\_page}{end\_page}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::end\+\_\+page) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00030}{30}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_ac38e50e3765c950887fd58e274287fad}\label{structgvrender__engine__s_ac38e50e3765c950887fd58e274287fad}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!library\_shape@{library\_shape}}
+\index{library\_shape@{library\_shape}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{library\_shape}{library\_shape}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::library\+\_\+shape) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, char $\ast$name, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} $\ast$\mbox{\hyperlink{class_a}{A}}, int n, int filled)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00054}{54}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a5d5ee18f1f36df22170763f7a01aec6c}\label{structgvrender__engine__s_a5d5ee18f1f36df22170763f7a01aec6c}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!polygon@{polygon}}
+\index{polygon@{polygon}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{polygon}{polygon}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::polygon) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} $\ast$\mbox{\hyperlink{class_a}{A}}, int n, int filled)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00049}{49}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a244395cffd6607eac569ee1f1d4e8896}\label{structgvrender__engine__s_a244395cffd6607eac569ee1f1d4e8896}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!polyline@{polyline}}
+\index{polyline@{polyline}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{polyline}{polyline}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::polyline) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} $\ast$\mbox{\hyperlink{class_a}{A}}, int n)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00052}{52}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a52e5ce59d3333f67552b3c37a776b1c6}\label{structgvrender__engine__s_a52e5ce59d3333f67552b3c37a776b1c6}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!resolve\_color@{resolve\_color}}
+\index{resolve\_color@{resolve\_color}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{resolve\_color}{resolve\_color}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::resolve\+\_\+color) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{color_8h_ae1191eed3030f43658df2fef5fa202de}{gvcolor\+\_\+t}} $\ast$color)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00047}{47}}
+
+\mbox{\Hypertarget{structgvrender__engine__s_a9195f2083fbd928563284af73a7f6b47}\label{structgvrender__engine__s_a9195f2083fbd928563284af73a7f6b47}} 
+\index{gvrender\_engine\_s@{gvrender\_engine\_s}!textspan@{textspan}}
+\index{textspan@{textspan}!gvrender\_engine\_s@{gvrender\_engine\_s}}
+\doxysubsubsection{\texorpdfstring{textspan}{textspan}}
+{\footnotesize\ttfamily void($\ast$ gvrender\+\_\+engine\+\_\+s\+::textspan) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} p, \mbox{\hyperlink{structtextspan__t}{textspan\+\_\+t}} $\ast$span)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvplugin__render_8h_source}{gvplugin\+\_\+render.\+h}} строка \mbox{\hyperlink{gvplugin__render_8h_source_l00046}{46}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\+Graphviz/include/graphviz/\mbox{\hyperlink{gvplugin__render_8h}{gvplugin\+\_\+render.\+h}}\end{DoxyCompactItemize}

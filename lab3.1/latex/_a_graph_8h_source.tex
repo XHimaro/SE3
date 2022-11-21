@@ -1,0 +1,56 @@
+\hypertarget{_a_graph_8h_source}{}\doxysection{AGraph.\+h}
+\label{_a_graph_8h_source}\index{for lab/Graphviz/include/graphviz/AGraph.h@{for lab/Graphviz/include/graphviz/AGraph.h}}
+\mbox{\hyperlink{_a_graph_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00003}00003 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cgraph_8h}{cgraph.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00008}00008 \textcolor{preprocessor}{\#ifdef GVDLL}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00009}00009 \textcolor{preprocessor}{\#if cgraph\_\_\_EXPORTS }\textcolor{comment}{// CMake's substitution of cgraph++\_EXPORTS}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00010}00010 \textcolor{preprocessor}{\#define AGRAPH\_API \_\_declspec(dllexport)}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00011}00011 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00012}00012 \textcolor{preprocessor}{\#define AGRAPH\_API \_\_declspec(dllimport)}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00013}00013 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00014}00014 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00016}00016 \textcolor{preprocessor}{\#ifndef AGRAPH\_API}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00017}\mbox{\hyperlink{_a_graph_8h_a960d889a4e4688b09455efacd32761f8}{00017}} \textcolor{preprocessor}{\#define AGRAPH\_API }\textcolor{comment}{/* nothing */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00018}00018 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00020}\mbox{\hyperlink{namespace_c_graph}{00020}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_c_graph}{CGraph}} \{}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00026}\mbox{\hyperlink{class_c_graph_1_1_a_graph}{00026}} \textcolor{keyword}{class }\mbox{\hyperlink{_a_graph_8h_a960d889a4e4688b09455efacd32761f8}{AGRAPH\_API}} \mbox{\hyperlink{class_c_graph_1_1_a_graph}{AGraph}} \{}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00027}00027 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00028}\mbox{\hyperlink{class_c_graph_1_1_a_graph_aeee18de63b091ed9ccd40a642e5cccaa}{00028}}   \textcolor{keyword}{explicit} \mbox{\hyperlink{class_c_graph_1_1_a_graph_aeee18de63b091ed9ccd40a642e5cccaa}{AGraph}}(\textcolor{keyword}{const} std::string \&dot);}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00029}\mbox{\hyperlink{class_c_graph_1_1_a_graph_aafcf15131c318326451d822499ab2b5e}{00029}}   \mbox{\hyperlink{class_c_graph_1_1_a_graph_aafcf15131c318326451d822499ab2b5e}{\string~AGraph}}();}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00031}00031   \textcolor{comment}{// delete copy since we manage a C struct using a raw pointer and the struct}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00032}00032   \textcolor{comment}{// cannot be easily copied since it contains even more raw pointers}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00033}\mbox{\hyperlink{class_c_graph_1_1_a_graph_a166be5c074b2a78a1b63fb3b7308fb1d}{00033}}   \mbox{\hyperlink{class_c_graph_1_1_a_graph_a166be5c074b2a78a1b63fb3b7308fb1d}{AGraph}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_c_graph_1_1_a_graph}{AGraph}} \&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00034}\mbox{\hyperlink{class_c_graph_1_1_a_graph_ae3f0e2ccab692d527bde1d5f71d890a8}{00034}}   \mbox{\hyperlink{class_c_graph_1_1_a_graph}{AGraph}} \&\mbox{\hyperlink{class_c_graph_1_1_a_graph_ae3f0e2ccab692d527bde1d5f71d890a8}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_c_graph_1_1_a_graph}{AGraph}} \&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00036}00036   \textcolor{comment}{// implement move since we manage a C struct using a raw pointer}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00037}\mbox{\hyperlink{class_c_graph_1_1_a_graph_aa92d36d7aaab7af2f053e5e7ea45693b}{00037}}   \mbox{\hyperlink{class_c_graph_1_1_a_graph_aa92d36d7aaab7af2f053e5e7ea45693b}{AGraph}}(\mbox{\hyperlink{class_c_graph_1_1_a_graph}{AGraph}} \&\&other) noexcept : m\_g(std::exchange(other.m\_g, \textcolor{keyword}{nullptr})) \{\}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00038}\mbox{\hyperlink{class_c_graph_1_1_a_graph_abd64f522ad3ff3fa3201ea3699721a45}{00038}}   \mbox{\hyperlink{class_c_graph_1_1_a_graph}{AGraph}} \&\mbox{\hyperlink{class_c_graph_1_1_a_graph_abd64f522ad3ff3fa3201ea3699721a45}{operator=}}(\mbox{\hyperlink{class_c_graph_1_1_a_graph}{AGraph}} \&\&other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00039}00039     \textcolor{keyword}{using }std::swap;}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00040}00040     swap(m\_g, other.m\_g);}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00041}00041     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00042}00042   \}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00044}00044   \textcolor{comment}{// get a non-\/owning pointer to the underlying C data structure}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00045}\mbox{\hyperlink{class_c_graph_1_1_a_graph_a64f85ea562bdc9f53f832a527b270686}{00045}}   \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *\mbox{\hyperlink{class_c_graph_1_1_a_graph_a64f85ea562bdc9f53f832a527b270686}{c\_struct}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_g; \};}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00047}00047 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00048}00048   \textcolor{comment}{// the underlying C data structure}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00049}\mbox{\hyperlink{class_c_graph_1_1_a_graph_a72d799d5848c012205b0d3389628c885}{00049}}   \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *m\_g = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00050}00050 \};}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00052}00052 \} \textcolor{comment}{// namespace CGraph}}
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_a_graph_8h_source_l00054}00054 \textcolor{preprocessor}{\#undef AGRAPH\_API}}
+
+\end{DoxyCode}

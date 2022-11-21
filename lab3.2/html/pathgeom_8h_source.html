@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ModBus: Исходный файл for lab/Graphviz/include/graphviz/pathgeom.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ModBus
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('pathgeom_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">pathgeom.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="pathgeom_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*************************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2011 AT&amp;T Intellectual Property </span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * All rights reserved. This program and the accompanying materials</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * are made available under the terms of the Eclipse Public License v1.0</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * which accompanies this distribution, and is available at</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * http://www.eclipse.org/legal/epl-v10.html</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * Contributors: Details at https://graphviz.org</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *************************************************************************/</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifdef GVDLL</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#ifdef PATHPLAN_EXPORTS</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define PATHGEOM_API __declspec(dllexport)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define PATHGEOM_API __declspec(dllimport)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifndef PATHGEOM_API</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="pathgeom_8h.html#a293da2369228cd10ad4a7ca31f78ca87">   26</a></span><span class="preprocessor">#define PATHGEOM_API </span><span class="comment">/* nothing */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#ifdef HAVE_POINTF_S</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structpointf__s.html">pointf_s</a> <a class="code hl_struct" href="struct_pxy__t.html">Ppoint_t</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structpointf__s.html">pointf_s</a> <a class="code hl_struct" href="struct_pxy__t.html">Pvector_t</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_pxy__t.html">   33</a></span>    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_pxy__t.html">Pxy_t</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_pxy__t.html#a8bfdfac06a9c292b12760d41fd8c5b91">   34</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="struct_pxy__t.html#a8bfdfac06a9c292b12760d41fd8c5b91">x</a>, <a class="code hl_variable" href="struct_pxy__t.html#ab2a1cfb26785cc5b0215371cae157a1e">y</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="pathgeom_8h.html#af111e6d99f20876ced371bf450346a55">   35</a></span>    } <a class="code hl_struct" href="struct_pxy__t.html">Pxy_t</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="pathgeom_8h.html#ae03dc374d3fff2c0f275c6c17e705d1f">   37</a></span>    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_pxy__t.html">Pxy_t</a> <a class="code hl_struct" href="struct_pxy__t.html">Ppoint_t</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="pathgeom_8h.html#a1601338d97d595819723e748357f2dca">   38</a></span>    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_pxy__t.html">Pxy_t</a> <a class="code hl_struct" href="struct_pxy__t.html">Pvector_t</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_ppoly__t.html">   41</a></span>    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_ppoly__t.html">Ppoly_t</a> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_ppoly__t.html#a693e25a86e550ef1b164a8399d896a39">   42</a></span>    <a class="code hl_struct" href="struct_pxy__t.html">Ppoint_t</a> *<a class="code hl_variable" href="struct_ppoly__t.html#a693e25a86e550ef1b164a8399d896a39">ps</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_ppoly__t.html#a2058b56b2ca48ccc95df43fe971efa71">   43</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_ppoly__t.html#a2058b56b2ca48ccc95df43fe971efa71">pn</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="pathgeom_8h.html#a7d960410b95012231fed454c0f6b7f86">   44</a></span>    } <a class="code hl_struct" href="struct_ppoly__t.html">Ppoly_t</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">   46</a></span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="struct_ppoly__t.html">Ppoly_t</a> <a class="code hl_typedef" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_pedge__t.html">   48</a></span>    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_pedge__t.html">Pedge_t</a> {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_pedge__t.html#aad7db338c15c9d818104faf9ea90f7aa">   49</a></span>    <a class="code hl_struct" href="struct_pxy__t.html">Ppoint_t</a> <a class="code hl_variable" href="struct_pedge__t.html#aad7db338c15c9d818104faf9ea90f7aa">a</a>, <a class="code hl_variable" href="struct_pedge__t.html#a1753042bb23cb891962e2eae3d93c4a6">b</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="pathgeom_8h.html#aeadb1c42ba14b5cc904fba100884cdd3">   50</a></span>    } <a class="code hl_struct" href="struct_pedge__t.html">Pedge_t</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">/* opaque state handle for visibility graph operations */</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="pathgeom_8h.html#af3ccabb851a77a61426d26c737df54b1">   53</a></span>    <span class="keyword">typedef</span> <span class="keyword">struct </span>vconfig_s <a class="code hl_typedef" href="pathgeom_8h.html#af3ccabb851a77a61426d26c737df54b1">vconfig_t</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="pathgeom_8h.html#a894ef8e0d84f96a503874f750e0e7a02">   55</a></span>    <a class="code hl_define" href="pathgeom_8h.html#a293da2369228cd10ad4a7ca31f78ca87">PATHGEOM_API</a> <span class="keywordtype">void</span> <a class="code hl_function" href="pathgeom_8h.html#a894ef8e0d84f96a503874f750e0e7a02">freePath</a>(<a class="code hl_struct" href="struct_ppoly__t.html">Ppolyline_t</a>* p);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#undef PATHGEOM_API</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="apathgeom_8h_html_a293da2369228cd10ad4a7ca31f78ca87"><div class="ttname"><a href="pathgeom_8h.html#a293da2369228cd10ad4a7ca31f78ca87">PATHGEOM_API</a></div><div class="ttdeci">#define PATHGEOM_API</div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00026">pathgeom.h:26</a></div></div>
+<div class="ttc" id="apathgeom_8h_html_a40d0fc3e3db12860642e212281e44905"><div class="ttname"><a href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a></div><div class="ttdeci">Ppoly_t Ppolyline_t</div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00046">pathgeom.h:46</a></div></div>
+<div class="ttc" id="apathgeom_8h_html_a894ef8e0d84f96a503874f750e0e7a02"><div class="ttname"><a href="pathgeom_8h.html#a894ef8e0d84f96a503874f750e0e7a02">freePath</a></div><div class="ttdeci">PATHGEOM_API void freePath(Ppolyline_t *p)</div></div>
+<div class="ttc" id="apathgeom_8h_html_af3ccabb851a77a61426d26c737df54b1"><div class="ttname"><a href="pathgeom_8h.html#af3ccabb851a77a61426d26c737df54b1">vconfig_t</a></div><div class="ttdeci">struct vconfig_s vconfig_t</div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00053">pathgeom.h:53</a></div></div>
+<div class="ttc" id="astruct_pedge__t_html"><div class="ttname"><a href="struct_pedge__t.html">Pedge_t</a></div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00048">pathgeom.h:48</a></div></div>
+<div class="ttc" id="astruct_pedge__t_html_a1753042bb23cb891962e2eae3d93c4a6"><div class="ttname"><a href="struct_pedge__t.html#a1753042bb23cb891962e2eae3d93c4a6">Pedge_t::b</a></div><div class="ttdeci">Ppoint_t b</div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00049">pathgeom.h:49</a></div></div>
+<div class="ttc" id="astruct_pedge__t_html_aad7db338c15c9d818104faf9ea90f7aa"><div class="ttname"><a href="struct_pedge__t.html#aad7db338c15c9d818104faf9ea90f7aa">Pedge_t::a</a></div><div class="ttdeci">Ppoint_t a</div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00049">pathgeom.h:49</a></div></div>
+<div class="ttc" id="astruct_ppoly__t_html"><div class="ttname"><a href="struct_ppoly__t.html">Ppoly_t</a></div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00041">pathgeom.h:41</a></div></div>
+<div class="ttc" id="astruct_ppoly__t_html_a2058b56b2ca48ccc95df43fe971efa71"><div class="ttname"><a href="struct_ppoly__t.html#a2058b56b2ca48ccc95df43fe971efa71">Ppoly_t::pn</a></div><div class="ttdeci">int pn</div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00043">pathgeom.h:43</a></div></div>
+<div class="ttc" id="astruct_ppoly__t_html_a693e25a86e550ef1b164a8399d896a39"><div class="ttname"><a href="struct_ppoly__t.html#a693e25a86e550ef1b164a8399d896a39">Ppoly_t::ps</a></div><div class="ttdeci">Ppoint_t * ps</div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00042">pathgeom.h:42</a></div></div>
+<div class="ttc" id="astruct_pxy__t_html"><div class="ttname"><a href="struct_pxy__t.html">Pxy_t</a></div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00033">pathgeom.h:33</a></div></div>
+<div class="ttc" id="astruct_pxy__t_html_a8bfdfac06a9c292b12760d41fd8c5b91"><div class="ttname"><a href="struct_pxy__t.html#a8bfdfac06a9c292b12760d41fd8c5b91">Pxy_t::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00034">pathgeom.h:34</a></div></div>
+<div class="ttc" id="astruct_pxy__t_html_ab2a1cfb26785cc5b0215371cae157a1e"><div class="ttname"><a href="struct_pxy__t.html#ab2a1cfb26785cc5b0215371cae157a1e">Pxy_t::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> <a href="pathgeom_8h_source.html#l00034">pathgeom.h:34</a></div></div>
+<div class="ttc" id="astructpointf__s_html"><div class="ttname"><a href="structpointf__s.html">pointf_s</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00024">geom.h:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e6c23235d574a84b5ef1a8613e824ad0.html">for lab</a></li><li class="navelem"><a class="el" href="dir_9e36fc1ac95da228bde805a03f57733e.html">Graphviz</a></li><li class="navelem"><a class="el" href="dir_ad4ebe5bca6393216da41cf9a4442fe0.html">include</a></li><li class="navelem"><a class="el" href="dir_1993f148fdb21d2725c441bae462129c.html">graphviz</a></li><li class="navelem"><a class="el" href="pathgeom_8h.html">pathgeom.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

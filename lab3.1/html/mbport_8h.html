@@ -1,0 +1,842 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Файл for lab/freemodbus-v1.5.0/modbus/include/mbport.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('mbport_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">Перечисления</a> &#124;
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle"><div class="title">Файл mbport.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h__dep__incl.png" border="0" usemap="#afor_01lab_2freemodbus-v1_85_80_2modbus_2include_2mbport_8hdep" alt=""/></div>
+<map name="afor_01lab_2freemodbus-v1_85_80_2modbus_2include_2mbport_8hdep" id="afor_01lab_2freemodbus-v1_85_80_2modbus_2include_2mbport_8hdep">
+<area shape="rect" title=" " alt="" coords="1309,5,1464,60"/>
+<area shape="rect" href="mbascii_8c.html" title=" " alt="" coords="5,196,147,251"/>
+<area shape="rect" href="mb_8h.html" title=" " alt="" coords="923,108,1111,148"/>
+<area shape="rect" href="mb_8c.html" title=" " alt="" coords="1315,203,1458,243"/>
+<area shape="rect" href="mbrtu_8c.html" title=" " alt="" coords="1482,203,1659,243"/>
+<area shape="rect" href="mbtcp_8c.html" title=" " alt="" coords="1683,203,1866,243"/>
+<area shape="rect" href="mbfunccoils_8c.html" title=" " alt="" coords="171,196,338,251"/>
+<area shape="rect" href="mbfuncdisc_8c.html" title=" " alt="" coords="362,196,529,251"/>
+<area shape="rect" href="mbfuncholding_8c.html" title=" " alt="" coords="553,196,719,251"/>
+<area shape="rect" href="mbfuncinput_8c.html" title=" " alt="" coords="743,196,910,251"/>
+<area shape="rect" href="mbfuncother_8c.html" title=" " alt="" coords="934,196,1101,251"/>
+<area shape="rect" href="mbutils_8c.html" title=" " alt="" coords="1125,196,1291,251"/>
+</map>
+</div>
+</div>
+<p><a href="mbport_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:a208845596909620aa0062468ff11ef02"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a208845596909620aa0062468ff11ef02">eMBEventType</a> { <a class="el" href="mbport_8h.html#a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0">EV_READY</a>
+, <a class="el" href="mbport_8h.html#a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2">EV_FRAME_RECEIVED</a>
+, <a class="el" href="mbport_8h.html#a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019">EV_EXECUTE</a>
+, <a class="el" href="mbport_8h.html#a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95">EV_FRAME_SENT</a>
+ }</td></tr>
+<tr class="separator:a208845596909620aa0062468ff11ef02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga16ba85fa56bcd52a11a12576af445ccb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__modbus.html#ga16ba85fa56bcd52a11a12576af445ccb">eMBParity</a> { <a class="el" href="group__modbus.html#gga16ba85fa56bcd52a11a12576af445ccba36c1b70b68bc05d618632e3f975a557b">MB_PAR_NONE</a>
+, <a class="el" href="group__modbus.html#gga16ba85fa56bcd52a11a12576af445ccba955fa6c30334314739ddceed6e749316">MB_PAR_ODD</a>
+, <a class="el" href="group__modbus.html#gga16ba85fa56bcd52a11a12576af445ccba0415f4c7ede57e13a0cca698a8375dbd">MB_PAR_EVEN</a>
+ }</td></tr>
+<tr class="memdesc:ga16ba85fa56bcd52a11a12576af445ccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parity used for characters in serial mode.  <a href="group__modbus.html#ga16ba85fa56bcd52a11a12576af445ccb">Подробнее...</a><br /></td></tr>
+<tr class="separator:ga16ba85fa56bcd52a11a12576af445ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a23aa6afd41597f7aaf5d1a6e6831c718"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a23aa6afd41597f7aaf5d1a6e6831c718">xMBPortEventInit</a> (void)</td></tr>
+<tr class="separator:a23aa6afd41597f7aaf5d1a6e6831c718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cdfe42cd5ee37d5839081c636576e7c"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a2cdfe42cd5ee37d5839081c636576e7c">xMBPortEventPost</a> (<a class="el" href="mbport_8h.html#a208845596909620aa0062468ff11ef02">eMBEventType</a> eEvent)</td></tr>
+<tr class="separator:a2cdfe42cd5ee37d5839081c636576e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad61d350e63d0c41e7563ac0bc0fd346f"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#ad61d350e63d0c41e7563ac0bc0fd346f">xMBPortEventGet</a> (<a class="el" href="mbport_8h.html#a208845596909620aa0062468ff11ef02">eMBEventType</a> *eEvent)</td></tr>
+<tr class="separator:ad61d350e63d0c41e7563ac0bc0fd346f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af614e62c57eaba86f45c45e5d0e6cfd9"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#af614e62c57eaba86f45c45e5d0e6cfd9">xMBPortSerialInit</a> (UCHAR ucPort, ULONG ulBaudRate, UCHAR ucDataBits, <a class="el" href="group__modbus.html#ga16ba85fa56bcd52a11a12576af445ccb">eMBParity</a> eParity)</td></tr>
+<tr class="separator:af614e62c57eaba86f45c45e5d0e6cfd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae97991ffb6ce01584afce5dd4f653b41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#ae97991ffb6ce01584afce5dd4f653b41">vMBPortClose</a> (void)</td></tr>
+<tr class="separator:ae97991ffb6ce01584afce5dd4f653b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5987b97b1075363db05a6783bd1103"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a9f5987b97b1075363db05a6783bd1103">xMBPortSerialClose</a> (void)</td></tr>
+<tr class="separator:a9f5987b97b1075363db05a6783bd1103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bf68bda6b5ed6c341d27d439a6c03df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a4bf68bda6b5ed6c341d27d439a6c03df">vMBPortSerialEnable</a> (BOOL xRxEnable, BOOL xTxEnable)</td></tr>
+<tr class="separator:a4bf68bda6b5ed6c341d27d439a6c03df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a4724e9dc26b2d2d1cc2a6d41c24770"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a4a4724e9dc26b2d2d1cc2a6d41c24770">xMBPortSerialGetByte</a> (CHAR *pucByte)</td></tr>
+<tr class="separator:a4a4724e9dc26b2d2d1cc2a6d41c24770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca95563c25eb239a4c51f3ce35f5cc8"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a5ca95563c25eb239a4c51f3ce35f5cc8">xMBPortSerialPutByte</a> (CHAR ucByte)</td></tr>
+<tr class="separator:a5ca95563c25eb239a4c51f3ce35f5cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d8e78fe43e66fab707da6eda4f5eaf"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a93d8e78fe43e66fab707da6eda4f5eaf">xMBPortTimersInit</a> (USHORT usTimeOut50us)</td></tr>
+<tr class="separator:a93d8e78fe43e66fab707da6eda4f5eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a7591ccc79c9423e5c1821d3fd826d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a7a7591ccc79c9423e5c1821d3fd826d1">xMBPortTimersClose</a> (void)</td></tr>
+<tr class="separator:a7a7591ccc79c9423e5c1821d3fd826d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2356d0d397b3da961b86cabddb9a9760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a2356d0d397b3da961b86cabddb9a9760">vMBPortTimersEnable</a> (void)</td></tr>
+<tr class="separator:a2356d0d397b3da961b86cabddb9a9760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf96b9d106626e42fa0b7b1a0b802523"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#adf96b9d106626e42fa0b7b1a0b802523">vMBPortTimersDisable</a> (void)</td></tr>
+<tr class="separator:adf96b9d106626e42fa0b7b1a0b802523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a334f66a0527a862f58488cc40d7999d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a334f66a0527a862f58488cc40d7999d4">vMBPortTimersDelay</a> (USHORT usTimeOutMS)</td></tr>
+<tr class="separator:a334f66a0527a862f58488cc40d7999d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a793d6e53b5632f4075af872b6a5c8ca5"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a793d6e53b5632f4075af872b6a5c8ca5">xMBTCPPortInit</a> (USHORT usTCPPort)</td></tr>
+<tr class="separator:a793d6e53b5632f4075af872b6a5c8ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c43e5231c42bb7b8c6a31f8bfcb8a3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a8c43e5231c42bb7b8c6a31f8bfcb8a3e">vMBTCPPortClose</a> (void)</td></tr>
+<tr class="separator:a8c43e5231c42bb7b8c6a31f8bfcb8a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ea2cd5d0cb31ce90df6e46d7af29d8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a2ea2cd5d0cb31ce90df6e46d7af29d8d">vMBTCPPortDisable</a> (void)</td></tr>
+<tr class="separator:a2ea2cd5d0cb31ce90df6e46d7af29d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a770c9a4001e08aafec96234e51ac8f42"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a770c9a4001e08aafec96234e51ac8f42">xMBTCPPortGetRequest</a> (UCHAR **ppucMBTCPFrame, USHORT *usTCPLength)</td></tr>
+<tr class="separator:a770c9a4001e08aafec96234e51ac8f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2902b52c4070bd676851561caef5a4c5"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a2902b52c4070bd676851561caef5a4c5">xMBTCPPortSendResponse</a> (const UCHAR *pucMBTCPFrame, USHORT usTCPLength)</td></tr>
+<tr class="separator:a2902b52c4070bd676851561caef5a4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a6ff9d563210c04e3afb414b9db75154a"><td class="memItemLeft" align="right" valign="top">BOOL(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a6ff9d563210c04e3afb414b9db75154a">pxMBFrameCBByteReceived</a> )(void)</td></tr>
+<tr class="memdesc:a6ff9d563210c04e3afb414b9db75154a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function for the porting layer when a new byte is available.  <a href="mbport_8h.html#a6ff9d563210c04e3afb414b9db75154a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6ff9d563210c04e3afb414b9db75154a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46ac9d979eaaeb885415014a0cb350b2"><td class="memItemLeft" align="right" valign="top">BOOL(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a46ac9d979eaaeb885415014a0cb350b2">pxMBFrameCBTransmitterEmpty</a> )(void)</td></tr>
+<tr class="separator:a46ac9d979eaaeb885415014a0cb350b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ca010d1cf1b3bda066f0d65641d9055"><td class="memItemLeft" align="right" valign="top">BOOL(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mbport_8h.html#a3ca010d1cf1b3bda066f0d65641d9055">pxMBPortCBTimerExpired</a> )(void)</td></tr>
+<tr class="separator:a3ca010d1cf1b3bda066f0d65641d9055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Перечисления</h2>
+<a id="a208845596909620aa0062468ff11ef02" name="a208845596909620aa0062468ff11ef02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a208845596909620aa0062468ff11ef02">&#9670;&#160;</a></span>eMBEventType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="mbport_8h.html#a208845596909620aa0062468ff11ef02">eMBEventType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0" name="a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0"></a>EV_READY&#160;</td><td class="fielddoc"><p >Startup finished. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2" name="a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2"></a>EV_FRAME_RECEIVED&#160;</td><td class="fielddoc"><p >Frame received. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019" name="a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019"></a>EV_EXECUTE&#160;</td><td class="fielddoc"><p >Execute function. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95" name="a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95"></a>EV_FRAME_SENT&#160;</td><td class="fielddoc"><p >Frame sent. </p>
+</td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="mbport_8h_source.html">mbport.h</a> строка <a class="el" href="mbport_8h_source.html#l00040">40</a></p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>{</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_enumvalue" href="mbport_8h.html#a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0">EV_READY</a>,                   </div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_enumvalue" href="mbport_8h.html#a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2">EV_FRAME_RECEIVED</a>,          </div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_enumvalue" href="mbport_8h.html#a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019">EV_EXECUTE</a>,                 </div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_enumvalue" href="mbport_8h.html#a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95">EV_FRAME_SENT</a>               </div>
+<div class="line"><span class="lineno">   46</span>} <a class="code hl_enumeration" href="mbport_8h.html#a208845596909620aa0062468ff11ef02">eMBEventType</a>;</div>
+<div class="ttc" id="ambport_8h_html_a208845596909620aa0062468ff11ef02"><div class="ttname"><a href="mbport_8h.html#a208845596909620aa0062468ff11ef02">eMBEventType</a></div><div class="ttdeci">eMBEventType</div><div class="ttdef"><b>Definition:</b> <a href="mbport_8h_source.html#l00040">mbport.h:41</a></div></div>
+<div class="ttc" id="ambport_8h_html_a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0"><div class="ttname"><a href="mbport_8h.html#a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0">EV_READY</a></div><div class="ttdeci">@ EV_READY</div><div class="ttdef"><b>Definition:</b> <a href="mbport_8h_source.html#l00042">mbport.h:42</a></div></div>
+<div class="ttc" id="ambport_8h_html_a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2"><div class="ttname"><a href="mbport_8h.html#a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2">EV_FRAME_RECEIVED</a></div><div class="ttdeci">@ EV_FRAME_RECEIVED</div><div class="ttdef"><b>Definition:</b> <a href="mbport_8h_source.html#l00043">mbport.h:43</a></div></div>
+<div class="ttc" id="ambport_8h_html_a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019"><div class="ttname"><a href="mbport_8h.html#a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019">EV_EXECUTE</a></div><div class="ttdeci">@ EV_EXECUTE</div><div class="ttdef"><b>Definition:</b> <a href="mbport_8h_source.html#l00044">mbport.h:44</a></div></div>
+<div class="ttc" id="ambport_8h_html_a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95"><div class="ttname"><a href="mbport_8h.html#a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95">EV_FRAME_SENT</a></div><div class="ttdeci">@ EV_FRAME_SENT</div><div class="ttdef"><b>Definition:</b> <a href="mbport_8h_source.html#l00046">mbport.h:45</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
+<a id="ae97991ffb6ce01584afce5dd4f653b41" name="ae97991ffb6ce01584afce5dd4f653b41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae97991ffb6ce01584afce5dd4f653b41">&#9670;&#160;</a></span>vMBPortClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vMBPortClose </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_ae97991ffb6ce01584afce5dd4f653b41_icgraph.png" border="0" usemap="#ambport_8h_ae97991ffb6ce01584afce5dd4f653b41_icgraph" alt=""/></div>
+<map name="ambport_8h_ae97991ffb6ce01584afce5dd4f653b41_icgraph" id="ambport_8h_ae97991ffb6ce01584afce5dd4f653b41_icgraph">
+<area shape="rect" title=" " alt="" coords="120,5,224,31"/>
+<area shape="rect" href="group__modbus.html#ga622dbe6b38ff1d255523d4736fa3da26" title="Initialize the Modbus protocol stack." alt="" coords="5,5,72,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4bf68bda6b5ed6c341d27d439a6c03df" name="a4bf68bda6b5ed6c341d27d439a6c03df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bf68bda6b5ed6c341d27d439a6c03df">&#9670;&#160;</a></span>vMBPortSerialEnable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vMBPortSerialEnable </td>
+          <td>(</td>
+          <td class="paramtype">BOOL&#160;</td>
+          <td class="paramname"><em>xRxEnable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BOOL&#160;</td>
+          <td class="paramname"><em>xTxEnable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df_icgraph.png" border="0" usemap="#ambport_8h_a4bf68bda6b5ed6c341d27d439a6c03df_icgraph" alt=""/></div>
+<map name="ambport_8h_a4bf68bda6b5ed6c341d27d439a6c03df_icgraph" id="ambport_8h_a4bf68bda6b5ed6c341d27d439a6c03df_icgraph">
+<area shape="rect" title=" " alt="" coords="320,80,464,105"/>
+<area shape="rect" href="mbrtu_8c.html#a6feb0c70f52d3ef74da1cfbdc10d1ab0" title=" " alt="" coords="144,5,248,31"/>
+<area shape="rect" href="mbrtu_8c.html#ae342bae030ea291a6e8a2fe3d2d0abeb" title=" " alt="" coords="145,55,247,80"/>
+<area shape="rect" href="mbrtu_8c.html#a3d44ef4747b7202d37142ef1aaea493b" title=" " alt="" coords="145,104,247,129"/>
+<area shape="rect" href="mbrtu_8c.html#a663e5daf0be0f2426a72c531c91d423f" title=" " alt="" coords="120,153,272,179"/>
+<area shape="rect" href="group__modbus.html#ga622dbe6b38ff1d255523d4736fa3da26" title="Initialize the Modbus protocol stack." alt="" coords="5,80,72,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a334f66a0527a862f58488cc40d7999d4" name="a334f66a0527a862f58488cc40d7999d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a334f66a0527a862f58488cc40d7999d4">&#9670;&#160;</a></span>vMBPortTimersDelay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vMBPortTimersDelay </td>
+          <td>(</td>
+          <td class="paramtype">USHORT&#160;</td>
+          <td class="paramname"><em>usTimeOutMS</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_a334f66a0527a862f58488cc40d7999d4_icgraph.png" border="0" usemap="#ambport_8h_a334f66a0527a862f58488cc40d7999d4_icgraph" alt=""/></div>
+<map name="ambport_8h_a334f66a0527a862f58488cc40d7999d4_icgraph" id="ambport_8h_a334f66a0527a862f58488cc40d7999d4_icgraph">
+<area shape="rect" title=" " alt="" coords="124,5,267,31"/>
+<area shape="rect" href="group__modbus.html#ga12648c98d45f768ba878fbcee46caca5" title="The main pooling loop of the Modbus protocol stack." alt="" coords="5,5,76,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adf96b9d106626e42fa0b7b1a0b802523" name="adf96b9d106626e42fa0b7b1a0b802523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf96b9d106626e42fa0b7b1a0b802523">&#9670;&#160;</a></span>vMBPortTimersDisable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vMBPortTimersDisable </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_adf96b9d106626e42fa0b7b1a0b802523_icgraph.png" border="0" usemap="#ambport_8h_adf96b9d106626e42fa0b7b1a0b802523_icgraph" alt=""/></div>
+<map name="ambport_8h_adf96b9d106626e42fa0b7b1a0b802523_icgraph" id="ambport_8h_adf96b9d106626e42fa0b7b1a0b802523_icgraph">
+<area shape="rect" title=" " alt="" coords="339,31,492,56"/>
+<area shape="rect" href="mbrtu_8c.html#a3d44ef4747b7202d37142ef1aaea493b" title=" " alt="" coords="155,5,256,31"/>
+<area shape="rect" href="mbrtu_8c.html#ac6302a8b67c6b82ae49e6c9d6a9795da" title=" " alt="" coords="120,55,291,80"/>
+<area shape="rect" href="group__modbus.html#ga622dbe6b38ff1d255523d4736fa3da26" title="Initialize the Modbus protocol stack." alt="" coords="5,31,72,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2356d0d397b3da961b86cabddb9a9760" name="a2356d0d397b3da961b86cabddb9a9760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2356d0d397b3da961b86cabddb9a9760">&#9670;&#160;</a></span>vMBPortTimersEnable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vMBPortTimersEnable </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_a2356d0d397b3da961b86cabddb9a9760_icgraph.png" border="0" usemap="#ambport_8h_a2356d0d397b3da961b86cabddb9a9760_icgraph" alt=""/></div>
+<map name="ambport_8h_a2356d0d397b3da961b86cabddb9a9760_icgraph" id="ambport_8h_a2356d0d397b3da961b86cabddb9a9760_icgraph">
+<area shape="rect" title=" " alt="" coords="315,31,465,56"/>
+<area shape="rect" href="mbrtu_8c.html#ae342bae030ea291a6e8a2fe3d2d0abeb" title=" " alt="" coords="142,5,245,31"/>
+<area shape="rect" href="mbrtu_8c.html#a447f45f582daab2600cad612b00120b0" title=" " alt="" coords="120,55,267,80"/>
+<area shape="rect" href="group__modbus.html#ga622dbe6b38ff1d255523d4736fa3da26" title="Initialize the Modbus protocol stack." alt="" coords="5,31,72,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8c43e5231c42bb7b8c6a31f8bfcb8a3e" name="a8c43e5231c42bb7b8c6a31f8bfcb8a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c43e5231c42bb7b8c6a31f8bfcb8a3e">&#9670;&#160;</a></span>vMBTCPPortClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vMBTCPPortClose </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ea2cd5d0cb31ce90df6e46d7af29d8d" name="a2ea2cd5d0cb31ce90df6e46d7af29d8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ea2cd5d0cb31ce90df6e46d7af29d8d">&#9670;&#160;</a></span>vMBTCPPortDisable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vMBTCPPortDisable </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad61d350e63d0c41e7563ac0bc0fd346f" name="ad61d350e63d0c41e7563ac0bc0fd346f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad61d350e63d0c41e7563ac0bc0fd346f">&#9670;&#160;</a></span>xMBPortEventGet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL xMBPortEventGet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mbport_8h.html#a208845596909620aa0062468ff11ef02">eMBEventType</a> *&#160;</td>
+          <td class="paramname"><em>eEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_ad61d350e63d0c41e7563ac0bc0fd346f_icgraph.png" border="0" usemap="#ambport_8h_ad61d350e63d0c41e7563ac0bc0fd346f_icgraph" alt=""/></div>
+<map name="ambport_8h_ad61d350e63d0c41e7563ac0bc0fd346f_icgraph" id="ambport_8h_ad61d350e63d0c41e7563ac0bc0fd346f_icgraph">
+<area shape="rect" title=" " alt="" coords="124,5,251,31"/>
+<area shape="rect" href="group__modbus.html#ga12648c98d45f768ba878fbcee46caca5" title="The main pooling loop of the Modbus protocol stack." alt="" coords="5,5,76,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a23aa6afd41597f7aaf5d1a6e6831c718" name="a23aa6afd41597f7aaf5d1a6e6831c718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23aa6afd41597f7aaf5d1a6e6831c718">&#9670;&#160;</a></span>xMBPortEventInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL xMBPortEventInit </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_a23aa6afd41597f7aaf5d1a6e6831c718_icgraph.png" border="0" usemap="#ambport_8h_a23aa6afd41597f7aaf5d1a6e6831c718_icgraph" alt=""/></div>
+<map name="ambport_8h_a23aa6afd41597f7aaf5d1a6e6831c718_icgraph" id="ambport_8h_a23aa6afd41597f7aaf5d1a6e6831c718_icgraph">
+<area shape="rect" title=" " alt="" coords="120,5,243,31"/>
+<area shape="rect" href="group__modbus.html#ga622dbe6b38ff1d255523d4736fa3da26" title="Initialize the Modbus protocol stack." alt="" coords="5,5,72,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2cdfe42cd5ee37d5839081c636576e7c" name="a2cdfe42cd5ee37d5839081c636576e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cdfe42cd5ee37d5839081c636576e7c">&#9670;&#160;</a></span>xMBPortEventPost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL xMBPortEventPost </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mbport_8h.html#a208845596909620aa0062468ff11ef02">eMBEventType</a>&#160;</td>
+          <td class="paramname"><em>eEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c_icgraph.png" border="0" usemap="#ambport_8h_a2cdfe42cd5ee37d5839081c636576e7c_icgraph" alt=""/></div>
+<map name="ambport_8h_a2cdfe42cd5ee37d5839081c636576e7c_icgraph" id="ambport_8h_a2cdfe42cd5ee37d5839081c636576e7c_icgraph">
+<area shape="rect" title=" " alt="" coords="339,55,471,80"/>
+<area shape="rect" href="group__modbus.html#ga12648c98d45f768ba878fbcee46caca5" title="The main pooling loop of the Modbus protocol stack." alt="" coords="170,5,241,31"/>
+<area shape="rect" href="mbrtu_8c.html#ac6302a8b67c6b82ae49e6c9d6a9795da" title=" " alt="" coords="120,55,291,80"/>
+<area shape="rect" href="mbrtu_8c.html#a663e5daf0be0f2426a72c531c91d423f" title=" " alt="" coords="129,104,281,129"/>
+<area shape="rect" href="group__modbus.html#ga622dbe6b38ff1d255523d4736fa3da26" title="Initialize the Modbus protocol stack." alt="" coords="5,80,72,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9f5987b97b1075363db05a6783bd1103" name="a9f5987b97b1075363db05a6783bd1103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f5987b97b1075363db05a6783bd1103">&#9670;&#160;</a></span>xMBPortSerialClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xMBPortSerialClose </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a4724e9dc26b2d2d1cc2a6d41c24770" name="a4a4724e9dc26b2d2d1cc2a6d41c24770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a4724e9dc26b2d2d1cc2a6d41c24770">&#9670;&#160;</a></span>xMBPortSerialGetByte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL xMBPortSerialGetByte </td>
+          <td>(</td>
+          <td class="paramtype">CHAR *&#160;</td>
+          <td class="paramname"><em>pucByte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770_icgraph.png" border="0" usemap="#ambport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770_icgraph" alt=""/></div>
+<map name="ambport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770_icgraph" id="ambport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770_icgraph">
+<area shape="rect" title=" " alt="" coords="315,5,469,31"/>
+<area shape="rect" href="mbrtu_8c.html#a447f45f582daab2600cad612b00120b0" title=" " alt="" coords="120,5,267,31"/>
+<area shape="rect" href="group__modbus.html#ga622dbe6b38ff1d255523d4736fa3da26" title="Initialize the Modbus protocol stack." alt="" coords="5,5,72,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af614e62c57eaba86f45c45e5d0e6cfd9" name="af614e62c57eaba86f45c45e5d0e6cfd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af614e62c57eaba86f45c45e5d0e6cfd9">&#9670;&#160;</a></span>xMBPortSerialInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL xMBPortSerialInit </td>
+          <td>(</td>
+          <td class="paramtype">UCHAR&#160;</td>
+          <td class="paramname"><em>ucPort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONG&#160;</td>
+          <td class="paramname"><em>ulBaudRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UCHAR&#160;</td>
+          <td class="paramname"><em>ucDataBits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__modbus.html#ga16ba85fa56bcd52a11a12576af445ccb">eMBParity</a>&#160;</td>
+          <td class="paramname"><em>eParity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_af614e62c57eaba86f45c45e5d0e6cfd9_icgraph.png" border="0" usemap="#ambport_8h_af614e62c57eaba86f45c45e5d0e6cfd9_icgraph" alt=""/></div>
+<map name="ambport_8h_af614e62c57eaba86f45c45e5d0e6cfd9_icgraph" id="ambport_8h_af614e62c57eaba86f45c45e5d0e6cfd9_icgraph">
+<area shape="rect" title=" " alt="" coords="259,5,381,31"/>
+<area shape="rect" href="mbrtu_8c.html#a52738b46d7f3be581582d30cfb2bfcb8" title=" " alt="" coords="120,5,211,31"/>
+<area shape="rect" href="group__modbus.html#ga622dbe6b38ff1d255523d4736fa3da26" title="Initialize the Modbus protocol stack." alt="" coords="5,5,72,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5ca95563c25eb239a4c51f3ce35f5cc8" name="a5ca95563c25eb239a4c51f3ce35f5cc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca95563c25eb239a4c51f3ce35f5cc8">&#9670;&#160;</a></span>xMBPortSerialPutByte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL xMBPortSerialPutByte </td>
+          <td>(</td>
+          <td class="paramtype">CHAR&#160;</td>
+          <td class="paramname"><em>ucByte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8_icgraph.png" border="0" usemap="#ambport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8_icgraph" alt=""/></div>
+<map name="ambport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8_icgraph" id="ambport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8_icgraph">
+<area shape="rect" title=" " alt="" coords="320,5,473,31"/>
+<area shape="rect" href="mbrtu_8c.html#a663e5daf0be0f2426a72c531c91d423f" title=" " alt="" coords="120,5,272,31"/>
+<area shape="rect" href="group__modbus.html#ga622dbe6b38ff1d255523d4736fa3da26" title="Initialize the Modbus protocol stack." alt="" coords="5,5,72,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7a7591ccc79c9423e5c1821d3fd826d1" name="a7a7591ccc79c9423e5c1821d3fd826d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a7591ccc79c9423e5c1821d3fd826d1">&#9670;&#160;</a></span>xMBPortTimersClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xMBPortTimersClose </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93d8e78fe43e66fab707da6eda4f5eaf" name="a93d8e78fe43e66fab707da6eda4f5eaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d8e78fe43e66fab707da6eda4f5eaf">&#9670;&#160;</a></span>xMBPortTimersInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL xMBPortTimersInit </td>
+          <td>(</td>
+          <td class="paramtype">USHORT&#160;</td>
+          <td class="paramname"><em>usTimeOut50us</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="mbport_8h_a93d8e78fe43e66fab707da6eda4f5eaf_icgraph.png" border="0" usemap="#ambport_8h_a93d8e78fe43e66fab707da6eda4f5eaf_icgraph" alt=""/></div>
+<map name="ambport_8h_a93d8e78fe43e66fab707da6eda4f5eaf_icgraph" id="ambport_8h_a93d8e78fe43e66fab707da6eda4f5eaf_icgraph">
+<area shape="rect" title=" " alt="" coords="259,5,388,31"/>
+<area shape="rect" href="mbrtu_8c.html#a52738b46d7f3be581582d30cfb2bfcb8" title=" " alt="" coords="120,5,211,31"/>
+<area shape="rect" href="group__modbus.html#ga622dbe6b38ff1d255523d4736fa3da26" title="Initialize the Modbus protocol stack." alt="" coords="5,5,72,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a770c9a4001e08aafec96234e51ac8f42" name="a770c9a4001e08aafec96234e51ac8f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a770c9a4001e08aafec96234e51ac8f42">&#9670;&#160;</a></span>xMBTCPPortGetRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL xMBTCPPortGetRequest </td>
+          <td>(</td>
+          <td class="paramtype">UCHAR **&#160;</td>
+          <td class="paramname"><em>ppucMBTCPFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">USHORT *&#160;</td>
+          <td class="paramname"><em>usTCPLength</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a793d6e53b5632f4075af872b6a5c8ca5" name="a793d6e53b5632f4075af872b6a5c8ca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a793d6e53b5632f4075af872b6a5c8ca5">&#9670;&#160;</a></span>xMBTCPPortInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL xMBTCPPortInit </td>
+          <td>(</td>
+          <td class="paramtype">USHORT&#160;</td>
+          <td class="paramname"><em>usTCPPort</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2902b52c4070bd676851561caef5a4c5" name="a2902b52c4070bd676851561caef5a4c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2902b52c4070bd676851561caef5a4c5">&#9670;&#160;</a></span>xMBTCPPortSendResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL xMBTCPPortSendResponse </td>
+          <td>(</td>
+          <td class="paramtype">const UCHAR *&#160;</td>
+          <td class="paramname"><em>pucMBTCPFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">USHORT&#160;</td>
+          <td class="paramname"><em>usTCPLength</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a6ff9d563210c04e3afb414b9db75154a" name="a6ff9d563210c04e3afb414b9db75154a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff9d563210c04e3afb414b9db75154a">&#9670;&#160;</a></span>pxMBFrameCBByteReceived</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL(* pxMBFrameCBByteReceived) (void) </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function for the porting layer when a new byte is available. </p>
+<p >Depending upon the mode this callback function is used by the RTU or ASCII transmission layers. In any case a call to <a class="el" href="mbport_8h.html#a4a4724e9dc26b2d2d1cc2a6d41c24770">xMBPortSerialGetByte()</a> must immediately return a new character.</p>
+<dl class="section return"><dt>Возвращает</dt><dd><code>TRUE</code> if a event was posted to the queue because a new byte was received. The port implementation should wake up the tasks which are currently blocked on the eventqueue. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="mb_8c_source.html">mb.c</a> строка <a class="el" href="mb_8c_source.html#l00085">85</a></p>
+
+</div>
+</div>
+<a id="a46ac9d979eaaeb885415014a0cb350b2" name="a46ac9d979eaaeb885415014a0cb350b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46ac9d979eaaeb885415014a0cb350b2">&#9670;&#160;</a></span>pxMBFrameCBTransmitterEmpty</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL(* pxMBFrameCBTransmitterEmpty) (void) </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mb_8c_source.html">mb.c</a> строка <a class="el" href="mb_8c_source.html#l00086">86</a></p>
+
+</div>
+</div>
+<a id="a3ca010d1cf1b3bda066f0d65641d9055" name="a3ca010d1cf1b3bda066f0d65641d9055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ca010d1cf1b3bda066f0d65641d9055">&#9670;&#160;</a></span>pxMBPortCBTimerExpired</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL(* pxMBPortCBTimerExpired) (void) </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="mb_8c_source.html">mb.c</a> строка <a class="el" href="mb_8c_source.html#l00087">87</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e6c23235d574a84b5ef1a8613e824ad0.html">for lab</a></li><li class="navelem"><a class="el" href="dir_49ca589d6040ea0275389168c0e2a0d9.html">freemodbus-v1.5.0</a></li><li class="navelem"><a class="el" href="dir_4d4451055b9134f402608f9a26feb7dc.html">modbus</a></li><li class="navelem"><a class="el" href="dir_73dd4f3872e340c5a86df0c2449386b7.html">include</a></li><li class="navelem"><a class="el" href="mbport_8h.html">mbport.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

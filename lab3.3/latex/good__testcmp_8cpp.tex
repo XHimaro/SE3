@@ -1,0 +1,55 @@
+\hypertarget{good__testcmp_8cpp}{}\doxysection{Файл Good\+\_\+complex/good\+\_\+testcmp.cpp}
+\label{good__testcmp_8cpp}\index{Good\_complex/good\_testcmp.cpp@{Good\_complex/good\_testcmp.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}good\+\_\+mycomplex.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для good\+\_\+testcmp.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{good__testcmp_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{good__testcmp_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{good__testcmp_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{good__testcmp_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{good\_testcmp.cpp@{good\_testcmp.cpp}!main@{main}}
+\index{main@{main}!good\_testcmp.cpp@{good\_testcmp.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{good__testcmp_8cpp_source}{good\+\_\+testcmp.\+cpp}} строка \mbox{\hyperlink{good__testcmp_8cpp_source_l00008}{8}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009 \{}
+\DoxyCodeLine{00010     \mbox{\hyperlink{class_complex}{Complex}} \mbox{\hyperlink{class_a}{A}};}
+\DoxyCodeLine{00011     \mbox{\hyperlink{class_complex}{Complex}} \mbox{\hyperlink{class_b}{B}}(-\/4);}
+\DoxyCodeLine{00012     \mbox{\hyperlink{class_complex}{Complex}} \mbox{\hyperlink{class_c}{C}}(23.0, 45.9);}
+\DoxyCodeLine{00013     \mbox{\hyperlink{class_complex}{Complex}} \mbox{\hyperlink{class_d}{D}};}
+\DoxyCodeLine{00014     \mbox{\hyperlink{class_complex}{Complex}} M=\mbox{\hyperlink{class_b}{B}}-\/\mbox{\hyperlink{class_c}{C}};}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016     cout << \mbox{\hyperlink{class_a}{A}} << \textcolor{stringliteral}{"{},"{}} << \mbox{\hyperlink{class_b}{B}} << \textcolor{stringliteral}{"{},"{}} << \mbox{\hyperlink{class_c}{C}} << endl;}
+\DoxyCodeLine{00017     \mbox{\hyperlink{class_a}{A}} = \mbox{\hyperlink{class_b}{B}} + \mbox{\hyperlink{class_c}{C}};}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     cout << \textcolor{stringliteral}{"{}A=B+C,A="{}} << \mbox{\hyperlink{class_a}{A}} << endl;}
+\DoxyCodeLine{00020     cout << \textcolor{stringliteral}{"{}M = B -\/ C, M = "{}} << M << endl;}
+\DoxyCodeLine{00021     cout << \textcolor{stringliteral}{"{}M*A="{}} << M*\mbox{\hyperlink{class_a}{A}} << endl;}
+\DoxyCodeLine{00022     cout << \textcolor{stringliteral}{"{}M/4.45="{}} << M / 4.45 << endl;}
+\DoxyCodeLine{00023     cout << \textcolor{stringliteral}{"{}Enter complex number D = "{}};}
+\DoxyCodeLine{00024     cin >> \mbox{\hyperlink{class_d}{D}};}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \mbox{\hyperlink{class_a}{A}} += \mbox{\hyperlink{class_c}{C}} + \mbox{\hyperlink{class_d}{D}};}
+\DoxyCodeLine{00027     cout << \textcolor{stringliteral}{"{}D = "{}} << \mbox{\hyperlink{class_d}{D}} << \textcolor{stringliteral}{"{}\(\backslash\)nA = "{}} << \mbox{\hyperlink{class_a}{A}} << endl;}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00030 \}}
+
+\end{DoxyCode}

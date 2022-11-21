@@ -1,0 +1,61 @@
+\hypertarget{_g_v_context_8h_source}{}\doxysection{GVContext.\+h}
+\label{_g_v_context_8h_source}\index{for lab/Graphviz/include/graphviz/GVContext.h@{for lab/Graphviz/include/graphviz/GVContext.h}}
+\mbox{\hyperlink{_g_v_context_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00003}00003 \textcolor{preprocessor}{\#include <string\_view>}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gvc_8h}{gvc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00008}00008 \textcolor{preprocessor}{\#ifdef GVDLL}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00009}00009 \textcolor{preprocessor}{\#if gvc\_\_\_EXPORTS }\textcolor{comment}{// CMake's substitution of gvc++\_EXPORTS}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00010}00010 \textcolor{preprocessor}{\#define GVCONTEXT\_API \_\_declspec(dllexport)}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00011}00011 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00012}00012 \textcolor{preprocessor}{\#define GVCONTEXT\_API \_\_declspec(dllimport)}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00013}00013 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00014}00014 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00016}00016 \textcolor{preprocessor}{\#ifndef GVCONTEXT\_API}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00017}\mbox{\hyperlink{_g_v_context_8h_afd80b7d57cf7b9821d31e84fbcd986d5}{00017}} \textcolor{preprocessor}{\#define GVCONTEXT\_API }\textcolor{comment}{/* nothing */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00018}00018 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00020}\mbox{\hyperlink{namespace_g_v_c}{00020}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_g_v_c}{GVC}} \{}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00026}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{00026}} \textcolor{keyword}{class }\mbox{\hyperlink{_g_v_context_8h_afd80b7d57cf7b9821d31e84fbcd986d5}{GVCONTEXT\_API}} \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \{}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00027}00027 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00028}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a33505a7fe78072d98ee0231405d6ceda}{00028}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a33505a7fe78072d98ee0231405d6ceda}{GVContext}}();}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00038}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a2302bd85318ee68847d9ec0022f0920c}{00038}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a2302bd85318ee68847d9ec0022f0920c}{GVContext}}(\textcolor{keyword}{const} \mbox{\hyperlink{structlt__symlist__t}{lt\_symlist\_t}} *builtins, \textcolor{keywordtype}{bool} demand\_loading);}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00039}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a90ff15892e780e873abd368db8e5329f}{00039}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a90ff15892e780e873abd368db8e5329f}{\string~GVContext}}();}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00041}00041   \textcolor{comment}{// delete copy since we manage a C struct using a raw pointer and the struct}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00042}00042   \textcolor{comment}{// cannot be easily copied since it contains even more raw pointers}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00043}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a26a9b390d7ddd6d1b6a1e33facdeed29}{00043}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a26a9b390d7ddd6d1b6a1e33facdeed29}{GVContext}}(\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00044}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_acec193f9630ef0de50b21f928079dad5}{00044}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_acec193f9630ef0de50b21f928079dad5}{operator=}}(\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00046}00046   \textcolor{comment}{// implement move since we manage a C struct using a raw pointer}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00047}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a650b8b1d6c1e1d1fb757731a0a04855a}{00047}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a650b8b1d6c1e1d1fb757731a0a04855a}{GVContext}}(\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&other) noexcept}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00048}00048       : m\_gvc(std::exchange(other.m\_gvc, \textcolor{keyword}{nullptr})) \{\}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00049}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_af36fd6a586339ef2424e0c657bacebfb}{00049}}   \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_af36fd6a586339ef2424e0c657bacebfb}{operator=}}(\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00050}00050     \textcolor{keyword}{using }std::swap;}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00051}00051     swap(m\_gvc, other.m\_gvc);}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00052}00052     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00053}00053   \}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00055}00055   \textcolor{comment}{// get a non-\/owning pointer to the underlying C data structure}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00056}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a641177c9e10d2f7380d153821ab56e34}{00056}}   \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a641177c9e10d2f7380d153821ab56e34}{c\_struct}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_gvc; \}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00058}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_aca3251b7cc97d1fd7186d9bcbe4c6a4c}{00058}}   std::string\_view \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_aca3251b7cc97d1fd7186d9bcbe4c6a4c}{buildDate}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00059}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a114d00b79ace13a3d353125e1aa6f878}{00059}}   std::string\_view \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a114d00b79ace13a3d353125e1aa6f878}{version}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00061}00061 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00062}00062   \textcolor{comment}{// the underlying C data structure}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00063}\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a09eef3174233292bcf5bdd1816b147fe}{00063}}   \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}} *m\_gvc = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00064}00064 \};}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00066}00066 \} \textcolor{comment}{// namespace GVC}}
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_g_v_context_8h_source_l00068}00068 \textcolor{preprocessor}{\#undef GVCONTEXT\_API}}
+
+\end{DoxyCode}

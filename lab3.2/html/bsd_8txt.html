@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ModBus: Файл for lab/freemodbus-v1.5.0/bsd.txt</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ModBus
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('bsd_8txt.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle"><div class="title">Файл for lab/freemodbus-v1.5.0/bsd.txt</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a8610e40af7b5cd7a4e5ac75666f62bcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#a8610e40af7b5cd7a4e5ac75666f62bcf">Copyright</a> (<a class="el" href="gpl_8txt.html#a052453a4f8c7149c6f5505aca1ca78c2">c</a>) 2006 Christian Walter&lt; wolti @sil.at &gt; All <a class="el" href="gpl_8txt.html#a8735f0e515c965031b8651a7fc9eae79">rights</a> reserved. Redistribution and use in source and binary forms</td></tr>
+<tr class="separator:a8610e40af7b5cd7a4e5ac75666f62bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55cabcecea3ca2a9f30414dcd9e679de"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY OR CONSEQUENTIAL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#a55cabcecea3ca2a9f30414dcd9e679de">DAMAGES</a> (<a class="el" href="bsd_8txt.html#a582346b71b9c242097f4b72230d49d46">INCLUDING</a>, BUT NOT LIMITED <a class="el" href="bsd_8txt.html#a2afc21dfdca8d4272db93a2012dc128f">TO</a>, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;LOSS OF USE, DATA, OR PROFITS;OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF <a class="el" href="bsd_8txt.html#a2f4fcb234b181b39aca49c9f82123c71">LIABILITY</a></td></tr>
+<tr class="separator:a55cabcecea3ca2a9f30414dcd9e679de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0fd54de12bc8d365d0d594afab6bfaf"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY OR CONSEQUENTIAL WHETHER IN STRICT OR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#aa0fd54de12bc8d365d0d594afab6bfaf">TORT</a> (<a class="el" href="bsd_8txt.html#a582346b71b9c242097f4b72230d49d46">INCLUDING</a> NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE</td></tr>
+<tr class="separator:aa0fd54de12bc8d365d0d594afab6bfaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:ac68a9f46d7174ff75faee3b912504adf"><td class="memItemLeft" align="right" valign="top">with or without&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#ac68a9f46d7174ff75faee3b912504adf">modification</a></td></tr>
+<tr class="separator:ac68a9f46d7174ff75faee3b912504adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab3addf33ece426db7a9c5d2761fbe4"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#a8ab3addf33ece426db7a9c5d2761fbe4">met</a></td></tr>
+<tr class="separator:a8ab3addf33ece426db7a9c5d2761fbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad84854b8f84dfa8d5d1d983b443bec92"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#ad84854b8f84dfa8d5d1d983b443bec92">notice</a></td></tr>
+<tr class="separator:ad84854b8f84dfa8d5d1d983b443bec92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a90c610b32e1983272ce92376ee71f"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a></td></tr>
+<tr class="separator:ae3a90c610b32e1983272ce92376ee71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a582346b71b9c242097f4b72230d49d46"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#a582346b71b9c242097f4b72230d49d46">INCLUDING</a></td></tr>
+<tr class="separator:a582346b71b9c242097f4b72230d49d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2afc21dfdca8d4272db93a2012dc128f"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#a2afc21dfdca8d4272db93a2012dc128f">TO</a></td></tr>
+<tr class="separator:a2afc21dfdca8d4272db93a2012dc128f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2aa7a8da2e508e36903ceeb21ed51dd"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#ac2aa7a8da2e508e36903ceeb21ed51dd">DIRECT</a></td></tr>
+<tr class="separator:ac2aa7a8da2e508e36903ceeb21ed51dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2976aab372d1665f6fe4e7d5f013d7ad"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#a2976aab372d1665f6fe4e7d5f013d7ad">INDIRECT</a></td></tr>
+<tr class="separator:a2976aab372d1665f6fe4e7d5f013d7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5b9e7f437edbda58256f3c799593ec1"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#ae5b9e7f437edbda58256f3c799593ec1">INCIDENTAL</a></td></tr>
+<tr class="separator:ae5b9e7f437edbda58256f3c799593ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a8616b6b460c99949688212e4e0140"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#a84a8616b6b460c99949688212e4e0140">SPECIAL</a></td></tr>
+<tr class="separator:a84a8616b6b460c99949688212e4e0140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7fdf916449d1a6d8b55748db8bd4b00"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#ac7fdf916449d1a6d8b55748db8bd4b00">EXEMPLARY</a></td></tr>
+<tr class="separator:ac7fdf916449d1a6d8b55748db8bd4b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa038a11613e56a40d4dea1fb03476a"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY OR CONSEQUENTIAL WHETHER IN&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#a2fa038a11613e56a40d4dea1fb03476a">CONTRACT</a></td></tr>
+<tr class="separator:a2fa038a11613e56a40d4dea1fb03476a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f4fcb234b181b39aca49c9f82123c71"><td class="memItemLeft" align="right" valign="top">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY OR CONSEQUENTIAL WHETHER IN STRICT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bsd_8txt.html#a2f4fcb234b181b39aca49c9f82123c71">LIABILITY</a></td></tr>
+<tr class="separator:a2f4fcb234b181b39aca49c9f82123c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a8610e40af7b5cd7a4e5ac75666f62bcf" name="a8610e40af7b5cd7a4e5ac75666f62bcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8610e40af7b5cd7a4e5ac75666f62bcf">&#9670;&#160;</a></span>Copyright()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Copyright </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gpl_8txt.html#a052453a4f8c7149c6f5505aca1ca78c2">c</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a55cabcecea3ca2a9f30414dcd9e679de" name="a55cabcecea3ca2a9f30414dcd9e679de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55cabcecea3ca2a9f30414dcd9e679de">&#9670;&#160;</a></span>DAMAGES()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY OR CONSEQUENTIAL DAMAGES </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="bsd_8txt.html#a582346b71b9c242097f4b72230d49d46">INCLUDING</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BUT NOT LIMITED&#160;</td>
+          <td class="paramname"><em>TO</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;LOSS OF&#160;</td>
+          <td class="paramname"><em>USE</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DATA&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">OR PROFITS;OR BUSINESS&#160;</td>
+          <td class="paramname"><em>INTERRUPTION</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0fd54de12bc8d365d0d594afab6bfaf" name="aa0fd54de12bc8d365d0d594afab6bfaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0fd54de12bc8d365d0d594afab6bfaf">&#9670;&#160;</a></span>TORT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY OR CONSEQUENTIAL WHETHER IN STRICT OR TORT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="bsd_8txt.html#a582346b71b9c242097f4b72230d49d46">INCLUDING</a> NEGLIGENCE OR&#160;</td>
+          <td class="paramname"><em>OTHERWISE</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a2fa038a11613e56a40d4dea1fb03476a" name="a2fa038a11613e56a40d4dea1fb03476a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa038a11613e56a40d4dea1fb03476a">&#9670;&#160;</a></span>CONTRACT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY OR CONSEQUENTIAL WHETHER IN CONTRACT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<a id="ac2aa7a8da2e508e36903ceeb21ed51dd" name="ac2aa7a8da2e508e36903ceeb21ed51dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2aa7a8da2e508e36903ceeb21ed51dd">&#9670;&#160;</a></span>DIRECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00018">18</a></p>
+
+</div>
+</div>
+<a id="ac7fdf916449d1a6d8b55748db8bd4b00" name="ac7fdf916449d1a6d8b55748db8bd4b00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7fdf916449d1a6d8b55748db8bd4b00">&#9670;&#160;</a></span>EXEMPLARY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY EXEMPLARY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a id="ae5b9e7f437edbda58256f3c799593ec1" name="ae5b9e7f437edbda58256f3c799593ec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5b9e7f437edbda58256f3c799593ec1">&#9670;&#160;</a></span>INCIDENTAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY INCIDENTAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a id="a582346b71b9c242097f4b72230d49d46" name="a582346b71b9c242097f4b72230d49d46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a582346b71b9c242097f4b72230d49d46">&#9670;&#160;</a></span>INCLUDING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> INCLUDING</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a id="a2976aab372d1665f6fe4e7d5f013d7ad" name="a2976aab372d1665f6fe4e7d5f013d7ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2976aab372d1665f6fe4e7d5f013d7ad">&#9670;&#160;</a></span>INDIRECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY INDIRECT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00018">18</a></p>
+
+</div>
+</div>
+<a id="a2f4fcb234b181b39aca49c9f82123c71" name="a2f4fcb234b181b39aca49c9f82123c71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f4fcb234b181b39aca49c9f82123c71">&#9670;&#160;</a></span>LIABILITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY OR CONSEQUENTIAL WHETHER IN STRICT LIABILITY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<a id="a8ab3addf33ece426db7a9c5d2761fbe4" name="a8ab3addf33ece426db7a9c5d2761fbe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab3addf33ece426db7a9c5d2761fbe4">&#9670;&#160;</a></span>met</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are met</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00006">6</a></p>
+
+</div>
+</div>
+<a id="ac68a9f46d7174ff75faee3b912504adf" name="ac68a9f46d7174ff75faee3b912504adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac68a9f46d7174ff75faee3b912504adf">&#9670;&#160;</a></span>modification</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without modification</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00005">5</a></p>
+
+</div>
+</div>
+<a id="ad84854b8f84dfa8d5d1d983b443bec92" name="ad84854b8f84dfa8d5d1d983b443bec92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84854b8f84dfa8d5d1d983b443bec92">&#9670;&#160;</a></span>notice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright notice</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00010">10</a></p>
+
+</div>
+</div>
+<a id="a84a8616b6b460c99949688212e4e0140" name="a84a8616b6b460c99949688212e4e0140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84a8616b6b460c99949688212e4e0140">&#9670;&#160;</a></span>SPECIAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED THE <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> <a class="el" href="bsd_8txt.html#ae3a90c610b32e1983272ce92376ee71f">WARRANTIES</a> OF MERCHANTABILITY AND FITNESS FOR <a class="el" href="class_a.html">A</a> PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a id="a2afc21dfdca8d4272db93a2012dc128f" name="a2afc21dfdca8d4272db93a2012dc128f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2afc21dfdca8d4272db93a2012dc128f">&#9670;&#160;</a></span>TO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> BUT NOT LIMITED TO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a id="ae3a90c610b32e1983272ce92376ee71f" name="ae3a90c610b32e1983272ce92376ee71f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a90c610b32e1983272ce92376ee71f">&#9670;&#160;</a></span>WARRANTIES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">with or without are <a class="el" href="lgpl_8txt.html#a6063e0ff241979deb5bdd1622fef9233">permitted</a> provided that the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> conditions are this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer Redistributions in binary form must reproduce the <a class="el" href="gpl_8txt.html#aadd2157482c040487672f890e730bb09">above</a> copyright this list of conditions and the <a class="el" href="gpl_8txt.html#af6788de5e873b07e2cf73c5460ecec87">following</a> disclaimer in the documentation and or other materials provided with the distribution The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR <a class="el" href="gpl_8txt.html#accd22eef7b278316d2115ae2093c6b04">IMPLIED</a> WARRANTIES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="bsd_8txt_source.html">bsd.txt</a> строка <a class="el" href="bsd_8txt_source.html#l00016">16</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="bsd_8txt.html">bsd.txt</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

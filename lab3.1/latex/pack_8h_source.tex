@@ -1,0 +1,101 @@
+\hypertarget{pack_8h_source}{}\doxysection{pack.\+h}
+\label{pack_8h_source}\index{for lab/Graphviz/include/graphviz/pack.h@{for lab/Graphviz/include/graphviz/pack.h}}
+\mbox{\hyperlink{pack_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00006}00006 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00007}00007 \textcolor{comment}{ * Copyright (c) 2011 AT\&T Intellectual Property }}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00008}00008 \textcolor{comment}{ * All rights reserved. This program and the accompanying materials}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00009}00009 \textcolor{comment}{ * are made available under the terms of the Eclipse Public License v1.0}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00010}00010 \textcolor{comment}{ * which accompanies this distribution, and is available at}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00011}00011 \textcolor{comment}{ * http://www.eclipse.org/legal/epl-\/v10.html}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00013}00013 \textcolor{comment}{ * Contributors: Details at https://graphviz.org}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00014}00014 \textcolor{comment}{ *************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00016}00016 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00018}00018 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00020}00020 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00021}00021 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00022}00022 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00024}00024 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{types_8h}{types.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00026}00026 \textcolor{comment}{/* Type indicating granularity and method }}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00027}00027 \textcolor{comment}{ *  l\_undef    -\/ unspecified}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00028}00028 \textcolor{comment}{ *  l\_node     -\/ polyomino using nodes and edges}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00029}00029 \textcolor{comment}{ *  l\_clust    -\/ polyomino using nodes and edges and top-\/level clusters}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00030}00030 \textcolor{comment}{ *               (assumes ND\_clust(n) unused by application)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00031}00031 \textcolor{comment}{ *  l\_graph    -\/ polyomino using computer graph bounding box}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00032}00032 \textcolor{comment}{ *  l\_array    -\/ array based on graph bounding boxes}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00033}00033 \textcolor{comment}{ *  l\_aspect   -\/ tiling based on graph bounding boxes preserving aspect ratio}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00034}00034 \textcolor{comment}{ *  l\_hull     -\/ polyomino using convex hull (unimplemented)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00035}00035 \textcolor{comment}{ *  l\_tile     -\/ tiling using graph bounding box (unimplemented)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00036}00036 \textcolor{comment}{ *  l\_bisect   -\/ alternate bisection using graph bounding box (unimplemented)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00037}00037 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00038}\mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2ab38798bc7ab1ac9bd8fd061f00da32a8}{00038}}     \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{ \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2a3e4ba46fe266df0f9085e24436ef948d}{l\_undef}}, \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2a25d95f2b6e3f7585e495b55407867cf8}{l\_clust}}, \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2ad0a4de273d36beb0c21b0f4ec7215ac3}{l\_node}}, \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2a7dbba35a1cb87ad4e71c4e0634447225}{l\_graph}}, \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2ab38798bc7ab1ac9bd8fd061f00da32a8}{l\_array}}, \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2a11c19ffbb2842ba3bc029f22a14723da}{l\_aspect}} \} \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2}{pack\_mode}};}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00040}\mbox{\hyperlink{pack_8h_aaa8a6cd9eee9dffc3393e5a57ec42e0b}{00040}} \textcolor{preprocessor}{\#define PK\_COL\_MAJOR   (1 << 0)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00041}\mbox{\hyperlink{pack_8h_aad7ebfc06d7717a7e5a41535578d664f}{00041}} \textcolor{preprocessor}{\#define PK\_USER\_VALS   (1 << 1)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00042}\mbox{\hyperlink{pack_8h_ac9096c006fab9e69731d50e40b52bf9d}{00042}} \textcolor{preprocessor}{\#define PK\_LEFT\_ALIGN  (1 << 2)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00043}\mbox{\hyperlink{pack_8h_ae9a9561061b4ede23536b37ce77c36b2}{00043}} \textcolor{preprocessor}{\#define PK\_RIGHT\_ALIGN (1 << 3)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00044}\mbox{\hyperlink{pack_8h_a5791c249f2cb2fbc3f69686df02c7299}{00044}} \textcolor{preprocessor}{\#define PK\_TOP\_ALIGN   (1 << 4)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00045}\mbox{\hyperlink{pack_8h_ac552e54a874d7d7e13e8230ba35caabc}{00045}} \textcolor{preprocessor}{\#define PK\_BOT\_ALIGN   (1 << 5)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00046}\mbox{\hyperlink{pack_8h_adbe0e9aa2ef0e581468a15d6f4b31629}{00046}} \textcolor{preprocessor}{\#define PK\_INPUT\_ORDER (1 << 6)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00048}\mbox{\hyperlink{pack_8h_a97c604e5f0df885172f770108f3df9cd}{00048}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{pack_8h_a97c604e5f0df885172f770108f3df9cd}{packval\_t}};}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00050}\mbox{\hyperlink{structpack__info}{00050}}     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00051}\mbox{\hyperlink{structpack__info_a07b6d2fc5d98620c409315133963dc5f}{00051}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structpack__info_a07b6d2fc5d98620c409315133963dc5f}{aspect}};     \textcolor{comment}{/* desired aspect ratio */}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00052}\mbox{\hyperlink{structpack__info_a53ddd56f6a9173e2e5a59d431d437bea}{00052}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structpack__info_a53ddd56f6a9173e2e5a59d431d437bea}{sz}};           \textcolor{comment}{/* row/column size size */}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00053}\mbox{\hyperlink{structpack__info_acf43e29db789271a7494e51864e25a46}{00053}}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structpack__info_acf43e29db789271a7494e51864e25a46}{margin}};  \textcolor{comment}{/* margin left around objects, in points */}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00054}\mbox{\hyperlink{structpack__info_aa2e93b65eaf035364214aea6db8f1feb}{00054}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structpack__info_aa2e93b65eaf035364214aea6db8f1feb}{doSplines}};     \textcolor{comment}{/* use splines in constructing graph shape */}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00055}\mbox{\hyperlink{structpack__info_a421f5826aa51c41653402e9072a2f86d}{00055}}     \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2}{pack\_mode}} \mbox{\hyperlink{structpack__info_a421f5826aa51c41653402e9072a2f86d}{mode}};        \textcolor{comment}{/* granularity and method */}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00056}\mbox{\hyperlink{structpack__info_a9d1a5430d82980b1010f029d15ac8603}{00056}}     \textcolor{keywordtype}{bool} *\mbox{\hyperlink{structpack__info_a9d1a5430d82980b1010f029d15ac8603}{fixed}};       \textcolor{comment}{/* fixed[i] == true implies g[i] should not be moved */}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00057}\mbox{\hyperlink{structpack__info_aaa63ae4b75c6a88465b0507b17083dd7}{00057}}     \mbox{\hyperlink{pack_8h_a97c604e5f0df885172f770108f3df9cd}{packval\_t}}* \mbox{\hyperlink{structpack__info_aaa63ae4b75c6a88465b0507b17083dd7}{vals}};   \textcolor{comment}{/* for arrays, sort numbers */}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00058}\mbox{\hyperlink{structpack__info_a1b713c8f5ae1329ec64129c5ada2a34d}{00058}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structpack__info_a1b713c8f5ae1329ec64129c5ada2a34d}{flags}};       }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00059}00059     \} \mbox{\hyperlink{structpack__info}{pack\_info}};}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00061}00061 \textcolor{preprocessor}{\#ifdef GVDLL}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00062}00062 \textcolor{preprocessor}{\#ifdef GVC\_EXPORTS}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00063}00063 \textcolor{preprocessor}{\#define PACK\_API \_\_declspec(dllexport)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00064}00064 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00065}00065 \textcolor{preprocessor}{\#define PACK\_API \_\_declspec(dllimport)}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00066}00066 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00067}00067 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00069}00069 \textcolor{preprocessor}{\#ifndef PACK\_API}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00070}\mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{00070}} \textcolor{preprocessor}{\#define PACK\_API }\textcolor{comment}{/* nothing */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00071}00071 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00073}\mbox{\hyperlink{pack_8h_a729f5dd70b79f7bceb49ca0eb450a25a}{00073}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \mbox{\hyperlink{structpoint}{point}} *\mbox{\hyperlink{pack_8h_a729f5dd70b79f7bceb49ca0eb450a25a}{putRects}}(\textcolor{keywordtype}{int} ng, \mbox{\hyperlink{structboxf}{boxf}}* bbs, \mbox{\hyperlink{structpack__info}{pack\_info}}* pinfo);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00074}\mbox{\hyperlink{pack_8h_a4957c94a9d9d44a7aa41194c4c21e697}{00074}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pack_8h_a4957c94a9d9d44a7aa41194c4c21e697}{packRects}}(\textcolor{keywordtype}{int} ng, \mbox{\hyperlink{structboxf}{boxf}}* bbs, \mbox{\hyperlink{structpack__info}{pack\_info}}* pinfo);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00076}\mbox{\hyperlink{pack_8h_aab02113d9f611aea283f952fb432cba3}{00076}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \mbox{\hyperlink{structpoint}{point}} *\mbox{\hyperlink{pack_8h_aab02113d9f611aea283f952fb432cba3}{putGraphs}}(\textcolor{keywordtype}{int}, \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} **, \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *, \mbox{\hyperlink{structpack__info}{pack\_info}} *);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00077}\mbox{\hyperlink{pack_8h_af5d9b34350c102cac2c069fbb87725eb}{00077}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pack_8h_af5d9b34350c102cac2c069fbb87725eb}{packGraphs}}(\textcolor{keywordtype}{int}, \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} **, \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *, \mbox{\hyperlink{structpack__info}{pack\_info}} *);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00078}\mbox{\hyperlink{pack_8h_a90a751fdab92df4701ce9399e42dc4f3}{00078}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pack_8h_a90a751fdab92df4701ce9399e42dc4f3}{packSubgraphs}}(\textcolor{keywordtype}{int}, \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} **, \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *, \mbox{\hyperlink{structpack__info}{pack\_info}} *);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00079}\mbox{\hyperlink{pack_8h_a0e161123c32c2bade345485572f767ee}{00079}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pack_8h_a0e161123c32c2bade345485572f767ee}{pack\_graph}}(\textcolor{keywordtype}{int} ng, \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}}** gs, \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}}* root, \textcolor{keywordtype}{bool} *fixed);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00081}\mbox{\hyperlink{pack_8h_a8bc4ff96951b297889d79b4d60e114f2}{00081}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pack_8h_a8bc4ff96951b297889d79b4d60e114f2}{shiftGraphs}}(\textcolor{keywordtype}{int}, \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}}**, \mbox{\hyperlink{structpoint}{point}}*, \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}}*, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00083}\mbox{\hyperlink{pack_8h_a8dbc607609ba43bc0628b183aae7e531}{00083}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2}{pack\_mode}} \mbox{\hyperlink{pack_8h_a8dbc607609ba43bc0628b183aae7e531}{getPackMode}}(\mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} * g, \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2}{pack\_mode}} dflt);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00084}\mbox{\hyperlink{pack_8h_ac571ff90e8fa643e83720941d3643282}{00084}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pack_8h_ac571ff90e8fa643e83720941d3643282}{getPack}}(\mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *, \textcolor{keywordtype}{int} not\_def, \textcolor{keywordtype}{int} dflt);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00085}\mbox{\hyperlink{pack_8h_aa86ed912bdc55f660de78bcfdb8ea6bc}{00085}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2}{pack\_mode}} \mbox{\hyperlink{pack_8h_aa86ed912bdc55f660de78bcfdb8ea6bc}{getPackInfo}}(\mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} * g, \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2}{pack\_mode}} dflt, \textcolor{keywordtype}{int} dfltMargin, \mbox{\hyperlink{structpack__info}{pack\_info}}*);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00086}\mbox{\hyperlink{pack_8h_ae9b62ae8252435edccd9a7d041c35f4a}{00086}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2}{pack\_mode}} \mbox{\hyperlink{pack_8h_ae9b62ae8252435edccd9a7d041c35f4a}{getPackModeInfo}}(\mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} * g, \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2}{pack\_mode}} dflt, \mbox{\hyperlink{structpack__info}{pack\_info}}*);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00087}\mbox{\hyperlink{pack_8h_a2c07b0207e7b9d654783384fd0850494}{00087}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2}{pack\_mode}} \mbox{\hyperlink{pack_8h_a2c07b0207e7b9d654783384fd0850494}{parsePackModeInfo}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* p, \mbox{\hyperlink{pack_8h_a7867530e1843c636960ccb52dcd347f2}{pack\_mode}} dflt,}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00088}00088                                          \mbox{\hyperlink{structpack__info}{pack\_info}}* pinfo);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00090}\mbox{\hyperlink{pack_8h_aaf317a9513fa298ac80c765fb6288ff7}{00090}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pack_8h_aaf317a9513fa298ac80c765fb6288ff7}{isConnected}}(\mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00091}\mbox{\hyperlink{pack_8h_a6349513a5616ef7dba875e0e512dbbc1}{00091}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} **\mbox{\hyperlink{pack_8h_a6349513a5616ef7dba875e0e512dbbc1}{ccomps}}(\mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *, \textcolor{keywordtype}{int} *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00092}\mbox{\hyperlink{pack_8h_a362943167f9b22e509cbca31272f43d4}{00092}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} **\mbox{\hyperlink{pack_8h_a362943167f9b22e509cbca31272f43d4}{cccomps}}(\mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *, \textcolor{keywordtype}{int} *, \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00093}\mbox{\hyperlink{pack_8h_a176f423c454bb2085003f107da1f289b}{00093}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} **\mbox{\hyperlink{pack_8h_a176f423c454bb2085003f107da1f289b}{pccomps}}(\mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *, \textcolor{keywordtype}{int} *, \textcolor{keywordtype}{char} *, \textcolor{keywordtype}{bool} *);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00094}\mbox{\hyperlink{pack_8h_ab434554d1602f74771e2878762ca44af}{00094}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \textcolor{keywordtype}{int} \mbox{\hyperlink{pack_8h_ab434554d1602f74771e2878762ca44af}{nodeInduce}}(\mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00095}\mbox{\hyperlink{pack_8h_af3402f836fbe6aedb49af84d837cc250}{00095}}     \mbox{\hyperlink{pack_8h_af1731d7d57f4b76b63de86911fd36cc5}{PACK\_API}} \mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *\mbox{\hyperlink{pack_8h_af3402f836fbe6aedb49af84d837cc250}{mapClust}}(\mbox{\hyperlink{struct_agraph__s}{Agraph\_t}} *);}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00096}00096 \textcolor{preprocessor}{\#undef PACK\_API}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00097}00097 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00098}00098 \}}
+\DoxyCodeLine{\Hypertarget{pack_8h_source_l00099}00099 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

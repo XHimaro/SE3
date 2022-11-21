@@ -1,0 +1,132 @@
+\hypertarget{structgvdevice__callbacks__s}{}\doxysection{Структура gvdevice\+\_\+callbacks\+\_\+s}
+\label{structgvdevice__callbacks__s}\index{gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}}
+
+
+{\ttfamily \#include $<$gvcjob.\+h$>$}
+
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{structgvdevice__callbacks__s_a666efa3f326b1e343f29b44b6e404991}{refresh}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvdevice__callbacks__s_a67875b5779274bd47bfa969ae14cdae8}{button\+\_\+press}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, int button, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} pointer)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvdevice__callbacks__s_a5c4edc2c809c59d11fdb23941f4c58ef}{button\+\_\+release}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, int button, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} pointer)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvdevice__callbacks__s_a71f323fee9a3f7954a41a2b19a0949b3}{motion}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} pointer)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvdevice__callbacks__s_ad9fab53f61e7136743a9bbe539fc50fc}{modify}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, const char $\ast$name, const char $\ast$value)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvdevice__callbacks__s_a9f864d10405b3a2bfe325556565cd86d}{del}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvdevice__callbacks__s_adedaef778696635fa3046d7873e41e0b}{read}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, const char $\ast$filename, const char $\ast$\mbox{\hyperlink{structgvdevice__callbacks__s_a3c07caefdb67aaa9294d5999af547be5}{layout}})
+\item 
+void($\ast$ \mbox{\hyperlink{structgvdevice__callbacks__s_a3c07caefdb67aaa9294d5999af547be5}{layout}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, const char $\ast$layout)
+\item 
+void($\ast$ \mbox{\hyperlink{structgvdevice__callbacks__s_a286fc3cd01f103de1560c69de31ccc62}{render}} )(\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, const char $\ast$format, const char $\ast$filename)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00153}{153}}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{structgvdevice__callbacks__s_a67875b5779274bd47bfa969ae14cdae8}\label{structgvdevice__callbacks__s_a67875b5779274bd47bfa969ae14cdae8}} 
+\index{gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}!button\_press@{button\_press}}
+\index{button\_press@{button\_press}!gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}}
+\doxysubsubsection{\texorpdfstring{button\_press}{button\_press}}
+{\footnotesize\ttfamily void($\ast$ gvdevice\+\_\+callbacks\+\_\+s\+::button\+\_\+press) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, int button, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} pointer)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00155}{155}}
+
+\mbox{\Hypertarget{structgvdevice__callbacks__s_a5c4edc2c809c59d11fdb23941f4c58ef}\label{structgvdevice__callbacks__s_a5c4edc2c809c59d11fdb23941f4c58ef}} 
+\index{gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}!button\_release@{button\_release}}
+\index{button\_release@{button\_release}!gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}}
+\doxysubsubsection{\texorpdfstring{button\_release}{button\_release}}
+{\footnotesize\ttfamily void($\ast$ gvdevice\+\_\+callbacks\+\_\+s\+::button\+\_\+release) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, int button, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} pointer)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00156}{156}}
+
+\mbox{\Hypertarget{structgvdevice__callbacks__s_a9f864d10405b3a2bfe325556565cd86d}\label{structgvdevice__callbacks__s_a9f864d10405b3a2bfe325556565cd86d}} 
+\index{gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}!del@{del}}
+\index{del@{del}!gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}}
+\doxysubsubsection{\texorpdfstring{del}{del}}
+{\footnotesize\ttfamily void($\ast$ gvdevice\+\_\+callbacks\+\_\+s\+::del) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00159}{159}}
+
+\mbox{\Hypertarget{structgvdevice__callbacks__s_a3c07caefdb67aaa9294d5999af547be5}\label{structgvdevice__callbacks__s_a3c07caefdb67aaa9294d5999af547be5}} 
+\index{gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}!layout@{layout}}
+\index{layout@{layout}!gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}}
+\doxysubsubsection{\texorpdfstring{layout}{layout}}
+{\footnotesize\ttfamily void($\ast$ gvdevice\+\_\+callbacks\+\_\+s\+::layout) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, const char $\ast$layout)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00161}{161}}
+
+\mbox{\Hypertarget{structgvdevice__callbacks__s_ad9fab53f61e7136743a9bbe539fc50fc}\label{structgvdevice__callbacks__s_ad9fab53f61e7136743a9bbe539fc50fc}} 
+\index{gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}!modify@{modify}}
+\index{modify@{modify}!gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}}
+\doxysubsubsection{\texorpdfstring{modify}{modify}}
+{\footnotesize\ttfamily void($\ast$ gvdevice\+\_\+callbacks\+\_\+s\+::modify) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, const char $\ast$name, const char $\ast$value)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00158}{158}}
+
+\mbox{\Hypertarget{structgvdevice__callbacks__s_a71f323fee9a3f7954a41a2b19a0949b3}\label{structgvdevice__callbacks__s_a71f323fee9a3f7954a41a2b19a0949b3}} 
+\index{gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}!motion@{motion}}
+\index{motion@{motion}!gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}}
+\doxysubsubsection{\texorpdfstring{motion}{motion}}
+{\footnotesize\ttfamily void($\ast$ gvdevice\+\_\+callbacks\+\_\+s\+::motion) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} pointer)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00157}{157}}
+
+\mbox{\Hypertarget{structgvdevice__callbacks__s_adedaef778696635fa3046d7873e41e0b}\label{structgvdevice__callbacks__s_adedaef778696635fa3046d7873e41e0b}} 
+\index{gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}!read@{read}}
+\index{read@{read}!gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}}
+\doxysubsubsection{\texorpdfstring{read}{read}}
+{\footnotesize\ttfamily void($\ast$ gvdevice\+\_\+callbacks\+\_\+s\+::read) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, const char $\ast$filename, const char $\ast$\mbox{\hyperlink{structgvdevice__callbacks__s_a3c07caefdb67aaa9294d5999af547be5}{layout}})}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00160}{160}}
+
+\mbox{\Hypertarget{structgvdevice__callbacks__s_a666efa3f326b1e343f29b44b6e404991}\label{structgvdevice__callbacks__s_a666efa3f326b1e343f29b44b6e404991}} 
+\index{gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}!refresh@{refresh}}
+\index{refresh@{refresh}!gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}}
+\doxysubsubsection{\texorpdfstring{refresh}{refresh}}
+{\footnotesize\ttfamily void($\ast$ gvdevice\+\_\+callbacks\+\_\+s\+::refresh) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00154}{154}}
+
+\mbox{\Hypertarget{structgvdevice__callbacks__s_a286fc3cd01f103de1560c69de31ccc62}\label{structgvdevice__callbacks__s_a286fc3cd01f103de1560c69de31ccc62}} 
+\index{gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}!render@{render}}
+\index{render@{render}!gvdevice\_callbacks\_s@{gvdevice\_callbacks\_s}}
+\doxysubsubsection{\texorpdfstring{render}{render}}
+{\footnotesize\ttfamily void($\ast$ gvdevice\+\_\+callbacks\+\_\+s\+::render) (\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{GVJ\+\_\+t}} $\ast$job, const char $\ast$format, const char $\ast$filename)}
+
+
+
+См. определение в файле \mbox{\hyperlink{gvcjob_8h_source}{gvcjob.\+h}} строка \mbox{\hyperlink{gvcjob_8h_source_l00162}{162}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\+Graphviz/include/graphviz/\mbox{\hyperlink{gvcjob_8h}{gvcjob.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,36 @@
+var mbproto_8h =
+[
+    [ "xMBFunctionHandler", "structx_m_b_function_handler.html", "structx_m_b_function_handler" ],
+    [ "MB_ADDRESS_BROADCAST", "mbproto_8h.html#a5e80f256fa3cb8a969c9935b48f2a7b1", null ],
+    [ "MB_ADDRESS_MAX", "mbproto_8h.html#a8b915be3e09043b5da9d307d30efd9f7", null ],
+    [ "MB_ADDRESS_MIN", "mbproto_8h.html#accf024291f4458ad8ad33e32568e8561", null ],
+    [ "MB_FUNC_DIAG_DIAGNOSTIC", "mbproto_8h.html#a891a8d1a286313c71d6389a33c60547e", null ],
+    [ "MB_FUNC_DIAG_GET_COM_EVENT_CNT", "mbproto_8h.html#aaed3a627e46195cdd35df734cb098be2", null ],
+    [ "MB_FUNC_DIAG_GET_COM_EVENT_LOG", "mbproto_8h.html#a3c5273d91f1e7bd705fa9a56444bc6f9", null ],
+    [ "MB_FUNC_DIAG_READ_EXCEPTION", "mbproto_8h.html#aee399c2ed9f9294e05029041c12deef3", null ],
+    [ "MB_FUNC_ERROR", "mbproto_8h.html#ad45e73770d806dfd75cc45b2d1d31dc2", null ],
+    [ "MB_FUNC_NONE", "mbproto_8h.html#a1097ed957945889aed9a3317a4962a93", null ],
+    [ "MB_FUNC_OTHER_REPORT_SLAVEID", "mbproto_8h.html#a8a711674834a510f4a1515f6ab420048", null ],
+    [ "MB_FUNC_READ_COILS", "mbproto_8h.html#a0a6bec36d352b12d11ce92855999ac21", null ],
+    [ "MB_FUNC_READ_DISCRETE_INPUTS", "mbproto_8h.html#a3c8f7c9db7137eab91695bb75dd1bcaf", null ],
+    [ "MB_FUNC_READ_HOLDING_REGISTER", "mbproto_8h.html#af82cce9431080646def54ecdcaf9a8e4", null ],
+    [ "MB_FUNC_READ_INPUT_REGISTER", "mbproto_8h.html#ab4adf9aa2c94273ab987590cd1a74859", null ],
+    [ "MB_FUNC_READWRITE_MULTIPLE_REGISTERS", "mbproto_8h.html#aae67d35bd7db006198623aaf68439dec", null ],
+    [ "MB_FUNC_WRITE_MULTIPLE_COILS", "mbproto_8h.html#a0ecd378607ca725092525dbc54ec4c7f", null ],
+    [ "MB_FUNC_WRITE_MULTIPLE_REGISTERS", "mbproto_8h.html#ad53ef69db978b8f15dbeef630335dd37", null ],
+    [ "MB_FUNC_WRITE_REGISTER", "mbproto_8h.html#a662445c40ea914156262986611f98fb8", null ],
+    [ "MB_FUNC_WRITE_SINGLE_COIL", "mbproto_8h.html#a4135bcd6e71affdba9daf3cd9bb2297b", null ],
+    [ "pxMBFunctionHandler", "mbproto_8h.html#a9fe16efc84b141d9b9ec804c0ddfa4b1", null ],
+    [ "eMBException", "mbproto_8h.html#ae054c61e74d0e5bd54f7aa2bda497c9c", [
+      [ "MB_EX_NONE", "mbproto_8h.html#ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808", null ],
+      [ "MB_EX_ILLEGAL_FUNCTION", "mbproto_8h.html#ae054c61e74d0e5bd54f7aa2bda497c9caf2cf9a6b48c5dee86cd361cc327b9abb", null ],
+      [ "MB_EX_ILLEGAL_DATA_ADDRESS", "mbproto_8h.html#ae054c61e74d0e5bd54f7aa2bda497c9ca610b4256de04afb3b4ef7b7d3e19ed52", null ],
+      [ "MB_EX_ILLEGAL_DATA_VALUE", "mbproto_8h.html#ae054c61e74d0e5bd54f7aa2bda497c9ca473bfed2d0edb76c4ff02e659082c777", null ],
+      [ "MB_EX_SLAVE_DEVICE_FAILURE", "mbproto_8h.html#ae054c61e74d0e5bd54f7aa2bda497c9cad3dbaac0c2e2f7005e3a896f5c7f8274", null ],
+      [ "MB_EX_ACKNOWLEDGE", "mbproto_8h.html#ae054c61e74d0e5bd54f7aa2bda497c9ca8ab5f36846f909d37bd6a3e4ba4426bb", null ],
+      [ "MB_EX_SLAVE_BUSY", "mbproto_8h.html#ae054c61e74d0e5bd54f7aa2bda497c9cae3ec1c97155e5f397d3bad66efa75fdc", null ],
+      [ "MB_EX_MEMORY_PARITY_ERROR", "mbproto_8h.html#ae054c61e74d0e5bd54f7aa2bda497c9ca45135805fdf5b286bcd2a9b48b44bd41", null ],
+      [ "MB_EX_GATEWAY_PATH_FAILED", "mbproto_8h.html#ae054c61e74d0e5bd54f7aa2bda497c9ca1edd146a459bc8ed8709b495406d3839", null ],
+      [ "MB_EX_GATEWAY_TGT_FAILED", "mbproto_8h.html#ae054c61e74d0e5bd54f7aa2bda497c9caec539d85e1d3b8c407c4f8a39ef0bf88", null ]
+    ] ]
+];

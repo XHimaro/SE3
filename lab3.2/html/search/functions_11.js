@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['send_0',['send',['../class_communicating_socket.html#aca4e86085c064641e86ae24ea29bbb94',1,'CommunicatingSocket::send(const void *buffer, int bufferLen)'],['../class_communicating_socket.html#aca4e86085c064641e86ae24ea29bbb94',1,'CommunicatingSocket::send(const void *buffer, int bufferLen)']]],
+  ['sendto_1',['sendTo',['../class_u_d_p_socket.html#a41a3595e226f273953cbd38618af5d5b',1,'UDPSocket::sendTo(const void *buffer, int bufferLen, const string &amp;foreignAddress, unsigned short foreignPort)'],['../class_u_d_p_socket.html#a41a3595e226f273953cbd38618af5d5b',1,'UDPSocket::sendTo(const void *buffer, int bufferLen, const string &amp;foreignAddress, unsigned short foreignPort)']]],
+  ['setbroadcast_2',['setBroadcast',['../class_u_d_p_socket.html#a316f08a017aa160643812f3c08734d27',1,'UDPSocket::setBroadcast()'],['../class_u_d_p_socket.html#a316f08a017aa160643812f3c08734d27',1,'UDPSocket::setBroadcast()']]],
+  ['setlisten_3',['setListen',['../class_t_c_p_server_socket.html#a1f39a2e6721ab62d8875a234eb300bab',1,'TCPServerSocket::setListen(int queueLen)'],['../class_t_c_p_server_socket.html#a1f39a2e6721ab62d8875a234eb300bab',1,'TCPServerSocket::setListen(int queueLen)']]],
+  ['setlocaladdressandport_4',['setLocalAddressAndPort',['../class_socket.html#aa6b986410bc2e606ba27d01fa7cb8836',1,'Socket::setLocalAddressAndPort(const string &amp;localAddress, unsigned short localPort=0)'],['../class_socket.html#aa6b986410bc2e606ba27d01fa7cb8836',1,'Socket::setLocalAddressAndPort(const string &amp;localAddress, unsigned short localPort=0)']]],
+  ['setlocalport_5',['setLocalPort',['../class_socket.html#a773fe4a35146002de76952e16fdebcfa',1,'Socket::setLocalPort(unsigned short localPort)'],['../class_socket.html#a773fe4a35146002de76952e16fdebcfa',1,'Socket::setLocalPort(unsigned short localPort)']]],
+  ['setmulticastttl_6',['setMulticastTTL',['../class_u_d_p_socket.html#a4dcfff33b45d1b84b5a602fc6f4a27f8',1,'UDPSocket::setMulticastTTL(unsigned char multicastTTL)'],['../class_u_d_p_socket.html#a4dcfff33b45d1b84b5a602fc6f4a27f8',1,'UDPSocket::setMulticastTTL(unsigned char multicastTTL)']]],
+  ['shiftgraphs_7',['shiftGraphs',['../pack_8h.html#a8bc4ff96951b297889d79b4d60e114f2',1,'pack.h']]],
+  ['socket_8',['Socket',['../class_socket.html#a656389d58fa00729ff70c4e159623f5c',1,'Socket::Socket(const Socket &amp;sock)'],['../class_socket.html#a53e00027bab2125a2b407914c6148589',1,'Socket::Socket(int type, int protocol)'],['../class_socket.html#a6a2609eef6559336a595a336f138d395',1,'Socket::Socket(int sockDesc)'],['../class_socket.html#a656389d58fa00729ff70c4e159623f5c',1,'Socket::Socket(const Socket &amp;sock)'],['../class_socket.html#a53e00027bab2125a2b407914c6148589',1,'Socket::Socket(int type, int protocol)'],['../class_socket.html#a6a2609eef6559336a595a336f138d395',1,'Socket::Socket(int sockDesc)']]],
+  ['socketexception_9',['SocketException',['../class_socket_exception.html#abb5bcecd9d9e20868c237ec5a82cf5c3',1,'SocketException::SocketException(const string &amp;message, bool inclSysMsg=false)'],['../class_socket_exception.html#abb5bcecd9d9e20868c237ec5a82cf5c3',1,'SocketException::SocketException(const string &amp;message, bool inclSysMsg=false)']]],
+  ['software_10',['software',['../lgpl_8txt.html#a12766eb210df8a0ec9d68160e103cee0',1,'lgpl.txt']]],
+  ['sprintxdot_11',['sprintXDot',['../xdot_8h.html#a1c7e297b272814da9a7d3481c330cf8c',1,'xdot.h']]],
+  ['statxdot_12',['statXDot',['../xdot_8h.html#aa02fbafb913ba22fea989e8c0249207b',1,'xdot.h']]],
+  ['strcmp_13',['strcmp',['../relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a',1,'relates.cpp']]],
+  ['string_5fview_14',['string_view',['../class_g_v_c_1_1_g_v_render_data.html#a751c282d422ac06bf71f7496bd35a0e7',1,'GVC::GVRenderData']]],
+  ['stringdebug_15',['stringDebug',['../class_string.html#a5c07384b505d25ae6f61fc7abf0b0e61',1,'String']]]
+];

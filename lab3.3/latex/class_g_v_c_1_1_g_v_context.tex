@@ -1,0 +1,172 @@
+\hypertarget{class_g_v_c_1_1_g_v_context}{}\doxysection{Класс GVC\+::GVContext}
+\label{class_g_v_c_1_1_g_v_context}\index{GVC::GVContext@{GVC::GVContext}}
+
+
+The \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} class represents a Graphviz context.  
+
+
+
+
+{\ttfamily \#include $<$GVContext.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a33505a7fe78072d98ee0231405d6ceda}{GVContext}} ()
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a2302bd85318ee68847d9ec0022f0920c}{GVContext}} (const \mbox{\hyperlink{structlt__symlist__t}{lt\+\_\+symlist\+\_\+t}} $\ast$builtins, bool demand\+\_\+loading)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} Create a graph context with built-\/in plugins and optionally load dynamic plugins on demand. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a90ff15892e780e873abd368db8e5329f}{$\sim$\+GVContext}} ()
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a26a9b390d7ddd6d1b6a1e33facdeed29}{GVContext}} (\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&)=delete
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \& \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_acec193f9630ef0de50b21f928079dad5}{operator=}} (\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&)=delete
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a650b8b1d6c1e1d1fb757731a0a04855a}{GVContext}} (\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \& \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_af36fd6a586339ef2424e0c657bacebfb}{operator=}} (\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$ \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a641177c9e10d2f7380d153821ab56e34}{c\+\_\+struct}} () const
+\item 
+std\+::string\+\_\+view \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_aca3251b7cc97d1fd7186d9bcbe4c6a4c}{build\+Date}} () const
+\item 
+std\+::string\+\_\+view \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a114d00b79ace13a3d353125e1aa6f878}{version}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$ \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a09eef3174233292bcf5bdd1816b147fe}{m\+\_\+gvc}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+The \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} class represents a Graphviz context. 
+
+См. определение в файле \mbox{\hyperlink{_g_v_context_8h_source}{GVContext.\+h}} строка \mbox{\hyperlink{_g_v_context_8h_source_l00026}{26}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_context_a33505a7fe78072d98ee0231405d6ceda}\label{class_g_v_c_1_1_g_v_context_a33505a7fe78072d98ee0231405d6ceda}} 
+\index{GVC::GVContext@{GVC::GVContext}!GVContext@{GVContext}}
+\index{GVContext@{GVContext}!GVC::GVContext@{GVC::GVContext}}
+\doxysubsubsection{\texorpdfstring{GVContext()}{GVContext()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily GVC\+::\+GVContext\+::\+GVContext (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_context_a2302bd85318ee68847d9ec0022f0920c}\label{class_g_v_c_1_1_g_v_context_a2302bd85318ee68847d9ec0022f0920c}} 
+\index{GVC::GVContext@{GVC::GVContext}!GVContext@{GVContext}}
+\index{GVContext@{GVContext}!GVC::GVContext@{GVC::GVContext}}
+\doxysubsubsection{\texorpdfstring{GVContext()}{GVContext()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily GVC\+::\+GVContext\+::\+GVContext (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlt__symlist__t}{lt\+\_\+symlist\+\_\+t}} $\ast$}]{builtins,  }\item[{bool}]{demand\+\_\+loading }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} Create a graph context with built-\/in plugins and optionally load dynamic plugins on demand. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em builtins} & Array of structs, each containing a pointer to the name and the address of a plugin to load. The end of the array is designated by a struct whose name pointer is NULL. \\
+\hline
+{\em demand\+\_\+loading} & Enables loading plugins dynamically on demand when true. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_context_a90ff15892e780e873abd368db8e5329f}\label{class_g_v_c_1_1_g_v_context_a90ff15892e780e873abd368db8e5329f}} 
+\index{GVC::GVContext@{GVC::GVContext}!````~GVContext@{$\sim$GVContext}}
+\index{````~GVContext@{$\sim$GVContext}!GVC::GVContext@{GVC::GVContext}}
+\doxysubsubsection{\texorpdfstring{$\sim$GVContext()}{~GVContext()}}
+{\footnotesize\ttfamily GVC\+::\+GVContext\+::$\sim$\+GVContext (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_context_a26a9b390d7ddd6d1b6a1e33facdeed29}\label{class_g_v_c_1_1_g_v_context_a26a9b390d7ddd6d1b6a1e33facdeed29}} 
+\index{GVC::GVContext@{GVC::GVContext}!GVContext@{GVContext}}
+\index{GVContext@{GVContext}!GVC::GVContext@{GVC::GVContext}}
+\doxysubsubsection{\texorpdfstring{GVContext()}{GVContext()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily GVC\+::\+GVContext\+::\+GVContext (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_context_a650b8b1d6c1e1d1fb757731a0a04855a}\label{class_g_v_c_1_1_g_v_context_a650b8b1d6c1e1d1fb757731a0a04855a}} 
+\index{GVC::GVContext@{GVC::GVContext}!GVContext@{GVContext}}
+\index{GVContext@{GVContext}!GVC::GVContext@{GVC::GVContext}}
+\doxysubsubsection{\texorpdfstring{GVContext()}{GVContext()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily GVC\+::\+GVContext\+::\+GVContext (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_g_v_context_8h_source}{GVContext.\+h}} строка \mbox{\hyperlink{_g_v_context_8h_source_l00047}{47}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048       : \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a09eef3174233292bcf5bdd1816b147fe}{m\_gvc}}(std::exchange(other.m\_gvc, \textcolor{keyword}{nullptr})) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_context_aca3251b7cc97d1fd7186d9bcbe4c6a4c}\label{class_g_v_c_1_1_g_v_context_aca3251b7cc97d1fd7186d9bcbe4c6a4c}} 
+\index{GVC::GVContext@{GVC::GVContext}!buildDate@{buildDate}}
+\index{buildDate@{buildDate}!GVC::GVContext@{GVC::GVContext}}
+\doxysubsubsection{\texorpdfstring{buildDate()}{buildDate()}}
+{\footnotesize\ttfamily std\+::string\+\_\+view GVC\+::\+GVContext\+::build\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_context_a641177c9e10d2f7380d153821ab56e34}\label{class_g_v_c_1_1_g_v_context_a641177c9e10d2f7380d153821ab56e34}} 
+\index{GVC::GVContext@{GVC::GVContext}!c\_struct@{c\_struct}}
+\index{c\_struct@{c\_struct}!GVC::GVContext@{GVC::GVContext}}
+\doxysubsubsection{\texorpdfstring{c\_struct()}{c\_struct()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$ GVC\+::\+GVContext\+::c\+\_\+struct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_g_v_context_8h_source}{GVContext.\+h}} строка \mbox{\hyperlink{_g_v_context_8h_source_l00056}{56}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a09eef3174233292bcf5bdd1816b147fe}{m\_gvc}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_context_af36fd6a586339ef2424e0c657bacebfb}\label{class_g_v_c_1_1_g_v_context_af36fd6a586339ef2424e0c657bacebfb}} 
+\index{GVC::GVContext@{GVC::GVContext}!operator=@{operator=}}
+\index{operator=@{operator=}!GVC::GVContext@{GVC::GVContext}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \& GVC\+::\+GVContext\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_g_v_context_8h_source}{GVContext.\+h}} строка \mbox{\hyperlink{_g_v_context_8h_source_l00049}{49}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049                                                    \{}
+\DoxyCodeLine{00050     \textcolor{keyword}{using }std::swap;}
+\DoxyCodeLine{00051     swap(\mbox{\hyperlink{class_g_v_c_1_1_g_v_context_a09eef3174233292bcf5bdd1816b147fe}{m\_gvc}}, other.m\_gvc);}
+\DoxyCodeLine{00052     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00053   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_context_acec193f9630ef0de50b21f928079dad5}\label{class_g_v_c_1_1_g_v_context_acec193f9630ef0de50b21f928079dad5}} 
+\index{GVC::GVContext@{GVC::GVContext}!operator=@{operator=}}
+\index{operator=@{operator=}!GVC::GVContext@{GVC::GVContext}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \& GVC\+::\+GVContext\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_context_a114d00b79ace13a3d353125e1aa6f878}\label{class_g_v_c_1_1_g_v_context_a114d00b79ace13a3d353125e1aa6f878}} 
+\index{GVC::GVContext@{GVC::GVContext}!version@{version}}
+\index{version@{version}!GVC::GVContext@{GVC::GVContext}}
+\doxysubsubsection{\texorpdfstring{version()}{version()}}
+{\footnotesize\ttfamily std\+::string\+\_\+view GVC\+::\+GVContext\+::version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_context_a09eef3174233292bcf5bdd1816b147fe}\label{class_g_v_c_1_1_g_v_context_a09eef3174233292bcf5bdd1816b147fe}} 
+\index{GVC::GVContext@{GVC::GVContext}!m\_gvc@{m\_gvc}}
+\index{m\_gvc@{m\_gvc}!GVC::GVContext@{GVC::GVContext}}
+\doxysubsubsection{\texorpdfstring{m\_gvc}{m\_gvc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}}$\ast$ GVC\+::\+GVContext\+::m\+\_\+gvc = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_g_v_context_8h_source}{GVContext.\+h}} строка \mbox{\hyperlink{_g_v_context_8h_source_l00063}{63}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\+Graphviz/include/graphviz/\mbox{\hyperlink{_g_v_context_8h}{GVContext.\+h}}\end{DoxyCompactItemize}

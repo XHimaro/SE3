@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ModBus: Исходный файл for lab/Graphviz/include/graphviz/color.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ModBus
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('color_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">color.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="color_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*************************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2011 AT&amp;T Intellectual Property </span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * All rights reserved. This program and the accompanying materials</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * are made available under the terms of the Eclipse Public License v1.0</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * which accompanies this distribution, and is available at</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * http://www.eclipse.org/legal/epl-v10.html</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * Contributors: Details at https://graphviz.org</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *************************************************************************/</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structhsvrgbacolor__t.html">   17</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structhsvrgbacolor__t.html">hsvrgbacolor_t</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structhsvrgbacolor__t.html#ae86e35caea2c585343419c6122e5cc3d">   18</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="structhsvrgbacolor__t.html#ae86e35caea2c585343419c6122e5cc3d">name</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structhsvrgbacolor__t.html#a519f5db8370777b193bcba9d4c69d3a1">   19</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="structhsvrgbacolor__t.html#a519f5db8370777b193bcba9d4c69d3a1">h</a>, <a class="code hl_variable" href="structhsvrgbacolor__t.html#aa8534788c747f1dc38f2baad8f44a149">s</a>, <a class="code hl_variable" href="structhsvrgbacolor__t.html#ab16c706c5e2a729bd9f611cf43d05562">v</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structhsvrgbacolor__t.html#a54171dd8a727b6be154f15ff852d3430">   20</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="structhsvrgbacolor__t.html#ac2d9e4fa53394ac95f24e642a089d4a3">r</a>, <a class="code hl_variable" href="structhsvrgbacolor__t.html#a88638d694c1e1ca6be87c7b8a8dd7777">g</a>, <a class="code hl_variable" href="structhsvrgbacolor__t.html#a6e97c507d2837f83468b35d41692893b">b</a>, <a class="code hl_variable" href="structhsvrgbacolor__t.html#a54171dd8a727b6be154f15ff852d3430">a</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="color_8h.html#a512822a53763651db1a8dbc273cc96d3">   21</a></span>} <a class="code hl_struct" href="structhsvrgbacolor__t.html">hsvrgbacolor_t</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/* possible representations of color in gvcolor_t */</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20abea14eaa37333c495d55bcdea07f44d7">   24</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> { <a class="code hl_enumvalue" href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20a4ec09b7c709fcb6ce271c8224e868182">HSVA_DOUBLE</a>, <a class="code hl_enumvalue" href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20aa6fd28dfa5d78b69ad9a5a6663089563">RGBA_BYTE</a>, <a class="code hl_enumvalue" href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20aa2500a5f9637a454382c55acf03654f6">RGBA_WORD</a>, <a class="code hl_enumvalue" href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20abea14eaa37333c495d55bcdea07f44d7">CMYK_BYTE</a>,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20ae60d922c402a91f1721af706f61ea466">   25</a></span>        <a class="code hl_enumvalue" href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20a87fbf87a09385a65d3080a64cf80b945">RGBA_DOUBLE</a>, <a class="code hl_enumvalue" href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20aef9051aa6077a779f60cc7bb2513913b">COLOR_STRING</a>, <a class="code hl_enumvalue" href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20ae60d922c402a91f1721af706f61ea466">COLOR_INDEX</a> } <a class="code hl_enumeration" href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20">color_type_t</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/* gvcolor_t can hold a color spec in a choice or representations */</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structcolor__s.html">   28</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structcolor__s.html">color_s</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structcolor__s.html#a2aa06fe8deb3b9aab722153c87dec0ac">   30</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structcolor__s.html#a2aa06fe8deb3b9aab722153c87dec0ac">RGBA</a>[4];</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structcolor__s.html#a5138284bed348fafa3c1a72f22094377">   31</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structcolor__s.html#a5138284bed348fafa3c1a72f22094377">HSVA</a>[4];</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structcolor__s.html#acfe59dac196e02b0d63d58468ab6be9b">   32</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="structcolor__s.html#acfe59dac196e02b0d63d58468ab6be9b">rgba</a>[4];</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structcolor__s.html#a6866a58347a03334aacd1b19cff6f1d0">   33</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="structcolor__s.html#a6866a58347a03334aacd1b19cff6f1d0">cmyk</a>[4];</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structcolor__s.html#a3ba7369dd590b336d3c950d3d39af998">   34</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structcolor__s.html#a3ba7369dd590b336d3c950d3d39af998">rrggbbaa</a>[4];</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structcolor__s.html#a236d63da02059b4df20358cf2eeecccd">   35</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="structcolor__s.html#a236d63da02059b4df20358cf2eeecccd">string</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structcolor__s.html#a01227ba12ab7210cfb839124b06e1779">   36</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structcolor__s.html#a01227ba12ab7210cfb839124b06e1779">index</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structcolor__s.html#ae2bad8068f8005326356129709c3df18">   37</a></span>    } <a class="code hl_variable" href="structcolor__s.html#ae2bad8068f8005326356129709c3df18">u</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structcolor__s.html#afff9b62d12e78b81a0d0939c1830011e">   38</a></span>    <a class="code hl_enumeration" href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20">color_type_t</a> <a class="code hl_variable" href="structcolor__s.html#afff9b62d12e78b81a0d0939c1830011e">type</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="color_8h.html#ae1191eed3030f43658df2fef5fa202de">   39</a></span>} <a class="code hl_typedef" href="color_8h.html#ae1191eed3030f43658df2fef5fa202de">gvcolor_t</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="color_8h.html#a33b51f43e7445305cc51be2f8cf37df5">   41</a></span><span class="preprocessor">#define COLOR_MALLOC_FAIL -1</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="color_8h.html#aeae63bffec753f28eca373ef5ebd1493">   42</a></span><span class="preprocessor">#define COLOR_UNKNOWN 1</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="color_8h.html#a2bbbfc6b13243b5d5ea1159eed41942c">   43</a></span><span class="preprocessor">#define COLOR_OK 0</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="acolor_8h_html_a0254bf137f575a4c9b56103c6859fe20"><div class="ttname"><a href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20">color_type_t</a></div><div class="ttdeci">color_type_t</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00024">color.h:24</a></div></div>
+<div class="ttc" id="acolor_8h_html_a0254bf137f575a4c9b56103c6859fe20a4ec09b7c709fcb6ce271c8224e868182"><div class="ttname"><a href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20a4ec09b7c709fcb6ce271c8224e868182">HSVA_DOUBLE</a></div><div class="ttdeci">@ HSVA_DOUBLE</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00024">color.h:24</a></div></div>
+<div class="ttc" id="acolor_8h_html_a0254bf137f575a4c9b56103c6859fe20a87fbf87a09385a65d3080a64cf80b945"><div class="ttname"><a href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20a87fbf87a09385a65d3080a64cf80b945">RGBA_DOUBLE</a></div><div class="ttdeci">@ RGBA_DOUBLE</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00025">color.h:25</a></div></div>
+<div class="ttc" id="acolor_8h_html_a0254bf137f575a4c9b56103c6859fe20aa2500a5f9637a454382c55acf03654f6"><div class="ttname"><a href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20aa2500a5f9637a454382c55acf03654f6">RGBA_WORD</a></div><div class="ttdeci">@ RGBA_WORD</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00024">color.h:24</a></div></div>
+<div class="ttc" id="acolor_8h_html_a0254bf137f575a4c9b56103c6859fe20aa6fd28dfa5d78b69ad9a5a6663089563"><div class="ttname"><a href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20aa6fd28dfa5d78b69ad9a5a6663089563">RGBA_BYTE</a></div><div class="ttdeci">@ RGBA_BYTE</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00024">color.h:24</a></div></div>
+<div class="ttc" id="acolor_8h_html_a0254bf137f575a4c9b56103c6859fe20abea14eaa37333c495d55bcdea07f44d7"><div class="ttname"><a href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20abea14eaa37333c495d55bcdea07f44d7">CMYK_BYTE</a></div><div class="ttdeci">@ CMYK_BYTE</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00024">color.h:24</a></div></div>
+<div class="ttc" id="acolor_8h_html_a0254bf137f575a4c9b56103c6859fe20ae60d922c402a91f1721af706f61ea466"><div class="ttname"><a href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20ae60d922c402a91f1721af706f61ea466">COLOR_INDEX</a></div><div class="ttdeci">@ COLOR_INDEX</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00025">color.h:25</a></div></div>
+<div class="ttc" id="acolor_8h_html_a0254bf137f575a4c9b56103c6859fe20aef9051aa6077a779f60cc7bb2513913b"><div class="ttname"><a href="color_8h.html#a0254bf137f575a4c9b56103c6859fe20aef9051aa6077a779f60cc7bb2513913b">COLOR_STRING</a></div><div class="ttdeci">@ COLOR_STRING</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00025">color.h:25</a></div></div>
+<div class="ttc" id="acolor_8h_html_ae1191eed3030f43658df2fef5fa202de"><div class="ttname"><a href="color_8h.html#ae1191eed3030f43658df2fef5fa202de">gvcolor_t</a></div><div class="ttdeci">struct color_s gvcolor_t</div></div>
+<div class="ttc" id="astructcolor__s_html"><div class="ttname"><a href="structcolor__s.html">color_s</a></div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00028">color.h:28</a></div></div>
+<div class="ttc" id="astructcolor__s_html_a01227ba12ab7210cfb839124b06e1779"><div class="ttname"><a href="structcolor__s.html#a01227ba12ab7210cfb839124b06e1779">color_s::index</a></div><div class="ttdeci">int index</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00036">color.h:36</a></div></div>
+<div class="ttc" id="astructcolor__s_html_a236d63da02059b4df20358cf2eeecccd"><div class="ttname"><a href="structcolor__s.html#a236d63da02059b4df20358cf2eeecccd">color_s::string</a></div><div class="ttdeci">char * string</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00035">color.h:35</a></div></div>
+<div class="ttc" id="astructcolor__s_html_a2aa06fe8deb3b9aab722153c87dec0ac"><div class="ttname"><a href="structcolor__s.html#a2aa06fe8deb3b9aab722153c87dec0ac">color_s::RGBA</a></div><div class="ttdeci">double RGBA[4]</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00030">color.h:30</a></div></div>
+<div class="ttc" id="astructcolor__s_html_a3ba7369dd590b336d3c950d3d39af998"><div class="ttname"><a href="structcolor__s.html#a3ba7369dd590b336d3c950d3d39af998">color_s::rrggbbaa</a></div><div class="ttdeci">int rrggbbaa[4]</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00034">color.h:34</a></div></div>
+<div class="ttc" id="astructcolor__s_html_a5138284bed348fafa3c1a72f22094377"><div class="ttname"><a href="structcolor__s.html#a5138284bed348fafa3c1a72f22094377">color_s::HSVA</a></div><div class="ttdeci">double HSVA[4]</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00031">color.h:31</a></div></div>
+<div class="ttc" id="astructcolor__s_html_a6866a58347a03334aacd1b19cff6f1d0"><div class="ttname"><a href="structcolor__s.html#a6866a58347a03334aacd1b19cff6f1d0">color_s::cmyk</a></div><div class="ttdeci">unsigned char cmyk[4]</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00033">color.h:33</a></div></div>
+<div class="ttc" id="astructcolor__s_html_acfe59dac196e02b0d63d58468ab6be9b"><div class="ttname"><a href="structcolor__s.html#acfe59dac196e02b0d63d58468ab6be9b">color_s::rgba</a></div><div class="ttdeci">unsigned char rgba[4]</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00032">color.h:32</a></div></div>
+<div class="ttc" id="astructcolor__s_html_ae2bad8068f8005326356129709c3df18"><div class="ttname"><a href="structcolor__s.html#ae2bad8068f8005326356129709c3df18">color_s::u</a></div><div class="ttdeci">union color_s::@5 u</div></div>
+<div class="ttc" id="astructcolor__s_html_afff9b62d12e78b81a0d0939c1830011e"><div class="ttname"><a href="structcolor__s.html#afff9b62d12e78b81a0d0939c1830011e">color_s::type</a></div><div class="ttdeci">color_type_t type</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00038">color.h:38</a></div></div>
+<div class="ttc" id="astructhsvrgbacolor__t_html"><div class="ttname"><a href="structhsvrgbacolor__t.html">hsvrgbacolor_t</a></div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00017">color.h:17</a></div></div>
+<div class="ttc" id="astructhsvrgbacolor__t_html_a519f5db8370777b193bcba9d4c69d3a1"><div class="ttname"><a href="structhsvrgbacolor__t.html#a519f5db8370777b193bcba9d4c69d3a1">hsvrgbacolor_t::h</a></div><div class="ttdeci">unsigned char h</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00019">color.h:19</a></div></div>
+<div class="ttc" id="astructhsvrgbacolor__t_html_a54171dd8a727b6be154f15ff852d3430"><div class="ttname"><a href="structhsvrgbacolor__t.html#a54171dd8a727b6be154f15ff852d3430">hsvrgbacolor_t::a</a></div><div class="ttdeci">unsigned char a</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00020">color.h:20</a></div></div>
+<div class="ttc" id="astructhsvrgbacolor__t_html_a6e97c507d2837f83468b35d41692893b"><div class="ttname"><a href="structhsvrgbacolor__t.html#a6e97c507d2837f83468b35d41692893b">hsvrgbacolor_t::b</a></div><div class="ttdeci">unsigned char b</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00020">color.h:20</a></div></div>
+<div class="ttc" id="astructhsvrgbacolor__t_html_a88638d694c1e1ca6be87c7b8a8dd7777"><div class="ttname"><a href="structhsvrgbacolor__t.html#a88638d694c1e1ca6be87c7b8a8dd7777">hsvrgbacolor_t::g</a></div><div class="ttdeci">unsigned char g</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00020">color.h:20</a></div></div>
+<div class="ttc" id="astructhsvrgbacolor__t_html_aa8534788c747f1dc38f2baad8f44a149"><div class="ttname"><a href="structhsvrgbacolor__t.html#aa8534788c747f1dc38f2baad8f44a149">hsvrgbacolor_t::s</a></div><div class="ttdeci">unsigned char s</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00019">color.h:19</a></div></div>
+<div class="ttc" id="astructhsvrgbacolor__t_html_ab16c706c5e2a729bd9f611cf43d05562"><div class="ttname"><a href="structhsvrgbacolor__t.html#ab16c706c5e2a729bd9f611cf43d05562">hsvrgbacolor_t::v</a></div><div class="ttdeci">unsigned char v</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00019">color.h:19</a></div></div>
+<div class="ttc" id="astructhsvrgbacolor__t_html_ac2d9e4fa53394ac95f24e642a089d4a3"><div class="ttname"><a href="structhsvrgbacolor__t.html#ac2d9e4fa53394ac95f24e642a089d4a3">hsvrgbacolor_t::r</a></div><div class="ttdeci">unsigned char r</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00020">color.h:20</a></div></div>
+<div class="ttc" id="astructhsvrgbacolor__t_html_ae86e35caea2c585343419c6122e5cc3d"><div class="ttname"><a href="structhsvrgbacolor__t.html#ae86e35caea2c585343419c6122e5cc3d">hsvrgbacolor_t::name</a></div><div class="ttdeci">char * name</div><div class="ttdef"><b>Definition:</b> <a href="color_8h_source.html#l00018">color.h:18</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e6c23235d574a84b5ef1a8613e824ad0.html">for lab</a></li><li class="navelem"><a class="el" href="dir_9e36fc1ac95da228bde805a03f57733e.html">Graphviz</a></li><li class="navelem"><a class="el" href="dir_ad4ebe5bca6393216da41cf9a4442fe0.html">include</a></li><li class="navelem"><a class="el" href="dir_1993f148fdb21d2725c441bae462129c.html">graphviz</a></li><li class="navelem"><a class="el" href="color_8h.html">color.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

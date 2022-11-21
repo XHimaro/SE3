@@ -1,0 +1,77 @@
+\hypertarget{mb_8h}{}\doxysection{Файл for lab/freemodbus-\/v1.5.0/modbus/include/mb.h}
+\label{mb_8h}\index{for lab/freemodbus-\/v1.5.0/modbus/include/mb.h@{for lab/freemodbus-\/v1.5.0/modbus/include/mb.h}}
+{\ttfamily \#include \char`\"{}port.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbport.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbproto.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для mb.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{mb_8h__incl}
+\end{center}
+\end{figure}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mb_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__modbus_ga0e6d79d4ff38dbf7d3fd81a80d655b70}{MB\+\_\+\+TCP\+\_\+\+PORT\+\_\+\+USE\+\_\+\+DEFAULT}}~0
+\begin{DoxyCompactList}\small\item\em Use the default Modbus TCP port (502) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{e\+MBMode}} \{ \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a1b807b8cf3d593d8cd8d1a1d21a3da31}{MB\+\_\+\+RTU}}
+, \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61afa37751530d5e48cb5a3f8841f9e3143}{MB\+\_\+\+ASCII}}
+, \mbox{\hyperlink{group__modbus_gga462d0d9396f02be6f9fd5b6f19463e61a5786284fe284b4a23889bf5b444d5142}{MB\+\_\+\+TCP}}
+ \}
+\begin{DoxyCompactList}\small\item\em Modbus serial transmission modes (RTU/\+ASCII). \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}{e\+MBRegister\+Mode}} \{ \mbox{\hyperlink{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8aa210c1d03e2745efb42486b822740d4b}{MB\+\_\+\+REG\+\_\+\+READ}}
+, \mbox{\hyperlink{group__modbus_ggaf1398cbbeb317b1dbd0276b275f5b0f8a3d0a62208562b69c5e7692a5a168c14e}{MB\+\_\+\+REG\+\_\+\+WRITE}}
+ \}
+\begin{DoxyCompactList}\small\item\em If register should be written or read. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \{ \newline
+\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\+\_\+\+ENOERR}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf415371aad180c545b726d39adbf9ba7}{MB\+\_\+\+ENOREG}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dafa57cdb3f85e8ab4baf160579104d624}{MB\+\_\+\+EINVAL}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da539fb138411468b12c05556157c6864d}{MB\+\_\+\+EPORTERR}}
+, \newline
+\mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0700c1e37bfc75068e6577bc0b04bb8}{MB\+\_\+\+ENORES}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf6eed4a1c490af14b7467be1e6e2fe67}{MB\+\_\+\+EIO}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf0e64a209ac1a01935167c6986338a6f}{MB\+\_\+\+EILLSTATE}}
+, \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da017c559e956f718cf77aafe269f49bd5}{MB\+\_\+\+ETIMEDOUT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Errorcodes used by all function in the protocol stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_ga622dbe6b38ff1d255523d4736fa3da26}{e\+MBInit}} (\mbox{\hyperlink{group__modbus_ga462d0d9396f02be6f9fd5b6f19463e61}{e\+MBMode}} e\+Mode, UCHAR uc\+Slave\+Address, UCHAR uc\+Port, ULONG ul\+Baud\+Rate, \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{e\+MBParity}} e\+Parity)
+\begin{DoxyCompactList}\small\item\em Initialize the Modbus protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gab06a2d0ef8bdfd866cd934f0ec7e7a6e}{e\+MBTCPInit}} (USHORT us\+TCPPort)
+\begin{DoxyCompactList}\small\item\em Initialize the Modbus protocol stack for Modbus TCP. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gac20080d92be2934456e2a5d27cd36310}{e\+MBClose}} (void)
+\begin{DoxyCompactList}\small\item\em Release resources used by the protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gab697be370833d562e6b016626d996132}{e\+MBEnable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable the Modbus protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gabcc2a31ec41fc276ab3c3ac705defdf3}{e\+MBDisable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable the Modbus protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_ga12648c98d45f768ba878fbcee46caca5}{e\+MBPoll}} (void)
+\begin{DoxyCompactList}\small\item\em The main pooling loop of the Modbus protocol stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_gabe2b0e2dccf23d506666aa3cfdf6a8a3}{e\+MBSet\+Slave\+ID}} (UCHAR uc\+Slave\+ID, BOOL x\+Is\+Running, UCHAR const $\ast$puc\+Additional, USHORT us\+Additional\+Len)
+\begin{DoxyCompactList}\small\item\em Configure the slave id of the device. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus_ga5f6e66893b2388a602ac453253a00784}{e\+MBRegister\+CB}} (UCHAR uc\+Function\+Code, \mbox{\hyperlink{mbproto_8h_a9fe16efc84b141d9b9ec804c0ddfa4b1}{px\+MBFunction\+Handler}} px\+Handler)
+\begin{DoxyCompactList}\small\item\em Registers a callback handler for a given function code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus__registers_ga7816677520b1eb2ebecf15060a41bc81}{e\+MBReg\+Input\+CB}} (UCHAR $\ast$puc\+Reg\+Buffer, USHORT us\+Address, USHORT us\+NRegs)
+\begin{DoxyCompactList}\small\item\em Callback function used if the value of a {\itshape Input Register} is required by the protocol stack. The starting register address is given by {\ttfamily us\+Address} and the last register is given by {\ttfamily us\+Address + us\+NRegs -\/ 1}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus__registers_ga10d37e1d80224bf3b1eeb9e246d7582e}{e\+MBReg\+Holding\+CB}} (UCHAR $\ast$puc\+Reg\+Buffer, USHORT us\+Address, USHORT us\+NRegs, \mbox{\hyperlink{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}{e\+MBRegister\+Mode}} e\+Mode)
+\begin{DoxyCompactList}\small\item\em Callback function used if a {\itshape Holding Register} value is read or written by the protocol stack. The starting register address is given by {\ttfamily us\+Address} and the last register is given by {\ttfamily us\+Address + us\+NRegs -\/ 1}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus__registers_ga88d9b719291515c60eee1bf9ffa1dd02}{e\+MBReg\+Coils\+CB}} (UCHAR $\ast$puc\+Reg\+Buffer, USHORT us\+Address, USHORT us\+NCoils, \mbox{\hyperlink{group__modbus_gaf1398cbbeb317b1dbd0276b275f5b0f8}{e\+MBRegister\+Mode}} e\+Mode)
+\begin{DoxyCompactList}\small\item\em Callback function used if a {\itshape Coil Register} value is read or written by the protocol stack. If you are going to use this function you might use the functions \mbox{\hyperlink{group__modbus__utils_gaffd1defb8bceb85f1b65d64fa1c895e1}{x\+MBUtil\+Set\+Bits(  )}} and \mbox{\hyperlink{group__modbus__utils_ga94b3b43e1d2353e621748c79e2fb4dd5}{x\+MBUtil\+Get\+Bits(  )}} for working with bitfields. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} \mbox{\hyperlink{group__modbus__registers_ga38101f5da54af137e210a3b8b9fa3887}{e\+MBReg\+Discrete\+CB}} (UCHAR $\ast$puc\+Reg\+Buffer, USHORT us\+Address, USHORT us\+NDiscrete)
+\begin{DoxyCompactList}\small\item\em Callback function used if a {\itshape Input Discrete Register} value is read by the protocol stack. \end{DoxyCompactList}\end{DoxyCompactItemize}

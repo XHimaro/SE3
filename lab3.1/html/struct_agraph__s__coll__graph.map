@@ -1,0 +1,20 @@
+<map id="Agraph_s" name="Agraph_s">
+<area shape="rect" id="node1" title=" " alt="" coords="375,411,453,437"/>
+<area shape="rect" id="node18" href="$struct_agcbdisc__s.html" title=" " alt="" coords="369,540,459,565"/>
+<area shape="rect" id="node2" href="$struct_agobj__s.html" title="a generic graph/node/edge header" alt="" coords="345,231,414,257"/>
+<area shape="rect" id="node3" href="$struct_agtag__s.html" title="Object tag for graphs, nodes, and edges." alt="" coords="443,127,513,152"/>
+<area shape="rect" id="node4" href="$struct_agrec__s.html" title="Header of a user record." alt="" coords="295,127,365,152"/>
+<area shape="rect" id="node5" href="$struct_agdesc__s.html" title=" " alt="" coords="438,231,518,257"/>
+<area shape="rect" id="node6" href="$struct__dtlink__s.html" title=" " alt="" coords="353,7,427,33"/>
+<area shape="rect" id="node9" href="$struct__dtdata__s.html" title=" " alt="" coords="185,127,264,152"/>
+<area shape="rect" id="node7" href="$struct__dt__s.html" title=" " alt="" coords="179,231,233,257"/>
+<area shape="rect" id="node8" href="$struct__dtdisc__s.html" title=" " alt="" coords="224,411,303,437"/>
+<area shape="rect" id="node10" href="$struct__dtmethod__s.html" title=" " alt="" coords="5,411,103,437"/>
+<area shape="rect" id="node11" href="$struct_agclos__s.html" title=" " alt="" coords="379,725,455,751"/>
+<area shape="rect" id="node12" href="$struct_agdisc__s.html" title="user&#39;s discipline" alt="" coords="543,637,619,663"/>
+<area shape="rect" id="node13" href="$struct_agmemdisc__s.html" title="memory allocator discipline, independent of other resources" alt="" coords="484,540,589,565"/>
+<area shape="rect" id="node14" href="$struct_agiddisc__s.html" title="object ID allocator discipline" alt="" coords="613,540,700,565"/>
+<area shape="rect" id="node15" href="$struct_agiodisc__s.html" title=" " alt="" coords="724,540,811,565"/>
+<area shape="rect" id="node16" href="$struct_agdstate__s.html" title=" " alt="" coords="643,637,731,663"/>
+<area shape="rect" id="node17" href="$struct_agcbstack__s.html" title="object event callbacks" alt="" coords="367,637,466,663"/>
+</map>

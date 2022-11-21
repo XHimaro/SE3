@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ModBus: Структура rank_t</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ModBus
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structrank__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="structrank__t-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Структура rank_t</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="types_8h_source.html">types.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса rank_t:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrank__t__coll__graph.png" border="0" usemap="#arank__t_coll__map" alt="Collaboration graph"/></div>
+<map name="arank__t_coll__map" id="arank__t_coll__map">
+<area shape="rect" title=" " alt="" coords="633,652,691,677"/>
+<area shape="rect" href="struct_agnode__s.html" title=" " alt="" coords="478,540,558,565"/>
+<area shape="rect" href="struct_agsubnode__s.html" title="This is the node struct allocated per graph (or subgraph)." alt="" coords="467,652,569,677"/>
+<area shape="rect" href="struct_agobj__s.html" title="a generic graph/node/edge header" alt="" coords="461,231,530,257"/>
+<area shape="rect" href="struct_agraph__s.html" title=" " alt="" coords="335,411,413,437"/>
+<area shape="rect" href="struct_agtag__s.html" title="Object tag for graphs, nodes, and edges." alt="" coords="460,127,531,152"/>
+<area shape="rect" href="struct_agrec__s.html" title="Header of a user record." alt="" coords="312,127,383,152"/>
+<area shape="rect" href="struct_agcbdisc__s.html" title=" " alt="" coords="218,540,309,565"/>
+<area shape="rect" href="struct_agdesc__s.html" title=" " alt="" coords="357,231,437,257"/>
+<area shape="rect" href="struct__dtlink__s.html" title=" " alt="" coords="531,7,606,33"/>
+<area shape="rect" href="struct__dtdata__s.html" title=" " alt="" coords="197,127,276,152"/>
+<area shape="rect" href="struct__dt__s.html" title=" " alt="" coords="165,231,220,257"/>
+<area shape="rect" href="struct__dtdisc__s.html" title=" " alt="" coords="69,411,148,437"/>
+<area shape="rect" href="struct__dtmethod__s.html" title=" " alt="" coords="205,411,303,437"/>
+<area shape="rect" href="struct_agclos__s.html" title=" " alt="" coords="336,740,412,765"/>
+<area shape="rect" href="struct_agdisc__s.html" title="user&#39;s discipline" alt="" coords="773,652,849,677"/>
+<area shape="rect" href="struct_agmemdisc__s.html" title="memory allocator discipline, independent of other resources" alt="" coords="879,540,984,565"/>
+<area shape="rect" href="struct_agiddisc__s.html" title="object ID allocator discipline" alt="" coords="1008,540,1095,565"/>
+<area shape="rect" href="struct_agiodisc__s.html" title=" " alt="" coords="768,540,855,565"/>
+<area shape="rect" href="struct_agdstate__s.html" title=" " alt="" coords="874,652,962,677"/>
+<area shape="rect" href="struct_agcbstack__s.html" title="object event callbacks" alt="" coords="186,652,285,677"/>
+<area shape="rect" href="structadjmatrix__t.html" title=" " alt="" coords="657,540,744,565"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a4d66550cf0c04854d76217a57a900b5b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#a4d66550cf0c04854d76217a57a900b5b">n</a></td></tr>
+<tr class="separator:a4d66550cf0c04854d76217a57a900b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4475ac82df1e486b9720294e41154e7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aa54efbeed985023658063bdae73347ec">node_t</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#a4475ac82df1e486b9720294e41154e7e">v</a></td></tr>
+<tr class="separator:a4475ac82df1e486b9720294e41154e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1f795cfbc2ee9d65df715a0b093842"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#a1c1f795cfbc2ee9d65df715a0b093842">an</a></td></tr>
+<tr class="separator:a1c1f795cfbc2ee9d65df715a0b093842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13c7834e7ce63c1d46952c8fc8d8cb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#aa54efbeed985023658063bdae73347ec">node_t</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#ab13c7834e7ce63c1d46952c8fc8d8cb7">av</a></td></tr>
+<tr class="separator:ab13c7834e7ce63c1d46952c8fc8d8cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dab509c28f2cb7176ae0b8ff05b6678"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#a8dab509c28f2cb7176ae0b8ff05b6678">ht1</a></td></tr>
+<tr class="separator:a8dab509c28f2cb7176ae0b8ff05b6678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae005e202b49e11c29b60d7a75cb8ddab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#ae005e202b49e11c29b60d7a75cb8ddab">ht2</a></td></tr>
+<tr class="separator:ae005e202b49e11c29b60d7a75cb8ddab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a027760107c372468b3361fa1d0cab50b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#a027760107c372468b3361fa1d0cab50b">pht1</a></td></tr>
+<tr class="separator:a027760107c372468b3361fa1d0cab50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdd0363c884929d9657fc4a996a4bc7a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#acdd0363c884929d9657fc4a996a4bc7a">pht2</a></td></tr>
+<tr class="separator:acdd0363c884929d9657fc4a996a4bc7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159c8dfd21b1d61c4444ebc1fb8c0224"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#a159c8dfd21b1d61c4444ebc1fb8c0224">candidate</a></td></tr>
+<tr class="separator:a159c8dfd21b1d61c4444ebc1fb8c0224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32847696dfdf29225303e3d3ffbcfef7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#a32847696dfdf29225303e3d3ffbcfef7">valid</a></td></tr>
+<tr class="separator:a32847696dfdf29225303e3d3ffbcfef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ffb2a3d2da3d2b7609bcaae563126d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#a92ffb2a3d2da3d2b7609bcaae563126d">cache_nc</a></td></tr>
+<tr class="separator:a92ffb2a3d2da3d2b7609bcaae563126d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73a92b022fd3803d56144ee943cabfba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structadjmatrix__t.html">adjmatrix_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrank__t.html#a73a92b022fd3803d56144ee943cabfba">flat</a></td></tr>
+<tr class="separator:a73a92b022fd3803d56144ee943cabfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00205">205</a></p>
+</div><h2 class="groupheader">Данные класса</h2>
+<a id="a1c1f795cfbc2ee9d65df715a0b093842" name="a1c1f795cfbc2ee9d65df715a0b093842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1f795cfbc2ee9d65df715a0b093842">&#9670;&#160;</a></span>an</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rank_t::an</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00208">208</a></p>
+
+</div>
+</div>
+<a id="ab13c7834e7ce63c1d46952c8fc8d8cb7" name="ab13c7834e7ce63c1d46952c8fc8d8cb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab13c7834e7ce63c1d46952c8fc8d8cb7">&#9670;&#160;</a></span>av</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aa54efbeed985023658063bdae73347ec">node_t</a>** rank_t::av</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00209">209</a></p>
+
+</div>
+</div>
+<a id="a92ffb2a3d2da3d2b7609bcaae563126d" name="a92ffb2a3d2da3d2b7609bcaae563126d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ffb2a3d2da3d2b7609bcaae563126d">&#9670;&#160;</a></span>cache_nc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rank_t::cache_nc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00216">216</a></p>
+
+</div>
+</div>
+<a id="a159c8dfd21b1d61c4444ebc1fb8c0224" name="a159c8dfd21b1d61c4444ebc1fb8c0224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a159c8dfd21b1d61c4444ebc1fb8c0224">&#9670;&#160;</a></span>candidate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rank_t::candidate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00214">214</a></p>
+
+</div>
+</div>
+<a id="a73a92b022fd3803d56144ee943cabfba" name="a73a92b022fd3803d56144ee943cabfba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73a92b022fd3803d56144ee943cabfba">&#9670;&#160;</a></span>flat</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structadjmatrix__t.html">adjmatrix_t</a>* rank_t::flat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00217">217</a></p>
+
+</div>
+</div>
+<a id="a8dab509c28f2cb7176ae0b8ff05b6678" name="a8dab509c28f2cb7176ae0b8ff05b6678"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dab509c28f2cb7176ae0b8ff05b6678">&#9670;&#160;</a></span>ht1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double rank_t::ht1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00210">210</a></p>
+
+</div>
+</div>
+<a id="ae005e202b49e11c29b60d7a75cb8ddab" name="ae005e202b49e11c29b60d7a75cb8ddab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae005e202b49e11c29b60d7a75cb8ddab">&#9670;&#160;</a></span>ht2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double rank_t::ht2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00211">211</a></p>
+
+</div>
+</div>
+<a id="a4d66550cf0c04854d76217a57a900b5b" name="a4d66550cf0c04854d76217a57a900b5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d66550cf0c04854d76217a57a900b5b">&#9670;&#160;</a></span>n</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rank_t::n</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00206">206</a></p>
+
+</div>
+</div>
+<a id="a027760107c372468b3361fa1d0cab50b" name="a027760107c372468b3361fa1d0cab50b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a027760107c372468b3361fa1d0cab50b">&#9670;&#160;</a></span>pht1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double rank_t::pht1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00212">212</a></p>
+
+</div>
+</div>
+<a id="acdd0363c884929d9657fc4a996a4bc7a" name="acdd0363c884929d9657fc4a996a4bc7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd0363c884929d9657fc4a996a4bc7a">&#9670;&#160;</a></span>pht2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double rank_t::pht2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00213">213</a></p>
+
+</div>
+</div>
+<a id="a4475ac82df1e486b9720294e41154e7e" name="a4475ac82df1e486b9720294e41154e7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4475ac82df1e486b9720294e41154e7e">&#9670;&#160;</a></span>v</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#aa54efbeed985023658063bdae73347ec">node_t</a>** rank_t::v</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00207">207</a></p>
+
+</div>
+</div>
+<a id="a32847696dfdf29225303e3d3ffbcfef7" name="a32847696dfdf29225303e3d3ffbcfef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32847696dfdf29225303e3d3ffbcfef7">&#9670;&#160;</a></span>valid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rank_t::valid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="types_8h_source.html">types.h</a> строка <a class="el" href="types_8h_source.html#l00215">215</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>for lab/Graphviz/include/graphviz/<a class="el" href="types_8h_source.html">types.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structrank__t.html">rank_t</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

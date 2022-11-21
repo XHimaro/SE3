@@ -1,0 +1,56 @@
+\hypertarget{gvcext_8h_source}{}\doxysection{gvcext.\+h}
+\label{gvcext_8h_source}\index{for lab/Graphviz/include/graphviz/gvcext.h@{for lab/Graphviz/include/graphviz/gvcext.h}}
+\mbox{\hyperlink{gvcext_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00002}00002 \textcolor{comment}{ * Copyright (c) 2011 AT\&T Intellectual Property }}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00003}00003 \textcolor{comment}{ * All rights reserved. This program and the accompanying materials}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00004}00004 \textcolor{comment}{ * are made available under the terms of the Eclipse Public License v1.0}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00005}00005 \textcolor{comment}{ * which accompanies this distribution, and is available at}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00006}00006 \textcolor{comment}{ * http://www.eclipse.org/legal/epl-\/v10.html}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00007}00007 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00008}00008 \textcolor{comment}{ * Contributors: Details at https://graphviz.org}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00009}00009 \textcolor{comment}{ *************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00011}00011 \textcolor{comment}{/* Common header used by both clients and plugins */}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00013}00013 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00015}00015 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00016}00016 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00017}00017 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00019}00019 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00020}00020 \textcolor{comment}{ * Define an apis array of name strings using an enumerated api\_t as index.}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00021}00021 \textcolor{comment}{ * The enumerated type is defined here.  The apis array is}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00022}00022 \textcolor{comment}{ * inititialized in gvplugin.c by redefining ELEM and reinvoking APIS.}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00023}00023 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00024}\mbox{\hyperlink{gvcext_8h_abdbe963515b51a66d3c4bedcdac270d8}{00024}} \textcolor{preprocessor}{\#define APIS ELEM(render) ELEM(layout) ELEM(textlayout) ELEM(device) ELEM(loadimage)}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00026}00026 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00027}00027 \textcolor{comment}{ * Define api\_t using names based on the plugin names with API\_ prefixed.}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00028}00028 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00029}\mbox{\hyperlink{gvcext_8h_a362272c997ae8f67a45bc9a4b399c736}{00029}} \textcolor{preprocessor}{\#define ELEM(x) API\_\#\#x,}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00030}\mbox{\hyperlink{gvcext_8h_ae124da9cae472afed2b4d3c7ef2ff574}{00030}}     \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{ \mbox{\hyperlink{gvcext_8h_abdbe963515b51a66d3c4bedcdac270d8}{APIS}} \} \mbox{\hyperlink{gvcext_8h_ae124da9cae472afed2b4d3c7ef2ff574}{api\_t}}; \textcolor{comment}{/* API\_render, API\_layout, ... */}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00031}00031 \textcolor{preprocessor}{\#undef ELEM}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00033}\mbox{\hyperlink{gvcext_8h_a9a257c86c8fde7d294726bece96315e5}{00033}}     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_g_v_j__s}{GVJ\_s}} \mbox{\hyperlink{struct_g_v_j__s}{GVJ\_t}};}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00034}\mbox{\hyperlink{gvcext_8h_af6bd0e091413025a4d30fa7eca90b641}{00034}}     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }GVG\_s \mbox{\hyperlink{gvcext_8h_af6bd0e091413025a4d30fa7eca90b641}{GVG\_t}};}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00035}\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{00035}}     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }GVC\_s \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\_t}};}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00037}\mbox{\hyperlink{structlt__symlist__t}{00037}}     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00038}\mbox{\hyperlink{structlt__symlist__t_a2261f1d6864e82f62f61ec8ec248aa4f}{00038}}     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{structlt__symlist__t_a2261f1d6864e82f62f61ec8ec248aa4f}{name}};}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00039}\mbox{\hyperlink{structlt__symlist__t_a72296d014346c3eddcab6f06cdbac935}{00039}}     \textcolor{keywordtype}{void}* \mbox{\hyperlink{structlt__symlist__t_a72296d014346c3eddcab6f06cdbac935}{address}};}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00040}00040     \} \mbox{\hyperlink{structlt__symlist__t}{lt\_symlist\_t}};}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00042}\mbox{\hyperlink{gvcext_8h_aae45d96279062a78e72e7c861600fd0e}{00042}}     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }gvplugin\_available\_s \mbox{\hyperlink{gvcext_8h_aae45d96279062a78e72e7c861600fd0e}{gvplugin\_available\_t}};}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00044}00044 \textcolor{preprocessor}{\#if !defined(LTDL\_H)}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00045}00045 \textcolor{keyword}{extern} \mbox{\hyperlink{structlt__symlist__t}{lt\_symlist\_t}} \mbox{\hyperlink{gvcext_8h_a3722c3fc0f0be8654c675764e4bb7ef5}{lt\_preloaded\_symbols}}[];}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00046}00046 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00048}00048 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00049}00049 \}}
+\DoxyCodeLine{\Hypertarget{gvcext_8h_source_l00050}00050 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

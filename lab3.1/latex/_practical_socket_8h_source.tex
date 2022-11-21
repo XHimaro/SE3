@@ -1,0 +1,146 @@
+\hypertarget{_practical_socket_8h_source}{}\doxysection{Practical\+Socket.\+h}
+\mbox{\hyperlink{_practical_socket_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00002}00002 \textcolor{comment}{ *   C++ sockets on Unix and Windows}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00003}00003 \textcolor{comment}{ *   Copyright (C) 2002}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00004}00004 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00005}00005 \textcolor{comment}{ *   This program is free software; you can redistribute it and/or modify}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00006}00006 \textcolor{comment}{ *   it under the terms of the GNU General Public License as published by}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00007}00007 \textcolor{comment}{ *   the Free Software Foundation; either version 2 of the License, or}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00008}00008 \textcolor{comment}{ *   (at your option) any later version.}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00009}00009 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00010}00010 \textcolor{comment}{ *   This program is distributed in the hope that it will be useful,}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00011}00011 \textcolor{comment}{ *   but WITHOUT ANY WARRANTY; without even the implied warranty of}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00012}00012 \textcolor{comment}{ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00013}00013 \textcolor{comment}{ *   GNU General Public License for more details.}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00014}00014 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00015}00015 \textcolor{comment}{ *   You should have received a copy of the GNU General Public License}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00016}00016 \textcolor{comment}{ *   along with this program; if not, write to the Free Software}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00017}00017 \textcolor{comment}{ *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-\/1307  USA}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00018}00018 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00020}00020 \textcolor{preprocessor}{\#ifndef \_\_PRACTICALSOCKET\_INCLUDED\_\_}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00021}00021 \textcolor{preprocessor}{\#define \_\_PRACTICALSOCKET\_INCLUDED\_\_}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00023}00023 \textcolor{preprocessor}{\#include <string>}            \textcolor{comment}{// For string}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00024}00024 \textcolor{preprocessor}{\#include <exception>}         \textcolor{comment}{// For exception class}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00026}00026 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00031}00031 \textcolor{keyword}{class }\mbox{\hyperlink{class_socket_exception}{SocketException}} : \textcolor{keyword}{public} exception \{}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00032}00032 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00039}\mbox{\hyperlink{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3}{00039}}   \mbox{\hyperlink{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3}{SocketException}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&message, \textcolor{keywordtype}{bool} inclSysMsg = \textcolor{keyword}{false}) throw();}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00044}\mbox{\hyperlink{class_socket_exception_a659557c899329aea01977c980c4db9b9}{00044}}   \string~\mbox{\hyperlink{class_socket_exception}{SocketException}}() throw();}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00050}\mbox{\hyperlink{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42}{00050}}   const \textcolor{keywordtype}{char} *\mbox{\hyperlink{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42}{what}}() const throw();}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00052}00052 private:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00053}00053   \textcolor{keywordtype}{string} \mbox{\hyperlink{class_socket_exception_adcfeba6d4ce5754b48ae9d37b07a7e87}{userMessage}};  \textcolor{comment}{// Exception message}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00054}00054 \};}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00059}00059 class \mbox{\hyperlink{class_socket}{Socket}} \{}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00060}00060 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00064}\mbox{\hyperlink{class_socket_aeac4eb6379a543d38ed88977d3b6630a}{00064}}   \mbox{\hyperlink{class_socket_aeac4eb6379a543d38ed88977d3b6630a}{\string~Socket}}();}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00071}\mbox{\hyperlink{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}{00071}}   \textcolor{keywordtype}{string} \mbox{\hyperlink{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}{getLocalAddress}}() throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00078}\mbox{\hyperlink{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}{00078}}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} getLocalPort() throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00086}\mbox{\hyperlink{class_socket_a773fe4a35146002de76952e16fdebcfa}{00086}}   \textcolor{keywordtype}{void} setLocalPort(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} localPort) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00096}\mbox{\hyperlink{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}{00096}}   \textcolor{keywordtype}{void} setLocalAddressAndPort(const \textcolor{keywordtype}{string} \&localAddress, }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00097}00097     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} localPort = 0) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00112}\mbox{\hyperlink{class_socket_a7ca859fca0e15ae7157b2ab29bb5399c}{00112}}   static \textcolor{keywordtype}{void} cleanUp() throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00120}\mbox{\hyperlink{class_socket_a19fdcfe174b5a6578f56f396a8c70b6b}{00120}}   static \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} resolveService(const \textcolor{keywordtype}{string} \&service,}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00121}00121                                        const \textcolor{keywordtype}{string} \&protocol = "{}tcp"{});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00123}00123 private:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00124}00124   \textcolor{comment}{// Prevent the user from trying to use value semantics on this object}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00125}\mbox{\hyperlink{class_socket_a656389d58fa00729ff70c4e159623f5c}{00125}}   \mbox{\hyperlink{class_socket}{Socket}}(const \mbox{\hyperlink{class_socket}{Socket}} \&sock);}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00126}\mbox{\hyperlink{class_socket_a1ef8f4c222c32756c8b1537323702df8}{00126}}   \textcolor{keywordtype}{void} operator=(const \mbox{\hyperlink{class_socket}{Socket}} \&sock);}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00128}00128 protected:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00129}00129   \textcolor{keywordtype}{int} sockDesc;              \textcolor{comment}{// Socket descriptor}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00130}\mbox{\hyperlink{class_socket_a53e00027bab2125a2b407914c6148589}{00130}}   \mbox{\hyperlink{class_socket}{Socket}}(\textcolor{keywordtype}{int} type, \textcolor{keywordtype}{int} protocol) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00131}\mbox{\hyperlink{class_socket_a6a2609eef6559336a595a336f138d395}{00131}}   \mbox{\hyperlink{class_socket}{Socket}}(\textcolor{keywordtype}{int} sockDesc);}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00132}00132 \};}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00137}00137 class \mbox{\hyperlink{class_communicating_socket}{CommunicatingSocket}} : public \mbox{\hyperlink{class_socket}{Socket}} \{}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00138}00138 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00146}\mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{00146}}   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&foreignAddress, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} foreignPort)}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00147}00147     \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00156}\mbox{\hyperlink{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}{00156}}   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}{send}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *buffer, \textcolor{keywordtype}{int} bufferLen) \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00166}\mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{00166}}   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{recv}}(\textcolor{keywordtype}{void} *buffer, \textcolor{keywordtype}{int} bufferLen) \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00173}\mbox{\hyperlink{class_communicating_socket_a13f9eca30ef56836cf23c163c848c09e}{00173}}   \textcolor{keywordtype}{string} \mbox{\hyperlink{class_communicating_socket_a13f9eca30ef56836cf23c163c848c09e}{getForeignAddress}}() throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00180}\mbox{\hyperlink{class_communicating_socket_a184fbb4775184b87ebd886a5587eb1a3}{00180}}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} getForeignPort() throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00181}00181 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00182}00182 protected:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00183}\mbox{\hyperlink{class_communicating_socket_a0017517b8d6e761fde0c40475af3b2ab}{00183}}   \mbox{\hyperlink{class_communicating_socket}{CommunicatingSocket}}(\textcolor{keywordtype}{int} type, \textcolor{keywordtype}{int} protocol) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00184}\mbox{\hyperlink{class_communicating_socket_a27d758db782b3be7d28741e92cb613d1}{00184}}   \mbox{\hyperlink{class_communicating_socket}{CommunicatingSocket}}(\textcolor{keywordtype}{int} newConnSD);}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00185}00185 \};}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00190}00190 class \mbox{\hyperlink{class_t_c_p_socket}{TCPSocket}} : public \mbox{\hyperlink{class_communicating_socket}{CommunicatingSocket}} \{}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00191}00191 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00196}\mbox{\hyperlink{class_t_c_p_socket_a7a50427a401d1a6f3209d51818bad901}{00196}}   \mbox{\hyperlink{class_t_c_p_socket_a7a50427a401d1a6f3209d51818bad901}{TCPSocket}}() throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00205}\mbox{\hyperlink{class_t_c_p_socket_a7b246b66f6dc3246ab2777b771e5f917}{00205}}   \mbox{\hyperlink{class_t_c_p_socket}{TCPSocket}}(const \textcolor{keywordtype}{string} \&foreignAddress, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} foreignPort) }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00206}00206       throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00208}00208 private:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00209}00209   \textcolor{comment}{// Access for TCPServerSocket::accept() connection creation}}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00210}00210   friend class \mbox{\hyperlink{class_t_c_p_server_socket}{TCPServerSocket}};}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00211}\mbox{\hyperlink{class_t_c_p_socket_a4763ac3be0d7d5e143884bef45e351c5}{00211}}   \mbox{\hyperlink{class_t_c_p_socket}{TCPSocket}}(\textcolor{keywordtype}{int} newConnSD);}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00212}00212 \};}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00217}00217 class \mbox{\hyperlink{class_t_c_p_server_socket}{TCPServerSocket}} : public \mbox{\hyperlink{class_socket}{Socket}} \{}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00218}00218 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00228}\mbox{\hyperlink{class_t_c_p_server_socket_ae559a3154527d09fe14a8e5ee1f53d7a}{00228}}   \mbox{\hyperlink{class_t_c_p_server_socket_ae559a3154527d09fe14a8e5ee1f53d7a}{TCPServerSocket}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} localPort, \textcolor{keywordtype}{int} queueLen = 5) }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00229}00229       throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00230}00230 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00240}\mbox{\hyperlink{class_t_c_p_server_socket_a3908fecb1b038f7c14fcc7726f54d01d}{00240}}   \mbox{\hyperlink{class_t_c_p_server_socket}{TCPServerSocket}}(const \textcolor{keywordtype}{string} \&localAddress, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} localPort,}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00241}00241       \textcolor{keywordtype}{int} queueLen = 5) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00242}00242 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00248}\mbox{\hyperlink{class_t_c_p_server_socket_a1d161137e1b069de7a7bfc14d3f8212c}{00248}}   \mbox{\hyperlink{class_t_c_p_socket}{TCPSocket}} *accept() throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00249}00249 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00250}00250 private:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00251}\mbox{\hyperlink{class_t_c_p_server_socket_a1f39a2e6721ab62d8875a234eb300bab}{00251}}   \textcolor{keywordtype}{void} setListen(\textcolor{keywordtype}{int} queueLen) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00252}00252 \};}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00257}00257 class \mbox{\hyperlink{class_u_d_p_socket}{UDPSocket}} : public \mbox{\hyperlink{class_communicating_socket}{CommunicatingSocket}} \{}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00258}00258 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00263}\mbox{\hyperlink{class_u_d_p_socket_a4f86f3023f5a08f6355802599a10e100}{00263}}   \mbox{\hyperlink{class_u_d_p_socket_a4f86f3023f5a08f6355802599a10e100}{UDPSocket}}() throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00264}00264 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00270}\mbox{\hyperlink{class_u_d_p_socket_a14dcb55c4b60b12d4a7fff648cbb825f}{00270}}   \mbox{\hyperlink{class_u_d_p_socket}{UDPSocket}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} localPort) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00271}00271 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00278}\mbox{\hyperlink{class_u_d_p_socket_af19281c523f15ed30d7d78f09033713d}{00278}}   \mbox{\hyperlink{class_u_d_p_socket}{UDPSocket}}(const \textcolor{keywordtype}{string} \&localAddress, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} localPort) }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00279}00279       throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00280}00280 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00286}\mbox{\hyperlink{class_u_d_p_socket_a7482e8e61cef160e1a7c0d6ac15c01be}{00286}}   \textcolor{keywordtype}{void} disconnect() throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00287}00287 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00298}\mbox{\hyperlink{class_u_d_p_socket_a41a3595e226f273953cbd38618af5d5b}{00298}}   \textcolor{keywordtype}{void} sendTo(const \textcolor{keywordtype}{void} *buffer, \textcolor{keywordtype}{int} bufferLen, const \textcolor{keywordtype}{string} \&foreignAddress,}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00299}00299             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} foreignPort) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00300}00300 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00311}\mbox{\hyperlink{class_u_d_p_socket_abcd5c064e2496bd8b1888fd4e1b68949}{00311}}   \textcolor{keywordtype}{int} recvFrom(\textcolor{keywordtype}{void} *buffer, \textcolor{keywordtype}{int} bufferLen, \textcolor{keywordtype}{string} \&sourceAddress, }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00312}00312                \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \&sourcePort) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00313}00313 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00319}\mbox{\hyperlink{class_u_d_p_socket_a4dcfff33b45d1b84b5a602fc6f4a27f8}{00319}}   \textcolor{keywordtype}{void} setMulticastTTL(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} multicastTTL) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00320}00320 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00326}\mbox{\hyperlink{class_u_d_p_socket_a1b20c1e8bd49a9bd9b53dd4f1c8d4c11}{00326}}   \textcolor{keywordtype}{void} joinGroup(const \textcolor{keywordtype}{string} \&multicastGroup) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00327}00327 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00333}\mbox{\hyperlink{class_u_d_p_socket_a78835eaeca8a5ac039b4579c795e3640}{00333}}   \textcolor{keywordtype}{void} leaveGroup(const \textcolor{keywordtype}{string} \&multicastGroup) throw(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00334}00334 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00335}00335 private:}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00336}\mbox{\hyperlink{class_u_d_p_socket_a316f08a017aa160643812f3c08734d27}{00336}}   \textcolor{keywordtype}{void} setBroadcast();}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00337}00337 \};}
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00338}00338 }
+\DoxyCodeLine{\Hypertarget{_practical_socket_8h_source_l00339}00339 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

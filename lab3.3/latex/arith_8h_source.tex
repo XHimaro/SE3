@@ -1,0 +1,79 @@
+\hypertarget{arith_8h_source}{}\doxysection{arith.\+h}
+\label{arith_8h_source}\index{for lab/Graphviz/include/graphviz/arith.h@{for lab/Graphviz/include/graphviz/arith.h}}
+\mbox{\hyperlink{arith_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00002}00002 \textcolor{comment}{ * Copyright (c) 2011 AT\&T Intellectual Property }}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00003}00003 \textcolor{comment}{ * All rights reserved. This program and the accompanying materials}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00004}00004 \textcolor{comment}{ * are made available under the terms of the Eclipse Public License v1.0}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00005}00005 \textcolor{comment}{ * which accompanies this distribution, and is available at}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00006}00006 \textcolor{comment}{ * http://www.eclipse.org/legal/epl-\/v10.html}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00007}00007 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00008}00008 \textcolor{comment}{ * Contributors: Details at https://graphviz.org}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00009}00009 \textcolor{comment}{ *************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00011}00011 \textcolor{comment}{/* geometric functions (e.g. on points and boxes) with application to, but}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00012}00012 \textcolor{comment}{ * no specific dependence on graphs */}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00014}00014 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00016}00016 \textcolor{comment}{/* for sincos */}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00017}00017 \textcolor{preprocessor}{\#ifndef \_GNU\_SOURCE}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00018}\mbox{\hyperlink{arith_8h_a369266c24eacffb87046522897a570d5}{00018}} \textcolor{preprocessor}{\#define \_GNU\_SOURCE 1}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00019}00019 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00021}00021 \textcolor{preprocessor}{\#include <limits.h>}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00022}00022 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00024}00024 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00025}00025 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00026}00026 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00028}00028 \textcolor{preprocessor}{\#ifdef MIN}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00029}00029 \textcolor{preprocessor}{\#undef MIN}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00030}00030 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00031}\mbox{\hyperlink{arith_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{00031}} \textcolor{preprocessor}{\#define MIN(a,b)    ((a)<(b)?(a):(b))}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00033}00033 \textcolor{preprocessor}{\#ifdef MAX}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00034}00034 \textcolor{preprocessor}{\#undef MAX}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00035}00035 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00036}\mbox{\hyperlink{arith_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{00036}} \textcolor{preprocessor}{\#define MAX(a,b)    ((a)>(b)?(a):(b))}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00038}\mbox{\hyperlink{arith_8h_a5d66ce7f9d1958415dc8a5f9556e73b2}{00038}} \textcolor{preprocessor}{\#define AVG(a,b)    ((a + b) / 2)}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00039}\mbox{\hyperlink{arith_8h_a0501e9b03fb5d244efedcc437ef66f68}{00039}} \textcolor{preprocessor}{\#define SGN(a)      (((a)<0)? -\/1 : 1)}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00040}\mbox{\hyperlink{arith_8h_adf44891366ab95806ded6886a9f1c2ee}{00040}} \textcolor{preprocessor}{\#define CMP(a,b)    (((a)<(b)) ? -\/1 : (((a)>(b)) ? 1 : 0))}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00042}00042 \textcolor{preprocessor}{\#ifndef MAXDOUBLE}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00043}\mbox{\hyperlink{arith_8h_ace724a9256f4e65b352465e5feb24a21}{00043}} \textcolor{preprocessor}{\#define MAXDOUBLE   1.7976931348623157e+308}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00044}00044 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00046}00046 \textcolor{preprocessor}{\#ifdef BETWEEN}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00047}00047 \textcolor{preprocessor}{\#undef BETWEEN}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00048}00048 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00049}\mbox{\hyperlink{arith_8h_a043815e8b2e49280dc4fcd060fc56a38}{00049}} \textcolor{preprocessor}{\#define BETWEEN(a,b,c)  (((a) <= (b)) \&\& ((b) <= (c)))}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00051}00051 \textcolor{preprocessor}{\#ifndef M\_PI}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00052}\mbox{\hyperlink{arith_8h_ae71449b1cc6e6250b91f539153a7a0d3}{00052}} \textcolor{preprocessor}{\#define M\_PI        3.14159265358979323846}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00053}00053 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00055}00055 \textcolor{preprocessor}{\#ifndef SQRT2}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00056}\mbox{\hyperlink{arith_8h_a514396dd60fa0621c83072091fb2a0cd}{00056}} \textcolor{preprocessor}{\#define SQRT2       1.41421356237309504880}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00057}00057 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00059}\mbox{\hyperlink{arith_8h_a91a8600e2a2859a47dbc2ba39960a352}{00059}} \textcolor{preprocessor}{\#define ROUND(f)        ((f>=0)?(int)(f + .5):(int)(f -\/ .5))}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00060}\mbox{\hyperlink{arith_8h_a4af1b2e9b11a7583daf59f2cb45a22e5}{00060}} \textcolor{preprocessor}{\#define RADIANS(deg)    ((deg)/180.0 * M\_PI)}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00061}\mbox{\hyperlink{arith_8h_aaee81a47de7098b758f6aadc3e2d9007}{00061}} \textcolor{preprocessor}{\#define DEGREES(rad)    ((rad)/M\_PI * 180.0)}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00063}\mbox{\hyperlink{arith_8h_ad41630f833e920c1ffa34722f45a8e77}{00063}} \textcolor{preprocessor}{\#define SQR(a) ((a) * (a))}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00065}00065 \textcolor{preprocessor}{\#ifdef HAVE\_SINCOS}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00066}00066     \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{arith_8h_acc80bfed9382d1c32be56f4114e1fbeb}{sincos}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} *s, \textcolor{keywordtype}{double} *c);}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00067}00067 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00068}\mbox{\hyperlink{arith_8h_acc80bfed9382d1c32be56f4114e1fbeb}{00068}} \textcolor{preprocessor}{\# define sincos(x,s,c) *s = sin(x); *c = cos(x)}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00069}00069 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00071}00071 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00072}00072 \}}
+\DoxyCodeLine{\Hypertarget{arith_8h_source_l00073}00073 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

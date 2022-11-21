@@ -1,0 +1,136 @@
+\hypertarget{mbframe_8h}{}\doxysection{Файл for lab/freemodbus-\/v1.5.0/modbus/include/mbframe.h}
+\label{mbframe_8h}\index{for lab/freemodbus-\/v1.5.0/modbus/include/mbframe.h@{for lab/freemodbus-\/v1.5.0/modbus/include/mbframe.h}}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbframe_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mbframe_8h_a072469ed5a2489229aad3bb243b4370f}{MB\+\_\+\+PDU\+\_\+\+SIZE\+\_\+\+MAX}}~253
+\item 
+\#define \mbox{\hyperlink{mbframe_8h_a95544bbb1d07b33d7e7d6cc28b5f0956}{MB\+\_\+\+PDU\+\_\+\+SIZE\+\_\+\+MIN}}~1
+\item 
+\#define \mbox{\hyperlink{mbframe_8h_a554b629520c4266fdff39099a2eef5db}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+OFF}}~0
+\item 
+\#define \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{mbframe_8h_a075bd0854eba03b7b33da5933e96a078}{pv\+MBFrame\+Start}}) (void)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{mbframe_8h_ae77f5c0d4c4e2fa7afd55122c599f3e2}{pv\+MBFrame\+Stop}}) (void)
+\item 
+typedef \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}}($\ast$ \mbox{\hyperlink{mbframe_8h_a06f6bce5e91795fb466ed8edf386c611}{pe\+MBFrame\+Receive}}) (UCHAR $\ast$puc\+Rcv\+Address, UCHAR $\ast$$\ast$puc\+Frame, USHORT $\ast$pus\+Length)
+\item 
+typedef \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}}($\ast$ \mbox{\hyperlink{mbframe_8h_a2819876d9dce4626d9d54833902fa88c}{pe\+MBFrame\+Send}}) (UCHAR slave\+Address, const UCHAR $\ast$puc\+Frame, USHORT us\+Length)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{mbframe_8h_ac90725e31188ed4e9b8250fd39625b57}{pv\+MBFrame\+Close}}) (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}\label{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}} 
+\index{mbframe.h@{mbframe.h}!MB\_PDU\_DATA\_OFF@{MB\_PDU\_DATA\_OFF}}
+\index{MB\_PDU\_DATA\_OFF@{MB\_PDU\_DATA\_OFF}!mbframe.h@{mbframe.h}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_DATA\_OFF}{MB\_PDU\_DATA\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF~1}
+
+Offset for response data in PDU. 
+
+См. определение в файле \mbox{\hyperlink{mbframe_8h_source}{mbframe.\+h}} строка \mbox{\hyperlink{mbframe_8h_source_l00067}{67}}
+
+\mbox{\Hypertarget{mbframe_8h_a554b629520c4266fdff39099a2eef5db}\label{mbframe_8h_a554b629520c4266fdff39099a2eef5db}} 
+\index{mbframe.h@{mbframe.h}!MB\_PDU\_FUNC\_OFF@{MB\_PDU\_FUNC\_OFF}}
+\index{MB\_PDU\_FUNC\_OFF@{MB\_PDU\_FUNC\_OFF}!mbframe.h@{mbframe.h}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_OFF}{MB\_PDU\_FUNC\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+OFF~0}
+
+Offset of function code in PDU. 
+
+См. определение в файле \mbox{\hyperlink{mbframe_8h_source}{mbframe.\+h}} строка \mbox{\hyperlink{mbframe_8h_source_l00066}{66}}
+
+\mbox{\Hypertarget{mbframe_8h_a072469ed5a2489229aad3bb243b4370f}\label{mbframe_8h_a072469ed5a2489229aad3bb243b4370f}} 
+\index{mbframe.h@{mbframe.h}!MB\_PDU\_SIZE\_MAX@{MB\_PDU\_SIZE\_MAX}}
+\index{MB\_PDU\_SIZE\_MAX@{MB\_PDU\_SIZE\_MAX}!mbframe.h@{mbframe.h}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_SIZE\_MAX}{MB\_PDU\_SIZE\_MAX}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+SIZE\+\_\+\+MAX~253}
+
+Constants which defines the format of a modbus frame. The example is shown for a Modbus RTU/\+ASCII frame. Note that the Modbus PDU is not dependent on the underlying transport.
+
+{\ttfamily  \texorpdfstring{$<$}{<}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- MODBUS SERIAL LINE PDU (1) -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}-\/-\/-\/-\/-\/-\/-\/-\/--- MODBUS PDU (1\textquotesingle{}) -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$>$}{>} +-\/-\/-\/-\/-\/-\/-\/-\/---+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+ $\vert$ Address $\vert$ Function Code $\vert$ Data $\vert$ CRC/\+LRC $\vert$ +-\/-\/-\/-\/-\/-\/-\/-\/---+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---+ $\vert$ $\vert$ $\vert$ $\vert$ (2) (3/2\textquotesingle{}) (3\textquotesingle{}) (4)}
+
+{\ttfamily (1) ... MB\+\_\+\+SER\+\_\+\+PDU\+\_\+\+SIZE\+\_\+\+MAX = 256 (2) ... MB\+\_\+\+SER\+\_\+\+PDU\+\_\+\+ADDR\+\_\+\+OFF = 0 (3) ... MB\+\_\+\+SER\+\_\+\+PDU\+\_\+\+PDU\+\_\+\+OFF = 1 (4) ... MB\+\_\+\+SER\+\_\+\+PDU\+\_\+\+SIZE\+\_\+\+CRC = 2}
+
+{\ttfamily (1\textquotesingle{}) ... MB\+\_\+\+PDU\+\_\+\+SIZE\+\_\+\+MAX = 253 (2\textquotesingle{}) ... MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+OFF = 0 (3\textquotesingle{}) ... MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF = 1 } Maximum size of a PDU. 
+
+См. определение в файле \mbox{\hyperlink{mbframe_8h_source}{mbframe.\+h}} строка \mbox{\hyperlink{mbframe_8h_source_l00064}{64}}
+
+\mbox{\Hypertarget{mbframe_8h_a95544bbb1d07b33d7e7d6cc28b5f0956}\label{mbframe_8h_a95544bbb1d07b33d7e7d6cc28b5f0956}} 
+\index{mbframe.h@{mbframe.h}!MB\_PDU\_SIZE\_MIN@{MB\_PDU\_SIZE\_MIN}}
+\index{MB\_PDU\_SIZE\_MIN@{MB\_PDU\_SIZE\_MIN}!mbframe.h@{mbframe.h}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_SIZE\_MIN}{MB\_PDU\_SIZE\_MIN}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+SIZE\+\_\+\+MIN~1}
+
+Function Code 
+
+См. определение в файле \mbox{\hyperlink{mbframe_8h_source}{mbframe.\+h}} строка \mbox{\hyperlink{mbframe_8h_source_l00065}{65}}
+
+
+
+\doxysubsection{Типы}
+\mbox{\Hypertarget{mbframe_8h_a06f6bce5e91795fb466ed8edf386c611}\label{mbframe_8h_a06f6bce5e91795fb466ed8edf386c611}} 
+\index{mbframe.h@{mbframe.h}!peMBFrameReceive@{peMBFrameReceive}}
+\index{peMBFrameReceive@{peMBFrameReceive}!mbframe.h@{mbframe.h}}
+\doxysubsubsection{\texorpdfstring{peMBFrameReceive}{peMBFrameReceive}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}}($\ast$ pe\+MBFrame\+Receive) (UCHAR $\ast$puc\+Rcv\+Address, UCHAR $\ast$$\ast$puc\+Frame, USHORT $\ast$pus\+Length)}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbframe_8h_source}{mbframe.\+h}} строка \mbox{\hyperlink{mbframe_8h_source_l00074}{74}}
+
+\mbox{\Hypertarget{mbframe_8h_a2819876d9dce4626d9d54833902fa88c}\label{mbframe_8h_a2819876d9dce4626d9d54833902fa88c}} 
+\index{mbframe.h@{mbframe.h}!peMBFrameSend@{peMBFrameSend}}
+\index{peMBFrameSend@{peMBFrameSend}!mbframe.h@{mbframe.h}}
+\doxysubsubsection{\texorpdfstring{peMBFrameSend}{peMBFrameSend}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}}($\ast$ pe\+MBFrame\+Send) (UCHAR slave\+Address, const UCHAR $\ast$puc\+Frame, USHORT us\+Length)}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbframe_8h_source}{mbframe.\+h}} строка \mbox{\hyperlink{mbframe_8h_source_l00078}{78}}
+
+\mbox{\Hypertarget{mbframe_8h_ac90725e31188ed4e9b8250fd39625b57}\label{mbframe_8h_ac90725e31188ed4e9b8250fd39625b57}} 
+\index{mbframe.h@{mbframe.h}!pvMBFrameClose@{pvMBFrameClose}}
+\index{pvMBFrameClose@{pvMBFrameClose}!mbframe.h@{mbframe.h}}
+\doxysubsubsection{\texorpdfstring{pvMBFrameClose}{pvMBFrameClose}}
+{\footnotesize\ttfamily typedef void($\ast$ pv\+MBFrame\+Close) (void)}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbframe_8h_source}{mbframe.\+h}} строка \mbox{\hyperlink{mbframe_8h_source_l00082}{82}}
+
+\mbox{\Hypertarget{mbframe_8h_a075bd0854eba03b7b33da5933e96a078}\label{mbframe_8h_a075bd0854eba03b7b33da5933e96a078}} 
+\index{mbframe.h@{mbframe.h}!pvMBFrameStart@{pvMBFrameStart}}
+\index{pvMBFrameStart@{pvMBFrameStart}!mbframe.h@{mbframe.h}}
+\doxysubsubsection{\texorpdfstring{pvMBFrameStart}{pvMBFrameStart}}
+{\footnotesize\ttfamily typedef void($\ast$ pv\+MBFrame\+Start) (void)}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbframe_8h_source}{mbframe.\+h}} строка \mbox{\hyperlink{mbframe_8h_source_l00070}{70}}
+
+\mbox{\Hypertarget{mbframe_8h_ae77f5c0d4c4e2fa7afd55122c599f3e2}\label{mbframe_8h_ae77f5c0d4c4e2fa7afd55122c599f3e2}} 
+\index{mbframe.h@{mbframe.h}!pvMBFrameStop@{pvMBFrameStop}}
+\index{pvMBFrameStop@{pvMBFrameStop}!mbframe.h@{mbframe.h}}
+\doxysubsubsection{\texorpdfstring{pvMBFrameStop}{pvMBFrameStop}}
+{\footnotesize\ttfamily typedef void($\ast$ pv\+MBFrame\+Stop) (void)}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbframe_8h_source}{mbframe.\+h}} строка \mbox{\hyperlink{mbframe_8h_source_l00072}{72}}
+

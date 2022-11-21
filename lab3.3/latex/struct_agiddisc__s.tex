@@ -1,0 +1,113 @@
+\hypertarget{struct_agiddisc__s}{}\doxysection{Структура Agiddisc\+\_\+s}
+\label{struct_agiddisc__s}\index{Agiddisc\_s@{Agiddisc\_s}}
+
+
+object ID allocator discipline  
+
+
+
+
+{\ttfamily \#include $<$cgraph.\+h$>$}
+
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$($\ast$ \mbox{\hyperlink{struct_agiddisc__s_a397fdb109291bbf3d1b8631b8a95b787}{open}} )(\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} $\ast$)
+\item 
+long($\ast$ \mbox{\hyperlink{struct_agiddisc__s_a3ab41faa293b078e0300801c7edebe3b}{map}} )(void $\ast$state, int objtype, char $\ast$str, \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}} $\ast$id, int createflag)
+\item 
+long($\ast$ \mbox{\hyperlink{struct_agiddisc__s_aa859e832acae721a2a46b02ac60cad18}{alloc}} )(void $\ast$state, int objtype, \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}} id)
+\item 
+void($\ast$ \mbox{\hyperlink{struct_agiddisc__s_a9de80173636ffa2e2920f485fb5d1d89}{free}} )(void $\ast$state, int objtype, \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}} id)
+\item 
+char $\ast$($\ast$ \mbox{\hyperlink{struct_agiddisc__s_aabfb032d134e3e5b9e4b192c1a96f597}{print}} )(void $\ast$state, int objtype, \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}} id)
+\item 
+void($\ast$ \mbox{\hyperlink{struct_agiddisc__s_a67673147fdf87cec41296dc37406d3ea}{close}} )(void $\ast$state)
+\item 
+void($\ast$ \mbox{\hyperlink{struct_agiddisc__s_a3bd7dd8eeab462cfd538f3019d283c64}{idregister}} )(void $\ast$state, int objtype, void $\ast$obj)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+object ID allocator discipline 
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00181}{181}}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{struct_agiddisc__s_aa859e832acae721a2a46b02ac60cad18}\label{struct_agiddisc__s_aa859e832acae721a2a46b02ac60cad18}} 
+\index{Agiddisc\_s@{Agiddisc\_s}!alloc@{alloc}}
+\index{alloc@{alloc}!Agiddisc\_s@{Agiddisc\_s}}
+\doxysubsubsection{\texorpdfstring{alloc}{alloc}}
+{\footnotesize\ttfamily long($\ast$ Agiddisc\+\_\+s\+::alloc) (void $\ast$state, int objtype, \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}} id)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00185}{185}}
+
+\mbox{\Hypertarget{struct_agiddisc__s_a67673147fdf87cec41296dc37406d3ea}\label{struct_agiddisc__s_a67673147fdf87cec41296dc37406d3ea}} 
+\index{Agiddisc\_s@{Agiddisc\_s}!close@{close}}
+\index{close@{close}!Agiddisc\_s@{Agiddisc\_s}}
+\doxysubsubsection{\texorpdfstring{close}{close}}
+{\footnotesize\ttfamily void($\ast$ Agiddisc\+\_\+s\+::close) (void $\ast$state)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00188}{188}}
+
+\mbox{\Hypertarget{struct_agiddisc__s_a9de80173636ffa2e2920f485fb5d1d89}\label{struct_agiddisc__s_a9de80173636ffa2e2920f485fb5d1d89}} 
+\index{Agiddisc\_s@{Agiddisc\_s}!free@{free}}
+\index{free@{free}!Agiddisc\_s@{Agiddisc\_s}}
+\doxysubsubsection{\texorpdfstring{free}{free}}
+{\footnotesize\ttfamily void($\ast$ Agiddisc\+\_\+s\+::free) (void $\ast$state, int objtype, \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}} id)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00186}{186}}
+
+\mbox{\Hypertarget{struct_agiddisc__s_a3bd7dd8eeab462cfd538f3019d283c64}\label{struct_agiddisc__s_a3bd7dd8eeab462cfd538f3019d283c64}} 
+\index{Agiddisc\_s@{Agiddisc\_s}!idregister@{idregister}}
+\index{idregister@{idregister}!Agiddisc\_s@{Agiddisc\_s}}
+\doxysubsubsection{\texorpdfstring{idregister}{idregister}}
+{\footnotesize\ttfamily void($\ast$ Agiddisc\+\_\+s\+::idregister) (void $\ast$state, int objtype, void $\ast$obj)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00189}{189}}
+
+\mbox{\Hypertarget{struct_agiddisc__s_a3ab41faa293b078e0300801c7edebe3b}\label{struct_agiddisc__s_a3ab41faa293b078e0300801c7edebe3b}} 
+\index{Agiddisc\_s@{Agiddisc\_s}!map@{map}}
+\index{map@{map}!Agiddisc\_s@{Agiddisc\_s}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily long($\ast$ Agiddisc\+\_\+s\+::map) (void $\ast$state, int objtype, char $\ast$str, \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}} $\ast$id, int createflag)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00183}{183}}
+
+\mbox{\Hypertarget{struct_agiddisc__s_a397fdb109291bbf3d1b8631b8a95b787}\label{struct_agiddisc__s_a397fdb109291bbf3d1b8631b8a95b787}} 
+\index{Agiddisc\_s@{Agiddisc\_s}!open@{open}}
+\index{open@{open}!Agiddisc\_s@{Agiddisc\_s}}
+\doxysubsubsection{\texorpdfstring{open}{open}}
+{\footnotesize\ttfamily void $\ast$($\ast$ Agiddisc\+\_\+s\+::open) (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} $\ast$)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00182}{182}}
+
+\mbox{\Hypertarget{struct_agiddisc__s_aabfb032d134e3e5b9e4b192c1a96f597}\label{struct_agiddisc__s_aabfb032d134e3e5b9e4b192c1a96f597}} 
+\index{Agiddisc\_s@{Agiddisc\_s}!print@{print}}
+\index{print@{print}!Agiddisc\_s@{Agiddisc\_s}}
+\doxysubsubsection{\texorpdfstring{print}{print}}
+{\footnotesize\ttfamily char $\ast$($\ast$ Agiddisc\+\_\+s\+::print) (void $\ast$state, int objtype, \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}} id)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00187}{187}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\+Graphviz/include/graphviz/\mbox{\hyperlink{cgraph_8h}{cgraph.\+h}}\end{DoxyCompactItemize}

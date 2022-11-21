@@ -1,0 +1,171 @@
+\hypertarget{class_socket_exception}{}\doxysection{Класс Socket\+Exception}
+\label{class_socket_exception}\index{SocketException@{SocketException}}
+
+
+{\ttfamily \#include $<$Practical\+Socket.\+h$>$}
+
+
+
+Граф наследования\+:Socket\+Exception\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_socket_exception__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Граф связей класса Socket\+Exception\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_socket_exception__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3}{Socket\+Exception}} (const string \&message, bool incl\+Sys\+Msg=false)  throw ()
+\item 
+\mbox{\hyperlink{class_socket_exception_a659557c899329aea01977c980c4db9b9}{$\sim$\+Socket\+Exception}} ()  throw ()
+\item 
+const char $\ast$ \mbox{\hyperlink{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42}{what}} () const  throw ()
+\item 
+\mbox{\hyperlink{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3}{Socket\+Exception}} (const string \&message, bool incl\+Sys\+Msg=false)  throw ()
+\item 
+\mbox{\hyperlink{class_socket_exception_a659557c899329aea01977c980c4db9b9}{$\sim$\+Socket\+Exception}} ()  throw ()
+\item 
+const char $\ast$ \mbox{\hyperlink{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42}{what}} () const  throw ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_socket_exception_adcfeba6d4ce5754b48ae9d37b07a7e87}{user\+Message}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Signals a problem with the execution of a socket call. 
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8h_source}{Practical\+Socket.\+h}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8h_source_l00031}{31}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3}\label{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3}} 
+\index{SocketException@{SocketException}!SocketException@{SocketException}}
+\index{SocketException@{SocketException}!SocketException@{SocketException}}
+\doxysubsubsection{\texorpdfstring{SocketException()}{SocketException()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Socket\+Exception\+::\+Socket\+Exception (\begin{DoxyParamCaption}\item[{const string \&}]{message,  }\item[{bool}]{incl\+Sys\+Msg = {\ttfamily false} }\end{DoxyParamCaption}) throw ( ) }
+
+Construct a \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}} with a explanatory message. 
+\begin{DoxyParams}{Аргументы}
+{\em message} & explanatory message \\
+\hline
+{\em inc\+Sys\+Msg} & true if system message (from strerror(errno)) should be postfixed to the user provided message \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00046}{46}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047           : \mbox{\hyperlink{class_socket_exception_adcfeba6d4ce5754b48ae9d37b07a7e87}{userMessage}}(message) \{}
+\DoxyCodeLine{00048   \textcolor{keywordflow}{if} (inclSysMsg) \{}
+\DoxyCodeLine{00049     \mbox{\hyperlink{class_socket_exception_adcfeba6d4ce5754b48ae9d37b07a7e87}{userMessage}}.append(\textcolor{stringliteral}{"{}: "{}});}
+\DoxyCodeLine{00050     \mbox{\hyperlink{class_socket_exception_adcfeba6d4ce5754b48ae9d37b07a7e87}{userMessage}}.append(strerror(\mbox{\hyperlink{structcmd_8h_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}));}
+\DoxyCodeLine{00051   \}}
+\DoxyCodeLine{00052 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_socket_exception_a659557c899329aea01977c980c4db9b9}\label{class_socket_exception_a659557c899329aea01977c980c4db9b9}} 
+\index{SocketException@{SocketException}!````~SocketException@{$\sim$SocketException}}
+\index{````~SocketException@{$\sim$SocketException}!SocketException@{SocketException}}
+\doxysubsubsection{\texorpdfstring{$\sim$SocketException()}{~SocketException()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Socket\+Exception\+::$\sim$\+Socket\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( ) }
+
+Provided just to guarantee that no exceptions are thrown. 
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00054}{54}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054                                           \{}
+\DoxyCodeLine{00055 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3}\label{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3}} 
+\index{SocketException@{SocketException}!SocketException@{SocketException}}
+\index{SocketException@{SocketException}!SocketException@{SocketException}}
+\doxysubsubsection{\texorpdfstring{SocketException()}{SocketException()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Socket\+Exception\+::\+Socket\+Exception (\begin{DoxyParamCaption}\item[{const string \&}]{message,  }\item[{bool}]{incl\+Sys\+Msg = {\ttfamily false} }\end{DoxyParamCaption}) throw ( ) }
+
+Construct a \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}} with a explanatory message. 
+\begin{DoxyParams}{Аргументы}
+{\em message} & explanatory message \\
+\hline
+{\em inc\+Sys\+Msg} & true if system message (from strerror(errno)) should be postfixed to the user provided message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_socket_exception_a659557c899329aea01977c980c4db9b9}\label{class_socket_exception_a659557c899329aea01977c980c4db9b9}} 
+\index{SocketException@{SocketException}!````~SocketException@{$\sim$SocketException}}
+\index{````~SocketException@{$\sim$SocketException}!SocketException@{SocketException}}
+\doxysubsubsection{\texorpdfstring{$\sim$SocketException()}{~SocketException()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Socket\+Exception\+::$\sim$\+Socket\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throw ( ) }
+
+Provided just to guarantee that no exceptions are thrown. 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42}\label{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42}} 
+\index{SocketException@{SocketException}!what@{what}}
+\index{what@{what}!SocketException@{SocketException}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const char $\ast$ Socket\+Exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const throw ( ) }
+
+Get the exception message \begin{DoxyReturn}{Возвращает}
+exception message 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source}{Practical\+Socket.\+cpp}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8cpp_source_l00057}{57}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057                                                 \{}
+\DoxyCodeLine{00058   \textcolor{keywordflow}{return} \mbox{\hyperlink{class_socket_exception_adcfeba6d4ce5754b48ae9d37b07a7e87}{userMessage}}.c\_str();}
+\DoxyCodeLine{00059 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42}\label{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42}} 
+\index{SocketException@{SocketException}!what@{what}}
+\index{what@{what}!SocketException@{SocketException}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char $\ast$ Socket\+Exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const throw ( ) }
+
+Get the exception message \begin{DoxyReturn}{Возвращает}
+exception message 
+\end{DoxyReturn}
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{class_socket_exception_adcfeba6d4ce5754b48ae9d37b07a7e87}\label{class_socket_exception_adcfeba6d4ce5754b48ae9d37b07a7e87}} 
+\index{SocketException@{SocketException}!userMessage@{userMessage}}
+\index{userMessage@{userMessage}!SocketException@{SocketException}}
+\doxysubsubsection{\texorpdfstring{userMessage}{userMessage}}
+{\footnotesize\ttfamily string Socket\+Exception\+::user\+Message\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{for_01lab_2_practical_socket_8h_source}{Practical\+Socket.\+h}} строка \mbox{\hyperlink{for_01lab_2_practical_socket_8h_source_l00053}{53}}
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\mbox{\hyperlink{for_01lab_2_practical_socket_8h}{Practical\+Socket.\+h}}\item 
+\mbox{\hyperlink{_practical_socket_8h}{Practical\+Socket.\+h}}\item 
+for lab/\mbox{\hyperlink{for_01lab_2_practical_socket_8cpp}{Practical\+Socket.\+cpp}}\item 
+\mbox{\hyperlink{_practical_socket_8cpp}{Practical\+Socket.\+cpp}}\end{DoxyCompactItemize}

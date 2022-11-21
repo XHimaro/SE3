@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Complex: Файл for lab/Graphviz/include/graphviz/pathplan.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Complex
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('pathplan_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Макросы</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл pathplan.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>finds and smooths shortest paths  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="pathgeom_8h_source.html">pathgeom.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для pathplan.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="pathplan_8h__incl.png" border="0" usemap="#afor_01lab_2_graphviz_2include_2graphviz_2pathplan_8h" alt=""/></div>
+<map name="afor_01lab_2_graphviz_2include_2graphviz_2pathplan_8h" id="afor_01lab_2_graphviz_2include_2graphviz_2pathplan_8h">
+<area shape="rect" title="finds and smooths shortest paths" alt="" coords="5,5,161,45"/>
+<area shape="rect" href="pathgeom_8h.html" title=" " alt="" coords="38,93,129,119"/>
+</map>
+</div>
+</div>
+<p><a href="pathplan_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:aceec0f93b171df2efd6e7bc6f66088f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pathplan_8h.html#aceec0f93b171df2efd6e7bc6f66088f1">PATHPLAN_API</a>&#160;&#160;&#160;/* nothing */</td></tr>
+<tr class="separator:aceec0f93b171df2efd6e7bc6f66088f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a37ffb3674b8a6c8ef89b04c87f143f1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pathplan_8h.html#aceec0f93b171df2efd6e7bc6f66088f1">PATHPLAN_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pathplan_8h.html#a37ffb3674b8a6c8ef89b04c87f143f1e">Pshortestpath</a> (<a class="el" href="struct_ppoly__t.html">Ppoly_t</a> *boundary, <a class="el" href="pathgeom_8h.html#ae03dc374d3fff2c0f275c6c17e705d1f">Ppoint_t</a> endpoints[2], <a class="el" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a> *output_route)</td></tr>
+<tr class="separator:a37ffb3674b8a6c8ef89b04c87f143f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee0802451f5a05ff6b33b68319257c5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pathplan_8h.html#aceec0f93b171df2efd6e7bc6f66088f1">PATHPLAN_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pathplan_8h.html#aee0802451f5a05ff6b33b68319257c5d">Proutespline</a> (<a class="el" href="struct_pedge__t.html">Pedge_t</a> *barriers, int n_barriers, <a class="el" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a> input_route, <a class="el" href="pathgeom_8h.html#a1601338d97d595819723e748357f2dca">Pvector_t</a> endpoint_slopes[2], <a class="el" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a> *output_route)</td></tr>
+<tr class="separator:aee0802451f5a05ff6b33b68319257c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b2fbb0a2f1a6791780267d8ffae36e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pathplan_8h.html#aceec0f93b171df2efd6e7bc6f66088f1">PATHPLAN_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pathplan_8h.html#a8b2fbb0a2f1a6791780267d8ffae36e1">Ppolybarriers</a> (<a class="el" href="struct_ppoly__t.html">Ppoly_t</a> **polys, int npolys, <a class="el" href="struct_pedge__t.html">Pedge_t</a> **barriers, int *n_barriers)</td></tr>
+<tr class="separator:a8b2fbb0a2f1a6791780267d8ffae36e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac46ac37b2f74c401c14f7475634a5423"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pathplan_8h.html#aceec0f93b171df2efd6e7bc6f66088f1">PATHPLAN_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pathplan_8h.html#ac46ac37b2f74c401c14f7475634a5423">make_polyline</a> (<a class="el" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a> line, <a class="el" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a> *sline)</td></tr>
+<tr class="separator:ac46ac37b2f74c401c14f7475634a5423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >finds and smooths shortest paths </p>
+
+<p class="definition">См. определение в файле <a class="el" href="pathplan_8h_source.html">pathplan.h</a></p>
+</div><h2 class="groupheader">Макросы</h2>
+<a id="aceec0f93b171df2efd6e7bc6f66088f1" name="aceec0f93b171df2efd6e7bc6f66088f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceec0f93b171df2efd6e7bc6f66088f1">&#9670;&#160;</a></span>PATHPLAN_API</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATHPLAN_API&#160;&#160;&#160;/* nothing */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pathplan_8h_source.html">pathplan.h</a> строка <a class="el" href="pathplan_8h_source.html#l00033">33</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
+<a id="ac46ac37b2f74c401c14f7475634a5423" name="ac46ac37b2f74c401c14f7475634a5423"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac46ac37b2f74c401c14f7475634a5423">&#9670;&#160;</a></span>make_polyline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pathplan_8h.html#aceec0f93b171df2efd6e7bc6f66088f1">PATHPLAN_API</a> void make_polyline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a> *&#160;</td>
+          <td class="paramname"><em>sline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b2fbb0a2f1a6791780267d8ffae36e1" name="a8b2fbb0a2f1a6791780267d8ffae36e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b2fbb0a2f1a6791780267d8ffae36e1">&#9670;&#160;</a></span>Ppolybarriers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pathplan_8h.html#aceec0f93b171df2efd6e7bc6f66088f1">PATHPLAN_API</a> int Ppolybarriers </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_ppoly__t.html">Ppoly_t</a> **&#160;</td>
+          <td class="paramname"><em>polys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>npolys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_pedge__t.html">Pedge_t</a> **&#160;</td>
+          <td class="paramname"><em>barriers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>n_barriers</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aee0802451f5a05ff6b33b68319257c5d" name="aee0802451f5a05ff6b33b68319257c5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee0802451f5a05ff6b33b68319257c5d">&#9670;&#160;</a></span>Proutespline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pathplan_8h.html#aceec0f93b171df2efd6e7bc6f66088f1">PATHPLAN_API</a> int Proutespline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_pedge__t.html">Pedge_t</a> *&#160;</td>
+          <td class="paramname"><em>barriers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_barriers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a>&#160;</td>
+          <td class="paramname"><em>input_route</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pathgeom_8h.html#a1601338d97d595819723e748357f2dca">Pvector_t</a>&#160;</td>
+          <td class="paramname"><em>endpoint_slopes</em>[2], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a> *&#160;</td>
+          <td class="paramname"><em>output_route</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37ffb3674b8a6c8ef89b04c87f143f1e" name="a37ffb3674b8a6c8ef89b04c87f143f1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37ffb3674b8a6c8ef89b04c87f143f1e">&#9670;&#160;</a></span>Pshortestpath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pathplan_8h.html#aceec0f93b171df2efd6e7bc6f66088f1">PATHPLAN_API</a> int Pshortestpath </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_ppoly__t.html">Ppoly_t</a> *&#160;</td>
+          <td class="paramname"><em>boundary</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pathgeom_8h.html#ae03dc374d3fff2c0f275c6c17e705d1f">Ppoint_t</a>&#160;</td>
+          <td class="paramname"><em>endpoints</em>[2], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pathgeom_8h.html#a40d0fc3e3db12860642e212281e44905">Ppolyline_t</a> *&#160;</td>
+          <td class="paramname"><em>output_route</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e6c23235d574a84b5ef1a8613e824ad0.html">for lab</a></li><li class="navelem"><a class="el" href="dir_9e36fc1ac95da228bde805a03f57733e.html">Graphviz</a></li><li class="navelem"><a class="el" href="dir_ad4ebe5bca6393216da41cf9a4442fe0.html">include</a></li><li class="navelem"><a class="el" href="dir_1993f148fdb21d2725c441bae462129c.html">graphviz</a></li><li class="navelem"><a class="el" href="pathplan_8h.html">pathplan.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

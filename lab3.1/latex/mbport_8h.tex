@@ -1,0 +1,370 @@
+\hypertarget{mbport_8h}{}\doxysection{Файл for lab/freemodbus-\/v1.5.0/modbus/include/mbport.h}
+\label{mbport_8h}\index{for lab/freemodbus-\/v1.5.0/modbus/include/mbport.h@{for lab/freemodbus-\/v1.5.0/modbus/include/mbport.h}}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbport_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{e\+MBEvent\+Type}} \{ \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0}{EV\+\_\+\+READY}}
+, \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2}{EV\+\_\+\+FRAME\+\_\+\+RECEIVED}}
+, \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019}{EV\+\_\+\+EXECUTE}}
+, \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95}{EV\+\_\+\+FRAME\+\_\+\+SENT}}
+ \}
+\item 
+enum \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{e\+MBParity}} \{ \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba36c1b70b68bc05d618632e3f975a557b}{MB\+\_\+\+PAR\+\_\+\+NONE}}
+, \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba955fa6c30334314739ddceed6e749316}{MB\+\_\+\+PAR\+\_\+\+ODD}}
+, \mbox{\hyperlink{group__modbus_gga16ba85fa56bcd52a11a12576af445ccba0415f4c7ede57e13a0cca698a8375dbd}{MB\+\_\+\+PAR\+\_\+\+EVEN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Parity used for characters in serial mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+BOOL \mbox{\hyperlink{mbport_8h_a23aa6afd41597f7aaf5d1a6e6831c718}{x\+MBPort\+Event\+Init}} (void)
+\item 
+BOOL \mbox{\hyperlink{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}{x\+MBPort\+Event\+Post}} (\mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{e\+MBEvent\+Type}} e\+Event)
+\item 
+BOOL \mbox{\hyperlink{mbport_8h_ad61d350e63d0c41e7563ac0bc0fd346f}{x\+MBPort\+Event\+Get}} (\mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{e\+MBEvent\+Type}} $\ast$e\+Event)
+\item 
+BOOL \mbox{\hyperlink{mbport_8h_af614e62c57eaba86f45c45e5d0e6cfd9}{x\+MBPort\+Serial\+Init}} (UCHAR uc\+Port, ULONG ul\+Baud\+Rate, UCHAR uc\+Data\+Bits, \mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{e\+MBParity}} e\+Parity)
+\item 
+void \mbox{\hyperlink{mbport_8h_ae97991ffb6ce01584afce5dd4f653b41}{v\+MBPort\+Close}} (void)
+\item 
+void \mbox{\hyperlink{mbport_8h_a9f5987b97b1075363db05a6783bd1103}{x\+MBPort\+Serial\+Close}} (void)
+\item 
+void \mbox{\hyperlink{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}{v\+MBPort\+Serial\+Enable}} (BOOL x\+Rx\+Enable, BOOL x\+Tx\+Enable)
+\item 
+BOOL \mbox{\hyperlink{mbport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770}{x\+MBPort\+Serial\+Get\+Byte}} (CHAR $\ast$puc\+Byte)
+\item 
+BOOL \mbox{\hyperlink{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8}{x\+MBPort\+Serial\+Put\+Byte}} (CHAR uc\+Byte)
+\item 
+BOOL \mbox{\hyperlink{mbport_8h_a93d8e78fe43e66fab707da6eda4f5eaf}{x\+MBPort\+Timers\+Init}} (USHORT us\+Time\+Out50us)
+\item 
+void \mbox{\hyperlink{mbport_8h_a7a7591ccc79c9423e5c1821d3fd826d1}{x\+MBPort\+Timers\+Close}} (void)
+\item 
+void \mbox{\hyperlink{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}{v\+MBPort\+Timers\+Enable}} (void)
+\item 
+void \mbox{\hyperlink{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523}{v\+MBPort\+Timers\+Disable}} (void)
+\item 
+void \mbox{\hyperlink{mbport_8h_a334f66a0527a862f58488cc40d7999d4}{v\+MBPort\+Timers\+Delay}} (USHORT us\+Time\+Out\+MS)
+\item 
+BOOL \mbox{\hyperlink{mbport_8h_a793d6e53b5632f4075af872b6a5c8ca5}{x\+MBTCPPort\+Init}} (USHORT us\+TCPPort)
+\item 
+void \mbox{\hyperlink{mbport_8h_a8c43e5231c42bb7b8c6a31f8bfcb8a3e}{v\+MBTCPPort\+Close}} (void)
+\item 
+void \mbox{\hyperlink{mbport_8h_a2ea2cd5d0cb31ce90df6e46d7af29d8d}{v\+MBTCPPort\+Disable}} (void)
+\item 
+BOOL \mbox{\hyperlink{mbport_8h_a770c9a4001e08aafec96234e51ac8f42}{x\+MBTCPPort\+Get\+Request}} (UCHAR $\ast$$\ast$ppuc\+MBTCPFrame, USHORT $\ast$us\+TCPLength)
+\item 
+BOOL \mbox{\hyperlink{mbport_8h_a2902b52c4070bd676851561caef5a4c5}{x\+MBTCPPort\+Send\+Response}} (const UCHAR $\ast$puc\+MBTCPFrame, USHORT us\+TCPLength)
+\end{DoxyCompactItemize}
+\doxysubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+BOOL($\ast$ \mbox{\hyperlink{mbport_8h_a6ff9d563210c04e3afb414b9db75154a}{px\+MBFrame\+CBByte\+Received}} )(void)
+\begin{DoxyCompactList}\small\item\em Callback function for the porting layer when a new byte is available. \end{DoxyCompactList}\item 
+BOOL($\ast$ \mbox{\hyperlink{mbport_8h_a46ac9d979eaaeb885415014a0cb350b2}{px\+MBFrame\+CBTransmitter\+Empty}} )(void)
+\item 
+BOOL($\ast$ \mbox{\hyperlink{mbport_8h_a3ca010d1cf1b3bda066f0d65641d9055}{px\+MBPort\+CBTimer\+Expired}} )(void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Перечисления}
+\mbox{\Hypertarget{mbport_8h_a208845596909620aa0062468ff11ef02}\label{mbport_8h_a208845596909620aa0062468ff11ef02}} 
+\index{mbport.h@{mbport.h}!eMBEventType@{eMBEventType}}
+\index{eMBEventType@{eMBEventType}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{eMBEventType}{eMBEventType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{e\+MBEvent\+Type}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EV\_READY@{EV\_READY}!mbport.h@{mbport.h}}\index{mbport.h@{mbport.h}!EV\_READY@{EV\_READY}}}\mbox{\Hypertarget{mbport_8h_a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0}\label{mbport_8h_a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0}} 
+EV\+\_\+\+READY&Startup finished. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EV\_FRAME\_RECEIVED@{EV\_FRAME\_RECEIVED}!mbport.h@{mbport.h}}\index{mbport.h@{mbport.h}!EV\_FRAME\_RECEIVED@{EV\_FRAME\_RECEIVED}}}\mbox{\Hypertarget{mbport_8h_a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2}\label{mbport_8h_a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2}} 
+EV\+\_\+\+FRAME\+\_\+\+RECEIVED&Frame received. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EV\_EXECUTE@{EV\_EXECUTE}!mbport.h@{mbport.h}}\index{mbport.h@{mbport.h}!EV\_EXECUTE@{EV\_EXECUTE}}}\mbox{\Hypertarget{mbport_8h_a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019}\label{mbport_8h_a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019}} 
+EV\+\_\+\+EXECUTE&Execute function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EV\_FRAME\_SENT@{EV\_FRAME\_SENT}!mbport.h@{mbport.h}}\index{mbport.h@{mbport.h}!EV\_FRAME\_SENT@{EV\_FRAME\_SENT}}}\mbox{\Hypertarget{mbport_8h_a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95}\label{mbport_8h_a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95}} 
+EV\+\_\+\+FRAME\+\_\+\+SENT&Frame sent. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{mbport_8h_source}{mbport.\+h}} строка \mbox{\hyperlink{mbport_8h_source_l00040}{40}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041 \{}
+\DoxyCodeLine{00042     \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a193382528431aaa562c2ecfee29039c0}{EV\_READY}},                   }
+\DoxyCodeLine{00043     \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02a5925cb291b7b7a4ec1fdee32aca761a2}{EV\_FRAME\_RECEIVED}},          }
+\DoxyCodeLine{00044     \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02ab8e9ebe43ab8ce27e6e48c46f57d9019}{EV\_EXECUTE}},                 }
+\DoxyCodeLine{00045     \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02afa87727a0c06c8ab5e2b5e6ae59cac95}{EV\_FRAME\_SENT}}               }
+\DoxyCodeLine{00046 \} \mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{eMBEventType}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{mbport_8h_ae97991ffb6ce01584afce5dd4f653b41}\label{mbport_8h_ae97991ffb6ce01584afce5dd4f653b41}} 
+\index{mbport.h@{mbport.h}!vMBPortClose@{vMBPortClose}}
+\index{vMBPortClose@{vMBPortClose}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{vMBPortClose()}{vMBPortClose()}}
+{\footnotesize\ttfamily void v\+MBPort\+Close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{mbport_8h_ae97991ffb6ce01584afce5dd4f653b41_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}\label{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df}} 
+\index{mbport.h@{mbport.h}!vMBPortSerialEnable@{vMBPortSerialEnable}}
+\index{vMBPortSerialEnable@{vMBPortSerialEnable}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{vMBPortSerialEnable()}{vMBPortSerialEnable()}}
+{\footnotesize\ttfamily void v\+MBPort\+Serial\+Enable (\begin{DoxyParamCaption}\item[{BOOL}]{x\+Rx\+Enable,  }\item[{BOOL}]{x\+Tx\+Enable }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbport_8h_a4bf68bda6b5ed6c341d27d439a6c03df_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_a334f66a0527a862f58488cc40d7999d4}\label{mbport_8h_a334f66a0527a862f58488cc40d7999d4}} 
+\index{mbport.h@{mbport.h}!vMBPortTimersDelay@{vMBPortTimersDelay}}
+\index{vMBPortTimersDelay@{vMBPortTimersDelay}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{vMBPortTimersDelay()}{vMBPortTimersDelay()}}
+{\footnotesize\ttfamily void v\+MBPort\+Timers\+Delay (\begin{DoxyParamCaption}\item[{USHORT}]{us\+Time\+Out\+MS }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{mbport_8h_a334f66a0527a862f58488cc40d7999d4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523}\label{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523}} 
+\index{mbport.h@{mbport.h}!vMBPortTimersDisable@{vMBPortTimersDisable}}
+\index{vMBPortTimersDisable@{vMBPortTimersDisable}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{vMBPortTimersDisable()}{vMBPortTimersDisable()}}
+{\footnotesize\ttfamily void v\+MBPort\+Timers\+Disable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbport_8h_adf96b9d106626e42fa0b7b1a0b802523_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}\label{mbport_8h_a2356d0d397b3da961b86cabddb9a9760}} 
+\index{mbport.h@{mbport.h}!vMBPortTimersEnable@{vMBPortTimersEnable}}
+\index{vMBPortTimersEnable@{vMBPortTimersEnable}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{vMBPortTimersEnable()}{vMBPortTimersEnable()}}
+{\footnotesize\ttfamily void v\+MBPort\+Timers\+Enable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbport_8h_a2356d0d397b3da961b86cabddb9a9760_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_a8c43e5231c42bb7b8c6a31f8bfcb8a3e}\label{mbport_8h_a8c43e5231c42bb7b8c6a31f8bfcb8a3e}} 
+\index{mbport.h@{mbport.h}!vMBTCPPortClose@{vMBTCPPortClose}}
+\index{vMBTCPPortClose@{vMBTCPPortClose}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{vMBTCPPortClose()}{vMBTCPPortClose()}}
+{\footnotesize\ttfamily void v\+MBTCPPort\+Close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mbport_8h_a2ea2cd5d0cb31ce90df6e46d7af29d8d}\label{mbport_8h_a2ea2cd5d0cb31ce90df6e46d7af29d8d}} 
+\index{mbport.h@{mbport.h}!vMBTCPPortDisable@{vMBTCPPortDisable}}
+\index{vMBTCPPortDisable@{vMBTCPPortDisable}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{vMBTCPPortDisable()}{vMBTCPPortDisable()}}
+{\footnotesize\ttfamily void v\+MBTCPPort\+Disable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mbport_8h_ad61d350e63d0c41e7563ac0bc0fd346f}\label{mbport_8h_ad61d350e63d0c41e7563ac0bc0fd346f}} 
+\index{mbport.h@{mbport.h}!xMBPortEventGet@{xMBPortEventGet}}
+\index{xMBPortEventGet@{xMBPortEventGet}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBPortEventGet()}{xMBPortEventGet()}}
+{\footnotesize\ttfamily BOOL x\+MBPort\+Event\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{e\+MBEvent\+Type}} $\ast$}]{e\+Event }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{mbport_8h_ad61d350e63d0c41e7563ac0bc0fd346f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_a23aa6afd41597f7aaf5d1a6e6831c718}\label{mbport_8h_a23aa6afd41597f7aaf5d1a6e6831c718}} 
+\index{mbport.h@{mbport.h}!xMBPortEventInit@{xMBPortEventInit}}
+\index{xMBPortEventInit@{xMBPortEventInit}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBPortEventInit()}{xMBPortEventInit()}}
+{\footnotesize\ttfamily BOOL x\+MBPort\+Event\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{mbport_8h_a23aa6afd41597f7aaf5d1a6e6831c718_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}\label{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c}} 
+\index{mbport.h@{mbport.h}!xMBPortEventPost@{xMBPortEventPost}}
+\index{xMBPortEventPost@{xMBPortEventPost}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBPortEventPost()}{xMBPortEventPost()}}
+{\footnotesize\ttfamily BOOL x\+MBPort\+Event\+Post (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mbport_8h_a208845596909620aa0062468ff11ef02}{e\+MBEvent\+Type}}}]{e\+Event }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbport_8h_a2cdfe42cd5ee37d5839081c636576e7c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_a9f5987b97b1075363db05a6783bd1103}\label{mbport_8h_a9f5987b97b1075363db05a6783bd1103}} 
+\index{mbport.h@{mbport.h}!xMBPortSerialClose@{xMBPortSerialClose}}
+\index{xMBPortSerialClose@{xMBPortSerialClose}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBPortSerialClose()}{xMBPortSerialClose()}}
+{\footnotesize\ttfamily void x\+MBPort\+Serial\+Close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mbport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770}\label{mbport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770}} 
+\index{mbport.h@{mbport.h}!xMBPortSerialGetByte@{xMBPortSerialGetByte}}
+\index{xMBPortSerialGetByte@{xMBPortSerialGetByte}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBPortSerialGetByte()}{xMBPortSerialGetByte()}}
+{\footnotesize\ttfamily BOOL x\+MBPort\+Serial\+Get\+Byte (\begin{DoxyParamCaption}\item[{CHAR $\ast$}]{puc\+Byte }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_af614e62c57eaba86f45c45e5d0e6cfd9}\label{mbport_8h_af614e62c57eaba86f45c45e5d0e6cfd9}} 
+\index{mbport.h@{mbport.h}!xMBPortSerialInit@{xMBPortSerialInit}}
+\index{xMBPortSerialInit@{xMBPortSerialInit}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBPortSerialInit()}{xMBPortSerialInit()}}
+{\footnotesize\ttfamily BOOL x\+MBPort\+Serial\+Init (\begin{DoxyParamCaption}\item[{UCHAR}]{uc\+Port,  }\item[{ULONG}]{ul\+Baud\+Rate,  }\item[{UCHAR}]{uc\+Data\+Bits,  }\item[{\mbox{\hyperlink{group__modbus_ga16ba85fa56bcd52a11a12576af445ccb}{e\+MBParity}}}]{e\+Parity }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbport_8h_af614e62c57eaba86f45c45e5d0e6cfd9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8}\label{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8}} 
+\index{mbport.h@{mbport.h}!xMBPortSerialPutByte@{xMBPortSerialPutByte}}
+\index{xMBPortSerialPutByte@{xMBPortSerialPutByte}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBPortSerialPutByte()}{xMBPortSerialPutByte()}}
+{\footnotesize\ttfamily BOOL x\+MBPort\+Serial\+Put\+Byte (\begin{DoxyParamCaption}\item[{CHAR}]{uc\+Byte }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbport_8h_a5ca95563c25eb239a4c51f3ce35f5cc8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_a7a7591ccc79c9423e5c1821d3fd826d1}\label{mbport_8h_a7a7591ccc79c9423e5c1821d3fd826d1}} 
+\index{mbport.h@{mbport.h}!xMBPortTimersClose@{xMBPortTimersClose}}
+\index{xMBPortTimersClose@{xMBPortTimersClose}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBPortTimersClose()}{xMBPortTimersClose()}}
+{\footnotesize\ttfamily void x\+MBPort\+Timers\+Close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mbport_8h_a93d8e78fe43e66fab707da6eda4f5eaf}\label{mbport_8h_a93d8e78fe43e66fab707da6eda4f5eaf}} 
+\index{mbport.h@{mbport.h}!xMBPortTimersInit@{xMBPortTimersInit}}
+\index{xMBPortTimersInit@{xMBPortTimersInit}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBPortTimersInit()}{xMBPortTimersInit()}}
+{\footnotesize\ttfamily BOOL x\+MBPort\+Timers\+Init (\begin{DoxyParamCaption}\item[{USHORT}]{us\+Time\+Out50us }\end{DoxyParamCaption})}
+
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbport_8h_a93d8e78fe43e66fab707da6eda4f5eaf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mbport_8h_a770c9a4001e08aafec96234e51ac8f42}\label{mbport_8h_a770c9a4001e08aafec96234e51ac8f42}} 
+\index{mbport.h@{mbport.h}!xMBTCPPortGetRequest@{xMBTCPPortGetRequest}}
+\index{xMBTCPPortGetRequest@{xMBTCPPortGetRequest}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBTCPPortGetRequest()}{xMBTCPPortGetRequest()}}
+{\footnotesize\ttfamily BOOL x\+MBTCPPort\+Get\+Request (\begin{DoxyParamCaption}\item[{UCHAR $\ast$$\ast$}]{ppuc\+MBTCPFrame,  }\item[{USHORT $\ast$}]{us\+TCPLength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mbport_8h_a793d6e53b5632f4075af872b6a5c8ca5}\label{mbport_8h_a793d6e53b5632f4075af872b6a5c8ca5}} 
+\index{mbport.h@{mbport.h}!xMBTCPPortInit@{xMBTCPPortInit}}
+\index{xMBTCPPortInit@{xMBTCPPortInit}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBTCPPortInit()}{xMBTCPPortInit()}}
+{\footnotesize\ttfamily BOOL x\+MBTCPPort\+Init (\begin{DoxyParamCaption}\item[{USHORT}]{us\+TCPPort }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mbport_8h_a2902b52c4070bd676851561caef5a4c5}\label{mbport_8h_a2902b52c4070bd676851561caef5a4c5}} 
+\index{mbport.h@{mbport.h}!xMBTCPPortSendResponse@{xMBTCPPortSendResponse}}
+\index{xMBTCPPortSendResponse@{xMBTCPPortSendResponse}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{xMBTCPPortSendResponse()}{xMBTCPPortSendResponse()}}
+{\footnotesize\ttfamily BOOL x\+MBTCPPort\+Send\+Response (\begin{DoxyParamCaption}\item[{const UCHAR $\ast$}]{puc\+MBTCPFrame,  }\item[{USHORT}]{us\+TCPLength }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Переменные}
+\mbox{\Hypertarget{mbport_8h_a6ff9d563210c04e3afb414b9db75154a}\label{mbport_8h_a6ff9d563210c04e3afb414b9db75154a}} 
+\index{mbport.h@{mbport.h}!pxMBFrameCBByteReceived@{pxMBFrameCBByteReceived}}
+\index{pxMBFrameCBByteReceived@{pxMBFrameCBByteReceived}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{pxMBFrameCBByteReceived}{pxMBFrameCBByteReceived}}
+{\footnotesize\ttfamily BOOL($\ast$ px\+MBFrame\+CBByte\+Received) (void) (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Callback function for the porting layer when a new byte is available. 
+
+Depending upon the mode this callback function is used by the RTU or ASCII transmission layers. In any case a call to \mbox{\hyperlink{mbport_8h_a4a4724e9dc26b2d2d1cc2a6d41c24770}{x\+MBPort\+Serial\+Get\+Byte()}} must immediately return a new character.
+
+\begin{DoxyReturn}{Возвращает}
+{\ttfamily TRUE} if a event was posted to the queue because a new byte was received. The port implementation should wake up the tasks which are currently blocked on the eventqueue. 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00085}{85}}
+
+\mbox{\Hypertarget{mbport_8h_a46ac9d979eaaeb885415014a0cb350b2}\label{mbport_8h_a46ac9d979eaaeb885415014a0cb350b2}} 
+\index{mbport.h@{mbport.h}!pxMBFrameCBTransmitterEmpty@{pxMBFrameCBTransmitterEmpty}}
+\index{pxMBFrameCBTransmitterEmpty@{pxMBFrameCBTransmitterEmpty}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{pxMBFrameCBTransmitterEmpty}{pxMBFrameCBTransmitterEmpty}}
+{\footnotesize\ttfamily BOOL($\ast$ px\+MBFrame\+CBTransmitter\+Empty) (void) (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00086}{86}}
+
+\mbox{\Hypertarget{mbport_8h_a3ca010d1cf1b3bda066f0d65641d9055}\label{mbport_8h_a3ca010d1cf1b3bda066f0d65641d9055}} 
+\index{mbport.h@{mbport.h}!pxMBPortCBTimerExpired@{pxMBPortCBTimerExpired}}
+\index{pxMBPortCBTimerExpired@{pxMBPortCBTimerExpired}!mbport.h@{mbport.h}}
+\doxysubsubsection{\texorpdfstring{pxMBPortCBTimerExpired}{pxMBPortCBTimerExpired}}
+{\footnotesize\ttfamily BOOL($\ast$ px\+MBPort\+CBTimer\+Expired) (void) (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{mb_8c_source}{mb.\+c}} строка \mbox{\hyperlink{mb_8c_source_l00087}{87}}
+

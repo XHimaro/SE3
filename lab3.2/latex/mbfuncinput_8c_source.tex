@@ -1,0 +1,128 @@
+\hypertarget{mbfuncinput_8c_source}{}\doxysection{mbfuncinput.\+c}
+\label{mbfuncinput_8c_source}\index{for lab/freemodbus-\/v1.5.0/modbus/functions/mbfuncinput.c@{for lab/freemodbus-\/v1.5.0/modbus/functions/mbfuncinput.c}}
+\mbox{\hyperlink{mbfuncinput_8c}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00001}00001 \textcolor{comment}{/* }}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00002}00002 \textcolor{comment}{ * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00003}00003 \textcolor{comment}{ * Copyright (c) 2006 Christian Walter <wolti@sil.at>}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00004}00004 \textcolor{comment}{ * All rights reserved.}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00006}00006 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00007}00007 \textcolor{comment}{ * modification, are permitted provided that the following conditions}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00008}00008 \textcolor{comment}{ * are met:}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00009}00009 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00010}00010 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer.}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00011}00011 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00012}00012 \textcolor{comment}{ *    notice, this list of conditions and the following disclaimer in the}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00013}00013 \textcolor{comment}{ *    documentation and/or other materials provided with the distribution.}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00014}00014 \textcolor{comment}{ * 3. The name of the author may not be used to endorse or promote products}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00015}00015 \textcolor{comment}{ *    derived from this software without specific prior written permission.}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00016}00016 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00017}00017 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00018}00018 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00019}00019 \textcolor{comment}{ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00020}00020 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00021}00021 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00022}00022 \textcolor{comment}{ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00023}00023 \textcolor{comment}{ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00024}00024 \textcolor{comment}{ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00025}00025 \textcolor{comment}{ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00026}00026 \textcolor{comment}{ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00028}00028 \textcolor{comment}{ * File: \$Id: mbfuncinput.c,v 1.10 2007/09/12 10:15:56 wolti Exp \$}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00029}00029 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00031}00031 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ System includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00032}00032 \textcolor{preprocessor}{\#include "{}stdlib.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00033}00033 \textcolor{preprocessor}{\#include "{}string.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00035}00035 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Platform includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00036}00036 \textcolor{preprocessor}{\#include "{}port.h"{}}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00038}00038 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Modbus includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00039}00039 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mb_8h}{mb.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00040}00040 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbframe_8h}{mbframe.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00041}00041 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbproto_8h}{mbproto.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00042}00042 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mbconfig_8h}{mbconfig.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00044}00044 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Defines -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00045}\mbox{\hyperlink{mbfuncinput_8c_ab3c4b5bd48b2160671541e4026f2caae}{00045}} \textcolor{preprocessor}{\#define MB\_PDU\_FUNC\_READ\_ADDR\_OFF           ( MB\_PDU\_DATA\_OFF )}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00046}\mbox{\hyperlink{mbfuncinput_8c_ae5f5bb2d34c79141f425774b00ddd63b}{00046}} \textcolor{preprocessor}{\#define MB\_PDU\_FUNC\_READ\_REGCNT\_OFF         ( MB\_PDU\_DATA\_OFF + 2 )}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00047}\mbox{\hyperlink{mbfuncinput_8c_a968555f75801294753a5b2da91bea764}{00047}} \textcolor{preprocessor}{\#define MB\_PDU\_FUNC\_READ\_SIZE               ( 4 )}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00048}\mbox{\hyperlink{mbfuncinput_8c_ac66f1588a8138771b7ba2ec39319ae50}{00048}} \textcolor{preprocessor}{\#define MB\_PDU\_FUNC\_READ\_REGCNT\_MAX         ( 0x007D )}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00050}\mbox{\hyperlink{mbfuncinput_8c_aed5d97217f5de85de9931062e875302a}{00050}} \textcolor{preprocessor}{\#define MB\_PDU\_FUNC\_READ\_RSP\_BYTECNT\_OFF    ( MB\_PDU\_DATA\_OFF )}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00052}00052 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Static functions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00053}00053 \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{eMBException}}    \mbox{\hyperlink{mbfuncinput_8c_ad5d2cc07a83fa7ea723ed734c905bc55}{prveMBError2Exception}}( \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}} eErrorCode );}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00055}00055 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Start implementation -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00056}00056 \textcolor{preprocessor}{\#if MB\_FUNC\_READ\_INPUT\_ENABLED > 0}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00058}00058 \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{eMBException}}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00059}00059 eMBFuncReadInputRegister( UCHAR * pucFrame, USHORT * usLen )}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00060}00060 \{}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00061}00061     USHORT          usRegAddress;}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00062}00062     USHORT          usRegCount;}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00063}00063     UCHAR          *pucFrameCur;}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00065}00065     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{eMBException}}    eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}{MB\_EX\_NONE}};}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00066}00066     \mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{eMBErrorCode}}    eRegStatus;}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00068}00068     \textcolor{keywordflow}{if}( *usLen == ( \mbox{\hyperlink{mbfuncinput_8c_a968555f75801294753a5b2da91bea764}{MB\_PDU\_FUNC\_READ\_SIZE}} + \mbox{\hyperlink{mbframe_8h_a95544bbb1d07b33d7e7d6cc28b5f0956}{MB\_PDU\_SIZE\_MIN}} ) )}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00069}00069     \{}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00070}00070         usRegAddress = ( USHORT )( pucFrame[\mbox{\hyperlink{mbfuncinput_8c_ab3c4b5bd48b2160671541e4026f2caae}{MB\_PDU\_FUNC\_READ\_ADDR\_OFF}}] << 8 );}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00071}00071         usRegAddress |= ( USHORT )( pucFrame[\mbox{\hyperlink{mbfuncinput_8c_ab3c4b5bd48b2160671541e4026f2caae}{MB\_PDU\_FUNC\_READ\_ADDR\_OFF}} + 1] );}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00072}00072         usRegAddress++;}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00074}00074         usRegCount = ( USHORT )( pucFrame[\mbox{\hyperlink{mbfuncinput_8c_ae5f5bb2d34c79141f425774b00ddd63b}{MB\_PDU\_FUNC\_READ\_REGCNT\_OFF}}] << 8 );}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00075}00075         usRegCount |= ( USHORT )( pucFrame[\mbox{\hyperlink{mbfuncinput_8c_ae5f5bb2d34c79141f425774b00ddd63b}{MB\_PDU\_FUNC\_READ\_REGCNT\_OFF}} + 1] );}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00077}00077         \textcolor{comment}{/* Check if the number of registers to read is valid. If not}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00078}00078 \textcolor{comment}{         * return Modbus illegal data value exception. }}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00079}00079 \textcolor{comment}{         */}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00080}00080         \textcolor{keywordflow}{if}( ( usRegCount >= 1 )}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00081}00081             \&\& ( usRegCount < \mbox{\hyperlink{mbfuncinput_8c_ac66f1588a8138771b7ba2ec39319ae50}{MB\_PDU\_FUNC\_READ\_REGCNT\_MAX}} ) )}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00082}00082         \{}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00083}00083             \textcolor{comment}{/* Set the current PDU data pointer to the beginning. */}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00084}00084             pucFrameCur = \&pucFrame[\mbox{\hyperlink{mbframe_8h_a554b629520c4266fdff39099a2eef5db}{MB\_PDU\_FUNC\_OFF}}];}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00085}00085             *usLen = \mbox{\hyperlink{mbframe_8h_a554b629520c4266fdff39099a2eef5db}{MB\_PDU\_FUNC\_OFF}};}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00087}00087             \textcolor{comment}{/* First byte contains the function code. */}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00088}00088             *pucFrameCur++ = \mbox{\hyperlink{mbproto_8h_ab4adf9aa2c94273ab987590cd1a74859}{MB\_FUNC\_READ\_INPUT\_REGISTER}};}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00089}00089             *usLen += 1;}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00091}00091             \textcolor{comment}{/* Second byte in the response contain the number of bytes. */}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00092}00092             *pucFrameCur++ = ( UCHAR )( usRegCount * 2 );}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00093}00093             *usLen += 1;}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00095}00095             eRegStatus =}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00096}00096                 \mbox{\hyperlink{group__modbus__registers_ga7816677520b1eb2ebecf15060a41bc81}{eMBRegInputCB}}( pucFrameCur, usRegAddress, usRegCount );}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00098}00098             \textcolor{comment}{/* If an error occured convert it into a Modbus exception. */}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00099}00099             \textcolor{keywordflow}{if}( eRegStatus != \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}} )}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00100}00100             \{}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00101}00101                 eStatus = \mbox{\hyperlink{mbfuncinput_8c_ad5d2cc07a83fa7ea723ed734c905bc55}{prveMBError2Exception}}( eRegStatus );}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00102}00102             \}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00103}00103             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00104}00104             \{}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00105}00105                 *usLen += usRegCount * 2;}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00106}00106             \}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00107}00107         \}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00108}00108         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00109}00109         \{}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00110}00110             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca473bfed2d0edb76c4ff02e659082c777}{MB\_EX\_ILLEGAL\_DATA\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00111}00111         \}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00113}00113     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00114}00114     \{}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00115}00115         \textcolor{comment}{/* Can't be a valid read input register request because the length}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00116}00116 \textcolor{comment}{         * is incorrect. */}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00117}00117         eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca473bfed2d0edb76c4ff02e659082c777}{MB\_EX\_ILLEGAL\_DATA\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00118}00118     \}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00119}00119     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00120}00120 \}}
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{mbfuncinput_8c_source_l00122}00122 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

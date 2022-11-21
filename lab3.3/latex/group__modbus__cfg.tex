@@ -1,0 +1,286 @@
+\hypertarget{group__modbus__cfg}{}\doxysection{Modbus Configuration}
+\label{group__modbus__cfg}\index{Modbus Configuration@{Modbus Configuration}}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_gae4accc470cf44e38b4011213a93a2adc}{MB\+\_\+\+ASCII\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If Modbus ASCII support is enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga00b7b4d768c9489b5022832db253a71c}{MB\+\_\+\+RTU\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If Modbus RTU support is enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga93a17168bbe8c49e45ce6405cb4c1afb}{MB\+\_\+\+TCP\+\_\+\+ENABLED}}~(  0 )
+\begin{DoxyCompactList}\small\item\em If Modbus TCP support is enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga90fe92ab8f17c76c6e48dbbab8986446}{MB\+\_\+\+ASCII\+\_\+\+TIMEOUT\+\_\+\+SEC}}~(  1 )
+\begin{DoxyCompactList}\small\item\em The character timeout value for Modbus ASCII. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga22fd01f62670a71ab137e16118c37ca2}{MB\+\_\+\+ASCII\+\_\+\+TIMEOUT\+\_\+\+WAIT\+\_\+\+BEFORE\+\_\+\+SEND\+\_\+\+MS}}~( 0 )
+\begin{DoxyCompactList}\small\item\em Timeout to wait in ASCII prior to enabling transmitter. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}{MB\+\_\+\+FUNC\+\_\+\+HANDLERS\+\_\+\+MAX}}~( 16 )
+\begin{DoxyCompactList}\small\item\em Maximum number of Modbus functions codes the protocol stack should support. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga4c376ec5ec8bea2ccfe067cd8c05db06}{MB\+\_\+\+FUNC\+\_\+\+OTHER\+\_\+\+REP\+\_\+\+SLAVEID\+\_\+\+BUF}}~( 32 )
+\begin{DoxyCompactList}\small\item\em Number of bytes which should be allocated for the {\itshape Report Slave ID }command. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga580ff483eb8b3fbfc23115808d7025c9}{MB\+\_\+\+FUNC\+\_\+\+OTHER\+\_\+\+REP\+\_\+\+SLAVEID\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Report Slave ID} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga18432b6043942aa4b9e5f14c0543e663}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+INPUT\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Read Input Registers} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga2427219b5788299b59972102db511df8}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+HOLDING\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Read Holding Registers} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_gae8aa746269641b5fe032b81aafd93521}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+HOLDING\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Write Single Register} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_gaafa15ddf4a433ab3149178ba8199e8e2}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+HOLDING\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Write Multiple registers} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga0a699b69e28d21c32c95affe08e04112}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+COILS\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Read Coils} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga3bb42e153880ea5312eaa42bb671ee50}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+COIL\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Write Coils} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga1973cf9a66e8738ee06681443259b78f}{MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+COILS\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Write Multiple Coils} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_ga76bb577b6d66b4e45571f7e46b04b134}{MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+DISCRETE\+\_\+\+INPUTS\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Read Discrete Inputs} function should be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__modbus__cfg_gae62a61cbd68a80de8c7ee268a5934ea3}{MB\+\_\+\+FUNC\+\_\+\+READWRITE\+\_\+\+HOLDING\+\_\+\+ENABLED}}~(  1 )
+\begin{DoxyCompactList}\small\item\em If the {\itshape Read/\+Write Multiple Registers} function should be enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Most modules in the protocol stack are completly optional and can be excluded. This is specially important if target resources are very small and program memory space should be saved.~\newline
+
+
+All of these settings are available in the file {\ttfamily \mbox{\hyperlink{mbconfig_8h}{mbconfig.\+h}}} 
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{group__modbus__cfg_gae4accc470cf44e38b4011213a93a2adc}\label{group__modbus__cfg_gae4accc470cf44e38b4011213a93a2adc}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_ASCII\_ENABLED@{MB\_ASCII\_ENABLED}}
+\index{MB\_ASCII\_ENABLED@{MB\_ASCII\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_ASCII\_ENABLED}{MB\_ASCII\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+ASCII\+\_\+\+ENABLED~(  1 )}
+
+
+
+If Modbus ASCII support is enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00050}{50}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga90fe92ab8f17c76c6e48dbbab8986446}\label{group__modbus__cfg_ga90fe92ab8f17c76c6e48dbbab8986446}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_ASCII\_TIMEOUT\_SEC@{MB\_ASCII\_TIMEOUT\_SEC}}
+\index{MB\_ASCII\_TIMEOUT\_SEC@{MB\_ASCII\_TIMEOUT\_SEC}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_ASCII\_TIMEOUT\_SEC}{MB\_ASCII\_TIMEOUT\_SEC}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+ASCII\+\_\+\+TIMEOUT\+\_\+\+SEC~(  1 )}
+
+
+
+The character timeout value for Modbus ASCII. 
+
+The character timeout value is not fixed for Modbus ASCII and is therefore a configuration option. It should be set to the maximum expected delay time of the network. 
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00064}{64}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga22fd01f62670a71ab137e16118c37ca2}\label{group__modbus__cfg_ga22fd01f62670a71ab137e16118c37ca2}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS@{MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS}}
+\index{MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS@{MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS}{MB\_ASCII\_TIMEOUT\_WAIT\_BEFORE\_SEND\_MS}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+ASCII\+\_\+\+TIMEOUT\+\_\+\+WAIT\+\_\+\+BEFORE\+\_\+\+SEND\+\_\+\+MS~( 0 )}
+
+
+
+Timeout to wait in ASCII prior to enabling transmitter. 
+
+If defined the function calls v\+MBPort\+Serial\+Delay with the argument MB\+\_\+\+ASCII\+\_\+\+TIMEOUT\+\_\+\+WAIT\+\_\+\+BEFORE\+\_\+\+SEND\+\_\+\+MS to allow for a delay before the serial transmitter is enabled. This is required because some targets are so fast that there is no time between receiving and transmitting the frame. If the master is to slow with enabling its receiver then he will not receive the response correctly. 
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00076}{76}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}\label{group__modbus__cfg_ga1dd115d6338ef87c83aaa23809792f25}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_HANDLERS\_MAX@{MB\_FUNC\_HANDLERS\_MAX}}
+\index{MB\_FUNC\_HANDLERS\_MAX@{MB\_FUNC\_HANDLERS\_MAX}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_HANDLERS\_MAX}{MB\_FUNC\_HANDLERS\_MAX}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+HANDLERS\+\_\+\+MAX~( 16 )}
+
+
+
+Maximum number of Modbus functions codes the protocol stack should support. 
+
+The maximum number of supported Modbus functions must be greater than the sum of all enabled functions in this file and custom function handlers. If set to small adding more functions will fail. 
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00086}{86}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga4c376ec5ec8bea2ccfe067cd8c05db06}\label{group__modbus__cfg_ga4c376ec5ec8bea2ccfe067cd8c05db06}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_OTHER\_REP\_SLAVEID\_BUF@{MB\_FUNC\_OTHER\_REP\_SLAVEID\_BUF}}
+\index{MB\_FUNC\_OTHER\_REP\_SLAVEID\_BUF@{MB\_FUNC\_OTHER\_REP\_SLAVEID\_BUF}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_OTHER\_REP\_SLAVEID\_BUF}{MB\_FUNC\_OTHER\_REP\_SLAVEID\_BUF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+OTHER\+\_\+\+REP\+\_\+\+SLAVEID\+\_\+\+BUF~( 32 )}
+
+
+
+Number of bytes which should be allocated for the {\itshape Report Slave ID }command. 
+
+This number limits the maximum size of the additional segment in the report slave id function. See \mbox{\hyperlink{group__modbus_gabe2b0e2dccf23d506666aa3cfdf6a8a3}{e\+MBSet\+Slave\+ID(  )}} for more information on how to set this value. It is only used if MB\+\_\+\+FUNC\+\_\+\+OTHER\+\_\+\+REP\+\_\+\+SLAVEID\+\_\+\+ENABLED is set to {\ttfamily 1}. 
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00096}{96}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga580ff483eb8b3fbfc23115808d7025c9}\label{group__modbus__cfg_ga580ff483eb8b3fbfc23115808d7025c9}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_OTHER\_REP\_SLAVEID\_ENABLED@{MB\_FUNC\_OTHER\_REP\_SLAVEID\_ENABLED}}
+\index{MB\_FUNC\_OTHER\_REP\_SLAVEID\_ENABLED@{MB\_FUNC\_OTHER\_REP\_SLAVEID\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_OTHER\_REP\_SLAVEID\_ENABLED}{MB\_FUNC\_OTHER\_REP\_SLAVEID\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+OTHER\+\_\+\+REP\+\_\+\+SLAVEID\+\_\+\+ENABLED~(  1 )}
+
+
+
+If the {\itshape Report Slave ID} function should be enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00099}{99}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga0a699b69e28d21c32c95affe08e04112}\label{group__modbus__cfg_ga0a699b69e28d21c32c95affe08e04112}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_READ\_COILS\_ENABLED@{MB\_FUNC\_READ\_COILS\_ENABLED}}
+\index{MB\_FUNC\_READ\_COILS\_ENABLED@{MB\_FUNC\_READ\_COILS\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_READ\_COILS\_ENABLED}{MB\_FUNC\_READ\_COILS\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+COILS\+\_\+\+ENABLED~(  1 )}
+
+
+
+If the {\itshape Read Coils} function should be enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00114}{114}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga76bb577b6d66b4e45571f7e46b04b134}\label{group__modbus__cfg_ga76bb577b6d66b4e45571f7e46b04b134}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_READ\_DISCRETE\_INPUTS\_ENABLED@{MB\_FUNC\_READ\_DISCRETE\_INPUTS\_ENABLED}}
+\index{MB\_FUNC\_READ\_DISCRETE\_INPUTS\_ENABLED@{MB\_FUNC\_READ\_DISCRETE\_INPUTS\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_READ\_DISCRETE\_INPUTS\_ENABLED}{MB\_FUNC\_READ\_DISCRETE\_INPUTS\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+DISCRETE\+\_\+\+INPUTS\+\_\+\+ENABLED~(  1 )}
+
+
+
+If the {\itshape Read Discrete Inputs} function should be enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00123}{123}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga2427219b5788299b59972102db511df8}\label{group__modbus__cfg_ga2427219b5788299b59972102db511df8}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_READ\_HOLDING\_ENABLED@{MB\_FUNC\_READ\_HOLDING\_ENABLED}}
+\index{MB\_FUNC\_READ\_HOLDING\_ENABLED@{MB\_FUNC\_READ\_HOLDING\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_READ\_HOLDING\_ENABLED}{MB\_FUNC\_READ\_HOLDING\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+HOLDING\+\_\+\+ENABLED~(  1 )}
+
+
+
+If the {\itshape Read Holding Registers} function should be enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00105}{105}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga18432b6043942aa4b9e5f14c0543e663}\label{group__modbus__cfg_ga18432b6043942aa4b9e5f14c0543e663}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_READ\_INPUT\_ENABLED@{MB\_FUNC\_READ\_INPUT\_ENABLED}}
+\index{MB\_FUNC\_READ\_INPUT\_ENABLED@{MB\_FUNC\_READ\_INPUT\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_READ\_INPUT\_ENABLED}{MB\_FUNC\_READ\_INPUT\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+INPUT\+\_\+\+ENABLED~(  1 )}
+
+
+
+If the {\itshape Read Input Registers} function should be enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00102}{102}}
+
+\mbox{\Hypertarget{group__modbus__cfg_gae62a61cbd68a80de8c7ee268a5934ea3}\label{group__modbus__cfg_gae62a61cbd68a80de8c7ee268a5934ea3}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_READWRITE\_HOLDING\_ENABLED@{MB\_FUNC\_READWRITE\_HOLDING\_ENABLED}}
+\index{MB\_FUNC\_READWRITE\_HOLDING\_ENABLED@{MB\_FUNC\_READWRITE\_HOLDING\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_READWRITE\_HOLDING\_ENABLED}{MB\_FUNC\_READWRITE\_HOLDING\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+READWRITE\+\_\+\+HOLDING\+\_\+\+ENABLED~(  1 )}
+
+
+
+If the {\itshape Read/\+Write Multiple Registers} function should be enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00126}{126}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga3bb42e153880ea5312eaa42bb671ee50}\label{group__modbus__cfg_ga3bb42e153880ea5312eaa42bb671ee50}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_WRITE\_COIL\_ENABLED@{MB\_FUNC\_WRITE\_COIL\_ENABLED}}
+\index{MB\_FUNC\_WRITE\_COIL\_ENABLED@{MB\_FUNC\_WRITE\_COIL\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_WRITE\_COIL\_ENABLED}{MB\_FUNC\_WRITE\_COIL\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+COIL\+\_\+\+ENABLED~(  1 )}
+
+
+
+If the {\itshape Write Coils} function should be enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00117}{117}}
+
+\mbox{\Hypertarget{group__modbus__cfg_gae8aa746269641b5fe032b81aafd93521}\label{group__modbus__cfg_gae8aa746269641b5fe032b81aafd93521}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_WRITE\_HOLDING\_ENABLED@{MB\_FUNC\_WRITE\_HOLDING\_ENABLED}}
+\index{MB\_FUNC\_WRITE\_HOLDING\_ENABLED@{MB\_FUNC\_WRITE\_HOLDING\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_WRITE\_HOLDING\_ENABLED}{MB\_FUNC\_WRITE\_HOLDING\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+HOLDING\+\_\+\+ENABLED~(  1 )}
+
+
+
+If the {\itshape Write Single Register} function should be enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00108}{108}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga1973cf9a66e8738ee06681443259b78f}\label{group__modbus__cfg_ga1973cf9a66e8738ee06681443259b78f}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_WRITE\_MULTIPLE\_COILS\_ENABLED@{MB\_FUNC\_WRITE\_MULTIPLE\_COILS\_ENABLED}}
+\index{MB\_FUNC\_WRITE\_MULTIPLE\_COILS\_ENABLED@{MB\_FUNC\_WRITE\_MULTIPLE\_COILS\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_WRITE\_MULTIPLE\_COILS\_ENABLED}{MB\_FUNC\_WRITE\_MULTIPLE\_COILS\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+COILS\+\_\+\+ENABLED~(  1 )}
+
+
+
+If the {\itshape Write Multiple Coils} function should be enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00120}{120}}
+
+\mbox{\Hypertarget{group__modbus__cfg_gaafa15ddf4a433ab3149178ba8199e8e2}\label{group__modbus__cfg_gaafa15ddf4a433ab3149178ba8199e8e2}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_FUNC\_WRITE\_MULTIPLE\_HOLDING\_ENABLED@{MB\_FUNC\_WRITE\_MULTIPLE\_HOLDING\_ENABLED}}
+\index{MB\_FUNC\_WRITE\_MULTIPLE\_HOLDING\_ENABLED@{MB\_FUNC\_WRITE\_MULTIPLE\_HOLDING\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_FUNC\_WRITE\_MULTIPLE\_HOLDING\_ENABLED}{MB\_FUNC\_WRITE\_MULTIPLE\_HOLDING\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+HOLDING\+\_\+\+ENABLED~(  1 )}
+
+
+
+If the {\itshape Write Multiple registers} function should be enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00111}{111}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga00b7b4d768c9489b5022832db253a71c}\label{group__modbus__cfg_ga00b7b4d768c9489b5022832db253a71c}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_RTU\_ENABLED@{MB\_RTU\_ENABLED}}
+\index{MB\_RTU\_ENABLED@{MB\_RTU\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_RTU\_ENABLED}{MB\_RTU\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+RTU\+\_\+\+ENABLED~(  1 )}
+
+
+
+If Modbus RTU support is enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00053}{53}}
+
+\mbox{\Hypertarget{group__modbus__cfg_ga93a17168bbe8c49e45ce6405cb4c1afb}\label{group__modbus__cfg_ga93a17168bbe8c49e45ce6405cb4c1afb}} 
+\index{Modbus Configuration@{Modbus Configuration}!MB\_TCP\_ENABLED@{MB\_TCP\_ENABLED}}
+\index{MB\_TCP\_ENABLED@{MB\_TCP\_ENABLED}!Modbus Configuration@{Modbus Configuration}}
+\doxysubsubsection{\texorpdfstring{MB\_TCP\_ENABLED}{MB\_TCP\_ENABLED}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+TCP\+\_\+\+ENABLED~(  0 )}
+
+
+
+If Modbus TCP support is enabled. 
+
+
+
+См. определение в файле \mbox{\hyperlink{mbconfig_8h_source}{mbconfig.\+h}} строка \mbox{\hyperlink{mbconfig_8h_source_l00056}{56}}
+

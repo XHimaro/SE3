@@ -1,0 +1,177 @@
+\hypertarget{structcmd_8h}{}\doxysection{Файл for lab/doxygen/examples/structcmd.h}
+\label{structcmd_8h}\index{for lab/doxygen/examples/structcmd.h@{for lab/doxygen/examples/structcmd.h}}
+
+
+\mbox{\hyperlink{class_a}{A}} Documented file.  
+
+
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{structcmd_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}(a,  b)~(((a)$>$(b))?(a)\+:(b))
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_a}{A}} macro that returns the maximum of {\itshape a} and {\itshape b}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \mbox{\hyperlink{structcmd_8h_ae1e6edbbc26d6fbc71a90190d0266018}{UINT32}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_a}{A}} type definition for a . \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structcmd_8h_a2c4414339f388561554c2deab11a1a07}{open}} (const char $\ast$, int)
+\begin{DoxyCompactList}\small\item\em Opens a file descriptor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structcmd_8h_ae152484c890a24e4d9b4980e7b965be0}{close}} (int)
+\begin{DoxyCompactList}\small\item\em Closes the file descriptor {\itshape fd}. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{structcmd_8h_af2a3ea719b83f672637febdd87c36c36}{write}} (int, const char $\ast$, size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Writes {\itshape count} bytes from {\itshape buf} to the filedescriptor {\itshape fd}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structcmd_8h_a9c7b76d5266903891c803132d51ccb90}{read}} (int, char $\ast$, size\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Read bytes from a file descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structcmd_8h_ad65a8842cc674e3ddf69355898c0ecbf}{errno}}
+\begin{DoxyCompactList}\small\item\em Contains the last error code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+\mbox{\hyperlink{class_a}{A}} Documented file. 
+
+Details. 
+
+См. определение в файле \mbox{\hyperlink{structcmd_8h_source}{structcmd.\+h}}
+
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{structcmd_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{structcmd_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\index{structcmd.h@{structcmd.h}!MAX@{MAX}}
+\index{MAX@{MAX}!structcmd.h@{structcmd.h}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define MAX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a)$>$(b))?(a)\+:(b))}
+
+
+
+\mbox{\hyperlink{class_a}{A}} macro that returns the maximum of {\itshape a} and {\itshape b}. 
+
+Details. 
+
+См. определение в файле \mbox{\hyperlink{structcmd_8h_source}{structcmd.\+h}} строка \mbox{\hyperlink{structcmd_8h_source_l00051}{51}}
+
+
+
+\doxysubsection{Типы}
+\mbox{\Hypertarget{structcmd_8h_ae1e6edbbc26d6fbc71a90190d0266018}\label{structcmd_8h_ae1e6edbbc26d6fbc71a90190d0266018}} 
+\index{structcmd.h@{structcmd.h}!UINT32@{UINT32}}
+\index{UINT32@{UINT32}!structcmd.h@{structcmd.h}}
+\doxysubsubsection{\texorpdfstring{UINT32}{UINT32}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{structcmd_8h_ae1e6edbbc26d6fbc71a90190d0266018}{UINT32}}}
+
+
+
+\mbox{\hyperlink{class_a}{A}} type definition for a . 
+
+Details. 
+
+См. определение в файле \mbox{\hyperlink{structcmd_8h_source}{structcmd.\+h}} строка \mbox{\hyperlink{structcmd_8h_source_l00052}{52}}
+
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{structcmd_8h_ae152484c890a24e4d9b4980e7b965be0}\label{structcmd_8h_ae152484c890a24e4d9b4980e7b965be0}} 
+\index{structcmd.h@{structcmd.h}!close@{close}}
+\index{close@{close}!structcmd.h@{structcmd.h}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily int close (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Closes the file descriptor {\itshape fd}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em fd} & The descriptor to close. \\
+\hline
+\end{DoxyParams}
+Граф вызова функции\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{structcmd_8h_ae152484c890a24e4d9b4980e7b965be0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structcmd_8h_a2c4414339f388561554c2deab11a1a07}\label{structcmd_8h_a2c4414339f388561554c2deab11a1a07}} 
+\index{structcmd.h@{structcmd.h}!open@{open}}
+\index{open@{open}!structcmd.h@{structcmd.h}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily int open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{pathname,  }\item[{int}]{flags }\end{DoxyParamCaption})}
+
+
+
+Opens a file descriptor. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em pathname} & The name of the descriptor. \\
+\hline
+{\em flags} & Opening flags. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structcmd_8h_a9c7b76d5266903891c803132d51ccb90}\label{structcmd_8h_a9c7b76d5266903891c803132d51ccb90}} 
+\index{structcmd.h@{structcmd.h}!read@{read}}
+\index{read@{read}!structcmd.h@{structcmd.h}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int read (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{char $\ast$}]{buf,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+
+
+Read bytes from a file descriptor. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em fd} & The descriptor to read from. \\
+\hline
+{\em buf} & The buffer to read into. \\
+\hline
+{\em count} & The number of bytes to read. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structcmd_8h_af2a3ea719b83f672637febdd87c36c36}\label{structcmd_8h_af2a3ea719b83f672637febdd87c36c36}} 
+\index{structcmd.h@{structcmd.h}!write@{write}}
+\index{write@{write}!structcmd.h@{structcmd.h}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily size\+\_\+t write (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{const char $\ast$}]{buf,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+
+
+Writes {\itshape count} bytes from {\itshape buf} to the filedescriptor {\itshape fd}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em fd} & The descriptor to write to. \\
+\hline
+{\em buf} & The data buffer to write. \\
+\hline
+{\em count} & The number of bytes to write. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Переменные}
+\mbox{\Hypertarget{structcmd_8h_ad65a8842cc674e3ddf69355898c0ecbf}\label{structcmd_8h_ad65a8842cc674e3ddf69355898c0ecbf}} 
+\index{structcmd.h@{structcmd.h}!errno@{errno}}
+\index{errno@{errno}!structcmd.h@{structcmd.h}}
+\doxysubsubsection{\texorpdfstring{errno}{errno}}
+{\footnotesize\ttfamily int errno}
+
+
+
+Contains the last error code. 
+
+\begin{DoxyWarning}{Предупреждения}
+Not thread safe! 
+\end{DoxyWarning}
+
+
+См. определение в файле \mbox{\hyperlink{structcmd_8h_source}{structcmd.\+h}} строка \mbox{\hyperlink{structcmd_8h_source_l00053}{53}}
+

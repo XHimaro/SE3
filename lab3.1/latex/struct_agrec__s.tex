@@ -1,0 +1,65 @@
+\hypertarget{struct_agrec__s}{}\doxysection{Структура Agrec\+\_\+s}
+\label{struct_agrec__s}\index{Agrec\_s@{Agrec\_s}}
+
+
+Header of a user record.  
+
+
+
+
+{\ttfamily \#include $<$cgraph.\+h$>$}
+
+
+
+Граф связей класса Agrec\+\_\+s\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{struct_agrec__s__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{struct_agrec__s_a81a026cc6c0a0759940833065f88971d}{name}}
+\item 
+\mbox{\hyperlink{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}{Agrec\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agrec__s_a621c3208b7772dc3b5911997c41d2d87}{next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Header of a user record. 
+
+These records are attached by client programs dynamically at runtime. \mbox{\hyperlink{class_a}{A}} unique string ID must be given to each record attached to the same object. Cgraph has functions to create, search for, and delete these records. The records are maintained in a circular list, with obj-\/\texorpdfstring{$>$}{>}data pointing somewhere in the list. The search function has an option to lock this pointer on a given record. The application must be written so only one such lock is outstanding at a time. 
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00085}{85}}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{struct_agrec__s_a81a026cc6c0a0759940833065f88971d}\label{struct_agrec__s_a81a026cc6c0a0759940833065f88971d}} 
+\index{Agrec\_s@{Agrec\_s}!name@{name}}
+\index{name@{name}!Agrec\_s@{Agrec\_s}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily char$\ast$ Agrec\+\_\+s\+::name}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00086}{86}}
+
+\mbox{\Hypertarget{struct_agrec__s_a621c3208b7772dc3b5911997c41d2d87}\label{struct_agrec__s_a621c3208b7772dc3b5911997c41d2d87}} 
+\index{Agrec\_s@{Agrec\_s}!next@{next}}
+\index{next@{next}!Agrec\_s@{Agrec\_s}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}{Agrec\+\_\+t}}$\ast$ Agrec\+\_\+s\+::next}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00087}{87}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\+Graphviz/include/graphviz/\mbox{\hyperlink{cgraph_8h}{cgraph.\+h}}\end{DoxyCompactItemize}

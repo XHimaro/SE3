@@ -1,0 +1,280 @@
+\hypertarget{cdt_8h_source}{}\doxysection{cdt.\+h}
+\label{cdt_8h_source}\index{for lab/Graphviz/include/graphviz/cdt.h@{for lab/Graphviz/include/graphviz/cdt.h}}
+\mbox{\hyperlink{cdt_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00006}00006 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00008}00008 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00009}00009 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00010}00010 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00012}00012 \textcolor{comment}{/*  Public interface for the dictionary library}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00013}00013 \textcolor{comment}{**}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00014}00014 \textcolor{comment}{**      Written by Kiem-\/Phong Vo}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00015}00015 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00017}\mbox{\hyperlink{cdt_8h_a15ac0da44b92ccaf93b7087cb6cf641e}{00017}} \textcolor{preprocessor}{\#define CDT\_VERSION 20050420L}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00019}00019 \textcolor{preprocessor}{\#include <stddef.h>} \textcolor{comment}{/* size\_t */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00020}00020 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00022}00022 \textcolor{preprocessor}{\#ifdef GVDLL}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00023}00023 \textcolor{preprocessor}{\#ifdef EXPORT\_CDT}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00024}00024 \textcolor{preprocessor}{\#define CDT\_API \_\_declspec(dllexport)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00025}00025 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00026}00026 \textcolor{preprocessor}{\#define CDT\_API \_\_declspec(dllimport)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00027}00027 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00028}00028 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00030}00030 \textcolor{preprocessor}{\#ifndef CDT\_API}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00031}\mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{00031}} \textcolor{preprocessor}{\#define CDT\_API }\textcolor{comment}{/* nothing */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00032}00032 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00034}\mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{00034}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dtlink__s}{\_dtlink\_s}}   \mbox{\hyperlink{struct__dtlink__s}{Dtlink\_t}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00035}\mbox{\hyperlink{cdt_8h_a0a38fb0e224c2c78db09e185ff3b4a7a}{00035}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dthold__s}{\_dthold\_s}}   \mbox{\hyperlink{struct__dthold__s}{Dthold\_t}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00036}\mbox{\hyperlink{cdt_8h_aea140cf19552bb2cd490b286cd45eff4}{00036}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dtdisc__s}{\_dtdisc\_s}}   \mbox{\hyperlink{struct__dtdisc__s}{Dtdisc\_t}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00037}\mbox{\hyperlink{cdt_8h_abf86d6f2f269d37e5944cd844290cf5f}{00037}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dtmethod__s}{\_dtmethod\_s}}   \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00038}\mbox{\hyperlink{cdt_8h_aebf7c2e3f7b071f05ce6a9ff4701c5ee}{00038}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dtdata__s}{\_dtdata\_s}}   \mbox{\hyperlink{struct__dtdata__s}{Dtdata\_t}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00039}\mbox{\hyperlink{cdt_8h_a37bbcd168191cb3ea46033b4d2514b5b}{00039}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dt__s}{\_dt\_s}}       \mbox{\hyperlink{struct__dt__s}{Dt\_t}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00040}\mbox{\hyperlink{cdt_8h_ac0967b1ac6289e719be57de7797cbc56}{00040}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dt__s}{\_dt\_s}}       \mbox{\hyperlink{struct__dt__s}{Dict\_t}};   \textcolor{comment}{/* for libdict compatibility */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00041}\mbox{\hyperlink{cdt_8h_afd8d4c3d43959a81a02899cb6b3463e6}{00041}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dtstat__s}{\_dtstat\_s}}   \mbox{\hyperlink{struct__dtstat__s}{Dtstat\_t}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00042}\mbox{\hyperlink{cdt_8h_ab5492c722a2f634f0f617bcd6e1a98da}{00042}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}*           (*Dtmemory\_f)(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*,\textcolor{keywordtype}{void}*,size\_t,\mbox{\hyperlink{struct__dtdisc__s}{Dtdisc\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00043}\mbox{\hyperlink{cdt_8h_ad302f306f9f77c3b1cfe6c0fdde2ffae}{00043}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}*           (*Dtsearch\_f)(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*,\textcolor{keywordtype}{void}*,int);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00044}\mbox{\hyperlink{cdt_8h_a9451ed4f0195c92a101c504b5f13a4fc}{00044}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}*       (*Dtmake\_f)(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*,\textcolor{keywordtype}{void}*,\mbox{\hyperlink{struct__dtdisc__s}{Dtdisc\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00045}\mbox{\hyperlink{cdt_8h_a3b5f8c44e2cb754e08158919559facc2}{00045}} \textcolor{keyword}{typedef} void            (*\mbox{\hyperlink{cdt_8h_a3b5f8c44e2cb754e08158919559facc2}{Dtfree\_f}})(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*,\textcolor{keywordtype}{void}*,\mbox{\hyperlink{struct__dtdisc__s}{Dtdisc\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00046}\mbox{\hyperlink{cdt_8h_afa0e5103398b9c9e1cd096ff6f4d24af}{00046}} \textcolor{keyword}{typedef} int         (*\mbox{\hyperlink{cdt_8h_afa0e5103398b9c9e1cd096ff6f4d24af}{Dtcompar\_f}})(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*,\textcolor{keywordtype}{void}*,\textcolor{keywordtype}{void}*,\mbox{\hyperlink{struct__dtdisc__s}{Dtdisc\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00047}\mbox{\hyperlink{cdt_8h_ae8b4e0d955dbb54803b6e1fefbd3d20f}{00047}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} int        (*\mbox{\hyperlink{cdt_8h_ae8b4e0d955dbb54803b6e1fefbd3d20f}{Dthash\_f}})(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*,\textcolor{keywordtype}{void}*,\mbox{\hyperlink{struct__dtdisc__s}{Dtdisc\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00048}\mbox{\hyperlink{cdt_8h_aac49f3d2e544b15c03465349f57178a7}{00048}} \textcolor{keyword}{typedef} int         (*\mbox{\hyperlink{cdt_8h_aac49f3d2e544b15c03465349f57178a7}{Dtevent\_f}})(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*,int,\textcolor{keywordtype}{void}*,\mbox{\hyperlink{struct__dtdisc__s}{Dtdisc\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00050}\mbox{\hyperlink{struct__dtlink__s}{00050}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dtlink__s}{\_dtlink\_s}}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00051}\mbox{\hyperlink{struct__dtlink__s_aac8d7353a842d224c7208640c636b335}{00051}} \{   \mbox{\hyperlink{struct__dtlink__s}{Dtlink\_t}}*   \mbox{\hyperlink{struct__dtlink__s_aac8d7353a842d224c7208640c636b335}{right}}; \textcolor{comment}{/* right child      */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00052}00052     \textcolor{keyword}{union}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00053}\mbox{\hyperlink{struct__dtlink__s_a336ddccc3fed053166ea09e6847a0812}{00053}}     \{ \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  \mbox{\hyperlink{struct__dtlink__s_a336ddccc3fed053166ea09e6847a0812}{\_hash}}; \textcolor{comment}{/* hash value       */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00054}\mbox{\hyperlink{struct__dtlink__s_aa159da20576fe861b3303823d6e8e7f6}{00054}}       \mbox{\hyperlink{struct__dtlink__s}{Dtlink\_t}}* \mbox{\hyperlink{struct__dtlink__s_aa159da20576fe861b3303823d6e8e7f6}{\_left}}; \textcolor{comment}{/* left child       */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00055}\mbox{\hyperlink{struct__dtlink__s_ab59258e93622b90ebf68ee0c468ec61e}{00055}}     \} \mbox{\hyperlink{struct__dtlink__s_ab59258e93622b90ebf68ee0c468ec61e}{hl}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00056}00056 \};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00058}00058 \textcolor{comment}{/* private structure to hold an object */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00059}\mbox{\hyperlink{struct__dthold__s}{00059}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dthold__s}{\_dthold\_s}}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00060}\mbox{\hyperlink{struct__dthold__s_a7ad1b3aefcb4c0930783c39da15f3da3}{00060}} \{   \mbox{\hyperlink{struct__dtlink__s}{Dtlink\_t}}    \mbox{\hyperlink{struct__dthold__s_a7ad1b3aefcb4c0930783c39da15f3da3}{hdr}}; \textcolor{comment}{/* header       */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00061}\mbox{\hyperlink{struct__dthold__s_af6890bb99ca3ae218a3a8967649cd886}{00061}}     \textcolor{keywordtype}{void}*       \mbox{\hyperlink{struct__dthold__s_af6890bb99ca3ae218a3a8967649cd886}{obj}}; \textcolor{comment}{/* user object      */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00062}00062 \};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00064}00064 \textcolor{comment}{/* method to manipulate dictionary structure */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00065}\mbox{\hyperlink{struct__dtmethod__s}{00065}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dtmethod__s}{\_dtmethod\_s}}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00066}\mbox{\hyperlink{struct__dtmethod__s_a4e4c9583a7075e46b4a7d82a7e439d34}{00066}} \{   \mbox{\hyperlink{cdt_8h_ad302f306f9f77c3b1cfe6c0fdde2ffae}{Dtsearch\_f}}    \mbox{\hyperlink{struct__dtmethod__s_a4e4c9583a7075e46b4a7d82a7e439d34}{searchf}}; \textcolor{comment}{/* search function  */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00067}\mbox{\hyperlink{struct__dtmethod__s_a1341f1db39b9e430a09902e08d831a41}{00067}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{struct__dtmethod__s_a1341f1db39b9e430a09902e08d831a41}{type}};   \textcolor{comment}{/* type of operation    */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00068}00068 \};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00070}00070 \textcolor{comment}{/* stuff that may be in shared memory */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00071}\mbox{\hyperlink{struct__dtdata__s}{00071}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dtdata__s}{\_dtdata\_s}}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00072}\mbox{\hyperlink{struct__dtdata__s_a8863adf3f0b7466425fb9673cb9765aa}{00072}} \{   \textcolor{keywordtype}{int}     \mbox{\hyperlink{struct__dtdata__s_a8863adf3f0b7466425fb9673cb9765aa}{type}};   \textcolor{comment}{/* type of dictionary           */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00073}\mbox{\hyperlink{struct__dtdata__s_a7bbbae2b5f766648135230713faaf752}{00073}}     \mbox{\hyperlink{struct__dtlink__s}{Dtlink\_t}}*   \mbox{\hyperlink{struct__dtdata__s_a7bbbae2b5f766648135230713faaf752}{here}};   \textcolor{comment}{/* finger to last search element    */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00074}00074     \textcolor{keyword}{union}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00075}\mbox{\hyperlink{struct__dtdata__s_ab661cdbcfdaf36270c85d16f2907d666}{00075}}     \{ \mbox{\hyperlink{struct__dtlink__s}{Dtlink\_t}}**    \mbox{\hyperlink{struct__dtdata__s_ab661cdbcfdaf36270c85d16f2907d666}{\_htab}}; \textcolor{comment}{/* hash table               */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00076}\mbox{\hyperlink{struct__dtdata__s_a614fcec7c2f841dc36351134df0707d3}{00076}}       \mbox{\hyperlink{struct__dtlink__s}{Dtlink\_t}}* \mbox{\hyperlink{struct__dtdata__s_a614fcec7c2f841dc36351134df0707d3}{\_head}}; \textcolor{comment}{/* linked list              */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00077}\mbox{\hyperlink{struct__dtdata__s_a10c71d06d65dc71cdc462bcaa7c9eb08}{00077}}     \} \mbox{\hyperlink{struct__dtdata__s_a10c71d06d65dc71cdc462bcaa7c9eb08}{hh}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00078}\mbox{\hyperlink{struct__dtdata__s_a006b5d574af777b5b4413cf4f30d31e2}{00078}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{struct__dtdata__s_a006b5d574af777b5b4413cf4f30d31e2}{ntab}};   \textcolor{comment}{/* number of hash slots         */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00079}\mbox{\hyperlink{struct__dtdata__s_aadfeba4434a3a99cda6e2a480f8da5aa}{00079}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{struct__dtdata__s_aadfeba4434a3a99cda6e2a480f8da5aa}{size}};   \textcolor{comment}{/* number of objects            */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00080}\mbox{\hyperlink{struct__dtdata__s_a80639a12a69bca3c97746336962adbbb}{00080}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{struct__dtdata__s_a80639a12a69bca3c97746336962adbbb}{loop}};   \textcolor{comment}{/* number of nested loops       */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00081}\mbox{\hyperlink{struct__dtdata__s_aeca1af6a736b2c03fa7e247663218e58}{00081}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{struct__dtdata__s_aeca1af6a736b2c03fa7e247663218e58}{minp}};   \textcolor{comment}{/* min path before splay, always even   */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00082}00082                 \textcolor{comment}{/* for hash dt, > 0: fixed table size   */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00083}00083 \};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00085}00085 \textcolor{comment}{/* structure to hold methods that manipulate an object */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00086}\mbox{\hyperlink{struct__dtdisc__s}{00086}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dtdisc__s}{\_dtdisc\_s}}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00087}\mbox{\hyperlink{struct__dtdisc__s_ac51fb2ae5cce2f12e1a868a817bb3b87}{00087}} \{   \textcolor{keywordtype}{int}     \mbox{\hyperlink{struct__dtdisc__s_ac51fb2ae5cce2f12e1a868a817bb3b87}{key}}; \textcolor{comment}{/* where the key begins in an object    */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00088}\mbox{\hyperlink{struct__dtdisc__s_abd4388b917527c950d3e2159a29406e8}{00088}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{struct__dtdisc__s_abd4388b917527c950d3e2159a29406e8}{size}};   \textcolor{comment}{/* key size and type            */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00089}\mbox{\hyperlink{struct__dtdisc__s_acd31b53d4df17c5ef4838c935a9e55a7}{00089}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{struct__dtdisc__s_acd31b53d4df17c5ef4838c935a9e55a7}{link}};   \textcolor{comment}{/* offset to Dtlink\_t field     */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00090}\mbox{\hyperlink{struct__dtdisc__s_a3d291948ea2e6a4a4946c04fc9d13647}{00090}}     \mbox{\hyperlink{cdt_8h_a9451ed4f0195c92a101c504b5f13a4fc}{Dtmake\_f}}    \mbox{\hyperlink{struct__dtdisc__s_a3d291948ea2e6a4a4946c04fc9d13647}{makef}}; \textcolor{comment}{/* object constructor           */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00091}\mbox{\hyperlink{struct__dtdisc__s_a33561846a811903d66ccc93cfc3c93f7}{00091}}     \mbox{\hyperlink{cdt_8h_a3b5f8c44e2cb754e08158919559facc2}{Dtfree\_f}}    \mbox{\hyperlink{struct__dtdisc__s_a33561846a811903d66ccc93cfc3c93f7}{freef}}; \textcolor{comment}{/* object destructor            */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00092}\mbox{\hyperlink{struct__dtdisc__s_ae48c4e104a101df70fca5184bde96e91}{00092}}     \mbox{\hyperlink{cdt_8h_afa0e5103398b9c9e1cd096ff6f4d24af}{Dtcompar\_f}}    \mbox{\hyperlink{struct__dtdisc__s_ae48c4e104a101df70fca5184bde96e91}{comparf}};\textcolor{comment}{/* to compare two objects        */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00093}\mbox{\hyperlink{struct__dtdisc__s_a532f5af05024b4a4ff0516a3e60282f6}{00093}}     \mbox{\hyperlink{cdt_8h_ae8b4e0d955dbb54803b6e1fefbd3d20f}{Dthash\_f}}    \mbox{\hyperlink{struct__dtdisc__s_a532f5af05024b4a4ff0516a3e60282f6}{hashf}}; \textcolor{comment}{/* to compute hash value of an object   */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00094}\mbox{\hyperlink{struct__dtdisc__s_aef683a57ca621583c7a87212243825e7}{00094}}     \mbox{\hyperlink{cdt_8h_ab5492c722a2f634f0f617bcd6e1a98da}{Dtmemory\_f}}    \mbox{\hyperlink{struct__dtdisc__s_aef683a57ca621583c7a87212243825e7}{memoryf}};\textcolor{comment}{/* to allocate/free memory       */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00095}\mbox{\hyperlink{struct__dtdisc__s_a1ed98dfe76104428815d3ce1514b7d2c}{00095}}     \mbox{\hyperlink{cdt_8h_aac49f3d2e544b15c03465349f57178a7}{Dtevent\_f}}  \mbox{\hyperlink{struct__dtdisc__s_a1ed98dfe76104428815d3ce1514b7d2c}{eventf}};   \textcolor{comment}{/* to process events            */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00096}00096 \};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00098}\mbox{\hyperlink{cdt_8h_a6a39e47e9f0d4e0176bf675d7f2b0788}{00098}} \textcolor{preprocessor}{\#define DTDISC(dc,ky,sz,lk,mkf,frf,cmpf,hshf,memf,evf) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00099}00099 \textcolor{preprocessor}{    ( (dc)-\/>key = (ky), (dc)-\/>size = (sz), (dc)-\/>link = (lk), \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00100}00100 \textcolor{preprocessor}{      (dc)-\/>makef = (mkf), (dc)-\/>freef = (frf), \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00101}00101 \textcolor{preprocessor}{      (dc)-\/>comparf = (cmpf), (dc)-\/>hashf = (hshf), \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00102}00102 \textcolor{preprocessor}{      (dc)-\/>memoryf = (memf), (dc)-\/>eventf = (evf) )}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00104}00104 \textcolor{comment}{/* the dictionary structure itself */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00105}\mbox{\hyperlink{struct__dt__s}{00105}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dt__s}{\_dt\_s}}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00106}\mbox{\hyperlink{struct__dt__s_a3c02032f5160f30aa99ff21bb10b4d39}{00106}} \{   \mbox{\hyperlink{cdt_8h_ad302f306f9f77c3b1cfe6c0fdde2ffae}{Dtsearch\_f}}    \mbox{\hyperlink{struct__dt__s_a3c02032f5160f30aa99ff21bb10b4d39}{searchf}};\textcolor{comment}{/* search function           */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00107}\mbox{\hyperlink{struct__dt__s_aad6bb1723ac19b670250686918c1a26a}{00107}}     \mbox{\hyperlink{struct__dtdisc__s}{Dtdisc\_t}}*   \mbox{\hyperlink{struct__dt__s_aad6bb1723ac19b670250686918c1a26a}{disc}};   \textcolor{comment}{/* method to manipulate objs        */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00108}\mbox{\hyperlink{struct__dt__s_aab8f40c305fabb6fa535071ab6048403}{00108}}     \mbox{\hyperlink{struct__dtdata__s}{Dtdata\_t}}*   \mbox{\hyperlink{struct__dt__s_aab8f40c305fabb6fa535071ab6048403}{data}};   \textcolor{comment}{/* sharable data            */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00109}\mbox{\hyperlink{struct__dt__s_a11bb56474dafa0ebabbbea78bbfd3260}{00109}}     \mbox{\hyperlink{cdt_8h_ab5492c722a2f634f0f617bcd6e1a98da}{Dtmemory\_f}}    \mbox{\hyperlink{struct__dt__s_a11bb56474dafa0ebabbbea78bbfd3260}{memoryf}};\textcolor{comment}{/* function to alloc/free memory */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00110}\mbox{\hyperlink{struct__dt__s_ab7ae90e7d444274f6bf0aa02f8a5f1ce}{00110}}     \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}*   \mbox{\hyperlink{struct__dt__s_ab7ae90e7d444274f6bf0aa02f8a5f1ce}{meth}};   \textcolor{comment}{/* dictionary method            */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00111}\mbox{\hyperlink{struct__dt__s_a02ac8517c8eb70cb73aafff9c36d231c}{00111}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{struct__dt__s_a02ac8517c8eb70cb73aafff9c36d231c}{type}};   \textcolor{comment}{/* type information         */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00112}\mbox{\hyperlink{struct__dt__s_a970265c088872a3ee46fdb259777405f}{00112}}     \textcolor{keywordtype}{int}     \mbox{\hyperlink{struct__dt__s_a970265c088872a3ee46fdb259777405f}{nview}}; \textcolor{comment}{/* number of parent view dictionaries   */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00113}\mbox{\hyperlink{struct__dt__s_a6bda875af8e9f14cdc191d8de2186b71}{00113}}     \mbox{\hyperlink{struct__dt__s}{Dt\_t}}*       \mbox{\hyperlink{struct__dt__s_a6bda875af8e9f14cdc191d8de2186b71}{view}};   \textcolor{comment}{/* next on viewpath         */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00114}\mbox{\hyperlink{struct__dt__s_a80379e874cc0211c4421cef5c89cea86}{00114}}     \mbox{\hyperlink{struct__dt__s}{Dt\_t}}*       \mbox{\hyperlink{struct__dt__s_a80379e874cc0211c4421cef5c89cea86}{walk}};   \textcolor{comment}{/* dictionary being walked      */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00115}\mbox{\hyperlink{struct__dt__s_ae6193e2f4f1de66485635e6f267c09f6}{00115}}     \textcolor{keywordtype}{void}*       \mbox{\hyperlink{struct__dt__s_ae6193e2f4f1de66485635e6f267c09f6}{user}};   \textcolor{comment}{/* for user's usage         */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00116}00116 \};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00118}00118 \textcolor{comment}{/* structure to get status of a dictionary */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00119}\mbox{\hyperlink{struct__dtstat__s}{00119}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct__dtstat__s}{\_dtstat\_s}}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00120}\mbox{\hyperlink{struct__dtstat__s_ad2675c65d63ad8862bf0223af6c3f607}{00120}} \{   \textcolor{keywordtype}{int} \mbox{\hyperlink{struct__dtstat__s_ad2675c65d63ad8862bf0223af6c3f607}{dt\_meth}}; \textcolor{comment}{/* method type              */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00121}\mbox{\hyperlink{struct__dtstat__s_a8d415172c2830301b7ffe3de8432e38a}{00121}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct__dtstat__s_a8d415172c2830301b7ffe3de8432e38a}{dt\_size}}; \textcolor{comment}{/* number of elements           */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00122}\mbox{\hyperlink{struct__dtstat__s_ad0d0ad85068a655586960c5042671235}{00122}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct__dtstat__s_ad0d0ad85068a655586960c5042671235}{dt\_n}};       \textcolor{comment}{/* number of chains or levels       */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00123}\mbox{\hyperlink{struct__dtstat__s_a631bed0e141494d863a643ed124baa37}{00123}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct__dtstat__s_a631bed0e141494d863a643ed124baa37}{dt\_max}};       \textcolor{comment}{/* max size of a chain or a level   */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00124}\mbox{\hyperlink{struct__dtstat__s_af6fa7b863a78050c63c30e29b2054f05}{00124}}     \textcolor{keywordtype}{int}*    \mbox{\hyperlink{struct__dtstat__s_af6fa7b863a78050c63c30e29b2054f05}{dt\_count}};   \textcolor{comment}{/* counts of chains or levels by size   */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00125}00125 \};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00127}00127 \textcolor{comment}{/* flag set if the last search operation actually found the object */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00128}\mbox{\hyperlink{cdt_8h_af4e9d5cbf75e9cf59d826d3968553ba1}{00128}} \textcolor{preprocessor}{\#define DT\_FOUND    0100000}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00130}00130 \textcolor{comment}{/* supported storage methods */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00131}\mbox{\hyperlink{cdt_8h_a257bbc9fe9828352a627cd1894030fbb}{00131}} \textcolor{preprocessor}{\#define DT\_SET      0000001 }\textcolor{comment}{/* set with unique elements     */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00132}\mbox{\hyperlink{cdt_8h_af174c3990360a8642fff6c014a2e677c}{00132}} \textcolor{preprocessor}{\#define DT\_BAG      0000002 }\textcolor{comment}{/* multiset             */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00133}\mbox{\hyperlink{cdt_8h_ab540f5d778fb80e2f825295c8ddf3ba7}{00133}} \textcolor{preprocessor}{\#define DT\_OSET     0000004 }\textcolor{comment}{/* ordered set (self-\/adjusting tree)    */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00134}\mbox{\hyperlink{cdt_8h_a1acc2651207891a7c4d5f525aef60bc8}{00134}} \textcolor{preprocessor}{\#define DT\_OBAG     0000010 }\textcolor{comment}{/* ordered multiset         */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00135}\mbox{\hyperlink{cdt_8h_aaed92dcddfae3a64d398f18212423f1b}{00135}} \textcolor{preprocessor}{\#define DT\_LIST     0000020 }\textcolor{comment}{/* linked list              */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00136}\mbox{\hyperlink{cdt_8h_aee4d7ae559cc7402896e8064fc19f6d2}{00136}} \textcolor{preprocessor}{\#define DT\_STACK    0000040 }\textcolor{comment}{/* stack: insert/delete at top      */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00137}\mbox{\hyperlink{cdt_8h_aeff201475fec084c1ba0cfb5ef4458ea}{00137}} \textcolor{preprocessor}{\#define DT\_QUEUE    0000100 }\textcolor{comment}{/* queue: insert at top, delete at tail */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00138}\mbox{\hyperlink{cdt_8h_a6679e3d0db9e54c089f6c0ec3d0107ce}{00138}} \textcolor{preprocessor}{\#define DT\_DEQUE    0000200 }\textcolor{comment}{/* deque: insert at top, append at tail */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00139}\mbox{\hyperlink{cdt_8h_ab2ed93cb7ebee29498a079e553945b57}{00139}} \textcolor{preprocessor}{\#define DT\_METHODS  0000377 }\textcolor{comment}{/* all currently supported methods  */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00141}00141 \textcolor{comment}{/* asserts to dtdisc() */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00142}\mbox{\hyperlink{cdt_8h_aa79b4bf6e2bb0ecebbf64e6ef6da9d7e}{00142}} \textcolor{preprocessor}{\#define DT\_SAMECMP  0000001 }\textcolor{comment}{/* compare methods equivalent       */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00143}\mbox{\hyperlink{cdt_8h_ae7eb06a88514b98d348d10b46d3fcd3b}{00143}} \textcolor{preprocessor}{\#define DT\_SAMEHASH 0000002 }\textcolor{comment}{/* hash methods equivalent      */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00145}00145 \textcolor{comment}{/* types of search */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00146}\mbox{\hyperlink{cdt_8h_a8f9920c0fee0b9f50e0a3b23abd3fd26}{00146}} \textcolor{preprocessor}{\#define DT\_INSERT   0000001 }\textcolor{comment}{/* insert object if not found       */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00147}\mbox{\hyperlink{cdt_8h_a645de2061b32735724c54c87fd5406a2}{00147}} \textcolor{preprocessor}{\#define DT\_DELETE   0000002 }\textcolor{comment}{/* delete object if found       */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00148}\mbox{\hyperlink{cdt_8h_a47e5c8e948e61a82e17cb2a4bdb6caa2}{00148}} \textcolor{preprocessor}{\#define DT\_SEARCH   0000004 }\textcolor{comment}{/* look for an object           */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00149}\mbox{\hyperlink{cdt_8h_a24fcda2658f9defe5bdb1984860d6240}{00149}} \textcolor{preprocessor}{\#define DT\_NEXT     0000010 }\textcolor{comment}{/* look for next element        */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00150}\mbox{\hyperlink{cdt_8h_a1bea70faf05bae1b0a7548ea96e1d511}{00150}} \textcolor{preprocessor}{\#define DT\_PREV     0000020 }\textcolor{comment}{/* find previous element        */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00151}\mbox{\hyperlink{cdt_8h_a9f480f0a639e6cbdfc740e489f034433}{00151}} \textcolor{preprocessor}{\#define DT\_RENEW    0000040 }\textcolor{comment}{/* renewing an object           */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00152}\mbox{\hyperlink{cdt_8h_a7001f50d84e9fedcf3f838636af4e62c}{00152}} \textcolor{preprocessor}{\#define DT\_CLEAR    0000100 }\textcolor{comment}{/* clearing all objects         */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00153}\mbox{\hyperlink{cdt_8h_af046cba51c33a3931219518d4d1fcf99}{00153}} \textcolor{preprocessor}{\#define DT\_FIRST    0000200 }\textcolor{comment}{/* get first object         */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00154}\mbox{\hyperlink{cdt_8h_a192bea83114b73344ba3e9aab4c796e3}{00154}} \textcolor{preprocessor}{\#define DT\_LAST     0000400 }\textcolor{comment}{/* get last object          */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00155}\mbox{\hyperlink{cdt_8h_a01aca514b0b658320c893611601af6fa}{00155}} \textcolor{preprocessor}{\#define DT\_MATCH    0001000 }\textcolor{comment}{/* find object matching key     */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00156}\mbox{\hyperlink{cdt_8h_a4fa66c08b3e8b07466485051fa8c328e}{00156}} \textcolor{preprocessor}{\#define DT\_VSEARCH  0002000 }\textcolor{comment}{/* search using internal representation */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00157}\mbox{\hyperlink{cdt_8h_aff852c2da33e1acb66d8632dcc03f115}{00157}} \textcolor{preprocessor}{\#define DT\_ATTACH   0004000 }\textcolor{comment}{/* attach an object to the dictionary   */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00158}\mbox{\hyperlink{cdt_8h_a93e662669aa505475549609079d64592}{00158}} \textcolor{preprocessor}{\#define DT\_DETACH   0010000 }\textcolor{comment}{/* detach an object from the dictionary */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00159}\mbox{\hyperlink{cdt_8h_a5318be11b47485ea6a6dbacabccc1ed8}{00159}} \textcolor{preprocessor}{\#define DT\_APPEND   0020000 }\textcolor{comment}{/* used on Dtlist to append an object   */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00160}00160 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00161}00161 \textcolor{comment}{/* events */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00162}\mbox{\hyperlink{cdt_8h_a6a939c5c13317e2ae53cfbb65ff20e34}{00162}} \textcolor{preprocessor}{\#define DT\_OPEN     1   }\textcolor{comment}{/* a dictionary is being opened     */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00163}\mbox{\hyperlink{cdt_8h_acb3dcfafd60ca5177416665dc7acb814}{00163}} \textcolor{preprocessor}{\#define DT\_CLOSE    2   }\textcolor{comment}{/* a dictionary is being closed     */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00164}\mbox{\hyperlink{cdt_8h_a4aad1223d07f93c924e533362eded7ba}{00164}} \textcolor{preprocessor}{\#define DT\_DISC     3   }\textcolor{comment}{/* discipline is about to be changed    */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00165}\mbox{\hyperlink{cdt_8h_a18eee91ec32bbcd762723153b019433c}{00165}} \textcolor{preprocessor}{\#define DT\_METH     4   }\textcolor{comment}{/* method is about to be changed    */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00166}\mbox{\hyperlink{cdt_8h_a4771f4fcf03652d3643686b6f09d05b9}{00166}} \textcolor{preprocessor}{\#define DT\_ENDOPEN  5   }\textcolor{comment}{/* dtopen() is done         */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00167}\mbox{\hyperlink{cdt_8h_a908b36b4d2364bc7402b104d38e4500d}{00167}} \textcolor{preprocessor}{\#define DT\_ENDCLOSE 6   }\textcolor{comment}{/* dtclose() is done            */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00168}\mbox{\hyperlink{cdt_8h_a37a056e25a770178eae11c9fc8d8c691}{00168}} \textcolor{preprocessor}{\#define DT\_HASHSIZE 7   }\textcolor{comment}{/* setting hash table size      */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00170}00170 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}*     \mbox{\hyperlink{cdt_8h_a43b7ee8085f341e219abd810b5861695}{Dtset}}; }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00171}00171 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}*     \mbox{\hyperlink{cdt_8h_a0b55dacf11141dc997aa6504726c1b19}{Dtbag}}; }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00172}00172 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}*     \mbox{\hyperlink{cdt_8h_ac17f2af349b0d37468df9c3890d65765}{Dtoset}}; }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00173}00173 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}*     \mbox{\hyperlink{cdt_8h_a5b337ee2980fe41be2e220c0102d9898}{Dtobag}}; }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00174}00174 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}* \mbox{\hyperlink{cdt_8h_ab0b27874135cdf18c992976e6cb27fac}{Dtlist}}; }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00175}00175 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}* \mbox{\hyperlink{cdt_8h_a255cf1096197b6245cf826d389d0d482}{Dtstack}}; }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00176}00176 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}* \mbox{\hyperlink{cdt_8h_ac642a6244d59541c55b70cf867914325}{Dtqueue}}; }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00177}00177 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}* \mbox{\hyperlink{cdt_8h_ad154a0568ee1a392ff5a7eddc99fad62}{Dtdeque}}; }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00179}00179 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}* \mbox{\hyperlink{cdt_8h_a2c19f9169fd450739ecdb0b6246f5855}{Dtorder}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00180}00180 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}* \mbox{\hyperlink{cdt_8h_aaf0578dbe76c834fcda77fdb36f90743}{Dttree}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00181}00181 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}* \mbox{\hyperlink{cdt_8h_a0ce1b290045070efe6c284b6474eb4c7}{Dthash}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00182}00182 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}  \mbox{\hyperlink{cdt_8h_aae23bf174fc603b4e32ba1d7ebed7e93}{\_Dttree}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00183}00183 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}  \mbox{\hyperlink{cdt_8h_a3877446df14fd5a28c6fc8b97a83dfdf}{\_Dthash}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00184}00184 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}  \mbox{\hyperlink{cdt_8h_a8c6844d9c9dec672414e6103bd58d90c}{\_Dtlist}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00185}00185 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}  \mbox{\hyperlink{cdt_8h_a5cd96315d01fc15ed0b58aa22e8d7f46}{\_Dtqueue}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00186}00186 \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keyword}{extern} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}  \mbox{\hyperlink{cdt_8h_a1e02c37aad01c1469b12293511e1a432}{\_Dtstack}};}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00188}\mbox{\hyperlink{cdt_8h_ae8ae3b9b0bb933f4b05923f28607feaa}{00188}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \mbox{\hyperlink{struct__dt__s}{Dt\_t}}*        \mbox{\hyperlink{cdt_8h_ae8ae3b9b0bb933f4b05923f28607feaa}{dtopen}}(\mbox{\hyperlink{struct__dtdisc__s}{Dtdisc\_t}}*, \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00189}\mbox{\hyperlink{cdt_8h_ab24362a4f1e5bd3d3dccb25199f34270}{00189}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keywordtype}{int}      \mbox{\hyperlink{cdt_8h_ab24362a4f1e5bd3d3dccb25199f34270}{dtclose}}(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00190}\mbox{\hyperlink{cdt_8h_aa1e08b44b868cd6e22a6be6fadd0cbaa}{00190}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \mbox{\hyperlink{struct__dt__s}{Dt\_t}}*        \mbox{\hyperlink{cdt_8h_aa1e08b44b868cd6e22a6be6fadd0cbaa}{dtview}}(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*, \mbox{\hyperlink{struct__dt__s}{Dt\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00191}\mbox{\hyperlink{cdt_8h_accacba94e2de19e9c22bf8c027418a5d}{00191}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \mbox{\hyperlink{struct__dtdisc__s}{Dtdisc\_t}}*    \mbox{\hyperlink{cdt_8h_accacba94e2de19e9c22bf8c027418a5d}{dtdisc}}(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}* dt, \mbox{\hyperlink{struct__dtdisc__s}{Dtdisc\_t}}*, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00192}\mbox{\hyperlink{cdt_8h_a369970d5990f9a2a19ba566769affa68}{00192}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}*    \mbox{\hyperlink{cdt_8h_a369970d5990f9a2a19ba566769affa68}{dtmethod}}(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*, \mbox{\hyperlink{struct__dtmethod__s}{Dtmethod\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00194}\mbox{\hyperlink{cdt_8h_a46b3a35c57ac634867000dcccf6afd78}{00194}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \mbox{\hyperlink{struct__dtlink__s}{Dtlink\_t}}*    \mbox{\hyperlink{cdt_8h_a46b3a35c57ac634867000dcccf6afd78}{dtflatten}}(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00195}\mbox{\hyperlink{cdt_8h_a60ae78bab00270d3483f563980926821}{00195}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \mbox{\hyperlink{struct__dtlink__s}{Dtlink\_t}}*    \mbox{\hyperlink{cdt_8h_a60ae78bab00270d3483f563980926821}{dtextract}}(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00196}\mbox{\hyperlink{cdt_8h_ae141b0f4f8a18fb671dab2fc4602c234}{00196}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keywordtype}{int}      \mbox{\hyperlink{cdt_8h_ae141b0f4f8a18fb671dab2fc4602c234}{dtrestore}}(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*, \mbox{\hyperlink{struct__dtlink__s}{Dtlink\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00198}\mbox{\hyperlink{cdt_8h_a077a3a183395019b77c6f0331285bcbb}{00198}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keywordtype}{int}      \mbox{\hyperlink{cdt_8h_a077a3a183395019b77c6f0331285bcbb}{dtwalk}}(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*, \textcolor{keywordtype}{int}(*)(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*,\textcolor{keywordtype}{void}*,\textcolor{keywordtype}{void}*), \textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00199}00199 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00200}\mbox{\hyperlink{cdt_8h_ab997ab5fe58d2ec14780b2d82e5c3dd6}{00200}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keywordtype}{void}*        \mbox{\hyperlink{cdt_8h_ab997ab5fe58d2ec14780b2d82e5c3dd6}{dtrenew}}(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*, \textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00202}\mbox{\hyperlink{cdt_8h_a70a5fc2d51f74f30b0a96228309b9873}{00202}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keywordtype}{int}      \mbox{\hyperlink{cdt_8h_a70a5fc2d51f74f30b0a96228309b9873}{dtsize}}(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*);}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00203}\mbox{\hyperlink{cdt_8h_ad5ced427c61b36dcd86b13701106418e}{00203}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keywordtype}{int}      \mbox{\hyperlink{cdt_8h_ad5ced427c61b36dcd86b13701106418e}{dtstat}}(\mbox{\hyperlink{struct__dt__s}{Dt\_t}}*, \mbox{\hyperlink{struct__dtstat__s}{Dtstat\_t}}*, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00204}\mbox{\hyperlink{cdt_8h_a4626463d5f854667f88a51644104c928}{00204}} \mbox{\hyperlink{cdt_8h_a907f3780dfe2def28491c21efee0418d}{CDT\_API}} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{cdt_8h_a4626463d5f854667f88a51644104c928}{dtstrhash}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}, \textcolor{keywordtype}{void}*, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00205}00205 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00206}00206 \textcolor{comment}{/* internal functions for translating among holder, object and key */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00207}\mbox{\hyperlink{cdt_8h_a71abe7f6cb4cc1c3892cc2e3f7798655}{00207}} \textcolor{preprocessor}{\#define \_DT(dt)     ((Dt\_t*)(dt))}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00208}\mbox{\hyperlink{cdt_8h_a0c558c127c5b56704889617c71bcdf09}{00208}} \textcolor{preprocessor}{\#define \_DTDSC(dc,ky,sz,lk,cmpf) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00209}00209 \textcolor{preprocessor}{            (ky = dc-\/>key, sz = dc-\/>size, lk = dc-\/>link, cmpf = dc-\/>comparf)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00210}\mbox{\hyperlink{cdt_8h_a2366c9db1803f36d06e9e255fdbc6514}{00210}} \textcolor{preprocessor}{\#define \_DTLNK(o,lk)    ((Dtlink\_t*)((char*)(o) + lk) )}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00211}\mbox{\hyperlink{cdt_8h_acd1eb06f8072a9014ff132c253884d10}{00211}} \textcolor{preprocessor}{\#define \_DTOBJ(e,lk)    (lk < 0 ? ((Dthold\_t*)(e))-\/>obj : (void*)((char*)(e) -\/ lk) )}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00212}\mbox{\hyperlink{cdt_8h_a08a47e323cf4fdbd6f9d7bf0855ce5bf}{00212}} \textcolor{preprocessor}{\#define \_DTKEY(o,ky,sz) (void*)(sz < 0 ? *((char**)((char*)(o)+ky)) : ((char*)(o)+ky))}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00214}\mbox{\hyperlink{cdt_8h_aa2e5cfe64189864a47a660f0f31593b2}{00214}} \textcolor{preprocessor}{\#define \_DTCMP(dt,k1,k2,dc,cmpf,sz) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00215}00215 \textcolor{preprocessor}{            (cmpf ? (*cmpf)(dt,k1,k2,dc) : \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00216}00216 \textcolor{preprocessor}{             (sz <= 0 ? strcmp(k1,k2) : memcmp(k1,k2,(size\_t)sz)) )}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00217}\mbox{\hyperlink{cdt_8h_a35a1dfdc28ec4891539111e4de93bfb1}{00217}} \textcolor{preprocessor}{\#define \_DTHSH(dt,ky,dc,sz) (dc-\/>hashf ? (*dc-\/>hashf)(dt,ky,dc) : dtstrhash(0,ky,sz) )}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00219}00219 \textcolor{comment}{/* special search function for tree structure only */}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00220}\mbox{\hyperlink{cdt_8h_a7e7851435e9042ecb13b347f4d64a402}{00220}} \textcolor{preprocessor}{\#define \_DTMTCH(dt,key,action) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00221}00221 \textcolor{preprocessor}{    do \{ Dtlink\_t* \_e; void *\_o, *\_k, *\_key; Dtdisc\_t* \_dc; \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00222}00222 \textcolor{preprocessor}{         int \_ky, \_sz, \_lk, \_cmp; Dtcompar\_f \_cmpf; \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00223}00223 \textcolor{preprocessor}{         \_dc = (dt)-\/>disc; \_DTDSC(\_dc, \_ky, \_sz, \_lk, \_cmpf); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00224}00224 \textcolor{preprocessor}{         \_key = (key); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00225}00225 \textcolor{preprocessor}{         for(\_e = (dt)-\/>data-\/>here; \_e; \_e = \_cmp < 0 ? \_e-\/>hl.\_left : \_e-\/>right) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00226}00226 \textcolor{preprocessor}{         \{  \_o = \_DTOBJ(\_e, \_lk); \_k = \_DTKEY(\_o, \_ky, \_sz); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00227}00227 \textcolor{preprocessor}{        if((\_cmp = \_DTCMP((dt), \_key, \_k, \_dc, \_cmpf, \_sz)) == 0) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00228}00228 \textcolor{preprocessor}{            break; \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00229}00229 \textcolor{preprocessor}{         \} \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00230}00230 \textcolor{preprocessor}{         action (\_e ? \_o : (void*)0); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00231}00231 \textcolor{preprocessor}{    \} while(0)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00232}00232 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00233}\mbox{\hyperlink{cdt_8h_a4b5b2cafd1acf7189a2e307117741dcc}{00233}} \textcolor{preprocessor}{\#define \_DTSRCH(dt,obj,action) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00234}00234 \textcolor{preprocessor}{    do \{ Dtlink\_t* \_e; void *\_o, *\_k, *\_key; Dtdisc\_t* \_dc; \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00235}00235 \textcolor{preprocessor}{         int \_ky, \_sz, \_lk, \_cmp; Dtcompar\_f \_cmpf; \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00236}00236 \textcolor{preprocessor}{         \_dc = (dt)-\/>disc; \_DTDSC(\_dc, \_ky, \_sz, \_lk, \_cmpf); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00237}00237 \textcolor{preprocessor}{         \_key = \_DTKEY(obj, \_ky, \_sz); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00238}00238 \textcolor{preprocessor}{         for(\_e = (dt)-\/>data-\/>here; \_e; \_e = \_cmp < 0 ? \_e-\/>hl.\_left : \_e-\/>right) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00239}00239 \textcolor{preprocessor}{         \{  \_o = \_DTOBJ(\_e, \_lk); \_k = \_DTKEY(\_o, \_ky, \_sz); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00240}00240 \textcolor{preprocessor}{        if((\_cmp = \_DTCMP((dt), \_key, \_k, \_dc, \_cmpf, \_sz)) == 0) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00241}00241 \textcolor{preprocessor}{            break; \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00242}00242 \textcolor{preprocessor}{         \} \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00243}00243 \textcolor{preprocessor}{         action (\_e ? \_o : (void*)0); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00244}00244 \textcolor{preprocessor}{    \} while(0)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00245}00245 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00246}\mbox{\hyperlink{cdt_8h_a3587d42c1f424edcf781b8f31d5b76f0}{00246}} \textcolor{preprocessor}{\#define DTTREEMATCH(dt,key,action)  \_DTMTCH(\_DT(dt),(void*)(key),action)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00247}\mbox{\hyperlink{cdt_8h_ab06e611cfb2cbd31399c80384d7171e4}{00247}} \textcolor{preprocessor}{\#define DTTREESEARCH(dt,obj,action) \_DTSRCH(\_DT(dt),(void*)(obj),action)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00248}00248 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00249}\mbox{\hyperlink{cdt_8h_adaf27822db39a7300f8fb6f2f589d88b}{00249}} \textcolor{preprocessor}{\#define dtvnext(d)  (\_DT(d)-\/>view)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00250}\mbox{\hyperlink{cdt_8h_afbce63ae3c853163834ab17019b0abb1}{00250}} \textcolor{preprocessor}{\#define dtvcount(d) (\_DT(d)-\/>nview)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00251}\mbox{\hyperlink{cdt_8h_a934e3765f51128a1b89a0aea68a7cdf4}{00251}} \textcolor{preprocessor}{\#define dtvhere(d)  (\_DT(d)-\/>walk)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00252}00252 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00253}\mbox{\hyperlink{cdt_8h_a79be8633be14ddf98d3b356e0d40564d}{00253}} \textcolor{preprocessor}{\#define dtlink(d,e) (((Dtlink\_t*)(e))-\/>right)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00254}\mbox{\hyperlink{cdt_8h_a4717180611823cdf0c057abe1a45315a}{00254}} \textcolor{preprocessor}{\#define dtobj(d,e)  \_DTOBJ((e), \_DT(d)-\/>disc-\/>link)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00255}\mbox{\hyperlink{cdt_8h_a820a52522c7b2de0619a793965d7d881}{00255}} \textcolor{preprocessor}{\#define dtfinger(d) (\_DT(d)-\/>data-\/>here ? dtobj((d),\_DT(d)-\/>data-\/>here):(void*)(0))}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00256}00256 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00257}\mbox{\hyperlink{cdt_8h_af954ac773cdfecad7ec5ac45e9a63a23}{00257}} \textcolor{preprocessor}{\#define dtfirst(d)  (*(\_DT(d)-\/>searchf))((d),(void*)(0),DT\_FIRST)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00258}\mbox{\hyperlink{cdt_8h_af6ea20c91403c1ef595681fc6b6ac30f}{00258}} \textcolor{preprocessor}{\#define dtnext(d,o) (*(\_DT(d)-\/>searchf))((d),(void*)(o),DT\_NEXT)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00259}\mbox{\hyperlink{cdt_8h_adc4c557fe7983acf4c3916ab0d547f72}{00259}} \textcolor{preprocessor}{\#define dtleast(d,o)    (*(\_DT(d)-\/>searchf))((d),(void*)(o),DT\_SEARCH|DT\_NEXT)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00260}\mbox{\hyperlink{cdt_8h_aba7b1b643434cc61b1692a1875c6029b}{00260}} \textcolor{preprocessor}{\#define dtlast(d)   (*(\_DT(d)-\/>searchf))((d),(void*)(0),DT\_LAST)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00261}\mbox{\hyperlink{cdt_8h_aa6a97d9b70597ac2a34565f956ae3703}{00261}} \textcolor{preprocessor}{\#define dtprev(d,o) (*(\_DT(d)-\/>searchf))((d),(void*)(o),DT\_PREV)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00262}\mbox{\hyperlink{cdt_8h_ac7ff1c375df31729ab1092362f24572e}{00262}} \textcolor{preprocessor}{\#define dtmost(d,o) (*(\_DT(d)-\/>searchf))((d),(void*)(o),DT\_SEARCH|DT\_PREV)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00263}\mbox{\hyperlink{cdt_8h_a62014aa3c3853e006d7115b1dbfb81c9}{00263}} \textcolor{preprocessor}{\#define dtsearch(d,o)   (*(\_DT(d)-\/>searchf))((d),(void*)(o),DT\_SEARCH)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00264}\mbox{\hyperlink{cdt_8h_a4dff83f53eb9464965da060528b4cae8}{00264}} \textcolor{preprocessor}{\#define dtmatch(d,o)    (*(\_DT(d)-\/>searchf))((d),(void*)(o),DT\_MATCH)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00265}\mbox{\hyperlink{cdt_8h_a8ac18f2bf845640bd563a1545d2e3675}{00265}} \textcolor{preprocessor}{\#define dtinsert(d,o)   (*(\_DT(d)-\/>searchf))((d),(void*)(o),DT\_INSERT)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00266}\mbox{\hyperlink{cdt_8h_a0e8b1acb7c062aa97fbb2312af20ae7e}{00266}} \textcolor{preprocessor}{\#define dtappend(d,o)   (*(\_DT(d)-\/>searchf))((d),(void*)(o),DT\_INSERT|DT\_APPEND)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00267}\mbox{\hyperlink{cdt_8h_ad351bb07a26ff918184f200ee1d655cc}{00267}} \textcolor{preprocessor}{\#define dtdelete(d,o)   (*(\_DT(d)-\/>searchf))((d),(void*)(o),DT\_DELETE)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00268}\mbox{\hyperlink{cdt_8h_abaee56ec6a8a93fbd6134c402bfe15d1}{00268}} \textcolor{preprocessor}{\#define dtattach(d,o)   (*(\_DT(d)-\/>searchf))((d),(void*)(o),DT\_ATTACH)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00269}\mbox{\hyperlink{cdt_8h_a6590446c25a135161df8945b8633b42a}{00269}} \textcolor{preprocessor}{\#define dtdetach(d,o)   (*(\_DT(d)-\/>searchf))((d),(void*)(o),DT\_DETACH)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00270}\mbox{\hyperlink{cdt_8h_a5cc1e11802758b8c71f085d463393ef0}{00270}} \textcolor{preprocessor}{\#define dtclear(d)  (*(\_DT(d)-\/>searchf))((d),(void*)(0),DT\_CLEAR)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00271}\mbox{\hyperlink{cdt_8h_aa4a6629bb284f906ac0c9cf7f9108ac3}{00271}} \textcolor{preprocessor}{\#define dtfound(d)  (\_DT(d)-\/>type \& DT\_FOUND)}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00272}00272 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00273}\mbox{\hyperlink{cdt_8h_a49c375f27033b223eb7c3c911efd2ecd}{00273}} \textcolor{preprocessor}{\#define DT\_PRIME    17109811 }\textcolor{comment}{/* 2\#00000001 00000101 00010011 00110011 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00274}\mbox{\hyperlink{cdt_8h_aca8d07f23a11d05f32b6f0691c8a8446}{00274}} \textcolor{preprocessor}{\#define dtcharhash(h,c) (((unsigned int)(h) + (unsigned int)(c)) * DT\_PRIME )}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00275}00275 }
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00281}00281 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00282}00282 \}}
+\DoxyCodeLine{\Hypertarget{cdt_8h_source_l00283}00283 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

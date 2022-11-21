@@ -1,0 +1,1017 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Complex: Файл for lab/Graphviz/include/graphviz/pack.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Complex
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('pack_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#define-members">Макросы</a> &#124;
+<a href="#typedef-members">Определения типов</a> &#124;
+<a href="#enum-members">Перечисления</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл pack.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>support for connected components  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для pack.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="pack_8h__incl.png" border="0" usemap="#afor_01lab_2_graphviz_2include_2graphviz_2pack_8h" alt=""/></div>
+<map name="afor_01lab_2_graphviz_2include_2graphviz_2pack_8h" id="afor_01lab_2_graphviz_2include_2graphviz_2pack_8h">
+<area shape="rect" title="support for connected components" alt="" coords="140,5,296,45"/>
+<area shape="rect" title=" " alt="" coords="584,240,658,265"/>
+<area shape="rect" href="types_8h.html" title="graphs, nodes and edges info: Agraphinfo_t, Agnodeinfo_t and Agedgeinfo_t" alt="" coords="410,93,475,119"/>
+<area shape="rect" title=" " alt="" coords="32,167,93,192"/>
+<area shape="rect" title=" " alt="" coords="117,167,186,192"/>
+<area shape="rect" title=" " alt="" coords="210,167,277,192"/>
+<area shape="rect" href="geom_8h.html" title=" " alt="" coords="670,167,735,192"/>
+<area shape="rect" href="gvcext_8h.html" title=" " alt="" coords="302,167,372,192"/>
+<area shape="rect" href="pathgeom_8h.html" title=" " alt="" coords="397,167,488,192"/>
+<area shape="rect" href="textspan_8h.html" title=" " alt="" coords="512,167,594,192"/>
+<area shape="rect" href="cgraph_8h.html" title="abstract graph C library" alt="" coords="877,167,949,192"/>
+<area shape="rect" href="usershape_8h.html" title=" " alt="" coords="760,167,853,192"/>
+<area shape="rect" href="arith_8h.html" title=" " alt="" coords="682,240,741,265"/>
+<area shape="rect" title=" " alt="" coords="598,313,662,339"/>
+<area shape="rect" title=" " alt="" coords="687,313,750,339"/>
+<area shape="rect" title=" " alt="" coords="874,240,952,265"/>
+<area shape="rect" href="cdt_8h.html" title="container data types API" alt="" coords="789,240,840,265"/>
+<area shape="rect" title=" " alt="" coords="778,313,846,339"/>
+<area shape="rect" title=" " alt="" coords="870,313,935,339"/>
+</map>
+</div>
+</div>
+<p><a href="pack_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpack__info.html">pack_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:aaa8a6cd9eee9dffc3393e5a57ec42e0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#aaa8a6cd9eee9dffc3393e5a57ec42e0b">PK_COL_MAJOR</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="separator:aaa8a6cd9eee9dffc3393e5a57ec42e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7ebfc06d7717a7e5a41535578d664f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#aad7ebfc06d7717a7e5a41535578d664f">PK_USER_VALS</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
+<tr class="separator:aad7ebfc06d7717a7e5a41535578d664f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9096c006fab9e69731d50e40b52bf9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#ac9096c006fab9e69731d50e40b52bf9d">PK_LEFT_ALIGN</a>&#160;&#160;&#160;(1 &lt;&lt; 2)</td></tr>
+<tr class="separator:ac9096c006fab9e69731d50e40b52bf9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9a9561061b4ede23536b37ce77c36b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#ae9a9561061b4ede23536b37ce77c36b2">PK_RIGHT_ALIGN</a>&#160;&#160;&#160;(1 &lt;&lt; 3)</td></tr>
+<tr class="separator:ae9a9561061b4ede23536b37ce77c36b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5791c249f2cb2fbc3f69686df02c7299"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a5791c249f2cb2fbc3f69686df02c7299">PK_TOP_ALIGN</a>&#160;&#160;&#160;(1 &lt;&lt; 4)</td></tr>
+<tr class="separator:a5791c249f2cb2fbc3f69686df02c7299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac552e54a874d7d7e13e8230ba35caabc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#ac552e54a874d7d7e13e8230ba35caabc">PK_BOT_ALIGN</a>&#160;&#160;&#160;(1 &lt;&lt; 5)</td></tr>
+<tr class="separator:ac552e54a874d7d7e13e8230ba35caabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe0e9aa2ef0e581468a15d6f4b31629"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#adbe0e9aa2ef0e581468a15d6f4b31629">PK_INPUT_ORDER</a>&#160;&#160;&#160;(1 &lt;&lt; 6)</td></tr>
+<tr class="separator:adbe0e9aa2ef0e581468a15d6f4b31629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1731d7d57f4b76b63de86911fd36cc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a>&#160;&#160;&#160;/* nothing */</td></tr>
+<tr class="separator:af1731d7d57f4b76b63de86911fd36cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:a97c604e5f0df885172f770108f3df9cd"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a97c604e5f0df885172f770108f3df9cd">packval_t</a></td></tr>
+<tr class="separator:a97c604e5f0df885172f770108f3df9cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:a7867530e1843c636960ccb52dcd347f2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a> { <br />
+&#160;&#160;<a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a3e4ba46fe266df0f9085e24436ef948d">l_undef</a>
+, <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a25d95f2b6e3f7585e495b55407867cf8">l_clust</a>
+, <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2ad0a4de273d36beb0c21b0f4ec7215ac3">l_node</a>
+, <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a7dbba35a1cb87ad4e71c4e0634447225">l_graph</a>
+, <br />
+&#160;&#160;<a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2ab38798bc7ab1ac9bd8fd061f00da32a8">l_array</a>
+, <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a11c19ffbb2842ba3bc029f22a14723da">l_aspect</a>
+<br />
+ }</td></tr>
+<tr class="separator:a7867530e1843c636960ccb52dcd347f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a729f5dd70b79f7bceb49ca0eb450a25a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="structpoint.html">point</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a729f5dd70b79f7bceb49ca0eb450a25a">putRects</a> (int ng, <a class="el" href="structboxf.html">boxf</a> *bbs, <a class="el" href="structpack__info.html">pack_info</a> *pinfo)</td></tr>
+<tr class="separator:a729f5dd70b79f7bceb49ca0eb450a25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4957c94a9d9d44a7aa41194c4c21e697"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a4957c94a9d9d44a7aa41194c4c21e697">packRects</a> (int ng, <a class="el" href="structboxf.html">boxf</a> *bbs, <a class="el" href="structpack__info.html">pack_info</a> *pinfo)</td></tr>
+<tr class="separator:a4957c94a9d9d44a7aa41194c4c21e697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab02113d9f611aea283f952fb432cba3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="structpoint.html">point</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#aab02113d9f611aea283f952fb432cba3">putGraphs</a> (int, <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **, <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *, <a class="el" href="structpack__info.html">pack_info</a> *)</td></tr>
+<tr class="separator:aab02113d9f611aea283f952fb432cba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d9b34350c102cac2c069fbb87725eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#af5d9b34350c102cac2c069fbb87725eb">packGraphs</a> (int, <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **, <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *, <a class="el" href="structpack__info.html">pack_info</a> *)</td></tr>
+<tr class="separator:af5d9b34350c102cac2c069fbb87725eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90a751fdab92df4701ce9399e42dc4f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a90a751fdab92df4701ce9399e42dc4f3">packSubgraphs</a> (int, <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **, <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *, <a class="el" href="structpack__info.html">pack_info</a> *)</td></tr>
+<tr class="separator:a90a751fdab92df4701ce9399e42dc4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e161123c32c2bade345485572f767ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a0e161123c32c2bade345485572f767ee">pack_graph</a> (int ng, <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **gs, <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *root, bool *fixed)</td></tr>
+<tr class="separator:a0e161123c32c2bade345485572f767ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc4ff96951b297889d79b4d60e114f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a8bc4ff96951b297889d79b4d60e114f2">shiftGraphs</a> (int, <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **, <a class="el" href="structpoint.html">point</a> *, <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *, int)</td></tr>
+<tr class="separator:a8bc4ff96951b297889d79b4d60e114f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dbc607609ba43bc0628b183aae7e531"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a8dbc607609ba43bc0628b183aae7e531">getPackMode</a> (<a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *g, <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a> dflt)</td></tr>
+<tr class="separator:a8dbc607609ba43bc0628b183aae7e531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac571ff90e8fa643e83720941d3643282"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#ac571ff90e8fa643e83720941d3643282">getPack</a> (<a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *, int not_def, int dflt)</td></tr>
+<tr class="separator:ac571ff90e8fa643e83720941d3643282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa86ed912bdc55f660de78bcfdb8ea6bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#aa86ed912bdc55f660de78bcfdb8ea6bc">getPackInfo</a> (<a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *g, <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a> dflt, int dfltMargin, <a class="el" href="structpack__info.html">pack_info</a> *)</td></tr>
+<tr class="separator:aa86ed912bdc55f660de78bcfdb8ea6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b62ae8252435edccd9a7d041c35f4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#ae9b62ae8252435edccd9a7d041c35f4a">getPackModeInfo</a> (<a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *g, <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a> dflt, <a class="el" href="structpack__info.html">pack_info</a> *)</td></tr>
+<tr class="separator:ae9b62ae8252435edccd9a7d041c35f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c07b0207e7b9d654783384fd0850494"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a2c07b0207e7b9d654783384fd0850494">parsePackModeInfo</a> (const char *p, <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a> dflt, <a class="el" href="structpack__info.html">pack_info</a> *pinfo)</td></tr>
+<tr class="separator:a2c07b0207e7b9d654783384fd0850494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf317a9513fa298ac80c765fb6288ff7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#aaf317a9513fa298ac80c765fb6288ff7">isConnected</a> (<a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *)</td></tr>
+<tr class="separator:aaf317a9513fa298ac80c765fb6288ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6349513a5616ef7dba875e0e512dbbc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a6349513a5616ef7dba875e0e512dbbc1">ccomps</a> (<a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *, int *, char *)</td></tr>
+<tr class="separator:a6349513a5616ef7dba875e0e512dbbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a362943167f9b22e509cbca31272f43d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a362943167f9b22e509cbca31272f43d4">cccomps</a> (<a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *, int *, char *)</td></tr>
+<tr class="separator:a362943167f9b22e509cbca31272f43d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a176f423c454bb2085003f107da1f289b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#a176f423c454bb2085003f107da1f289b">pccomps</a> (<a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *, int *, char *, bool *)</td></tr>
+<tr class="separator:a176f423c454bb2085003f107da1f289b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab434554d1602f74771e2878762ca44af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#ab434554d1602f74771e2878762ca44af">nodeInduce</a> (<a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *)</td></tr>
+<tr class="separator:ab434554d1602f74771e2878762ca44af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3402f836fbe6aedb49af84d837cc250"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pack_8h.html#af3402f836fbe6aedb49af84d837cc250">mapClust</a> (<a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *)</td></tr>
+<tr class="separator:af3402f836fbe6aedb49af84d837cc250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >support for connected components </p>
+
+<p class="definition">См. определение в файле <a class="el" href="pack_8h_source.html">pack.h</a></p>
+</div><h2 class="groupheader">Макросы</h2>
+<a id="af1731d7d57f4b76b63de86911fd36cc5" name="af1731d7d57f4b76b63de86911fd36cc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1731d7d57f4b76b63de86911fd36cc5">&#9670;&#160;</a></span>PACK_API</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PACK_API&#160;&#160;&#160;/* nothing */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pack_8h_source.html">pack.h</a> строка <a class="el" href="pack_8h_source.html#l00070">70</a></p>
+
+</div>
+</div>
+<a id="ac552e54a874d7d7e13e8230ba35caabc" name="ac552e54a874d7d7e13e8230ba35caabc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac552e54a874d7d7e13e8230ba35caabc">&#9670;&#160;</a></span>PK_BOT_ALIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PK_BOT_ALIGN&#160;&#160;&#160;(1 &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pack_8h_source.html">pack.h</a> строка <a class="el" href="pack_8h_source.html#l00045">45</a></p>
+
+</div>
+</div>
+<a id="aaa8a6cd9eee9dffc3393e5a57ec42e0b" name="aaa8a6cd9eee9dffc3393e5a57ec42e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa8a6cd9eee9dffc3393e5a57ec42e0b">&#9670;&#160;</a></span>PK_COL_MAJOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PK_COL_MAJOR&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pack_8h_source.html">pack.h</a> строка <a class="el" href="pack_8h_source.html#l00040">40</a></p>
+
+</div>
+</div>
+<a id="adbe0e9aa2ef0e581468a15d6f4b31629" name="adbe0e9aa2ef0e581468a15d6f4b31629"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbe0e9aa2ef0e581468a15d6f4b31629">&#9670;&#160;</a></span>PK_INPUT_ORDER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PK_INPUT_ORDER&#160;&#160;&#160;(1 &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pack_8h_source.html">pack.h</a> строка <a class="el" href="pack_8h_source.html#l00046">46</a></p>
+
+</div>
+</div>
+<a id="ac9096c006fab9e69731d50e40b52bf9d" name="ac9096c006fab9e69731d50e40b52bf9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9096c006fab9e69731d50e40b52bf9d">&#9670;&#160;</a></span>PK_LEFT_ALIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PK_LEFT_ALIGN&#160;&#160;&#160;(1 &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pack_8h_source.html">pack.h</a> строка <a class="el" href="pack_8h_source.html#l00042">42</a></p>
+
+</div>
+</div>
+<a id="ae9a9561061b4ede23536b37ce77c36b2" name="ae9a9561061b4ede23536b37ce77c36b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9a9561061b4ede23536b37ce77c36b2">&#9670;&#160;</a></span>PK_RIGHT_ALIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PK_RIGHT_ALIGN&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pack_8h_source.html">pack.h</a> строка <a class="el" href="pack_8h_source.html#l00043">43</a></p>
+
+</div>
+</div>
+<a id="a5791c249f2cb2fbc3f69686df02c7299" name="a5791c249f2cb2fbc3f69686df02c7299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5791c249f2cb2fbc3f69686df02c7299">&#9670;&#160;</a></span>PK_TOP_ALIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PK_TOP_ALIGN&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pack_8h_source.html">pack.h</a> строка <a class="el" href="pack_8h_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a id="aad7ebfc06d7717a7e5a41535578d664f" name="aad7ebfc06d7717a7e5a41535578d664f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7ebfc06d7717a7e5a41535578d664f">&#9670;&#160;</a></span>PK_USER_VALS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PK_USER_VALS&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pack_8h_source.html">pack.h</a> строка <a class="el" href="pack_8h_source.html#l00041">41</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Типы</h2>
+<a id="a97c604e5f0df885172f770108f3df9cd" name="a97c604e5f0df885172f770108f3df9cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97c604e5f0df885172f770108f3df9cd">&#9670;&#160;</a></span>packval_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned int <a class="el" href="pack_8h.html#a97c604e5f0df885172f770108f3df9cd">packval_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="pack_8h_source.html">pack.h</a> строка <a class="el" href="pack_8h_source.html#l00048">48</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Перечисления</h2>
+<a id="a7867530e1843c636960ccb52dcd347f2" name="a7867530e1843c636960ccb52dcd347f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7867530e1843c636960ccb52dcd347f2">&#9670;&#160;</a></span>pack_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a7867530e1843c636960ccb52dcd347f2a3e4ba46fe266df0f9085e24436ef948d" name="a7867530e1843c636960ccb52dcd347f2a3e4ba46fe266df0f9085e24436ef948d"></a>l_undef&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7867530e1843c636960ccb52dcd347f2a25d95f2b6e3f7585e495b55407867cf8" name="a7867530e1843c636960ccb52dcd347f2a25d95f2b6e3f7585e495b55407867cf8"></a>l_clust&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7867530e1843c636960ccb52dcd347f2ad0a4de273d36beb0c21b0f4ec7215ac3" name="a7867530e1843c636960ccb52dcd347f2ad0a4de273d36beb0c21b0f4ec7215ac3"></a>l_node&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7867530e1843c636960ccb52dcd347f2a7dbba35a1cb87ad4e71c4e0634447225" name="a7867530e1843c636960ccb52dcd347f2a7dbba35a1cb87ad4e71c4e0634447225"></a>l_graph&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7867530e1843c636960ccb52dcd347f2ab38798bc7ab1ac9bd8fd061f00da32a8" name="a7867530e1843c636960ccb52dcd347f2ab38798bc7ab1ac9bd8fd061f00da32a8"></a>l_array&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7867530e1843c636960ccb52dcd347f2a11c19ffbb2842ba3bc029f22a14723da" name="a7867530e1843c636960ccb52dcd347f2a11c19ffbb2842ba3bc029f22a14723da"></a>l_aspect&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="pack_8h_source.html">pack.h</a> строка <a class="el" href="pack_8h_source.html#l00038">38</a></p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{ <a class="code hl_enumvalue" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a3e4ba46fe266df0f9085e24436ef948d">l_undef</a>, <a class="code hl_enumvalue" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a25d95f2b6e3f7585e495b55407867cf8">l_clust</a>, <a class="code hl_enumvalue" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2ad0a4de273d36beb0c21b0f4ec7215ac3">l_node</a>, <a class="code hl_enumvalue" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a7dbba35a1cb87ad4e71c4e0634447225">l_graph</a>, <a class="code hl_enumvalue" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2ab38798bc7ab1ac9bd8fd061f00da32a8">l_array</a>, <a class="code hl_enumvalue" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a11c19ffbb2842ba3bc029f22a14723da">l_aspect</a> } <a class="code hl_enumeration" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a>;</div>
+<div class="ttc" id="apack_8h_html_a7867530e1843c636960ccb52dcd347f2"><div class="ttname"><a href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a></div><div class="ttdeci">pack_mode</div><div class="ttdef"><b>Definition:</b> <a href="pack_8h_source.html#l00038">pack.h:38</a></div></div>
+<div class="ttc" id="apack_8h_html_a7867530e1843c636960ccb52dcd347f2a11c19ffbb2842ba3bc029f22a14723da"><div class="ttname"><a href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a11c19ffbb2842ba3bc029f22a14723da">l_aspect</a></div><div class="ttdeci">@ l_aspect</div><div class="ttdef"><b>Definition:</b> <a href="pack_8h_source.html#l00038">pack.h:38</a></div></div>
+<div class="ttc" id="apack_8h_html_a7867530e1843c636960ccb52dcd347f2a25d95f2b6e3f7585e495b55407867cf8"><div class="ttname"><a href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a25d95f2b6e3f7585e495b55407867cf8">l_clust</a></div><div class="ttdeci">@ l_clust</div><div class="ttdef"><b>Definition:</b> <a href="pack_8h_source.html#l00038">pack.h:38</a></div></div>
+<div class="ttc" id="apack_8h_html_a7867530e1843c636960ccb52dcd347f2a3e4ba46fe266df0f9085e24436ef948d"><div class="ttname"><a href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a3e4ba46fe266df0f9085e24436ef948d">l_undef</a></div><div class="ttdeci">@ l_undef</div><div class="ttdef"><b>Definition:</b> <a href="pack_8h_source.html#l00038">pack.h:38</a></div></div>
+<div class="ttc" id="apack_8h_html_a7867530e1843c636960ccb52dcd347f2a7dbba35a1cb87ad4e71c4e0634447225"><div class="ttname"><a href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2a7dbba35a1cb87ad4e71c4e0634447225">l_graph</a></div><div class="ttdeci">@ l_graph</div><div class="ttdef"><b>Definition:</b> <a href="pack_8h_source.html#l00038">pack.h:38</a></div></div>
+<div class="ttc" id="apack_8h_html_a7867530e1843c636960ccb52dcd347f2ab38798bc7ab1ac9bd8fd061f00da32a8"><div class="ttname"><a href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2ab38798bc7ab1ac9bd8fd061f00da32a8">l_array</a></div><div class="ttdeci">@ l_array</div><div class="ttdef"><b>Definition:</b> <a href="pack_8h_source.html#l00038">pack.h:38</a></div></div>
+<div class="ttc" id="apack_8h_html_a7867530e1843c636960ccb52dcd347f2ad0a4de273d36beb0c21b0f4ec7215ac3"><div class="ttname"><a href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2ad0a4de273d36beb0c21b0f4ec7215ac3">l_node</a></div><div class="ttdeci">@ l_node</div><div class="ttdef"><b>Definition:</b> <a href="pack_8h_source.html#l00038">pack.h:38</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
+<a id="a362943167f9b22e509cbca31272f43d4" name="a362943167f9b22e509cbca31272f43d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a362943167f9b22e509cbca31272f43d4">&#9670;&#160;</a></span>cccomps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> ** cccomps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6349513a5616ef7dba875e0e512dbbc1" name="a6349513a5616ef7dba875e0e512dbbc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6349513a5616ef7dba875e0e512dbbc1">&#9670;&#160;</a></span>ccomps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> ** ccomps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac571ff90e8fa643e83720941d3643282" name="ac571ff90e8fa643e83720941d3643282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac571ff90e8fa643e83720941d3643282">&#9670;&#160;</a></span>getPack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int getPack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>not_def</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dflt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa86ed912bdc55f660de78bcfdb8ea6bc" name="aa86ed912bdc55f660de78bcfdb8ea6bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa86ed912bdc55f660de78bcfdb8ea6bc">&#9670;&#160;</a></span>getPackInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a> getPackInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a>&#160;</td>
+          <td class="paramname"><em>dflt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dfltMargin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpack__info.html">pack_info</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8dbc607609ba43bc0628b183aae7e531" name="a8dbc607609ba43bc0628b183aae7e531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dbc607609ba43bc0628b183aae7e531">&#9670;&#160;</a></span>getPackMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a> getPackMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a>&#160;</td>
+          <td class="paramname"><em>dflt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae9b62ae8252435edccd9a7d041c35f4a" name="ae9b62ae8252435edccd9a7d041c35f4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9b62ae8252435edccd9a7d041c35f4a">&#9670;&#160;</a></span>getPackModeInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a> getPackModeInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a>&#160;</td>
+          <td class="paramname"><em>dflt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpack__info.html">pack_info</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaf317a9513fa298ac80c765fb6288ff7" name="aaf317a9513fa298ac80c765fb6288ff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf317a9513fa298ac80c765fb6288ff7">&#9670;&#160;</a></span>isConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int isConnected </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af3402f836fbe6aedb49af84d837cc250" name="af3402f836fbe6aedb49af84d837cc250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3402f836fbe6aedb49af84d837cc250">&#9670;&#160;</a></span>mapClust()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> * mapClust </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab434554d1602f74771e2878762ca44af" name="ab434554d1602f74771e2878762ca44af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab434554d1602f74771e2878762ca44af">&#9670;&#160;</a></span>nodeInduce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int nodeInduce </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e161123c32c2bade345485572f767ee" name="a0e161123c32c2bade345485572f767ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e161123c32c2bade345485572f767ee">&#9670;&#160;</a></span>pack_graph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int pack_graph </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **&#160;</td>
+          <td class="paramname"><em>gs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>fixed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af5d9b34350c102cac2c069fbb87725eb" name="af5d9b34350c102cac2c069fbb87725eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5d9b34350c102cac2c069fbb87725eb">&#9670;&#160;</a></span>packGraphs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int packGraphs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpack__info.html">pack_info</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4957c94a9d9d44a7aa41194c4c21e697" name="a4957c94a9d9d44a7aa41194c4c21e697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4957c94a9d9d44a7aa41194c4c21e697">&#9670;&#160;</a></span>packRects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int packRects </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboxf.html">boxf</a> *&#160;</td>
+          <td class="paramname"><em>bbs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpack__info.html">pack_info</a> *&#160;</td>
+          <td class="paramname"><em>pinfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a90a751fdab92df4701ce9399e42dc4f3" name="a90a751fdab92df4701ce9399e42dc4f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a751fdab92df4701ce9399e42dc4f3">&#9670;&#160;</a></span>packSubgraphs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int packSubgraphs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpack__info.html">pack_info</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c07b0207e7b9d654783384fd0850494" name="a2c07b0207e7b9d654783384fd0850494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c07b0207e7b9d654783384fd0850494">&#9670;&#160;</a></span>parsePackModeInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a> parsePackModeInfo </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pack_8h.html#a7867530e1843c636960ccb52dcd347f2">pack_mode</a>&#160;</td>
+          <td class="paramname"><em>dflt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpack__info.html">pack_info</a> *&#160;</td>
+          <td class="paramname"><em>pinfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a176f423c454bb2085003f107da1f289b" name="a176f423c454bb2085003f107da1f289b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a176f423c454bb2085003f107da1f289b">&#9670;&#160;</a></span>pccomps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> ** pccomps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab02113d9f611aea283f952fb432cba3" name="aab02113d9f611aea283f952fb432cba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab02113d9f611aea283f952fb432cba3">&#9670;&#160;</a></span>putGraphs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="structpoint.html">point</a> * putGraphs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpack__info.html">pack_info</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a729f5dd70b79f7bceb49ca0eb450a25a" name="a729f5dd70b79f7bceb49ca0eb450a25a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a729f5dd70b79f7bceb49ca0eb450a25a">&#9670;&#160;</a></span>putRects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> <a class="el" href="structpoint.html">point</a> * putRects </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboxf.html">boxf</a> *&#160;</td>
+          <td class="paramname"><em>bbs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpack__info.html">pack_info</a> *&#160;</td>
+          <td class="paramname"><em>pinfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8bc4ff96951b297889d79b4d60e114f2" name="a8bc4ff96951b297889d79b4d60e114f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bc4ff96951b297889d79b4d60e114f2">&#9670;&#160;</a></span>shiftGraphs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pack_8h.html#af1731d7d57f4b76b63de86911fd36cc5">PACK_API</a> int shiftGraphs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> **&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpoint.html">point</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="cgraph_8h.html#a48061c3baade540af78ac621211ae926">Agraph_t</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e6c23235d574a84b5ef1a8613e824ad0.html">for lab</a></li><li class="navelem"><a class="el" href="dir_9e36fc1ac95da228bde805a03f57733e.html">Graphviz</a></li><li class="navelem"><a class="el" href="dir_ad4ebe5bca6393216da41cf9a4442fe0.html">include</a></li><li class="navelem"><a class="el" href="dir_1993f148fdb21d2725c441bae462129c.html">graphviz</a></li><li class="navelem"><a class="el" href="pack_8h.html">pack.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

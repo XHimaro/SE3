@@ -1,0 +1,225 @@
+\hypertarget{mbfunccoils_8c}{}\doxysection{Файл for lab/freemodbus-\/v1.5.0/modbus/functions/mbfunccoils.c}
+\label{mbfunccoils_8c}\index{for lab/freemodbus-\/v1.5.0/modbus/functions/mbfunccoils.c@{for lab/freemodbus-\/v1.5.0/modbus/functions/mbfunccoils.c}}
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}port.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbframe.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbproto.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbconfig.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для mbfunccoils.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbfunccoils_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_ab3c4b5bd48b2160671541e4026f2caae}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+ADDR\+\_\+\+OFF}}~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_aa5c2152c1dedaf85596395824b7ca7a9}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+COILCNT\+\_\+\+OFF}}~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 2 )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_a968555f75801294753a5b2da91bea764}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+SIZE}}~( 4 )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_a76ddc47804210a5c6a7cd159d4f851e1}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+COILCNT\+\_\+\+MAX}}~( 0x07\+D0 )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_a7e062d894a248db85a8270050f94e97e}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+ADDR\+\_\+\+OFF}}~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_a3366487f1f94813dbf7e118146fe0698}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+VALUE\+\_\+\+OFF}}~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 2 )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_a740439a1794d2f5be18109f38be50862}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+SIZE}}~( 4 )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_ac28b968f1b4bbba124a7576e89a4ee96}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+ADDR\+\_\+\+OFF}}~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_a68b2c3c056ee85f7c00030fe7500724a}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+COILCNT\+\_\+\+OFF}}~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 2 )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_ad40dd5916e0b4785402f5f583a288035}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+BYTECNT\+\_\+\+OFF}}~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 4 )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_a712155f8f2d0babedfa33f63a07e875b}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+VALUES\+\_\+\+OFF}}~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 5 )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_a2e813e9e8d7743a9ae3f57bed67d0f64}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+SIZE\+\_\+\+MIN}}~( 5 )
+\item 
+\#define \mbox{\hyperlink{mbfunccoils_8c_aab9b5eb819556c0dbd8d0077cd167cc2}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+COILCNT\+\_\+\+MAX}}~( 0x07\+B0 )
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{e\+MBException}} \mbox{\hyperlink{mbfunccoils_8c_ad5d2cc07a83fa7ea723ed734c905bc55}{prve\+MBError2\+Exception}} (\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+Error\+Code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{mbfunccoils_8c_ab3c4b5bd48b2160671541e4026f2caae}\label{mbfunccoils_8c_ab3c4b5bd48b2160671541e4026f2caae}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_READ\_ADDR\_OFF@{MB\_PDU\_FUNC\_READ\_ADDR\_OFF}}
+\index{MB\_PDU\_FUNC\_READ\_ADDR\_OFF@{MB\_PDU\_FUNC\_READ\_ADDR\_OFF}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_READ\_ADDR\_OFF}{MB\_PDU\_FUNC\_READ\_ADDR\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+ADDR\+\_\+\+OFF~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00045}{45}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_a76ddc47804210a5c6a7cd159d4f851e1}\label{mbfunccoils_8c_a76ddc47804210a5c6a7cd159d4f851e1}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_READ\_COILCNT\_MAX@{MB\_PDU\_FUNC\_READ\_COILCNT\_MAX}}
+\index{MB\_PDU\_FUNC\_READ\_COILCNT\_MAX@{MB\_PDU\_FUNC\_READ\_COILCNT\_MAX}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_READ\_COILCNT\_MAX}{MB\_PDU\_FUNC\_READ\_COILCNT\_MAX}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+COILCNT\+\_\+\+MAX~( 0x07\+D0 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00048}{48}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_aa5c2152c1dedaf85596395824b7ca7a9}\label{mbfunccoils_8c_aa5c2152c1dedaf85596395824b7ca7a9}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_READ\_COILCNT\_OFF@{MB\_PDU\_FUNC\_READ\_COILCNT\_OFF}}
+\index{MB\_PDU\_FUNC\_READ\_COILCNT\_OFF@{MB\_PDU\_FUNC\_READ\_COILCNT\_OFF}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_READ\_COILCNT\_OFF}{MB\_PDU\_FUNC\_READ\_COILCNT\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+COILCNT\+\_\+\+OFF~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 2 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00046}{46}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_a968555f75801294753a5b2da91bea764}\label{mbfunccoils_8c_a968555f75801294753a5b2da91bea764}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_READ\_SIZE@{MB\_PDU\_FUNC\_READ\_SIZE}}
+\index{MB\_PDU\_FUNC\_READ\_SIZE@{MB\_PDU\_FUNC\_READ\_SIZE}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_READ\_SIZE}{MB\_PDU\_FUNC\_READ\_SIZE}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+SIZE~( 4 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00047}{47}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_a7e062d894a248db85a8270050f94e97e}\label{mbfunccoils_8c_a7e062d894a248db85a8270050f94e97e}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_WRITE\_ADDR\_OFF@{MB\_PDU\_FUNC\_WRITE\_ADDR\_OFF}}
+\index{MB\_PDU\_FUNC\_WRITE\_ADDR\_OFF@{MB\_PDU\_FUNC\_WRITE\_ADDR\_OFF}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_WRITE\_ADDR\_OFF}{MB\_PDU\_FUNC\_WRITE\_ADDR\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+ADDR\+\_\+\+OFF~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00050}{50}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_ac28b968f1b4bbba124a7576e89a4ee96}\label{mbfunccoils_8c_ac28b968f1b4bbba124a7576e89a4ee96}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_WRITE\_MUL\_ADDR\_OFF@{MB\_PDU\_FUNC\_WRITE\_MUL\_ADDR\_OFF}}
+\index{MB\_PDU\_FUNC\_WRITE\_MUL\_ADDR\_OFF@{MB\_PDU\_FUNC\_WRITE\_MUL\_ADDR\_OFF}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_WRITE\_MUL\_ADDR\_OFF}{MB\_PDU\_FUNC\_WRITE\_MUL\_ADDR\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+ADDR\+\_\+\+OFF~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00054}{54}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_ad40dd5916e0b4785402f5f583a288035}\label{mbfunccoils_8c_ad40dd5916e0b4785402f5f583a288035}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_WRITE\_MUL\_BYTECNT\_OFF@{MB\_PDU\_FUNC\_WRITE\_MUL\_BYTECNT\_OFF}}
+\index{MB\_PDU\_FUNC\_WRITE\_MUL\_BYTECNT\_OFF@{MB\_PDU\_FUNC\_WRITE\_MUL\_BYTECNT\_OFF}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_WRITE\_MUL\_BYTECNT\_OFF}{MB\_PDU\_FUNC\_WRITE\_MUL\_BYTECNT\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+BYTECNT\+\_\+\+OFF~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 4 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00056}{56}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_aab9b5eb819556c0dbd8d0077cd167cc2}\label{mbfunccoils_8c_aab9b5eb819556c0dbd8d0077cd167cc2}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_MAX@{MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_MAX}}
+\index{MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_MAX@{MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_MAX}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_MAX}{MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_MAX}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+COILCNT\+\_\+\+MAX~( 0x07\+B0 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00059}{59}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_a68b2c3c056ee85f7c00030fe7500724a}\label{mbfunccoils_8c_a68b2c3c056ee85f7c00030fe7500724a}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_OFF@{MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_OFF}}
+\index{MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_OFF@{MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_OFF}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_OFF}{MB\_PDU\_FUNC\_WRITE\_MUL\_COILCNT\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+COILCNT\+\_\+\+OFF~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 2 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00055}{55}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_a2e813e9e8d7743a9ae3f57bed67d0f64}\label{mbfunccoils_8c_a2e813e9e8d7743a9ae3f57bed67d0f64}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_WRITE\_MUL\_SIZE\_MIN@{MB\_PDU\_FUNC\_WRITE\_MUL\_SIZE\_MIN}}
+\index{MB\_PDU\_FUNC\_WRITE\_MUL\_SIZE\_MIN@{MB\_PDU\_FUNC\_WRITE\_MUL\_SIZE\_MIN}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_WRITE\_MUL\_SIZE\_MIN}{MB\_PDU\_FUNC\_WRITE\_MUL\_SIZE\_MIN}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+SIZE\+\_\+\+MIN~( 5 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00058}{58}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_a712155f8f2d0babedfa33f63a07e875b}\label{mbfunccoils_8c_a712155f8f2d0babedfa33f63a07e875b}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_WRITE\_MUL\_VALUES\_OFF@{MB\_PDU\_FUNC\_WRITE\_MUL\_VALUES\_OFF}}
+\index{MB\_PDU\_FUNC\_WRITE\_MUL\_VALUES\_OFF@{MB\_PDU\_FUNC\_WRITE\_MUL\_VALUES\_OFF}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_WRITE\_MUL\_VALUES\_OFF}{MB\_PDU\_FUNC\_WRITE\_MUL\_VALUES\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+MUL\+\_\+\+VALUES\+\_\+\+OFF~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 5 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00057}{57}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_a740439a1794d2f5be18109f38be50862}\label{mbfunccoils_8c_a740439a1794d2f5be18109f38be50862}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_WRITE\_SIZE@{MB\_PDU\_FUNC\_WRITE\_SIZE}}
+\index{MB\_PDU\_FUNC\_WRITE\_SIZE@{MB\_PDU\_FUNC\_WRITE\_SIZE}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_WRITE\_SIZE}{MB\_PDU\_FUNC\_WRITE\_SIZE}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+SIZE~( 4 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00052}{52}}
+
+\mbox{\Hypertarget{mbfunccoils_8c_a3366487f1f94813dbf7e118146fe0698}\label{mbfunccoils_8c_a3366487f1f94813dbf7e118146fe0698}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!MB\_PDU\_FUNC\_WRITE\_VALUE\_OFF@{MB\_PDU\_FUNC\_WRITE\_VALUE\_OFF}}
+\index{MB\_PDU\_FUNC\_WRITE\_VALUE\_OFF@{MB\_PDU\_FUNC\_WRITE\_VALUE\_OFF}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_WRITE\_VALUE\_OFF}{MB\_PDU\_FUNC\_WRITE\_VALUE\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+WRITE\+\_\+\+VALUE\+\_\+\+OFF~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 2 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfunccoils_8c_source}{mbfunccoils.\+c}} строка \mbox{\hyperlink{mbfunccoils_8c_source_l00051}{51}}
+
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{mbfunccoils_8c_ad5d2cc07a83fa7ea723ed734c905bc55}\label{mbfunccoils_8c_ad5d2cc07a83fa7ea723ed734c905bc55}} 
+\index{mbfunccoils.c@{mbfunccoils.c}!prveMBError2Exception@{prveMBError2Exception}}
+\index{prveMBError2Exception@{prveMBError2Exception}!mbfunccoils.c@{mbfunccoils.c}}
+\doxysubsubsection{\texorpdfstring{prveMBError2Exception()}{prveMBError2Exception()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{e\+MBException}} prve\+MBError2\+Exception (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}}}]{e\+Error\+Code }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbutils_8c_source}{mbutils.\+c}} строка \mbox{\hyperlink{mbutils_8c_source_l00117}{117}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118 \{}
+\DoxyCodeLine{00119     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{eMBException}}    eStatus;}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121     \textcolor{keywordflow}{switch} ( eErrorCode )}
+\DoxyCodeLine{00122     \{}
+\DoxyCodeLine{00123         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}}:}
+\DoxyCodeLine{00124             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}{MB\_EX\_NONE}};}
+\DoxyCodeLine{00125             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf415371aad180c545b726d39adbf9ba7}{MB\_ENOREG}}:}
+\DoxyCodeLine{00128             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca610b4256de04afb3b4ef7b7d3e19ed52}{MB\_EX\_ILLEGAL\_DATA\_ADDRESS}};}
+\DoxyCodeLine{00129             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da017c559e956f718cf77aafe269f49bd5}{MB\_ETIMEDOUT}}:}
+\DoxyCodeLine{00132             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cae3ec1c97155e5f397d3bad66efa75fdc}{MB\_EX\_SLAVE\_BUSY}};}
+\DoxyCodeLine{00133             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00136             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cad3dbaac0c2e2f7005e3a896f5c7f8274}{MB\_EX\_SLAVE\_DEVICE\_FAILURE}};}
+\DoxyCodeLine{00137             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00138     \}}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{00141 \}}
+
+\end{DoxyCode}

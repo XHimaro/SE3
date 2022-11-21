@@ -1,0 +1,20 @@
+<map id="Agclos_s" name="Agclos_s">
+<area shape="rect" id="node1" title=" " alt="" coords="311,433,387,459"/>
+<area shape="rect" id="node14" href="$struct_agraph__s.html" title=" " alt="" coords="761,547,838,573"/>
+<area shape="rect" id="node2" href="$struct_agdisc__s.html" title="user&#39;s discipline" alt="" coords="140,231,216,257"/>
+<area shape="rect" id="node3" href="$struct_agmemdisc__s.html" title="memory allocator discipline, independent of other resources" alt="" coords="5,127,111,152"/>
+<area shape="rect" id="node4" href="$struct_agiddisc__s.html" title="object ID allocator discipline" alt="" coords="135,127,221,152"/>
+<area shape="rect" id="node5" href="$struct_agiodisc__s.html" title=" " alt="" coords="245,127,332,152"/>
+<area shape="rect" id="node6" href="$struct_agdstate__s.html" title=" " alt="" coords="241,231,329,257"/>
+<area shape="rect" id="node7" href="$struct__dt__s.html" title=" " alt="" coords="592,231,647,257"/>
+<area shape="rect" id="node8" href="$struct__dtdisc__s.html" title=" " alt="" coords="453,433,532,459"/>
+<area shape="rect" id="node11" href="$struct__dtmethod__s.html" title=" " alt="" coords="587,433,684,459"/>
+<area shape="rect" id="node9" href="$struct__dtdata__s.html" title=" " alt="" coords="775,127,853,152"/>
+<area shape="rect" id="node10" href="$struct__dtlink__s.html" title=" " alt="" coords="897,7,971,33"/>
+<area shape="rect" id="node12" href="$struct_agcbstack__s.html" title="object event callbacks" alt="" coords="398,755,497,780"/>
+<area shape="rect" id="node13" href="$struct_agcbdisc__s.html" title=" " alt="" coords="631,667,722,692"/>
+<area shape="rect" id="node15" href="$struct_agobj__s.html" title="a generic graph/node/edge header" alt="" coords="914,433,983,459"/>
+<area shape="rect" id="node16" href="$struct_agtag__s.html" title="Object tag for graphs, nodes, and edges." alt="" coords="788,231,859,257"/>
+<area shape="rect" id="node17" href="$struct_agrec__s.html" title="Header of a user record." alt="" coords="883,231,953,257"/>
+<area shape="rect" id="node18" href="$struct_agdesc__s.html" title=" " alt="" coords="810,433,890,459"/>
+</map>

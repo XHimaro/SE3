@@ -1,0 +1,129 @@
+\hypertarget{mbfuncinput_8c}{}\doxysection{Файл for lab/freemodbus-\/v1.5.0/modbus/functions/mbfuncinput.c}
+\label{mbfuncinput_8c}\index{for lab/freemodbus-\/v1.5.0/modbus/functions/mbfuncinput.c@{for lab/freemodbus-\/v1.5.0/modbus/functions/mbfuncinput.c}}
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}port.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbframe.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbproto.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mbconfig.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для mbfuncinput.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mbfuncinput_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mbfuncinput_8c_ab3c4b5bd48b2160671541e4026f2caae}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+ADDR\+\_\+\+OFF}}~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} )
+\item 
+\#define \mbox{\hyperlink{mbfuncinput_8c_ae5f5bb2d34c79141f425774b00ddd63b}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+REGCNT\+\_\+\+OFF}}~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 2 )
+\item 
+\#define \mbox{\hyperlink{mbfuncinput_8c_a968555f75801294753a5b2da91bea764}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+SIZE}}~( 4 )
+\item 
+\#define \mbox{\hyperlink{mbfuncinput_8c_ac66f1588a8138771b7ba2ec39319ae50}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+REGCNT\+\_\+\+MAX}}~( 0x007D )
+\item 
+\#define \mbox{\hyperlink{mbfuncinput_8c_aed5d97217f5de85de9931062e875302a}{MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+RSP\+\_\+\+BYTECNT\+\_\+\+OFF}}~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} )
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{e\+MBException}} \mbox{\hyperlink{mbfuncinput_8c_ad5d2cc07a83fa7ea723ed734c905bc55}{prve\+MBError2\+Exception}} (\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}} e\+Error\+Code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{mbfuncinput_8c_ab3c4b5bd48b2160671541e4026f2caae}\label{mbfuncinput_8c_ab3c4b5bd48b2160671541e4026f2caae}} 
+\index{mbfuncinput.c@{mbfuncinput.c}!MB\_PDU\_FUNC\_READ\_ADDR\_OFF@{MB\_PDU\_FUNC\_READ\_ADDR\_OFF}}
+\index{MB\_PDU\_FUNC\_READ\_ADDR\_OFF@{MB\_PDU\_FUNC\_READ\_ADDR\_OFF}!mbfuncinput.c@{mbfuncinput.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_READ\_ADDR\_OFF}{MB\_PDU\_FUNC\_READ\_ADDR\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+ADDR\+\_\+\+OFF~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfuncinput_8c_source}{mbfuncinput.\+c}} строка \mbox{\hyperlink{mbfuncinput_8c_source_l00045}{45}}
+
+\mbox{\Hypertarget{mbfuncinput_8c_ac66f1588a8138771b7ba2ec39319ae50}\label{mbfuncinput_8c_ac66f1588a8138771b7ba2ec39319ae50}} 
+\index{mbfuncinput.c@{mbfuncinput.c}!MB\_PDU\_FUNC\_READ\_REGCNT\_MAX@{MB\_PDU\_FUNC\_READ\_REGCNT\_MAX}}
+\index{MB\_PDU\_FUNC\_READ\_REGCNT\_MAX@{MB\_PDU\_FUNC\_READ\_REGCNT\_MAX}!mbfuncinput.c@{mbfuncinput.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_READ\_REGCNT\_MAX}{MB\_PDU\_FUNC\_READ\_REGCNT\_MAX}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+REGCNT\+\_\+\+MAX~( 0x007D )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfuncinput_8c_source}{mbfuncinput.\+c}} строка \mbox{\hyperlink{mbfuncinput_8c_source_l00048}{48}}
+
+\mbox{\Hypertarget{mbfuncinput_8c_ae5f5bb2d34c79141f425774b00ddd63b}\label{mbfuncinput_8c_ae5f5bb2d34c79141f425774b00ddd63b}} 
+\index{mbfuncinput.c@{mbfuncinput.c}!MB\_PDU\_FUNC\_READ\_REGCNT\_OFF@{MB\_PDU\_FUNC\_READ\_REGCNT\_OFF}}
+\index{MB\_PDU\_FUNC\_READ\_REGCNT\_OFF@{MB\_PDU\_FUNC\_READ\_REGCNT\_OFF}!mbfuncinput.c@{mbfuncinput.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_READ\_REGCNT\_OFF}{MB\_PDU\_FUNC\_READ\_REGCNT\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+REGCNT\+\_\+\+OFF~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} + 2 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfuncinput_8c_source}{mbfuncinput.\+c}} строка \mbox{\hyperlink{mbfuncinput_8c_source_l00046}{46}}
+
+\mbox{\Hypertarget{mbfuncinput_8c_aed5d97217f5de85de9931062e875302a}\label{mbfuncinput_8c_aed5d97217f5de85de9931062e875302a}} 
+\index{mbfuncinput.c@{mbfuncinput.c}!MB\_PDU\_FUNC\_READ\_RSP\_BYTECNT\_OFF@{MB\_PDU\_FUNC\_READ\_RSP\_BYTECNT\_OFF}}
+\index{MB\_PDU\_FUNC\_READ\_RSP\_BYTECNT\_OFF@{MB\_PDU\_FUNC\_READ\_RSP\_BYTECNT\_OFF}!mbfuncinput.c@{mbfuncinput.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_READ\_RSP\_BYTECNT\_OFF}{MB\_PDU\_FUNC\_READ\_RSP\_BYTECNT\_OFF}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+RSP\+\_\+\+BYTECNT\+\_\+\+OFF~( \mbox{\hyperlink{mbframe_8h_ace44746a2b6323b94de9029ed491b58f}{MB\+\_\+\+PDU\+\_\+\+DATA\+\_\+\+OFF}} )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfuncinput_8c_source}{mbfuncinput.\+c}} строка \mbox{\hyperlink{mbfuncinput_8c_source_l00050}{50}}
+
+\mbox{\Hypertarget{mbfuncinput_8c_a968555f75801294753a5b2da91bea764}\label{mbfuncinput_8c_a968555f75801294753a5b2da91bea764}} 
+\index{mbfuncinput.c@{mbfuncinput.c}!MB\_PDU\_FUNC\_READ\_SIZE@{MB\_PDU\_FUNC\_READ\_SIZE}}
+\index{MB\_PDU\_FUNC\_READ\_SIZE@{MB\_PDU\_FUNC\_READ\_SIZE}!mbfuncinput.c@{mbfuncinput.c}}
+\doxysubsubsection{\texorpdfstring{MB\_PDU\_FUNC\_READ\_SIZE}{MB\_PDU\_FUNC\_READ\_SIZE}}
+{\footnotesize\ttfamily \#define MB\+\_\+\+PDU\+\_\+\+FUNC\+\_\+\+READ\+\_\+\+SIZE~( 4 )}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbfuncinput_8c_source}{mbfuncinput.\+c}} строка \mbox{\hyperlink{mbfuncinput_8c_source_l00047}{47}}
+
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{mbfuncinput_8c_ad5d2cc07a83fa7ea723ed734c905bc55}\label{mbfuncinput_8c_ad5d2cc07a83fa7ea723ed734c905bc55}} 
+\index{mbfuncinput.c@{mbfuncinput.c}!prveMBError2Exception@{prveMBError2Exception}}
+\index{prveMBError2Exception@{prveMBError2Exception}!mbfuncinput.c@{mbfuncinput.c}}
+\doxysubsubsection{\texorpdfstring{prveMBError2Exception()}{prveMBError2Exception()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{e\+MBException}} prve\+MBError2\+Exception (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__modbus_ga9e7fce8c431cb0e521c67f7f36dd823d}{e\+MBError\+Code}}}]{e\+Error\+Code }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{mbutils_8c_source}{mbutils.\+c}} строка \mbox{\hyperlink{mbutils_8c_source_l00117}{117}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118 \{}
+\DoxyCodeLine{00119     \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9c}{eMBException}}    eStatus;}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121     \textcolor{keywordflow}{switch} ( eErrorCode )}
+\DoxyCodeLine{00122     \{}
+\DoxyCodeLine{00123         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823dabf4c1fb8c72eafc08be972225613fe2b}{MB\_ENOERR}}:}
+\DoxyCodeLine{00124             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cab784d14e9328dd8bdcacb5a0e6eb7808}{MB\_EX\_NONE}};}
+\DoxyCodeLine{00125             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823daf415371aad180c545b726d39adbf9ba7}{MB\_ENOREG}}:}
+\DoxyCodeLine{00128             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9ca610b4256de04afb3b4ef7b7d3e19ed52}{MB\_EX\_ILLEGAL\_DATA\_ADDRESS}};}
+\DoxyCodeLine{00129             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131         \textcolor{keywordflow}{case} \mbox{\hyperlink{group__modbus_gga9e7fce8c431cb0e521c67f7f36dd823da017c559e956f718cf77aafe269f49bd5}{MB\_ETIMEDOUT}}:}
+\DoxyCodeLine{00132             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cae3ec1c97155e5f397d3bad66efa75fdc}{MB\_EX\_SLAVE\_BUSY}};}
+\DoxyCodeLine{00133             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00136             eStatus = \mbox{\hyperlink{mbproto_8h_ae054c61e74d0e5bd54f7aa2bda497c9cad3dbaac0c2e2f7005e3a896f5c7f8274}{MB\_EX\_SLAVE\_DEVICE\_FAILURE}};}
+\DoxyCodeLine{00137             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00138     \}}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140     \textcolor{keywordflow}{return} eStatus;}
+\DoxyCodeLine{00141 \}}
+
+\end{DoxyCode}

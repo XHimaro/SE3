@@ -1,0 +1,694 @@
+\hypertarget{struct_agraphinfo__t}{}\doxysection{Структура Agraphinfo\+\_\+t}
+\label{struct_agraphinfo__t}\index{Agraphinfo\_t@{Agraphinfo\_t}}
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+
+
+Граф связей класса Agraphinfo\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_agraphinfo__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}{Agrec\+\_\+t}} \mbox{\hyperlink{struct_agraphinfo__t_ac6710eaa47b8cafeb70f780da0c8b7c7}{hdr}}
+\item 
+\mbox{\hyperlink{structlayout__t}{layout\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_a16f3ae645ac8947fb2660a3efe48f56a}{drawing}}
+\item 
+\mbox{\hyperlink{structtextlabel__t}{textlabel\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_a5611e8566fb1a060520544caba07dfec}{label}}
+\item 
+\mbox{\hyperlink{structboxf}{boxf}} \mbox{\hyperlink{struct_agraphinfo__t_aed213a818c1eef6ceac20b74fcd6cfdb}{bb}}
+\item 
+\mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} \mbox{\hyperlink{struct_agraphinfo__t_abfe1c78301a2fda09e4ac05f03652d82}{border}} \mbox{[}4\mbox{]}
+\item 
+unsigned char \mbox{\hyperlink{struct_agraphinfo__t_a663fce49617ef574ce35e71245fb04bb}{gui\+\_\+state}}
+\item 
+unsigned char \mbox{\hyperlink{struct_agraphinfo__t_ae676de4f320f9dbcfd980aebe35f6036}{has\+\_\+labels}}
+\item 
+bool \mbox{\hyperlink{struct_agraphinfo__t_a50fb0a143c455b561615ee4cf3ae54db}{has\+\_\+images}}
+\item 
+unsigned char \mbox{\hyperlink{struct_agraphinfo__t_abb9abd4f0a61642fe3e690b1ccea3cf8}{charset}}
+\item 
+int \mbox{\hyperlink{struct_agraphinfo__t_a387c217e14e4062d699c5c28b9ee9ecb}{rankdir}}
+\item 
+double \mbox{\hyperlink{struct_agraphinfo__t_ab72ad28b6091b49a6b55940799268777}{ht1}}
+\item 
+double \mbox{\hyperlink{struct_agraphinfo__t_a8252375d01b4dc0f4db2f8157977bb70}{ht2}}
+\item 
+unsigned short \mbox{\hyperlink{struct_agraphinfo__t_af6fc30815825e5690ad3a7ebdd73d5c0}{flags}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_ac4f7dffe8d497737b8babee32279b2f4}{alg}}
+\item 
+\mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_a672892c8ec364a0aaa5102fe67430032}{gvc}}
+\item 
+void($\ast$ \mbox{\hyperlink{struct_agraphinfo__t_a9d3475ead933c4f4f04d97a1c6fe171c}{cleanup}} )(\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g)
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$$\ast$ \mbox{\hyperlink{struct_agraphinfo__t_a7fab880a15bc546e40c54e654c973bd5}{neato\+\_\+nlist}}
+\item 
+int \mbox{\hyperlink{struct_agraphinfo__t_a6d67027255ceff9a2e25f7281b96aeda}{move}}
+\item 
+double $\ast$$\ast$ \mbox{\hyperlink{struct_agraphinfo__t_afa85d2de962cabdb58a4ffc298fcfa6a}{dist}}
+\item 
+double $\ast$$\ast$ \mbox{\hyperlink{struct_agraphinfo__t_ab11bc8bdc7e72647d3b8bcfc8ed85c0a}{spring}}
+\item 
+double $\ast$$\ast$ \mbox{\hyperlink{struct_agraphinfo__t_a87947912fe92ae298470e49ca22ac488}{sum\+\_\+t}}
+\item 
+double $\ast$$\ast$$\ast$ \mbox{\hyperlink{struct_agraphinfo__t_a6952aaf072c3e94c173b6b37b74b30c5}{t}}
+\item 
+unsigned short \mbox{\hyperlink{struct_agraphinfo__t_aa6e7e48624432cca510bfae2e6b25225}{ndim}}
+\item 
+unsigned short \mbox{\hyperlink{struct_agraphinfo__t_ac05aa9ebbff3f09542c9d0121222618f}{odim}}
+\item 
+int \mbox{\hyperlink{struct_agraphinfo__t_a65ab53c5a698eb5cc8e1c6fd02d69e40}{n\+\_\+cluster}}
+\item 
+\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$$\ast$ \mbox{\hyperlink{struct_agraphinfo__t_a4722b6d41f93a730019096ef69c7d327}{clust}}
+\item 
+\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_ae83cf4395c62c044cc8b183b7b786800}{dotroot}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_accc3528fa8210ca59efa1f06e06b8e38}{nlist}}
+\item 
+\mbox{\hyperlink{structrank__t}{rank\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_aef7424dd5ba8feaa6cd7dde39aca1dab}{rank}}
+\item 
+\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_a160ac52f1da28020ade3b346fbebf7a6}{parent}}
+\item 
+int \mbox{\hyperlink{struct_agraphinfo__t_aa83d8f9f00b810631a1bbdc92ed67bfd}{level}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_a0e253354ca7700f63b57273bc322acf2}{minrep}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_abb130c836c0021fce2da64dc314f8d96}{maxrep}}
+\item 
+\mbox{\hyperlink{structnlist__t}{nlist\+\_\+t}} \mbox{\hyperlink{struct_agraphinfo__t_a3e13e09309f06bef10e620fa146b701e}{comp}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_ad2b2a4ef80f54aaf1f59d63b1078df80}{minset}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_a18397eb62c9d81841b336b9706bc2e3d}{maxset}}
+\item 
+long \mbox{\hyperlink{struct_agraphinfo__t_ad2b14652d2e55239c9c71044bda89bb4}{n\+\_\+nodes}}
+\item 
+int \mbox{\hyperlink{struct_agraphinfo__t_a74d938af454412881ce49eea7aeecc4a}{minrank}}
+\item 
+int \mbox{\hyperlink{struct_agraphinfo__t_a4245d8a41eea4a2feccbd4ceba39d5ed}{maxrank}}
+\item 
+bool \mbox{\hyperlink{struct_agraphinfo__t_abcdb791a459472a1a12250038f429e87}{has\+\_\+flat\+\_\+edges}}
+\item 
+bool \mbox{\hyperlink{struct_agraphinfo__t_a43e68e077bf2b487bb240fb0100aa135}{has\+\_\+sourcerank}}
+\item 
+bool \mbox{\hyperlink{struct_agraphinfo__t_ad5bb4e01efa0aeba070653aae7e84500}{has\+\_\+sinkrank}}
+\item 
+unsigned char \mbox{\hyperlink{struct_agraphinfo__t_aadf7c0bfd403eaae70fd1866e0ee5fc7}{showboxes}}
+\item 
+\mbox{\hyperlink{types_8h_a2a6b72cfc1be9a7af92447c2f1372496}{fontname\+\_\+kind}} \mbox{\hyperlink{struct_agraphinfo__t_af9659a001c6ec47ad98e85694a4960b7}{fontnames}}
+\item 
+int \mbox{\hyperlink{struct_agraphinfo__t_a3038e54d9fc5cd4f204278307fa580b9}{nodesep}}
+\item 
+int \mbox{\hyperlink{struct_agraphinfo__t_a74da894d104e1d18aef375d388fe05cf}{ranksep}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_ac3335bc89d906c82834200758e136d32}{ln}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_aaf9a818221025b3a42ffb4696d8e71f7}{rn}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_agraphinfo__t_af0331a91a4d5a53c016610871be267ed}{leader}}
+\item 
+\mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}} $\ast$$\ast$ \mbox{\hyperlink{struct_agraphinfo__t_aaba2922c000b527c79b1598d70ec05c7}{rankleader}}
+\item 
+bool \mbox{\hyperlink{struct_agraphinfo__t_a6f2297335c947735ad1b8be9c4e65ac7}{expanded}}
+\item 
+char \mbox{\hyperlink{struct_agraphinfo__t_a1e4caf7f5b810adbc9973a76fbd86fba}{installed}}
+\item 
+char \mbox{\hyperlink{struct_agraphinfo__t_a413eca8823d1c8ee6927130ac5349b22}{set\+\_\+type}}
+\item 
+char \mbox{\hyperlink{struct_agraphinfo__t_a0b8dadeeff79b9e9ea46fcc658084205}{label\+\_\+pos}}
+\item 
+bool \mbox{\hyperlink{struct_agraphinfo__t_ad68fffa1d08c7faddcb7b5ad432860cb}{exact\+\_\+ranksep}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00273}{273}}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{struct_agraphinfo__t_ac4f7dffe8d497737b8babee32279b2f4}\label{struct_agraphinfo__t_ac4f7dffe8d497737b8babee32279b2f4}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!alg@{alg}}
+\index{alg@{alg}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{alg}{alg}}
+{\footnotesize\ttfamily void$\ast$ Agraphinfo\+\_\+t\+::alg}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00288}{288}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_aed213a818c1eef6ceac20b74fcd6cfdb}\label{struct_agraphinfo__t_aed213a818c1eef6ceac20b74fcd6cfdb}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!bb@{bb}}
+\index{bb@{bb}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{bb}{bb}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structboxf}{boxf}} Agraphinfo\+\_\+t\+::bb}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00278}{278}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_abfe1c78301a2fda09e4ac05f03652d82}\label{struct_agraphinfo__t_abfe1c78301a2fda09e4ac05f03652d82}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!border@{border}}
+\index{border@{border}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{border}{border}}
+{\footnotesize\ttfamily \mbox{\hyperlink{geom_8h_ab1d4fa1dc6a3884bc0f897efb568a084}{pointf}} Agraphinfo\+\_\+t\+::border\mbox{[}4\mbox{]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00279}{279}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_abb9abd4f0a61642fe3e690b1ccea3cf8}\label{struct_agraphinfo__t_abb9abd4f0a61642fe3e690b1ccea3cf8}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!charset@{charset}}
+\index{charset@{charset}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{charset}{charset}}
+{\footnotesize\ttfamily unsigned char Agraphinfo\+\_\+t\+::charset}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00283}{283}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a9d3475ead933c4f4f04d97a1c6fe171c}\label{struct_agraphinfo__t_a9d3475ead933c4f4f04d97a1c6fe171c}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{cleanup}{cleanup}}
+{\footnotesize\ttfamily void($\ast$ Agraphinfo\+\_\+t\+::cleanup) (\mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}} $\ast$g)}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00290}{290}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a4722b6d41f93a730019096ef69c7d327}\label{struct_agraphinfo__t_a4722b6d41f93a730019096ef69c7d327}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!clust@{clust}}
+\index{clust@{clust}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{clust}{clust}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}}$\ast$$\ast$ Agraphinfo\+\_\+t\+::clust}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00306}{306}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a3e13e09309f06bef10e620fa146b701e}\label{struct_agraphinfo__t_a3e13e09309f06bef10e620fa146b701e}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!comp@{comp}}
+\index{comp@{comp}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{comp}{comp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnlist__t}{nlist\+\_\+t}} Agraphinfo\+\_\+t\+::comp}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00316}{316}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_afa85d2de962cabdb58a4ffc298fcfa6a}\label{struct_agraphinfo__t_afa85d2de962cabdb58a4ffc298fcfa6a}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!dist@{dist}}
+\index{dist@{dist}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{dist}{dist}}
+{\footnotesize\ttfamily double$\ast$$\ast$ Agraphinfo\+\_\+t\+::dist}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00296}{296}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_ae83cf4395c62c044cc8b183b7b786800}\label{struct_agraphinfo__t_ae83cf4395c62c044cc8b183b7b786800}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!dotroot@{dotroot}}
+\index{dotroot@{dotroot}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{dotroot}{dotroot}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::dotroot}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00307}{307}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a16f3ae645ac8947fb2660a3efe48f56a}\label{struct_agraphinfo__t_a16f3ae645ac8947fb2660a3efe48f56a}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!drawing@{drawing}}
+\index{drawing@{drawing}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{drawing}{drawing}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlayout__t}{layout\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::drawing}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00276}{276}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_ad68fffa1d08c7faddcb7b5ad432860cb}\label{struct_agraphinfo__t_ad68fffa1d08c7faddcb7b5ad432860cb}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!exact\_ranksep@{exact\_ranksep}}
+\index{exact\_ranksep@{exact\_ranksep}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{exact\_ranksep}{exact\_ranksep}}
+{\footnotesize\ttfamily bool Agraphinfo\+\_\+t\+::exact\+\_\+ranksep}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00344}{344}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a6f2297335c947735ad1b8be9c4e65ac7}\label{struct_agraphinfo__t_a6f2297335c947735ad1b8be9c4e65ac7}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!expanded@{expanded}}
+\index{expanded@{expanded}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{expanded}{expanded}}
+{\footnotesize\ttfamily bool Agraphinfo\+\_\+t\+::expanded}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00340}{340}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_af6fc30815825e5690ad3a7ebdd73d5c0}\label{struct_agraphinfo__t_af6fc30815825e5690ad3a7ebdd73d5c0}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!flags@{flags}}
+\index{flags@{flags}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily unsigned short Agraphinfo\+\_\+t\+::flags}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00287}{287}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_af9659a001c6ec47ad98e85694a4960b7}\label{struct_agraphinfo__t_af9659a001c6ec47ad98e85694a4960b7}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!fontnames@{fontnames}}
+\index{fontnames@{fontnames}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{fontnames}{fontnames}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_a2a6b72cfc1be9a7af92447c2f1372496}{fontname\+\_\+kind}} Agraphinfo\+\_\+t\+::fontnames}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00330}{330}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a663fce49617ef574ce35e71245fb04bb}\label{struct_agraphinfo__t_a663fce49617ef574ce35e71245fb04bb}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!gui\_state@{gui\_state}}
+\index{gui\_state@{gui\_state}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{gui\_state}{gui\_state}}
+{\footnotesize\ttfamily unsigned char Agraphinfo\+\_\+t\+::gui\+\_\+state}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00280}{280}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a672892c8ec364a0aaa5102fe67430032}\label{struct_agraphinfo__t_a672892c8ec364a0aaa5102fe67430032}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!gvc@{gvc}}
+\index{gvc@{gvc}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{gvc}{gvc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{gvcext_8h_ad6cf1b9d460390425d8f423380c2a7ed}{GVC\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::gvc}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00289}{289}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_abcdb791a459472a1a12250038f429e87}\label{struct_agraphinfo__t_abcdb791a459472a1a12250038f429e87}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!has\_flat\_edges@{has\_flat\_edges}}
+\index{has\_flat\_edges@{has\_flat\_edges}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{has\_flat\_edges}{has\_flat\_edges}}
+{\footnotesize\ttfamily bool Agraphinfo\+\_\+t\+::has\+\_\+flat\+\_\+edges}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00326}{326}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a50fb0a143c455b561615ee4cf3ae54db}\label{struct_agraphinfo__t_a50fb0a143c455b561615ee4cf3ae54db}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!has\_images@{has\_images}}
+\index{has\_images@{has\_images}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{has\_images}{has\_images}}
+{\footnotesize\ttfamily bool Agraphinfo\+\_\+t\+::has\+\_\+images}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00282}{282}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_ae676de4f320f9dbcfd980aebe35f6036}\label{struct_agraphinfo__t_ae676de4f320f9dbcfd980aebe35f6036}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!has\_labels@{has\_labels}}
+\index{has\_labels@{has\_labels}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{has\_labels}{has\_labels}}
+{\footnotesize\ttfamily unsigned char Agraphinfo\+\_\+t\+::has\+\_\+labels}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00281}{281}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_ad5bb4e01efa0aeba070653aae7e84500}\label{struct_agraphinfo__t_ad5bb4e01efa0aeba070653aae7e84500}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!has\_sinkrank@{has\_sinkrank}}
+\index{has\_sinkrank@{has\_sinkrank}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{has\_sinkrank}{has\_sinkrank}}
+{\footnotesize\ttfamily bool Agraphinfo\+\_\+t\+::has\+\_\+sinkrank}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00328}{328}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a43e68e077bf2b487bb240fb0100aa135}\label{struct_agraphinfo__t_a43e68e077bf2b487bb240fb0100aa135}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!has\_sourcerank@{has\_sourcerank}}
+\index{has\_sourcerank@{has\_sourcerank}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{has\_sourcerank}{has\_sourcerank}}
+{\footnotesize\ttfamily bool Agraphinfo\+\_\+t\+::has\+\_\+sourcerank}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00327}{327}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_ac6710eaa47b8cafeb70f780da0c8b7c7}\label{struct_agraphinfo__t_ac6710eaa47b8cafeb70f780da0c8b7c7}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!hdr@{hdr}}
+\index{hdr@{hdr}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{hdr}{hdr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}{Agrec\+\_\+t}} Agraphinfo\+\_\+t\+::hdr}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00274}{274}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_ab72ad28b6091b49a6b55940799268777}\label{struct_agraphinfo__t_ab72ad28b6091b49a6b55940799268777}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!ht1@{ht1}}
+\index{ht1@{ht1}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{ht1}{ht1}}
+{\footnotesize\ttfamily double Agraphinfo\+\_\+t\+::ht1}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00285}{285}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a8252375d01b4dc0f4db2f8157977bb70}\label{struct_agraphinfo__t_a8252375d01b4dc0f4db2f8157977bb70}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!ht2@{ht2}}
+\index{ht2@{ht2}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{ht2}{ht2}}
+{\footnotesize\ttfamily double Agraphinfo\+\_\+t\+::ht2}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00286}{286}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a1e4caf7f5b810adbc9973a76fbd86fba}\label{struct_agraphinfo__t_a1e4caf7f5b810adbc9973a76fbd86fba}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!installed@{installed}}
+\index{installed@{installed}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{installed}{installed}}
+{\footnotesize\ttfamily char Agraphinfo\+\_\+t\+::installed}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00341}{341}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a5611e8566fb1a060520544caba07dfec}\label{struct_agraphinfo__t_a5611e8566fb1a060520544caba07dfec}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!label@{label}}
+\index{label@{label}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtextlabel__t}{textlabel\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::label}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00277}{277}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a0b8dadeeff79b9e9ea46fcc658084205}\label{struct_agraphinfo__t_a0b8dadeeff79b9e9ea46fcc658084205}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!label\_pos@{label\_pos}}
+\index{label\_pos@{label\_pos}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{label\_pos}{label\_pos}}
+{\footnotesize\ttfamily char Agraphinfo\+\_\+t\+::label\+\_\+pos}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00343}{343}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_af0331a91a4d5a53c016610871be267ed}\label{struct_agraphinfo__t_af0331a91a4d5a53c016610871be267ed}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!leader@{leader}}
+\index{leader@{leader}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{leader}{leader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::leader}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00338}{338}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_aa83d8f9f00b810631a1bbdc92ed67bfd}\label{struct_agraphinfo__t_aa83d8f9f00b810631a1bbdc92ed67bfd}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!level@{level}}
+\index{level@{level}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily int Agraphinfo\+\_\+t\+::level}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00311}{311}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_ac3335bc89d906c82834200758e136d32}\label{struct_agraphinfo__t_ac3335bc89d906c82834200758e136d32}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!ln@{ln}}
+\index{ln@{ln}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{ln}{ln}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::ln}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00334}{334}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a4245d8a41eea4a2feccbd4ceba39d5ed}\label{struct_agraphinfo__t_a4245d8a41eea4a2feccbd4ceba39d5ed}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!maxrank@{maxrank}}
+\index{maxrank@{maxrank}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{maxrank}{maxrank}}
+{\footnotesize\ttfamily int Agraphinfo\+\_\+t\+::maxrank}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00323}{323}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_abb130c836c0021fce2da64dc314f8d96}\label{struct_agraphinfo__t_abb130c836c0021fce2da64dc314f8d96}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!maxrep@{maxrep}}
+\index{maxrep@{maxrep}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{maxrep}{maxrep}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::maxrep}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00313}{313}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a18397eb62c9d81841b336b9706bc2e3d}\label{struct_agraphinfo__t_a18397eb62c9d81841b336b9706bc2e3d}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!maxset@{maxset}}
+\index{maxset@{maxset}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{maxset}{maxset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::maxset}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00319}{319}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a74d938af454412881ce49eea7aeecc4a}\label{struct_agraphinfo__t_a74d938af454412881ce49eea7aeecc4a}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!minrank@{minrank}}
+\index{minrank@{minrank}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{minrank}{minrank}}
+{\footnotesize\ttfamily int Agraphinfo\+\_\+t\+::minrank}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00322}{322}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a0e253354ca7700f63b57273bc322acf2}\label{struct_agraphinfo__t_a0e253354ca7700f63b57273bc322acf2}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!minrep@{minrep}}
+\index{minrep@{minrep}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{minrep}{minrep}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::minrep}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00312}{312}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_ad2b2a4ef80f54aaf1f59d63b1078df80}\label{struct_agraphinfo__t_ad2b2a4ef80f54aaf1f59d63b1078df80}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!minset@{minset}}
+\index{minset@{minset}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{minset}{minset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::minset}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00318}{318}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a6d67027255ceff9a2e25f7281b96aeda}\label{struct_agraphinfo__t_a6d67027255ceff9a2e25f7281b96aeda}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!move@{move}}
+\index{move@{move}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{move}{move}}
+{\footnotesize\ttfamily int Agraphinfo\+\_\+t\+::move}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00295}{295}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a65ab53c5a698eb5cc8e1c6fd02d69e40}\label{struct_agraphinfo__t_a65ab53c5a698eb5cc8e1c6fd02d69e40}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!n\_cluster@{n\_cluster}}
+\index{n\_cluster@{n\_cluster}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{n\_cluster}{n\_cluster}}
+{\footnotesize\ttfamily int Agraphinfo\+\_\+t\+::n\+\_\+cluster}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00305}{305}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_ad2b14652d2e55239c9c71044bda89bb4}\label{struct_agraphinfo__t_ad2b14652d2e55239c9c71044bda89bb4}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!n\_nodes@{n\_nodes}}
+\index{n\_nodes@{n\_nodes}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{n\_nodes}{n\_nodes}}
+{\footnotesize\ttfamily long Agraphinfo\+\_\+t\+::n\+\_\+nodes}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00320}{320}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_aa6e7e48624432cca510bfae2e6b25225}\label{struct_agraphinfo__t_aa6e7e48624432cca510bfae2e6b25225}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!ndim@{ndim}}
+\index{ndim@{ndim}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{ndim}{ndim}}
+{\footnotesize\ttfamily unsigned short Agraphinfo\+\_\+t\+::ndim}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00300}{300}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a7fab880a15bc546e40c54e654c973bd5}\label{struct_agraphinfo__t_a7fab880a15bc546e40c54e654c973bd5}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!neato\_nlist@{neato\_nlist}}
+\index{neato\_nlist@{neato\_nlist}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{neato\_nlist}{neato\_nlist}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$$\ast$ Agraphinfo\+\_\+t\+::neato\+\_\+nlist}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00294}{294}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_accc3528fa8210ca59efa1f06e06b8e38}\label{struct_agraphinfo__t_accc3528fa8210ca59efa1f06e06b8e38}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!nlist@{nlist}}
+\index{nlist@{nlist}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{nlist}{nlist}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::nlist}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00308}{308}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a3038e54d9fc5cd4f204278307fa580b9}\label{struct_agraphinfo__t_a3038e54d9fc5cd4f204278307fa580b9}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!nodesep@{nodesep}}
+\index{nodesep@{nodesep}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{nodesep}{nodesep}}
+{\footnotesize\ttfamily int Agraphinfo\+\_\+t\+::nodesep}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00332}{332}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_ac05aa9ebbff3f09542c9d0121222618f}\label{struct_agraphinfo__t_ac05aa9ebbff3f09542c9d0121222618f}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!odim@{odim}}
+\index{odim@{odim}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{odim}{odim}}
+{\footnotesize\ttfamily unsigned short Agraphinfo\+\_\+t\+::odim}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00301}{301}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a160ac52f1da28020ade3b346fbebf7a6}\label{struct_agraphinfo__t_a160ac52f1da28020ade3b346fbebf7a6}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!parent@{parent}}
+\index{parent@{parent}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aedca4e11cb6b1a3893747040cb785c12}{graph\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::parent}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00310}{310}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_aef7424dd5ba8feaa6cd7dde39aca1dab}\label{struct_agraphinfo__t_aef7424dd5ba8feaa6cd7dde39aca1dab}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!rank@{rank}}
+\index{rank@{rank}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{rank}{rank}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrank__t}{rank\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::rank}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00309}{309}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a387c217e14e4062d699c5c28b9ee9ecb}\label{struct_agraphinfo__t_a387c217e14e4062d699c5c28b9ee9ecb}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!rankdir@{rankdir}}
+\index{rankdir@{rankdir}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{rankdir}{rankdir}}
+{\footnotesize\ttfamily int Agraphinfo\+\_\+t\+::rankdir}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00284}{284}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_aaba2922c000b527c79b1598d70ec05c7}\label{struct_agraphinfo__t_aaba2922c000b527c79b1598d70ec05c7}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!rankleader@{rankleader}}
+\index{rankleader@{rankleader}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{rankleader}{rankleader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$$\ast$ Agraphinfo\+\_\+t\+::rankleader}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00339}{339}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a74da894d104e1d18aef375d388fe05cf}\label{struct_agraphinfo__t_a74da894d104e1d18aef375d388fe05cf}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!ranksep@{ranksep}}
+\index{ranksep@{ranksep}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{ranksep}{ranksep}}
+{\footnotesize\ttfamily int Agraphinfo\+\_\+t\+::ranksep}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00333}{333}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_aaf9a818221025b3a42ffb4696d8e71f7}\label{struct_agraphinfo__t_aaf9a818221025b3a42ffb4696d8e71f7}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!rn@{rn}}
+\index{rn@{rn}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{rn}{rn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aa54efbeed985023658063bdae73347ec}{node\+\_\+t}}$\ast$ Agraphinfo\+\_\+t\+::rn}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00335}{335}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a413eca8823d1c8ee6927130ac5349b22}\label{struct_agraphinfo__t_a413eca8823d1c8ee6927130ac5349b22}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!set\_type@{set\_type}}
+\index{set\_type@{set\_type}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{set\_type}{set\_type}}
+{\footnotesize\ttfamily char Agraphinfo\+\_\+t\+::set\+\_\+type}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00342}{342}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_aadf7c0bfd403eaae70fd1866e0ee5fc7}\label{struct_agraphinfo__t_aadf7c0bfd403eaae70fd1866e0ee5fc7}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!showboxes@{showboxes}}
+\index{showboxes@{showboxes}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{showboxes}{showboxes}}
+{\footnotesize\ttfamily unsigned char Agraphinfo\+\_\+t\+::showboxes}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00329}{329}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_ab11bc8bdc7e72647d3b8bcfc8ed85c0a}\label{struct_agraphinfo__t_ab11bc8bdc7e72647d3b8bcfc8ed85c0a}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!spring@{spring}}
+\index{spring@{spring}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{spring}{spring}}
+{\footnotesize\ttfamily double$\ast$$\ast$ Agraphinfo\+\_\+t\+::spring}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00297}{297}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a87947912fe92ae298470e49ca22ac488}\label{struct_agraphinfo__t_a87947912fe92ae298470e49ca22ac488}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!sum\_t@{sum\_t}}
+\index{sum\_t@{sum\_t}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{sum\_t}{sum\_t}}
+{\footnotesize\ttfamily double$\ast$$\ast$ Agraphinfo\+\_\+t\+::sum\+\_\+t}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00298}{298}}
+
+\mbox{\Hypertarget{struct_agraphinfo__t_a6952aaf072c3e94c173b6b37b74b30c5}\label{struct_agraphinfo__t_a6952aaf072c3e94c173b6b37b74b30c5}} 
+\index{Agraphinfo\_t@{Agraphinfo\_t}!t@{t}}
+\index{t@{t}!Agraphinfo\_t@{Agraphinfo\_t}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily double$\ast$$\ast$$\ast$ Agraphinfo\+\_\+t\+::t}
+
+
+
+См. определение в файле \mbox{\hyperlink{types_8h_source}{types.\+h}} строка \mbox{\hyperlink{types_8h_source_l00299}{299}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\+Graphviz/include/graphviz/\mbox{\hyperlink{types_8h}{types.\+h}}\end{DoxyCompactItemize}

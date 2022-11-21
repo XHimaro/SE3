@@ -1,0 +1,1810 @@
+\hypertarget{cgraph_8h}{}\doxysection{Файл for lab/\+Graphviz/include/graphviz/cgraph.h}
+\label{cgraph_8h}\index{for lab/Graphviz/include/graphviz/cgraph.h@{for lab/Graphviz/include/graphviz/cgraph.h}}
+
+
+abstract graph \mbox{\hyperlink{class_c}{C}} library  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}cdt.\+h\char`\"{}}\newline
+Граф включаемых заголовочных файлов для cgraph.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{cgraph_8h__incl}
+\end{center}
+\end{figure}
+Граф файлов, в которые включается этот файл\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cgraph_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_agrec__s}{Agrec\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Header of a user record. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agtag__s}{Agtag\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_object}{Object}} tag for graphs, nodes, and edges. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agobj__s}{Agobj\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em a generic graph/node/edge header \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agsubnode__s}{Agsubnode\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em This is the node struct allocated per graph (or subgraph). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agnode__s}{Agnode\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_agedge__s}{Agedge\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_agedgepair__s}{Agedgepair\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_agdesc__s}{Agdesc\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_agmemdisc__s}{Agmemdisc\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em memory allocator discipline, independent of other resources \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agiddisc__s}{Agiddisc\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em object ID allocator discipline \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agiodisc__s}{Agiodisc\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_agdisc__s}{Agdisc\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em user\textquotesingle{}s discipline \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agdstate__s}{Agdstate\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_agcbdisc__s}{Agcbdisc\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_agcbstack__s}{Agcbstack\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em object event callbacks \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agclos__s}{Agclos\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_agraph__s}{Agraph\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_agattr__s}{Agattr\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em definitions for dynamic string attributes \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agsym__s}{Agsym\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em symbol in one of the above dictionaries \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_agdatadict__s}{Agdatadict\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a1e06db728ec62594cc4c34d5e039f94b}{AGRAPH}}~0 /$\ast$ can\textquotesingle{}t exceed 2 bits. see Agtag\+\_\+t. $\ast$/
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a43a81a3fd3c7b0ee89f200344195e630}{AGNODE}}~1
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a5368d33053a2d0bae5c214e197c46cf0}{AGOUTEDGE}}~2
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a74f36ad6c38c74813891907855f77ae4}{AGINEDGE}}~3 /$\ast$ (1 $<$$<$ 1) indicates an edge tag.   $\ast$/
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_af7e2feb683e8c8e540a832845b15bb18}{AGEDGE}}~\mbox{\hyperlink{cgraph_8h_a5368d33053a2d0bae5c214e197c46cf0}{AGOUTEDGE}} /$\ast$ synonym in object kind args $\ast$/
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_abf2980fa393039cd2ff1130e5eb491a1}{AGTAG}}(obj)~(((\mbox{\hyperlink{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}{Agobj\+\_\+t}}$\ast$)(obj))-\/$>$tag)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a91e26f76d41f9f199ef969d977412f23}{AGTYPE}}(obj)~(\mbox{\hyperlink{cgraph_8h_abf2980fa393039cd2ff1130e5eb491a1}{AGTAG}}(obj).objtype)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a27963b35a047acbd49f14b70e6a86c57}{AGID}}(obj)~(\mbox{\hyperlink{cgraph_8h_abf2980fa393039cd2ff1130e5eb491a1}{AGTAG}}(obj).id)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_afba562b0e6220df03e91273360b621c0}{AGSEQ}}(obj)~(\mbox{\hyperlink{cgraph_8h_abf2980fa393039cd2ff1130e5eb491a1}{AGTAG}}(obj).seq)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_af18db1d379fa0df06c9253f320b6be84}{AGATTRWF}}(obj)~(\mbox{\hyperlink{cgraph_8h_abf2980fa393039cd2ff1130e5eb491a1}{AGTAG}}(obj).attrwf)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}{AGDATA}}(obj)~(((\mbox{\hyperlink{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}{Agobj\+\_\+t}}$\ast$)(obj))-\/$>$data)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a1c1daa5e08c9b0c8f553ed8b03fd4c4e}{agnew}}(g,  t)~((t$\ast$)\mbox{\hyperlink{cgraph_8h_a6ec138fd5847dc2270932e4e8e278985}{agalloc}}(g,sizeof(t)))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_ad64cd43fc8278ee1e416b8439c829ff8}{agnnew}}(g,  n,  t)~((t$\ast$)\mbox{\hyperlink{cgraph_8h_a6ec138fd5847dc2270932e4e8e278985}{agalloc}}(g,(n)$\ast$sizeof(t)))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a465e7ee7880c21684594ee7bbb5b5294}{AGIN2\+OUT}}(e)~((e)-\/1)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_ac8066c3bc8c1c2deb5e571f81196090f}{AGOUT2\+IN}}(e)~((e)+1)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_aed727d3e94d3aef53f5e679cc4041da2}{AGOPP}}(e)~((\mbox{\hyperlink{cgraph_8h_a91e26f76d41f9f199ef969d977412f23}{AGTYPE}}(e)==\mbox{\hyperlink{cgraph_8h_a74f36ad6c38c74813891907855f77ae4}{AGINEDGE}})?\mbox{\hyperlink{cgraph_8h_a465e7ee7880c21684594ee7bbb5b5294}{AGIN2\+OUT}}(e)\+:\mbox{\hyperlink{cgraph_8h_ac8066c3bc8c1c2deb5e571f81196090f}{AGOUT2\+IN}}(e))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a2629b0763de05c381161770b0640b0ad}{AGMKOUT}}(e)~(\mbox{\hyperlink{cgraph_8h_a91e26f76d41f9f199ef969d977412f23}{AGTYPE}}(e) == \mbox{\hyperlink{cgraph_8h_a5368d33053a2d0bae5c214e197c46cf0}{AGOUTEDGE}}? (e)\+: \mbox{\hyperlink{cgraph_8h_a465e7ee7880c21684594ee7bbb5b5294}{AGIN2\+OUT}}(e))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a8f16054047081a8639e79509f855fdf1}{AGMKIN}}(e)~(\mbox{\hyperlink{cgraph_8h_a91e26f76d41f9f199ef969d977412f23}{AGTYPE}}(e) == \mbox{\hyperlink{cgraph_8h_a74f36ad6c38c74813891907855f77ae4}{AGINEDGE}}?  (e)\+: \mbox{\hyperlink{cgraph_8h_ac8066c3bc8c1c2deb5e571f81196090f}{AGOUT2\+IN}}(e))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_addbb048b0b1e23abd8b4d40df33f0104}{AGTAIL}}(e)~(\mbox{\hyperlink{cgraph_8h_a8f16054047081a8639e79509f855fdf1}{AGMKIN}}(e)-\/$>$node)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_af29d9915ddd2240bab9693727ef7b069}{AGHEAD}}(e)~(\mbox{\hyperlink{cgraph_8h_a2629b0763de05c381161770b0640b0ad}{AGMKOUT}}(e)-\/$>$node)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a6c4d7e15c611303c142ce711229cda0a}{AGEQEDGE}}(e,  f)~(\mbox{\hyperlink{cgraph_8h_a2629b0763de05c381161770b0640b0ad}{AGMKOUT}}(e) == \mbox{\hyperlink{cgraph_8h_a2629b0763de05c381161770b0640b0ad}{AGMKOUT}}(f))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a96fc1fa869456d5345e784a7bf9c615e}{agtail}}(e)~\mbox{\hyperlink{cgraph_8h_addbb048b0b1e23abd8b4d40df33f0104}{AGTAIL}}(e)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_ad106624d1b561de8683c142319ff630e}{aghead}}(e)~\mbox{\hyperlink{cgraph_8h_af29d9915ddd2240bab9693727ef7b069}{AGHEAD}}(e)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a21ee14460f49ddb2e954f3cf9f9100a3}{agopp}}(e)~\mbox{\hyperlink{cgraph_8h_aed727d3e94d3aef53f5e679cc4041da2}{AGOPP}}(e)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a8b777558e7d3375ab4e6cfd4f22c4528}{ageqedge}}(e,  f)~\mbox{\hyperlink{cgraph_8h_a6c4d7e15c611303c142ce711229cda0a}{AGEQEDGE}}(e,f)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a21c6527e075feb0693a9112e122110ac}{TAILPORT\+\_\+\+ID}}~\char`\"{}tailport\char`\"{}
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a5bc7f7e2e3a0459be80728f8e6495c56}{HEADPORT\+\_\+\+ID}}~\char`\"{}headport\char`\"{}
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}{AGHEADPOINTER}}(g)~((\mbox{\hyperlink{cgraph_8h_a28a8bdde72c3f1193846994b7a59b62c}{Agnoderef\+\_\+t}}$\ast$)(g-\/$>$n\+\_\+seq-\/$>$data-\/$>$hh.\+\_\+head))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a5e706aff586570c1a2363a8e058922ad}{AGRIGHTPOINTER}}(rep)~((\mbox{\hyperlink{cgraph_8h_a28a8bdde72c3f1193846994b7a59b62c}{Agnoderef\+\_\+t}}$\ast$)((rep)-\/$>$seq\+\_\+link.\+right?((void$\ast$)((rep)-\/$>$seq\+\_\+link.\+right) -\/ offsetof(\mbox{\hyperlink{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}{Agsubnode\+\_\+t}},seq\+\_\+link))\+:0))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_af49e2f2d448513116e21e5aafa77cc3f}{AGLEFTPOINTER}}(rep)~((\mbox{\hyperlink{cgraph_8h_a28a8bdde72c3f1193846994b7a59b62c}{Agnoderef\+\_\+t}}$\ast$)((rep)-\/$>$seq\+\_\+link.\+hl.\+\_\+left?((void$\ast$)((rep)-\/$>$seq\+\_\+link.\+hl.\+\_\+left) -\/ offsetof(\mbox{\hyperlink{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}{Agsubnode\+\_\+t}},seq\+\_\+link))\+:0))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a0c63a2341e44475499e944e91c9bf3aa}{FIRSTNREF}}(g)~(\mbox{\hyperlink{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}{agflatten}}(g,1), \mbox{\hyperlink{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}{AGHEADPOINTER}}(g))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_ac032c69ecf18ef38f1d58e004d164f86}{NEXTNREF}}(g,  rep)~(\mbox{\hyperlink{cgraph_8h_a5e706aff586570c1a2363a8e058922ad}{AGRIGHTPOINTER}}(rep) == \mbox{\hyperlink{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}{AGHEADPOINTER}}(g)?0\+:\mbox{\hyperlink{cgraph_8h_a5e706aff586570c1a2363a8e058922ad}{AGRIGHTPOINTER}}(rep))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_ad61b4cf80edd9e1f7f4bfaa0357eb994}{PREVNREF}}(g,  rep)~(((rep)==\mbox{\hyperlink{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}{AGHEADPOINTER}}(g))?0\+:(\mbox{\hyperlink{cgraph_8h_af49e2f2d448513116e21e5aafa77cc3f}{AGLEFTPOINTER}}(rep)))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a09c3f4f2ba45f855b30be109ebae926f}{LASTNREF}}(g)~(\mbox{\hyperlink{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}{agflatten}}(g,1), \mbox{\hyperlink{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}{AGHEADPOINTER}}(g)?\mbox{\hyperlink{cgraph_8h_af49e2f2d448513116e21e5aafa77cc3f}{AGLEFTPOINTER}}(\mbox{\hyperlink{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}{AGHEADPOINTER}}(g))\+:0)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_ad0b5132f1f459932b8713eb767708873}{NODEOF}}(rep)~((rep)-\/$>$node)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a93c09cc33bcd201216e34753b25f19c7}{FIRSTOUTREF}}(g,  sn)~(\mbox{\hyperlink{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}{agflatten}}(g,1), (sn)-\/$>$out\+\_\+seq)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_aacce723e499342d8615b440edcde8b8c}{LASTOUTREF}}(g,  sn)~(\mbox{\hyperlink{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}{agflatten}}(g,1), (\mbox{\hyperlink{cgraph_8h_aee8adc70db35f37a4bc26997b6ac6b81}{Agedgeref\+\_\+t}}$\ast$)\mbox{\hyperlink{cdt_8h_aba7b1b643434cc61b1692a1875c6029b}{dtlast}}(sn-\/$>$out\+\_\+seq))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a14b4f2b54efac4f6ef24ebf2998be25f}{FIRSTINREF}}(g,  sn)~(\mbox{\hyperlink{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}{agflatten}}(g,1), (sn)-\/$>$in\+\_\+seq)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a06bc56043856cb3f27a245c28e3ab309}{NEXTEREF}}(g,  rep)~((rep)-\/$>$right)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_ae87533af17a7fb8f90f1006b154b1449}{PREVEREF}}(g,  rep)~((rep)-\/$>$hl.\+\_\+left)
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_aba4711ac9f35fc6537d10ff17b1b54a6}{AGSNMAIN}}(sn)~((sn)==(\&((sn)-\/$>$node-\/$>$mainsub)))
+\item 
+\#define \mbox{\hyperlink{cgraph_8h_a3d9901a401be74d297b4512b5d69390c}{EDGEOF}}(sn,  rep)~(\mbox{\hyperlink{cgraph_8h_aba4711ac9f35fc6537d10ff17b1b54a6}{AGSNMAIN}}(sn)?((\mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}}$\ast$)((unsigned char$\ast$)(rep) -\/ offsetof(\mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}},seq\+\_\+link))) \+: ((\mbox{\hyperlink{cdt_8h_a0a38fb0e224c2c78db09e185ff3b4a7a}{Dthold\+\_\+t}}$\ast$)(rep))-\/$>$obj)
+\end{DoxyCompactItemize}
+\doxysubsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint64\+\_\+t \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}}
+\item 
+typedef struct \mbox{\hyperlink{struct_agtag__s}{Agtag\+\_\+s}} \mbox{\hyperlink{cgraph_8h_aacd16fe557116c340e6bad52ac843f3c}{Agtag\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_agobj__s}{Agobj\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}{Agobj\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em generic object header \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agraph__s}{Agraph\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em graph, subgraph (or hyperedge) \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agnode__s}{Agnode\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em node (atom) \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agedge__s}{Agedge\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em node pair \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agdesc__s}{Agdesc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em graph descriptor \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agmemdisc__s}{Agmemdisc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a9c972a6ee678b82cabc303e1e37ad0c6}{Agmemdisc\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em memory allocator \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agiddisc__s}{Agiddisc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a8e845730a89de4d3b5609b996f94c9ac}{Agiddisc\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em object ID allocator \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agiodisc__s}{Agiodisc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_aacaa7e5682be10f0c44bd7a93a00df8d}{Agiodisc\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em IO services. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agdisc__s}{Agdisc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em union of client discipline methods \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agdstate__s}{Agdstate\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a238c6bc86df30b49961fb0b64f33ea03}{Agdstate\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em client state (closures) \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agsym__s}{Agsym\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em string attribute descriptors \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agattr__s}{Agattr\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a842c1770dab888f97a2124fd1c4beab5}{Agattr\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em string attribute container \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agcbdisc__s}{Agcbdisc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a1268b501cf6ea9359343e0545e0d89bc}{Agcbdisc\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em client event callbacks \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agcbstack__s}{Agcbstack\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a2557226a5c2e12011ae3af38218ce16a}{Agcbstack\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em enclosing state for cbdisc \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agclos__s}{Agclos\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a06d0f63c3d8a11010e5cde97404bda9e}{Agclos\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em common fields for graph/subgs \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agrec__s}{Agrec\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}{Agrec\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em generic runtime record \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agdatadict__s}{Agdatadict\+\_\+s}} \mbox{\hyperlink{cgraph_8h_af9586e118422d27a92e6c9ac694e8810}{Agdatadict\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em set of dictionaries per graph \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agedgepair__s}{Agedgepair\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a23808484bcb2730ccccc6138ef0fc0e2}{Agedgepair\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em the edge object \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_agsubnode__s}{Agsubnode\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}{Agsubnode\+\_\+t}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{cgraph_8h_a328f1953f5f8ccc75b7ea4bfbfcc3a6b}{agobjfn\+\_\+t}}) (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}{Agobj\+\_\+t}} $\ast$obj, void $\ast$arg)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{cgraph_8h_a1346110b9185ce19585655259ebd3f54}{agobjupdfn\+\_\+t}}) (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}{Agobj\+\_\+t}} $\ast$obj, void $\ast$arg, \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$sym)
+\item 
+typedef int($\ast$ \mbox{\hyperlink{cgraph_8h_adaa9664d5293197783f01659b889d8c6}{agusererrf}}) (char $\ast$)
+\item 
+typedef \mbox{\hyperlink{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}{Agsubnode\+\_\+t}} \mbox{\hyperlink{cgraph_8h_a28a8bdde72c3f1193846994b7a59b62c}{Agnoderef\+\_\+t}}
+\item 
+typedef \mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} \mbox{\hyperlink{cgraph_8h_aee8adc70db35f37a4bc26997b6ac6b81}{Agedgeref\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cf}{agerrlevel\+\_\+t}} \{ \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa4486cfed6fa2babf34e58bdb3707461c}{AGWARN}}
+, \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa76eb3bf18a02c1e78b1be01b25c296f2}{AGERR}}
+, \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa737e3522a0c1ebe6f2bc9faa54da2a77}{AGMAX}}
+, \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfabd794ca4c498f8e4c0cf4d26755e0398}{AGPREV}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+CGRAPH\+\_\+\+API void \mbox{\hyperlink{cgraph_8h_a536796e152d4e2880c6754897dacb1ca}{agpushdisc}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a1268b501cf6ea9359343e0545e0d89bc}{Agcbdisc\+\_\+t}} $\ast$disc, void $\ast$state)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a04dc55e336444df2689c70304e91a769}{agpopdisc}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a1268b501cf6ea9359343e0545e0d89bc}{Agcbdisc\+\_\+t}} $\ast$disc)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a32e0da50178bc16a3eb0236a1e45bf52}{agcallbacks}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, int flag)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a85e142c9c453c325cb722ef837d11dd2}{agopen}} (char $\ast$name, \mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}} desc, \mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} $\ast$disc)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a3ee45d1d24d5cd3752fa361aea60d17e}{agclose}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_aa713e98b20e21ae1d9d95303981b38e5}{agread}} (void $\ast$chan, \mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} $\ast$disc)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a4903073e6680f7882f371865875e639e}{agmemread}} (const char $\ast$cp)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a966226a22960e8ceac4e7f1c6517828b}{agmemconcat}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, const char $\ast$cp)
+\item 
+CGRAPH\+\_\+\+API void \mbox{\hyperlink{cgraph_8h_ab40fd03cef339aa4605317832b1fee4e}{agreadline}} (int)
+\item 
+CGRAPH\+\_\+\+API void \mbox{\hyperlink{cgraph_8h_a3c6ac2b423fc76d157bf4a5e9634b0dd}{agsetfile}} (const char $\ast$)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a3769c156e3962b32d89508d6fe338296}{agconcat}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, void $\ast$chan, \mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} $\ast$disc)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a43c761e45309ba677ca59d8296312483}{agwrite}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, void $\ast$chan)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a5cd1939122326a203075ca855ff6daf2}{agisdirected}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a7ed846573acf4555f86ab5c452fc640e}{agisundirected}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a21defec3b5fab9f37781d0909a7d6bde}{agisstrict}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a45a62bb0e62e5ee18c6e5167648cd923}{agissimple}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a1e8d44a7de90600adccd069df68e1fdc}{agnode}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, char $\ast$name, int createflag)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a61fc8bec39e11279c569d2e2f798361c}{agidnode}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}} id, int createflag)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a03a53b6f715e313db550a8f6190eb10c}{agsubnode}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$n, int createflag)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_ad268407778a4c0bf3751274fefdba46b}{agfstnode}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a47450693c22286ed8d4a1d99c2397409}{agnxtnode}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$n)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_aa18cb7517fbe8be4bdcb18cf52acd2c7}{aglstnode}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a42ea9ee41f66ac773553fa490ae931c0}{agprvnode}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$n)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}{Agsubnode\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_adad4a1e185307c87499d6f729a4a2348}{agsubrep}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$n)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_ad53cb3497ec9bec98db2ac7e5c54f0b3}{agnodebefore}} (\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$u, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$v)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a95def214657d6bb88fa9fb78c0a8decc}{agedge}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$t, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$h, char $\ast$name, int createflag)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a0742c930a05dedd75c1af738c07a0838}{agidedge}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$t, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$h, \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}} id, int createflag)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a118a898f2c8f8da04983ee098d6b4397}{agsubedge}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$e, int createflag)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a96ce3a0e231ffa09821c1c5006ad4b3f}{agfstin}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$n)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a131b383f7a6c07ba45cca2911f96acb4}{agnxtin}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$e)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_ad7746ce0558651807cc1c090dd7a10f9}{agfstout}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$n)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a114a41c25080ac2787b51b3b2514693b}{agnxtout}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$e)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_af925ab5ddb3ed9a9dd5d5df1a84ea6bd}{agfstedge}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$n)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_ac30d1b378d21509656500ad476b7029b}{agnxtedge}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$e, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$n)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_af9dd5dd7686f83a45c2e0b8b1e68853e}{agraphof}} (void $\ast$obj)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a3f720bb07e800136f69b875bcff5b814}{agroot}} (void $\ast$obj)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a9c439ed4a327d91f9222f19a97e555cb}{agcontains}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$, void $\ast$)
+\item 
+CGRAPH\+\_\+\+API char $\ast$ \mbox{\hyperlink{cgraph_8h_a015fdcf259e5cfbbc903ad3f1990556b}{agnameof}} (void $\ast$)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a94e70a22f74df89275f02b0f4450b9d9}{agrelabel\+\_\+node}} (\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$n, char $\ast$newname)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a19273212a3f0fca17c542858e6bd1e0b}{agdelete}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, void $\ast$obj)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_ab1c83c6ec6158127af8d718352cea710}{agdelsubg}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$sub)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a0673ef5a28252affd27980820f2c2774}{agdelnode}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$arg\+\_\+n)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_aa6b8ecac59848235f597cf522634a371}{agdeledge}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$arg\+\_\+e)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_af6d0bb2694e419b3dd5fc6ed64169d77}{agobjkind}} (void $\ast$)
+\item 
+CGRAPH\+\_\+\+API char $\ast$ \mbox{\hyperlink{cgraph_8h_a63d197f6e77d5f5ac6d3b47580624b84}{agstrdup}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$, const char $\ast$)
+\item 
+CGRAPH\+\_\+\+API char $\ast$ \mbox{\hyperlink{cgraph_8h_a4443d4d88064813323bac27514c727ac}{agstrdup\+\_\+html}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$, const char $\ast$)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a4b85c338d71db56dccc18040f53638a7}{aghtmlstr}} (const char $\ast$)
+\item 
+CGRAPH\+\_\+\+API char $\ast$ \mbox{\hyperlink{cgraph_8h_a83740b274c978d83d6ac8ac5b5cf0196}{agstrbind}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, const char $\ast$)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a748d389c443bc9352988e6788225c357}{agstrfree}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$, const char $\ast$)
+\item 
+CGRAPH\+\_\+\+API char $\ast$ \mbox{\hyperlink{cgraph_8h_aad3cc2785341c97cf7655d0801fffe29}{agcanon}} (char $\ast$, int)
+\item 
+CGRAPH\+\_\+\+API char $\ast$ \mbox{\hyperlink{cgraph_8h_a713d5399c53b10bf008eb7a1682ca98a}{agstrcanon}} (char $\ast$, char $\ast$)
+\item 
+CGRAPH\+\_\+\+API char $\ast$ \mbox{\hyperlink{cgraph_8h_a9e37d90b309da81ff4ab135fdd131b61}{agcanon\+Str}} (char $\ast$str)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_ac9976dbfd1f6494265db70a8b5757e13}{agattr}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, int kind, char $\ast$name, const char $\ast$value)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a5b16c999c865cb06c9a77a22985c502e}{agattrsym}} (void $\ast$obj, char $\ast$name)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a960a710d65dc71930d5e164a606e5353}{agnxtattr}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, int kind, \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$attr)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a4ae52a8faaa6ea2db87b5d36fb1cde6b}{agcopyattr}} (void $\ast$oldobj, void $\ast$newobj)
+\item 
+CGRAPH\+\_\+\+API void $\ast$ \mbox{\hyperlink{cgraph_8h_a6bdb778abe4c0e93b957329520e31917}{agbindrec}} (void $\ast$obj, const char $\ast$name, unsigned int recsize, int move\+\_\+to\+\_\+front)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}{Agrec\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a5cb2db42cf08631f32b7653114cddaee}{aggetrec}} (void $\ast$obj, const char $\ast$name, int move\+\_\+to\+\_\+front)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a296164f98874ccee53917ebbabd08e1d}{agdelrec}} (void $\ast$obj, const char $\ast$name)
+\item 
+CGRAPH\+\_\+\+API void \mbox{\hyperlink{cgraph_8h_af60635002636d33f14f1da1c9e348f8a}{aginit}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, int kind, const char $\ast$rec\+\_\+name, int rec\+\_\+size, int move\+\_\+to\+\_\+front)
+\item 
+CGRAPH\+\_\+\+API void \mbox{\hyperlink{cgraph_8h_ab9b463c58a79b8520413c6bc26fad4b5}{agclean}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, int kind, char $\ast$rec\+\_\+name)
+\item 
+CGRAPH\+\_\+\+API char $\ast$ \mbox{\hyperlink{cgraph_8h_a86a945a79cd78918470570ea81ad61f4}{agget}} (void $\ast$obj, char $\ast$name)
+\item 
+CGRAPH\+\_\+\+API char $\ast$ \mbox{\hyperlink{cgraph_8h_ad2d0f1fbd29039ec42d12ffb24c015b6}{agxget}} (void $\ast$obj, \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$sym)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_ac158869cc4f6d0493674d68c3cfe3ad5}{agset}} (void $\ast$obj, char $\ast$name, const char $\ast$value)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a457f6b56df5722cd546e990efd77c751}{agxset}} (void $\ast$obj, \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$sym, const char $\ast$value)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a079949a7a6a03570588c0d8f829d1d96}{agsafeset}} (void $\ast$obj, char $\ast$name, const char $\ast$value, const char $\ast$def)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a2ca7f6ee15e2ed41b86b715d776ab230}{agsubg}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, char $\ast$name, int cflag)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_a8bbc2ae3bc3568fb84de9e0c848911e3}{agidsubg}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}} id, int cflag)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_abcd8466586e7f9dafd183b291427231f}{agfstsubg}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_ae997729f968b4ecc622d1a5eedf2b785}{agnxtsubg}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$subg)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ \mbox{\hyperlink{cgraph_8h_af7bfbe45c1682b483146507823af9007}{agparent}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a4adc84a502d28ec87c931b98407846fd}{agnnodes}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_ab6fefbed26b04eadf563f407a7d3774a}{agnedges}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a2995244a8e345f4574876251e8b449d2}{agnsubg}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a7bde08e6e67433a4afd6c046e0b62d9b}{agdegree}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$n, int in, int out)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_ab2d5ab6810e74b55cf287bcb8490a8be}{agcountuniqedges}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$n, int in, int out)
+\item 
+CGRAPH\+\_\+\+API void $\ast$ \mbox{\hyperlink{cgraph_8h_a6ec138fd5847dc2270932e4e8e278985}{agalloc}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, size\+\_\+t size)
+\item 
+CGRAPH\+\_\+\+API void $\ast$ \mbox{\hyperlink{cgraph_8h_a406841a50eda1d7f76ce66aaa8145dec}{agrealloc}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, void $\ast$ptr, size\+\_\+t oldsize, size\+\_\+t size)
+\item 
+CGRAPH\+\_\+\+API void \mbox{\hyperlink{cgraph_8h_aa65a37d065b6fc07efa173c222925511}{agfree}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, void $\ast$ptr)
+\item 
+CGRAPH\+\_\+\+API void \mbox{\hyperlink{cgraph_8h_a99ec607328c25c20eb5049179dc03226}{aginternalmapclearlocalnames}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cf}{agerrlevel\+\_\+t}} \mbox{\hyperlink{cgraph_8h_ac8b80f854859b4017499e42067bae5b7}{agseterr}} (\mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cf}{agerrlevel\+\_\+t}})
+\item 
+CGRAPH\+\_\+\+API char $\ast$ \mbox{\hyperlink{cgraph_8h_a4776647f453831f116fee7e200ee2823}{aglasterr}} (void)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_a42ef64ab2933b0503ccc8406dfe375b7}{agerr}} (\mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cf}{agerrlevel\+\_\+t}} level, const char $\ast$fmt,...) PRINTF\+\_\+\+LIKE(2
+\item 
+CGRAPH\+\_\+\+API int CGRAPH\+\_\+\+API void \mbox{\hyperlink{cgraph_8h_af80e0604e4bcff00064559e46261b8d4}{agerrorf}} (const char $\ast$fmt,...) PRINTF\+\_\+\+LIKE(1
+\item 
+CGRAPH\+\_\+\+API int CGRAPH\+\_\+\+API void CGRAPH\+\_\+\+API void \mbox{\hyperlink{cgraph_8h_a1b3c7fe6147832a992f62fcd28e79a82}{agwarningf}} (const char $\ast$fmt,...) PRINTF\+\_\+\+LIKE(1
+\item 
+CGRAPH\+\_\+\+API int CGRAPH\+\_\+\+API void CGRAPH\+\_\+\+API void CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_ac3dd9f429c7f6f0b7147e8ffd5c83ed5}{agerrors}} (void)
+\item 
+CGRAPH\+\_\+\+API int \mbox{\hyperlink{cgraph_8h_acc4553d6d246fc943e79b267299437d2}{agreseterrors}} (void)
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_adaa9664d5293197783f01659b889d8c6}{agusererrf}} \mbox{\hyperlink{cgraph_8h_adee66a17e220d081d595875a1afc0c2c}{agseterrf}} (\mbox{\hyperlink{cgraph_8h_adaa9664d5293197783f01659b889d8c6}{agusererrf}})
+\item 
+void \mbox{\hyperlink{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}{agflatten}} (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, int flag)
+\end{DoxyCompactItemize}
+\doxysubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a9c972a6ee678b82cabc303e1e37ad0c6}{Agmemdisc\+\_\+t}} \mbox{\hyperlink{cgraph_8h_a9196065df62bd4ba5e91d49bb681a947}{Ag\+Mem\+Disc}}
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a8e845730a89de4d3b5609b996f94c9ac}{Agiddisc\+\_\+t}} \mbox{\hyperlink{cgraph_8h_a8dfe7271f23a5f54f97e73fa363ba0f3}{Ag\+Id\+Disc}}
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_aacaa7e5682be10f0c44bd7a93a00df8d}{Agiodisc\+\_\+t}} \mbox{\hyperlink{cgraph_8h_a24e9bd096c4092649607924dc6e969c8}{Ag\+Io\+Disc}}
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} \mbox{\hyperlink{cgraph_8h_ade3d1614ee2c32df0edd7a022f66478a}{Ag\+Default\+Disc}}
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}} \mbox{\hyperlink{cgraph_8h_a8a3475f98b683496724e35f34a56c8c5}{Agdirected}}
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}} \mbox{\hyperlink{cgraph_8h_a90a816224a1dfa7732f06ce0a9770220}{Agstrictdirected}}
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}} \mbox{\hyperlink{cgraph_8h_a13c8f3f32c6538e915cdc7784dd09bba}{Agundirected}}
+\item 
+CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}} \mbox{\hyperlink{cgraph_8h_adb18db99d62071a35bec738edc2b0636}{Agstrictundirected}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+abstract graph \mbox{\hyperlink{class_c}{C}} library 
+
+\href{https://graphviz.org/pdf/cgraph.3.pdf}{\texttt{ man 3 cgraph}} 
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}}
+
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{cgraph_8h_af18db1d379fa0df06c9253f320b6be84}\label{cgraph_8h_af18db1d379fa0df06c9253f320b6be84}} 
+\index{cgraph.h@{cgraph.h}!AGATTRWF@{AGATTRWF}}
+\index{AGATTRWF@{AGATTRWF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGATTRWF}{AGATTRWF}}
+{\footnotesize\ttfamily \#define AGATTRWF(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_abf2980fa393039cd2ff1130e5eb491a1}{AGTAG}}(obj).attrwf)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00121}{121}}
+
+\mbox{\Hypertarget{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}\label{cgraph_8h_a12a48d1c8103f642da615024eee9d7eb}} 
+\index{cgraph.h@{cgraph.h}!AGDATA@{AGDATA}}
+\index{AGDATA@{AGDATA}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGDATA}{AGDATA}}
+{\footnotesize\ttfamily \#define AGDATA(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})~(((\mbox{\hyperlink{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}{Agobj\+\_\+t}}$\ast$)(obj))-\/$>$data)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00122}{122}}
+
+\mbox{\Hypertarget{cgraph_8h_af7e2feb683e8c8e540a832845b15bb18}\label{cgraph_8h_af7e2feb683e8c8e540a832845b15bb18}} 
+\index{cgraph.h@{cgraph.h}!AGEDGE@{AGEDGE}}
+\index{AGEDGE@{AGEDGE}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGEDGE}{AGEDGE}}
+{\footnotesize\ttfamily \#define AGEDGE~\mbox{\hyperlink{cgraph_8h_a5368d33053a2d0bae5c214e197c46cf0}{AGOUTEDGE}} /$\ast$ synonym in object kind args $\ast$/}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00109}{109}}
+
+\mbox{\Hypertarget{cgraph_8h_a6c4d7e15c611303c142ce711229cda0a}\label{cgraph_8h_a6c4d7e15c611303c142ce711229cda0a}} 
+\index{cgraph.h@{cgraph.h}!AGEQEDGE@{AGEQEDGE}}
+\index{AGEQEDGE@{AGEQEDGE}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGEQEDGE}{AGEQEDGE}}
+{\footnotesize\ttfamily \#define AGEQEDGE(\begin{DoxyParamCaption}\item[{}]{e,  }\item[{}]{f }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a2629b0763de05c381161770b0640b0ad}{AGMKOUT}}(e) == \mbox{\hyperlink{cgraph_8h_a2629b0763de05c381161770b0640b0ad}{AGMKOUT}}(f))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00440}{440}}
+
+\mbox{\Hypertarget{cgraph_8h_a8b777558e7d3375ab4e6cfd4f22c4528}\label{cgraph_8h_a8b777558e7d3375ab4e6cfd4f22c4528}} 
+\index{cgraph.h@{cgraph.h}!ageqedge@{ageqedge}}
+\index{ageqedge@{ageqedge}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{ageqedge}{ageqedge}}
+{\footnotesize\ttfamily \#define ageqedge(\begin{DoxyParamCaption}\item[{}]{e,  }\item[{}]{f }\end{DoxyParamCaption})~\mbox{\hyperlink{cgraph_8h_a6c4d7e15c611303c142ce711229cda0a}{AGEQEDGE}}(e,f)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00445}{445}}
+
+\mbox{\Hypertarget{cgraph_8h_af29d9915ddd2240bab9693727ef7b069}\label{cgraph_8h_af29d9915ddd2240bab9693727ef7b069}} 
+\index{cgraph.h@{cgraph.h}!AGHEAD@{AGHEAD}}
+\index{AGHEAD@{AGHEAD}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGHEAD}{AGHEAD}}
+{\footnotesize\ttfamily \#define AGHEAD(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a2629b0763de05c381161770b0640b0ad}{AGMKOUT}}(e)-\/$>$node)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00439}{439}}
+
+\mbox{\Hypertarget{cgraph_8h_ad106624d1b561de8683c142319ff630e}\label{cgraph_8h_ad106624d1b561de8683c142319ff630e}} 
+\index{cgraph.h@{cgraph.h}!aghead@{aghead}}
+\index{aghead@{aghead}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{aghead}{aghead}}
+{\footnotesize\ttfamily \#define aghead(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~\mbox{\hyperlink{cgraph_8h_af29d9915ddd2240bab9693727ef7b069}{AGHEAD}}(e)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00443}{443}}
+
+\mbox{\Hypertarget{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}\label{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}} 
+\index{cgraph.h@{cgraph.h}!AGHEADPOINTER@{AGHEADPOINTER}}
+\index{AGHEADPOINTER@{AGHEADPOINTER}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGHEADPOINTER}{AGHEADPOINTER}}
+{\footnotesize\ttfamily \#define AGHEADPOINTER(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~((\mbox{\hyperlink{cgraph_8h_a28a8bdde72c3f1193846994b7a59b62c}{Agnoderef\+\_\+t}}$\ast$)(g-\/$>$n\+\_\+seq-\/$>$data-\/$>$hh.\+\_\+head))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00460}{460}}
+
+\mbox{\Hypertarget{cgraph_8h_a27963b35a047acbd49f14b70e6a86c57}\label{cgraph_8h_a27963b35a047acbd49f14b70e6a86c57}} 
+\index{cgraph.h@{cgraph.h}!AGID@{AGID}}
+\index{AGID@{AGID}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGID}{AGID}}
+{\footnotesize\ttfamily \#define AGID(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_abf2980fa393039cd2ff1130e5eb491a1}{AGTAG}}(obj).id)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00119}{119}}
+
+\mbox{\Hypertarget{cgraph_8h_a465e7ee7880c21684594ee7bbb5b5294}\label{cgraph_8h_a465e7ee7880c21684594ee7bbb5b5294}} 
+\index{cgraph.h@{cgraph.h}!AGIN2OUT@{AGIN2OUT}}
+\index{AGIN2OUT@{AGIN2OUT}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGIN2OUT}{AGIN2OUT}}
+{\footnotesize\ttfamily \#define AGIN2\+OUT(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~((e)-\/1)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00433}{433}}
+
+\mbox{\Hypertarget{cgraph_8h_a74f36ad6c38c74813891907855f77ae4}\label{cgraph_8h_a74f36ad6c38c74813891907855f77ae4}} 
+\index{cgraph.h@{cgraph.h}!AGINEDGE@{AGINEDGE}}
+\index{AGINEDGE@{AGINEDGE}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGINEDGE}{AGINEDGE}}
+{\footnotesize\ttfamily \#define AGINEDGE~3 /$\ast$ (1 $<$$<$ 1) indicates an edge tag.   $\ast$/}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00108}{108}}
+
+\mbox{\Hypertarget{cgraph_8h_af49e2f2d448513116e21e5aafa77cc3f}\label{cgraph_8h_af49e2f2d448513116e21e5aafa77cc3f}} 
+\index{cgraph.h@{cgraph.h}!AGLEFTPOINTER@{AGLEFTPOINTER}}
+\index{AGLEFTPOINTER@{AGLEFTPOINTER}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGLEFTPOINTER}{AGLEFTPOINTER}}
+{\footnotesize\ttfamily \#define AGLEFTPOINTER(\begin{DoxyParamCaption}\item[{}]{rep }\end{DoxyParamCaption})~((\mbox{\hyperlink{cgraph_8h_a28a8bdde72c3f1193846994b7a59b62c}{Agnoderef\+\_\+t}}$\ast$)((rep)-\/$>$seq\+\_\+link.\+hl.\+\_\+left?((void$\ast$)((rep)-\/$>$seq\+\_\+link.\+hl.\+\_\+left) -\/ offsetof(\mbox{\hyperlink{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}{Agsubnode\+\_\+t}},seq\+\_\+link))\+:0))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00462}{462}}
+
+\mbox{\Hypertarget{cgraph_8h_a8f16054047081a8639e79509f855fdf1}\label{cgraph_8h_a8f16054047081a8639e79509f855fdf1}} 
+\index{cgraph.h@{cgraph.h}!AGMKIN@{AGMKIN}}
+\index{AGMKIN@{AGMKIN}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGMKIN}{AGMKIN}}
+{\footnotesize\ttfamily \#define AGMKIN(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a91e26f76d41f9f199ef969d977412f23}{AGTYPE}}(e) == \mbox{\hyperlink{cgraph_8h_a74f36ad6c38c74813891907855f77ae4}{AGINEDGE}}?  (e)\+: \mbox{\hyperlink{cgraph_8h_ac8066c3bc8c1c2deb5e571f81196090f}{AGOUT2\+IN}}(e))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00437}{437}}
+
+\mbox{\Hypertarget{cgraph_8h_a2629b0763de05c381161770b0640b0ad}\label{cgraph_8h_a2629b0763de05c381161770b0640b0ad}} 
+\index{cgraph.h@{cgraph.h}!AGMKOUT@{AGMKOUT}}
+\index{AGMKOUT@{AGMKOUT}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGMKOUT}{AGMKOUT}}
+{\footnotesize\ttfamily \#define AGMKOUT(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a91e26f76d41f9f199ef969d977412f23}{AGTYPE}}(e) == \mbox{\hyperlink{cgraph_8h_a5368d33053a2d0bae5c214e197c46cf0}{AGOUTEDGE}}? (e)\+: \mbox{\hyperlink{cgraph_8h_a465e7ee7880c21684594ee7bbb5b5294}{AGIN2\+OUT}}(e))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00436}{436}}
+
+\mbox{\Hypertarget{cgraph_8h_a1c1daa5e08c9b0c8f553ed8b03fd4c4e}\label{cgraph_8h_a1c1daa5e08c9b0c8f553ed8b03fd4c4e}} 
+\index{cgraph.h@{cgraph.h}!agnew@{agnew}}
+\index{agnew@{agnew}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnew}{agnew}}
+{\footnotesize\ttfamily \#define agnew(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{t }\end{DoxyParamCaption})~((t$\ast$)\mbox{\hyperlink{cgraph_8h_a6ec138fd5847dc2270932e4e8e278985}{agalloc}}(g,sizeof(t)))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00402}{402}}
+
+\mbox{\Hypertarget{cgraph_8h_ad64cd43fc8278ee1e416b8439c829ff8}\label{cgraph_8h_ad64cd43fc8278ee1e416b8439c829ff8}} 
+\index{cgraph.h@{cgraph.h}!agnnew@{agnnew}}
+\index{agnnew@{agnnew}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnnew}{agnnew}}
+{\footnotesize\ttfamily \#define agnnew(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{n,  }\item[{}]{t }\end{DoxyParamCaption})~((t$\ast$)\mbox{\hyperlink{cgraph_8h_a6ec138fd5847dc2270932e4e8e278985}{agalloc}}(g,(n)$\ast$sizeof(t)))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00403}{403}}
+
+\mbox{\Hypertarget{cgraph_8h_a43a81a3fd3c7b0ee89f200344195e630}\label{cgraph_8h_a43a81a3fd3c7b0ee89f200344195e630}} 
+\index{cgraph.h@{cgraph.h}!AGNODE@{AGNODE}}
+\index{AGNODE@{AGNODE}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGNODE}{AGNODE}}
+{\footnotesize\ttfamily \#define AGNODE~1}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00106}{106}}
+
+\mbox{\Hypertarget{cgraph_8h_aed727d3e94d3aef53f5e679cc4041da2}\label{cgraph_8h_aed727d3e94d3aef53f5e679cc4041da2}} 
+\index{cgraph.h@{cgraph.h}!AGOPP@{AGOPP}}
+\index{AGOPP@{AGOPP}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGOPP}{AGOPP}}
+{\footnotesize\ttfamily \#define AGOPP(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~((\mbox{\hyperlink{cgraph_8h_a91e26f76d41f9f199ef969d977412f23}{AGTYPE}}(e)==\mbox{\hyperlink{cgraph_8h_a74f36ad6c38c74813891907855f77ae4}{AGINEDGE}})?\mbox{\hyperlink{cgraph_8h_a465e7ee7880c21684594ee7bbb5b5294}{AGIN2\+OUT}}(e)\+:\mbox{\hyperlink{cgraph_8h_ac8066c3bc8c1c2deb5e571f81196090f}{AGOUT2\+IN}}(e))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00435}{435}}
+
+\mbox{\Hypertarget{cgraph_8h_a21ee14460f49ddb2e954f3cf9f9100a3}\label{cgraph_8h_a21ee14460f49ddb2e954f3cf9f9100a3}} 
+\index{cgraph.h@{cgraph.h}!agopp@{agopp}}
+\index{agopp@{agopp}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agopp}{agopp}}
+{\footnotesize\ttfamily \#define agopp(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~\mbox{\hyperlink{cgraph_8h_aed727d3e94d3aef53f5e679cc4041da2}{AGOPP}}(e)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00444}{444}}
+
+\mbox{\Hypertarget{cgraph_8h_ac8066c3bc8c1c2deb5e571f81196090f}\label{cgraph_8h_ac8066c3bc8c1c2deb5e571f81196090f}} 
+\index{cgraph.h@{cgraph.h}!AGOUT2IN@{AGOUT2IN}}
+\index{AGOUT2IN@{AGOUT2IN}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGOUT2IN}{AGOUT2IN}}
+{\footnotesize\ttfamily \#define AGOUT2\+IN(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~((e)+1)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00434}{434}}
+
+\mbox{\Hypertarget{cgraph_8h_a5368d33053a2d0bae5c214e197c46cf0}\label{cgraph_8h_a5368d33053a2d0bae5c214e197c46cf0}} 
+\index{cgraph.h@{cgraph.h}!AGOUTEDGE@{AGOUTEDGE}}
+\index{AGOUTEDGE@{AGOUTEDGE}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGOUTEDGE}{AGOUTEDGE}}
+{\footnotesize\ttfamily \#define AGOUTEDGE~2}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00107}{107}}
+
+\mbox{\Hypertarget{cgraph_8h_a1e06db728ec62594cc4c34d5e039f94b}\label{cgraph_8h_a1e06db728ec62594cc4c34d5e039f94b}} 
+\index{cgraph.h@{cgraph.h}!AGRAPH@{AGRAPH}}
+\index{AGRAPH@{AGRAPH}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGRAPH}{AGRAPH}}
+{\footnotesize\ttfamily \#define AGRAPH~0 /$\ast$ can\textquotesingle{}t exceed 2 bits. see Agtag\+\_\+t. $\ast$/}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00105}{105}}
+
+\mbox{\Hypertarget{cgraph_8h_a5e706aff586570c1a2363a8e058922ad}\label{cgraph_8h_a5e706aff586570c1a2363a8e058922ad}} 
+\index{cgraph.h@{cgraph.h}!AGRIGHTPOINTER@{AGRIGHTPOINTER}}
+\index{AGRIGHTPOINTER@{AGRIGHTPOINTER}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGRIGHTPOINTER}{AGRIGHTPOINTER}}
+{\footnotesize\ttfamily \#define AGRIGHTPOINTER(\begin{DoxyParamCaption}\item[{}]{rep }\end{DoxyParamCaption})~((\mbox{\hyperlink{cgraph_8h_a28a8bdde72c3f1193846994b7a59b62c}{Agnoderef\+\_\+t}}$\ast$)((rep)-\/$>$seq\+\_\+link.\+right?((void$\ast$)((rep)-\/$>$seq\+\_\+link.\+right) -\/ offsetof(\mbox{\hyperlink{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}{Agsubnode\+\_\+t}},seq\+\_\+link))\+:0))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00461}{461}}
+
+\mbox{\Hypertarget{cgraph_8h_afba562b0e6220df03e91273360b621c0}\label{cgraph_8h_afba562b0e6220df03e91273360b621c0}} 
+\index{cgraph.h@{cgraph.h}!AGSEQ@{AGSEQ}}
+\index{AGSEQ@{AGSEQ}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGSEQ}{AGSEQ}}
+{\footnotesize\ttfamily \#define AGSEQ(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_abf2980fa393039cd2ff1130e5eb491a1}{AGTAG}}(obj).seq)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00120}{120}}
+
+\mbox{\Hypertarget{cgraph_8h_aba4711ac9f35fc6537d10ff17b1b54a6}\label{cgraph_8h_aba4711ac9f35fc6537d10ff17b1b54a6}} 
+\index{cgraph.h@{cgraph.h}!AGSNMAIN@{AGSNMAIN}}
+\index{AGSNMAIN@{AGSNMAIN}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGSNMAIN}{AGSNMAIN}}
+{\footnotesize\ttfamily \#define AGSNMAIN(\begin{DoxyParamCaption}\item[{}]{sn }\end{DoxyParamCaption})~((sn)==(\&((sn)-\/$>$node-\/$>$mainsub)))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00480}{480}}
+
+\mbox{\Hypertarget{cgraph_8h_abf2980fa393039cd2ff1130e5eb491a1}\label{cgraph_8h_abf2980fa393039cd2ff1130e5eb491a1}} 
+\index{cgraph.h@{cgraph.h}!AGTAG@{AGTAG}}
+\index{AGTAG@{AGTAG}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGTAG}{AGTAG}}
+{\footnotesize\ttfamily \#define AGTAG(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})~(((\mbox{\hyperlink{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}{Agobj\+\_\+t}}$\ast$)(obj))-\/$>$tag)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00117}{117}}
+
+\mbox{\Hypertarget{cgraph_8h_addbb048b0b1e23abd8b4d40df33f0104}\label{cgraph_8h_addbb048b0b1e23abd8b4d40df33f0104}} 
+\index{cgraph.h@{cgraph.h}!AGTAIL@{AGTAIL}}
+\index{AGTAIL@{AGTAIL}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGTAIL}{AGTAIL}}
+{\footnotesize\ttfamily \#define AGTAIL(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a8f16054047081a8639e79509f855fdf1}{AGMKIN}}(e)-\/$>$node)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00438}{438}}
+
+\mbox{\Hypertarget{cgraph_8h_a96fc1fa869456d5345e784a7bf9c615e}\label{cgraph_8h_a96fc1fa869456d5345e784a7bf9c615e}} 
+\index{cgraph.h@{cgraph.h}!agtail@{agtail}}
+\index{agtail@{agtail}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agtail}{agtail}}
+{\footnotesize\ttfamily \#define agtail(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~\mbox{\hyperlink{cgraph_8h_addbb048b0b1e23abd8b4d40df33f0104}{AGTAIL}}(e)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00442}{442}}
+
+\mbox{\Hypertarget{cgraph_8h_a91e26f76d41f9f199ef969d977412f23}\label{cgraph_8h_a91e26f76d41f9f199ef969d977412f23}} 
+\index{cgraph.h@{cgraph.h}!AGTYPE@{AGTYPE}}
+\index{AGTYPE@{AGTYPE}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AGTYPE}{AGTYPE}}
+{\footnotesize\ttfamily \#define AGTYPE(\begin{DoxyParamCaption}\item[{}]{obj }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_abf2980fa393039cd2ff1130e5eb491a1}{AGTAG}}(obj).objtype)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00118}{118}}
+
+\mbox{\Hypertarget{cgraph_8h_a3d9901a401be74d297b4512b5d69390c}\label{cgraph_8h_a3d9901a401be74d297b4512b5d69390c}} 
+\index{cgraph.h@{cgraph.h}!EDGEOF@{EDGEOF}}
+\index{EDGEOF@{EDGEOF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{EDGEOF}{EDGEOF}}
+{\footnotesize\ttfamily \#define EDGEOF(\begin{DoxyParamCaption}\item[{}]{sn,  }\item[{}]{rep }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_aba4711ac9f35fc6537d10ff17b1b54a6}{AGSNMAIN}}(sn)?((\mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}}$\ast$)((unsigned char$\ast$)(rep) -\/ offsetof(\mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}},seq\+\_\+link))) \+: ((\mbox{\hyperlink{cdt_8h_a0a38fb0e224c2c78db09e185ff3b4a7a}{Dthold\+\_\+t}}$\ast$)(rep))-\/$>$obj)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00481}{481}}
+
+\mbox{\Hypertarget{cgraph_8h_a14b4f2b54efac4f6ef24ebf2998be25f}\label{cgraph_8h_a14b4f2b54efac4f6ef24ebf2998be25f}} 
+\index{cgraph.h@{cgraph.h}!FIRSTINREF@{FIRSTINREF}}
+\index{FIRSTINREF@{FIRSTINREF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{FIRSTINREF}{FIRSTINREF}}
+{\footnotesize\ttfamily \#define FIRSTINREF(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{sn }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}{agflatten}}(g,1), (sn)-\/$>$in\+\_\+seq)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00475}{475}}
+
+\mbox{\Hypertarget{cgraph_8h_a0c63a2341e44475499e944e91c9bf3aa}\label{cgraph_8h_a0c63a2341e44475499e944e91c9bf3aa}} 
+\index{cgraph.h@{cgraph.h}!FIRSTNREF@{FIRSTNREF}}
+\index{FIRSTNREF@{FIRSTNREF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{FIRSTNREF}{FIRSTNREF}}
+{\footnotesize\ttfamily \#define FIRSTNREF(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}{agflatten}}(g,1), \mbox{\hyperlink{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}{AGHEADPOINTER}}(g))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00464}{464}}
+
+\mbox{\Hypertarget{cgraph_8h_a93c09cc33bcd201216e34753b25f19c7}\label{cgraph_8h_a93c09cc33bcd201216e34753b25f19c7}} 
+\index{cgraph.h@{cgraph.h}!FIRSTOUTREF@{FIRSTOUTREF}}
+\index{FIRSTOUTREF@{FIRSTOUTREF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{FIRSTOUTREF}{FIRSTOUTREF}}
+{\footnotesize\ttfamily \#define FIRSTOUTREF(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{sn }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}{agflatten}}(g,1), (sn)-\/$>$out\+\_\+seq)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00473}{473}}
+
+\mbox{\Hypertarget{cgraph_8h_a5bc7f7e2e3a0459be80728f8e6495c56}\label{cgraph_8h_a5bc7f7e2e3a0459be80728f8e6495c56}} 
+\index{cgraph.h@{cgraph.h}!HEADPORT\_ID@{HEADPORT\_ID}}
+\index{HEADPORT\_ID@{HEADPORT\_ID}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{HEADPORT\_ID}{HEADPORT\_ID}}
+{\footnotesize\ttfamily \#define HEADPORT\+\_\+\+ID~\char`\"{}headport\char`\"{}}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00448}{448}}
+
+\mbox{\Hypertarget{cgraph_8h_a09c3f4f2ba45f855b30be109ebae926f}\label{cgraph_8h_a09c3f4f2ba45f855b30be109ebae926f}} 
+\index{cgraph.h@{cgraph.h}!LASTNREF@{LASTNREF}}
+\index{LASTNREF@{LASTNREF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{LASTNREF}{LASTNREF}}
+{\footnotesize\ttfamily \#define LASTNREF(\begin{DoxyParamCaption}\item[{}]{g }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}{agflatten}}(g,1), \mbox{\hyperlink{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}{AGHEADPOINTER}}(g)?\mbox{\hyperlink{cgraph_8h_af49e2f2d448513116e21e5aafa77cc3f}{AGLEFTPOINTER}}(\mbox{\hyperlink{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}{AGHEADPOINTER}}(g))\+:0)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00470}{470}}
+
+\mbox{\Hypertarget{cgraph_8h_aacce723e499342d8615b440edcde8b8c}\label{cgraph_8h_aacce723e499342d8615b440edcde8b8c}} 
+\index{cgraph.h@{cgraph.h}!LASTOUTREF@{LASTOUTREF}}
+\index{LASTOUTREF@{LASTOUTREF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{LASTOUTREF}{LASTOUTREF}}
+{\footnotesize\ttfamily \#define LASTOUTREF(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{sn }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}{agflatten}}(g,1), (\mbox{\hyperlink{cgraph_8h_aee8adc70db35f37a4bc26997b6ac6b81}{Agedgeref\+\_\+t}}$\ast$)\mbox{\hyperlink{cdt_8h_aba7b1b643434cc61b1692a1875c6029b}{dtlast}}(sn-\/$>$out\+\_\+seq))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00474}{474}}
+
+\mbox{\Hypertarget{cgraph_8h_a06bc56043856cb3f27a245c28e3ab309}\label{cgraph_8h_a06bc56043856cb3f27a245c28e3ab309}} 
+\index{cgraph.h@{cgraph.h}!NEXTEREF@{NEXTEREF}}
+\index{NEXTEREF@{NEXTEREF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{NEXTEREF}{NEXTEREF}}
+{\footnotesize\ttfamily \#define NEXTEREF(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{rep }\end{DoxyParamCaption})~((rep)-\/$>$right)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00476}{476}}
+
+\mbox{\Hypertarget{cgraph_8h_ac032c69ecf18ef38f1d58e004d164f86}\label{cgraph_8h_ac032c69ecf18ef38f1d58e004d164f86}} 
+\index{cgraph.h@{cgraph.h}!NEXTNREF@{NEXTNREF}}
+\index{NEXTNREF@{NEXTNREF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{NEXTNREF}{NEXTNREF}}
+{\footnotesize\ttfamily \#define NEXTNREF(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{rep }\end{DoxyParamCaption})~(\mbox{\hyperlink{cgraph_8h_a5e706aff586570c1a2363a8e058922ad}{AGRIGHTPOINTER}}(rep) == \mbox{\hyperlink{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}{AGHEADPOINTER}}(g)?0\+:\mbox{\hyperlink{cgraph_8h_a5e706aff586570c1a2363a8e058922ad}{AGRIGHTPOINTER}}(rep))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00466}{466}}
+
+\mbox{\Hypertarget{cgraph_8h_ad0b5132f1f459932b8713eb767708873}\label{cgraph_8h_ad0b5132f1f459932b8713eb767708873}} 
+\index{cgraph.h@{cgraph.h}!NODEOF@{NODEOF}}
+\index{NODEOF@{NODEOF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{NODEOF}{NODEOF}}
+{\footnotesize\ttfamily \#define NODEOF(\begin{DoxyParamCaption}\item[{}]{rep }\end{DoxyParamCaption})~((rep)-\/$>$node)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00471}{471}}
+
+\mbox{\Hypertarget{cgraph_8h_ae87533af17a7fb8f90f1006b154b1449}\label{cgraph_8h_ae87533af17a7fb8f90f1006b154b1449}} 
+\index{cgraph.h@{cgraph.h}!PREVEREF@{PREVEREF}}
+\index{PREVEREF@{PREVEREF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{PREVEREF}{PREVEREF}}
+{\footnotesize\ttfamily \#define PREVEREF(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{rep }\end{DoxyParamCaption})~((rep)-\/$>$hl.\+\_\+left)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00477}{477}}
+
+\mbox{\Hypertarget{cgraph_8h_ad61b4cf80edd9e1f7f4bfaa0357eb994}\label{cgraph_8h_ad61b4cf80edd9e1f7f4bfaa0357eb994}} 
+\index{cgraph.h@{cgraph.h}!PREVNREF@{PREVNREF}}
+\index{PREVNREF@{PREVNREF}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{PREVNREF}{PREVNREF}}
+{\footnotesize\ttfamily \#define PREVNREF(\begin{DoxyParamCaption}\item[{}]{g,  }\item[{}]{rep }\end{DoxyParamCaption})~(((rep)==\mbox{\hyperlink{cgraph_8h_a9e6202ae84de28af964d9f031b12bcb4}{AGHEADPOINTER}}(g))?0\+:(\mbox{\hyperlink{cgraph_8h_af49e2f2d448513116e21e5aafa77cc3f}{AGLEFTPOINTER}}(rep)))}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00468}{468}}
+
+\mbox{\Hypertarget{cgraph_8h_a21c6527e075feb0693a9112e122110ac}\label{cgraph_8h_a21c6527e075feb0693a9112e122110ac}} 
+\index{cgraph.h@{cgraph.h}!TAILPORT\_ID@{TAILPORT\_ID}}
+\index{TAILPORT\_ID@{TAILPORT\_ID}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{TAILPORT\_ID}{TAILPORT\_ID}}
+{\footnotesize\ttfamily \#define TAILPORT\+\_\+\+ID~\char`\"{}tailport\char`\"{}}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00447}{447}}
+
+
+
+\doxysubsection{Типы}
+\mbox{\Hypertarget{cgraph_8h_a842c1770dab888f97a2124fd1c4beab5}\label{cgraph_8h_a842c1770dab888f97a2124fd1c4beab5}} 
+\index{cgraph.h@{cgraph.h}!Agattr\_t@{Agattr\_t}}
+\index{Agattr\_t@{Agattr\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agattr\_t}{Agattr\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agattr__s}{Agattr\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a842c1770dab888f97a2124fd1c4beab5}{Agattr\+\_\+t}}}
+
+
+
+string attribute container 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00066}{66}}
+
+\mbox{\Hypertarget{cgraph_8h_a1268b501cf6ea9359343e0545e0d89bc}\label{cgraph_8h_a1268b501cf6ea9359343e0545e0d89bc}} 
+\index{cgraph.h@{cgraph.h}!Agcbdisc\_t@{Agcbdisc\_t}}
+\index{Agcbdisc\_t@{Agcbdisc\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agcbdisc\_t}{Agcbdisc\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agcbdisc__s}{Agcbdisc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a1268b501cf6ea9359343e0545e0d89bc}{Agcbdisc\+\_\+t}}}
+
+
+
+client event callbacks 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00067}{67}}
+
+\mbox{\Hypertarget{cgraph_8h_a2557226a5c2e12011ae3af38218ce16a}\label{cgraph_8h_a2557226a5c2e12011ae3af38218ce16a}} 
+\index{cgraph.h@{cgraph.h}!Agcbstack\_t@{Agcbstack\_t}}
+\index{Agcbstack\_t@{Agcbstack\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agcbstack\_t}{Agcbstack\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agcbstack__s}{Agcbstack\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a2557226a5c2e12011ae3af38218ce16a}{Agcbstack\+\_\+t}}}
+
+
+
+enclosing state for cbdisc 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00068}{68}}
+
+\mbox{\Hypertarget{cgraph_8h_a06d0f63c3d8a11010e5cde97404bda9e}\label{cgraph_8h_a06d0f63c3d8a11010e5cde97404bda9e}} 
+\index{cgraph.h@{cgraph.h}!Agclos\_t@{Agclos\_t}}
+\index{Agclos\_t@{Agclos\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agclos\_t}{Agclos\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agclos__s}{Agclos\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a06d0f63c3d8a11010e5cde97404bda9e}{Agclos\+\_\+t}}}
+
+
+
+common fields for graph/subgs 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00069}{69}}
+
+\mbox{\Hypertarget{cgraph_8h_af9586e118422d27a92e6c9ac694e8810}\label{cgraph_8h_af9586e118422d27a92e6c9ac694e8810}} 
+\index{cgraph.h@{cgraph.h}!Agdatadict\_t@{Agdatadict\_t}}
+\index{Agdatadict\_t@{Agdatadict\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agdatadict\_t}{Agdatadict\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agdatadict__s}{Agdatadict\+\_\+s}} \mbox{\hyperlink{cgraph_8h_af9586e118422d27a92e6c9ac694e8810}{Agdatadict\+\_\+t}}}
+
+
+
+set of dictionaries per graph 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00071}{71}}
+
+\mbox{\Hypertarget{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}\label{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}} 
+\index{cgraph.h@{cgraph.h}!Agdesc\_t@{Agdesc\_t}}
+\index{Agdesc\_t@{Agdesc\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agdesc\_t}{Agdesc\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agdesc__s}{Agdesc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}}}
+
+
+
+graph descriptor 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00059}{59}}
+
+\mbox{\Hypertarget{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}\label{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}} 
+\index{cgraph.h@{cgraph.h}!Agdisc\_t@{Agdisc\_t}}
+\index{Agdisc\_t@{Agdisc\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agdisc\_t}{Agdisc\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agdisc__s}{Agdisc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}}}
+
+
+
+union of client discipline methods 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00063}{63}}
+
+\mbox{\Hypertarget{cgraph_8h_a238c6bc86df30b49961fb0b64f33ea03}\label{cgraph_8h_a238c6bc86df30b49961fb0b64f33ea03}} 
+\index{cgraph.h@{cgraph.h}!Agdstate\_t@{Agdstate\_t}}
+\index{Agdstate\_t@{Agdstate\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agdstate\_t}{Agdstate\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agdstate__s}{Agdstate\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a238c6bc86df30b49961fb0b64f33ea03}{Agdstate\+\_\+t}}}
+
+
+
+client state (closures) 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00064}{64}}
+
+\mbox{\Hypertarget{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}\label{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}} 
+\index{cgraph.h@{cgraph.h}!Agedge\_t@{Agedge\_t}}
+\index{Agedge\_t@{Agedge\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agedge\_t}{Agedge\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agedge__s}{Agedge\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}}}
+
+
+
+node pair 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00058}{58}}
+
+\mbox{\Hypertarget{cgraph_8h_a23808484bcb2730ccccc6138ef0fc0e2}\label{cgraph_8h_a23808484bcb2730ccccc6138ef0fc0e2}} 
+\index{cgraph.h@{cgraph.h}!Agedgepair\_t@{Agedgepair\_t}}
+\index{Agedgepair\_t@{Agedgepair\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agedgepair\_t}{Agedgepair\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agedgepair__s}{Agedgepair\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a23808484bcb2730ccccc6138ef0fc0e2}{Agedgepair\+\_\+t}}}
+
+
+
+the edge object 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00072}{72}}
+
+\mbox{\Hypertarget{cgraph_8h_aee8adc70db35f37a4bc26997b6ac6b81}\label{cgraph_8h_aee8adc70db35f37a4bc26997b6ac6b81}} 
+\index{cgraph.h@{cgraph.h}!Agedgeref\_t@{Agedgeref\_t}}
+\index{Agedgeref\_t@{Agedgeref\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agedgeref\_t}{Agedgeref\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{cdt_8h_a1346eabee70476232f305f8e876d7fab}{Dtlink\+\_\+t}} \mbox{\hyperlink{cgraph_8h_aee8adc70db35f37a4bc26997b6ac6b81}{Agedgeref\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00458}{458}}
+
+\mbox{\Hypertarget{cgraph_8h_a8e845730a89de4d3b5609b996f94c9ac}\label{cgraph_8h_a8e845730a89de4d3b5609b996f94c9ac}} 
+\index{cgraph.h@{cgraph.h}!Agiddisc\_t@{Agiddisc\_t}}
+\index{Agiddisc\_t@{Agiddisc\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agiddisc\_t}{Agiddisc\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agiddisc__s}{Agiddisc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a8e845730a89de4d3b5609b996f94c9ac}{Agiddisc\+\_\+t}}}
+
+
+
+object ID allocator 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00061}{61}}
+
+\mbox{\Hypertarget{cgraph_8h_aacaa7e5682be10f0c44bd7a93a00df8d}\label{cgraph_8h_aacaa7e5682be10f0c44bd7a93a00df8d}} 
+\index{cgraph.h@{cgraph.h}!Agiodisc\_t@{Agiodisc\_t}}
+\index{Agiodisc\_t@{Agiodisc\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agiodisc\_t}{Agiodisc\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agiodisc__s}{Agiodisc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_aacaa7e5682be10f0c44bd7a93a00df8d}{Agiodisc\+\_\+t}}}
+
+
+
+IO services. 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00062}{62}}
+
+\mbox{\Hypertarget{cgraph_8h_a9c972a6ee678b82cabc303e1e37ad0c6}\label{cgraph_8h_a9c972a6ee678b82cabc303e1e37ad0c6}} 
+\index{cgraph.h@{cgraph.h}!Agmemdisc\_t@{Agmemdisc\_t}}
+\index{Agmemdisc\_t@{Agmemdisc\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agmemdisc\_t}{Agmemdisc\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agmemdisc__s}{Agmemdisc\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a9c972a6ee678b82cabc303e1e37ad0c6}{Agmemdisc\+\_\+t}}}
+
+
+
+memory allocator 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00060}{60}}
+
+\mbox{\Hypertarget{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}\label{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}} 
+\index{cgraph.h@{cgraph.h}!Agnode\_t@{Agnode\_t}}
+\index{Agnode\_t@{Agnode\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agnode\_t}{Agnode\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agnode__s}{Agnode\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}}}
+
+
+
+node (atom) 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00057}{57}}
+
+\mbox{\Hypertarget{cgraph_8h_a28a8bdde72c3f1193846994b7a59b62c}\label{cgraph_8h_a28a8bdde72c3f1193846994b7a59b62c}} 
+\index{cgraph.h@{cgraph.h}!Agnoderef\_t@{Agnoderef\_t}}
+\index{Agnoderef\_t@{Agnoderef\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agnoderef\_t}{Agnoderef\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}{Agsubnode\+\_\+t}} \mbox{\hyperlink{cgraph_8h_a28a8bdde72c3f1193846994b7a59b62c}{Agnoderef\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00457}{457}}
+
+\mbox{\Hypertarget{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}\label{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}} 
+\index{cgraph.h@{cgraph.h}!Agobj\_t@{Agobj\_t}}
+\index{Agobj\_t@{Agobj\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agobj\_t}{Agobj\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agobj__s}{Agobj\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}{Agobj\+\_\+t}}}
+
+
+
+generic object header 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00055}{55}}
+
+\mbox{\Hypertarget{cgraph_8h_a328f1953f5f8ccc75b7ea4bfbfcc3a6b}\label{cgraph_8h_a328f1953f5f8ccc75b7ea4bfbfcc3a6b}} 
+\index{cgraph.h@{cgraph.h}!agobjfn\_t@{agobjfn\_t}}
+\index{agobjfn\_t@{agobjfn\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agobjfn\_t}{agobjfn\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ agobjfn\+\_\+t) (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}{Agobj\+\_\+t}} $\ast$obj, void $\ast$arg)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00222}{222}}
+
+\mbox{\Hypertarget{cgraph_8h_a1346110b9185ce19585655259ebd3f54}\label{cgraph_8h_a1346110b9185ce19585655259ebd3f54}} 
+\index{cgraph.h@{cgraph.h}!agobjupdfn\_t@{agobjupdfn\_t}}
+\index{agobjupdfn\_t@{agobjupdfn\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agobjupdfn\_t}{agobjupdfn\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ agobjupdfn\+\_\+t) (\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$g, \mbox{\hyperlink{cgraph_8h_a90bb56515d2b9598f7f967f39cb864e8}{Agobj\+\_\+t}} $\ast$obj, void $\ast$arg, \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$sym)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00223}{223}}
+
+\mbox{\Hypertarget{cgraph_8h_a48061c3baade540af78ac621211ae926}\label{cgraph_8h_a48061c3baade540af78ac621211ae926}} 
+\index{cgraph.h@{cgraph.h}!Agraph\_t@{Agraph\_t}}
+\index{Agraph\_t@{Agraph\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agraph\_t}{Agraph\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agraph__s}{Agraph\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}}}
+
+
+
+graph, subgraph (or hyperedge) 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00056}{56}}
+
+\mbox{\Hypertarget{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}\label{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}} 
+\index{cgraph.h@{cgraph.h}!Agrec\_t@{Agrec\_t}}
+\index{Agrec\_t@{Agrec\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agrec\_t}{Agrec\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agrec__s}{Agrec\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}{Agrec\+\_\+t}}}
+
+
+
+generic runtime record 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00070}{70}}
+
+\mbox{\Hypertarget{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}\label{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}} 
+\index{cgraph.h@{cgraph.h}!Agsubnode\_t@{Agsubnode\_t}}
+\index{Agsubnode\_t@{Agsubnode\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agsubnode\_t}{Agsubnode\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agsubnode__s}{Agsubnode\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}{Agsubnode\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00073}{73}}
+
+\mbox{\Hypertarget{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}\label{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}} 
+\index{cgraph.h@{cgraph.h}!Agsym\_t@{Agsym\_t}}
+\index{Agsym\_t@{Agsym\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agsym\_t}{Agsym\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agsym__s}{Agsym\+\_\+s}} \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}}}
+
+
+
+string attribute descriptors 
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00065}{65}}
+
+\mbox{\Hypertarget{cgraph_8h_aacd16fe557116c340e6bad52ac843f3c}\label{cgraph_8h_aacd16fe557116c340e6bad52ac843f3c}} 
+\index{cgraph.h@{cgraph.h}!Agtag\_t@{Agtag\_t}}
+\index{Agtag\_t@{Agtag\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agtag\_t}{Agtag\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_agtag__s}{Agtag\+\_\+s}} \mbox{\hyperlink{cgraph_8h_aacd16fe557116c340e6bad52ac843f3c}{Agtag\+\_\+t}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00054}{54}}
+
+\mbox{\Hypertarget{cgraph_8h_adaa9664d5293197783f01659b889d8c6}\label{cgraph_8h_adaa9664d5293197783f01659b889d8c6}} 
+\index{cgraph.h@{cgraph.h}!agusererrf@{agusererrf}}
+\index{agusererrf@{agusererrf}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agusererrf}{agusererrf}}
+{\footnotesize\ttfamily typedef int($\ast$ agusererrf) (char $\ast$)}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00418}{418}}
+
+\mbox{\Hypertarget{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}\label{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}} 
+\index{cgraph.h@{cgraph.h}!IDTYPE@{IDTYPE}}
+\index{IDTYPE@{IDTYPE}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{IDTYPE}{IDTYPE}}
+{\footnotesize\ttfamily typedef uint64\+\_\+t \mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}}}
+
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00051}{51}}
+
+
+
+\doxysubsection{Перечисления}
+\mbox{\Hypertarget{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cf}\label{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cf}} 
+\index{cgraph.h@{cgraph.h}!agerrlevel\_t@{agerrlevel\_t}}
+\index{agerrlevel\_t@{agerrlevel\_t}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agerrlevel\_t}{agerrlevel\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cf}{agerrlevel\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AGWARN@{AGWARN}!cgraph.h@{cgraph.h}}\index{cgraph.h@{cgraph.h}!AGWARN@{AGWARN}}}\mbox{\Hypertarget{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa4486cfed6fa2babf34e58bdb3707461c}\label{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa4486cfed6fa2babf34e58bdb3707461c}} 
+AGWARN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AGERR@{AGERR}!cgraph.h@{cgraph.h}}\index{cgraph.h@{cgraph.h}!AGERR@{AGERR}}}\mbox{\Hypertarget{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa76eb3bf18a02c1e78b1be01b25c296f2}\label{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa76eb3bf18a02c1e78b1be01b25c296f2}} 
+AGERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AGMAX@{AGMAX}!cgraph.h@{cgraph.h}}\index{cgraph.h@{cgraph.h}!AGMAX@{AGMAX}}}\mbox{\Hypertarget{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa737e3522a0c1ebe6f2bc9faa54da2a77}\label{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa737e3522a0c1ebe6f2bc9faa54da2a77}} 
+AGMAX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AGPREV@{AGPREV}!cgraph.h@{cgraph.h}}\index{cgraph.h@{cgraph.h}!AGPREV@{AGPREV}}}\mbox{\Hypertarget{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfabd794ca4c498f8e4c0cf4d26755e0398}\label{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfabd794ca4c498f8e4c0cf4d26755e0398}} 
+AGPREV&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{cgraph_8h_source}{cgraph.\+h}} строка \mbox{\hyperlink{cgraph_8h_source_l00417}{417}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00417 \{ \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa4486cfed6fa2babf34e58bdb3707461c}{AGWARN}}, \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa76eb3bf18a02c1e78b1be01b25c296f2}{AGERR}}, \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfa737e3522a0c1ebe6f2bc9faa54da2a77}{AGMAX}}, \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cfabd794ca4c498f8e4c0cf4d26755e0398}{AGPREV}} \} \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cf}{agerrlevel\_t}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Функции}
+\mbox{\Hypertarget{cgraph_8h_a6ec138fd5847dc2270932e4e8e278985}\label{cgraph_8h_a6ec138fd5847dc2270932e4e8e278985}} 
+\index{cgraph.h@{cgraph.h}!agalloc@{agalloc}}
+\index{agalloc@{agalloc}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agalloc()}{agalloc()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API void $\ast$ agalloc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ac9976dbfd1f6494265db70a8b5757e13}\label{cgraph_8h_ac9976dbfd1f6494265db70a8b5757e13}} 
+\index{cgraph.h@{cgraph.h}!agattr@{agattr}}
+\index{agattr@{agattr}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agattr()}{agattr()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$ agattr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{int}]{kind,  }\item[{char $\ast$}]{name,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a5b16c999c865cb06c9a77a22985c502e}\label{cgraph_8h_a5b16c999c865cb06c9a77a22985c502e}} 
+\index{cgraph.h@{cgraph.h}!agattrsym@{agattrsym}}
+\index{agattrsym@{agattrsym}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agattrsym()}{agattrsym()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$ agattrsym (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a6bdb778abe4c0e93b957329520e31917}\label{cgraph_8h_a6bdb778abe4c0e93b957329520e31917}} 
+\index{cgraph.h@{cgraph.h}!agbindrec@{agbindrec}}
+\index{agbindrec@{agbindrec}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agbindrec()}{agbindrec()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API void $\ast$ agbindrec (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj,  }\item[{const char $\ast$}]{name,  }\item[{unsigned int}]{recsize,  }\item[{int}]{move\+\_\+to\+\_\+front }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a32e0da50178bc16a3eb0236a1e45bf52}\label{cgraph_8h_a32e0da50178bc16a3eb0236a1e45bf52}} 
+\index{cgraph.h@{cgraph.h}!agcallbacks@{agcallbacks}}
+\index{agcallbacks@{agcallbacks}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agcallbacks()}{agcallbacks()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agcallbacks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{int}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_aad3cc2785341c97cf7655d0801fffe29}\label{cgraph_8h_aad3cc2785341c97cf7655d0801fffe29}} 
+\index{cgraph.h@{cgraph.h}!agcanon@{agcanon}}
+\index{agcanon@{agcanon}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agcanon()}{agcanon()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API char $\ast$ agcanon (\begin{DoxyParamCaption}\item[{char $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a9e37d90b309da81ff4ab135fdd131b61}\label{cgraph_8h_a9e37d90b309da81ff4ab135fdd131b61}} 
+\index{cgraph.h@{cgraph.h}!agcanonStr@{agcanonStr}}
+\index{agcanonStr@{agcanonStr}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agcanonStr()}{agcanonStr()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API char $\ast$ agcanon\+Str (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ab9b463c58a79b8520413c6bc26fad4b5}\label{cgraph_8h_ab9b463c58a79b8520413c6bc26fad4b5}} 
+\index{cgraph.h@{cgraph.h}!agclean@{agclean}}
+\index{agclean@{agclean}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agclean()}{agclean()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API void agclean (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{int}]{kind,  }\item[{char $\ast$}]{rec\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a3ee45d1d24d5cd3752fa361aea60d17e}\label{cgraph_8h_a3ee45d1d24d5cd3752fa361aea60d17e}} 
+\index{cgraph.h@{cgraph.h}!agclose@{agclose}}
+\index{agclose@{agclose}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agclose()}{agclose()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agclose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a3769c156e3962b32d89508d6fe338296}\label{cgraph_8h_a3769c156e3962b32d89508d6fe338296}} 
+\index{cgraph.h@{cgraph.h}!agconcat@{agconcat}}
+\index{agconcat@{agconcat}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agconcat()}{agconcat()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agconcat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{void $\ast$}]{chan,  }\item[{\mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} $\ast$}]{disc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a9c439ed4a327d91f9222f19a97e555cb}\label{cgraph_8h_a9c439ed4a327d91f9222f19a97e555cb}} 
+\index{cgraph.h@{cgraph.h}!agcontains@{agcontains}}
+\index{agcontains@{agcontains}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agcontains()}{agcontains()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agcontains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{,  }\item[{void $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a4ae52a8faaa6ea2db87b5d36fb1cde6b}\label{cgraph_8h_a4ae52a8faaa6ea2db87b5d36fb1cde6b}} 
+\index{cgraph.h@{cgraph.h}!agcopyattr@{agcopyattr}}
+\index{agcopyattr@{agcopyattr}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agcopyattr()}{agcopyattr()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agcopyattr (\begin{DoxyParamCaption}\item[{void $\ast$}]{oldobj,  }\item[{void $\ast$}]{newobj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ab2d5ab6810e74b55cf287bcb8490a8be}\label{cgraph_8h_ab2d5ab6810e74b55cf287bcb8490a8be}} 
+\index{cgraph.h@{cgraph.h}!agcountuniqedges@{agcountuniqedges}}
+\index{agcountuniqedges@{agcountuniqedges}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agcountuniqedges()}{agcountuniqedges()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agcountuniqedges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{n,  }\item[{int}]{in,  }\item[{int}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a7bde08e6e67433a4afd6c046e0b62d9b}\label{cgraph_8h_a7bde08e6e67433a4afd6c046e0b62d9b}} 
+\index{cgraph.h@{cgraph.h}!agdegree@{agdegree}}
+\index{agdegree@{agdegree}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agdegree()}{agdegree()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agdegree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{n,  }\item[{int}]{in,  }\item[{int}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_aa6b8ecac59848235f597cf522634a371}\label{cgraph_8h_aa6b8ecac59848235f597cf522634a371}} 
+\index{cgraph.h@{cgraph.h}!agdeledge@{agdeledge}}
+\index{agdeledge@{agdeledge}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agdeledge()}{agdeledge()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agdeledge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$}]{arg\+\_\+e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a19273212a3f0fca17c542858e6bd1e0b}\label{cgraph_8h_a19273212a3f0fca17c542858e6bd1e0b}} 
+\index{cgraph.h@{cgraph.h}!agdelete@{agdelete}}
+\index{agdelete@{agdelete}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agdelete()}{agdelete()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agdelete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{void $\ast$}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a0673ef5a28252affd27980820f2c2774}\label{cgraph_8h_a0673ef5a28252affd27980820f2c2774}} 
+\index{cgraph.h@{cgraph.h}!agdelnode@{agdelnode}}
+\index{agdelnode@{agdelnode}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agdelnode()}{agdelnode()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agdelnode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{arg\+\_\+n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a296164f98874ccee53917ebbabd08e1d}\label{cgraph_8h_a296164f98874ccee53917ebbabd08e1d}} 
+\index{cgraph.h@{cgraph.h}!agdelrec@{agdelrec}}
+\index{agdelrec@{agdelrec}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agdelrec()}{agdelrec()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agdelrec (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ab1c83c6ec6158127af8d718352cea710}\label{cgraph_8h_ab1c83c6ec6158127af8d718352cea710}} 
+\index{cgraph.h@{cgraph.h}!agdelsubg@{agdelsubg}}
+\index{agdelsubg@{agdelsubg}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agdelsubg()}{agdelsubg()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agdelsubg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{sub }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a95def214657d6bb88fa9fb78c0a8decc}\label{cgraph_8h_a95def214657d6bb88fa9fb78c0a8decc}} 
+\index{cgraph.h@{cgraph.h}!agedge@{agedge}}
+\index{agedge@{agedge}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agedge()}{agedge()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ agedge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{t,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{h,  }\item[{char $\ast$}]{name,  }\item[{int}]{createflag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a42ef64ab2933b0503ccc8406dfe375b7}\label{cgraph_8h_a42ef64ab2933b0503ccc8406dfe375b7}} 
+\index{cgraph.h@{cgraph.h}!agerr@{agerr}}
+\index{agerr@{agerr}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agerr()}{agerr()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agerr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cf}{agerrlevel\+\_\+t}}}]{level,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_af80e0604e4bcff00064559e46261b8d4}\label{cgraph_8h_af80e0604e4bcff00064559e46261b8d4}} 
+\index{cgraph.h@{cgraph.h}!agerrorf@{agerrorf}}
+\index{agerrorf@{agerrorf}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agerrorf()}{agerrorf()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int CGRAPH\+\_\+\+API void agerrorf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ac3dd9f429c7f6f0b7147e8ffd5c83ed5}\label{cgraph_8h_ac3dd9f429c7f6f0b7147e8ffd5c83ed5}} 
+\index{cgraph.h@{cgraph.h}!agerrors@{agerrors}}
+\index{agerrors@{agerrors}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agerrors()}{agerrors()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int CGRAPH\+\_\+\+API void CGRAPH\+\_\+\+API void CGRAPH\+\_\+\+API int agerrors (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}\label{cgraph_8h_a728846abaafbdf1ac2aa7744b61cf1f0}} 
+\index{cgraph.h@{cgraph.h}!agflatten@{agflatten}}
+\index{agflatten@{agflatten}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agflatten()}{agflatten()}}
+{\footnotesize\ttfamily void agflatten (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{int}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_aa65a37d065b6fc07efa173c222925511}\label{cgraph_8h_aa65a37d065b6fc07efa173c222925511}} 
+\index{cgraph.h@{cgraph.h}!agfree@{agfree}}
+\index{agfree@{agfree}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agfree()}{agfree()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API void agfree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_af925ab5ddb3ed9a9dd5d5df1a84ea6bd}\label{cgraph_8h_af925ab5ddb3ed9a9dd5d5df1a84ea6bd}} 
+\index{cgraph.h@{cgraph.h}!agfstedge@{agfstedge}}
+\index{agfstedge@{agfstedge}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agfstedge()}{agfstedge()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ agfstedge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a96ce3a0e231ffa09821c1c5006ad4b3f}\label{cgraph_8h_a96ce3a0e231ffa09821c1c5006ad4b3f}} 
+\index{cgraph.h@{cgraph.h}!agfstin@{agfstin}}
+\index{agfstin@{agfstin}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agfstin()}{agfstin()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ agfstin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ad268407778a4c0bf3751274fefdba46b}\label{cgraph_8h_ad268407778a4c0bf3751274fefdba46b}} 
+\index{cgraph.h@{cgraph.h}!agfstnode@{agfstnode}}
+\index{agfstnode@{agfstnode}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agfstnode()}{agfstnode()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ agfstnode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ad7746ce0558651807cc1c090dd7a10f9}\label{cgraph_8h_ad7746ce0558651807cc1c090dd7a10f9}} 
+\index{cgraph.h@{cgraph.h}!agfstout@{agfstout}}
+\index{agfstout@{agfstout}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agfstout()}{agfstout()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ agfstout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_abcd8466586e7f9dafd183b291427231f}\label{cgraph_8h_abcd8466586e7f9dafd183b291427231f}} 
+\index{cgraph.h@{cgraph.h}!agfstsubg@{agfstsubg}}
+\index{agfstsubg@{agfstsubg}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agfstsubg()}{agfstsubg()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agfstsubg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a86a945a79cd78918470570ea81ad61f4}\label{cgraph_8h_a86a945a79cd78918470570ea81ad61f4}} 
+\index{cgraph.h@{cgraph.h}!agget@{agget}}
+\index{agget@{agget}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agget()}{agget()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API char $\ast$ agget (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a5cb2db42cf08631f32b7653114cddaee}\label{cgraph_8h_a5cb2db42cf08631f32b7653114cddaee}} 
+\index{cgraph.h@{cgraph.h}!aggetrec@{aggetrec}}
+\index{aggetrec@{aggetrec}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{aggetrec()}{aggetrec()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a2bd56252330358f27af8321f650a1e8a}{Agrec\+\_\+t}} $\ast$ aggetrec (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj,  }\item[{const char $\ast$}]{name,  }\item[{int}]{move\+\_\+to\+\_\+front }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a4b85c338d71db56dccc18040f53638a7}\label{cgraph_8h_a4b85c338d71db56dccc18040f53638a7}} 
+\index{cgraph.h@{cgraph.h}!aghtmlstr@{aghtmlstr}}
+\index{aghtmlstr@{aghtmlstr}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{aghtmlstr()}{aghtmlstr()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int aghtmlstr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a0742c930a05dedd75c1af738c07a0838}\label{cgraph_8h_a0742c930a05dedd75c1af738c07a0838}} 
+\index{cgraph.h@{cgraph.h}!agidedge@{agidedge}}
+\index{agidedge@{agidedge}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agidedge()}{agidedge()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ agidedge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{t,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}}}]{id,  }\item[{int}]{createflag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a61fc8bec39e11279c569d2e2f798361c}\label{cgraph_8h_a61fc8bec39e11279c569d2e2f798361c}} 
+\index{cgraph.h@{cgraph.h}!agidnode@{agidnode}}
+\index{agidnode@{agidnode}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agidnode()}{agidnode()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ agidnode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}}}]{id,  }\item[{int}]{createflag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a8bbc2ae3bc3568fb84de9e0c848911e3}\label{cgraph_8h_a8bbc2ae3bc3568fb84de9e0c848911e3}} 
+\index{cgraph.h@{cgraph.h}!agidsubg@{agidsubg}}
+\index{agidsubg@{agidsubg}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agidsubg()}{agidsubg()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agidsubg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a496f55d8b021184f08084dcecc4724ec}{IDTYPE}}}]{id,  }\item[{int}]{cflag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_af60635002636d33f14f1da1c9e348f8a}\label{cgraph_8h_af60635002636d33f14f1da1c9e348f8a}} 
+\index{cgraph.h@{cgraph.h}!aginit@{aginit}}
+\index{aginit@{aginit}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{aginit()}{aginit()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API void aginit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{int}]{kind,  }\item[{const char $\ast$}]{rec\+\_\+name,  }\item[{int}]{rec\+\_\+size,  }\item[{int}]{move\+\_\+to\+\_\+front }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a99ec607328c25c20eb5049179dc03226}\label{cgraph_8h_a99ec607328c25c20eb5049179dc03226}} 
+\index{cgraph.h@{cgraph.h}!aginternalmapclearlocalnames@{aginternalmapclearlocalnames}}
+\index{aginternalmapclearlocalnames@{aginternalmapclearlocalnames}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{aginternalmapclearlocalnames()}{aginternalmapclearlocalnames()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API void aginternalmapclearlocalnames (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a5cd1939122326a203075ca855ff6daf2}\label{cgraph_8h_a5cd1939122326a203075ca855ff6daf2}} 
+\index{cgraph.h@{cgraph.h}!agisdirected@{agisdirected}}
+\index{agisdirected@{agisdirected}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agisdirected()}{agisdirected()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agisdirected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a45a62bb0e62e5ee18c6e5167648cd923}\label{cgraph_8h_a45a62bb0e62e5ee18c6e5167648cd923}} 
+\index{cgraph.h@{cgraph.h}!agissimple@{agissimple}}
+\index{agissimple@{agissimple}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agissimple()}{agissimple()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agissimple (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a21defec3b5fab9f37781d0909a7d6bde}\label{cgraph_8h_a21defec3b5fab9f37781d0909a7d6bde}} 
+\index{cgraph.h@{cgraph.h}!agisstrict@{agisstrict}}
+\index{agisstrict@{agisstrict}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agisstrict()}{agisstrict()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agisstrict (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a7ed846573acf4555f86ab5c452fc640e}\label{cgraph_8h_a7ed846573acf4555f86ab5c452fc640e}} 
+\index{cgraph.h@{cgraph.h}!agisundirected@{agisundirected}}
+\index{agisundirected@{agisundirected}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agisundirected()}{agisundirected()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agisundirected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a4776647f453831f116fee7e200ee2823}\label{cgraph_8h_a4776647f453831f116fee7e200ee2823}} 
+\index{cgraph.h@{cgraph.h}!aglasterr@{aglasterr}}
+\index{aglasterr@{aglasterr}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{aglasterr()}{aglasterr()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API char $\ast$ aglasterr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_aa18cb7517fbe8be4bdcb18cf52acd2c7}\label{cgraph_8h_aa18cb7517fbe8be4bdcb18cf52acd2c7}} 
+\index{cgraph.h@{cgraph.h}!aglstnode@{aglstnode}}
+\index{aglstnode@{aglstnode}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{aglstnode()}{aglstnode()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ aglstnode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a966226a22960e8ceac4e7f1c6517828b}\label{cgraph_8h_a966226a22960e8ceac4e7f1c6517828b}} 
+\index{cgraph.h@{cgraph.h}!agmemconcat@{agmemconcat}}
+\index{agmemconcat@{agmemconcat}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agmemconcat()}{agmemconcat()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agmemconcat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{const char $\ast$}]{cp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a4903073e6680f7882f371865875e639e}\label{cgraph_8h_a4903073e6680f7882f371865875e639e}} 
+\index{cgraph.h@{cgraph.h}!agmemread@{agmemread}}
+\index{agmemread@{agmemread}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agmemread()}{agmemread()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agmemread (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a015fdcf259e5cfbbc903ad3f1990556b}\label{cgraph_8h_a015fdcf259e5cfbbc903ad3f1990556b}} 
+\index{cgraph.h@{cgraph.h}!agnameof@{agnameof}}
+\index{agnameof@{agnameof}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnameof()}{agnameof()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API char $\ast$ agnameof (\begin{DoxyParamCaption}\item[{void $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ab6fefbed26b04eadf563f407a7d3774a}\label{cgraph_8h_ab6fefbed26b04eadf563f407a7d3774a}} 
+\index{cgraph.h@{cgraph.h}!agnedges@{agnedges}}
+\index{agnedges@{agnedges}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnedges()}{agnedges()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agnedges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a4adc84a502d28ec87c931b98407846fd}\label{cgraph_8h_a4adc84a502d28ec87c931b98407846fd}} 
+\index{cgraph.h@{cgraph.h}!agnnodes@{agnnodes}}
+\index{agnnodes@{agnnodes}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnnodes()}{agnnodes()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agnnodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a1e8d44a7de90600adccd069df68e1fdc}\label{cgraph_8h_a1e8d44a7de90600adccd069df68e1fdc}} 
+\index{cgraph.h@{cgraph.h}!agnode@{agnode}}
+\index{agnode@{agnode}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnode()}{agnode()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ agnode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{char $\ast$}]{name,  }\item[{int}]{createflag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ad53cb3497ec9bec98db2ac7e5c54f0b3}\label{cgraph_8h_ad53cb3497ec9bec98db2ac7e5c54f0b3}} 
+\index{cgraph.h@{cgraph.h}!agnodebefore@{agnodebefore}}
+\index{agnodebefore@{agnodebefore}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnodebefore()}{agnodebefore()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agnodebefore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{u,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a2995244a8e345f4574876251e8b449d2}\label{cgraph_8h_a2995244a8e345f4574876251e8b449d2}} 
+\index{cgraph.h@{cgraph.h}!agnsubg@{agnsubg}}
+\index{agnsubg@{agnsubg}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnsubg()}{agnsubg()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agnsubg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a960a710d65dc71930d5e164a606e5353}\label{cgraph_8h_a960a710d65dc71930d5e164a606e5353}} 
+\index{cgraph.h@{cgraph.h}!agnxtattr@{agnxtattr}}
+\index{agnxtattr@{agnxtattr}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnxtattr()}{agnxtattr()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$ agnxtattr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{int}]{kind,  }\item[{\mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$}]{attr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ac30d1b378d21509656500ad476b7029b}\label{cgraph_8h_ac30d1b378d21509656500ad476b7029b}} 
+\index{cgraph.h@{cgraph.h}!agnxtedge@{agnxtedge}}
+\index{agnxtedge@{agnxtedge}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnxtedge()}{agnxtedge()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ agnxtedge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$}]{e,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a131b383f7a6c07ba45cca2911f96acb4}\label{cgraph_8h_a131b383f7a6c07ba45cca2911f96acb4}} 
+\index{cgraph.h@{cgraph.h}!agnxtin@{agnxtin}}
+\index{agnxtin@{agnxtin}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnxtin()}{agnxtin()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ agnxtin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$}]{e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a47450693c22286ed8d4a1d99c2397409}\label{cgraph_8h_a47450693c22286ed8d4a1d99c2397409}} 
+\index{cgraph.h@{cgraph.h}!agnxtnode@{agnxtnode}}
+\index{agnxtnode@{agnxtnode}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnxtnode()}{agnxtnode()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ agnxtnode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a114a41c25080ac2787b51b3b2514693b}\label{cgraph_8h_a114a41c25080ac2787b51b3b2514693b}} 
+\index{cgraph.h@{cgraph.h}!agnxtout@{agnxtout}}
+\index{agnxtout@{agnxtout}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnxtout()}{agnxtout()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ agnxtout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$}]{e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ae997729f968b4ecc622d1a5eedf2b785}\label{cgraph_8h_ae997729f968b4ecc622d1a5eedf2b785}} 
+\index{cgraph.h@{cgraph.h}!agnxtsubg@{agnxtsubg}}
+\index{agnxtsubg@{agnxtsubg}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agnxtsubg()}{agnxtsubg()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agnxtsubg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{subg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_af6d0bb2694e419b3dd5fc6ed64169d77}\label{cgraph_8h_af6d0bb2694e419b3dd5fc6ed64169d77}} 
+\index{cgraph.h@{cgraph.h}!agobjkind@{agobjkind}}
+\index{agobjkind@{agobjkind}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agobjkind()}{agobjkind()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agobjkind (\begin{DoxyParamCaption}\item[{void $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a85e142c9c453c325cb722ef837d11dd2}\label{cgraph_8h_a85e142c9c453c325cb722ef837d11dd2}} 
+\index{cgraph.h@{cgraph.h}!agopen@{agopen}}
+\index{agopen@{agopen}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agopen()}{agopen()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agopen (\begin{DoxyParamCaption}\item[{char $\ast$}]{name,  }\item[{\mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}}}]{desc,  }\item[{\mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} $\ast$}]{disc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_af7bfbe45c1682b483146507823af9007}\label{cgraph_8h_af7bfbe45c1682b483146507823af9007}} 
+\index{cgraph.h@{cgraph.h}!agparent@{agparent}}
+\index{agparent@{agparent}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agparent()}{agparent()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agparent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a04dc55e336444df2689c70304e91a769}\label{cgraph_8h_a04dc55e336444df2689c70304e91a769}} 
+\index{cgraph.h@{cgraph.h}!agpopdisc@{agpopdisc}}
+\index{agpopdisc@{agpopdisc}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agpopdisc()}{agpopdisc()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agpopdisc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a1268b501cf6ea9359343e0545e0d89bc}{Agcbdisc\+\_\+t}} $\ast$}]{disc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a42ea9ee41f66ac773553fa490ae931c0}\label{cgraph_8h_a42ea9ee41f66ac773553fa490ae931c0}} 
+\index{cgraph.h@{cgraph.h}!agprvnode@{agprvnode}}
+\index{agprvnode@{agprvnode}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agprvnode()}{agprvnode()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ agprvnode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a536796e152d4e2880c6754897dacb1ca}\label{cgraph_8h_a536796e152d4e2880c6754897dacb1ca}} 
+\index{cgraph.h@{cgraph.h}!agpushdisc@{agpushdisc}}
+\index{agpushdisc@{agpushdisc}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agpushdisc()}{agpushdisc()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API void agpushdisc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a1268b501cf6ea9359343e0545e0d89bc}{Agcbdisc\+\_\+t}} $\ast$}]{disc,  }\item[{void $\ast$}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_af9dd5dd7686f83a45c2e0b8b1e68853e}\label{cgraph_8h_af9dd5dd7686f83a45c2e0b8b1e68853e}} 
+\index{cgraph.h@{cgraph.h}!agraphof@{agraphof}}
+\index{agraphof@{agraphof}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agraphof()}{agraphof()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agraphof (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_aa713e98b20e21ae1d9d95303981b38e5}\label{cgraph_8h_aa713e98b20e21ae1d9d95303981b38e5}} 
+\index{cgraph.h@{cgraph.h}!agread@{agread}}
+\index{agread@{agread}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agread()}{agread()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agread (\begin{DoxyParamCaption}\item[{void $\ast$}]{chan,  }\item[{\mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} $\ast$}]{disc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ab40fd03cef339aa4605317832b1fee4e}\label{cgraph_8h_ab40fd03cef339aa4605317832b1fee4e}} 
+\index{cgraph.h@{cgraph.h}!agreadline@{agreadline}}
+\index{agreadline@{agreadline}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agreadline()}{agreadline()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API void agreadline (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a406841a50eda1d7f76ce66aaa8145dec}\label{cgraph_8h_a406841a50eda1d7f76ce66aaa8145dec}} 
+\index{cgraph.h@{cgraph.h}!agrealloc@{agrealloc}}
+\index{agrealloc@{agrealloc}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agrealloc()}{agrealloc()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API void $\ast$ agrealloc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{void $\ast$}]{ptr,  }\item[{size\+\_\+t}]{oldsize,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a94e70a22f74df89275f02b0f4450b9d9}\label{cgraph_8h_a94e70a22f74df89275f02b0f4450b9d9}} 
+\index{cgraph.h@{cgraph.h}!agrelabel\_node@{agrelabel\_node}}
+\index{agrelabel\_node@{agrelabel\_node}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agrelabel\_node()}{agrelabel\_node()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agrelabel\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{n,  }\item[{char $\ast$}]{newname }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_acc4553d6d246fc943e79b267299437d2}\label{cgraph_8h_acc4553d6d246fc943e79b267299437d2}} 
+\index{cgraph.h@{cgraph.h}!agreseterrors@{agreseterrors}}
+\index{agreseterrors@{agreseterrors}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agreseterrors()}{agreseterrors()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agreseterrors (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a3f720bb07e800136f69b875bcff5b814}\label{cgraph_8h_a3f720bb07e800136f69b875bcff5b814}} 
+\index{cgraph.h@{cgraph.h}!agroot@{agroot}}
+\index{agroot@{agroot}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agroot()}{agroot()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agroot (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a079949a7a6a03570588c0d8f829d1d96}\label{cgraph_8h_a079949a7a6a03570588c0d8f829d1d96}} 
+\index{cgraph.h@{cgraph.h}!agsafeset@{agsafeset}}
+\index{agsafeset@{agsafeset}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agsafeset()}{agsafeset()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agsafeset (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj,  }\item[{char $\ast$}]{name,  }\item[{const char $\ast$}]{value,  }\item[{const char $\ast$}]{def }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ac158869cc4f6d0493674d68c3cfe3ad5}\label{cgraph_8h_ac158869cc4f6d0493674d68c3cfe3ad5}} 
+\index{cgraph.h@{cgraph.h}!agset@{agset}}
+\index{agset@{agset}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agset()}{agset()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agset (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj,  }\item[{char $\ast$}]{name,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ac8b80f854859b4017499e42067bae5b7}\label{cgraph_8h_ac8b80f854859b4017499e42067bae5b7}} 
+\index{cgraph.h@{cgraph.h}!agseterr@{agseterr}}
+\index{agseterr@{agseterr}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agseterr()}{agseterr()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cf}{agerrlevel\+\_\+t}} agseterr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a0c75ffdbe1d93ca74fe77dc46a45a6cf}{agerrlevel\+\_\+t}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_adee66a17e220d081d595875a1afc0c2c}\label{cgraph_8h_adee66a17e220d081d595875a1afc0c2c}} 
+\index{cgraph.h@{cgraph.h}!agseterrf@{agseterrf}}
+\index{agseterrf@{agseterrf}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agseterrf()}{agseterrf()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_adaa9664d5293197783f01659b889d8c6}{agusererrf}} agseterrf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_adaa9664d5293197783f01659b889d8c6}{agusererrf}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a3c6ac2b423fc76d157bf4a5e9634b0dd}\label{cgraph_8h_a3c6ac2b423fc76d157bf4a5e9634b0dd}} 
+\index{cgraph.h@{cgraph.h}!agsetfile@{agsetfile}}
+\index{agsetfile@{agsetfile}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agsetfile()}{agsetfile()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API void agsetfile (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a83740b274c978d83d6ac8ac5b5cf0196}\label{cgraph_8h_a83740b274c978d83d6ac8ac5b5cf0196}} 
+\index{cgraph.h@{cgraph.h}!agstrbind@{agstrbind}}
+\index{agstrbind@{agstrbind}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agstrbind()}{agstrbind()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API char $\ast$ agstrbind (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a713d5399c53b10bf008eb7a1682ca98a}\label{cgraph_8h_a713d5399c53b10bf008eb7a1682ca98a}} 
+\index{cgraph.h@{cgraph.h}!agstrcanon@{agstrcanon}}
+\index{agstrcanon@{agstrcanon}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agstrcanon()}{agstrcanon()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API char $\ast$ agstrcanon (\begin{DoxyParamCaption}\item[{char $\ast$}]{,  }\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a63d197f6e77d5f5ac6d3b47580624b84}\label{cgraph_8h_a63d197f6e77d5f5ac6d3b47580624b84}} 
+\index{cgraph.h@{cgraph.h}!agstrdup@{agstrdup}}
+\index{agstrdup@{agstrdup}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agstrdup()}{agstrdup()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API char $\ast$ agstrdup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a4443d4d88064813323bac27514c727ac}\label{cgraph_8h_a4443d4d88064813323bac27514c727ac}} 
+\index{cgraph.h@{cgraph.h}!agstrdup\_html@{agstrdup\_html}}
+\index{agstrdup\_html@{agstrdup\_html}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agstrdup\_html()}{agstrdup\_html()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API char $\ast$ agstrdup\+\_\+html (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a748d389c443bc9352988e6788225c357}\label{cgraph_8h_a748d389c443bc9352988e6788225c357}} 
+\index{cgraph.h@{cgraph.h}!agstrfree@{agstrfree}}
+\index{agstrfree@{agstrfree}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agstrfree()}{agstrfree()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agstrfree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{,  }\item[{const char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a118a898f2c8f8da04983ee098d6b4397}\label{cgraph_8h_a118a898f2c8f8da04983ee098d6b4397}} 
+\index{cgraph.h@{cgraph.h}!agsubedge@{agsubedge}}
+\index{agsubedge@{agsubedge}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agsubedge()}{agsubedge()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$ agsubedge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a7c54f4922d88107ff771babd5e04dacb}{Agedge\+\_\+t}} $\ast$}]{e,  }\item[{int}]{createflag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a2ca7f6ee15e2ed41b86b715d776ab230}\label{cgraph_8h_a2ca7f6ee15e2ed41b86b715d776ab230}} 
+\index{cgraph.h@{cgraph.h}!agsubg@{agsubg}}
+\index{agsubg@{agsubg}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agsubg()}{agsubg()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$ agsubg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{char $\ast$}]{name,  }\item[{int}]{cflag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a03a53b6f715e313db550a8f6190eb10c}\label{cgraph_8h_a03a53b6f715e313db550a8f6190eb10c}} 
+\index{cgraph.h@{cgraph.h}!agsubnode@{agsubnode}}
+\index{agsubnode@{agsubnode}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agsubnode()}{agsubnode()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$ agsubnode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{n,  }\item[{int}]{createflag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_adad4a1e185307c87499d6f729a4a2348}\label{cgraph_8h_adad4a1e185307c87499d6f729a4a2348}} 
+\index{cgraph.h@{cgraph.h}!agsubrep@{agsubrep}}
+\index{agsubrep@{agsubrep}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agsubrep()}{agsubrep()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a035d8e8997e582435a8c5a7b8b87dd27}{Agsubnode\+\_\+t}} $\ast$ agsubrep (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{cgraph_8h_a26c742547e98b7c2331cad7c85ff16c6}{Agnode\+\_\+t}} $\ast$}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a1b3c7fe6147832a992f62fcd28e79a82}\label{cgraph_8h_a1b3c7fe6147832a992f62fcd28e79a82}} 
+\index{cgraph.h@{cgraph.h}!agwarningf@{agwarningf}}
+\index{agwarningf@{agwarningf}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agwarningf()}{agwarningf()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int CGRAPH\+\_\+\+API void CGRAPH\+\_\+\+API void agwarningf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a43c761e45309ba677ca59d8296312483}\label{cgraph_8h_a43c761e45309ba677ca59d8296312483}} 
+\index{cgraph.h@{cgraph.h}!agwrite@{agwrite}}
+\index{agwrite@{agwrite}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agwrite()}{agwrite()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agwrite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cgraph_8h_a48061c3baade540af78ac621211ae926}{Agraph\+\_\+t}} $\ast$}]{g,  }\item[{void $\ast$}]{chan }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_ad2d0f1fbd29039ec42d12ffb24c015b6}\label{cgraph_8h_ad2d0f1fbd29039ec42d12ffb24c015b6}} 
+\index{cgraph.h@{cgraph.h}!agxget@{agxget}}
+\index{agxget@{agxget}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agxget()}{agxget()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API char $\ast$ agxget (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj,  }\item[{\mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$}]{sym }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cgraph_8h_a457f6b56df5722cd546e990efd77c751}\label{cgraph_8h_a457f6b56df5722cd546e990efd77c751}} 
+\index{cgraph.h@{cgraph.h}!agxset@{agxset}}
+\index{agxset@{agxset}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{agxset()}{agxset()}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API int agxset (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj,  }\item[{\mbox{\hyperlink{cgraph_8h_a51d4ce67ee895cc7051b19db92d771d6}{Agsym\+\_\+t}} $\ast$}]{sym,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Переменные}
+\mbox{\Hypertarget{cgraph_8h_ade3d1614ee2c32df0edd7a022f66478a}\label{cgraph_8h_ade3d1614ee2c32df0edd7a022f66478a}} 
+\index{cgraph.h@{cgraph.h}!AgDefaultDisc@{AgDefaultDisc}}
+\index{AgDefaultDisc@{AgDefaultDisc}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AgDefaultDisc}{AgDefaultDisc}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_acd835fb7cf0a8a5d8b1dc3198dafff40}{Agdisc\+\_\+t}} Ag\+Default\+Disc\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{cgraph_8h_a8a3475f98b683496724e35f34a56c8c5}\label{cgraph_8h_a8a3475f98b683496724e35f34a56c8c5}} 
+\index{cgraph.h@{cgraph.h}!Agdirected@{Agdirected}}
+\index{Agdirected@{Agdirected}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agdirected}{Agdirected}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}} Agdirected\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{cgraph_8h_a8dfe7271f23a5f54f97e73fa363ba0f3}\label{cgraph_8h_a8dfe7271f23a5f54f97e73fa363ba0f3}} 
+\index{cgraph.h@{cgraph.h}!AgIdDisc@{AgIdDisc}}
+\index{AgIdDisc@{AgIdDisc}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AgIdDisc}{AgIdDisc}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a8e845730a89de4d3b5609b996f94c9ac}{Agiddisc\+\_\+t}} Ag\+Id\+Disc\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{cgraph_8h_a24e9bd096c4092649607924dc6e969c8}\label{cgraph_8h_a24e9bd096c4092649607924dc6e969c8}} 
+\index{cgraph.h@{cgraph.h}!AgIoDisc@{AgIoDisc}}
+\index{AgIoDisc@{AgIoDisc}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AgIoDisc}{AgIoDisc}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_aacaa7e5682be10f0c44bd7a93a00df8d}{Agiodisc\+\_\+t}} Ag\+Io\+Disc\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{cgraph_8h_a9196065df62bd4ba5e91d49bb681a947}\label{cgraph_8h_a9196065df62bd4ba5e91d49bb681a947}} 
+\index{cgraph.h@{cgraph.h}!AgMemDisc@{AgMemDisc}}
+\index{AgMemDisc@{AgMemDisc}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{AgMemDisc}{AgMemDisc}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a9c972a6ee678b82cabc303e1e37ad0c6}{Agmemdisc\+\_\+t}} Ag\+Mem\+Disc\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{cgraph_8h_a90a816224a1dfa7732f06ce0a9770220}\label{cgraph_8h_a90a816224a1dfa7732f06ce0a9770220}} 
+\index{cgraph.h@{cgraph.h}!Agstrictdirected@{Agstrictdirected}}
+\index{Agstrictdirected@{Agstrictdirected}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agstrictdirected}{Agstrictdirected}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}} Agstrictdirected\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{cgraph_8h_adb18db99d62071a35bec738edc2b0636}\label{cgraph_8h_adb18db99d62071a35bec738edc2b0636}} 
+\index{cgraph.h@{cgraph.h}!Agstrictundirected@{Agstrictundirected}}
+\index{Agstrictundirected@{Agstrictundirected}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agstrictundirected}{Agstrictundirected}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}} Agstrictundirected\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{cgraph_8h_a13c8f3f32c6538e915cdc7784dd09bba}\label{cgraph_8h_a13c8f3f32c6538e915cdc7784dd09bba}} 
+\index{cgraph.h@{cgraph.h}!Agundirected@{Agundirected}}
+\index{Agundirected@{Agundirected}!cgraph.h@{cgraph.h}}
+\doxysubsubsection{\texorpdfstring{Agundirected}{Agundirected}}
+{\footnotesize\ttfamily CGRAPH\+\_\+\+API \mbox{\hyperlink{cgraph_8h_a57bf9a7fac6e52ad51c90f5fac1230b5}{Agdesc\+\_\+t}} Agundirected\hspace{0.3cm}{\ttfamily [extern]}}
+

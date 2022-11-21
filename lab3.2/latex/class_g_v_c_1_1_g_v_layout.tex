@@ -1,0 +1,142 @@
+\hypertarget{class_g_v_c_1_1_g_v_layout}{}\doxysection{Класс GVC\+::GVLayout}
+\label{class_g_v_c_1_1_g_v_layout}\index{GVC::GVLayout@{GVC::GVLayout}}
+
+
+The \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} class represents a graph layout.  
+
+
+
+
+{\ttfamily \#include $<$GVLayout.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a1924389732788dc88aa339b33613e475}{GVLayout}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} $>$ \&gvc, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph\+::\+AGraph}} $>$ \&g, const std\+::string \&engine)
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_af2d19a3c632f16347d5b30042c6c36fa}{GVLayout}} (\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&gvc, \mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph\+::\+AGraph}} \&\&g, const std\+::string \&engine)
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_aa50d2ff00a2f299361110e2615728a9d}{GVLayout}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} $>$ gvc, \mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph\+::\+AGraph}} \&\&g, const std\+::string \&engine)
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_ace44891629e3e3f002ae72bf369bee1f}{GVLayout}} (\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&gvc, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph\+::\+AGraph}} $>$ g, const std\+::string \&engine)
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a68a13451faf1cdd5e8005e9e39efd2cb}{$\sim$\+GVLayout}} ()
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a0039d8c89ccae48c54e7b57bcef61fdc}{GVLayout}} (const \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&)=default
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \& \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_ad7a4a0b86a765bf6a6d63e1131a3f37d}{operator=}} (const \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&)=default
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a0043815c3d47a9b11d612b9f10daeb03}{GVLayout}} (\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \& \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a92f9b79398f64268535c3377a73e44f4}{operator=}} (\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_g_v_c_1_1_g_v_render_data}{GVRender\+Data}} \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a2afc965cde8f81707ce2fd12c140a673}{render}} (const std\+::string \&format) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} $>$ \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a32e3a6c8f48bf9aae03b5de359496842}{m\+\_\+gvc}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph\+::\+AGraph}} $>$ \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout_a3345dae4650647d8b0092a0d7c60379d}{m\+\_\+g}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+The \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} class represents a graph layout. 
+
+См. определение в файле \mbox{\hyperlink{_g_v_layout_8h_source}{GVLayout.\+h}} строка \mbox{\hyperlink{_g_v_layout_8h_source_l00027}{27}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_a1924389732788dc88aa339b33613e475}\label{class_g_v_c_1_1_g_v_layout_a1924389732788dc88aa339b33613e475}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!GVLayout@{GVLayout}}
+\index{GVLayout@{GVLayout}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{GVLayout()}{GVLayout()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily GVC\+::\+GVLayout\+::\+GVLayout (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} $>$ \&}]{gvc,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph\+::\+AGraph}} $>$ \&}]{g,  }\item[{const std\+::string \&}]{engine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_af2d19a3c632f16347d5b30042c6c36fa}\label{class_g_v_c_1_1_g_v_layout_af2d19a3c632f16347d5b30042c6c36fa}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!GVLayout@{GVLayout}}
+\index{GVLayout@{GVLayout}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{GVLayout()}{GVLayout()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily GVC\+::\+GVLayout\+::\+GVLayout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&}]{gvc,  }\item[{\mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph\+::\+AGraph}} \&\&}]{g,  }\item[{const std\+::string \&}]{engine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_aa50d2ff00a2f299361110e2615728a9d}\label{class_g_v_c_1_1_g_v_layout_aa50d2ff00a2f299361110e2615728a9d}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!GVLayout@{GVLayout}}
+\index{GVLayout@{GVLayout}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{GVLayout()}{GVLayout()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily GVC\+::\+GVLayout\+::\+GVLayout (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} $>$}]{gvc,  }\item[{\mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph\+::\+AGraph}} \&\&}]{g,  }\item[{const std\+::string \&}]{engine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_ace44891629e3e3f002ae72bf369bee1f}\label{class_g_v_c_1_1_g_v_layout_ace44891629e3e3f002ae72bf369bee1f}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!GVLayout@{GVLayout}}
+\index{GVLayout@{GVLayout}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{GVLayout()}{GVLayout()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily GVC\+::\+GVLayout\+::\+GVLayout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}} \&\&}]{gvc,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph\+::\+AGraph}} $>$}]{g,  }\item[{const std\+::string \&}]{engine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_a68a13451faf1cdd5e8005e9e39efd2cb}\label{class_g_v_c_1_1_g_v_layout_a68a13451faf1cdd5e8005e9e39efd2cb}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!````~GVLayout@{$\sim$GVLayout}}
+\index{````~GVLayout@{$\sim$GVLayout}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{$\sim$GVLayout()}{~GVLayout()}}
+{\footnotesize\ttfamily GVC\+::\+GVLayout\+::$\sim$\+GVLayout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_a0039d8c89ccae48c54e7b57bcef61fdc}\label{class_g_v_c_1_1_g_v_layout_a0039d8c89ccae48c54e7b57bcef61fdc}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!GVLayout@{GVLayout}}
+\index{GVLayout@{GVLayout}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{GVLayout()}{GVLayout()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily GVC\+::\+GVLayout\+::\+GVLayout (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_a0043815c3d47a9b11d612b9f10daeb03}\label{class_g_v_c_1_1_g_v_layout_a0043815c3d47a9b11d612b9f10daeb03}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!GVLayout@{GVLayout}}
+\index{GVLayout@{GVLayout}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{GVLayout()}{GVLayout()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily GVC\+::\+GVLayout\+::\+GVLayout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_ad7a4a0b86a765bf6a6d63e1131a3f37d}\label{class_g_v_c_1_1_g_v_layout_ad7a4a0b86a765bf6a6d63e1131a3f37d}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!operator=@{operator=}}
+\index{operator=@{operator=}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \& GVC\+::\+GVLayout\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_a92f9b79398f64268535c3377a73e44f4}\label{class_g_v_c_1_1_g_v_layout_a92f9b79398f64268535c3377a73e44f4}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!operator=@{operator=}}
+\index{operator=@{operator=}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \& GVC\+::\+GVLayout\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_v_c_1_1_g_v_layout}{GVLayout}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_a2afc965cde8f81707ce2fd12c140a673}\label{class_g_v_c_1_1_g_v_layout_a2afc965cde8f81707ce2fd12c140a673}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!render@{render}}
+\index{render@{render}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_v_c_1_1_g_v_render_data}{GVRender\+Data}} GVC\+::\+GVLayout\+::render (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{format }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_a3345dae4650647d8b0092a0d7c60379d}\label{class_g_v_c_1_1_g_v_layout_a3345dae4650647d8b0092a0d7c60379d}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!m\_g@{m\_g}}
+\index{m\_g@{m\_g}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{m\_g}{m\_g}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_c_graph_1_1_a_graph}{CGraph\+::\+AGraph}}$>$ GVC\+::\+GVLayout\+::m\+\_\+g\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_g_v_layout_8h_source}{GVLayout.\+h}} строка \mbox{\hyperlink{_g_v_layout_8h_source_l00051}{51}}
+
+\mbox{\Hypertarget{class_g_v_c_1_1_g_v_layout_a32e3a6c8f48bf9aae03b5de359496842}\label{class_g_v_c_1_1_g_v_layout_a32e3a6c8f48bf9aae03b5de359496842}} 
+\index{GVC::GVLayout@{GVC::GVLayout}!m\_gvc@{m\_gvc}}
+\index{m\_gvc@{m\_gvc}!GVC::GVLayout@{GVC::GVLayout}}
+\doxysubsubsection{\texorpdfstring{m\_gvc}{m\_gvc}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_g_v_c_1_1_g_v_context}{GVContext}}$>$ GVC\+::\+GVLayout\+::m\+\_\+gvc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_g_v_layout_8h_source}{GVLayout.\+h}} строка \mbox{\hyperlink{_g_v_layout_8h_source_l00050}{50}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+for lab/\+Graphviz/include/graphviz/\mbox{\hyperlink{_g_v_layout_8h}{GVLayout.\+h}}\end{DoxyCompactItemize}
